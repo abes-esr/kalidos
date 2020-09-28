@@ -1,6 +1,8 @@
 import 'bootstrap/dist/css/bootstrap.css';
 import $ from 'jquery';
 import './style.css';
+import './templateAdmin/css/sb-admin-2.min.css'
+import './templateAdmin/js/sb-admin-2'
 
 function hide (name) {
     var x = document.getElementById(name);
