@@ -1,8 +1,8 @@
-// import $ from 'jquery';
+import $ from 'jquery';
 import './style.css';
 import 'jquery';
 import 'bootstrap/dist/css/bootstrap.css';
-import './templateAdmin/js/sb-admin-2'
+import 'startbootstrap-sb-admin-2/js/sb-admin-2'
 import 'startbootstrap-sb-admin-2/css/sb-admin-2.min.css'
 
 
