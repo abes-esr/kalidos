@@ -10,7 +10,7 @@ module.exports = (env, argv) => {
   console.log(argv.mode);
   return {
     watch: true,
-    entry: './src/index.js',
+    entry: './src/index.jsx',
     output: { // NEW
       path: path.join(__dirname, 'dist'),
       filename: '[name].js',

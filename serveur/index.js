@@ -3,6 +3,8 @@ const express = require('express');
 const app = express();
 const path = require('path');
 
+const fs = require('fs');  
+
 const DIST_DIR = path.join(__dirname, '../dist');
 
 app.use(express.static(DIST_DIR));
@@ -15,9 +17,10 @@ const mockResponse = {
 app.get('/api', (req, res) => {
   res.send(mockResponse);
 });
-app.get('/', (req, res) => {
-  res.status(200).send('Hello World!');
+app.get('/*', (req, res) => {
+  res.sendFile(path.join(DIST_DIR,'index.html'));
 });
+
 app.listen(port, () => {
   console.log(`App listening on port: ${port}`);
   console.log(`App is running on : http://localhost:${port}`);
