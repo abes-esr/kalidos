@@ -13,7 +13,7 @@ const SaisieManuelle = () => (
                 </div>
             </div>
         </div>
-        <button type="button" className="btn btn-primary">Envoyer</button>
+        <button type="button" style={{width:'100%'}} className="btn btn-primary">Envoyer</button>
     </div>
 
 );
@@ -37,9 +37,9 @@ const DropdownJeuDeRègles = () => (
     <div className="row">
         <div className="col-lg-12">
             <div className="form-group">
-                <label for='jeuDeRegles'>Choix du jeu de règles</label>
+                <label htmlFor='jeuDeRegles'>Choix du jeu de règles</label>
                 <select className="form-control" aria-describedby="basic-addon1" id="jeuDeRegles">
-                    <option value="0" selected>Choix automatique</option>
+                    <option value="0" defaultValue>Choix automatique</option>
                     <option value="1">Encyclopédie</option>
                     <option value="2">Bibliographie</option>
                     <option value="3">Thèse</option>
