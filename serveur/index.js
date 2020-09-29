@@ -14,6 +14,10 @@ const mockResponse = {
   bar: 'foo',
 };
 
+app.post('/upload', (req,res) => {
+  res.sendStatus(200);
+});
+
 app.get('/api', (req, res) => {
   res.send(mockResponse);
 });

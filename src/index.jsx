@@ -1,9 +1,12 @@
 import $ from 'jquery';
 import './style.css';
-import 'jquery';
+window.jQuery = window.$ = $;
 import 'bootstrap/dist/css/bootstrap.css';
 import 'startbootstrap-sb-admin-2/js/sb-admin-2'
 import 'startbootstrap-sb-admin-2/css/sb-admin-2.min.css'
+import 'dropzone';
+
+Dropzone.autoDiscover = false;
 
 
 import React from 'react';
@@ -12,9 +15,10 @@ import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import TopBar from './Components/TopBar/TopBar';
 import AppRouter from './Components/Router/Router';
 
-import ExamplePage1 from './Components/ExamplePage/ExamplePage1';
+import PageDeSaisie from './Components/PageDeSaisie/PageDeSaisie';
 import ExamplePage2 from './Components/ExamplePage/ExamplePage2';
 import ExamplePage3 from './Components/ExamplePage/ExamplePage3';
+import { Form } from 'react-bootstrap';
 
 
 
@@ -24,7 +28,7 @@ const Content = () => (
 
         <div className="container">
 
-            <Route exact path="/" component={ExamplePage1} />
+            <Route exact path="/" component={PageDeSaisie} />
             <Route path="/examplePage2" component={ExamplePage2} />
             <Route path="/examplePage3" component={ExamplePage3} />
         </div>
