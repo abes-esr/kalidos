@@ -13,7 +13,7 @@ const SaisieManuelle = () => (
                 </div>
             </div>
         </div>
-        <button type="button" style={{width:'100%'}} className="btn btn-primary">Envoyer</button>
+        <button type="button" className="btn btn-primary">Envoyer</button>
     </div>
 
 );
