@@ -2,7 +2,6 @@ import $ from 'jquery';
 import './style.css';
 window.jQuery = window.$ = $;
 import 'bootstrap/dist/css/bootstrap.css';
-import 'startbootstrap-sb-admin-2/js/sb-admin-2'
 import 'startbootstrap-sb-admin-2/css/sb-admin-2.min.css'
 import 'dropzone';
 
@@ -61,6 +60,8 @@ const Wrapper = () => (
 );
 
 ReactDOM.render(<Wrapper />, document.getElementById('wrapperContent'));
+
+
 
 
 // function hide (name) {
