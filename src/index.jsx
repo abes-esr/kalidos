@@ -8,7 +8,7 @@ import 'startbootstrap-sb-admin-2/css/sb-admin-2.min.css'
 
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { BrowserRouter as Router, Route } from "react-router-dom";
+import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import TopBar from './Components/TopBar/TopBar';
 import AppRouter from './Components/Router/Router';
 
