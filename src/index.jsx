@@ -3,6 +3,7 @@ import './style.css';
 window.jQuery = window.$ = $;
 import 'bootstrap/dist/css/bootstrap.css';
 import 'startbootstrap-sb-admin-2/css/sb-admin-2.min.css'
+import 'react-bootstrap-table-next/dist/react-bootstrap-table2.min.css'
 import 'dropzone';
 
 Dropzone.autoDiscover = false;
@@ -17,6 +18,7 @@ import AppRouter from './Components/Router/Router';
 import PageDeSaisie from './Components/PageDeSaisie/PageDeSaisie';
 import ExamplePage2 from './Components/ExamplePage/ExamplePage2';
 import ExamplePage3 from './Components/ExamplePage/ExamplePage3';
+import PageDeRegles from './Components/PageDeRegles/PageDeRegles';
 import { Form } from 'react-bootstrap';
 
 
@@ -30,6 +32,7 @@ const Content = () => (
             <Route exact path="/" component={PageDeSaisie} />
             <Route path="/examplePage2" component={ExamplePage2} />
             <Route path="/examplePage3" component={ExamplePage3} />
+            <Route path="/regles" component={PageDeRegles} />
         </div>
     </div>
 );
