@@ -4,6 +4,7 @@ import React from 'react';
 
 const ExamplePage2 = () => (
     <div>
+        <h2>Interface de résultat Démo </h2>
         <table class="table table-condensed tab-collapse">
             <thead>
                 <tr>

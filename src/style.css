@@ -30,4 +30,7 @@
 .tab-collapse {
   border-collapse:collapse;
 }
+.accordian-body {
+  padding: 12px;
+}
 /* end tab résulats */
