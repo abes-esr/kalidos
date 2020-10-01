@@ -2,6 +2,7 @@ import $ from 'jquery';
 import './style.css';
 window.jQuery = window.$ = $;
 import 'bootstrap/dist/css/bootstrap.css';
+import 'bootstrap/dist/js/bootstrap.js';
 import 'startbootstrap-sb-admin-2/css/sb-admin-2.min.css'
 import 'dropzone';
 
@@ -49,7 +50,7 @@ const Wrapper = () => (
                 <footer className="sticky-footer bg-white">
                     <div className="container my-auto">
                         <div className="copyright text-center my-auto">
-                            <span>Copyright &copy; Your Website 2020</span>
+                            <span>Copyright &copy; BiblioDev 2020</span>
                         </div>
                     </div>
                 </footer>
