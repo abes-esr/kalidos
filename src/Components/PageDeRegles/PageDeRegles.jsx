@@ -1,89 +1,158 @@
 import React from 'react';
-// import Card6 from '../Générique/Card_6';
 import Card12 from '../Générique/Card_12';
+import Modal from './Modal';
 
 import BootstrapTable from 'react-bootstrap-table-next';
 import ToolkitProvider, { Search } from 'react-bootstrap-table2-toolkit';
+import paginationFactory from 'react-bootstrap-table2-paginator';
+import 'react-bootstrap-table2-paginator/dist/react-bootstrap-table2-paginator.min.css';
+
 
 const { SearchBar } = Search;
 
-
 const products = [
     {
-        id : 1,
-        owner : "owner 1",
-        type : "type 1",
-        action : ""
+        code: 1,
+        bloc: "bloc 1",
+        description: "description 1",
+        action: ""
     },
     {
-        id : 2,
-        owner : "owner 2",
-        type : "type 2",
-        action : ""
+        code: 2,
+        bloc: "bloc 2",
+        description: "description 2",
+        action: ""
     },
     {
-        id : 3,
-        owner : "owner 3",
-        type : "type 3",
-        action : ""
+        code: 3,
+        bloc: "bloc 3",
+        description: "description 3",
+        action: ""
     },
     {
-        id : 4,
-        owner : "owner 3",
-        type : "type 3",
-        action : ""
+        code: 4,
+        bloc: "bloc 3",
+        description: "description 3",
+        action: ""
+    },
+    {
+        code: 1,
+        bloc: "bloc 1",
+        description: "description 1",
+        action: ""
+    },
+    {
+        code: 5,
+        bloc: "bloc 2",
+        description: "description 2",
+        action: ""
+    },
+    {
+        code: 6,
+        bloc: "bloc 3",
+        description: "description 3",
+        action: ""
+    },
+    {
+        code: 7,
+        bloc: "bloc 3",
+        description: "description 3",
+        action: ""
+    },
+    {
+        code: 8,
+        bloc: "bloc 1",
+        description: "description 1",
+        action: ""
+    },
+    {
+        code: 9,
+        bloc: "bloc 2",
+        description: "description 2",
+        action: ""
+    },
+    {
+        code: 10,
+        bloc: "bloc 3",
+        description: "description 3",
+        action: ""
+    },
+    {
+        code: 11,
+        bloc: "bloc 3",
+        description: "description 3",
+        action: ""
     },
 ];
 
 const columns = [
     {
-        dataField: 'id',
-        text: 'Job ID',
-        searchable: false,
-        hidden: true
+        dataField: 'code',
+        text: 'Code'
     },
     {
-        dataField: 'owner',
-        text: 'Job Owner'
+        dataField: 'bloc',
+        text: 'Bloc'
     },
     {
-        dataField: 'type',
-        text: 'Job Type'
+        dataField: 'description',
+        text: 'Description'
     },
     {
         dataField: "action",
-        text: 'Job Action',
-        editable : false,
+        text: 'Action',
+        editable: false,
+        searchable: false,
         formatter: (cell, row, rowIndex) => {
             return (
-                <div>
-                    <button className="btn btn-secondary btn-xs" onClick={() => console.log(row)}>
-                        Edit
-                    </button>
-                    <button className="btn btn-danger btn-xs" onClick={deleteRow(row.id)}>
-                        Delete
-                    </button>
-                </div>
+                <Modal />
             );
         }
     }
 ];
 
-// const deleteRow = function(row){
-//     const index = products.findIndex( (e) => e.id = row);
-//     if (index > -1)
-//         products.splice(index, 1);
-//     console.log(products);
-// }
+const customTotal = (from, to, size) => (
+    <span className="react-bootstrap-table-pagination-total">
+      Showing { from } to { to } of { size } Results
+    </span>
+);
+  
+const options = {
+    paginationSize: 4,
+    pageStartIndex: 0,
+    // alwaysShowAllBtns: true, // Always show next and previous button
+    // withFirstAndLast: false, // Hide the going to First and Last page button
+    // hideSizePerPage: true, // Hide the sizePerPage dropdown always
+    // hidePageListOnlyOnePage: true, // Hide the pagination list when only one page
+    firstPageText: 'First',
+    prePageText: 'Back',
+    nextPageText: 'Next',
+    lastPageText: 'Last',
+    nextPageTitle: 'First page',
+    prePageTitle: 'Pre page',
+    firstPageTitle: 'Next page',
+    lastPageTitle: 'Last page',
+    showTotal: true,
+    paginationTotalRenderer: customTotal,
+    disablePageTitle: true,
+    sizePerPageList: [{
+      text: '5', value: 5
+    }, {
+      text: '10', value: 10
+    }, {
+      text: 'All', value: products.length
+    }] // A numeric array is also available. the purpose of above example is custom the text
+};
+  
 
 const ListJeuDeRègles = () => (
-    <ToolkitProvider keyField="id" data={products} columns={columns} search >
+    <ToolkitProvider keyField="code" data={products} columns={columns} search >
         {
             props => (
                 <div>
                     <SearchBar {...props.searchProps} />
                     <hr />
-                    <BootstrapTable id="tableRegles" {...props.baseProps} />
+                    <BootstrapTable {...props.baseProps}  pagination={ paginationFactory(options) } />
                 </div>
             )
         }
@@ -92,8 +161,6 @@ const ListJeuDeRègles = () => (
 
 const PageDeSaisie = () => (
     <div>
-        <h2>Jeu de règles</h2>
-        <br></br>
         <div className="row">
             <Card12 title={'Jeu de règles'} content={ListJeuDeRègles} />
         </div>
