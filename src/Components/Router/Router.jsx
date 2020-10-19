@@ -17,9 +17,9 @@ const Router_App = () => (
                 <hr className="sidebar-divider my-0"></hr>
 
                 <li className="nav-item active">
-                    <Link to="/" className="nav-link" href="charts.html">
+                    <Link to="/" className="nav-link">
                         <i className="fas fa-fw fa-chart-area"></i>
-                        <span>Home</span>
+                        <span>Accueil</span>
                     </Link>
                 </li>
 
@@ -27,19 +27,19 @@ const Router_App = () => (
 
                 <div className="sidebar-heading">Interface</div>
                 <li className="nav-item">
-                    <Link to="/" className="nav-link" href="charts.html">
+                    <Link to="/" className="nav-link">
                         <i className="fas fa-fw fa-chart-area"></i>
-                        <span>Home</span>
+                        <span>Saisie des identifiants</span>
                     </Link>
                 </li>
                 <li className="nav-item">
-                    <Link to="/examplePage2" className="nav-link" href="charts.html">
+                    <Link to="/examplePage2" className="nav-link">
                         <i className="fas fa-fw fa-cog"></i>
                         <span>ExamplePage2</span>
                     </Link>
                 </li>
                 <li className="nav-item">
-                    <Link to="/examplePage3" className="nav-link" href="charts.html">
+                    <Link to="/examplePage3" className="nav-link">
                         <i className="fas fa-fw fa-wrench"></i>
                         <span>ExamplePage3</span>
                     </Link>

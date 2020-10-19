@@ -6,6 +6,8 @@ const htmlPlugin = new HtmlWebPackPlugin({
   template: './src/index.html',
   filename: './index.html',
 });
+
+
 module.exports = (env, argv) => {
   console.log(argv.mode);
   return {
