@@ -1,0 +1,161 @@
+<record>
+    <leader> clm0 22 450 </leader>
+    <controlfield tag="001">169450546</controlfield>
+    <controlfield tag="002">38</controlfield>
+    <controlfield tag="003">http://www.sudoc.fr/169450546</controlfield>
+    <controlfield tag="004">20130524</controlfield>
+    <controlfield tag="005">20200308122057.000</controlfield>
+    <controlfield tag="006">692669902</controlfield>
+    <controlfield tag="007">1999</controlfield>
+    <controlfield tag="008">Oax3</controlfield>
+    <datafield tag="029" ind1=" " ind2=" ">
+        <subfield code="a">FR</subfield>
+        <subfield code="b">1892LYFMM733</subfield>
+    </datafield>
+    <datafield tag="035" ind1=" " ind2=" ">
+        <subfield code="a">(OCoLC)867504447</subfield>
+    </datafield>
+    <datafield tag="100" ind1=" " ind2=" ">
+        <subfield code="a">20130524e20131892k y0frey50 ba</subfield>
+    </datafield>
+    <datafield tag="101" ind1="0" ind2=" ">
+        <subfield code="a">fre</subfield>
+    </datafield>
+    <datafield tag="102" ind1=" " ind2=" ">
+        <subfield code="a">FR</subfield>
+    </datafield>
+    <datafield tag="105" ind1=" " ind2=" ">
+        <subfield code="a">y v 000yy</subfield>
+    </datafield>
+    <datafield tag="135" ind1=" " ind2=" ">
+        <subfield code="a">dr|||||||||||</subfield>
+    </datafield>
+    <datafield tag="200" ind1="1" ind2=" ">
+        <subfield code="a">Histoire de l'examen médico-judiciaire des cadavres en France</subfield>
+        <subfield code="b">Ressource électronique</subfield>
+        <subfield code="f">Charles Binet</subfield>
+        <subfield code="g">sous la direction d'Alexandre Lacassagne</subfield>
+    </datafield>
+    <datafield tag="210" ind1=" " ind2=" ">
+        <subfield code="a">Lyon</subfield>
+        <subfield code="c">Université Claude Bernard Lyon 1</subfield>
+        <subfield code="d">2013</subfield>
+    </datafield>
+    <datafield tag="230" ind1=" " ind2=" ">
+        <subfield code="a">Données textuelles (1 fichier PDF : 134216 Ko)</subfield>
+    </datafield>
+    <datafield tag="303" ind1=" " ind2=" ">
+        <subfield code="a">L’impression du document génère 126 p.</subfield>
+    </datafield>
+    <datafield tag="304" ind1=" " ind2=" ">
+        <subfield code="a">Titre provenant de la page de titre du document numérisé</subfield>
+    </datafield>
+    <datafield tag="305" ind1=" " ind2=" ">
+        <subfield code="a">Document numérisé dans le cadre du projet de numérisation du SCD Lyon 1, corpus Fonds Lacassagne</subfield>
+    </datafield>
+    <datafield tag="320" ind1=" " ind2=" ">
+        <subfield code="a">Bibliogr. p. [114]-116</subfield>
+    </datafield>
+    <datafield tag="324" ind1=" " ind2=" ">
+        <subfield code="a">Numérisation de l'édition de Lyon : Impr. A. Storck, 1892</subfield>
+    </datafield>
+    <datafield tag="328" ind1=" " ind2="0">
+        <subfield code="z">Reproduction de</subfield>
+        <subfield code="b">Thèse</subfield>
+        <subfield code="c">Médecine</subfield>
+        <subfield code="e">Lyon, Faculté de médecine et de pharmacie</subfield>
+        <subfield code="d">1892</subfield>
+    </datafield>
+    <datafield tag="337" ind1=" " ind2=" ">
+        <subfield code="a">Nécessite un navigateur internet ; un lecteur de fichier PDF</subfield>
+    </datafield>
+    <datafield tag="455" ind1=" " ind2="|">
+        <subfield code="0">104507985</subfield>
+        <subfield code="t">Histoire de l'examen médico-judiciaire des cadavres en France</subfield>
+        <subfield code="f">Charles Binet,...</subfield>
+        <subfield code="c">Lyon</subfield>
+        <subfield code="n">Imprimerie de A. Storck</subfield>
+        <subfield code="d">1892</subfield>
+        <subfield code="p">1 vol. (116 p.)</subfield>
+    </datafield>
+    <datafield tag="579" ind1=" " ind2=" ">
+        <subfield code="1">0499</subfield>
+        <subfield code="3">215007646</subfield>
+    </datafield>
+    <datafield tag="606" ind1=" " ind2=" ">
+        <subfield code="3">055821650</subfield>
+        <subfield code="a">Cadavres</subfield>
+        <subfield code="3">027616487</subfield>
+        <subfield code="x">Identification</subfield>
+        <subfield code="2">rameau</subfield>
+    </datafield>
+    <datafield tag="606" ind1=" " ind2=" ">
+        <subfield code="3">027619044</subfield>
+        <subfield code="a">Morts</subfield>
+        <subfield code="x">Identification</subfield>
+        <subfield code="2">rameau</subfield>
+    </datafield>
+    <datafield tag="606" ind1=" " ind2=" ">
+        <subfield code="3">027237575</subfield>
+        <subfield code="a">Médecine légale</subfield>
+        <subfield code="3">027226794</subfield>
+        <subfield code="y">France</subfield>
+        <subfield code="3">02726470X</subfield>
+        <subfield code="x">Histoire</subfield>
+        <subfield code="2">rameau</subfield>
+    </datafield>
+    <datafield tag="608" ind1=" " ind2=" ">
+        <subfield code="3">027253139</subfield>
+        <subfield code="a">Thèses et écrits académiques</subfield>
+        <subfield code="2">rameau</subfield>
+    </datafield>
+    <datafield tag="700" ind1=" " ind2="1">
+        <subfield code="3">112833799</subfield>
+        <subfield code="a">Binet</subfield>
+        <subfield code="b">Charles</subfield>
+        <subfield code="f">1868-1941</subfield>
+        <subfield code="4">070</subfield>
+    </datafield>
+    <datafield tag="701" ind1=" " ind2="1">
+        <subfield code="3">032317956</subfield>
+        <subfield code="a">Lacassagne</subfield>
+        <subfield code="b">Alexandre</subfield>
+        <subfield code="f">1843-1924</subfield>
+        <subfield code="4">727</subfield>
+    </datafield>
+    <datafield tag="711" ind1="0" ind2="2">
+        <subfield code="3">169816079</subfield>
+        <subfield code="a">Faculté de médecine et de pharmacie</subfield>
+        <subfield code="c">Lyon</subfield>
+        <subfield code="4">295</subfield>
+    </datafield>
+    <datafield tag="801" ind1=" " ind2="3">
+        <subfield code="a">FR</subfield>
+        <subfield code="b">Abes</subfield>
+        <subfield code="c">20200308</subfield>
+        <subfield code="g">AFNOR</subfield>
+    </datafield>
+    <datafield tag="830" ind1=" " ind2=" ">
+        <subfield code="a">Réforme Rameau Genre-Forme retro thèses (ne pas supprimer)</subfield>
+    </datafield>
+    <datafield tag="856" ind1="4" ind2=" ">
+        <subfield code="q">PDF</subfield>
+        <subfield code="u">http://n2t.net/ark:/47881/m6wh2n4c</subfield>
+        <subfield code="z">Accès au texte intégral</subfield>
+    </datafield>
+    <datafield tag="930" ind1=" " ind2=" ">
+        <subfield code="5">692669902:47997554X</subfield>
+        <subfield code="b">692669902</subfield>
+        <subfield code="j">g</subfield>
+    </datafield>
+    <datafield tag="940" ind1=" " ind2=" ">
+        <subfield code="5">692669902:47997554X</subfield>
+        <subfield code="a">20130524</subfield>
+        <subfield code="b">x</subfield>
+    </datafield>
+    <datafield tag="941" ind1=" " ind2=" ">
+        <subfield code="5">692669902:47997554X</subfield>
+        <subfield code="a">20130524</subfield>
+        <subfield code="b">12:22:38.000</subfield>
+    </datafield>
+</record>

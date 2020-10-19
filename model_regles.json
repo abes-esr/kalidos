@@ -1,0 +1,54 @@
+{
+            "Generale" : {
+                "matching" : [{
+
+                            "Number" : 200,
+                            "code" : "b",
+                            "message" : "valeur présente",
+                            "regex" : "(.*)"
+                         },
+                         {
+
+                            "Number" : 201,
+                            "code" : "c",
+                            "message" : "caractères interdits : $",
+                            "regex" : "^(.*$.*)"
+                         }],
+                "dependances" : [{
+                            "Number" : 203,
+                            "code" : "4",
+                            "message" : "dépendance champ : 204-c",
+                            "depend" : {
+
+                                   "Number" : 204,
+                                   "code" : "c"
+
+                                 }
+                            }],
+                "Conditionnels" : [{
+
+                            "Number" : "",
+                            "operator" : "and",
+                            "parameter1" : "Aax",
+                            "parameter2" : "461",
+                            "or" : ["305" , "225"],
+                            "and" : [],
+                            "message" : "Si Aax et 461 il doit y avoir une 305 ou 225"
+                         
+                            },  
+                            {
+                            "Number" : "101",
+                            "operator" : "equals",
+                            "parameter1" : "ind1",
+                            "parameter2" : "1",
+                            "or" : [],
+                            "and" : ["a" , "c"],
+                            "message" : "Si 101 ind1=1 il faut au moins un $a et $c"
+                         
+                            }]
+
+        },
+        "Mémoire" : {},
+        "Electronique" :{}
+}
+
