@@ -2,32 +2,32 @@
             "Generale" : {
                 "matching" : [{
 
-                            "Number" : 200,
+                            "number": 200,
                             "code" : "b",
                             "message" : "valeur présente",
-                            "regex" : "(.*)"
+                            "regex" : "[0-9]+"
                          },
                          {
 
-                            "Number" : 201,
+                            "number": 201,
                             "code" : "c",
                             "message" : "caractères interdits : $",
                             "regex" : "^(.*$.*)"
                          }],
                 "dependances" : [{
-                            "Number" : 203,
+                            "number": 203,
                             "code" : "4",
                             "message" : "dépendance champ : 204-c",
                             "depend" : {
 
-                                   "Number" : 204,
+                                   "number": 204,
                                    "code" : "c"
 
                                  }
                             }],
                 "Conditionnels" : [{
 
-                            "Number" : "",
+                            "number": "",
                             "operator" : "and",
                             "parameter1" : "Aax",
                             "parameter2" : "461",
@@ -37,7 +37,7 @@
                          
                             },  
                             {
-                            "Number" : "101",
+                            "number": "101",
                             "operator" : "equals",
                             "parameter1" : "ind1",
                             "parameter2" : "1",

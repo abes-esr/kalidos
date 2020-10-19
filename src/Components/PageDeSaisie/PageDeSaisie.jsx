@@ -1,6 +1,9 @@
 import React from 'react';
 import Card6 from '../Générique/Card_6';
 import Card12 from '../Générique/Card_12';
+import checkRules from '../../js/verifyRules'
+
+
 
 const SaisieManuelle = () => (
     <div>
@@ -29,7 +32,7 @@ const SaisieFichier = () => (
 
         <br></br>
 
-        <button type="button" className="btn btn-primary">Envoyer</button>
+        <button type="button" className="btn btn-primary" onClick={checkRules} >Envoyer</button>
     </div>
 );
 

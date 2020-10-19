@@ -21,9 +21,11 @@
   "author": "Yann MONTEIX",
   "license": "ISC",
   "dependencies": {
+    "axios": "^0.20.0",
     "bootstrap": "^4.5.2",
     "dropzone": "^5.7.2",
     "express": "^4.17.1",
+    "fs": "0.0.1-security",
     "http": "0.0.1-security",
     "jquery": "^3.5.1",
     "popper.js": "^1.16.1",
@@ -32,6 +34,7 @@
     "react-dom": "^16.13.1",
     "react-router-dom": "^5.2.0",
     "startbootstrap-sb-admin-2": "^4.1.1",
+    "xml-js": "^1.6.11",
     "xml2js": "^0.4.23"
   },
   "devDependencies": {

@@ -7,7 +7,6 @@ const htmlPlugin = new HtmlWebPackPlugin({
   filename: './index.html',
 });
 
-
 module.exports = (env, argv) => {
   console.log(argv.mode);
   return {
@@ -16,7 +15,7 @@ module.exports = (env, argv) => {
     output: { // NEW
       path: path.join(__dirname, 'dist'),
       filename: '[name].js',
-    }, // NEW Ends
+    },
     plugins: [htmlPlugin],
     module: {
       rules: [
