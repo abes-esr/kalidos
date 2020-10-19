@@ -1,6 +1,4 @@
 const express = require('express');
-const xml2js = require('xml2js');
-
 
 const app = express();
 const path = require('path');
@@ -16,6 +14,10 @@ const mockResponse = {
   foo: 'bar',
   bar: 'foo',
 };
+
+app.post('/upload', (req,res) => {
+  res.sendStatus(200);
+});
 
 var obj = JSON.parse(fs.readFileSync('model_regles.json', 'utf8'));
 

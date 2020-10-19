@@ -11,6 +11,9 @@
 
   <title>SB Admin 2 - Dashboard</title>
 
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.5.1/min/dropzone.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.5.1/min/dropzone.min.js"></script>
+
   <script src="https://use.fontawesome.com/releases/v5.8.1/js/all.js"></script>
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
     integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
@@ -24,6 +27,7 @@
     href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
     rel="stylesheet">
 
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <!-- Custom styles for this template-->
 
 </head>
@@ -88,16 +92,73 @@
     </div>
   </div>
 
-  <!-- Bootstrap core JavaScript-->
-
-  <!-- Core plugin JavaScript-->
-
-  <!-- Custom scripts for all pages-->
-
-  <!-- Page level plugins -->
-
-  <!-- Page level custom scripts -->
-
 </body>
 
 </html>
+
+<script>
+  (function ($) {
+    "use strict"; // Start of use strict
+
+    // Toggle the side navigation
+    $("#sidebarToggle, #sidebarToggleTop").on('click', function (e) {
+      $("body").toggleClass("sidebar-toggled");
+      if ($('.sidebar').length) {
+        $(".sidebar").toggleClass("toggled");
+        if ($(".sidebar").hasClass("toggled") && $('.sidebar .collapse').length) {
+          $('.sidebar .collapse').collapse('hide');
+        }
+      }
+    });
+
+    // Close any open menu accordions when window is resized below 768px
+    $(window).resize(function () {
+      if ($(window).width() < 768) {
+        if ($('.sidebar .collapse').length) {
+          $('.sidebar .collapse').collapse('hide');
+
+        }
+      };
+
+      // Toggle the side navigation when window is resized below 480px
+      if ($(window).width() < 480 && !$(".sidebar").hasClass("toggled")) {
+        $("body").addClass("sidebar-toggled");
+        $(".sidebar").addClass("toggled");
+        if ($('.sidebar .collapse').length) {
+          $('.sidebar .collapse').collapse('hide');
+        }
+      };
+    });
+
+    // Prevent the content wrapper from scrolling when the fixed side navigation hovered over
+    $('body.fixed-nav .sidebar').on('mousewheel DOMMouseScroll wheel', function (e) {
+      if ($(window).width() > 768) {
+        var e0 = e.originalEvent,
+          delta = e0.wheelDelta || -e0.detail;
+        this.scrollTop += (delta < 0 ? 1 : -1) * 30;
+        e.preventDefault();
+      }
+    });
+
+    // Scroll to top button appear
+    // $(document).on('scroll', function () {
+    //   var scrollDistance = $(this).scrollTop();
+    //   if (scrollDistance > 100 && $('.scroll-to-top').length) {
+    //     $('.scroll-to-top').fadeIn();
+    //   } else {
+    //     $('.scroll-to-top').fadeOut();
+    //   }
+    // });
+
+    // Smooth scrolling using jQuery easing
+    $(document).on('click', 'a.scroll-to-top', function (e) {
+      var $anchor = $(this);
+      $('html, body').stop().animate({
+        scrollTop: ($($anchor.attr('href')).offset().top)
+      }, 1000, 'easeInOutExpo');
+      e.preventDefault();
+    });
+
+  })(jQuery); // End of use strict
+
+</script>
