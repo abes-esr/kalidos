@@ -1,7 +1,6 @@
 const express = require('express');
 const bodyParser = require('body-parser')
-const _ = require('lodash');
-const idGenerator = require('./js/index');
+const f = require('./js/index');
 
 
 
@@ -52,16 +51,19 @@ app.post('/rules', (req,res) => {
   let rules = JSON.parse(json);
   const type = req.header("type");
   const categorie = req.header("categorie");
+  const index = f.idGenerator(rules)
   let valid = true;
   if(rules[categorie][type] != null) {
     rules[categorie][type].forEach(function(element){
-      if(_.isEqual(element, req.body)){
+      if(f.ruleEquals(element, req.body)){
         valid = false;
       }
     });
 
     if(valid) {
-      rules[categorie][type].push(req.body)
+      let body = req.body
+      body.index = index
+      rules[categorie][type].push(body)
     }
 
 
@@ -81,9 +83,14 @@ app.post('/rules', (req,res) => {
 });
 
 
+/**
+ * URL DE TEST
+ */
 app.post('/testIdGenerator', (req,res) => {
   let json = fs.readFileSync(`${__dirname}/public/model_regles.json`);
-  console.log(idGenerator())
+  let rules = JSON.parse(json);
+  console.log(f.idGenerator(rules))
+  res.sendStatus(200);
 });
 
 app.post('/upload', (req,res) => {
