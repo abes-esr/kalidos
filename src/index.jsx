@@ -18,6 +18,7 @@ import AppRouter from './Components/Router/Router';
 import PageDeSaisie from './Components/PageDeSaisie/PageDeSaisie';
 import ExamplePage2 from './Components/ExamplePage/ExamplePage2';
 import ExamplePage3 from './Components/ExamplePage/ExamplePage3';
+import InterfaceVerif from './Components/InterfaceVerif/InterfaceVerif';
 import { Form } from 'react-bootstrap';
 
 
@@ -31,6 +32,7 @@ const Content = () => (
             <Route exact path="/" component={PageDeSaisie} />
             <Route path="/examplePage2" component={ExamplePage2} />
             <Route path="/examplePage3" component={ExamplePage3} />
+            <Route path="/interfaceVerif" component={InterfaceVerif} />
         </div>
     </div>
 );
