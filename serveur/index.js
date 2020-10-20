@@ -1,6 +1,7 @@
 const express = require('express');
 const bodyParser = require('body-parser')
 const _ = require('lodash');
+const idGenerator = require('./js/index');
 
 
 
@@ -79,14 +80,15 @@ app.post('/rules', (req,res) => {
   }
 });
 
+
+app.post('/testIdGenerator', (req,res) => {
+  let json = fs.readFileSync(`${__dirname}/public/model_regles.json`);
+  console.log(idGenerator())
+});
+
 app.post('/upload', (req,res) => {
   res.sendStatus(200);
 });
-
-
-
-
-
 
 
 app.get('/api', (req, res) => {

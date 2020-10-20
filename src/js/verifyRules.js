@@ -3,6 +3,7 @@ const convert = require("xml-js");
 
 let result = {};
 
+const PPN_EN_DUR = '169450546'
 const CATEGORIE = "Generale";
 const TYPE = "matching";
 const NEWRULE = {
@@ -13,7 +14,7 @@ const NEWRULE = {
 }
 
 function verifyRules() {
-    var rules = getRules()
+    var rules = getRules(PPN_EN_DUR)
     var obj;
 }
 
@@ -45,7 +46,7 @@ function writeResult(){
         },
         data: result,
     }).then(function () {
-        console.log("ok")
+        //console.log("ok")
     })
         .catch(function (error) {
             // handle error
@@ -81,7 +82,7 @@ function addRule(categorie,type,rule){
 function getRules(PPN) {
     axios.get('http://localhost:3000/rules')
         .then(function (response) {
-            getSudoc(response.data,'169450546');
+            getSudoc(response.data,PPN);
         })
         .catch(function (error) {
             // handle error
