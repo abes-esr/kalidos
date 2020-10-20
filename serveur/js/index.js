@@ -1,4 +1,11 @@
 const _ = require('lodash');
+const Lists = require('./Lists');
+
+
+console.log(Lists.listCategorie)
+console.log(Lists.listType)
+const list1 = Lists.listType
+const list2 = Lists.listCategorie
 
 /**
  * Genere un indice de regle superieur a tout ceux present dans le fichier de regles
@@ -51,4 +58,4 @@ function ruleEquals(rule1,rule2) {
 }
 
 
-module.exports = { idGenerator,ruleEquals};
+module.exports = { idGenerator,ruleEquals,list1 , list2};

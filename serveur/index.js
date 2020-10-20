@@ -109,3 +109,7 @@ app.listen(port, () => {
   console.log(`App listening on port: ${port}`);
   console.log(`App is running on : http://localhost:${port}`);
 });
+
+
+console.log(f.lists1)
+console.log(f.lists2)
