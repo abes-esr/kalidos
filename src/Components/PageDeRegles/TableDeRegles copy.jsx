@@ -83,27 +83,6 @@ const products = [
     },
 ];
 
-const action = () => (
-    <div>
-        <Modal 
-            button="X" 
-            buttonColor="danger"
-            title="Delete" 
-            close="Cancel" 
-            accept="Delete rule" 
-            accepting={() => console.log("delete rule")}
-        />
-        <Modal 
-            button="V"
-            buttonColor="primary" 
-            title="Edit" 
-            close="Cancel" 
-            accept="Save changes" 
-            accepting={() => console.log("edit rule")}
-        />
-    </div>
-);
-
 const columns = [
     {
         dataField: 'code',
@@ -123,15 +102,21 @@ const columns = [
         editable: false,
         searchable: false,
         formatter: (cell, row, rowIndex) => {
-            return action;
+            return (
+                <Modal />
+            );
         }
     }
 ];
-  
+
+
 const options = {
     paginationSize: 4,
     pageStartIndex: 0,
-    hidePageListOnlyOnePage: true, 
+    // alwaysShowAllBtns: true, // Always show next and previous button
+    // withFirstAndLast: false, // Hide the going to First and Last page button
+    // hideSizePerPage: true, // Hide the sizePerPage dropdown always
+    // hidePageListOnlyOnePage: true, // Hide the pagination list when only one page
     firstPageText: 'First',
     prePageText: 'Back',
     nextPageText: 'Next',
@@ -142,7 +127,13 @@ const options = {
     lastPageTitle: 'Last page',
     showTotal: true,
     disablePageTitle: true,
-    sizePerPageList: [5, 10, 20, 50, 100]
+    sizePerPageList: [{
+      text: '5', value: 5
+    }, {
+      text: '10', value: 10
+    }, {
+      text: 'All', value: products.length
+    }] // A numeric array is also available. the purpose of above example is custom the text
 };
   
 
@@ -161,7 +152,3 @@ const Table = () => (
 );
 
 export default Table
-
-class Table extends React.Component {
-    
-}

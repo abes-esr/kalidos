@@ -4,7 +4,7 @@ import { Button, Modal } from 'react-bootstrap'
 class BootstrapModal extends React.Component {
 
     constructor() {
-        super();
+        super()
         this.state = {
             showHide: false
         }
@@ -16,29 +16,40 @@ class BootstrapModal extends React.Component {
     }
 
 
+    whenClosing() {
+        this.props.closing()
+        this.handleModalShowHide()
+    }
+
+    whenAccepting() {
+        this.props.accepting()
+        this.handleModalShowHide()
+    }
+
+
     render() {
 
         return (
             <div>
-                <Button variant="primary" size="sm" onClick={() => this.handleModalShowHide()}>
-                    Launch demo modal
+                <Button variant={this.props.buttonColor} size="sm" onClick={() => this.handleModalShowHide()}>
+                    {this.props.button}
                 </Button>
 
                 <Modal show={this.state.showHide}>
 
-                    <Modal.Header closeButton onClick={() => this.handleModalShowHide()}>
-                        <Modal.Title>Modal heading</Modal.Title>
+                    <Modal.Header closeButton onClick={() => this.whenClosing()}>
+                        <Modal.Title>{this.props.title}</Modal.Title>
                     </Modal.Header>
 
-                    <Modal.Body>Woohoo, you're reading this text in a modal!</Modal.Body>
+                    <Modal.Body>{this.props.body}</Modal.Body>
 
                     <Modal.Footer>
-                        <Button variant="secondary" onClick={() => this.handleModalShowHide()}>
-                            Close
+                        <Button variant="secondary" onClick={() => this.whenClosing()}>
+                            {this.props.close}
                         </Button>
 
-                        <Button variant="primary" onClick={() => this.handleModalShowHide()}>
-                            Save Changes
+                        <Button variant="primary" onClick={() => this.whenAccepting()}>
+                            {this.props.accept}
                         </Button>
 
                     </Modal.Footer>
