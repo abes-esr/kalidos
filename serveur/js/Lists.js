@@ -1,25 +1,38 @@
 const fs = require('fs');
 const path = require('path');
 
-
-const json = fs.readFileSync(path.join(__dirname, '../public/model_regles.json'));
-
-const rules = JSON.parse(json);
-
-class Lists {
-  constructor(json) {
-    this.listCategorie = [];
-    this.listType = [];
-
-    for (categorie in json) {
+/**
+ * Recupere les listes des categories et des types de regles contenue dans le fichier model_regles.json
+ * retourne une liste contenant en premiere position la liste des categories et en seconde la liste des types
+ */
+var Lists = function() {
+  const json = fs.readFileSync(path.join(__dirname, '../public/model_regles.json'));
+  let rules = JSON.parse(json);
+  var listCategorie = [];
+  var listType = [];
+  // This is private because it is not being return
+  
+  var setup = function() {
+    console.log(rules)
+    for (categorie in rules) {
       listCategorie.push(categorie)
     }
+   
     if (listCategorie.length > 0) {
-      for (type in json[listCategorie[0]]) {
+      for (type in rules[listCategorie[0]]) {
         listType.push(type)
       }
     }
+    console.log(listCategorie)
+    console.log(listType)
+    return [listCategorie,listType]
   }
-}
+  
 
-module.exports = {Lists};
+  return {
+      setup: setup
+  }
+}();
+
+module.exports = Lists;
+

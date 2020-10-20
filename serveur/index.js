@@ -4,6 +4,7 @@ const f = require('./js/index');
 
 
 
+
 const app = express();
 const path = require('path');
 const fs = require('fs');
@@ -111,5 +112,3 @@ app.listen(port, () => {
 });
 
 
-console.log(f.lists1)
-console.log(f.lists2)

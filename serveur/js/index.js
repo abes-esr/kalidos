@@ -1,28 +1,15 @@
 const _ = require('lodash');
-const Lists = require('./Lists');
-
-
-console.log(Lists.listCategorie)
-console.log(Lists.listType)
-const list1 = Lists.listType
-const list2 = Lists.listCategorie
+var Lists = require('./Lists');
 
 /**
  * Genere un indice de regle superieur a tout ceux present dans le fichier de regles
  * @param {*} json fichier de regles
  */
 function idGenerator (json) {
-    let listCategorie = []
-    let listType = []
+    const res = Lists.setup()
+    const listCategorie = res[0]
+    const listType = res[1]
     let maxIndex = 0;
-    for (categorie in json) {
-        listCategorie.push(categorie)
-    } 
-    if(listCategorie.length > 0) {
-        for (type in json[listCategorie[0]]) {
-            listType.push(type)
-        }
-    }
     
     for(categorie in listCategorie) {
         for (type in listType){
@@ -58,4 +45,4 @@ function ruleEquals(rule1,rule2) {
 }
 
 
-module.exports = { idGenerator,ruleEquals,list1 , list2};
+module.exports = { idGenerator,ruleEquals};
