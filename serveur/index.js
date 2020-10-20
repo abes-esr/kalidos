@@ -19,45 +19,64 @@ const mockResponse = {
   bar: 'foo',
 };
 
+/**
+ * renvois le fichier de regles
+ */
 app.get('/rules', (req,res) => {
   const file = `${__dirname}/public/model_regles.json`;
   res.download(file); // Set disposition and send it.
 });
 
-
+/**
+ * remplace le contenu du fichier result.json par le body de la requete
+ * @body body : fichier resultat
+ * return code 200
+ */
 app.post('/result', (req,res) => {
   const json = JSON.stringify(req.body);
   fs.writeFile(`${__dirname}/public/result.json`, json, 'utf8' , () => {});
   res.sendStatus(200);
 });
 
-
+/**
+ * ajoute une nouvelle regle dans le fichier de regles
+ * @header type : type de la regle
+ * @header categorie : categorie de la regle
+ * retourne 200 si ajout avec succes
+ * retourne 304 si on tente d'ajouter une regle deja existante
+ * retourne 404 si le type/categorie n'existe pas
+ */
 app.post('/rules', (req,res) => {
   let json = fs.readFileSync(`${__dirname}/public/model_regles.json`);
   let rules = JSON.parse(json);
   const type = req.header("type");
   const categorie = req.header("categorie");
   let valid = true;
+  if(rules[categorie][type] != null) {
+    rules[categorie][type].forEach(function(element){
+      if(_.isEqual(element, req.body)){
+        valid = false;
+      }
+    });
 
-  rules[categorie][type].forEach(function(element){
-    if(_.isEqual(element, req.body)){
-      valid = false;
-      res.sendStatus(200);
+    if(valid) {
+      rules[categorie][type].push(req.body)
     }
-  });
 
-  if(valid) {
-    rules[categorie][type].push(req.body)
+
+    console.log(rules[categorie][type]);
+
+    const newJson = JSON.stringify(rules);
+    fs.writeFile(`${__dirname}/public/model_regles.json`, newJson, 'utf8' , () => {});
+
+    if(valid) {
+      res.sendStatus(200);
+    } else {
+      res.sendStatus(304);
+    }
+  } else {
+    res.sendStatus(404);
   }
-
-
-  console.log(rules[categorie][type]);
-
-  const newJson = JSON.stringify(rules);
-  fs.writeFile(`${__dirname}/public/model_regles.json`, newJson, 'utf8' , () => {});
-
-
-  res.sendStatus(200);
 });
 
 app.post('/upload', (req,res) => {
