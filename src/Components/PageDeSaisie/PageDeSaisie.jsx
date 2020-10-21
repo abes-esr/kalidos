@@ -1,54 +1,32 @@
 import React from 'react';
-import Card6 from '../Générique/Card_6';
 import Card12 from '../Générique/Card_12';
-import checkRules from '../../js/verifyRules'
-
-
+import { verifiyRulesByTextArea } from '../../js/verifyRules'
+import Dropzone from './Dropzone';
 
 const SaisieManuelle = () => (
     <div>
         <div className="row">
-            <div className='col-lg-12'>
+            <div className="col-lg-12">
                 <div className="form-group">
-                    <label htmlFor="listePPN">Identifiants (PPN: 1 par ligne):</label>
-                    <textarea placeholder="Saisissez votre liste de PPN!" className="form-control" id="listePPN" rows="10">
-                    </textarea>
+                    <label htmlFor='jeuDeRegles'>Choix du jeu de règles</label>
+                    <select className="form-control" aria-describedby="basic-addon1" id="jeuDeRegles">
+                        <option value="0" defaultValue>Choix automatique</option>
+                        <option value="1">Encyclopédie</option>
+                        <option value="2">Bibliographie</option>
+                        <option value="3">Thèse</option>
+                    </select>
                 </div>
             </div>
         </div>
-        <button type="button" className="btn btn-primary">Envoyer</button>
-    </div>
 
-);
-
-const SaisieFichier = () => (
-    <div>
-        <form action="/upload" className="dropzone dz-clickable" id="my-dropzone">
-            <div className="dz-message d-flex flex-column">
-                <i className="material-icons text-muted">cloud_upload</i>
-            Drag &amp; Drop dans la zone ou cliquez
-          </div>
-        </form>
-
-        <br></br>
-
-        <button type="button" className="btn btn-primary" onClick={checkRules} >Envoyer</button>
-    </div>
-);
-
-const DropdownJeuDeRègles = () => (
-    <div className="row">
-        <div className="col-lg-12">
-            <div className="form-group">
-                <label htmlFor='jeuDeRegles'>Choix du jeu de règles</label>
-                <select className="form-control" aria-describedby="basic-addon1" id="jeuDeRegles">
-                    <option value="0" defaultValue>Choix automatique</option>
-                    <option value="1">Encyclopédie</option>
-                    <option value="2">Bibliographie</option>
-                    <option value="3">Thèse</option>
-                </select>
+        <div className="row">
+            <div className='col-lg-12'>
+                <div className="form-group">
+                    <Dropzone />
+                </div>
             </div>
         </div>
+        <button type="button" className="btn btn-primary" style={{width:'100%'}} onClick={verifiyRulesByTextArea}>Envoyer</button>
     </div>
 );
 
@@ -58,14 +36,11 @@ const PageDeSaisie = () => (
         <h2>Saisie des identifiants</h2>
         <br></br>
         <div className="row">
-            <Card12 title={'Choix du jeu de règles'} content={DropdownJeuDeRègles} />
-        </div>
-        <div className="row">
-            <Card6 title={'Saisie manuelle'} content={SaisieManuelle} />
-            <Card6 title={'Saisie par fichier'} content={SaisieFichier} />
+            <Card12 title={'Saisie des identifiants'} content={SaisieManuelle()} />
         </div>
     </div>
 );
+
 
 
 export default PageDeSaisie;

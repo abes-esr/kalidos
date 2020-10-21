@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const Router_App = () => (
         <div>
@@ -48,6 +48,12 @@ const Router_App = () => (
                     <Link to="/interfaceVerif" className="nav-link">
                         <i className="fas fa-fw fa-wrench"></i>
                         <span>InterfaceVerif</span>
+                    </Link>
+                </li>
+                <li className="nav-item">
+                    <Link to="/tempInterfaceVerif" className="nav-link">
+                        <i className="fas fa-fw fa-wrench"></i>
+                        <span>Temp Interface Verif</span>
                     </Link>
                 </li>
             </ul>
