@@ -1,7 +1,13 @@
 const axios = require('axios');
 const convert = require("xml-js");
+<<<<<<< HEAD
 import { cleanResult, addErrorPPN } from '../actions/index';
 import store from '../store/index';
+=======
+const Regex = require("./Regex");
+
+let result = {};
+>>>>>>> backend
 
 const PPN_EN_DUR = '169450546'
 const CATEGORIE = "Generale";
@@ -11,6 +17,7 @@ const NEWRULE = {
     "code": "z",
     "message": "NEW RULE",
     "regex": "[A-Z]*[a-z]+"
+<<<<<<< HEAD
 }
 
 function verifyRulesByFile() {
@@ -35,23 +42,41 @@ function verifyRules() {
     window.location += 'tempInterfaceVerif';
     getRules();
 }
+=======
+};
+>>>>>>> backend
 
 const NEWRULEMODIFIED = {
     "number": 404,
-    "code" : "z",
-    "message" : "NEW RULE MODIFIED",
-    "regex" : "[A-Z]*[a-z]+"
+    "code": "z",
+    "message": "NEW RULE MODIFIED",
+    "regex": "[A-Z]*[a-z]+"
 };
 const INDEX = 5;
+const REGEXENDUR = ".*^(NOM).*"
 
 function getSudoc(rules, PPN) {
 
+<<<<<<< HEAD
+=======
+function verifyRules() {
+    var rules = getRules(PPN_EN_DUR)
+    var obj;
+}
+
+function getSudoc(rules, PPN) {
+
+>>>>>>> backend
     axios.get('https://www.sudoc.fr/' + PPN + '.xml')
         .then(function (response) {
             const data = JSON.parse(
                 convert.xml2json(response.data, { compact: true, spaces: 2 })
             );
+<<<<<<< HEAD
             verifMain(rules, data);
+=======
+            verifMain(rules, data );
+>>>>>>> backend
         })
         .catch(function (error) {
             // handle error
@@ -89,24 +114,24 @@ function deleteRule(index) {
         contentType: "application/json",
         headers: {
             "Accept": "application/json",
-            "index" : index,
+            "index": index,
         },
     }).then(function () {
         console.log("suppression ok")
     })
-    .catch(function (error) {
-        console.log(error);
-    })
-    .then(function () {
-    });
+        .catch(function (error) {
+            console.log(error);
+        })
+        .then(function () {
+        });
 }
 
-function updateRule(index,newRule) {
-    axios.put('http://localhost:3000/rules', newRule, { 
-        headers: { 
+function updateRule(index, newRule) {
+    axios.put('http://localhost:3000/rules', newRule, {
+        headers: {
             'Content-Type': 'application/json',
-            "index":index
-        } 
+            "index": index
+        }
     }).then(function () {
         console.log("modification ok")
     }).catch(function (error) {
@@ -114,7 +139,7 @@ function updateRule(index,newRule) {
     });
 }
 
-function addRule(categorie,type,rule){
+function addRule(categorie, type, rule) {
     axios({
         method: 'POST',
         url: 'http://localhost:3000/rules',
@@ -139,6 +164,7 @@ function addRule(categorie,type,rule){
 function getRules(listPPN) {
     axios.get('http://localhost:3000/rules')
         .then(function (response) {
+
             listPPN.forEach(PPN => getSudoc(response.data, PPN));
             // getSudoc(response.data,'169450546');
             writeResult();
@@ -153,7 +179,10 @@ function getRules(listPPN) {
 
 }
 
+
+
 function verifMain(rules, sudoc) {
+
     const leader = sudoc.record.leader;
     const controlfields = sudoc.record.controlfield;
     const datafields = sudoc.record.datafield;
@@ -161,27 +190,52 @@ function verifMain(rules, sudoc) {
         PPN: controlfields[0]._text,
         errors: [],
     };
+
+
     rules.Generale.matching.forEach(function (regle) {
         const regex = RegExp(regle.regex);
         datafields.forEach(function (field) {
-            if (field._attributes.tag.toString() === regle.number.toString()) {
-                field.subfield.forEach(function (subfield) {
-                    if (subfield._attributes.code === regle.code && !regex.test(subfield._text)) {
-                        resultJson.errors.push({
-                            message: regle.message,
-                            number: regle.number,
-                            code: regle.code
-                        });
+
+            if (field._attributes.tag.toString() === regle.number.toString() || regle.number === "GLOBAL") {
+                if (field.subfield instanceof Array) {
+                    field.subfield.forEach(function (subfield) {
+                        if (subfield._attributes.code === regle.code || regle.number === "GLOBAL") {
+                            if(!regex.test(subfield._text)) {
+                                resultJson.errors.push({
+                                    message: regle.message,
+                                    number: regle.number,
+                                    code: regle.code
+                                });
+                            }          
+                        }
+                    });
+                } else {
+                    if (field.subfield._attributes.code === regle.code || regle.number === "GLOBAL") {
+                        if(!regex.test(field.subfield._text)) {
+                            resultJson.errors.push({
+                                message: regle.message,
+                                number: regle.number,
+                                code: regle.code
+                            });
+                        }
+
                     }
-                });
+                }
             }
         });
     });
+
     store.dispatch(addErrorPPN(resultJson));
     //addRule(CATEGORIE,TYPE,NEWRULE)
+
+
+    result[controlfields[0]._text] = resultJson;
+    console.log(result);
+    writeResult();
     //addRule(CATEGORIE,TYPE,NEWRULE);
     //updateRule(INDEX,NEWRULEMODIFIED);
     //deleteRule(INDEX)
+    //Regex.transform(REGEXENDUR,sudoc)
 }
 
 export { verifyRules, verifiyRulesByTextArea, verifyRulesByFile };
