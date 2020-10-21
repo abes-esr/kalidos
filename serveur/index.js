@@ -1,7 +1,11 @@
 const express = require('express');
 const bodyParser = require('body-parser')
-const _ = require('lodash');
+const f = require('./js/index');
+const Lists = require('./js/Lists');
 
+const res = Lists.setup()
+const listCategorie = res[0]
+const listType = res[1]
 
 
 const app = express();
@@ -51,16 +55,19 @@ app.post('/rules', (req,res) => {
   let rules = JSON.parse(json);
   const type = req.header("type");
   const categorie = req.header("categorie");
+  const index = f.idGenerator(rules)
   let valid = true;
   if(rules[categorie][type] != null) {
     rules[categorie][type].forEach(function(element){
-      if(_.isEqual(element, req.body)){
+      if(f.ruleEquals(element, req.body)){
         valid = false;
       }
     });
 
     if(valid) {
-      rules[categorie][type].push(req.body)
+      let body = req.body
+      body.index = index
+      rules[categorie][type].push(body)
     }
 
 
@@ -79,14 +86,72 @@ app.post('/rules', (req,res) => {
   }
 });
 
-app.post('/upload', (req,res) => {
+/**
+ * supression d'une regle
+ * @header index : identifiant de la regle a supprimer
+ * return 200 ou 404
+ */
+app.delete('/rules', (req,res) => {
+  let json = fs.readFileSync(`${__dirname}/public/model_regles.json`);
+  let rules = JSON.parse(json);
+  const index = parseInt(req.header("index"), 10);
+  for(categorie in listCategorie) {
+    for (type in listType){
+            for (i = 0; i < rules[listCategorie[categorie]][listType[type]].length; i++) {
+                if(rules[listCategorie[categorie]][listType[type]][i].index == index) {
+                    rules[listCategorie[categorie]][listType[type]].splice(i, 1);
+                    const newJson = JSON.stringify(rules);
+                    fs.writeFile(`${__dirname}/public/model_regles.json`, newJson, 'utf8' , () => {});
+                    res.sendStatus(200);
+                    return;
+                }
+            } 
+    }
+}
+res.sendStatus(404);
+});
+
+/**
+ * modification d'une regle
+ * @header index : identifiant de la regle a modifier
+ * @body body : nouvelle regle
+ * return 200 ou 404
+ */
+app.put('/rules', (req,res) => {
+  let json = fs.readFileSync(`${__dirname}/public/model_regles.json`);
+  let rules = JSON.parse(json);
+  const index = parseInt(req.header("index"), 10);
+  for(categorie in listCategorie) {
+    for (type in listType){
+            for (i = 0; i < rules[listCategorie[categorie]][listType[type]].length; i++) {
+                if(rules[listCategorie[categorie]][listType[type]][i].index === index) {
+                    rules[listCategorie[categorie]][listType[type]][i] = req.body;
+                    rules[listCategorie[categorie]][listType[type]][i].index = index;
+                    const newJson = JSON.stringify(rules);
+                    fs.writeFile(`${__dirname}/public/model_regles.json`, newJson, 'utf8' , () => {});
+                    res.sendStatus(200);
+                    return;
+                }
+            } 
+    }
+}
+res.sendStatus(404);
+
+});
+
+/**
+ * URL DE TEST
+ */
+app.post('/testIdGenerator', (req,res) => {
+  let json = fs.readFileSync(`${__dirname}/public/model_regles.json`);
+  let rules = JSON.parse(json);
+  console.log(f.idGenerator(rules))
   res.sendStatus(200);
 });
 
-
-
-
-
+app.post('/upload', (req,res) => {
+  res.sendStatus(200);
+});
 
 
 app.get('/api', (req, res) => {
@@ -100,3 +165,5 @@ app.listen(port, () => {
   console.log(`App listening on port: ${port}`);
   console.log(`App is running on : http://localhost:${port}`);
 });
+
+

@@ -3,6 +3,7 @@ const convert = require("xml-js");
 import { cleanResult, addErrorPPN } from '../actions/index';
 import store from '../store/index';
 
+const PPN_EN_DUR = '169450546'
 const CATEGORIE = "Generale";
 const TYPE = "matching";
 const NEWRULE = {
@@ -35,6 +36,14 @@ function verifyRules() {
     getRules();
 }
 
+const NEWRULEMODIFIED = {
+    "number": 404,
+    "code" : "z",
+    "message" : "NEW RULE MODIFIED",
+    "regex" : "[A-Z]*[a-z]+"
+};
+const INDEX = 5;
+
 function getSudoc(rules, PPN) {
 
     axios.get('https://www.sudoc.fr/' + PPN + '.xml')
@@ -63,7 +72,7 @@ function writeResult() {
         },
         data: store.getState().result,
     }).then(function () {
-        console.log("ok")
+        //console.log("ok")
     })
         .catch(function (error) {
             // handle error
@@ -73,8 +82,39 @@ function writeResult() {
         });
 }
 
+function deleteRule(index) {
+    axios({
+        method: 'DELETE',
+        url: 'http://localhost:3000/rules',
+        contentType: "application/json",
+        headers: {
+            "Accept": "application/json",
+            "index" : index,
+        },
+    }).then(function () {
+        console.log("suppression ok")
+    })
+    .catch(function (error) {
+        console.log(error);
+    })
+    .then(function () {
+    });
+}
 
-function addRule(categorie, type, rule) {
+function updateRule(index,newRule) {
+    axios.put('http://localhost:3000/rules', newRule, { 
+        headers: { 
+            'Content-Type': 'application/json',
+            "index":index
+        } 
+    }).then(function () {
+        console.log("modification ok")
+    }).catch(function (error) {
+        console.log(error);
+    });
+}
+
+function addRule(categorie,type,rule){
     axios({
         method: 'POST',
         url: 'http://localhost:3000/rules',
@@ -102,7 +142,6 @@ function getRules(listPPN) {
             listPPN.forEach(PPN => getSudoc(response.data, PPN));
             // getSudoc(response.data,'169450546');
             writeResult();
-
         })
         .catch(function (error) {
             // handle error
@@ -140,7 +179,9 @@ function verifMain(rules, sudoc) {
     });
     store.dispatch(addErrorPPN(resultJson));
     //addRule(CATEGORIE,TYPE,NEWRULE)
-
+    //addRule(CATEGORIE,TYPE,NEWRULE);
+    //updateRule(INDEX,NEWRULEMODIFIED);
+    //deleteRule(INDEX)
 }
 
 export { verifyRules, verifiyRulesByTextArea, verifyRulesByFile };
