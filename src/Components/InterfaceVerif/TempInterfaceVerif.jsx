@@ -48,7 +48,6 @@ let idCard6 = 0;
 
 function TempInterfaceVerif({ result }) {
     window.result = result;
-    console.log(result);
     const data = Object.keys(result).map((key) => [Number(key), result[key]]);
     return (
         <div>

@@ -1,6 +1,6 @@
 const axios = require('axios');
 const convert = require("xml-js");
-import { cleanResult, addErrorPPN } from '../actions/index';
+import { cleanResult, addErrorPPN, setNombreTotalPPN } from '../actions/index';
 import store from '../store/index';
 const Regex = require("./Regex");
 
@@ -14,20 +14,11 @@ const NEWRULE = {
     "regex": "[A-Z]*[a-z]+"
 }
 
-function verifyRulesByFile() {
-    window.location += 'tempInterfaceVerif';
-    let reader = new FileReader();
-    reader.readAsText(window.fileListPPN);
-    reader.onload = function () {
-        const listPPN = reader.result.split("\n");
-        getRules(listPPN);
-    }
-}
-
 function verifiyRulesByTextArea() {
     store.dispatch(cleanResult());
     window.location += 'tempInterfaceVerif';
-    const listPPN = document.getElementById("textAreaSaisie").value.split("\n");
+    const listPPN = document.getElementById("textAreaSaisie").value.split("\n").filter(x=>x!='');
+    store.dispatch(setNombreTotalPPN(listPPN.length));
     getRules(listPPN);
 }
 
@@ -212,4 +203,4 @@ function verifMain(rules, sudoc) {
     //Regex.transform(REGEXENDUR,sudoc)
 }
 
-export { verifyRules, verifiyRulesByTextArea, verifyRulesByFile };
+export { verifyRules, verifiyRulesByTextArea };

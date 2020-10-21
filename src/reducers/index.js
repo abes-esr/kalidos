@@ -1,4 +1,4 @@
-import { CLEAN_RESULT, ADD_ERROR_PPN, ADD_ERROR_TEST } from '../actions';
+import { CLEAN_RESULT, ADD_ERROR_PPN, ADD_ERROR_TEST, SET_NOMBRE_TOTAL_PPN } from '../actions';
 
 const initialState = {
   result: {
@@ -14,6 +14,7 @@ const initialState = {
     }
   },
   compteurResult: 1,
+  nombreTotalPPN:1,
 };
 
 function rootReducer(state = initialState, action) {
@@ -23,6 +24,7 @@ function rootReducer(state = initialState, action) {
         ...state,
         result: {},
         compteurResult: 0,
+        nombreTotalPPN: 0,
       }
 
     case ADD_ERROR_PPN:
@@ -46,6 +48,11 @@ function rootReducer(state = initialState, action) {
         ...state,
         compteurResult: state.compteurResult + 1,
       };
+    case SET_NOMBRE_TOTAL_PPN:
+      return {
+        ...state,
+        nombreTotalPPN: action.payload,
+      }
   }
   return state;
 }
