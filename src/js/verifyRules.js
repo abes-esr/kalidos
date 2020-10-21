@@ -8,16 +8,16 @@ const CATEGORIE = "Generale";
 const TYPE = "matching";
 const NEWRULE = {
     "number": 404,
-    "code" : "z",
-    "message" : "NEW RULE",
-    "regex" : "[A-Z]*[a-z]+"
+    "code": "z",
+    "message": "NEW RULE",
+    "regex": "[A-Z]*[a-z]+"
 };
 
 const NEWRULEMODIFIED = {
     "number": 404,
-    "code" : "z",
-    "message" : "NEW RULE MODIFIED",
-    "regex" : "[A-Z]*[a-z]+"
+    "code": "z",
+    "message": "NEW RULE MODIFIED",
+    "regex": "[A-Z]*[a-z]+"
 };
 const INDEX = 5;
 
@@ -27,14 +27,14 @@ function verifyRules() {
     var obj;
 }
 
-function getSudoc(rules,PPN) {
+function getSudoc(rules, PPN) {
 
-    axios.get('https://www.sudoc.fr/'+PPN+'.xml')
+    axios.get('https://www.sudoc.fr/' + PPN + '.xml')
         .then(function (response) {
             const data = JSON.parse(
                 convert.xml2json(response.data, { compact: true, spaces: 2 })
             );
-            verifMain(rules,data);
+            verifMain(rules, data);
         })
         .catch(function (error) {
             // handle error
@@ -45,7 +45,7 @@ function getSudoc(rules,PPN) {
         });
 }
 
-function writeResult(){
+function writeResult() {
     axios({
         method: 'POST',
         url: 'http://localhost:3000/result',
@@ -73,24 +73,24 @@ function deleteRule(index) {
         contentType: "application/json",
         headers: {
             "Accept": "application/json",
-            "index" : index,
+            "index": index,
         },
     }).then(function () {
         console.log("suppression ok")
     })
-    .catch(function (error) {
-        console.log(error);
-    })
-    .then(function () {
-    });
+        .catch(function (error) {
+            console.log(error);
+        })
+        .then(function () {
+        });
 }
 
-function updateRule(index,newRule) {
-    axios.put('http://localhost:3000/rules', newRule, { 
-        headers: { 
+function updateRule(index, newRule) {
+    axios.put('http://localhost:3000/rules', newRule, {
+        headers: {
             'Content-Type': 'application/json',
-            "index":index
-        } 
+            "index": index
+        }
     }).then(function () {
         console.log("modification ok")
     }).catch(function (error) {
@@ -98,15 +98,15 @@ function updateRule(index,newRule) {
     });
 }
 
-function addRule(categorie,type,rule){
+function addRule(categorie, type, rule) {
     axios({
         method: 'POST',
         url: 'http://localhost:3000/rules',
         contentType: "application/json",
         headers: {
             "Accept": "application/json",
-            "categorie" : categorie,
-            "type" : type
+            "categorie": categorie,
+            "type": type
         },
         data: rule,
     }).then(function () {
@@ -123,7 +123,7 @@ function addRule(categorie,type,rule){
 function getRules(PPN) {
     axios.get('http://localhost:3000/rules')
         .then(function (response) {
-            getSudoc(response.data,PPN);
+            getSudoc(response.data, PPN);
         })
         .catch(function (error) {
             // handle error
@@ -135,42 +135,48 @@ function getRules(PPN) {
 
 }
 
-function verifMain(rules,sudoc) {
+function verifMain(rules, sudoc) {
     const leader = sudoc.record.leader;
     const controlfields = sudoc.record.controlfield;
-    const datafields = sudoc.record.datafield ;
+    const datafields = sudoc.record.datafield;
     let resultJson = {
-        PPN : controlfields[0]._text,
-        errors : [],
+        PPN: controlfields[0]._text,
+        errors: [],
     };
-    rules.Generale.matching.forEach(function(regle) {
+
+    rules.Generale.matching.forEach(function (regle) {
         const regex = RegExp(regle.regex);
-        datafields.forEach(function (field){
-            
-            if(field._attributes.tag.toString() === regle.number.toString()){
-                if(field.subfield instanceof Array) {
-                    field.subfield.forEach(function (subfield){
-                        if(subfield._attributes.code === regle.code && !regex.test(subfield._text)) {
-                            resultJson.errors.push({
-                                message : regle.message,
-                                number : regle.number,
-                                code : regle.code
-                            });
+        datafields.forEach(function (field) {
+
+            if (field._attributes.tag.toString() === regle.number.toString() || regle.number === "GLOBAL") {
+                if (field.subfield instanceof Array) {
+                    field.subfield.forEach(function (subfield) {
+                        if (subfield._attributes.code === regle.code || regle.number === "GLOBAL") {
+                            if(!regex.test(subfield._text)) {
+                                resultJson.errors.push({
+                                    message: regle.message,
+                                    number: regle.number,
+                                    code: regle.code
+                                });
+                            }          
                         }
                     });
                 } else {
-                    if(field.subfield._attributes.code === regle.code && !regex.test(field.subfield._text)) {
-                        resultJson.errors.push({
-                            message : regle.message,
-                            number : regle.number,
-                            code : regle.code
-                        });
+                    if (field.subfield._attributes.code === regle.code || regle.number === "GLOBAL") {
+                        if(!regex.test(field.subfield._text)) {
+                            resultJson.errors.push({
+                                message: regle.message,
+                                number: regle.number,
+                                code: regle.code
+                            });
+                        }
                     }
                 }
             }
         });
     });
-    result[controlfields[0]._text]= resultJson;
+
+    result[controlfields[0]._text] = resultJson;
     console.log(result);
     writeResult();
     //addRule(CATEGORIE,TYPE,NEWRULE);
