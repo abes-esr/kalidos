@@ -6,6 +6,7 @@ import { connect } from 'react-redux';
 
 const mapStateToProps = (state) => ({
     result: state.result,
+    compteurResult: state.compteurResult,
   });
 
 
@@ -14,7 +15,7 @@ const mapDispatchToProps = (dispatch) => ({
 
 let idTr = 0;
 
-function TabMessage({errors}){
+function TabMessage({errors, compteurResult}){
     return (
         <div>
             <table className="table table-bordered" width="100%" cellSpacing="0">
