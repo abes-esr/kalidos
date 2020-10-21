@@ -1,0 +1,23 @@
+{
+    "12345":{
+        "PPN":12345,
+        "errors": [ {
+            "message": "je suis un message",
+            "number": 200,
+            "code": "b"
+        },
+        {
+            "message": "Comment ça va",
+            "number": 350,
+            "code": "f"
+        } ]
+    },
+    "6789":{
+        "PPN":6789,
+        "errors": [ {
+            "message": "Bonjour",
+            "number": 500,
+            "code": "c"
+        } ]
+    }
+}
