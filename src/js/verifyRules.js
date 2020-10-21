@@ -1,5 +1,6 @@
 const axios = require('axios');
 const convert = require("xml-js");
+const Regex = require("./Regex");
 
 let result = {};
 
@@ -20,6 +21,7 @@ const NEWRULEMODIFIED = {
     "regex": "[A-Z]*[a-z]+"
 };
 const INDEX = 5;
+const REGEXENDUR = ".*^(NOM).*"
 
 
 function verifyRules() {
@@ -34,7 +36,7 @@ function getSudoc(rules, PPN) {
             const data = JSON.parse(
                 convert.xml2json(response.data, { compact: true, spaces: 2 })
             );
-            verifMain(rules, data);
+            verifMain(rules, data );
         })
         .catch(function (error) {
             // handle error
@@ -135,7 +137,7 @@ function getRules(PPN) {
 
 }
 
-function verifMain(rules, sudoc) {
+function verifMain(rules, sudoc ) {
     const leader = sudoc.record.leader;
     const controlfields = sudoc.record.controlfield;
     const datafields = sudoc.record.datafield;
@@ -182,6 +184,7 @@ function verifMain(rules, sudoc) {
     //addRule(CATEGORIE,TYPE,NEWRULE);
     //updateRule(INDEX,NEWRULEMODIFIED);
     //deleteRule(INDEX)
+    //Regex.transform(REGEXENDUR,sudoc)
 }
 
 export default verifyRules;
