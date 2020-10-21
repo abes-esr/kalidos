@@ -6,6 +6,13 @@
     display: none;
 }
 
+.dropzoneSaisiePPN {
+  width: 100%;
+  border: 2px dashed #dedede;
+  border-radius: 5px;
+  background: #f5f5f5;
+}
+
 .dropzone {
   border: 2px dashed #dedede;
   border-radius: 5px;
