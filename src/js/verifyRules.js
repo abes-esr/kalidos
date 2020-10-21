@@ -1,13 +1,8 @@
 const axios = require('axios');
 const convert = require("xml-js");
-<<<<<<< HEAD
 import { cleanResult, addErrorPPN } from '../actions/index';
 import store from '../store/index';
-=======
 const Regex = require("./Regex");
-
-let result = {};
->>>>>>> backend
 
 const PPN_EN_DUR = '169450546'
 const CATEGORIE = "Generale";
@@ -17,7 +12,6 @@ const NEWRULE = {
     "code": "z",
     "message": "NEW RULE",
     "regex": "[A-Z]*[a-z]+"
-<<<<<<< HEAD
 }
 
 function verifyRulesByFile() {
@@ -42,9 +36,6 @@ function verifyRules() {
     window.location += 'tempInterfaceVerif';
     getRules();
 }
-=======
-};
->>>>>>> backend
 
 const NEWRULEMODIFIED = {
     "number": 404,
@@ -53,30 +44,16 @@ const NEWRULEMODIFIED = {
     "regex": "[A-Z]*[a-z]+"
 };
 const INDEX = 5;
-const REGEXENDUR = ".*^(NOM).*"
+const REGEXENDUR = ".*^(NOM).*";
 
 function getSudoc(rules, PPN) {
 
-<<<<<<< HEAD
-=======
-function verifyRules() {
-    var rules = getRules(PPN_EN_DUR)
-    var obj;
-}
-
-function getSudoc(rules, PPN) {
-
->>>>>>> backend
     axios.get('https://www.sudoc.fr/' + PPN + '.xml')
         .then(function (response) {
             const data = JSON.parse(
                 convert.xml2json(response.data, { compact: true, spaces: 2 })
             );
-<<<<<<< HEAD
-            verifMain(rules, data);
-=======
             verifMain(rules, data );
->>>>>>> backend
         })
         .catch(function (error) {
             // handle error
@@ -229,9 +206,6 @@ function verifMain(rules, sudoc) {
     //addRule(CATEGORIE,TYPE,NEWRULE)
 
 
-    result[controlfields[0]._text] = resultJson;
-    console.log(result);
-    writeResult();
     //addRule(CATEGORIE,TYPE,NEWRULE);
     //updateRule(INDEX,NEWRULEMODIFIED);
     //deleteRule(INDEX)
