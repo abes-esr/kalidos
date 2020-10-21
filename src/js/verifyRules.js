@@ -146,16 +146,27 @@ function verifMain(rules,sudoc) {
     rules.Generale.matching.forEach(function(regle) {
         const regex = RegExp(regle.regex);
         datafields.forEach(function (field){
+            
             if(field._attributes.tag.toString() === regle.number.toString()){
-                field.subfield.forEach(function (subfield){
-                    if(subfield._attributes.code === regle.code && !regex.test(subfield._text)) {
+                if(field.subfield instanceof Array) {
+                    field.subfield.forEach(function (subfield){
+                        if(subfield._attributes.code === regle.code && !regex.test(subfield._text)) {
+                            resultJson.errors.push({
+                                message : regle.message,
+                                number : regle.number,
+                                code : regle.code
+                            });
+                        }
+                    });
+                } else {
+                    if(field.subfield._attributes.code === regle.code && !regex.test(field.subfield._text)) {
                         resultJson.errors.push({
                             message : regle.message,
                             number : regle.number,
                             code : regle.code
                         });
                     }
-                });
+                }
             }
         });
     });
