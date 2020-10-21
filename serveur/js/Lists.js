@@ -13,7 +13,6 @@ var Lists = function() {
   // This is private because it is not being return
   
   var setup = function() {
-    console.log(rules)
     for (categorie in rules) {
       listCategorie.push(categorie)
     }
@@ -23,8 +22,6 @@ var Lists = function() {
         listType.push(type)
       }
     }
-    console.log(listCategorie)
-    console.log(listType)
     return [listCategorie,listType]
   }
   

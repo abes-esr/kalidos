@@ -1,8 +1,11 @@
 const express = require('express');
 const bodyParser = require('body-parser')
 const f = require('./js/index');
+const Lists = require('./js/Lists');
 
-
+const res = Lists.setup()
+const listCategorie = res[0]
+const listType = res[1]
 
 
 const app = express();
@@ -83,6 +86,58 @@ app.post('/rules', (req,res) => {
   }
 });
 
+/**
+ * supression d'une regle
+ * @header index : identifiant de la regle a supprimer
+ * return 200 ou 404
+ */
+app.delete('/rules', (req,res) => {
+  let json = fs.readFileSync(`${__dirname}/public/model_regles.json`);
+  let rules = JSON.parse(json);
+  const index = parseInt(req.header("index"), 10);
+  for(categorie in listCategorie) {
+    for (type in listType){
+            for (i = 0; i < rules[listCategorie[categorie]][listType[type]].length; i++) {
+                if(rules[listCategorie[categorie]][listType[type]][i].index == index) {
+                    rules[listCategorie[categorie]][listType[type]].splice(i, 1);
+                    const newJson = JSON.stringify(rules);
+                    fs.writeFile(`${__dirname}/public/model_regles.json`, newJson, 'utf8' , () => {});
+                    res.sendStatus(200);
+                    return;
+                }
+            } 
+    }
+}
+res.sendStatus(404);
+});
+
+/**
+ * modification d'une regle
+ * @header index : identifiant de la regle a modifier
+ * @body body : nouvelle regle
+ * return 200 ou 404
+ */
+app.put('/rules', (req,res) => {
+  let json = fs.readFileSync(`${__dirname}/public/model_regles.json`);
+  let rules = JSON.parse(json);
+  const index = parseInt(req.header("index"), 10);
+  for(categorie in listCategorie) {
+    for (type in listType){
+            for (i = 0; i < rules[listCategorie[categorie]][listType[type]].length; i++) {
+                if(rules[listCategorie[categorie]][listType[type]][i].index === index) {
+                    rules[listCategorie[categorie]][listType[type]][i] = req.body;
+                    rules[listCategorie[categorie]][listType[type]][i].index = index;
+                    const newJson = JSON.stringify(rules);
+                    fs.writeFile(`${__dirname}/public/model_regles.json`, newJson, 'utf8' , () => {});
+                    res.sendStatus(200);
+                    return;
+                }
+            } 
+    }
+}
+res.sendStatus(404);
+
+});
 
 /**
  * URL DE TEST

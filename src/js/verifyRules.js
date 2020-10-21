@@ -11,7 +11,16 @@ const NEWRULE = {
     "code" : "z",
     "message" : "NEW RULE",
     "regex" : "[A-Z]*[a-z]+"
-}
+};
+
+const NEWRULEMODIFIED = {
+    "number": 404,
+    "code" : "z",
+    "message" : "NEW RULE MODIFIED",
+    "regex" : "[A-Z]*[a-z]+"
+};
+const INDEX = 5;
+
 
 function verifyRules() {
     var rules = getRules(PPN_EN_DUR)
@@ -56,6 +65,38 @@ function writeResult(){
         });
 }
 
+
+function deleteRule(index) {
+    axios({
+        method: 'DELETE',
+        url: 'http://localhost:3000/rules',
+        contentType: "application/json",
+        headers: {
+            "Accept": "application/json",
+            "index" : index,
+        },
+    }).then(function () {
+        console.log("suppression ok")
+    })
+    .catch(function (error) {
+        console.log(error);
+    })
+    .then(function () {
+    });
+}
+
+function updateRule(index,newRule) {
+    axios.put('http://localhost:3000/rules', newRule, { 
+        headers: { 
+            'Content-Type': 'application/json',
+            "index":index
+        } 
+    }).then(function () {
+        console.log("modification ok")
+    }).catch(function (error) {
+        console.log(error);
+    });
+}
 
 function addRule(categorie,type,rule){
     axios({
@@ -121,7 +162,9 @@ function verifMain(rules,sudoc) {
     result[controlfields[0]._text]= resultJson;
     console.log(result);
     writeResult();
-    addRule(CATEGORIE,TYPE,NEWRULE)
+    //addRule(CATEGORIE,TYPE,NEWRULE);
+    //updateRule(INDEX,NEWRULEMODIFIED);
+    //deleteRule(INDEX)
 }
 
 export default verifyRules;
