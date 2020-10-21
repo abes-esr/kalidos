@@ -2,7 +2,6 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 const Router_App = () => (
-        <div>
             <ul className="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
 
@@ -58,8 +57,6 @@ const Router_App = () => (
                 </li>
             </ul>
 
-            <hr />
-        </div>
 );
 
 
