@@ -44,6 +44,12 @@ const Router_App = () => (
                         <span>ExamplePage3</span>
                     </Link>
                 </li>
+                <li className="nav-item">
+                    <Link to="/interfaceVerif" className="nav-link">
+                        <i className="fas fa-fw fa-wrench"></i>
+                        <span>InterfaceVerif</span>
+                    </Link>
+                </li>
             </ul>
 
             <hr />
