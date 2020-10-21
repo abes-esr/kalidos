@@ -58,11 +58,11 @@ const PageDeSaisie = () => (
         <h2>Saisie des identifiants</h2>
         <br></br>
         <div className="row">
-            <Card12 title={'Choix du jeu de règles'} content={DropdownJeuDeRègles} />
-        </div>
+            <Card12 title={'Choix du jeu de règles'} content={DropdownJeuDeRègles()} />
+        </div> 
         <div className="row">
-            <Card6 title={'Saisie manuelle'} content={SaisieManuelle} />
-            <Card6 title={'Saisie par fichier'} content={SaisieFichier} />
+            <Card6 title={'Saisie manuelle'} content={SaisieManuelle()} />
+            <Card6 title={'Saisie par fichier'} content={SaisieFichier()} />
         </div>
     </div>
 );

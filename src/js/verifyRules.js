@@ -1,5 +1,7 @@
 const axios = require('axios');
 const convert = require("xml-js");
+import { cleanResult, addErrorPPN } from '../actions/index';
+import store from '../store/index';
 
 let result = {};
 
@@ -13,8 +15,9 @@ const NEWRULE = {
 }
 
 function verifyRules() {
-    var rules = getRules()
-    var obj;
+    store.dispatch(cleanResult());
+    window.location+='tempInterfaceVerif';
+    getRules();
 }
 
 function getSudoc(rules,PPN) {
@@ -43,7 +46,7 @@ function writeResult(){
         headers: {
             "Accept": "application/json",
         },
-        data: result,
+        data: store.getState().result,
     }).then(function () {
         console.log("ok")
     })
@@ -117,10 +120,11 @@ function verifMain(rules,sudoc) {
             }
         });
     });
-    result[controlfields[0]._text]= resultJson;
-    console.log(result);
+    // result[controlfields[0]._text]= resultJson;
+    store.dispatch(addErrorPPN(resultJson));
     writeResult();
-    addRule(CATEGORIE,TYPE,NEWRULE)
+    //addRule(CATEGORIE,TYPE,NEWRULE)
+
 }
 
 export default verifyRules;
