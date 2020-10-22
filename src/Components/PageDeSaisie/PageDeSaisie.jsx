@@ -1,6 +1,7 @@
 import React from 'react';
 import Card12 from '../Générique/Card_12';
 import { verifiyRulesByTextArea } from '../../js/verifyRules'
+import verifyRules from '../../js/RulesEnDur'
 import Dropzone from './Dropzone';
 
 const SaisieManuelle = () => (
@@ -31,6 +32,9 @@ const SaisieManuelle = () => (
 );
 
 
+
+
+
 const PageDeSaisie = () => (
     <div>
         <h2>Saisie des identifiants</h2>
@@ -38,6 +42,10 @@ const PageDeSaisie = () => (
         <div className="row">
             <Card12 title={'Saisie des identifiants'} content={SaisieManuelle()} />
         </div>
+        <div className="row">
+            <button type="button" className="btn btn-primary" style={{width:'100%'}} onClick={verifyRules} >TEST RULES</button>
+        </div>
+
     </div>
 );
 
