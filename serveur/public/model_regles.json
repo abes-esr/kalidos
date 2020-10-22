@@ -216,6 +216,44 @@
                 ],
                 "message": "Si 101 ind1=1 il faut au moins un $a et $c"
             }
+        ],
+        "Structurel": [
+            {
+                "index": 28,
+                "number": "200",
+                "ind1":"",
+                "ind2":"",
+                "code":"",
+                "type":"required",
+                "message": "200 obligatoire"
+            },
+            {
+                "index": 29,
+                "number": "181",
+                "ind1":"",
+                "ind2":"",
+                "code":"",
+                "type":"required",
+                "message": "181 obligatoire"
+            },
+            {
+                "index": 30,
+                "number": "182",
+                "ind1":"",
+                "ind2":"",
+                "code":"",
+                "type":"required",
+                "message": "182 obligatoire"
+            },
+            {
+                "index": 31,
+                "number": "183",
+                "ind1":"",
+                "ind2":"",
+                "code":"",
+                "type":"required",
+                "message": "183 obligatoire"
+            }
         ]
     },
     "Mémoire": {
@@ -237,6 +275,9 @@
             {}
         ],
         "Conditionnels": [
+            {}
+        ],
+        "Structurel": [
             {}
         ]
     }

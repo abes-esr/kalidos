@@ -1,7 +1,7 @@
 const axios = require('axios');
 const convert = require("xml-js");
-//const Regex = require("./Regex");
 const Matching = require("./Matching");
+const Structurel = require("./Structurel");
 
 let result = {};
 
@@ -142,10 +142,18 @@ function verifMain(rules, sudoc ) {
     const leader = sudoc.record.leader;
     const controlfields = sudoc.record.controlfield;
     const datafields = sudoc.record.datafield;
-    const resultMatching = Matching.testMatchRegexRules(rules,controlfields,datafields)
-    console.log("retour : " ,resultMatching)
+    let resultJson = {
+        PPN: controlfields[0]._text,
+        errors: [],
+    };
+    Matching.testMatchRegexRules(rules,controlfields,datafields , resultJson)
+    console.log("retour Matching : " ,resultJson)
 
-    result[controlfields[0]._text] = resultMatching;
+    //TODO
+    Structurel.testMatchStructurelRules(rules,controlfields,datafields , resultJson)
+    console.log("retour Conditionel : " ,resultJson)
+
+    result[controlfields[0]._text] = resultJson;
     //console.log(result);
     writeResult();
 

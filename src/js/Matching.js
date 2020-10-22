@@ -1,10 +1,5 @@
 var Matching = function () {
-    var testMatchRegexRules = function (rules, controlfields , datafields) {
-        let resultJson = {
-            PPN: controlfields[0]._text,
-            errors: [],
-        };
-
+    var testMatchRegexRules = function (rules, controlfields , datafields , resultJson) {
         rules.Generale.matching.forEach(function (regle) {
             const regex = RegExp(regle.regex);
             datafields.forEach(function (field) {
@@ -36,7 +31,6 @@ var Matching = function () {
                 }
             });
         });
-        return resultJson
     }
   
   
