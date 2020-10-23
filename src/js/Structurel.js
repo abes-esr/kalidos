@@ -65,7 +65,7 @@ var Structurel = function () {
                         });
                     }
                 }
-                if (regle.type == "contains code" || regle.type == "neq" ||  regle.type == "eq") {
+                if (regle.type == "contains code" ) {
                     let valid = regle.number.length
                     let numberError = []
                     for (item in regle.number) {
@@ -78,18 +78,7 @@ var Structurel = function () {
                                         valid -= 1
                                         numberError.pop()
                                         break;
-                                    } else if (regle.type == "neq") {
-                                        if(!value.includes(field.subfield[i]._text)){
-                                            valid -= 1
-                                            numberError.pop()
-                                        }
-                                    }else if (regle.type == "eq") {
-                                        if(value.includes(field.subfield[i]._text)){
-                                            valid -= 1
-                                            numberError.pop()
-                                        }
-                                    }
-
+                                    } 
                                 }
                             }
                         } else if (field != null) {
@@ -97,17 +86,7 @@ var Structurel = function () {
                                 if (regle.type == "contains code") {
                                     valid -= 1
                                     numberError.pop()
-                                } else if (regle.type == "neq") {
-                                    if(!value.includes(field.subfield._text)){
-                                        valid -= 1
-                                        numberError.pop()
-                                    }
-                                }else if (regle.type == "eq") {
-                                    if(value.includes(field.subfield._text)){
-                                        valid -= 1
-                                        numberError.pop()
-                                    }
-                                }
+                                } 
                             }
                         } else {
                             valid -= 1
