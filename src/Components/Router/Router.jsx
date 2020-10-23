@@ -55,6 +55,12 @@ const Router_App = () => (
                         <span>Temp Interface Verif</span>
                     </Link>
                 </li>
+                <li className="nav-item">
+                    <Link to="/tempInterfaceVerif2" className="nav-link">
+                        <i className="fas fa-fw fa-wrench"></i>
+                        <span>Temp Interface Verif 2</span>
+                    </Link>
+                </li>
             </ul>
 
 );

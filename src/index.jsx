@@ -27,6 +27,7 @@ import ExamplePage2 from './Components/ExamplePage/ExamplePage2';
 import ExamplePage3 from './Components/ExamplePage/ExamplePage3';
 import InterfaceVerif from './Components/InterfaceVerif/InterfaceVerif';
 import TempInterfaceVerif from './Components/InterfaceVerif/TempInterfaceVerif';
+import TempInterfaceVerif2 from './Components/InterfaceVerif/TempInterfaceVerif2';
 
 const Content = () => (
     <div>
@@ -39,6 +40,7 @@ const Content = () => (
             <Route path="/examplePage3" component={ExamplePage3} />
             <Route path="/interfaceVerif" component={InterfaceVerif} />
             <Route path="/tempInterfaceVerif" component={TempInterfaceVerif} />
+            <Route path="/tempInterfaceVerif2" component={TempInterfaceVerif2} />
         </div>
     </div>
 );

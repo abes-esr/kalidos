@@ -1,23 +1,237 @@
 {
-    "12345":{
-        "PPN":12345,
-        "errors": [ {
-            "message": "je suis un message",
-            "number": 200,
-            "code": "b"
-        },
-        {
-            "message": "Comment ça va",
-            "number": 350,
+    "result": {
+      "169450546": {
+        "PPN": "169450546",
+        "errors": [
+          {
+            "message": "328$e = Lyon 1 ou Université de Lyon",
+            "number": "328",
+            "code": "d"
+          }
+        ]
+      },
+      "169450554": {
+        "PPN": "169450554",
+        "errors": []
+      },
+      "169450570": {
+        "PPN": "169450570",
+        "errors": []
+      },
+      "169450589": {
+        "PPN": "169450589",
+        "errors": []
+      },
+      "169450597": {
+        "PPN": "169450597",
+        "errors": [
+          {
+            "message": "328$e = Lyon 1 ou Université de Lyon",
+            "number": "328",
+            "code": "d"
+          }
+        ]
+      },
+      "169450619": {
+        "PPN": "169450619",
+        "errors": []
+      },
+      "169450635": {
+        "PPN": "169450635",
+        "errors": []
+      },
+      "169450651": {
+        "PPN": "169450651",
+        "errors": [
+          {
+            "message": "328$e = Lyon 1 ou Université de Lyon",
+            "number": "328",
+            "code": "d"
+          }
+        ]
+      },
+      "169450678": {
+        "PPN": "169450678",
+        "errors": []
+      },
+      "169450686": {
+        "PPN": "169450686",
+        "errors": [
+          {
+            "message": "701$f doit contenir 9 caractères",
+            "number": 701,
             "code": "f"
-        } ]
+          },
+          {
+            "message": "328$e = Lyon 1 ou Université de Lyon",
+            "number": "328",
+            "code": "d"
+          }
+        ]
+      },
+      "169450694": {
+        "PPN": "169450694",
+        "errors": []
+      },
+      "169450716": {
+        "PPN": "169450716",
+        "errors": []
+      },
+      "169450724": {
+        "PPN": "169450724",
+        "errors": []
+      },
+      "169450759": {
+        "PPN": "169450759",
+        "errors": []
+      },
+      "169450783": {
+        "PPN": "169450783",
+        "errors": []
+      },
+      "169450791": {
+        "PPN": "169450791",
+        "errors": []
+      },
+      "169450813": {
+        "PPN": "169450813",
+        "errors": []
+      },
+      "169450821": {
+        "PPN": "169450821",
+        "errors": [
+          {
+            "message": "328$e = Lyon 1 ou Université de Lyon",
+            "number": "328",
+            "code": "d"
+          }
+        ]
+      },
+      "169450848": {
+        "PPN": "169450848",
+        "errors": []
+      },
+      "169450856": {
+        "PPN": "169450856",
+        "errors": []
+      },
+      "169450864": {
+        "PPN": "169450864",
+        "errors": []
+      },
+      "169450872": {
+        "PPN": "169450872",
+        "errors": []
+      },
+      "169450880": {
+        "PPN": "169450880",
+        "errors": []
+      },
+      "169450899": {
+        "PPN": "169450899",
+        "errors": [
+          {
+            "message": "328$e = Lyon 1 ou Université de Lyon",
+            "number": "328",
+            "code": "d"
+          }
+        ]
+      },
+      "169450902": {
+        "PPN": "169450902",
+        "errors": []
+      },
+      "169450910": {
+        "PPN": "169450910",
+        "errors": []
+      },
+      "169450937": {
+        "PPN": "169450937",
+        "errors": []
+      },
+      "169450945": {
+        "PPN": "169450945",
+        "errors": [
+          {
+            "message": "328$e = Lyon 1 ou Université de Lyon",
+            "number": "328",
+            "code": "d"
+          }
+        ]
+      },
+      "169450953": {
+        "PPN": "169450953",
+        "errors": [
+          {
+            "message": "200$e ne doit pas être complément du titre",
+            "number": "200",
+            "code": "e"
+          }
+        ]
+      },
+      "169450996": {
+        "PPN": "169450996",
+        "errors": []
+      },
+      "169451011": {
+        "PPN": "169451011",
+        "errors": []
+      },
+      "169451038": {
+        "PPN": "169451038",
+        "errors": []
+      },
+      "169451046": {
+        "PPN": "169451046",
+        "errors": []
+      },
+      "169451054": {
+        "PPN": "169451054",
+        "errors": []
+      },
+      "169451070": {
+        "PPN": "169451070",
+        "errors": []
+      },
+      "169451097": {
+        "PPN": "169451097",
+        "errors": [
+          {
+            "message": "328$e = Lyon 1 ou Université de Lyon",
+            "number": "328",
+            "code": "d"
+          }
+        ]
+      },
+      "169451100": {
+        "PPN": "169451100",
+        "errors": [
+          {
+            "message": "328$e = Lyon 1 ou Université de Lyon",
+            "number": "328",
+            "code": "d"
+          }
+        ]
+      },
+      "169451119": {
+        "PPN": "169451119",
+        "errors": []
+      },
+      "169451143": {
+        "PPN": "169451143",
+        "errors": []
+      },
+      "169451151": {
+        "PPN": "169451151",
+        "errors": []
+      }
     },
-    "6789":{
-        "PPN":6789,
-        "errors": [ {
-            "message": "Bonjour",
-            "number": 500,
-            "code": "c"
-        } ]
-    }
-}
+    "compteurResult": 41,
+    "nombreTotalPPN": 41,
+    "displayVerif": {
+      "PPNDisplay": 0,
+      "numPage": 1,
+      "recherchePPN": ""
+    } 
+
+  }
