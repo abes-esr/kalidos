@@ -1,1 +1,1 @@
-{}
+{"169450546":{"PPN":"169450546","errors":[{"message":"328$e = Lyon 1 ou Université de Lyon","number":"328","code":"d"},{"message":"181 obligatoire","number":"181"},{"message":"182 obligatoire","number":"182"},{"message":"183 obligatoire","number":"183"},{"message":"7XX $4 ne doit pas être 205 ou 727 (FAIL TEST)","number":["701"]},{"message":"9XX $5= 020, 050 (FAIL TEST)","number":["930","940"]}]}}
