@@ -19,11 +19,7 @@ function InterfaceVerif({ result, recherchePPN }) {
             <h2>Interface de Verification</h2>
             <br></br>
             <div className="row">
-                <Card4 title={'Tableau PPN'} content={
-                    <TabPPN
-                        listPPN={listPPNWithGoodName}
-                    />
-                } />
+                <Card4 title={'Tableau PPN'} content={<TabPPN listPPN={listPPNWithGoodName} />} />
                 <Card8 title={'Erreur sur le PPN'} content={<TabPPNError result={result} />} />
             </div>
         </div>
