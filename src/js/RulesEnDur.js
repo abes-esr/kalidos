@@ -1,8 +1,10 @@
 const axios = require('axios');
 const convert = require("xml-js");
-import { cleanResult, addErrorPPN, setNombreTotalPPN } from '../actions/index';
-import store from '../store/index';
-const Regex = require("./Regex");
+const Matching = require("./Matching");
+const Structurel = require("./Structurel");
+
+
+let result = {};
 
 const PPN_EN_DUR = '169450546'
 const CATEGORIE = "Generale";
@@ -12,7 +14,7 @@ const NEWRULE = {
     "code": "z",
     "message": "NEW RULE",
     "regex": "[A-Z]*[a-z]+"
-}
+};
 
 const NEWRULEMODIFIED = {
     "number": 404,
@@ -21,22 +23,13 @@ const NEWRULEMODIFIED = {
     "regex": "[A-Z]*[a-z]+"
 };
 const INDEX = 5;
-const REGEXENDUR = ".*^(NOM).*";
+const REGEXENDUR = ".*^(NOM).*"
 
-function verifiyRulesByTextArea() {
-    store.dispatch(cleanResult());
-    window.location += 'tempInterfaceVerif';
-    const listPPN = document.getElementById("textAreaSaisie").value.split("\n").filter(x=>x!='');
-    store.dispatch(setNombreTotalPPN(listPPN.length));
-    getRules(listPPN);
-}
 
 function verifyRules() {
-    store.dispatch(cleanResult());
-    window.location += 'tempInterfaceVerif';
-    getRules();
+    var rules = getRules(PPN_EN_DUR)
+    var obj;
 }
-
 
 function getSudoc(rules, PPN) {
 
@@ -64,7 +57,7 @@ function writeResult() {
         headers: {
             "Accept": "application/json",
         },
-        data: store.getState().result,
+        data: result,
     }).then(function () {
         //console.log("ok")
     })
@@ -75,6 +68,7 @@ function writeResult() {
         .then(function () {
         });
 }
+
 
 function deleteRule(index) {
     axios({
@@ -130,13 +124,10 @@ function addRule(categorie, type, rule) {
         });
 }
 
-function getRules(listPPN) {
+function getRules(PPN) {
     axios.get('http://localhost:3000/rules')
         .then(function (response) {
-
-            listPPN.forEach(PPN => getSudoc(response.data, PPN));
-            // getSudoc(response.data,'169450546');
-            writeResult();
+            getSudoc(response.data, PPN);
         })
         .catch(function (error) {
             // handle error
@@ -148,10 +139,7 @@ function getRules(listPPN) {
 
 }
 
-
-
-function verifMain(rules, sudoc) {
-
+function verifMain(rules, sudoc ) {
     const leader = sudoc.record.leader;
     const controlfields = sudoc.record.controlfield;
     const datafields = sudoc.record.datafield;
@@ -159,43 +147,16 @@ function verifMain(rules, sudoc) {
         PPN: controlfields[0]._text,
         errors: [],
     };
+    Matching.testMatchRegexRules(rules,controlfields,datafields , resultJson)
+    console.log("retour Matching : " ,resultJson)
 
+    //TODO
+    Structurel.testMatchStructurelRules(rules,controlfields,datafields , resultJson)
+    console.log("retour Conditionel : " ,resultJson)
 
-    rules.Generale.matching.forEach(function (regle) {
-        const regex = RegExp(regle.regex);
-        datafields.forEach(function (field) {
-
-            if (field._attributes.tag.toString() === regle.number.toString() || regle.number === "GLOBAL") {
-                if (field.subfield instanceof Array) {
-                    field.subfield.forEach(function (subfield) {
-                        if (subfield._attributes.code === regle.code || regle.number === "GLOBAL") {
-                            if(!regex.test(subfield._text)) {
-                                resultJson.errors.push({
-                                    message: regle.message,
-                                    number: regle.number,
-                                    code: regle.code
-                                });
-                            }          
-                        }
-                    });
-                } else {
-                    if (field.subfield._attributes.code === regle.code || regle.number === "GLOBAL") {
-                        if(!regex.test(field.subfield._text)) {
-                            resultJson.errors.push({
-                                message: regle.message,
-                                number: regle.number,
-                                code: regle.code
-                            });
-                        }
-
-                    }
-                }
-            }
-        });
-    });
-
-    store.dispatch(addErrorPPN(resultJson));
-    //addRule(CATEGORIE,TYPE,NEWRULE)
+    result[controlfields[0]._text] = resultJson;
+    //console.log(result);
+    writeResult();
 
 
     //addRule(CATEGORIE,TYPE,NEWRULE);
@@ -204,4 +165,4 @@ function verifMain(rules, sudoc) {
     //Regex.transform(REGEXENDUR,sudoc)
 }
 
-export { verifyRules, verifiyRulesByTextArea };
+export default verifyRules;

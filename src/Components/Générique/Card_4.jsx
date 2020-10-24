@@ -1,9 +1,11 @@
 
 import React from 'react';
 
-function Card_12({title, content}) {
+
+function Card_4({title, content}) {
+
     return (
-        <div className="col-xl-12 col-lg-12">
+        <div className="col-xl-4 col-lg-4">
             <div className="card shadow mb-4">
                 <div className="card-header py-3 d-flex flex-row align-items-center justify-content-between">
                     <h6 className="m-0 font-weight-bold text-primary">
@@ -17,4 +19,4 @@ function Card_12({title, content}) {
         </div>);
 }
 
-export default Card_12;
+export default Card_4;

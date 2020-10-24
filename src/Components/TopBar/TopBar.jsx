@@ -1,11 +1,26 @@
 
 import React from 'react';
+import { connect } from 'react-redux';
+import { ProgressBar } from 'react-bootstrap';
 
+const mapStateToProps = (state) => ({
+    compteurResult: state.compteurResult,
+    nombreTotalPPN: state.nombreTotalPPN
+});
 
-const TopBar = () => (
-    <nav className="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+function TopBar({ compteurResult, nombreTotalPPN }) {
+    const width = parseInt(100 * compteurResult / nombreTotalPPN);
+    let progressBar = '';
+    if (compteurResult != nombreTotalPPN) {
+        progressBar = <div className="progress" style={{ marginLeft: '17%', width: '66%' }}>
+            <ProgressBar animated now={width} style={{width:'100%', animationDuration:'0.01s'}} label={`${width}%`} />;
+        </div>
+    }
+    return (
+        <nav className="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+            {progressBar}
 
-        <button id="sidebarToggleTop" className="btn btn-link d-md-none rounded-circle mr-3">
+            {/* <button id="sidebarToggleTop" className="btn btn-link d-md-none rounded-circle mr-3">
             <i className="fa fa-bars"></i>
         </button>
 
@@ -19,9 +34,9 @@ const TopBar = () => (
                     </button>
                 </div>
             </div>
-        </form>
+        </form> */}
 
-    </nav>
-);
-
-export default TopBar;
+        </nav>
+    );
+}
+export default connect(mapStateToProps)(TopBar);
