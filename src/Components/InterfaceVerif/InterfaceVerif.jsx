@@ -8,9 +8,10 @@ import { connect } from 'react-redux';
 const mapStateToProps = (state) => ({
     result: state.result,
     recherchePPN: state.displayVerif.recherchePPN,
+    compteurResult: state.compteurResult,
 });
 
-function InterfaceVerif({ result, recherchePPN }) {
+function InterfaceVerif({ result, recherchePPN, compteurResult }) {
     const data = Object.keys(result).map((key) => [Number(key), result[key]]);
     const listPPNWithError = data.filter((row) => { return row[1].errors.length });
     const listPPNWithGoodName = listPPNWithError.filter((row) => { return row[1].PPN.toString().includes(recherchePPN) });
