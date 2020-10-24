@@ -53,7 +53,14 @@ const Wrapper = () => (
                 <Content />
 
 
-                <footer className="sticky-footer bg-white">
+                <footer className="sticky-footer bg-white"
+                style={{
+                    position:"fixed",
+                    bottom:0,
+                    left:0,
+                    width:"100%",
+                    zIndex:0,
+                }}>
                     <div className="container my-auto">
                         <div className="copyright text-center my-auto">
                             <span>Copyright &copy; BiblioDev 2020</span>
