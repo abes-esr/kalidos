@@ -1,16 +1,6 @@
+const Parcours = require("./Parcours");
+
 var Structurel = function () {
-
-    const findDataField = function (datafields, number) {
-        let retour = null
-        datafields.forEach(function (field) {
-            if (field._attributes.tag === number) {
-                retour = field
-                return field
-            }
-        });
-        return retour;
-    }
-
     function verifyRequire(type, retour) {
         return type === "required" && retour == null;
     }
@@ -22,7 +12,7 @@ var Structurel = function () {
     function verifyRequireOne(regle, datafields) {
         if (regle.type === "required one") {
             for (item in regle.number) {
-                if (findDataField(datafields, regle.number[item]) != null) {
+                if (Parcours.findDataField(datafields, regle.number[item]) != null) {
                     return false;
                 }
             }
@@ -36,7 +26,7 @@ var Structurel = function () {
             let valid = regle.number.length;
             let numberError = [];
             for (item in regle.number) {
-                const field = findDataField(datafields, regle.number[item])
+                const field = Parcours.findDataField(datafields, regle.number[item])
                 numberError.push(regle.number[item]);
                 
                 if (field != null && field.subfield instanceof Array) {
@@ -69,14 +59,6 @@ var Structurel = function () {
     }
 
     var testMatchStructurelRules = function (rules, controlfields, datafields, resultJson) {
-        /*"number": "181",
-                "ind1":"",
-                "ind2":"",
-                "code":"",
-                "type":"required",
-                "message": "181 obligatoire" 
-        */
-
         rules.Generale.Structurel.forEach(function (regle) {
             const ind1 = regle.ind1
             const ind2 = regle.ind2
@@ -90,7 +72,7 @@ var Structurel = function () {
 
             if (regle.number.length == 1) {
                 number = regle.number[0]
-                let retour = findDataField(datafields, number)
+                let retour = Parcours.findDataField(datafields, number)
                 // contrainte sur le number
                 if (ind1 === "" && ind2 === "" && code === "") {
                     isPushInJson = isPushInJson || verifyRequire(type, retour);

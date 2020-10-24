@@ -1,14 +1,6 @@
+const Parcours = require("./Parcours");
+
 var Matching = function () {
-    const findDataField = function (datafields, number) {
-        let retour = null
-        datafields.forEach(function (field) {
-            if (field._attributes.tag === number) {
-                retour = field
-                return field
-            }
-        });
-        return retour;
-    }
     var testMatchRegexRules = function (rules, controlfields, datafields, resultJson) {
         rules.Generale.matching.forEach(function (regle) {
             if (regle.number instanceof Array) {
@@ -25,10 +17,6 @@ var Matching = function () {
                 if (field.subfield instanceof Array) {
                     field.subfield.forEach(function (subfield) {
                         if (subfield._attributes.code === regle.code || regle.number === "GLOBAL") {
-                            if(regle.index === 42) {
-                                console.log("field : " ,subfield._text)
-                                console.log("value : ",regle.value)
-                            }
                             if (regle.match === "all" && !matchAll(subfield._text,regle.value)) {
                                 resultJson.errors.push({
                                     message: regle.message,
@@ -106,7 +94,7 @@ var Matching = function () {
         const value = regle.value
         const message = regle.message
         for (item in regle.number) {
-            const field = findDataField(datafields, regle.number[item])
+            const field = Parcours.findDataField(datafields, regle.number[item])
             numberError.push(regle.number[item])
             let matchvalid = true
             if (field != null && field.subfield instanceof Array) {
