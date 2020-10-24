@@ -3,61 +3,61 @@ import { Button, Modal } from 'react-bootstrap'
 
 class BootstrapModal extends React.Component {
 
-    constructor() {
-        super()
-        this.state = {
-            showHide: false
-        }
+  constructor() {
+    super()
+    this.state = {
+      showHide: false
     }
+  }
 
 
-    handleModalShowHide() {
-        this.setState({ showHide: !this.state.showHide })
-    }
+  handleModalShowHide() {
+    this.setState({ showHide: !this.state.showHide })
+  }
 
 
-    whenClosing() {
-        this.props.closing()
-        this.handleModalShowHide()
-    }
+  whenClosing() {
+    this.props.closing()
+    this.handleModalShowHide()
+  }
 
-    whenAccepting() {
-        this.props.accepting()
-        this.handleModalShowHide()
-    }
+  whenAccepting() {
+    this.props.accepting()
+    this.handleModalShowHide()
+  }
 
 
-    render() {
+  render() {
 
-        return (
-            <div>
-                <Button variant={this.props.buttonColor} size="sm" onClick={() => this.handleModalShowHide()}>
-                    {this.props.button}
-                </Button>
+    return (
+      <div>
+        <Button variant={this.props.buttonColor} size="sm" onClick={() => this.handleModalShowHide()}>
+          {this.props.button}
+        </Button>
 
-                <Modal show={this.state.showHide}>
+        <Modal show={this.state.showHide}>
 
-                    <Modal.Header closeButton onClick={() => this.whenClosing()}>
-                        <Modal.Title>{this.props.title}</Modal.Title>
-                    </Modal.Header>
+          <Modal.Header closeButton onClick={() => this.whenClosing()}>
+            <Modal.Title>{this.props.title}</Modal.Title>
+          </Modal.Header>
 
-                    <Modal.Body>{this.props.body}</Modal.Body>
+          <Modal.Body>{this.props.body}</Modal.Body>
 
-                    <Modal.Footer>
-                        <Button variant="secondary" onClick={() => this.whenClosing()}>
-                            {this.props.close}
-                        </Button>
+          <Modal.Footer>
+            <Button variant="secondary" onClick={() => this.whenClosing()}>
+              {this.props.close}
+            </Button>
 
-                        <Button variant="primary" onClick={() => this.whenAccepting()}>
-                            {this.props.accept}
-                        </Button>
+            <Button variant="primary" onClick={() => this.whenAccepting()}>
+              {this.props.accept}
+            </Button>
 
-                    </Modal.Footer>
+          </Modal.Footer>
 
-                </Modal>
-            </div>
-        )
-    }
+        </Modal>
+      </div>
+    )
+  }
 }
 
 
