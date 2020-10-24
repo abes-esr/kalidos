@@ -211,6 +211,22 @@
                 "value":["020", "050"],
                 "match":"one",
                 "message": "9XX $5= 020, 050 (FAIL TEST)"
+            },
+            {
+                "index": 41,
+                "number": 941,
+                "code":"5",
+                "value":["020", "050"],
+                "match":"one",
+                "message": "941 $5= 020, 050 (FAIL TEST)"
+            },
+            {
+                "index": 42,
+                "number": 941,
+                "code":"a",
+                "value":["^((?!020).)*$", "^((?!20130524).)*$"],
+                "match":"all",
+                "message": "941 $a != 020, 20130524 (FAIL TEST)"
             }
         ],
         "dependances": [

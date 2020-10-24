@@ -1,5 +1,5 @@
 var Matching = function () {
-    const findDataField = function (datafields,number) {
+    const findDataField = function (datafields, number) {
         let retour = null
         datafields.forEach(function (field) {
             if (field._attributes.tag === number) {
@@ -25,7 +25,25 @@ var Matching = function () {
                 if (field.subfield instanceof Array) {
                     field.subfield.forEach(function (subfield) {
                         if (subfield._attributes.code === regle.code || regle.number === "GLOBAL") {
-                            if (!regex.test(subfield._text)) {
+                            if(regle.index === 42) {
+                                console.log("field : " ,subfield._text)
+                                console.log("value : ",regle.value)
+                            }
+                            if (regle.match === "all" && !matchAll(subfield._text,regle.value)) {
+                                resultJson.errors.push({
+                                    message: regle.message,
+                                    number: regle.number,
+                                    code: regle.code
+                                });
+                            }
+                            else if (regle.match === "one" && !matchOne(subfield._text,regle.value)) {
+                                resultJson.errors.push({
+                                    message: regle.message,
+                                    number: regle.number,
+                                    code: regle.code
+                                });
+                            }
+                            else if (!regex.test(subfield._text)) {
                                 resultJson.errors.push({
                                     message: regle.message,
                                     number: regle.number,
@@ -36,7 +54,21 @@ var Matching = function () {
                     });
                 } else {
                     if (field.subfield._attributes.code === regle.code || regle.number === "GLOBAL") {
-                        if (!regex.test(field.subfield._text)) {
+                        if (regle.match === "all" && !matchAll(field,regle.value)) {
+                            resultJson.errors.push({
+                                message: regle.message,
+                                number: regle.number,
+                                code: regle.code
+                            });
+                        }
+                        else if (regle.match === "one" && !matchOne(field,regle.value)) {
+                            resultJson.errors.push({
+                                message: regle.message,
+                                number: regle.number,
+                                code: regle.code
+                            });
+                        }
+                        else if (!regex.test(field.subfield._text)) {
                             resultJson.errors.push({
                                 message: regle.message,
                                 number: regle.number,
@@ -48,6 +80,26 @@ var Matching = function () {
             }
         });
     }
+
+    var matchAll = function (textField,value) {
+        for (j in value) {
+            //console.log(value[j] , " : " , field.subfield[i]._text , " -> " , !RegExp(value[j]).test(field.subfield[i]._text))
+            if (!RegExp(value[j]).test(textField)) {
+                return false
+            }
+        }
+        return true;
+    }
+
+    var matchOne = function (textField,value) {
+        for (j in value) {
+            if (RegExp(value[j]).test(textField)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
     var testMatchRegexNumberArray = function (regle, datafields, resultJson) {
         let valid = regle.number.length
         let numberError = []
@@ -61,22 +113,10 @@ var Matching = function () {
                 for (i in field.subfield) {
                     if (field.subfield[i]._attributes.code === regle.code) {
                         if (regle.match === "all") {
-                            matchvalid = true;
-                            for (j in value) {                            
-                                if (!RegExp(value[j]).test(field.subfield[i]._text)) {
-                                    matchvalid = false;
-                                    break;
-                                }
-                            }
+                            matchvalid = matchAll(field.subfield[i]._text,value)
                         }
                         else if (regle.match === "one") {
-                            matchvalid = false
-                            for (j in value) {
-                                if (RegExp(value[j]).test(field.subfield[i]._text)) {
-                                    matchvalid = true;
-                                    break;
-                                }
-                            }
+                            matchvalid = matchOne(field.subfield[i]._text,value)
                         }
                         if (matchvalid) {
                             valid -= 1
@@ -89,21 +129,10 @@ var Matching = function () {
                 if (field.subfield._attributes.code === regle.code) {
                     matchvalid = true;
                     if (regle.match === "all") {
-                        for (j in value) {
-                            if (!RegExp(value[j]).test(field.subfield._text)) {
-                                matchvalid = false;
-                                break;
-                            }
-                        }
+                        matchvalid = matchAll(field.subfield._text,value)
                     }
                     else if (regle.match === "one") {
-                        matchvalid = false
-                        for (j in value) {
-                            if (RegExp(value[j]).test(field.subfield._text)) {
-                                matchvalid = true;
-                                break;
-                            }
-                        }
+                        matchvalid = matchOne(field.subfield._text,value)
                     }
                     if (matchvalid) {
                         valid -= 1
@@ -119,9 +148,16 @@ var Matching = function () {
             }
         }
         if (valid > 0) {
+            let errors = "";
+            for (str in numberError) {
+                errors += numberError[str];
+                if(str < numberError.length - 1) {
+                    errors += " , ";
+                } 
+            }
             resultJson.errors.push({
                 message: message,
-                number: numberError
+                number: errors
             });
         }
 
