@@ -1,20 +1,15 @@
-import React from 'react';
-import Card4 from '../Générique/Card_4';
-import Card8 from '../Générique/Card_8';
+import { Card, ListGroup, Badge, Row } from 'react-bootstrap';
+import Pagination from '@material-ui/lab/Pagination';
+import style from '../../style.css';
 import { withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
-import { Card, ListGroup, Table, Badge, Row } from 'react-bootstrap';
+import React from 'react';
 import { setPPNDisplay, setNumPage, setRecherchePPN } from '../../actions/index';
-import Pagination from '@material-ui/lab/Pagination';
 
-import style from '../../style.css';
 
 const mapStateToProps = (state) => ({
-    result: state.result,
-    compteurResult: state.compteurResult,
     PPNDisplay: state.displayVerif.PPNDisplay,
     numPage: state.displayVerif.numPage,
-    recherchePPN: state.displayVerif.recherchePPN,
 });
 
 
@@ -78,8 +73,8 @@ function TabPPN({ listPPN, SetPPNDisplay, SetNumPage, numPage, SetRecherchePPN, 
                             if (PPNDisplay == row[1].PPN) {
                                 styleBackground = {
                                     backgroundColor: '#f2f2f2',
-                                    color:'#757A8C',
-                                    fontWeight:'bold',
+                                    color: '#757A8C',
+                                    fontWeight: 'bold',
                                 }
                             }
                             return (
@@ -111,62 +106,4 @@ function TabPPN({ listPPN, SetPPNDisplay, SetNumPage, numPage, SetRecherchePPN, 
     );
 }
 
-let idTrTabPPNError = 0;
-function TabPPNError({ result, PPNDisplay }) {
-    if (PPNDisplay === 0) {
-        return ('');
-    }
-    return (
-        <Table striped bordered hover>
-            <thead>
-                <tr>
-                    <th>Message d'erreur</th>
-                    <th>Numéro</th>
-                    <th>Code</th>
-                </tr>
-            </thead>
-            <tbody>
-                {
-                    result[PPNDisplay].errors.map((error) => {
-                        idTrTabPPNError++;
-                        return (
-                            <tr key={idTrTabPPNError}>
-                                <td>{error.message}</td>
-                                <td>{error.number}</td>
-                                <td>{error.code}</td>
-                            </tr>);
-                    })
-                }
-            </tbody>
-        </Table>
-    );
-}
-
-
-function TempInterfaceVerif({ result, PPNDisplay, SetPPNDisplay, SetNumPage, numPage, SetRecherchePPN, recherchePPN }) {
-    const data = Object.keys(result).map((key) => [Number(key), result[key]]);
-    const listPPNWithError = data.filter((row) => { return row[1].errors.length });
-    const listPPNWithGoodName = listPPNWithError.filter((row) => { return row[1].PPN.toString().includes(recherchePPN) });
-    return (
-        <div>
-            <h2>Interface de Verification</h2>
-            <br></br>
-            <div className="row">
-                <Card4 title={'Tableau PPN'} content={
-                    <TabPPN
-                        listPPN={listPPNWithGoodName}
-                        SetNumPage={SetNumPage}
-                        numPage={numPage}
-                        SetPPNDisplay={SetPPNDisplay}
-                        SetRecherchePPN={SetRecherchePPN}
-                        PPNDisplay={PPNDisplay}
-                    />
-                } />
-                <Card8 title={'Erreur sur le PPN'} content={<TabPPNError result={result} PPNDisplay={PPNDisplay} />} />
-            </div>
-        </div>
-    );
-}
-
-export default withRouter(connect(mapStateToProps, mapDispatchToProps)(TempInterfaceVerif));
-
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(TabPPN));

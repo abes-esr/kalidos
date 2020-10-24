@@ -11,6 +11,63 @@ var Structurel = function () {
         return retour;
     }
 
+    function verifyRequire(type, retour) {
+        return type === "required" && retour == null;
+    }
+
+    function verifyExclude(type, retour) {
+        return type === "exclude" && retour != null
+    }
+
+    function verifyRequireOne(regle, datafields) {
+        if (regle.type === "required one") {
+            for (item in regle.number) {
+                if (findDataField(datafields, regle.number[item]) != null) {
+                    return false;
+                }
+            }
+            return true;
+        }
+        return false;
+    }
+
+    function verifyContainsCode(regle, datafields) {
+        if (regle.type == "contains code") {
+            let valid = regle.number.length;
+            let numberError = [];
+            for (item in regle.number) {
+                const field = findDataField(datafields, regle.number[item])
+                numberError.push(regle.number[item]);
+                
+                if (field != null && field.subfield instanceof Array) {
+                    for (i in field.subfield) {
+                        if (field.subfield[i]._attributes.code === regle.code) {
+                            if (regle.type == "contains code") {
+                                valid -= 1;
+                                numberError.pop();
+                                break;
+                            }
+                        }
+                    }
+                } else if (field != null) {
+                    if (field.subfield._attributes.code === regle.code) {
+                        if (regle.type == "contains code") {
+                            valid -= 1;
+                            numberError.pop();
+                        }
+                    }
+                } else {
+                    valid -= 1;
+                    numberError.pop();
+                }
+                if (field != null && !valid) {
+                    break;
+                }
+            }
+            return valid>0;
+        }
+    }
+
     var testMatchStructurelRules = function (rules, controlfields, datafields, resultJson) {
         /*"number": "181",
                 "ind1":"",
@@ -27,82 +84,28 @@ var Structurel = function () {
             const type = regle.type
             const value = regle.value
             const message = regle.message
+            let number = undefined;
+
+            let isPushInJson = false;
 
             if (regle.number.length == 1) {
-                const number = regle.number[0]
+                number = regle.number[0]
                 let retour = findDataField(datafields, number)
                 // contrainte sur le number
                 if (ind1 === "" && ind2 === "" && code === "") {
-                    if (regle.type === "required") {
-                        if (retour == null) {
-                            resultJson.errors.push({
-                                message: message,
-                                number: number
-                            });
-                        }
-                    } else if (regle.type === "exclude") {
-                        if (retour != null) {
-                            resultJson.errors.push({
-                                message: message,
-                                number: number
-                            });
-                        }
-                    }
+                    isPushInJson = isPushInJson || verifyRequire(type, retour);
+                    isPushInJson = isPushInJson || verifyExclude(type, retour);
                 }
             } else {
-                if (regle.type === "required one") {
-                    let foundOne = false;
-                    for (item in regle.number) {
-                        if (findDataField(datafields, regle.number[item]) != null) {
-                            foundOne = true
-                            break;
-                        }
-                    }
-                    if (!foundOne) {
-                        resultJson.errors.push({
-                            message: message,
-                            number: number
-                        });
-                    }
-                }
-                if (regle.type == "contains code" ) {
-                    let valid = regle.number.length
-                    let numberError = []
-                    for (item in regle.number) {
-                        const field = findDataField(datafields, regle.number[item])
-                        numberError.push(regle.number[item])
-                        if (field != null && field.subfield instanceof Array) {
-                            for (i in field.subfield) {
-                                if (field.subfield[i]._attributes.code === regle.code) {
-                                    if (regle.type == "contains code") {
-                                        valid -= 1
-                                        numberError.pop()
-                                        break;
-                                    } 
-                                }
-                            }
-                        } else if (field != null) {
-                            if (field.subfield._attributes.code === regle.code) {
-                                if (regle.type == "contains code") {
-                                    valid -= 1
-                                    numberError.pop()
-                                } 
-                            }
-                        } else {
-                            valid -= 1
-                            numberError.pop()
-                        }
-                        if (field != null && !valid) {
-                            break;
-                        }
-                    }
-                    if (valid > 0) {
-                        resultJson.errors.push({
-                            message: message,
-                            number: numberError
-                        });
-                    }
-                }
+                isPushInJson = isPushInJson || verifyRequireOne(regle, datafields); 
+                isPushInJson = isPushInJson || verifyContainsCode(regle, datafields);                 
+            }
+
+            if(isPushInJson) {
+                resultJson.errors.push({
+                    message: message,
+                    number: number
+                });
             }
 
 

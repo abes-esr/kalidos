@@ -2,7 +2,8 @@ const axios = require('axios');
 const convert = require("xml-js");
 import { cleanResult, addErrorPPN, setNombreTotalPPN } from '../actions/index';
 import store from '../store/index';
-const Regex = require("./Regex");
+const Matching = require("./Matching");
+const Structurel = require("./Structurel");
 
 const PPN_EN_DUR = '169450546'
 const CATEGORIE = "Generale";
@@ -25,7 +26,7 @@ const REGEXENDUR = ".*^(NOM).*";
 
 function verifiyRulesByTextArea() {
     store.dispatch(cleanResult());
-    window.location += 'tempInterfaceVerif';
+    window.location += 'interfaceVerif';
     const listPPN = document.getElementById("textAreaSaisie").value.split("\n").filter(x=>x!='');
     store.dispatch(setNombreTotalPPN(listPPN.length));
     getRules(listPPN);
@@ -152,47 +153,16 @@ function getRules(listPPN) {
 
 function verifMain(rules, sudoc) {
 
-    const leader = sudoc.record.leader;
+    // const leader = sudoc.record.leader;
     const controlfields = sudoc.record.controlfield;
     const datafields = sudoc.record.datafield;
     let resultJson = {
         PPN: controlfields[0]._text,
         errors: [],
     };
+    Matching.testMatchRegexRules(rules,controlfields,datafields , resultJson)
+    Structurel.testMatchStructurelRules(rules,controlfields,datafields , resultJson)
 
-
-    rules.Generale.matching.forEach(function (regle) {
-        const regex = RegExp(regle.regex);
-        datafields.forEach(function (field) {
-
-            if (field._attributes.tag.toString() === regle.number.toString() || regle.number === "GLOBAL") {
-                if (field.subfield instanceof Array) {
-                    field.subfield.forEach(function (subfield) {
-                        if (subfield._attributes.code === regle.code || regle.number === "GLOBAL") {
-                            if(!regex.test(subfield._text)) {
-                                resultJson.errors.push({
-                                    message: regle.message,
-                                    number: regle.number,
-                                    code: regle.code
-                                });
-                            }          
-                        }
-                    });
-                } else {
-                    if (field.subfield._attributes.code === regle.code || regle.number === "GLOBAL") {
-                        if(!regex.test(field.subfield._text)) {
-                            resultJson.errors.push({
-                                message: regle.message,
-                                number: regle.number,
-                                code: regle.code
-                            });
-                        }
-
-                    }
-                }
-            }
-        });
-    });
 
     store.dispatch(addErrorPPN(resultJson));
     //addRule(CATEGORIE,TYPE,NEWRULE)
