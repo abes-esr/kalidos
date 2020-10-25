@@ -4,6 +4,9 @@ import Card8 from '../Générique/Card_8';
 import TabPPN from './TabPPN';
 import TabPPNError from './TabPPNError';
 import { connect } from 'react-redux';
+import { MDBIcon } from 'mdbreact';
+import { Button } from 'react-bootstrap';
+
 
 const mapStateToProps = (state) => ({
     result: state.result,
@@ -17,7 +20,12 @@ function InterfaceVerif({ result, recherchePPN, compteurResult }) {
     const listPPNWithGoodName = listPPNWithError.filter((row) => { return row[1].PPN.toString().includes(recherchePPN) });
     return (
         <div>
-            <h2>Interface de Verification</h2>
+            <h2>
+                Interface de Verification
+                <Button variant="success" style={{float:"right"}}>
+                    <MDBIcon far icon="file-excel" />
+                </Button>
+            </h2>
             <br></br>
             <div className="row">
                 <Card4 title={'Tableau PPN'} content={<TabPPN listPPN={listPPNWithGoodName} />} />
