@@ -5,13 +5,15 @@ import BootstrapTable from 'react-bootstrap-table-next';
 import ToolkitProvider, { Search } from 'react-bootstrap-table2-toolkit';
 import paginationFactory from 'react-bootstrap-table2-paginator';
 import 'react-bootstrap-table2-paginator/dist/react-bootstrap-table2-paginator.min.css';
-import { Col, Container, Row } from 'react-bootstrap';
+import { Button, Col, Container, Form, Row } from 'react-bootstrap';
+import ModalForm from './ModalForm';
 
 function Table() {
-  
+
   const [error, setError] = useState(null);
   const [isLoaded, setIsLoaded] = useState(false);
   const [rules, setRules] = useState([]);
+  const [types, setTypes] = useState([]);
   const { SearchBar } = Search;
 
   const options = {
@@ -33,13 +35,18 @@ function Table() {
 
   const filtering = (result) => {
     let rules = []
+    let types = []
     for (const type in result) { // type => {Generale, Memoire, Electronique}
+      types.push(type)
       /***************************************************************
        *     IF TO REMOVE ONCE MEMORE AND ELECTRONIQUE ARE ADDED
        ***************************************************************/
       if (type == "Generale") {
         for (const property in result[type]) {
           let filter = result[type][property].map((r) => {
+            if (Array.isArray(r.number))
+              r.number = r.number.toString()
+
             r.type = type
             r.action = ""
             delete r.regex
@@ -50,13 +57,25 @@ function Table() {
         }
       }
     }
+    setTypes(types)
     return rules
   };
 
   const deleting = (row) => {
     setRules(rules.filter(rule => rule.index != row.index))
-    console.log(rules)
   }
+
+  const accepting = (row) => {
+    const index = rules.findIndex(r => r.index == row.index)
+    let tmp = rules;
+    tmp[index].type = document.getElementById("formType").value
+    tmp[index].number = document.getElementById("formNumber").value
+    tmp[index].code = document.getElementById("formCode").value
+    tmp[index].message = document.getElementById("formMessage").value
+    console.log(tmp[index])
+    setRules(tmp)
+  }
+
   const columns = [
     {
       dataField: 'type',
@@ -92,20 +111,39 @@ function Table() {
         return { width: '10%', whiteSpace: 'nowrap' };
       },
       formatter: (cell, row, rowIndex) => {
-        console.log(cell)
-        console.log(row)
-        console.log(rowIndex)
+        const optionsType = types.map(type => <option key={type}> {type} </option>)
+        const editForm = (() => (
+          <div>
+            <Form.Group controlId="formType">
+              <Form.Label>Type</Form.Label>
+              <Form.Control as="select">{optionsType}</Form.Control>
+            </Form.Group>
+            <Form.Group controlId="formNumber">
+              <Form.Label>Number</Form.Label>
+              <Form.Control placeholder={row.number} defaultValue={row.number} />
+            </Form.Group>
+            <Form.Group controlId="formCode">
+              <Form.Label>Code</Form.Label>
+              <Form.Control placeholder={row.code} defaultValue={row.code} />
+            </Form.Group>
+            <Form.Group controlId="formMessage">
+              <Form.Label>Message</Form.Label>
+              <Form.Control placeholder={row.message} defaultValue={row.message} />
+            </Form.Group>
+          </div>
+        ))
         return (
           <Container fluid>
             <Row>
               <Col>
-                <Modal
+                <ModalForm
                   button="V"
                   buttonColor="primary"
                   title="Edit"
                   close="Cancel"
                   accept="Save changes"
-                  accepting={() => console.log("edit rule")}
+                  body={editForm()}
+                  accepting={() => accepting(row)}
                 />
               </Col>
               <Col>
@@ -152,8 +190,12 @@ function Table() {
           props => (
             <div>
               <SearchBar {...props.searchProps} />
+              <Button className="float-right" variant="primary" onClick={() => console.log("Adding rule")}>
+                Add Rule
+                </Button>
               <hr />
               <BootstrapTable {...props.baseProps} pagination={paginationFactory(options)} />
+
             </div>
           )
         }

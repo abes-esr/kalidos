@@ -1,7 +1,7 @@
 import React from 'react'
-import { Button, Modal } from 'react-bootstrap'
+import { Button, Form, Modal } from 'react-bootstrap'
 
-class BootstrapModal extends React.Component {
+class BootstrapModalForm extends React.Component {
 
   constructor() {
     super()
@@ -40,19 +40,20 @@ class BootstrapModal extends React.Component {
           <Modal.Header closeButton onClick={() => this.whenClosing()}>
             <Modal.Title>{this.props.title}</Modal.Title>
           </Modal.Header>
+          <Form>
+            <Modal.Body>{this.props.body}</Modal.Body>
 
-          <Modal.Body>{this.props.body}</Modal.Body>
+            <Modal.Footer>
+              <Button variant="secondary" onClick={() => this.whenClosing()}>
+                {this.props.close}
+              </Button>
 
-          <Modal.Footer>
-            <Button variant="secondary" onClick={() => this.whenClosing()}>
-              {this.props.close}
-            </Button>
+              <Button variant="primary" onClick={() => this.whenAccepting()} type="submit">
+                {this.props.accept}
+              </Button>
 
-            <Button variant="primary" onClick={() => this.whenAccepting()}>
-              {this.props.accept}
-            </Button>
-
-          </Modal.Footer>
+            </Modal.Footer>
+          </Form>
 
         </Modal>
       </div>
@@ -61,4 +62,4 @@ class BootstrapModal extends React.Component {
 }
 
 
-export default BootstrapModal;
+export default BootstrapModalForm;
