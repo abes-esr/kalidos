@@ -13,7 +13,7 @@ function Table() {
   const [error, setError] = useState(null);
   const [isLoaded, setIsLoaded] = useState(false);
   const [rules, setRules] = useState([]);
-  const [types, setTypes] = useState([]);
+  const [category, setCategory] = useState([]);
   const { SearchBar } = Search;
 
   const options = {
@@ -35,18 +35,19 @@ function Table() {
 
   const filtering = (result) => {
     let rules = []
-    let types = []
-    for (const type in result) { // type => {Generale, Memoire, Electronique}
-      types.push(type)
+    let categories = []
+    for (const category in result) { // category => {Generale, Memoire, Electronique}
+      categories.push(category)
       /***************************************************************
        *     IF TO REMOVE ONCE MEMORE AND ELECTRONIQUE ARE ADDED
        ***************************************************************/
-      if (type == "Generale") {
-        for (const property in result[type]) {
-          let filter = result[type][property].map((r) => {
+      if (category == "Generale") {
+        for (const type in result[category]) {
+          let filter = result[category][type].map((r) => {
             if (Array.isArray(r.number))
               r.number = r.number.toString()
 
+            r.category = category
             r.type = type
             r.action = ""
             delete r.regex
@@ -57,29 +58,61 @@ function Table() {
         }
       }
     }
-    setTypes(types)
+    setCategory(categories)
     return rules
   };
 
+  /**
+   * Deletes a rule from the table
+   * @param {*} row 
+   */
   const deleting = (row) => {
+    var headers = new Headers();
+    headers.set("index", row.index)
+    fetch("http://localhost:3000/rules", {
+      method:'DELETE',
+      headers:headers
+    })
+      .then(res => console.log(res))
     setRules(rules.filter(rule => rule.index != row.index))
   }
 
-  const accepting = (row) => {
+  /**
+   * Edits a row on the table
+   * @param {*} row 
+   */
+  const editing = (row) => {
     const index = rules.findIndex(r => r.index == row.index)
-    let tmp = rules;
-    tmp[index].type = document.getElementById("formType").value
-    tmp[index].number = document.getElementById("formNumber").value
-    tmp[index].code = document.getElementById("formCode").value
-    tmp[index].message = document.getElementById("formMessage").value
-    console.log(tmp[index])
-    setRules(tmp)
+    console.log(row)
+    rules[index].type = document.getElementById("formType").value
+    rules[index].number = document.getElementById("formNumber").value
+    rules[index].code = document.getElementById("formCode").value
+    rules[index].message = document.getElementById("formMessage").value
+    setRules(rules)
+    var headers = new Headers();
+    headers.set("index", row.index)
+    headers.set("Content-Type", "application/json")
+    let rule = rules[index]
+    delete rule.category
+    delete rule.type
+    delete rule.action
+    fetch("http://localhost:3000/rules", {
+      method:'PUT', 
+      headers:headers,
+      body: JSON.stringify(rule)
+    })
+      .then(res => console.log(res))
+    console.log(rules)
+  }
+
+  const adding = () => {
+
   }
 
   const columns = [
     {
-      dataField: 'type',
-      text: 'type',
+      dataField: 'category',
+      text: 'category',
       headerStyle: (colum, colIndex) => {
         return { width: '15%', whiteSpace: 'nowrap' };
       }
@@ -110,13 +143,13 @@ function Table() {
       headerStyle: (colum, colIndex) => {
         return { width: '10%', whiteSpace: 'nowrap' };
       },
-      formatter: (cell, row, rowIndex) => {
-        const optionsType = types.map(type => <option key={type}> {type} </option>)
+      formatter: (cell, row) => {
+        const optionsCat = category.map(c => <option key={c}> {c} </option>)
         const editForm = (() => (
           <div>
             <Form.Group controlId="formType">
-              <Form.Label>Type</Form.Label>
-              <Form.Control as="select">{optionsType}</Form.Control>
+              <Form.Label>Category</Form.Label>
+              <Form.Control as="select">{optionsCat}</Form.Control>
             </Form.Group>
             <Form.Group controlId="formNumber">
               <Form.Label>Number</Form.Label>
@@ -139,17 +172,19 @@ function Table() {
                 <ModalForm
                   button="V"
                   buttonColor="primary"
+                  buttonSize="sm"
                   title="Edit"
                   close="Cancel"
                   accept="Save changes"
                   body={editForm()}
-                  accepting={() => accepting(row)}
+                  accepting={() => editing(row)}
                 />
               </Col>
               <Col>
                 <Modal
                   button="X"
                   buttonColor="danger"
+                  buttonSize="sm"
                   title="Delete"
                   close="Cancel"
                   body="Are you sure you want to delete this rule?"
@@ -190,9 +225,18 @@ function Table() {
           props => (
             <div>
               <SearchBar {...props.searchProps} />
-              <Button className="float-right" variant="primary" onClick={() => console.log("Adding rule")}>
-                Add Rule
-                </Button>
+              <Col>
+                <Modal
+                  button="Add rule"
+                  buttonColor="primary"
+                  buttonSize="md"
+                  title="Add Rule"
+                  close="Cancel"
+                  body="Working on it..."
+                  accept="Add rule"
+                  accepting={() => console.log("ADD RULE")}
+                />
+              </Col>
               <hr />
               <BootstrapTable {...props.baseProps} pagination={paginationFactory(options)} />
 

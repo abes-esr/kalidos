@@ -31,7 +31,7 @@ class BootstrapModal extends React.Component {
 
     return (
       <div>
-        <Button variant={this.props.buttonColor} size="sm" onClick={() => this.handleModalShowHide()}>
+        <Button variant={this.props.buttonColor} size={this.props.buttonSize} onClick={() => this.handleModalShowHide()}>
           {this.props.button}
         </Button>
 
