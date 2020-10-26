@@ -7,37 +7,42 @@ Dependance
 - 101 $a >=$f
 
 Conditionelle
-- Si 101 ind1=1 il faut au moins un $a et $c
-- Si 101 ind1=0 il ne faut pas $c
-- Si 101 ind1=2 il faut au moins une $a, $b et $c
-- Si 101 ind1=1 il faut une 454
 
-- Si  105 $a Pos. 0-3 = "y" alors 215$c ne doit pas être présent
-- Si 105 $a Pos. 8 = 1 alors il faut aussi une 608 ‎$302886431XActes de congrès
-- Si 105 $a Pos. 8 = 0 alors il ne doit pas y avoir 608 ‎$302886431XActes de congrès
-- Si 105 $a Pos. 10 =1 alors il faut une 320 avec la mention "Index"
-- Si 105 $a Pos. 10 =0 alors il ne doit pas y avoir une 320 avec la mention "Index"
-- Si 105 $a Pos. 4-7 =a alors il faut une 320
-- Si 105 $a Pos. 4-7= t, m, l, q, j, f, e, b ou 7 il faut la présence d'une 608
-- Si 105 $a Pos. 4-7= m ou 7 il faut une 608 $3027253139Thèses et écrits académiques
+    condition structurelle 
 
-- Si 008 = Aax3, présence obligatoire d'une zone 106
-
-- Si 214 #4$d, la zone doit commencer par "C espace"
-- 214 #0 ou 214#1 obligatoire, sauf si 105$b=v
 - Si 214 #1 $d obligatoire
-- Si 214 #0 et $d, doit commencer par "DL espace" ou "[" ou un chiffre
-- Si plusieurs zones 214, doivent respecter l'ordre des chiffres de l'ind2
-- 215 $a et $d obligatoires
-- Si 225 ind1=0 il faut au moins une 410
-
-- Si 225 ind1=0 $a est différent du 410$t
-- Si 225 ind1=2 $a = 410$t
-
 - Si 225 ind1=0 $a alors 410$0 doit être présent
 - Si 225 ind1=2 $a alors 410$0 doit être présent    
 - Si 225 ind1=1 $a alors 461 doit être présent
 - Si 225 ind1=2 il faut au moins une 410
+- Si 101 ind1=1 il faut au moins un $a et $c
+- Si 101 ind1=0 il ne faut pas $c
+- Si 101 ind1=2 il faut au moins une $a, $b et $c
+- Si 101 ind1=1 il faut une 454
+- Si  105 $a Pos. 0-3 = "y" alors 215$c ne doit pas être présent
+- Si 225 ind1=0 il faut au moins une 410
+- Si 105 $a Pos. 4-7 =a alors il faut une 320
+- Si 105 $a Pos. 4-7= t, m, l, q, j, f, e, b ou 7 il faut la présence d'une 608
+- Si 008 = Aax3, présence obligatoire d'une zone 106
+
+- 214 #0 ou 214#1 obligatoire, sauf si 105$b=v <=> SI 105$b != v , 214 #0 ou 214#1 obligatoire
+
+    condition structurelle + matching
+- Si 105 $a Pos. 8 = 1 alors il faut aussi une 608 ‎$302886431XActes de congrès
+- Si 105 $a Pos. 8 = 0 alors il ne doit pas y avoir 608 ‎$302886431XActes de congrès
+- Si 105 $a Pos. 10 =1 alors il faut une 320 avec la mention "Index"
+- Si 105 $a Pos. 10 =0 alors il ne doit pas y avoir une 320 avec la mention "Index"
+- Si 214 #4$d, la zone doit commencer par "C espace"
+- Si 214 #0 et $d, doit commencer par "DL espace" ou "[" ou un chiffre
+- Si 105 $a Pos. 4-7= m ou 7 il faut une 608 $3027253139Thèses et écrits académiques
+
+    condition structurelle + dependance
+- Si 225 ind1=0 $a est différent du 410$t
+- Si 225 ind1=2 $a = 410$t
+
+???
+- Si plusieurs zones 214, doivent respecter l'ordre des chiffres de l'ind2
+
 
 AJAX 
 - Si 600$a, vérifier dans Idref, à partir de l'identifiant $3, que 008 =Tp
