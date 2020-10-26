@@ -232,13 +232,31 @@
         "dependances": [
             {
                 "index": 2,
-                "number": 203,
-                "code": "4",
-                "message": "dépendance champ : 204-c",
-                "depend": {
-                    "number": 204,
-                    "code": "c"
-                }
+                "field1": {
+                    "number":100,
+                    "code":"a"
+                },
+                "field2": {
+                    "number":214,
+                    "code":"d"
+                },
+                "operator": "equals",
+                "message": "100$a = 214$d"
+               
+            },
+            {
+                "index": 43,
+                "field1": {
+                    "number":100,
+                    "code":"a"
+                },
+                "field2": {
+                    "number":101,
+                    "code":"a"
+                },
+                "operator": "equals",
+                "message": "100$a = 101$a (FAIL TEST)"
+               
             }
         ],
         "Conditionnels": [
