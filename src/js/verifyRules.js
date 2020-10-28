@@ -66,7 +66,7 @@ function writeResult() {
             "Accept": "application/json",
         },
         data: store.getState().result,
-        port:9091,
+        port:3000,
     }).then(function () {
         //console.log("ok")
     })
@@ -87,7 +87,7 @@ function deleteRule(index) {
             "Accept": "application/json",
             "index": index,
         },
-        port:9091,
+        port:3000,
     }).then(function () {
         console.log("suppression ok")
     })
@@ -104,7 +104,7 @@ function updateRule(index, newRule) {
             'Content-Type': 'application/json',
             "index": index
         },
-        port:9091,
+        port:3000,
     }).then(function () {
         console.log("modification ok")
     }).catch(function (error) {
@@ -123,7 +123,7 @@ function addRule(categorie, type, rule) {
             "type": type
         },
         data: rule,
-        port:9091,
+        port:3000,
     }).then(function () {
         console.log("ok")
     })
@@ -136,7 +136,7 @@ function addRule(categorie, type, rule) {
 }
 
 function getRules(listPPN) {
-    axios.get('/rules',{port:9091})
+    axios.get('/rules',{port:3000})
         .then(function (response) {
 
             listPPN.forEach(PPN => getSudoc(response.data, PPN));
