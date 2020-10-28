@@ -36,21 +36,15 @@ const Router_App = () => (
                     </Link>
                 </li>
                 <li className="nav-item">
-                    <Link to="/examplePage2" className="nav-link">
-                        <i className="fas fa-fw fa-cog"></i>
-                        <span>ExamplePage2</span>
-                    </Link>
-                </li>
-                <li className="nav-item">
-                    <Link to="/examplePage3" className="nav-link">
-                        <i className="fas fa-fw fa-wrench"></i>
-                        <span>ExamplePage3</span>
-                    </Link>
-                </li>
-                <li className="nav-item">
                     <Link to="/interfaceVerif" className="nav-link">
                         <i className="fas fa-fw fa-wrench"></i>
                         <span>InterfaceVerif</span>
+                    </Link>
+                </li>
+                <li className="nav-item">
+                    <Link to="/interfaceRegles" className="nav-link">
+                        <i className="fas fa-fw fa-wrench"></i>
+                        <span>Interface des règles</span>
                     </Link>
                 </li>
             </ul>
