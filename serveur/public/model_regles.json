@@ -259,32 +259,201 @@
                
             }
         ],
-        "Conditionnels": [
+        "ConditionStructurel": [
             {
-                "index": 3,
-                "number": "",
-                "operator": "and",
-                "parameter1": "Aax",
-                "parameter2": "461",
-                "or": [
-                    "305",
-                    "225"
+                "condition" : {
+                    "number": "101",
+                    "verif" : [
+                        {
+                            "operator": "equals",
+                            "number" : "101",
+                            "code" : "",
+                            "ind1" : "1",
+                            "ind2" : ""
+                        }],
+
+                    "value": [
+                        {
+                            "number" : "101",
+                            "code" : "a"
+                        },
+                        {
+                            "number" : "101",
+                            "code" : "c"
+                        }
+                    ],
+                    "type": "allRequired"
+
+                },
+                "index": 44,
+                "number": "101",
+                "message": "Si 101 ind1=1 il faut au moins un $a et $c"
+            },
+
+            {
+            "condition" : {
+                "number": "101",
+                "verif" : [
+                    {
+                        "operator": "equals",
+                        "number" : "101",
+                        "code" : "",
+                        "ind1" : "0",
+                        "ind2" : ""
+                    }],
+
+                "value": [
+                    {
+                        "number" : "101",
+                        "code" : "c"
+                    }
                 ],
-                "and": [],
-                "message": "Si Aax et 461 il doit y avoir une 305 ou 225"
+                "type": "notRequired"
+
+            },
+            "index": 45,
+            "number": "101",
+            "message": "Si 101 ind1=0 il ne faut pas $c"
+        },
+        {
+                "condition" : {
+                    "number": "101",
+                    "verif" : [
+                        {
+                            "operator": "equals",
+                            "number" : "101",
+                            "code" : "",
+                            "ind1" : "2",
+                            "ind2" : ""
+                        }],
+
+                    "value": [
+                        {
+                            "number" : "101",
+                            "code" : "a"
+                        },
+                        {
+                            "number" : "101",
+                            "code" : "b"
+                        },
+                        {
+                            "number" : "101",
+                            "code" : "c"
+                        }
+                    ],
+                    "type": "allRequired"
+
+                },
+                "index": 46,
+                "number": "101",
+                "message": "Si 101 ind1=2 il faut au moins une $a, $b et $c"
+        },
+            {
+                "condition" : {
+                    "number": "101",
+                    "verif" : [
+                        {
+                            "operator": "equals",
+                            "number" : "101",
+                            "code" : "",
+                            "ind1" : "1",
+                            "ind2" : ""
+                        }],
+
+                    "value": [
+                        {
+                            "number" : "454",
+                            "code" : ""
+                        }
+                    ],
+                    "type": "allRequired"
+
+                },
+                "index": 47,
+                "number": "101",
+                "message": "Si 101 ind1=1 il faut une 454"
             },
             {
-                "index": 4,
+                "condition" : {
+                    "number": "101",
+                    "verif" : [
+                        {
+                            "operator": "equals",
+                            "number" : "101",
+                            "code" : "",
+                            "ind1" : "2",
+                            "ind2" : ""
+                        }],
+
+                    "value": [
+                        {
+                            "number" : "454",
+                            "code" : ""
+                        }
+                    ],
+                    "type": "allRequired"
+
+                },
+                "index": 48,
                 "number": "101",
-                "operator": "equals",
-                "parameter1": "ind1",
-                "parameter2": "1",
-                "or": [],
-                "and": [
-                    "a",
-                    "c"
-                ],
-                "message": "Si 101 ind1=1 il faut au moins un $a et $c"
+                "message": "Si 101 ind1=2 il faut une 454"
+            },
+            {
+                "condition" : {
+                    "number": "225",
+                    "verif" : [
+                        {
+                            "operator": "equals",
+                            "number" : "225",
+                            "code" : "",
+                            "ind1" : "0",
+                            "ind2" : ""
+                        }],
+
+                    "value": [
+                        {
+                            "number" : "410",
+                            "code" : ""
+                        }
+                    ],
+                    "type": "allRequired"
+
+                },
+                "index": 49,
+                "number": "225",
+                "message": "Si 225 ind1=0 il faut au moins une 410"
+            },
+            {
+                "condition" : {
+                    "number": "225",
+                    "verif" : [
+                        {
+                            "operator": "equals",
+                            "number" : "225",
+                            "code" : "",
+                            "ind1" : "0",
+                            "ind2" : ""
+                        },
+                        {
+                            "operator": "presente",
+                            "number" : "225",
+                            "code" : "a",
+                            "ind1" : "",
+                            "ind2" : ""
+                        }],
+
+                    "value": [
+                        {
+                            "number" : "410",
+                            "code" : "0"
+                        }
+                    ],
+                    "type": "allRequired"
+
+                },
+                "index": 50,
+                "number": "225",
+                "message": "Si 225 ind1=0 $a alors 410$0 doit être présent"
             }
         ],
         "Structurel": [
