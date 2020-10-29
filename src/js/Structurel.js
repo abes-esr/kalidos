@@ -58,6 +58,35 @@ var Structurel = function () {
         }
     }
 
+    function verifyIndex(regle, datafields) {
+        if (regle.type == "index") {
+            for (item in regle.number) {
+                let field = Parcours.findDataField(datafields, regle.number[item])
+                if(field._attributes.ind1 !== regle.ind1 && field._attributes.ind2 !== regle.ind2 ) {
+                    return true
+                }        
+            }
+            return false
+
+        }
+    }
+
+
+    function verifyRequiredValue(regle, datafields) {
+        if (regle.type == "required with value") {
+            for (item in regle.number) {
+                let field = Parcours.findDataField(datafields, regle.number[item])
+                let texte = Parcours.getSubfieldValue(field,regle.code)
+                //console.log(texte , " " , regle.value ," -> " ,texte !== regle.value)
+                if(texte !== regle.value ) {
+                    return true
+                }        
+            }
+            return false
+
+        }
+    }
+
     var testMatchStructurelRules = function (rules, controlfields, datafields, resultJson) {
         rules.Generale.Structurel.forEach(function (regle) {
             const ind1 = regle.ind1
@@ -77,6 +106,10 @@ var Structurel = function () {
                 if (ind1 === "" && ind2 === "" && code === "") {
                     isPushInJson = isPushInJson || verifyRequire(type, retour);
                     isPushInJson = isPushInJson || verifyExclude(type, retour);
+                } else if (ind1 != "" && ind2 != ""){
+                    isPushInJson = isPushInJson || verifyIndex(regle, datafields);
+                } else if(code != "") {
+                    isPushInJson = isPushInJson || verifyRequiredValue(regle, datafields);
                 }
             } else {
                 isPushInJson = isPushInJson || verifyRequireOne(regle, datafields); 

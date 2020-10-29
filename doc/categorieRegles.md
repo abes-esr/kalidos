@@ -2,6 +2,7 @@
 
 ### Regex
 ```
+1	x	x	x	x	008	008 doit contenir "x3"		Zone 008 erronée
 3	x	x	x	x	100	100 $a Pos. 22-24 = fre		Zone 104 : langue de catalogage à corriger
 5	x	x	x	x	100	100 ne doit pas contenir le caractère "|"		Données codées à compléter
 20	x	x	x	x	105	105 ne doit pas contenir le caractère "|"		Zone 105 à compléter
@@ -79,32 +80,29 @@
 ```
 ### Structurel
 ```
-1	x	x	x	x	008	008 doit contenir "x3"		Zone 008 erronée
 22	x	x	x	x	181	181 obligatoire		La notice doit contenir au moins une zone 181
 23	x	x	x	x	182	182 obligatoire		La notice doit contenir au moins une zone 182
 24	x	x	x	x	183	183 obligatoire		La notice doit contenir au moins zone 183
 27	x	x	x	x	200	200$b ne doit pas être présente		Zone 200$d : à remplacer par les zones 181, 182 et 183
 32	x	x	x	x	210	210 ne doit pas être présente		Zone 210 à remplacer par 214 (document en main)
-35	x	x	x	x	214	Si 214 #1 $d obligatoire		Zone 214 : une date est obligatoire
 46	x	x	x	x	309	309 ne doit pas être présente		 Supprimer la zone 309 une fois la correction demandée effectuée
 85	x	x	x	x	7XX	7XX obligatoire	7XX = 700, 701, 702, 710, 711, 712, 720, 721 ou 722	Mention d'auteur obligatoire
 86	x	x	x	x	7XX	7XX doit toujours contenir un $3		Zones 7XX : lier à une notice d'autorité
 117		x	x	x	328	328 doit contenir ind1=" " ind2="0"		Zone 328 : revoir la valeur des indicateurs
 118			x		328	328$z  doit pas être présente		Zone 328 incohérente avec le statut de la thèse : une reproduction doit contenir la sous-zone $z
 119		x			328	328$z ne doit pas être présente		Zone 328$z incohérente avec le statut de la thèse
-126		x			608	608$3027253139 doit être présente		Zone 608 : indexation Forme-Genre obligatoire (PPN 027253139)
-
-77	x	x	x	x	6XX	6XX et $2rameau doit contenir $3	6XX = 600, 601, 602, 604, 605, 606, 607, 608	Zones 6XX doivent être liées à une notice d'autorité RAMEAU
-133		x			711	Au moins une 711$3026402823$4295 doit être présente		Zone 711 : université de soutenance doit être présente (711$3026402823$4295)
 145		x			455	455 ne doit pas être présente		Zone 455 incompatible avec le type de thèse (soutenance)
 147			x		456	456 ne doit pas être présente		Zone 456 incompatible avec le type de thèse (reproduction)
 155	x				303	303 doit être présente		Ressource électronique : doit contenir une zone 303
 156	x				339	339 doit être présente		Ressource électronique : doit contenir une zone 339
+
+126		x			608	608$3027253139 doit être présente		Zone 608 : indexation Forme-Genre obligatoire (PPN 027253139)
+
+
 ```
 ### Conditionnel
 ##### condition-regex
 ```
-
 2	x	x	x	x	100	100$a Pos. 9-12 = 214$d	Si 214 #4$d il y aura en plus "C espace" ;  si 214 #0$d il peut y avoir en plus "DL espace"	Dates incohérentes : vérifier zones 100 et 214
 11	x	x	x	x	105	Si  105 $a Pos. 0-3 différent de la valeur "y" alors 215$c ne doit pas être vide		Mention d'illustrations incohérente : vérifier zones 105 et 215
 13	x			x	105	Si 105 $a Pos. 8 = 1 alors il faut aussi une 608 ‎$302886431XActes de congrès		Mention de congrès incohérente : vérifier zones 105 et 608
@@ -140,6 +138,7 @@
 ```
 ##### condition-structurel
 ```
+
 6	x	x	x	x	101	Si 101 ind1=1 il faut au moins un $a et $c		Zone 101 : vérifier l'indicateur et les langues
 7	x	x	x	x	101	Si 101 ind1=0 il ne faut pas $c		Zone 101 : vérifier l'indicateur et les langues
 8	x	x	x	x	101	Si 101 ind1=2 il faut au moins une $a, $b et $c		Zone 101 : vérifier l'indicateur et les langues
@@ -150,12 +149,14 @@
 18	x	x	x	x	105	Si 105 $a Pos. 4-7= t, m, l, q, j, f, e, b ou 7 il faut la présence d'une 608		Zone 608 : indexation Forme-Genre à vérifier
 21		x	x	x	106	Si 008 commence par Aa, présence obligatoire d'une zone 106		Zone 106 à compléter
 34	x	x	x	x	214	214 #0 ou 214#1 obligatoire, sauf si 105$b=v		Zone 214 incohérente : vérifier zones 105 et 214
+35	x	x	x	x	214	Si 214 #1 $d obligatoire		Zone 214 : une date est obligatoire
 38		x	x	x	215	Si 008 commence par Aa, 215 $a et $d obligatoires		Zone 215 : collation obligatoire pour une ressource imprimée
 39	x			x	225	Si 225 ind1=0 il faut au moins une 410		Zone 410 : obligatoire avec une 225
 42	x			x	225	Si 225 ind1=0 $a alors 410$0 doit être présent		Zone 410 : obligatoire avec une 225
 43	x			x	225	Si 225 ind1=2 $a alors 410$0 doit être présent		Zone 410 : obligatoire avec une 225
 44	x			x	225	Si 225 ind1=1 $a alors 461 doit être présent		Zone 461 : obligatoire
 45	x			x	225	Si 225 ind1=2 il faut au moins une 410		Zone 410 : obligatoire avec une 225
+77	x	x	x	x	6XX	6XX et $2rameau doit contenir $3	6XX = 600, 601, 602, 604, 605, 606, 607, 608	Zones 6XX doivent être liées à une notice d'autorité RAMEAU
 92			x		455	Si 328$z"Reproduction de", 455 doit être présente		Vérifier les liens entre la version de soutenance et la reproduction
 93			x		456	Si 328$z"Reproduction de" , 456 ne doit pas être présente		Zone 456 incompatible avec le type de thèse (reproduction)
 105		x	x		101	Si 101$d, 330 doit être présente		Mention de résumé incohérente : vérifier zones 101 et 330
@@ -164,6 +165,7 @@
 152	x	x	x		307	Si 008 commence par Oa, 307 doit être présente		Ressource électronique : doit contenir une zone 307
 153	x	x	x		337	Si 008 commence par Oa, 337 doit être présente		Ressource électronique : doit contenir une zone 337
 154	x	x	x		230	Si 008 commence par Oa, 230 doit être présente		Ressource électronique : doit contenir une zone 230
+
 
 78	x	x	x	x	6XX	6XX $a, $x ou $y doit contenir toujours $3 sauf si $2lc ou $2mesh		Zones 6XX doivent être liées à une notice d'autorité RAMEAU ou Fmesh
 134	x	x	x		856	Si 008 commence par Oa et ne contient pas une 215, une 856 doit être présente		Zone 856 : une ressource électronique doit contenir l'accès
@@ -247,6 +249,7 @@
 102		x	x		100	100 ind1=0		Zone 100 : l'année de soutenance est vraiment incertaine ?
 111			x		214	214 ind2="0" ou ind2="2"		Zone 214 incohérente avec statut de la thèse (reproduction)
 112		x			214	214 ind2="1"		Zone 214 incohérente avec statut de la thèse (soutenance)
+133		x			711	Au moins une 711$3026402823$4295 doit être présente		Zone 711 : université de soutenance doit être présente (711$3026402823$4295)
 ```
 
 

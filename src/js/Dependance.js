@@ -26,7 +26,7 @@ var Dependance = function () {
                 }
 
                 if (regle.operator === "equals") {
-                    console.log(testString1, " === ", testString2, "->", testString1 === testString2)
+                    //console.log(testString1, " === ", testString2, "->", testString1 === testString2)
                     return testString1 === testString2;
                 }
                 else if (regle.operator === "greater") {
