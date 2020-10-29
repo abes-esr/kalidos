@@ -22,7 +22,8 @@ var Parcours = function () {
                 return field.subfield._text
 
             }
-        } else return null
+        } 
+        return null
 
     }
     return {
