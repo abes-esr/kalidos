@@ -319,28 +319,49 @@
             {
                 "index": 2,
                 "field1": {
-                    "number": 100,
-                    "code": "a"
+                    "number": "100",
+                    "code": "a",
+                    "pos":[9,13]
                 },
                 "field2": {
-                    "number": 214,
-                    "code": "d"
+                    "number": "100",
+                    "code": "a",
+                    "pos":[13,17]
                 },
-                "operator": "equals",
-                "message": "100$a = 214$d"
+                "operator": "greaterEquals",
+                "message": "Dates incohérentes : vérifier les dates zone 100",
+                "numRegle" : 4
             },
             {
                 "index": 43,
                 "field1": {
-                    "number": 100,
-                    "code": "a"
+                    "number": "029",
+                    "code": "b",
+                    "pos":[0,4]
                 },
                 "field2": {
-                    "number": 101,
-                    "code": "a"
+                    "number": "328",
+                    "code": "d",
+                    "pos":[]
                 },
                 "operator": "equals",
-                "message": "100$a = 101$a (FAIL TEST)"
+                "message": "Année de soutenance : l'année en 029 et 328 doivent être identiques",
+                "numRegle" : 101
+            },
+            {
+                "index": 43,
+                "field1": {
+                    "number": "210",
+                    "code": "d",
+                    "pos":[]
+                },
+                "field2": {
+                    "number": "328",
+                    "code": "d",
+                    "pos":[0,2]
+                },
+                "operator": "equals",
+                "message": "210$d = 328$d pos1-2 (FAIL TEST)"
             }
         ],
         "Conditionnels": [
