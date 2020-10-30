@@ -1,4 +1,4 @@
-const Parcours = require("./Parcours");
+const Parcours = require("../utile/Parcours");
 
 /* 
 Dependance
@@ -48,8 +48,8 @@ var Dependance = function () {
 
 
 
-    var testMatchDependanceRules = function (rules, controlfields, datafields, resultJson) {
-        rules.Generale.dependances.forEach(function (regle) {
+    var testMatchDependanceRules = function (categorie,rules, controlfields, datafields, resultJson) {
+        rules[categorie].dependances.forEach(function (regle) {
             const field1 = Parcours.findDataField(datafields, regle.field1.number)
             const field2 = Parcours.findDataField(datafields, regle.field2.number)
             if (!applyRuleOnFields(field1, field2, regle)) {

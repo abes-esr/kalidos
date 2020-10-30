@@ -1,9 +1,9 @@
 const axios = require('axios');
 const convert = require("xml-js");
-const Matching = require("./Matching");
-const Structurel = require("./Structurel");
-const Conditionnel = require("./Conditionnel");
-const Dependance = require("./Dependance");
+const Matching = require("../regles/Matching");
+const Structurel = require("../regles/Structurel");
+const Conditionnel = require("../regles/Conditionnel");
+const Dependance = require("../regles/Dependance");
 
 
 let result = {};
@@ -149,14 +149,14 @@ function verifMain(rules, sudoc ) {
         PPN: controlfields[0]._text,
         errors: [],
     };
-    Matching.testMatchRegexRules(rules,controlfields,datafields , resultJson)
-    //console.log("retour Matching : " ,resultJson)
+    Matching.testMatchRegexRules(CATEGORIE,rules,controlfields,datafields , resultJson)
+    console.log("retour Matching : " ,resultJson)
 
     
-    Structurel.testMatchStructurelRules(rules,controlfields,datafields , resultJson)
-    //console.log("retour Structurel : " ,resultJson)
+    Structurel.testMatchStructurelRules(CATEGORIE,rules,controlfields,datafields , resultJson)
+    console.log("retour Structurel : " ,resultJson)
 
-    Dependance.testMatchDependanceRules(rules,controlfields,datafields , resultJson)
+    Dependance.testMatchDependanceRules(CATEGORIE,rules,controlfields,datafields , resultJson)
     console.log("retour Dependance : " ,resultJson)
 
 

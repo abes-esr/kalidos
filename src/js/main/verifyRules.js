@@ -1,9 +1,9 @@
 const axios = require('axios');
 const convert = require("xml-js");
-import { cleanResult, addErrorPPN, setNombreTotalPPN } from '../actions/index';
-import store from '../store/index';
-const Matching = require("./Matching");
-const Structurel = require("./Structurel");
+import { cleanResult, addErrorPPN, setNombreTotalPPN } from '../../actions/index';
+import store from '../../store/index';
+const Matching = require("../regles/Matching");
+const Structurel = require("../regles/Structurel");
 
 const PPN_EN_DUR = '169450546'
 const CATEGORIE = "Generale";
@@ -160,8 +160,8 @@ function verifMain(rules, sudoc) {
         PPN: controlfields[0]._text,
         errors: [],
     };
-    Matching.testMatchRegexRules(rules,controlfields,datafields , resultJson)
-    Structurel.testMatchStructurelRules(rules,controlfields,datafields , resultJson)
+    Matching.testMatchRegexRules(CATEGORIE,rules,controlfields,datafields , resultJson)
+    Structurel.testMatchStructurelRules(CATEGORIE,rules,controlfields,datafields , resultJson)
 
 
     store.dispatch(addErrorPPN(resultJson));

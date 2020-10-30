@@ -1,4 +1,4 @@
-const Parcours = require("./Parcours");
+const Parcours = require("../utile/Parcours");
 
 var Structurel = function () {
     function verifyRequire(type, retour) {
@@ -87,8 +87,8 @@ var Structurel = function () {
         }
     }
 
-    var testMatchStructurelRules = function (rules, controlfields, datafields, resultJson) {
-        rules.Generale.Structurel.forEach(function (regle) {
+    var testMatchStructurelRules = function (categorie,rules, controlfields, datafields, resultJson) {
+        rules[categorie].Structurel.forEach(function (regle) {
             const ind1 = regle.ind1
             const ind2 = regle.ind2
             const code = regle.code
@@ -122,10 +122,8 @@ var Structurel = function () {
                     number: number
                 });
             }
-
-
-
         });
+
 
     }
     return {
