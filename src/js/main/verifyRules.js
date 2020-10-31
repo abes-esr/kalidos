@@ -60,7 +60,7 @@ function getSudoc(rules, PPN) {
 function writeResult() {
     axios({
         method: 'POST',
-        url: ':/result',
+        url: '/result',
         contentType: "application/json",
         headers: {
             "Accept": "application/json",
