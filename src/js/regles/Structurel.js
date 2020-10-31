@@ -62,7 +62,7 @@ var Structurel = function () {
         if (regle.type == "index") {
             for (item in regle.number) {
                 let field = Parcours.findDataField(datafields, regle.number[item])
-                if(field._attributes.ind1 !== regle.ind1 && field._attributes.ind2 !== regle.ind2 ) {
+                if(field != null && field._attributes.ind1 !== regle.ind1 && field._attributes.ind2 !== regle.ind2 ) {
                     return true
                 }        
             }
