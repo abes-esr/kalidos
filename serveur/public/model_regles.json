@@ -599,6 +599,24 @@
                 "numRuleExcell": 126,
                 "index": 51
             }
+        ],
+        "idRef": [
+            {
+                "index": 52,
+                "numRuleExcell": 69,
+                "condition" : {
+                    "number" : "701",
+                    "code" : "a"
+                },
+                "identifiant":{
+                    "code":"3"
+                },
+                "verification" : {
+                    "number" : "008",
+                    "regex": "^Tp.*"
+                },
+                "message": "Incohérence zone 7XX : vérifier l'étiquette et le type de notice d'autorité"
+            }
         ]
     },
     "Mémoire": {
@@ -612,6 +630,9 @@
             {}
         ],
         "Structurel": [
+            {}
+        ],
+        "idRef": [
             {}
         ]
     },
@@ -627,6 +648,10 @@
         ],
         "Structurel": [
             {}
+        ],
+        "idRef": [
+            {}
         ]
+        
     }
 }

@@ -4,6 +4,8 @@ import { cleanResult, addErrorPPN, setNombreTotalPPN } from '../../actions/index
 import store from '../../store/index';
 const Matching = require("../regles/Matching");
 const Structurel = require("../regles/Structurel");
+const Dependance = require("../regles/Dependance");
+const IdRef = require("../regles/IdRef");
 
 const PPN_EN_DUR = '169450546'
 const CATEGORIE = "Generale";
@@ -166,6 +168,8 @@ function verifMain(rules, sudoc) {
     };
     Matching.testMatchRegexRules(CATEGORIE,rules,controlfields,datafields , resultJson)
     Structurel.testMatchStructurelRules(CATEGORIE,rules,controlfields,datafields , resultJson)
+    Dependance.testMatchDependanceRules(CATEGORIE,rules,controlfields,datafields , resultJson)
+    IdRef.testIdRefRules(CATEGORIE,rules,controlfields,datafields , resultJson)
 
 
     store.dispatch(addErrorPPN(resultJson));
