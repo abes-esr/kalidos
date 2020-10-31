@@ -13,7 +13,7 @@ var Parcours = function () {
     const getSubfieldValue = function(field,code) {
         if (field != null && field.subfield instanceof Array) {
             for (i in field.subfield) {
-                if(field.subfield[i]._attributes.code === code) {
+                if(field.subfield[i]._text === code) {
                     return field.subfield[i]._text
                 }
             }
@@ -22,8 +22,7 @@ var Parcours = function () {
                 return field.subfield._text
 
             }
-        } 
-        return null
+        } else return null
 
     }
     return {

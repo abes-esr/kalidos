@@ -1,12 +1,9 @@
 const axios = require('axios');
 const convert = require("xml-js");
-const Matching = require("../regles/Matching");
-const Structurel = require("../regles/Structurel");
-const Conditionnel = require("../regles/Conditionnel");
-const Dependance = require("../regles/Dependance");
-
-
-let result = {};
+import { cleanResult, addErrorPPN, setNombreTotalPPN } from '../actions/index';
+import store from '../store/index';
+const Matching = require("./Matching");
+const Structurel = require("./Structurel");
 
 const PPN_EN_DUR = '169450546'
 const CATEGORIE = "Generale";
@@ -16,7 +13,7 @@ const NEWRULE = {
     "code": "z",
     "message": "NEW RULE",
     "regex": "[A-Z]*[a-z]+"
-};
+}
 
 const NEWRULEMODIFIED = {
     "number": 404,
@@ -25,13 +22,22 @@ const NEWRULEMODIFIED = {
     "regex": "[A-Z]*[a-z]+"
 };
 const INDEX = 5;
-const REGEXENDUR = ".*^(NOM).*"
+const REGEXENDUR = ".*^(NOM).*";
 
+function verifiyRulesByTextArea() {
+    store.dispatch(cleanResult());
+    window.location += 'interfaceVerif';
+    const listPPN = document.getElementById("textAreaSaisie").value.split("\n").filter(x=>x!='');
+    store.dispatch(setNombreTotalPPN(listPPN.length));
+    getRules(listPPN);
+}
 
 function verifyRules() {
-    var rules = getRules(PPN_EN_DUR)
-    var obj;
+    store.dispatch(cleanResult());
+    window.location += 'tempInterfaceVerif';
+    getRules();
 }
+
 
 function getSudoc(rules, PPN) {
 
@@ -54,12 +60,13 @@ function getSudoc(rules, PPN) {
 function writeResult() {
     axios({
         method: 'POST',
-        url: 'http://localhost:3000/result',
+        url: ':/result',
         contentType: "application/json",
         headers: {
             "Accept": "application/json",
         },
-        data: result,
+        data: store.getState().result,
+        port:3000,
     }).then(function () {
         //console.log("ok")
     })
@@ -71,16 +78,16 @@ function writeResult() {
         });
 }
 
-
 function deleteRule(index) {
     axios({
         method: 'DELETE',
-        url: 'http://localhost:3000/rules',
+        url: '/rules',
         contentType: "application/json",
         headers: {
             "Accept": "application/json",
             "index": index,
         },
+        port:3000,
     }).then(function () {
         console.log("suppression ok")
     })
@@ -92,11 +99,12 @@ function deleteRule(index) {
 }
 
 function updateRule(index, newRule) {
-    axios.put('http://localhost:3000/rules', newRule, {
+    axios.put('/rules', newRule, {
         headers: {
             'Content-Type': 'application/json',
             "index": index
-        }
+        },
+        port:3000,
     }).then(function () {
         console.log("modification ok")
     }).catch(function (error) {
@@ -107,7 +115,7 @@ function updateRule(index, newRule) {
 function addRule(categorie, type, rule) {
     axios({
         method: 'POST',
-        url: 'http://localhost:3000/rules',
+        url: '/rules',
         contentType: "application/json",
         headers: {
             "Accept": "application/json",
@@ -115,6 +123,7 @@ function addRule(categorie, type, rule) {
             "type": type
         },
         data: rule,
+        port:3000,
     }).then(function () {
         console.log("ok")
     })
@@ -126,10 +135,13 @@ function addRule(categorie, type, rule) {
         });
 }
 
-function getRules(PPN) {
-    axios.get('http://localhost:3000/rules')
+function getRules(listPPN) {
+    axios.get('/rules',{port:3000})
         .then(function (response) {
-            getSudoc(response.data, PPN);
+
+            listPPN.forEach(PPN => getSudoc(response.data, PPN));
+            // getSudoc(response.data,'169450546');
+            writeResult();
         })
         .catch(function (error) {
             // handle error
@@ -141,29 +153,23 @@ function getRules(PPN) {
 
 }
 
-function verifMain(rules, sudoc ) {
-    const leader = sudoc.record.leader;
+
+
+function verifMain(rules, sudoc) {
+
+    // const leader = sudoc.record.leader;
     const controlfields = sudoc.record.controlfield;
     const datafields = sudoc.record.datafield;
     let resultJson = {
         PPN: controlfields[0]._text,
         errors: [],
     };
-    Matching.testMatchRegexRules(CATEGORIE,rules,controlfields,datafields , resultJson)
-    console.log("retour Matching : " ,resultJson)
-
-    
-    Structurel.testMatchStructurelRules(CATEGORIE,rules,controlfields,datafields , resultJson)
-    console.log("retour Structurel : " ,resultJson)
-
-    Dependance.testMatchDependanceRules(CATEGORIE,rules,controlfields,datafields , resultJson)
-    console.log("retour Dependance : " ,resultJson)
+    Matching.testMatchRegexRules(rules,controlfields,datafields , resultJson)
+    Structurel.testMatchStructurelRules(rules,controlfields,datafields , resultJson)
 
 
-
-    result[controlfields[0]._text] = resultJson;
-    //console.log(result);
-    writeResult();
+    store.dispatch(addErrorPPN(resultJson));
+    //addRule(CATEGORIE,TYPE,NEWRULE)
 
 
     //addRule(CATEGORIE,TYPE,NEWRULE);
@@ -172,4 +178,4 @@ function verifMain(rules, sudoc ) {
     //Regex.transform(REGEXENDUR,sudoc)
 }
 
-export default verifyRules;
+export { verifyRules, verifiyRulesByTextArea };

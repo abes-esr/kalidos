@@ -1,7 +1,7 @@
 import React from 'react';
 import Card12 from '../Générique/Card_12';
-import { verifiyRulesByTextArea } from '../../js/main/verifyRules'
-import verifyRules from '../../js/main/RulesEnDur'
+import { verifiyRulesByTextArea } from '../../js/verifyRules'
+import verifyRules from '../../js/RulesEnDur'
 import Dropzone from './Dropzone';
 
 const SaisieManuelle = () => (
