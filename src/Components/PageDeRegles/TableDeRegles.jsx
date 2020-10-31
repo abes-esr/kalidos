@@ -95,7 +95,7 @@ function Table() {
     delete rule.category
     delete rule.type
     delete rule.action
-    fetch(":3000/rules", {
+    fetch("http://localhost:3000/rules", {
       method: 'PUT',
       headers: headers,
       body: JSON.stringify(rule)

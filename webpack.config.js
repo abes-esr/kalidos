@@ -10,7 +10,7 @@ const htmlPlugin = new HtmlWebPackPlugin({
 module.exports = (env, argv) => {
   console.log(argv.mode);
   return {
-    watch: true,
+    watch: false,
     entry: './src/index.jsx',
     output: { // NEW
       path: path.join(__dirname, 'dist'),
