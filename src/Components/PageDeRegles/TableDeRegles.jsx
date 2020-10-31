@@ -69,7 +69,7 @@ function Table() {
   const deleting = (row) => {
     var headers = new Headers();
     headers.set("index", row.index)
-    fetch("http://localhost:3000/rules", {
+    fetch(":3000/rules", {
       method: 'DELETE',
       headers: headers
     })

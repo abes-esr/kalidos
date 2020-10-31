@@ -2,17 +2,11 @@
     "Generale": {
         "matching": [
             {
-                "index": 0,
-                "number": "200",
-                "code": "b",
-                "message": "valeur présente"
-            },
-            {
                 "index": 1,
                 "number": 201,
                 "code": "c",
                 "message": "caractères interdits : $",
-                "regex": ".*[^$].*"
+                "regex": "(?:(?!\\$).)+"
             },
             {
                 "number": 701,
@@ -25,49 +19,49 @@
                 "number": 200,
                 "code": "c",
                 "message": "200$c ne doit pas contenir le caractère / ou : ou .",
-                "regex": ".*[^/.].*",
+                "regex": "(?:(?![/:.]).)+",
                 "index": 6
             },
             {
                 "number": 200,
                 "code": "d",
                 "message": "200$d doit commencer par espace =",
-                "regex": "^[^=].*",
+                "regex": "^( =).*",
                 "index": 7
             },
             {
                 "number": "856",
                 "code": "u",
                 "message": "856$u ne doit pas contenir URL",
-                "regex": ".*[^(URL)].*",
+                "regex": "(?:(?!URL).)+",
                 "index": 8
             },
             {
                 "number": "100",
                 "code": "a",
                 "message": "100$a ne doit pas contenir le caractère ?",
-                "regex": ".*[^?].*",
+                "regex": "(?:(?!\\?).)+",
                 "index": 9
             },
             {
                 "number": "307",
                 "code": "a",
                 "message": "307$a ne doit pas contenir le caractère ?",
-                "regex": ".*[^?].*",
+                "regex": "(?:(?!\\?).)+",
                 "index": 10
             },
             {
                 "number": "700",
                 "code": "b",
                 "message": "700$b ne doit pas contenir Prénom",
-                "regex": ".*[^(Prénom)].*",
+                "regex": "(?:(?!Prénom).)+",
                 "index": 11
             },
             {
                 "number": "214",
                 "code": "d",
                 "message": "214$d ne doit pas contenir le caractère ?",
-                "regex": ".*[^?].*",
+                "regex": "(?:(?!\\?).)+",
                 "index": 12
             },
             {
@@ -81,33 +75,33 @@
                 "number": "700",
                 "code": "a",
                 "message": "700$a ne doit pas contenir Nom",
-                "regex": ".*[^(Nom)].*",
+                "regex": "(?:(?!Nom).)+",
                 "index": 14
             },
             {
                 "number": "701",
                 "code": "b",
                 "message": "701$b ne doit pas contenir Prénom",
-                "regex": ".*[^(Prénom)].*",
+                "regex": "(?:(?!Prénom).)+",
                 "index": 15
             },
             {
                 "number": "606",
                 "code": "a",
                 "message": "606$a ne doit pas contenir vedette",
-                "regex": ".*[^(vedette)].*",
+                "regex": "(?:(?!vedette).)+",
                 "index": 16
             },
             {
                 "number": "330",
                 "code": "a",
                 "message": "330$a ne doit pas contenir Résumé en français",
-                "regex": ".*[^(Résumé en français)].*",
+                "regex": "(?:(?!Résumé en français).)+",
                 "index": 17
             },
             {
                 "number": "328",
-                "code": "d",
+                "code": "e",
                 "message": "328$e = Lyon 1 ou Université de Lyon",
                 "regex": "(Lyon 1)|(Université de Lyon)",
                 "index": 18
@@ -116,64 +110,57 @@
                 "number": "328",
                 "code": "d",
                 "message": "328$d ne doit pas contenir le caractère ?",
-                "regex": ".*[^?].*",
+                "regex": ".(?:(?!\\?).)+",
                 "index": 19
             },
             {
                 "number": "230",
                 "code": "a",
                 "message": "230$a ne doit pas contenir le caractère ?",
-                "regex": ".*[^?].*",
+                "regex": "(?:(?!\\?).)+",
                 "index": 20
             },
             {
                 "number": "200",
                 "code": "g",
                 "message": "200$g ne doit pas finir par sous la direction de",
-                "regex": ".*[^(sous la direction de)]",
+                "regex": ".*(?<!sous la direction de)$",
                 "index": 21
             },
             {
                 "number": "200",
                 "code": "e",
                 "message": "200$e ne doit pas être complément du titre",
-                "regex": "[^(complément du titre)]",
+                "regex": "^(?!complément du titre).*$",
                 "index": 22
             },
             {
                 "number": "200",
                 "code": "a",
                 "message": "200$a ne doit pas être Le Titre",
-                "regex": "[^(Le Titre)]",
+                "regex": "^(?!Le Titre).*$",
                 "index": 23
             },
             {
                 "number": "029",
                 "code": "b",
                 "message": "029$b ne doit pas contenir le caractère ?",
-                "regex": ".*[^?].*",
+                "regex": "(?:(?!\\?).)+",
                 "index": 24
             },
             {
                 "number": "GLOBAL",
                 "code": "",
                 "message": "Ne doit pas contenir le caractère ’",
-                "regex": ".*[^'].*",
+                "regex": "(?:(?!').)+",
                 "index": 25
             },
             {
                 "number": 200,
                 "code": "e",
                 "message": "200$e ne doit pas contenir le caractère / ou : ou .",
-                "regex": ".*[^/.].*",
+                "regex": "(?:(?![/:.]).)+",
                 "index": 26
-            },
-            {
-                "number": 200,
-                "code": "d",
-                "message": "200$d doit commencer par espace =",
-                "regex": "^( =).*",
-                "index": 27
             },
             {
                 "index": 37,
@@ -190,8 +177,8 @@
                 ],
                 "code": "4",
                 "value": [
-                    "^((?!205).)*$",
-                    "^((?!727).)*$"
+                    "^205$",
+                    "^727$"
                 ],
                 "match": "all",
                 "message": "7XX $4 ne doit pas être 205 ou 727 (FAIL TEST)"

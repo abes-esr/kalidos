@@ -1,7 +1,7 @@
 const Parcours = require("../utile/Parcours");
 
 var Matching = function () {
-    var testMatchRegexRules = function (categorie,rules, controlfields, datafields, resultJson) {
+    var testMatchRegexRules = function (categorie, rules, controlfields, datafields, resultJson) {
         rules[categorie].matching.forEach(function (regle) {
             if (regle.number instanceof Array) {
                 testMatchRegexNumberArray(regle, datafields, resultJson)
@@ -10,66 +10,54 @@ var Matching = function () {
             }
         });
     }
+
+    // Faudrait trouver un nom plus explicite
+    function matchFactoriser(regle, regex, field, text, code) {
+        let addError = false;
+        if (code === regle.code || regle.number === "GLOBAL") {
+            addError = addError || regle.match === "all" && !matchAll(field, regle.value);
+            addError = addError || regle.match === "one" && !matchOne(field, regle.value);
+            if (text != undefined) {
+                const match = text.toString().match(regex);
+                // if (regle.number == "700") {
+                //     console.log(text, regex, match, match && text === match[0]);
+                // }
+                addError = addError || !(match && text === match[0]);
+            }
+        }
+        return addError;
+    }
+
     var testMatchRegexNumber = function (regle, datafields, resultJson) {
-        const regex = RegExp(regle.regex);
+        const regex = RegExp(regle.regex, 'g');
         datafields.forEach(function (field) {
             if (field._attributes.tag.toString() === regle.number.toString() || regle.number === "GLOBAL") {
                 if (field.subfield instanceof Array) {
                     field.subfield.forEach(function (subfield) {
-                        if (subfield._attributes.code === regle.code || regle.number === "GLOBAL") {
-                            if (regle.match === "all" && !matchAll(subfield._text,regle.value)) {
-                                resultJson.errors.push({
-                                    message: regle.message,
-                                    number: regle.number,
-                                    code: regle.code
-                                });
-                            }
-                            else if (regle.match === "one" && !matchOne(subfield._text,regle.value)) {
-                                resultJson.errors.push({
-                                    message: regle.message,
-                                    number: regle.number,
-                                    code: regle.code
-                                });
-                            }
-                            else if (!regex.test(subfield._text)) {
-                                resultJson.errors.push({
-                                    message: regle.message,
-                                    number: regle.number,
-                                    code: regle.code
-                                });
-                            }
+                        let addError = matchFactoriser(regle, regex, subfield._text, subfield._text, subfield._attributes.code);
+                        if (addError) {
+                            resultJson.errors.push({
+                                message: regle.message,
+                                number: regle.number,
+                                code: regle.code,
+                            });
                         }
                     });
                 } else {
-                    if (field.subfield._attributes.code === regle.code || regle.number === "GLOBAL") {
-                        if (regle.match === "all" && !matchAll(field,regle.value)) {
-                            resultJson.errors.push({
-                                message: regle.message,
-                                number: regle.number,
-                                code: regle.code
-                            });
-                        }
-                        else if (regle.match === "one" && !matchOne(field,regle.value)) {
-                            resultJson.errors.push({
-                                message: regle.message,
-                                number: regle.number,
-                                code: regle.code
-                            });
-                        }
-                        else if (!regex.test(field.subfield._text)) {
-                            resultJson.errors.push({
-                                message: regle.message,
-                                number: regle.number,
-                                code: regle.code
-                            });
-                        }
+                    let addError = matchFactoriser(regle, regex, field, field.subfield._text, field.subfield._attributes.code);
+                    if (addError) {
+                        resultJson.errors.push({
+                            message: regle.message,
+                            number: regle.number,
+                            code: regle.code
+                        });
                     }
                 }
             }
         });
     }
 
-    var matchAll = function (textField,value) {
+    var matchAll = function (textField, value) {
         for (j in value) {
             //console.log(value[j] , " : " , field.subfield[i]._text , " -> " , !RegExp(value[j]).test(field.subfield[i]._text))
             if (!RegExp(value[j]).test(textField)) {
@@ -79,7 +67,7 @@ var Matching = function () {
         return true;
     }
 
-    var matchOne = function (textField,value) {
+    var matchOne = function (textField, value) {
         for (j in value) {
             if (RegExp(value[j]).test(textField)) {
                 return true;
@@ -93,7 +81,7 @@ var Matching = function () {
         let numberError = []
         const value = regle.value
         const message = regle.message
-        for (item in regle.number) {
+        for (const item in regle.number) {
             const field = Parcours.findDataField(datafields, regle.number[item])
             numberError.push(regle.number[item])
             let matchvalid = true
@@ -101,10 +89,10 @@ var Matching = function () {
                 for (i in field.subfield) {
                     if (field.subfield[i]._attributes.code === regle.code) {
                         if (regle.match === "all") {
-                            matchvalid = matchAll(field.subfield[i]._text,value)
+                            matchvalid = matchAll(field.subfield[i]._text, value)
                         }
                         else if (regle.match === "one") {
-                            matchvalid = matchOne(field.subfield[i]._text,value)
+                            matchvalid = matchOne(field.subfield[i]._text, value)
                         }
                         if (matchvalid) {
                             valid -= 1
@@ -115,12 +103,12 @@ var Matching = function () {
                 }
             } else if (field != null) {
                 if (field.subfield._attributes.code === regle.code) {
-                    matchvalid = true;
+                    // matchvalid = true;
                     if (regle.match === "all") {
-                        matchvalid = matchAll(field.subfield._text,value)
+                        matchvalid = matchAll(field.subfield._text, value)
                     }
                     else if (regle.match === "one") {
-                        matchvalid = matchOne(field.subfield._text,value)
+                        matchvalid = matchOne(field.subfield._text, value)
                     }
                     if (matchvalid) {
                         valid -= 1
@@ -137,11 +125,11 @@ var Matching = function () {
         }
         if (valid > 0) {
             let errors = "";
-            for (str in numberError) {
+            for (const str in numberError) {
                 errors += numberError[str];
-                if(str < numberError.length - 1) {
+                if (str < numberError.length - 1) {
                     errors += " , ";
-                } 
+                }
             }
             resultJson.errors.push({
                 message: message,
