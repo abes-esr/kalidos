@@ -102,7 +102,6 @@ var Structurel = function () {
             if (regle.number.length == 1) {
                 number = regle.number[0]
                 let retour = Parcours.findDataField(datafields, number)
-                console.log(retour)
                 // contrainte sur le number
                 if (ind1 === "" && ind2 === "" && code === "") {
                     isPushInJson = isPushInJson || verifyRequire(type, retour);

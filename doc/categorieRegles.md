@@ -12,13 +12,7 @@
 29	x	x	x	x	200	200$e ne doit pas contenir le caractère "/" ou ":" ou "."		Zone 200 : le titre ne doit pas comporter une ponctuation ISBD introduite par une sous-zone
 30	x	x	x	x	200	200$d ne doit pas contenir le caractère "/" ou ":" ou "."		Zone 200 : le titre ne doit pas comporter une ponctuation ISBD introduite par une sous-zone
 31	x	x	x	x	200	200$c ne doit pas contenir le caractère "/" ou ":" ou "."		Zone 200 : le titre ne doit pas comporter une ponctuation ISBD introduite par une sous-zone
-49	x	x	x	x	600	Si 600 $2rameau doit être présent		Zone 6XX $2 mal orthographié ou absent
-51	x	x	x	x	601	Si 601 $2rameau doit être présent		Zone 6XX $2 mal orthographié ou absent
-53	x	x	x	x	602	Si 602 $2rameau doit être présent		Zone 6XX $2 mal orthographié ou absent
-55	x	x	x	x	604	Si 602 $2rameau doit être présent		Zone 6XX $2 mal orthographié ou absent
-57	x	x	x	x	605	Si 605 $2rameau doit être présent		Zone 6XX $2 mal orthographié ou absent
 59	x	x	x	x	606	606 et $3, doit contenir $2rameau ou $2fmesh		Zone 6XX $2 mal orthographié ou absent
-62	x	x	x	x	607	Si 607 $2rameau doit être présent		Zone 6XX $2 mal orthographié ou absent
 64	x	x	x	x	608	608 et $3 doit contenir $2rameau ou $2fmesh		Zone 6XX $2 mal orthographié ou absent
 66	x	x	x	x	700	700$f doit contenir  au moins 9 caractères		Vérifier les dates de l'autorité auteur
 68	x	x	x	x	701	701$f doit contenir au moins 9 caractères		Vérifier les dates de l'autorité auteur
@@ -114,7 +108,12 @@
 36	x		x	x	214	Si 214 #0 et $d, doit commencer par "DL espace" ou "[" ou un chiffre		Zone 214 : qualificatifs de la date non conforme
 149			x		214	Si 214 ind2=2, alors $aLyon		Zone 214$a incohérente avec le statut de la thèse (reproduction)
 150					214	Si 214 ind2=2, alors $cBibliothèque Lyon 1		Zone 214$c incohérente avec le statut de la thèse (reproduction)
-
+49	x	x	x	x	600	Si 600 $2rameau doit être présent		Zone 6XX $2 mal orthographié ou absent
+51	x	x	x	x	601	Si 601 $2rameau doit être présent		Zone 6XX $2 mal orthographié ou absent
+53	x	x	x	x	602	Si 602 $2rameau doit être présent		Zone 6XX $2 mal orthographié ou absent
+55	x	x	x	x	604	Si 602 $2rameau doit être présent		Zone 6XX $2 mal orthographié ou absent
+57	x	x	x	x	605	Si 605 $2rameau doit être présent		Zone 6XX $2 mal orthographié ou absent
+62	x	x	x	x	607	Si 607 $2rameau doit être présent		Zone 6XX $2 mal orthographié ou absent
 136	x	x	x		856	856$zAccès au texte intégral sauf si 856$5=692669902, alors $zAccès réservé aux membres de Lyon 1 après authentification		Zone 856 : le texte ne correspond pas au type d'accès (internet-intranet)
 138		x	x		856	Si 856$5=692669902, alors doit être présente 310 ##$aL'accès à cette ressource est réservé aux membres de Lyon 1 après authentification		Zone E856 : une note 310 doit préciser le type d'accès restreint
 

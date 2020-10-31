@@ -4,6 +4,7 @@ const Matching = require("../regles/Matching");
 const Structurel = require("../regles/Structurel");
 const Conditionnel = require("../regles/Conditionnel");
 const Dependance = require("../regles/Dependance");
+const IdRef = require("../regles/IdRef");
 
 
 let result = {};
@@ -149,15 +150,16 @@ function verifMain(rules, sudoc ) {
         PPN: controlfields[0]._text,
         errors: [],
     };
+
+
+
     Matching.testMatchRegexRules(CATEGORIE,rules,controlfields,datafields , resultJson)
-    console.log("retour Matching : " ,resultJson)
-
-    
     Structurel.testMatchStructurelRules(CATEGORIE,rules,controlfields,datafields , resultJson)
-    console.log("retour Structurel : " ,resultJson)
-
     Dependance.testMatchDependanceRules(CATEGORIE,rules,controlfields,datafields , resultJson)
-    console.log("retour Dependance : " ,resultJson)
+    IdRef.testIdRefRules(CATEGORIE,rules,controlfields,datafields , resultJson)
+
+    console.log("result : " , resultJson)
+
 
 
 
