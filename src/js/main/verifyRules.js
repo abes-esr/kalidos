@@ -27,7 +27,7 @@ const REGEXENDUR = ".*^(NOM).*";
 function verifiyRulesByTextArea() {
     store.dispatch(cleanResult());
     window.location += 'interfaceVerif';
-    const listPPN = document.getElementById("textAreaSaisie").value.split("\n").filter(x => x != '');
+    const listPPN = document.getElementById("textAreaSaisie").value.split("\n").filter(x=>x!='');
     store.dispatch(setNombreTotalPPN(listPPN.length));
     getRules(listPPN);
 }
@@ -46,7 +46,7 @@ function getSudoc(rules, PPN) {
             const data = JSON.parse(
                 convert.xml2json(response.data, { compact: true, spaces: 2 })
             );
-            verifMain(rules, data);
+            verifMain(rules, data );
         })
         .catch(function (error) {
             // handle error
@@ -60,13 +60,13 @@ function getSudoc(rules, PPN) {
 function writeResult() {
     axios({
         method: 'POST',
-        url: '/result',
+        url: ':/result',
         contentType: "application/json",
         headers: {
             "Accept": "application/json",
         },
         data: store.getState().result,
-        port: 3000,
+        port:3000,
     }).then(function () {
         //console.log("ok")
     })
@@ -87,7 +87,7 @@ function deleteRule(index) {
             "Accept": "application/json",
             "index": index,
         },
-        port: 3000,
+        port:3000,
     }).then(function () {
         console.log("suppression ok")
     })
@@ -104,7 +104,7 @@ function updateRule(index, newRule) {
             'Content-Type': 'application/json',
             "index": index
         },
-        port: 3000,
+        port:3000,
     }).then(function () {
         console.log("modification ok")
     }).catch(function (error) {
@@ -123,7 +123,7 @@ function addRule(categorie, type, rule) {
             "type": type
         },
         data: rule,
-        port: 3000,
+        port:3000,
     }).then(function () {
         console.log("ok")
     })
@@ -136,7 +136,7 @@ function addRule(categorie, type, rule) {
 }
 
 function getRules(listPPN) {
-    axios.get('/rules', { port: 3000 })
+    axios.get('/rules',{port:3000})
         .then(function (response) {
 
             listPPN.forEach(PPN => getSudoc(response.data, PPN));
@@ -164,8 +164,8 @@ function verifMain(rules, sudoc) {
         PPN: controlfields[0]._text,
         errors: [],
     };
-    Matching.testMatchRegexRules(CATEGORIE, rules, controlfields, datafields, resultJson)
-    Structurel.testMatchStructurelRules(CATEGORIE, rules, controlfields, datafields, resultJson)
+    Matching.testMatchRegexRules(CATEGORIE,rules,controlfields,datafields , resultJson)
+    Structurel.testMatchStructurelRules(CATEGORIE,rules,controlfields,datafields , resultJson)
 
 
     store.dispatch(addErrorPPN(resultJson));
