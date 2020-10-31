@@ -1,8 +1,8 @@
-const Parcours = require("./Parcours");
+const Parcours = require("../utile/Parcours");
 
 var Matching = function () {
-    var testMatchRegexRules = function (rules, controlfields, datafields, resultJson) {
-        rules.Generale.matching.forEach(function (regle) {
+    var testMatchRegexRules = function (categorie,rules, controlfields, datafields, resultJson) {
+        rules[categorie].matching.forEach(function (regle) {
             if (regle.number instanceof Array) {
                 testMatchRegexNumberArray(regle, datafields, resultJson)
             } else {
