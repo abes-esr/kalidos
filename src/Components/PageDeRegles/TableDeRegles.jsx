@@ -199,7 +199,7 @@ function Table() {
   ];
 
   useEffect(() => {
-    fetch("http://localhost:3000/rules")
+    fetch(":3000/rules")
       .then(res => res.json())
       .then(
         (result) => {
