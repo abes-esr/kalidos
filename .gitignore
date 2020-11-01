@@ -30,6 +30,10 @@ build/
 ### VS Code ###
 .vscode/
 
+### metals ###
+.metals/metals.h2.db  
+.metals/
+
 lib/
 
 
