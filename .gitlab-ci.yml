@@ -5,13 +5,13 @@ stages:
   - test
 
 cache :
+  key: ${CI_COMMIT_REF_SLUG}
   paths :
    - node_modules/
 
 install :
  stage : install
- cache: 
-    key: $CI_COMMIT_REF_SLUG-$CI_PROJECT_DIR
+ artifacts:
     paths:
       - node_modules/
  script:
