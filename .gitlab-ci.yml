@@ -3,6 +3,7 @@ image : node:latest
 stages:
   - install
   - test
+  - deploy
 
 cache :
   paths :
