@@ -5,7 +5,6 @@ stages:
   - test
 
 cache :
-  key: ${CI_COMMIT_REF_SLUG}
   paths :
    - node_modules/
 
@@ -16,9 +15,7 @@ install :
       - node_modules/
  script:
   - npm install
- only:
-  changes:
-    - package-lock.json
+
 
 test :
   stage : test
