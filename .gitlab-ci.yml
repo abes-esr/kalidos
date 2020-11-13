@@ -32,4 +32,4 @@ production:
     - gem install dpl
     - dpl --provider=heroku --app=budev --api-key=d2da7495-2783-4633-ba2e-817d155d2dee
   only:
-    - ci
+    - master
