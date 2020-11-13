@@ -10,11 +10,15 @@ cache :
 
 install :
  stage : install
- script :
-  - npm install
- artifacts :
-  paths:
-    - node_modules/
+ cache: 
+    key: $CI_COMMIT_REF_SLUG-$CI_PROJECT_DIR
+    paths:
+      - node_modules/
+ script:
+  - npm ci
+ only:
+  changes:
+    - package-lock.json
 
 test :
   stage : test
