@@ -31,7 +31,7 @@ var IdRef = function () {
         let valid = false
         if(field != null) {
             const value = field._text
-            console.log (regex , " : " , value , " -> " ,RegExp(regex).test(value))
+            //console.log (regex , " : " , value , " -> " ,RegExp(regex).test(value))
             if(RegExp(regex).test(value)) {
                 valid = true
             }
