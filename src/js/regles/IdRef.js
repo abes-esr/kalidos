@@ -80,7 +80,6 @@ var IdRef = function () {
                 const identifiant = identifiantNotice(datafields,regle)
                 if(identifiant != null) {
                     getRequest(identifiant,regle , resultJson)
-                    const titi = ""
                 } else {
                     resultJson.errors.push({
                         message: regle.message,
