@@ -2,6 +2,8 @@ const Parcours = require("../utile/Parcours");
 const convert = require("xml-js");
 const axios = require('axios');
 
+
+
 var IdRef = function () {
 
     var getRequest = function (identifiant,regle,resultJson) {
@@ -13,14 +15,16 @@ var IdRef = function () {
             validateIdRef(data,regle,resultJson)
         })
         .catch(function (error) {
-            console.log(error);
+            //console.log("avant : " , resultJson)
             resultJson.errors.push({
                 message: regle.message,
                 number: regle.number,
                 code: regle.code
             });
+            //console.log("apres : " , resultJson)
         })
         .then(function () {
+
         });
     }
 
@@ -43,6 +47,7 @@ var IdRef = function () {
                 number: regle.number,
                 code: regle.code
             });
+            //console.log(resultJson.errors)
         }
     }
 
@@ -74,10 +79,10 @@ var IdRef = function () {
     var testIdRefRules = function (categorie,rules, controlfields, datafields, resultJson) {
         //getRequest("https://www.idref.fr/032317956.xml")
         rules[categorie].idRef.forEach(function (regle) {
-            let error = false;
             if (conditionNotice(datafields, regle)) {
                 const identifiant = identifiantNotice(datafields,regle)
                 if(identifiant != null) {
+
                     getRequest(identifiant,regle , resultJson)
                 } else {
                     resultJson.errors.push({

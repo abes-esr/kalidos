@@ -648,6 +648,22 @@
                     "regex": "^Tp.*"
                 },
                 "message": "Incohérence indexation : vérifier les zones 6XX et le type de notice d'autorité"
+            },
+            {
+                "index": 55,
+                "numRuleExcell": 52,
+                "condition" : {
+                    "number" : "602",
+                    "code" : "a"
+                },
+                "identifiant":{
+                    "code":"3"
+                },
+                "verification" : {
+                    "number" : "008",
+                    "regex": "^Ta.*"
+                },
+                "message": "Incohérence indexation : vérifier les zones 6XX et le type de notice d'autorité"
             }
         ]
     },
