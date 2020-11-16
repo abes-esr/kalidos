@@ -69,7 +69,7 @@ function Table() {
   const deleting = (row) => {
     var headers = new Headers();
     headers.set("index", row.index)
-    fetch(":3000/rules", {
+    fetch("/rules", {
       method: 'DELETE',
       headers: headers
     })
@@ -95,7 +95,7 @@ function Table() {
     delete rule.category
     delete rule.type
     delete rule.action
-    fetch(":3000/rules", {
+    fetch("/rules", {
       method: 'PUT',
       headers: headers,
       body: JSON.stringify(rule)
@@ -199,7 +199,7 @@ function Table() {
   ];
 
   useEffect(() => {
-    fetch("http://localhost:3000/rules")
+    fetch("/rules")
       .then(res => res.json())
       .then(
         (result) => {

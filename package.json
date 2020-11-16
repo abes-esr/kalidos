@@ -7,7 +7,7 @@
     "test": "jest",
     "start": "node serveur/index.js",
     "build": "webpack --mode production",
-    "dev": "webpack --mode development && node serveur/index.js",
+    "dev": "webpack --watch --mode development && node serveur/index.js",
     "lint": "eslint ."
   },
   "bin": "./bin/mybin.js",
