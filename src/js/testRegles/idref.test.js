@@ -54,7 +54,7 @@ test("69 : Incohérence zone 7XX : vérifier l'étiquette et le type de notice d
         errors: [],
     };
     await IdRef.testIdRefRules(CATEGORIE,rules,undefined,datafields , resultJson)
-    //expect(resultJson.errors).not.toStrictEqual([]);
+    expect(resultJson.errors).not.toStrictEqual([]);
 });
 
 test("48 : Incohérence indexation : vérifier les zones 6XX et le type de notice d'autorité", async () => {

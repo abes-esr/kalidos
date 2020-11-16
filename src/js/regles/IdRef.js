@@ -23,9 +23,6 @@ var IdRef = function () {
             });
             //console.log("apres : " , resultJson)
         })
-        .then(function () {
-
-        });
     }
 
     var validateIdRef = function (data,regle,resultJson){
@@ -82,8 +79,8 @@ var IdRef = function () {
             if (conditionNotice(datafields, regle)) {
                 const identifiant = identifiantNotice(datafields,regle)
                 if(identifiant != null) {
-
                     getRequest(identifiant,regle , resultJson)
+                    const titi = ""
                 } else {
                     resultJson.errors.push({
                         message: regle.message,
