@@ -62,7 +62,6 @@ const Wrapper = () => (
 
                 <footer className="sticky-footer bg-white"
                 style={{
-                    position:"fixed",
                     bottom:0,
                     left:0,
                     width:"100%",
