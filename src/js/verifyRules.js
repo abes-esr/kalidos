@@ -161,8 +161,8 @@ function verifMain(rules, sudoc) {
         PPN: controlfields[0]._text,
         errors: [],
     };
-    //Matching.testMatchRegexRules(rules,controlfields,datafields , resultJson)
-    //Structurel.testMatchStructurelRules(rules,controlfields,datafields , resultJson)
+    Matching.testMatchRegexRules(rules,controlfields,datafields , resultJson)
+    Structurel.testMatchStructurelRules(rules,controlfields,datafields , resultJson)
     ConditionStructurel.testConditionStrucutrelRules(rules,controlfields,datafields , resultJson)
 
 
