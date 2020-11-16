@@ -43,3 +43,53 @@ test("69 : Incohérence zone 7XX : vérifier l'étiquette et le type de notice d
     await IdRef.testIdRefRules(CATEGORIE,rules,undefined,datafields , resultJson)
     expect(resultJson.errors).not.toStrictEqual([]);
 });
+
+test("48 : Incohérence indexation : vérifier les zones 6XX et le type de notice d'autorité", async () => {
+    const indexExcell = 48;
+    const PPN = getPPN(indexExcell + '/' + indexExcell + '.xml');
+    const datafields = PPN.record.datafield;
+    let resultJson = {
+        PPN: 0,
+        errors: [],
+    };
+    await IdRef.testIdRefRules(CATEGORIE,rules,undefined,datafields , resultJson)
+
+    expect(resultJson.errors).toStrictEqual([]);
+});
+
+test("48 : Incohérence indexation : vérifier les zones 6XX et le type de notice d'autorité (FAIL)", async () => {
+    const indexExcell = 48;
+    const PPN = getPPN(indexExcell + '/' + indexExcell + '_Fail.xml');
+    const datafields = PPN.record.datafield;
+    let resultJson = {
+        PPN: 0,
+        errors: [],
+    };
+    await IdRef.testIdRefRules(CATEGORIE,rules,undefined,datafields , resultJson)
+    expect(resultJson.errors).not.toStrictEqual([]);
+});
+
+test("50 : Incohérence indexation : vérifier les zones 6XX et le type de notice d'autorité", async () => {
+    const indexExcell = 50;
+    const PPN = getPPN(indexExcell + '/' + indexExcell + '.xml');
+    const datafields = PPN.record.datafield;
+    let resultJson = {
+        PPN: 0,
+        errors: [],
+    };
+    await IdRef.testIdRefRules(CATEGORIE,rules,undefined,datafields , resultJson)
+
+    expect(resultJson.errors).toStrictEqual([]);
+});
+
+test("50 : Incohérence indexation : vérifier les zones 6XX et le type de notice d'autorité (FAIL)", async () => {
+    const indexExcell = 50;
+    const PPN = getPPN(indexExcell + '/' + indexExcell + '_Fail.xml');
+    const datafields = PPN.record.datafield;
+    let resultJson = {
+        PPN: 0,
+        errors: [],
+    };
+    await IdRef.testIdRefRules(CATEGORIE,rules,undefined,datafields , resultJson)
+    expect(resultJson.errors).not.toStrictEqual([]);
+});

@@ -616,6 +616,38 @@
                     "regex": "^Tp.*"
                 },
                 "message": "Incohérence zone 7XX : vérifier l'étiquette et le type de notice d'autorité"
+            },
+            {
+                "index": 53,
+                "numRuleExcell": 48,
+                "condition" : {
+                    "number" : "600",
+                    "code" : "a"
+                },
+                "identifiant":{
+                    "code":"3"
+                },
+                "verification" : {
+                    "number" : "008",
+                    "regex": "^Tp.*"
+                },
+                "message": "Incohérence indexation : vérifier les zones 6XX et le type de notice d'autorité"
+            },
+            {
+                "index": 54,
+                "numRuleExcell": 50,
+                "condition" : {
+                    "number" : "601",
+                    "code" : "a"
+                },
+                "identifiant":{
+                    "code":"3"
+                },
+                "verification" : {
+                    "number" : "008",
+                    "regex": "^Tp.*"
+                },
+                "message": "Incohérence indexation : vérifier les zones 6XX et le type de notice d'autorité"
             }
         ]
     },

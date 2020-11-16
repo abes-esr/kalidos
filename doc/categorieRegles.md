@@ -238,7 +238,6 @@
 37	x		x	x	214	Si plusieurs zones 214, doivent respecter l'ordre des chiffres de l'ind2		Zones 214 : garder l'ordre des indicateurs
 
 106		x	x		101	Si plusieurs 101$d, il doit y avoir autant de 330		Mention de résumé incohérente : vérifier zones 101 et le nombre de zones 330
-
 ```
 
 
