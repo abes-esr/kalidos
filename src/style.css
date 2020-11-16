@@ -1,0 +1,49 @@
+#cible {
+  display: none;
+}
+
+#charRegexExclusion{
+  display: none;
+}
+
+.listGroupPPN:hover {
+background-color: #4e73df !important;
+color: white !important;
+cursor: pointer !important;
+}
+
+.dropzoneSaisiePPN {
+width: 100%;
+border: 2px dashed #dedede;
+border-radius: 5px;
+background: #f5f5f5;
+}
+
+.dropzone {
+border: 2px dashed #dedede;
+border-radius: 5px;
+background: #f5f5f5;
+}
+
+.dropzone i{
+font-size: 5rem;
+}
+
+.dropzone .dz-message {
+color: rgba(0,0,0,.54);
+font-weight: 500;
+font-size: initial;
+text-transform: uppercase;
+}
+
+/* tab résultats */
+.hiddenRow {
+padding: 0 !important;
+}
+.tab-collapse {
+border-collapse:collapse;
+}
+.accordian-body {
+padding: 12px;
+}
+/* end tab résulats */

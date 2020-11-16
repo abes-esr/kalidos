@@ -1,0 +1,11 @@
+<record>
+    <datafield tag="701" ind1=" " ind2=" ">
+        <subfield code="f">1234567890</subfield>
+    </datafield>
+    <datafield tag="701" ind1=" " ind2=" ">
+        <subfield code="f">12345678</subfield>
+    </datafield>
+    <datafield tag="" ind1="" ind2="">
+        <subfield code=""></subfield>
+    </datafield>
+</record>

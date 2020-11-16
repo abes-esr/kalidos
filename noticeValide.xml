@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record>
+    <leader>     cam0 22        450 </leader>
+    <controlfield tag="001">192132741</controlfield>
+    <controlfield tag="002">100</controlfield>
+    <controlfield tag="003">http://www.sudoc.fr/192132741</controlfield>
+    <controlfield tag="004">20160323</controlfield>
+    <controlfield tag="005">20171021230319.000</controlfield>
+    <controlfield tag="006">751142302</controlfield>
+    <controlfield tag="007">0499</controlfield>
+    <datafield tag="010" ind1=" " ind2=" ">
+        <subfield code="a">978-1-4939-2826-2</subfield>
+        <subfield code="b">br.</subfield>
+    </datafield>
+    <datafield tag="035" ind1=" " ind2=" ">
+        <subfield code="a">(OCoLC)945417818</subfield>
+    </datafield>
+    <datafield tag="073" ind1=" " ind2="0">
+        <subfield code="a">9781493928262</subfield>
+    </datafield>
+    <datafield tag="100" ind1=" " ind2=" ">
+        <subfield code="a">20160323h20162016k  y0frey50      ba</subfield>
+    </datafield>
+    <datafield tag="101" ind1="0" ind2=" ">
+        <subfield code="a">eng</subfield>
+    </datafield>
+    <datafield tag="102" ind1=" " ind2=" ">
+        <subfield code="a">US</subfield>
+    </datafield>
+    <datafield tag="105" ind1=" " ind2=" ">
+        <subfield code="a">a   a   001yy</subfield>
+    </datafield>
+    <datafield tag="106" ind1=" " ind2=" ">
+        <subfield code="a">r</subfield>
+    </datafield>
+    <datafield tag="181" ind1=" " ind2=" ">
+        <subfield code="6">z01</subfield>
+        <subfield code="c">txt</subfield>
+        <subfield code="2">rdacontent</subfield>
+    </datafield>
+    <datafield tag="181" ind1=" " ind2="1">
+        <subfield code="6">z01</subfield>
+        <subfield code="a">i#</subfield>
+        <subfield code="b">xxxe##</subfield>
+    </datafield>
+    <datafield tag="182" ind1=" " ind2=" ">
+        <subfield code="6">z01</subfield>
+        <subfield code="c">n</subfield>
+        <subfield code="2">rdamedia</subfield>
+    </datafield>
+    <datafield tag="182" ind1=" " ind2="1">
+        <subfield code="6">z01</subfield>
+        <subfield code="a">n</subfield>
+    </datafield>
+    <datafield tag="200" ind1="1" ind2=" ">
+        <subfield code="a">The Hubble Space Telescope</subfield>
+        <subfield code="e">From Concept to Success</subfield>
+        <subfield code="f">by David J. Shayler, David M. Harland.</subfield>
+    </datafield>
+    <datafield tag="210" ind1=" " ind2=" ">
+        <subfield code="a">New York</subfield>
+        <subfield code="c">Springer</subfield>
+        <subfield code="a">Chichester</subfield>
+        <subfield code="c">Praxis Publishing</subfield>
+        <subfield code="d">cop. 2016</subfield>
+    </datafield>
+    <datafield tag="215" ind1=" " ind2=" ">
+        <subfield code="a">1 vol. (XXIII-414 p.)</subfield>
+        <subfield code="c">ill. en noir et en coul.</subfield>
+        <subfield code="d">24 cm</subfield>
+    </datafield>
+    <datafield tag="225" ind1="0" ind2=" ">
+        <subfield code="a">Springer-Praxis books in space exploration</subfield>
+    </datafield>
+    <datafield tag="320" ind1=" " ind2=" ">
+        <subfield code="a">Références bibliogr. en fin de chapitres. Bibliogr. p. 397-400. Index</subfield>
+    </datafield>
+    <datafield tag="359" ind1="2" ind2=" ">
+        <subfield code="b">1. Deployment</subfield>
+        <subfield code="b">2. The dream</subfield>
+        <subfield code="b">3. A dream becomes reality</subfield>
+        <subfield code="b">4. LST becomes ST, becomes HST</subfield>
+        <subfield code="b">5. Simulating servicing</subfield>
+        <subfield code="b">6. Tools of the trade</subfield>
+        <subfield code="b">7. Behind the scenes</subfield>
+        <subfield code="b">8. Service Mission 1</subfield>
+    </datafield>
+    <datafield tag="410" ind1=" " ind2="|">
+        <subfield code="0">11068947X</subfield>
+        <subfield code="t">Springer-Praxis books in space exploration</subfield>
+    </datafield>
+    <datafield tag="452" ind1=" " ind2="|">
+        <subfield code="0">190530723</subfield>
+        <subfield code="t">The Hubble Space Telescope</subfield>
+        <subfield code="o">From Concept to Success</subfield>
+        <subfield code="f">by David J. Shayler, David M. Harland.</subfield>
+        <subfield code="c">New York, NY</subfield>
+        <subfield code="n">Springer New York</subfield>
+        <subfield code="n">Springer e-books</subfield>
+        <subfield code="n">Imprint: Praxis</subfield>
+        <subfield code="n">Springer e-books</subfield>
+        <subfield code="d">2016</subfield>
+        <subfield code="s">Springer Praxis Books</subfield>
+        <subfield code="y">978-1-493-92827-9</subfield>
+    </datafield>
+    <datafield tag="579" ind1=" " ind2=" ">
+        <subfield code="1">0499</subfield>
+        <subfield code="3">215284097</subfield>
+    </datafield>
+    <datafield tag="606" ind1=" " ind2=" ">
+        <subfield code="3">061616079</subfield>
+        <subfield code="a">Télescope spatial Hubble</subfield>
+        <subfield code="2">rameau</subfield>
+    </datafield>
+    <datafield tag="606" ind1=" " ind2=" ">
+        <subfield code="3">028134419</subfield>
+        <subfield code="a">Astronomie spatiale</subfield>
+        <subfield code="2">rameau</subfield>
+    </datafield>
+    <datafield tag="700" ind1=" " ind2="1">
+        <subfield code="3">076317013</subfield>
+        <subfield code="a">Shayler</subfield>
+        <subfield code="b">David J.</subfield>
+        <subfield code="4">070</subfield>
+    </datafield>
+    <datafield tag="701" ind1=" " ind2="1">
+        <subfield code="3">061743097</subfield>
+        <subfield code="a">Harland</subfield>
+        <subfield code="b">David Michael</subfield>
+        <subfield code="f">1955-....</subfield>
+        <subfield code="4">070</subfield>
+    </datafield>
+    <datafield tag="801" ind1=" " ind2="3">
+        <subfield code="a">FR</subfield>
+        <subfield code="b">Abes</subfield>
+        <subfield code="c">20171021</subfield>
+        <subfield code="g">AFNOR</subfield>
+    </datafield>
+    <datafield tag="915" ind1=" " ind2=" ">
+        <subfield code="5">751142302:550765484</subfield>
+        <subfield code="b">36104</subfield>
+    </datafield>
+    <datafield tag="930" ind1=" " ind2=" ">
+        <subfield code="5">751142302:550765484</subfield>
+        <subfield code="b">751142302</subfield>
+        <subfield code="a">520.2 SHA</subfield>
+        <subfield code="j">u</subfield>
+    </datafield>
+    <datafield tag="940" ind1=" " ind2=" ">
+        <subfield code="5">751142302:550765484</subfield>
+        <subfield code="a">20160323</subfield>
+        <subfield code="b">x</subfield>
+    </datafield>
+    <datafield tag="941" ind1=" " ind2=" ">
+        <subfield code="5">751142302:550765484</subfield>
+        <subfield code="a">20160323</subfield>
+        <subfield code="b">12:58:38.000</subfield>
+    </datafield>
+</record>
