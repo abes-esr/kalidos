@@ -5,7 +5,7 @@ import TabPPN from './TabPPN';
 import TabPPNError from './TabPPNError';
 import { connect } from 'react-redux';
 import { MDBIcon } from 'mdbreact';
-import { Button } from 'react-bootstrap';
+import { Button, Tooltip, OverlayTrigger } from 'react-bootstrap';
 
 
 const mapStateToProps = (state) => ({
@@ -13,6 +13,12 @@ const mapStateToProps = (state) => ({
     recherchePPN: state.displayVerif.recherchePPN,
     compteurResult: state.compteurResult,
 });
+
+const renderTooltip = (props) => (
+    <Tooltip id="button-tooltip" {...props}>
+        Génération d'un fichier excel
+    </Tooltip>
+);
 
 function InterfaceVerif({ result, recherchePPN, compteurResult }) {
     const data = Object.keys(result).map((key) => [Number(key), result[key]]);
@@ -22,9 +28,15 @@ function InterfaceVerif({ result, recherchePPN, compteurResult }) {
         <div>
             <h2>
                 Interface de Verification
-                <Button variant="success" style={{float:"right"}}>
-                    <MDBIcon far icon="file-excel" />
-                </Button>
+                <OverlayTrigger
+                    placement="top"
+                    delay={{ show: 250, hide: 400 }}
+                    overlay={renderTooltip}
+                >
+                    <Button variant="success" style={{ float: "right" }}>
+                        <MDBIcon far icon="file-excel" />
+                    </Button>
+                </OverlayTrigger>
             </h2>
             <br></br>
             <div className="row">
