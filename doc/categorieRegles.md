@@ -140,30 +140,30 @@
 ```
 ##### condition-structurel
 ```
-6	x	x	x	x	101	Si 101 ind1=1 il faut au moins un $a et $c		Zone 101 : vérifier l'indicateur et les langues
-7	x	x	x	x	101	Si 101 ind1=0 il ne faut pas $c		Zone 101 : vérifier l'indicateur et les langues
-8	x	x	x	x	101	Si 101 ind1=2 il faut au moins une $a, $b et $c		Zone 101 : vérifier l'indicateur et les langues
-9	x	x	x	x	101	Si 101 ind1=1 il faut une 454		Compléter avec le titre original en 454
-10	x	x	x	x	101	Si 101 ind1=2 il faut une 454		Compléter avec le titre original en 454
-12	x	x	x	x	105	Si  105 $a Pos. 0-3 = "y" alors 215$c ne doit pas être présent		Mention d'illustrations incohérente : vérifier zones 105 et 215
-17	x	x	x	x	105	Si 105 $a Pos. 4-7 =a alors il faut une 320		Mention de bibliographie incohérente : vérifier zones 105 et 320
-18	x	x	x	x	105	Si 105 $a Pos. 4-7= t, m, l, q, j, f, e, b ou 7 il faut la présence d'une 608		Zone 608 : indexation Forme-Genre à vérifier
-21		x	x	x	106	Si 008 commence par Aa, présence obligatoire d'une zone 106		Zone 106 à compléter
+(FAIT) 6	x	x	x	x	101	Si 101 ind1=1 il faut au moins un $a et $c		Zone 101 : vérifier l'indicateur et les langues
+(FAIT) 7	x	x	x	x	101	Si 101 ind1=0 il ne faut pas $c		Zone 101 : vérifier l'indicateur et les langues
+(FAIT) 8	x	x	x	x	101	Si 101 ind1=2 il faut au moins une $a, $b et $c		Zone 101 : vérifier l'indicateur et les langues
+(FAIT) 9	x	x	x	x	101	Si 101 ind1=1 il faut une 454		Compléter avec le titre original en 454
+(FAIT) 10	x	x	x	x	101	Si 101 ind1=2 il faut une 454		Compléter avec le titre original en 454
+(FAIT)12	x	x	x	x	105	Si  105 $a Pos. 0-3 = "y" alors 215$c ne doit pas être présent		Mention d'illustrations incohérente : vérifier zones 105 et 215
+(FAIT)17	x	x	x	x	105	Si 105 $a Pos. 4-7 =a alors il faut une 320		Mention de bibliographie incohérente : vérifier zones 105 et 320
+(FAIT)18	x	x	x	x	105	Si 105 $a Pos. 4-7= t, m, l, q, j, f, e, b ou 7 il faut la présence d'une 608		Zone 608 : indexation Forme-Genre à vérifier
+(FAIT)21		x	x	x	106	Si 008 commence par Aa, présence obligatoire d'une zone 106		Zone 106 à compléter
 34	x	x	x	x	214	214 #0 ou 214#1 obligatoire, sauf si 105$b=v		Zone 214 incohérente : vérifier zones 105 et 214
-38		x	x	x	215	Si 008 commence par Aa, 215 $a et $d obligatoires		Zone 215 : collation obligatoire pour une ressource imprimée
-39	x			x	225	Si 225 ind1=0 il faut au moins une 410		Zone 410 : obligatoire avec une 225
-42	x			x	225	Si 225 ind1=0 $a alors 410$0 doit être présent		Zone 410 : obligatoire avec une 225
-43	x			x	225	Si 225 ind1=2 $a alors 410$0 doit être présent		Zone 410 : obligatoire avec une 225
-44	x			x	225	Si 225 ind1=1 $a alors 461 doit être présent		Zone 461 : obligatoire
-45	x			x	225	Si 225 ind1=2 il faut au moins une 410		Zone 410 : obligatoire avec une 225
+(FAIT)38		x	x	x	215	Si 008 commence par Aa, 215 $a et $d obligatoires		Zone 215 : collation obligatoire pour une ressource imprimée
+(FAIT)39	x			x	225	Si 225 ind1=0 il faut au moins une 410		Zone 410 : obligatoire avec une 225
+(FAIT)42	x			x	225	Si 225 ind1=0 $a alors 410$0 doit être présent		Zone 410 : obligatoire avec une 225
+(FAIT)43	x			x	225	Si 225 ind1=2 $a alors 410$0 doit être présent		Zone 410 : obligatoire avec une 225
+(FAIT)44	x			x	225	Si 225 ind1=1 $a alors 461 doit être présent		Zone 461 : obligatoire
+(FAIT)45	x			x	225	Si 225 ind1=2 il faut au moins une 410		Zone 410 : obligatoire avec une 225
 92			x		455	Si 328$z"Reproduction de", 455 doit être présente		Vérifier les liens entre la version de soutenance et la reproduction
 93			x		456	Si 328$z"Reproduction de" , 456 ne doit pas être présente		Zone 456 incompatible avec le type de thèse (reproduction)
-105		x	x		101	Si 101$d, 330 doit être présente		Mention de résumé incohérente : vérifier zones 101 et 330
+(FAIT)105		x	x		101	Si 101$d, 330 doit être présente		Mention de résumé incohérente : vérifier zones 101 et 330
 137	x				856	Si 856$5=692669902, une 310 doit être présente		Zone E856 : une note 310 doit préciser le type d'accès restreint
-151	x	x	x		304	Si 008 commence par Oa,  304 doit être présente		Ressource électronique : doit contenir une zone 304
-152	x	x	x		307	Si 008 commence par Oa, 307 doit être présente		Ressource électronique : doit contenir une zone 307
-153	x	x	x		337	Si 008 commence par Oa, 337 doit être présente		Ressource électronique : doit contenir une zone 337
-154	x	x	x		230	Si 008 commence par Oa, 230 doit être présente		Ressource électronique : doit contenir une zone 230
+(FAIT)151	x	x	x		304	Si 008 commence par Oa,  304 doit être présente		Ressource électronique : doit contenir une zone 304
+(FAIT)152	x	x	x		307	Si 008 commence par Oa, 307 doit être présente		Ressource électronique : doit contenir une zone 307
+(FAIT)153	x	x	x		337	Si 008 commence par Oa, 337 doit être présente		Ressource électronique : doit contenir une zone 337
+(FAIT)154	x	x	x		230	Si 008 commence par Oa, 230 doit être présente		Ressource électronique : doit contenir une zone 230
 
 78	x	x	x	x	6XX	6XX $a, $x ou $y doit contenir toujours $3 sauf si $2lc ou $2mesh		Zones 6XX doivent être liées à une notice d'autorité RAMEAU ou Fmesh
 134	x	x	x		856	Si 008 commence par Oa et ne contient pas une 215, une 856 doit être présente		Zone 856 : une ressource électronique doit contenir l'accès
@@ -180,21 +180,21 @@
 193		x			456	Si 456, alors vérifier que la notice en 465$0  contient  328$z		Vérifier la pertinence des liens réciproques
 194		x			456	Si 456, alors vérifier que la notice en 456$0 contient 105$a Pos. 4-7= v		Vérifier la pertinence des liens réciproques
 
-164		x	x	x	456	Si 325$a commence par "Document numérisé dans le cadre d'un projet de numérisation du SCD de Lyon 1", 456 doit être présente		Document numérisé : ajouter un lien 456 vers la reproduction
-165	x				324	Si 305$a commence par "Document numérisé dans le cadre du projet de numérisation", doit contenir une 324		Document numérique FA : ajouter la zone 324
-166	x				455	Si 305$a commence par "Document numérisé dans le cadre du projet de numérisation", doit contenir une 455		Document numérique FA : ajouter un lien 455 vers l'original
+(FAIT)164		x	x	x	456	Si 325$a commence par "Document numérisé dans le cadre d'un projet de numérisation du SCD de Lyon 1", 456 doit être présente		Document numérisé : ajouter un lien 456 vers la reproduction
+(FAIT)165	x				324	Si 305$a commence par "Document numérisé dans le cadre du projet de numérisation", doit contenir une 324		Document numérique FA : ajouter la zone 324
+(FAIT)166	x				455	Si 305$a commence par "Document numérisé dans le cadre du projet de numérisation", doit contenir une 455		Document numérique FA : ajouter un lien 455 vers l'original
 167	x				214	Si 305$a commence par "Document numérisé dans le cadre du projet de numérisation", 214 ind1=' ' et ind2="0"		Document numérique FA : doit contenir une mention de publication en 214 (indicateurs #0)
 
-178		x			029	Si 105 $a Pos. 4-7= "m", alors il faut une 029		Zone 029 obligatoire pour une thèse (soutenance)
-179		x	x	x	328	Si 105 $a Pos. 4-7= "m" ou "7", alors il faut une 328		Zone 328 obligatoire pour une thèse ou mémoire (soutenance)
-180		x			017	Si 105 $a Pos. 4-7= "v" ou "7", alors il faut une 017		Zone 017  nécessaire pour un mémoire
-182			x	x	328	Si 105 $a Pos. 4-7= "v", alors il faut une 328$z		Zone 328 incohérente avec le type de thèse (reproduction)
+(FAIT)178		x			029	Si 105 $a Pos. 4-7= "m", alors il faut une 029		Zone 029 obligatoire pour une thèse (soutenance)
+(FAIT)179		x	x	x	328	Si 105 $a Pos. 4-7= "m" ou "7", alors il faut une 328		Zone 328 obligatoire pour une thèse ou mémoire (soutenance)
+(FAIT)180		x			017	Si 105 $a Pos. 4-7= "v" ou "7", alors il faut une 017		Zone 017  nécessaire pour un mémoire
+(FAIT)182			x	x	328	Si 105 $a Pos. 4-7= "v", alors il faut une 328$z		Zone 328 incohérente avec le type de thèse (reproduction)
 183			x	x	029	Si 328$zReproduction de, alors il faut une 029		Zone 029 obligatoire pour une reproduction à l'identique d'une thèse
 184			x	x	029	Si 328$z n'est pas "Reproduction de", alors 029 ne doit pas être présente		Zone 029 incohérente pour une autre édition d'une thèse
 190			x	x	608	Si 328$z n'est pas "Reproduction de", alors 608 $3027253139Thèses et écrits académiques ne doit pas être présente		Zone 608 : incohérente pour une autre édition d'une thèse
 191			x	x	455	Si 328$zReproduction de, alors il faut une 455		Zone 455 obligatoire pour une reproduction à l'identique d'une thèse
 
-47	x			x	461	Si 008 commence par Aa et présence d'une 461, alors il doit y avoir une 305 ou 225		Zones incohérentes : vérifier les zones 461 et 225 (monographie en plusieurs volumes) ou 305 (numéro de périodique)
+(FAIT)47	x			x	461	Si 008 commence par Aa et présence d'une 461, alors il doit y avoir une 305 ou 225		Zones incohérentes : vérifier les zones 461 et 225 (monographie en plusieurs volumes) ou 305 (numéro de périodique)
 ```
 ##### condition-dependance
 ```
@@ -248,18 +248,6 @@
 111			x		214	214 ind2="0" ou ind2="2"		Zone 214 incohérente avec statut de la thèse (reproduction)
 112		x			214	214 ind2="1"		Zone 214 incohérente avec statut de la thèse (soutenance)
 ```
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
