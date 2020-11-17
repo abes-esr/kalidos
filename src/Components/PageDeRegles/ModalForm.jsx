@@ -1,5 +1,6 @@
 import React from 'react'
 import { Button, Form, Modal } from 'react-bootstrap'
+import IconButton from '@material-ui/core/IconButton'
 
 class BootstrapModalForm extends React.Component {
 
@@ -28,12 +29,11 @@ class BootstrapModalForm extends React.Component {
 
 
   render() {
-
     return (
       <div>
-        <Button variant={this.props.buttonColor} size={this.props.buttonSize} onClick={() => this.handleModalShowHide()}>
+        <IconButton aria-label="delete" variant={this.props.buttonColor} size={this.props.buttonSize} onClick={() => this.handleModalShowHide()}>
           {this.props.button}
-        </Button>
+        </IconButton>
 
         <Modal show={this.state.showHide}>
 

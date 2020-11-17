@@ -1,6 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import Modal from './Modal';
 
+import DeleteIcon from '@material-ui/icons/Delete';
+import EditIcon from '@material-ui/icons/Edit';
+
 import BootstrapTable from 'react-bootstrap-table-next';
 import ToolkitProvider, { Search } from 'react-bootstrap-table2-toolkit';
 import paginationFactory from 'react-bootstrap-table2-paginator';
@@ -169,7 +172,7 @@ function Table() {
             <Row>
               <Col>
                 <ModalForm
-                  button="V"
+                  button={<DeleteIcon />}
                   buttonColor="primary"
                   buttonSize="sm"
                   title="Edit"
@@ -181,7 +184,7 @@ function Table() {
               </Col>
               <Col>
                 <Modal
-                  button="X"
+                  button={<EditIcon />}
                   buttonColor="danger"
                   buttonSize="sm"
                   title="Delete"
