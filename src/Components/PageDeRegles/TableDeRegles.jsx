@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Modal from './Modal';
+import Form from "@rjsf/core";
+
 
 import DeleteIcon from '@material-ui/icons/Delete';
 import EditIcon from '@material-ui/icons/Edit';
@@ -221,6 +223,32 @@ function Table() {
   } else if (!isLoaded) {
     return <div>Loading...</div>;
   } else {
+    const schema = {
+      "type": "number",
+      "anyOf": [
+        {
+          "type": "number",
+          "title": "one",
+          "enum": [
+            1
+          ]
+        },
+        {
+          "type": "number",
+          "title": "two",
+          "enum": [
+            2
+          ]
+        },
+        {
+          "type": "number",
+          "title": "three",
+          "enum": [
+            3
+          ]
+        }
+      ]
+    };
     return (
       <ToolkitProvider keyField="index" data={rules} columns={columns} search >
         {
@@ -234,7 +262,7 @@ function Table() {
                   buttonSize="md"
                   title="Add Rule"
                   close="Cancel"
-                  body="Working on it..."
+                  body={<Form schema={schema} />}
                   accept="Add rule"
                   accepting={() => console.log("ADD RULE")}
                 />
