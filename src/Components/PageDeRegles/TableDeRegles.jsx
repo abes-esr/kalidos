@@ -172,7 +172,7 @@ function Table() {
             <Row>
               <Col>
                 <ModalForm
-                  button={<DeleteIcon />}
+                  button={<EditIcon />}
                   buttonColor="primary"
                   buttonSize="sm"
                   title="Edit"
@@ -184,7 +184,7 @@ function Table() {
               </Col>
               <Col>
                 <Modal
-                  button={<EditIcon />}
+                  button={<DeleteIcon />}
                   buttonColor="danger"
                   buttonSize="sm"
                   title="Delete"
