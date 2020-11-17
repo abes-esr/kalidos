@@ -1,6 +1,8 @@
 const Parcours = require("../utile/Parcours");
 
 var Structurel = function () {
+
+
     function verifyRequire(type, retour) {
         return type === "required" && retour == null;
     }
@@ -87,6 +89,19 @@ var Structurel = function () {
         }
     }
 
+    function verifyExcludeCode(regle, datafields) {
+        if (regle.type == "exclude") {
+            for (let item in regle.number) {
+                const field = Parcours.findDataField(datafields, regle.number[item])
+                if(Parcours.testCode(field,regle.code)) {
+                    return true
+                }
+            }
+            return false
+
+        }
+    }
+
     var testMatchStructurelRules = function (categorie, rules, controlfields, datafields, resultJson) {
         rules[categorie].Structurel.forEach(function (regle) {
             const ind1 = regle.ind1
@@ -110,6 +125,7 @@ var Structurel = function () {
                     isPushInJson = isPushInJson || verifyIndex(regle, datafields);
                 } else if (code != "") {
                     isPushInJson = isPushInJson || verifyRequiredValue(regle, datafields);
+                    isPushInJson = isPushInJson || verifyExcludeCode(regle, datafields);
                 }
             } else {
                 isPushInJson = isPushInJson || verifyRequireOne(regle, datafields);
