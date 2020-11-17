@@ -1,6 +1,8 @@
 const Parcours = require("../utile/Parcours");
 
 var Structurel = function () {
+
+
     function verifyRequire(type, retour) {
         return type === "required" && retour == null;
     }
@@ -11,7 +13,7 @@ var Structurel = function () {
 
     function verifyRequireOne(regle, datafields) {
         if (regle.type === "required one") {
-            for (item in regle.number) {
+            for (let item in regle.number) {
                 if (Parcours.findDataField(datafields, regle.number[item]) != null) {
                     return false;
                 }
@@ -24,17 +26,17 @@ var Structurel = function () {
     function verifyContainsCode(regle, datafields) {
         if (regle.type == "contains code") {
             let valid = regle.number.length;
-            let numberError = [];
-            for (item in regle.number) {
+            // let numberError = [];
+            for (let item in regle.number) {
                 const field = Parcours.findDataField(datafields, regle.number[item])
-                numberError.push(regle.number[item]);
-                
+                // numberError.push(regle.number[item]);
+
                 if (field != null && field.subfield instanceof Array) {
                     for (i in field.subfield) {
                         if (field.subfield[i]._attributes.code === regle.code) {
                             if (regle.type == "contains code") {
                                 valid -= 1;
-                                numberError.pop();
+                                // numberError.pop();
                                 break;
                             }
                         }
@@ -43,28 +45,28 @@ var Structurel = function () {
                     if (field.subfield._attributes.code === regle.code) {
                         if (regle.type == "contains code") {
                             valid -= 1;
-                            numberError.pop();
+                            // numberError.pop();
                         }
                     }
                 } else {
                     valid -= 1;
-                    numberError.pop();
+                    // numberError.pop();
                 }
                 if (field != null && !valid) {
                     break;
                 }
             }
-            return valid>0;
+            return valid > 0;
         }
     }
 
     function verifyIndex(regle, datafields) {
         if (regle.type == "index") {
-            for (item in regle.number) {
+            for (let item in regle.number) {
                 let field = Parcours.findDataField(datafields, regle.number[item])
-                if(field != null && field._attributes.ind1 !== regle.ind1 && field._attributes.ind2 !== regle.ind2 ) {
+                if (field != null && (field._attributes.ind1 !== regle.ind1 || field._attributes.ind2 !== regle.ind2)) {
                     return true
-                }        
+                }
             }
             return false
 
@@ -74,26 +76,39 @@ var Structurel = function () {
 
     function verifyRequiredValue(regle, datafields) {
         if (regle.type == "required with value") {
-            for (item in regle.number) {
+            for (let item in regle.number) {
                 let field = Parcours.findDataField(datafields, regle.number[item])
-                let texte = Parcours.getSubfieldValue(field,regle.code)
+                let texte = Parcours.getSubfieldValue(field, regle.code)
                 //console.log(texte , " " , regle.value ," -> " ,texte !== regle.value)
-                if(texte !== regle.value) {
+                if (texte !== regle.value) {
                     return true
-                }        
+                }
             }
             return false
 
         }
     }
 
-    var testMatchStructurelRules = function (categorie,rules, controlfields, datafields, resultJson) {
+    function verifyExcludeCode(regle, datafields) {
+        if (regle.type == "exclude") {
+            for (let item in regle.number) {
+                const field = Parcours.findDataField(datafields, regle.number[item])
+                if(Parcours.testCode(field,regle.code)) {
+                    return true
+                }
+            }
+            return false
+
+        }
+    }
+
+    var testMatchStructurelRules = function (categorie, rules, controlfields, datafields, resultJson) {
         rules[categorie].Structurel.forEach(function (regle) {
             const ind1 = regle.ind1
             const ind2 = regle.ind2
             const code = regle.code
             const type = regle.type
-            const value = regle.value
+            // const value = regle.value
             const message = regle.message
             let number = undefined;
 
@@ -106,17 +121,18 @@ var Structurel = function () {
                 if (ind1 === "" && ind2 === "" && code === "") {
                     isPushInJson = isPushInJson || verifyRequire(type, retour);
                     isPushInJson = isPushInJson || verifyExclude(type, retour);
-                } else if (ind1 != "" && ind2 != ""){
+                } else if (ind1 != "" && ind2 != "") {
                     isPushInJson = isPushInJson || verifyIndex(regle, datafields);
-                } else if(code != "") {
+                } else if (code != "") {
                     isPushInJson = isPushInJson || verifyRequiredValue(regle, datafields);
+                    isPushInJson = isPushInJson || verifyExcludeCode(regle, datafields);
                 }
             } else {
-                isPushInJson = isPushInJson || verifyRequireOne(regle, datafields); 
-                isPushInJson = isPushInJson || verifyContainsCode(regle, datafields);                 
+                isPushInJson = isPushInJson || verifyRequireOne(regle, datafields);
+                isPushInJson = isPushInJson || verifyContainsCode(regle, datafields);
             }
 
-            if(isPushInJson) {
+            if (isPushInJson) {
                 resultJson.errors.push({
                     message: message,
                     number: number
