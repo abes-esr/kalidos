@@ -9,7 +9,7 @@ const IdRef = require("../regles/IdRef");
 
 let result = {};
 
-const PPN_EN_DUR = '169450546'
+const PPN_EN_DUR = '192132741'
 const CATEGORIE = "Generale";
 const TYPE = "matching";
 const NEWRULE = {
@@ -153,9 +153,9 @@ function verifMain(rules, sudoc ) {
 
 
 
-    Matching.testMatchRegexRules(CATEGORIE,rules,controlfields,datafields , resultJson)
-    Structurel.testMatchStructurelRules(CATEGORIE,rules,controlfields,datafields , resultJson)
-    Dependance.testMatchDependanceRules(CATEGORIE,rules,controlfields,datafields , resultJson)
+    // Matching.testMatchRegexRules(CATEGORIE,rules,controlfields,datafields , resultJson)
+    // Structurel.testMatchStructurelRules(CATEGORIE,rules,controlfields,datafields , resultJson)
+    // Dependance.testMatchDependanceRules(CATEGORIE,rules,controlfields,datafields , resultJson)
     IdRef.testIdRefRules(CATEGORIE,rules,controlfields,datafields , resultJson)
 
     console.log("result : " , resultJson)

@@ -17,7 +17,7 @@ var IdRef = function () {
         .catch(function (error) {
             //console.log("avant : " , resultJson)
             resultJson.errors.push({
-                message: regle.message,
+                message: regle.message + " ( " + regle.index + " ) ",
                 number: regle.number,
                 code: regle.code
             });
@@ -32,19 +32,30 @@ var IdRef = function () {
         let valid = false
         if(field != null) {
             const value = field._text
-            //console.log (regex , " : " , value , " -> " ,RegExp(regex).test(value))
             if(RegExp(regex).test(value)) {
                 valid = true
             }
         }
         
         if(!valid) {
+            //console.log("regle : " , regle.numRuleExcell)
             resultJson.errors.push({
-                message: regle.message,
+                message: regle.message + " ( " + regle.index + " ) ",
                 number: regle.number,
                 code: regle.code
             });
             //console.log(resultJson.errors)
+        }
+    }
+
+    var testValueCode = function(field,code,regex) {
+        const subfield = Parcours.getSubfieldValue(field,code)
+        const regExp = RegExp(regex);
+        if(subfield != null) {
+            //console.log(subfield , " " , regex , " ",RegExp(regExp).test(subfield))
+            return RegExp(regExp).test(subfield)
+        } else {
+            return false
         }
     }
 
@@ -54,12 +65,22 @@ var IdRef = function () {
      * @param {*} regle 
      */
     var conditionNotice = function(datafields ,regle) {
-        const field = Parcours.findDataField(datafields, regle.condition.number)
-        if(field != null && regle.condition.code != null) {
-            return Parcours.testCode(field,regle.condition.code)
-        } else {
-            return field != null 
+        let retour = false;
+        for (let i in regle.condition) {
+            const field = Parcours.findDataField(datafields, regle.condition[i].number)
+            if(field != null && regle.condition[i].code != null && regle.condition[i].regex != null){
+                retour = testValueCode(field,regle.condition[i].code,regle.condition[i].regex)
+            }
+            else if(field != null && regle.condition[i].code != null) {
+                retour = Parcours.testCode(field,regle.condition[i].code)
+            } else {
+                retour = field != null
+            }
+            if(retour == false) {
+                return false;
+            }
         }
+        return retour
     }
 
     /**
@@ -68,7 +89,7 @@ var IdRef = function () {
      * @param {*} regle 
      */
     var identifiantNotice = function (datafields ,regle){
-        const field = Parcours.findDataField(datafields, regle.condition.number)
+        const field = Parcours.findDataField(datafields, regle.identifiant.number)
         const identifiant = Parcours.getSubfieldValue(field,regle.identifiant.code)
         return identifiant
     }
@@ -81,8 +102,10 @@ var IdRef = function () {
                 if(identifiant != null) {
                     getRequest(identifiant,regle , resultJson)
                 } else {
+
+                       
                     resultJson.errors.push({
-                        message: regle.message,
+                        message: regle.message + " ( " + regle.index + " ) ",
                         number: regle.number,
                         code: regle.code
                     });

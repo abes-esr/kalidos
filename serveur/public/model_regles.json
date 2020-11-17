@@ -604,11 +604,12 @@
             {
                 "index": 52,
                 "numRuleExcell": 69,
-                "condition" : {
+                "condition" : [{
                     "number" : "701",
                     "code" : "a"
-                },
+                }],
                 "identifiant":{
+                    "number" : "701",
                     "code":"3"
                 },
                 "verification" : {
@@ -620,11 +621,12 @@
             {
                 "index": 53,
                 "numRuleExcell": 48,
-                "condition" : {
+                "condition" : [{
                     "number" : "600",
                     "code" : "a"
-                },
+                }],
                 "identifiant":{
+                    "number" : "600",
                     "code":"3"
                 },
                 "verification" : {
@@ -636,11 +638,12 @@
             {
                 "index": 54,
                 "numRuleExcell": 50,
-                "condition" : {
+                "condition" : [{
                     "number" : "601",
                     "code" : "a"
-                },
+                }],
                 "identifiant":{
+                    "number" : "601",
                     "code":"3"
                 },
                 "verification" : {
@@ -652,11 +655,12 @@
             {
                 "index": 55,
                 "numRuleExcell": 52,
-                "condition" : {
+                "condition" : [{
                     "number" : "602",
                     "code" : "a"
-                },
+                }],
                 "identifiant":{
+                    "number" : "602",
                     "code":"3"
                 },
                 "verification" : {
@@ -664,6 +668,270 @@
                     "regex": "^Ta.*"
                 },
                 "message": "Incohérence indexation : vérifier les zones 6XX et le type de notice d'autorité"
+            },
+            {
+                "index": 56,
+                "numRuleExcell": 54,
+                "condition" : [{
+                    "number" : "604",
+                    "code" : "a"
+                }],
+                "identifiant":{
+                    "number" : "604",
+                    "code":"3"
+                },
+                "verification" : {
+                    "number" : "008",
+                    "regex": "^Tq.*"
+                },
+                "message": "Incohérence indexation : vérifier les zones 6XX et le type de notice d'autorité"
+            },
+            {
+                "index": 57,
+                "numRuleExcell": 56,
+                "condition" : [{
+                    "number" : "605",
+                    "code" : "a"
+                }],
+                "identifiant":{
+                    "number" : "605",
+                    "code":"3"
+                },
+                "verification" : {
+                    "number" : "008",
+                    "regex": "^Tu.*"
+                },
+                "message": "Incohérence indexation : vérifier les zones 6XX et le type de notice d'autorité"
+            },
+            {
+                "index": 58,
+                "numRuleExcell": 58,
+                "condition" : [{
+                    "number" : "606",
+                    "code" : "a"
+                },
+                {
+                    "number" : "606",
+                    "code" : "2",
+                    "regex" : "^rameau$"
+                }
+                ],
+                "identifiant":{
+                    "number" : "606",
+                    "code":"3"
+                },
+                "verification" : {
+                    "number" : "008",
+                    "regex": "^Td.*"
+                },
+                "message": "Incohérence indexation : vérifier les zones 6XX et le type de notice d'autorité"
+            },
+            {
+                "index": 59,
+                "numRuleExcell": 60,
+                "condition" : [{
+                    "number" : "606",
+                    "code" : "a"
+                },
+                {
+                    "number" : "606",
+                    "code" : "2",
+                    "regex" : "^fmesh$"
+                }
+                ],
+                "identifiant":{
+                    "number" : "606",
+                    "code":"3"
+                },
+                "verification" : {
+                    "number" : "008",
+                    "regex": "^Tl.*"
+                },
+                "message": "Incohérence indexation : vérifier les zones 6XX et le type de notice d'autorité"
+            },
+            {
+                "index": 60,
+                "numRuleExcell": 61,
+                "condition" : [{
+                    "number" : "607",
+                    "code" : "a"
+                }
+                ],
+                "identifiant":{
+                    "number" : "607",
+                    "code":"3"
+                },
+                "verification" : {
+                    "number" : "008",
+                    "regex": "^Tg.*"
+                },
+                "message": "Incohérence indexation : vérifier les zones 6XX et le type de notice d'autorité"
+            },
+            {
+                "index": 61,
+                "numRuleExcell": 62,
+                "condition" : [{
+                    "number" : "608",
+                    "code" : "a"
+                }
+                ],
+                "identifiant":{
+                    "number" : "608",
+                    "code":"3"
+                },
+                "verification" : {
+                    "number" : "008",
+                    "regex": "^Tf.*"
+                },
+                "message": "Incohérence indexation : vérifier les zones 6XX et le type de notice d'autorité"
+            },
+            {
+                "index": 62,
+                "numRuleExcell": 65,
+                "condition" : [{
+                    "number" : "616",
+                    "code" : "a"
+                }
+                ],
+                "identifiant":{
+                    "number" : "616",
+                    "code":"3"
+                },
+                "verification" : {
+                    "number" : "008",
+                    "regex": "^Tm.*"
+                },
+                "message": "Incohérence indexation : vérifier les zones 6XX et le type de notice d'autorité"
+            },
+            {
+                "index": 63,
+                "numRuleExcell": 67,
+                "condition" : [{
+                    "number" : "700",
+                    "code" : "a"
+                }
+                ],
+                "identifiant":{
+                    "number" : "700",
+                    "code":"3"
+                },
+                "verification" : {
+                    "number" : "008",
+                    "regex": "^Tp.*"
+                },
+                "message": "Incohérence zone 7XX : vérifier l'étiquette et le type de notice d'autorité"
+            },
+            {
+                "index": 64,
+                "numRuleExcell": 70,
+                "condition" : [{
+                    "number" : "702"
+                }],
+                "identifiant":{
+                    "number" : "702",
+                    "code":"3"
+                },
+                "verification" : {
+                    "number" : "008",
+                    "regex": "^Tp.*"
+                },
+                "message": "Incohérence zone 7XX : vérifier l'étiquette et le type de notice d'autorité"
+            },
+            {
+                "index": 65,
+                "numRuleExcell": 71,
+                "condition" : [{
+                    "number" : "710"
+                }],
+                "identifiant":{
+                    "number" : "710",
+                    "code":"3"
+                },
+                "verification" : {
+                    "number" : "008",
+                    "regex": "^Tb.*"
+                },
+                "message": "Incohérence zone 7XX : vérifier l'étiquette et le type de notice d'autorité"
+            },
+            {
+                "index": 66,
+                "numRuleExcell": 72,
+                "condition" : [{
+                    "number" : "711"
+                }],
+                "identifiant":{
+                    "number" : "711",
+                    "code":"3"
+                },
+                "verification" : {
+                    "number" : "008",
+                    "regex": "^Tb.*"
+                },
+                "message": "Incohérence zone 7XX : vérifier l'étiquette et le type de notice d'autorité"
+            },
+            {
+                "index": 66,
+                "numRuleExcell": 72,
+                "condition" : [{
+                    "number" : "712"
+                }],
+                "identifiant":{
+                    "number" : "712",
+                    "code":"3"
+                },
+                "verification" : {
+                    "number" : "008",
+                    "regex": "^Tb.*"
+                },
+                "message": "Incohérence zone 7XX : vérifier l'étiquette et le type de notice d'autorité"
+            },
+            {
+                "index": 67,
+                "numRuleExcell": 74,
+                "condition" : [{
+                    "number" : "720"
+                }],
+                "identifiant":{
+                    "number" : "720",
+                    "code":"3"
+                },
+                "verification" : {
+                    "number" : "008",
+                    "regex": "^Ta.*"
+                },
+                "message": "Incohérence zone 7XX : vérifier l'étiquette et le type de notice d'autorité"
+            },
+            {
+                "index": 68,
+                "numRuleExcell": 75,
+                "condition" : [{
+                    "number" : "721"
+                }],
+                "identifiant":{
+                    "number" : "721",
+                    "code":"3"
+                },
+                "verification" : {
+                    "number" : "008",
+                    "regex": "^Ta.*"
+                },
+                "message": "Incohérence zone 7XX : vérifier l'étiquette et le type de notice d'autorité"
+            },
+            {
+                "index": 69,
+                "numRuleExcell": 76,
+                "condition" : [{
+                    "number" : "722"
+                }],
+                "identifiant":{
+                    "number" : "722",
+                    "code":"3"
+                },
+                "verification" : {
+                    "number" : "008",
+                    "regex": "^Ta.*"
+                },
+                "message": "Incohérence zone 7XX : vérifier l'étiquette et le type de notice d'autorité"
             }
         ]
     },
