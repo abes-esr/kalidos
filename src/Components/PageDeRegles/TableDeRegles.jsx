@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Modal from './Modal';
-import Form from "@rjsf/core";
-
+import FormJSON from "@rjsf/core";
 
 import DeleteIcon from '@material-ui/icons/Delete';
 import EditIcon from '@material-ui/icons/Edit';
@@ -249,12 +248,17 @@ function Table() {
         }
       ]
     };
+
+    console.log(schema)
+    const formJSON = () => { <FormJSON schema={schema} />};
+    console.log(formJSON)
     return (
       <ToolkitProvider keyField="index" data={rules} columns={columns} search >
         {
           props => (
             <div>
               <SearchBar {...props.searchProps} />
+              {/* <FormJSON schema={schema}></FormJSON> */}
               <Col>
                 <Modal
                   button="Add rule"
@@ -262,7 +266,7 @@ function Table() {
                   buttonSize="md"
                   title="Add Rule"
                   close="Cancel"
-                  body={<Form schema={schema} />}
+                  body={<FormJSON schema={schema} />}
                   accept="Add rule"
                   accepting={() => console.log("ADD RULE")}
                 />
