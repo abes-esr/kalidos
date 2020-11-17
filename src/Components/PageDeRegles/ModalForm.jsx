@@ -1,65 +1,59 @@
-import React from 'react'
+import React, { useState } from 'react'
+
 import { Button, Form, Modal } from 'react-bootstrap'
 import IconButton from '@material-ui/core/IconButton'
 
-class BootstrapModalForm extends React.Component {
+function ModalForm({button, title, body, close, accept, accepting}){
 
-  constructor() {
-    super()
-    this.state = {
-      showHide: false
-    }
+  const [showHide, setShowHide] = useState(false);
+
+
+  const handleModalShowHide = () => {
+    setShowHide(!showHide)
   }
 
 
-  handleModalShowHide() {
-    this.setState({ showHide: !this.state.showHide })
+  const whenClosing = () => {
+    handleModalShowHide()
+  }
+
+  const whenAccepting = () => {
+    accepting()
+    handleModalShowHide()
   }
 
 
-  whenClosing() {
-    // this.props.closing()
-    this.handleModalShowHide()
-  }
+  return (
+    <div>
+      <IconButton className="p-0" onClick={() => handleModalShowHide()}>
+        {button}
+      </IconButton>
 
-  whenAccepting() {
-    this.props.accepting()
-    this.handleModalShowHide()
-  }
+      <Modal show={showHide}>
 
+        <Modal.Header closeButton onClick={() => whenClosing()}>
+          <Modal.Title>{title}</Modal.Title>
+        </Modal.Header>
+        <Form>
+          <Modal.Body>{body}</Modal.Body>
 
-  render() {
-    return (
-      <div>
-        <IconButton aria-label="delete" variant={this.props.buttonColor} size={this.props.buttonSize} onClick={() => this.handleModalShowHide()}>
-          {this.props.button}
-        </IconButton>
+          <Modal.Footer>
+            <Button variant="secondary" onClick={() => whenClosing()}>
+              {close}
+            </Button>
 
-        <Modal show={this.state.showHide}>
+            <Button variant="primary" onClick={() => whenAccepting()} type="submit">
+              {accept}
+            </Button>
 
-          <Modal.Header closeButton onClick={() => this.whenClosing()}>
-            <Modal.Title>{this.props.title}</Modal.Title>
-          </Modal.Header>
-          <Form>
-            <Modal.Body>{this.props.body}</Modal.Body>
+          </Modal.Footer>
+        </Form>
 
-            <Modal.Footer>
-              <Button variant="secondary" onClick={() => this.whenClosing()}>
-                {this.props.close}
-              </Button>
+      </Modal>
+    </div>
+  )
 
-              <Button variant="primary" onClick={() => this.whenAccepting()} type="submit">
-                {this.props.accept}
-              </Button>
-
-            </Modal.Footer>
-          </Form>
-
-        </Modal>
-      </div>
-    )
-  }
 }
 
 
-export default BootstrapModalForm;
+export default ModalForm;
