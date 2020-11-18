@@ -1,0 +1,14 @@
+<record>
+    <datafield tag="500" ind1=" " ind2=" ">
+        <subfield code="a">sdsds</subfield>
+    </datafield>
+    <datafield tag="600" ind1=" " ind2=" ">
+        <subfield code="a">klb ,klwdb,</subfield>
+    </datafield>
+    <datafield tag="700" ind1=" " ind2=" ">
+        <subfield code="a">’</subfield>
+    </datafield>
+    <datafield tag="" ind1="" ind2="">
+        <subfield code=""></subfield>
+    </datafield>
+</record>

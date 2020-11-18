@@ -152,7 +152,7 @@
                 "number": "GLOBAL",
                 "code": "",
                 "message": "Ne doit pas contenir le caractère ’",
-                "regex": "(?:(?!').)+",
+                "regex": "(?:(?!’).)+",
                 "index": 25
             },
             {

@@ -58,7 +58,7 @@ var Matching = function () {
     }
 
     var matchAll = function (textField, value) {
-        for (j in value) {
+        for (const j in value) {
             //console.log(value[j] , " : " , field.subfield[i]._text , " -> " , !RegExp(value[j]).test(field.subfield[i]._text))
             if (!RegExp(value[j]).test(textField)) {
                 return false
@@ -68,7 +68,7 @@ var Matching = function () {
     }
 
     var matchOne = function (textField, value) {
-        for (j in value) {
+        for (const j in value) {
             if (RegExp(value[j]).test(textField)) {
                 return true;
             }
