@@ -47,6 +47,7 @@
     "react-dropzone-textarea": "^1.1.4",
     "react-dropzone-uploader": "^2.11.0",
     "react-js-pagination": "^3.0.3",
+    "react-json-to-csv": "^1.0.4",
     "react-redux": "^7.2.1",
     "react-router-dom": "^5.2.0",
     "redux": "^4.0.5",

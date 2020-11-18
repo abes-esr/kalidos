@@ -6,6 +6,7 @@ import TabPPNError from './TabPPNError';
 import { connect } from 'react-redux';
 import { MDBIcon } from 'mdbreact';
 import { Button, Tooltip, OverlayTrigger } from 'react-bootstrap';
+import CsvDownload from 'react-json-to-csv';
 
 
 const mapStateToProps = (state) => ({
@@ -21,9 +22,16 @@ const renderTooltip = (props) => (
 );
 
 function InterfaceVerif({ result, recherchePPN, compteurResult }) {
-    const data = Object.keys(result).map((key) => [Number(key), result[key]]);
-    const listPPNWithError = data.filter((row) => { return row[1].errors.length });
+    console.log(result);
+    const data_verif = Object.keys(result).map((key) => [Number(key), result[key]]);
+    console.log(data_verif);
+
+    const listPPNWithError = data_verif.filter((row) => { return row[1].errors.length });
+    console.log(listPPNWithError);
+
     const listPPNWithGoodName = listPPNWithError.filter((row) => { return row[1].PPN.toString().includes(recherchePPN) });
+    console.log(listPPNWithGoodName);
+
     return (
         <div>
             <h2>
@@ -33,9 +41,13 @@ function InterfaceVerif({ result, recherchePPN, compteurResult }) {
                     delay={{ show: 250, hide: 400 }}
                     overlay={renderTooltip}
                 >
-                    <Button variant="success" style={{ float: "right" }}>
-                        <MDBIcon far icon="file-excel" />
-                    </Button>
+                    {/**/}
+
+                    <CsvDownload data={data_verif} filename="verif_data.csv" style={{ float : "right" }}>
+                        <Button variant="success">
+                            <MDBIcon far icon="file-excel" />
+                        </Button>
+                    </CsvDownload>
                 </OverlayTrigger>
             </h2>
             <br></br>
