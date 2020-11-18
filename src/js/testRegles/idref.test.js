@@ -14,122 +14,63 @@ beforeAll(() => {
 afterAll(() => {
 });
 
-function getPPN(link) {
+function getXML(link) {
     const xmlPPN = fs.readFileSync(path.join(__dirname, 'idRef/' + link), 'utf8');
     return JSON.parse(convert.xml2json(xmlPPN, { compact: true, spaces: 2 }));
 }
 
-function testError(errorMessage , resultJson) {
-    for( let i in resultJson.errors) {
-        console.log(resultJson.errors[i].message , "    " , errorMessage , "      " , errorMessage === resultJson.errors[i].message)
-        if(errorMessage == resultJson.errors[i].message) {
-            return true
+function testIdRefRules(categorie, rules, idrule, idref, datafields, resultJson) {
+    rules[categorie].idRef.forEach(function (regle) {
+        if (regle.index === idrule) {
+            if (IdRef.conditionNotice(datafields, regle)) {
+                const identifiant = IdRef.identifiantNotice(datafields, regle)
+                if (identifiant != null) {
+                    IdRef.validateIdRef(idref, regle, resultJson)
+                } else {
+
+
+                    resultJson.errors.push({
+                        message: regle.message + " ( " + regle.index + " ) ",
+                        number: regle.number,
+                        code: regle.code
+                    });
+                }
+            }
         }
-    }
-    return false
+    });
 }
 
 
 
 
-test("69 : Incohérence zone 7XX : vérifier l'étiquette et le type de notice d'autorité", async () => {
-    const indexExcell = 69;
-    const PPN = getPPN(indexExcell + '/' + indexExcell + '.xml');
-    const datafields = PPN.record.datafield;
+test("58 : Incohérence indexation : vérifier les zones 6XX et le type de notice d'autorité", () => {
+    const index = 58;
+    const indexExcell = 58;
+    const sudoc = getXML(indexExcell + '/' + indexExcell + '_pass_sudoc.xml');
+    const idref = getXML(indexExcell + '/' + indexExcell + '_pass_idref.xml');
+    const datafields = sudoc.record.datafield;
     let resultJson = {
         PPN: 0,
         errors: [],
     };
-    await IdRef.testIdRefRules(CATEGORIE,rules,undefined,datafields , resultJson)
-    //testError("Incohérence zone 7XX : vérifier l'étiquette et le type de notice d'autorité" , resultJson)
+    testIdRefRules(CATEGORIE, rules, index, idref, datafields, resultJson)
     expect(resultJson.errors).toStrictEqual([]);
 });
 
-test("69 : Incohérence zone 7XX : vérifier l'étiquette et le type de notice d'autorité (FAIL)", async () => {
-    const indexExcell = 69;
-    const PPN = getPPN(indexExcell + '/' + indexExcell + '_Fail.xml');
-    const datafields = PPN.record.datafield;
+
+
+test("61 : Incohérence indexation : vérifier les zones 6XX et le type de notice d'autorité", () => {
+    const index = 60;
+    const indexExcell = 61;
+    const sudoc = getXML(indexExcell + '/' + indexExcell + '_fail_sudoc.xml');
+    const idref = getXML(indexExcell + '/' + indexExcell + '_fail_idref.xml');
+    console.log(idref)
+    const datafields = sudoc.record.datafield;
     let resultJson = {
         PPN: 0,
         errors: [],
     };
-    await IdRef.testIdRefRules(CATEGORIE,rules,undefined,datafields , resultJson)
-    expect(resultJson.errors).not.toStrictEqual([]);
-});
-
-test("48 : Incohérence indexation : vérifier les zones 6XX et le type de notice d'autorité", async () => {
-    const indexExcell = 48;
-    const PPN = getPPN(indexExcell + '/' + indexExcell + '.xml');
-    const datafields = PPN.record.datafield;
-    let resultJson = {
-        PPN: 0,
-        errors: [],
-    };
-    await IdRef.testIdRefRules(CATEGORIE,rules,undefined,datafields , resultJson)
-    expect(resultJson.errors).toStrictEqual([]);
-});
-
-test("48 : Incohérence indexation : vérifier les zones 6XX et le type de notice d'autorité (FAIL)", async () => {
-    const indexExcell = 48;
-    const PPN = getPPN(indexExcell + '/' + indexExcell + '_Fail.xml');
-    const datafields = PPN.record.datafield;
-    let resultJson = {
-        PPN: 0,
-        errors: [],
-    };
-    await IdRef.testIdRefRules(CATEGORIE,rules,undefined,datafields , resultJson)
-    console.log(resultJson)
-    expect(resultJson.errors).not.toStrictEqual([]);
-});
-
-test("50 : Incohérence indexation : vérifier les zones 6XX et le type de notice d'autorité", async () => {
-    const indexExcell = 50;
-    const PPN = getPPN(indexExcell + '/' + indexExcell + '.xml');
-    const datafields = PPN.record.datafield;
-    let resultJson = {
-        PPN: 0,
-        errors: [],
-    };
-    await IdRef.testIdRefRules(CATEGORIE,rules,undefined,datafields , resultJson)
-    expect(resultJson.errors).toStrictEqual([]);
-});
-
-test("50 : Incohérence indexation : vérifier les zones 6XX et le type de notice d'autorité (FAIL)", async () => {
-    const indexExcell = 50;
-    const PPN = getPPN(indexExcell + '/' + indexExcell + '_Fail.xml');
-    const datafields = PPN.record.datafield;
-    let resultJson = {
-        PPN: 0,
-        errors: [],
-    };
-    await IdRef.testIdRefRules(CATEGORIE,rules,undefined,datafields , resultJson)
-    expect(resultJson.errors).not.toStrictEqual([]);
-});
-
-
-test("52 : Incohérence indexation : vérifier les zones 6XX et le type de notice d'autorité", async () => {
-    const indexExcell = 52;
-    const PPN = getPPN(indexExcell + '/' + indexExcell + '.xml');
-    const datafields = PPN.record.datafield;
-    let resultJson = {
-        PPN: 0,
-        errors: [],
-    };
-    await IdRef.testIdRefRules(CATEGORIE,rules,undefined,datafields , resultJson)
-    expect(resultJson.errors).toStrictEqual([]);
-
-    
-});
-
-test("52 : Incohérence indexation : vérifier les zones 6XX et le type de notice d'autorité (FAIL)", async () => {
-    const indexExcell = 52;
-    const PPN = getPPN(indexExcell + '/' + indexExcell + '_Fail.xml');
-    const datafields = PPN.record.datafield;
-    let resultJson = {
-        PPN: 0,
-        errors: [],
-    };
-    await IdRef.testIdRefRules(CATEGORIE,rules,undefined,datafields , resultJson)
+    testIdRefRules(CATEGORIE, rules, index, idref, datafields, resultJson)
     expect(resultJson.errors).not.toStrictEqual([]);
 });
 

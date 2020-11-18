@@ -19,7 +19,8 @@ var IdRef = function () {
             resultJson.errors.push({
                 message: regle.message + " ( " + regle.index + " ) ",
                 number: regle.number,
-                code: regle.code
+                code: regle.code,
+                index : regle.index
             });
             //console.log("apres : " , resultJson)
         })
@@ -42,7 +43,8 @@ var IdRef = function () {
             resultJson.errors.push({
                 message: regle.message + " ( " + regle.index + " ) ",
                 number: regle.number,
-                code: regle.code
+                code: regle.code,
+                index : regle.index
             });
             //console.log(resultJson.errors)
         }
@@ -107,7 +109,8 @@ var IdRef = function () {
                     resultJson.errors.push({
                         message: regle.message + " ( " + regle.index + " ) ",
                         number: regle.number,
-                        code: regle.code
+                        code: regle.code,
+                        index : regle.index
                     });
                 }
             } 
@@ -115,7 +118,10 @@ var IdRef = function () {
     }
 
     return {
-        testIdRefRules : testIdRefRules
+        testIdRefRules : testIdRefRules,
+        validateIdRef : validateIdRef,
+        conditionNotice : conditionNotice,
+        identifiantNotice : identifiantNotice,
     }
 }();
 
