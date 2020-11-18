@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
-import { Button, Card, Col, Container, Form, Modal, Row } from 'react-bootstrap'
-import IconButton from '@material-ui/core/IconButton'
+import { Button, Card, Col, Container, Form, ListGroup, Modal, Row } from 'react-bootstrap'
 
 const TypeList = () => {
   
@@ -17,7 +16,7 @@ const TypeList = () => {
 
   const handleSelectedType = (type) => {
     setType(type)
-    setIndexDesc(types.findIndex(type => type.type == type))
+    setIndexDesc(types.findIndex(t => t.type == type))
   }
 
   return (
@@ -27,7 +26,7 @@ const TypeList = () => {
           <ListGroup defaultActiveKey="#link1">
             {types.map(type => {
               return(
-                <ListGroup.Item key={type.type} action onClick={handleSelectedType(type.type)}>
+                <ListGroup.Item key={type.type} action onClick={() => handleSelectedType(type.type)}>
                   {type.name}
                 </ListGroup.Item>
               );
@@ -35,9 +34,16 @@ const TypeList = () => {
           </ListGroup>
         </Col>
         <Col>
-            <Card>
-          <Card.Body>{type[indexDesc].description}</Card.Body>
-            </Card>
+            <Row className="align-self-start">
+              <Card>
+                <Card.Body>{types[indexDesc].description}</Card.Body>
+              </Card>
+            </Row>
+            <Row className="align-self-end">
+              <Button>
+                Suivant
+              </Button>
+            </Row>
         </Col>
       </Row>
   </Container>
