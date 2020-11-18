@@ -7,7 +7,6 @@ import { connect } from 'react-redux';
 import { MDBIcon } from 'mdbreact';
 import { Button, Tooltip, OverlayTrigger } from 'react-bootstrap';
 import { CSVLink, CSVDownload } from "react-csv";
-import json2csv from "json2csv";
 
 
 const mapStateToProps = (state) => ({
@@ -32,7 +31,7 @@ function InterfaceVerif({ result, recherchePPN, compteurResult }) {
 
     const headers = [
         { label: "PPN", key: "ppn" },
-        { label: "Erreur", key: "error" },
+        { label: "Erreurs", key: "error" },
         { label: "Message", key: "message" },
         { label: "Number", key: "number" },
         { label: "Code", key: "code" }
@@ -42,14 +41,26 @@ function InterfaceVerif({ result, recherchePPN, compteurResult }) {
     for (let i=0; i<listPPNWithError.length; i++ ) {
         let error_number = listPPNWithError.[i].[1].['errors'].length;
 
+        let redondance = false;
         for (let j=0; j<error_number; j++) {
-            csvData.push( {  
-                ppn: listPPNWithError.[i].[1].['PPN'], 
-                error: error_number, 
-                message: listPPNWithError.[i].[1].['errors'].[0].['message'],
-                number: listPPNWithError.[i].[1].['errors'].[0].['number'],
-                code: listPPNWithError.[i].[1].['errors'].[0].['code'],
-            } )
+            if(!redondance) {
+                csvData.push( {  
+                    ppn: listPPNWithError.[i].[1].['PPN'], 
+                    error: error_number, 
+                    message: listPPNWithError.[i].[1].['errors'].[0].['message'],
+                    number: listPPNWithError.[i].[1].['errors'].[0].['number'],
+                    code: listPPNWithError.[i].[1].['errors'].[0].['code'],
+                } )
+                redondance = true;
+            } else {
+                csvData.push( {  
+                    ppn: "", 
+                    error: "", 
+                    message: listPPNWithError.[i].[1].['errors'].[0].['message'],
+                    number: listPPNWithError.[i].[1].['errors'].[0].['number'],
+                    code: listPPNWithError.[i].[1].['errors'].[0].['code'],
+                } )
+            }
         }
     }
 
@@ -62,7 +73,18 @@ function InterfaceVerif({ result, recherchePPN, compteurResult }) {
             <h2>
                 Interface de Verification
 
-                <CSVLink data={csvData} headers={headers}> Download me </CSVLink>;
+                <OverlayTrigger
+                    placement="top"
+                    delay={{ show: 250, hide: 400 }}
+                    overlay={renderTooltip}
+                >
+
+                    <CSVLink data={csvData} headers={headers} style={{ float : "right" }}>
+                            <Button variant="success">
+                                <MDBIcon far icon="file-excel" />
+                            </Button>
+                    </CSVLink>
+                </OverlayTrigger>
             </h2>
             <br></br>
             <div className="row">
