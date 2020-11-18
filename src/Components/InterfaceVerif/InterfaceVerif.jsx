@@ -41,24 +41,22 @@ function InterfaceVerif({ result, recherchePPN, compteurResult }) {
     for (let i=0; i<listPPNWithError.length; i++ ) {
         let error_number = listPPNWithError.[i].[1].['errors'].length;
 
-        let redondance = false;
         for (let j=0; j<error_number; j++) {
-            if(!redondance) {
+            if(j==0) {
                 csvData.push( {  
                     ppn: listPPNWithError.[i].[1].['PPN'], 
                     error: error_number, 
-                    message: listPPNWithError.[i].[1].['errors'].[0].['message'],
-                    number: listPPNWithError.[i].[1].['errors'].[0].['number'],
-                    code: listPPNWithError.[i].[1].['errors'].[0].['code'],
+                    message: listPPNWithError.[i].[1].['errors'].[j].['message'],
+                    number: listPPNWithError.[i].[1].['errors'].[j].['number'],
+                    code: listPPNWithError.[i].[1].['errors'].[j].['code'],
                 } )
-                redondance = true;
             } else {
                 csvData.push( {  
                     ppn: "", 
                     error: "", 
-                    message: listPPNWithError.[i].[1].['errors'].[0].['message'],
-                    number: listPPNWithError.[i].[1].['errors'].[0].['number'],
-                    code: listPPNWithError.[i].[1].['errors'].[0].['code'],
+                    message: listPPNWithError.[i].[1].['errors'].[j].['message'],
+                    number: listPPNWithError.[i].[1].['errors'].[j].['number'],
+                    code: listPPNWithError.[i].[1].['errors'].[j].['code'],
                 } )
             }
         }
