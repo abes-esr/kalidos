@@ -1,0 +1,131 @@
+<record>
+    <leader> cam0 22 450 </leader>
+    <controlfield tag="001">169450619</controlfield>
+    <controlfield tag="002">75</controlfield>
+    <controlfield tag="003">http://www.sudoc.fr/169450619</controlfield>
+    <controlfield tag="004">20130524</controlfield>
+    <controlfield tag="005">20200721110344.000</controlfield>
+    <controlfield tag="006">751052250</controlfield>
+    <controlfield tag="007">341720001</controlfield>
+    <controlfield tag="008">Aax3</controlfield>
+    <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(OCoLC)867504620</subfield>
+    </datafield>
+    <datafield tag="100" ind1=" " ind2=" ">
+    <subfield code="a">20130524d1981 u y0frey50 ba</subfield>
+    </datafield>
+    <datafield tag="101" ind1="0" ind2=" ">
+    <subfield code="a">fre</subfield>
+    </datafield>
+    <datafield tag="102" ind1=" " ind2=" ">
+    <subfield code="a">EG</subfield>
+    </datafield>
+    <datafield tag="105" ind1=" " ind2=" ">
+    <subfield code="a">a a 000yy</subfield>
+    </datafield>
+    <datafield tag="106" ind1=" " ind2=" ">
+    <subfield code="a">r</subfield>
+    </datafield>
+    <datafield tag="181" ind1=" " ind2=" ">
+    <subfield code="6">z01</subfield>
+    <subfield code="c">txt</subfield>
+    <subfield code="2">rdacontent</subfield>
+    </datafield>
+    <datafield tag="181" ind1=" " ind2="1">
+    <subfield code="6">z01</subfield>
+    <subfield code="a">i#</subfield>
+    <subfield code="b">xxxe##</subfield>
+    </datafield>
+    <datafield tag="182" ind1=" " ind2=" ">
+    <subfield code="6">z01</subfield>
+    <subfield code="c">n</subfield>
+    <subfield code="2">rdamedia</subfield>
+    </datafield>
+    <datafield tag="182" ind1=" " ind2="1">
+    <subfield code="6">z01</subfield>
+    <subfield code="a">n</subfield>
+    </datafield>
+    <datafield tag="200" ind1="1" ind2=" ">
+    <subfield code="a">
+    Publications du centre d'études et de documentation sur l'ancienne Égypte
+    </subfield>
+    <subfield code="h">Catalogue n°2</subfield>
+    </datafield>
+    <datafield tag="210" ind1=" " ind2=" ">
+    <subfield code="a">Le Caire</subfield>
+    <subfield code="c">
+    Centre d'etudes et de Documention sur l'ancienne Egypte
+    </subfield>
+    <subfield code="d">1981</subfield>
+    </datafield>
+    <datafield tag="215" ind1=" " ind2=" ">
+    <subfield code="a">1 vol. ([20] p.)</subfield>
+    <subfield code="c">ill.</subfield>
+    <subfield code="d">25 cm</subfield>
+    </datafield>
+    <datafield tag="606" ind1=" " ind2=" ">
+    <subfield code="3">050546392</subfield>
+    <subfield code="a">Égyptologie</subfield>
+    <subfield code="3">027229386</subfield>
+    <subfield code="x">Bibliographie</subfield>
+    <subfield code="2">rameau</subfield>
+    </datafield>
+    <datafield tag="607" ind1=" " ind2=" ">
+    <subfield code="a">Egypt</subfield>
+    <subfield code="x">Bibliography</subfield>
+    <subfield code="x">Catalogs</subfield>
+    <subfield code="2">lc</subfield>
+    </datafield>
+    <datafield tag="608" ind1=" " ind2=" ">
+    <subfield code="3">027793222</subfield>
+    <subfield code="a">Catalogues</subfield>
+    <subfield code="2">rameau</subfield>
+    </datafield>
+    <datafield tag="660" ind1=" " ind2=" ">
+    <subfield code="a">f-ua---</subfield>
+    </datafield>
+    <datafield tag="680" ind1=" " ind2=" ">
+    <subfield code="a">DT60.X1</subfield>
+    <subfield code="b">P82 1981</subfield>
+    </datafield>
+    <datafield tag="801" ind1=" " ind2="3">
+    <subfield code="a">FR</subfield>
+    <subfield code="b">Abes</subfield>
+    <subfield code="c">20200721</subfield>
+    <subfield code="g">AFNOR</subfield>
+    </datafield>
+    <datafield tag="801" ind1=" " ind2="0">
+    <subfield code="b">UPB</subfield>
+    <subfield code="g">AACR2</subfield>
+    </datafield>
+    <datafield tag="801" ind1=" " ind2="1">
+    <subfield code="b">UBY</subfield>
+    <subfield code="g">AACR2</subfield>
+    </datafield>
+    <datafield tag="830" ind1=" " ind2=" ">
+    <subfield code="a">
+    Réforme Rameau Genre-Forme retro catalogues (ne pas supprimer)
+    </subfield>
+    </datafield>
+    <datafield tag="930" ind1=" " ind2=" ">
+    <subfield code="5">751052250:47997568X</subfield>
+    <subfield code="b">751052250</subfield>
+    <subfield code="a">BIBLIO CED</subfield>
+    <subfield code="j">g</subfield>
+    </datafield>
+    <datafield tag="940" ind1=" " ind2=" ">
+    <subfield code="5">751052250:47997568X</subfield>
+    <subfield code="a">20130524</subfield>
+    <subfield code="b">x</subfield>
+    </datafield>
+    <datafield tag="941" ind1=" " ind2=" ">
+    <subfield code="5">751052250:47997568X</subfield>
+    <subfield code="a">20130524</subfield>
+    <subfield code="b">12:23:42.000</subfield>
+    </datafield>
+    <datafield tag="991" ind1=" " ind2=" ">
+    <subfield code="5">751052250:47997568X</subfield>
+    <subfield code="a">RETRO-2013-CRE DER-egypto</subfield>
+    <subfield code="b">CRES</subfield>
+    </datafield>
+    </record>

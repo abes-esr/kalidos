@@ -870,7 +870,7 @@
                 "message": "Incohérence zone 7XX : vérifier l'étiquette et le type de notice d'autorité"
             },
             {
-                "index": 66,
+                "index": 67,
                 "numRuleExcell": 72,
                 "condition" : [{
                     "number" : "712"
@@ -886,7 +886,7 @@
                 "message": "Incohérence zone 7XX : vérifier l'étiquette et le type de notice d'autorité"
             },
             {
-                "index": 67,
+                "index": 68,
                 "numRuleExcell": 74,
                 "condition" : [{
                     "number" : "720"
@@ -902,7 +902,7 @@
                 "message": "Incohérence zone 7XX : vérifier l'étiquette et le type de notice d'autorité"
             },
             {
-                "index": 68,
+                "index": 69,
                 "numRuleExcell": 75,
                 "condition" : [{
                     "number" : "721"
@@ -918,7 +918,7 @@
                 "message": "Incohérence zone 7XX : vérifier l'étiquette et le type de notice d'autorité"
             },
             {
-                "index": 69,
+                "index": 70,
                 "numRuleExcell": 76,
                 "condition" : [{
                     "number" : "722"
