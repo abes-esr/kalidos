@@ -1,6 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import Modal from './Modal';
+import SelectType from './SelectType'
 import FormJSON from "@rjsf/core";
+
+
 
 import DeleteIcon from '@material-ui/icons/Delete';
 import EditIcon from '@material-ui/icons/Edit';
@@ -9,8 +12,10 @@ import BootstrapTable from 'react-bootstrap-table-next';
 import ToolkitProvider, { Search } from 'react-bootstrap-table2-toolkit';
 import paginationFactory from 'react-bootstrap-table2-paginator';
 import 'react-bootstrap-table2-paginator/dist/react-bootstrap-table2-paginator.min.css';
-import { Button, Col, Container, Form, Row } from 'react-bootstrap';
+import { Button, Col, Form, Row } from 'react-bootstrap';
 import ModalForm from './ModalForm';
+import AddIcon from '@material-ui/icons/Add';
+// import Fab from '@material-ui/core/Fab';
 
 function Table() {
 
@@ -144,7 +149,7 @@ function Table() {
       editable: false,
       searchable: false,
       headerStyle: (colum, colIndex) => {
-        return { width: '10%', whiteSpace: 'nowrap' };
+        return { width: '10%', whiteSpace: 'nowrap'};
       },
       formatter: (cell, row) => {
         const optionsCat = category.map(c => <option key={c}> {c} </option>)
@@ -169,34 +174,28 @@ function Table() {
           </div>
         ))
         return (
-          <Container fluid>
-            <Row>
-              <Col>
-                <ModalForm
-                  button={<EditIcon />}
-                  buttonColor="primary"
-                  buttonSize="sm"
-                  title="Edit"
-                  close="Cancel"
-                  accept="Save changes"
-                  body={editForm()}
-                  accepting={() => editing(row)}
-                />
-              </Col>
-              <Col>
-                <Modal
-                  button={<DeleteIcon />}
-                  buttonColor="danger"
-                  buttonSize="sm"
-                  title="Delete"
-                  close="Cancel"
-                  body="Are you sure you want to delete this rule?"
-                  accept="Delete rule"
-                  accepting={() => deleting(row)}
-                />
-              </Col>
-            </Row>
-          </Container>
+          <div className="row">
+            <div className="col-5 mx-auto">
+              <ModalForm
+                button={<EditIcon color="primary" fontSize="small" />}
+                title="Edit"
+                close="Cancel"
+                accept="Save changes"
+                body={() => editForm()}
+                accepting={() => editing(row)}
+              />
+            </div>
+            <div className="col-5 mx-auto">
+              <ModalForm
+                button={<DeleteIcon color="error" fontSize="small" />}
+                title="Delete"
+                close="Cancel"
+                body="Are you sure you want to delete this rule?"
+                accept="Delete rule"
+                accepting={() => deleting(row)}
+              />
+            </div>
+          </div>
         )
       }
     }
@@ -217,10 +216,12 @@ function Table() {
       )
   }, [])
 
-  if (error) {
+  if (error)
     return <div>Error: {error.message}</div>;
-  } else if (!isLoaded) {
+
+  else if (!isLoaded)
     return <div>Loading...</div>;
+<<<<<<< HEAD
   } else {
     const schema =
         /*{type: "number",
@@ -247,25 +248,60 @@ function Table() {
     console.log(schema)
     const formJSON = () => { <FormJSON schema={schema} uiSchema={uiSchema} />};
     console.log(formJSON)
+=======
+    
+  else {
+
+    const schema = {
+      "type": "number",
+      "anyOf": [
+        {
+          "type": "number",
+          "title": "one",
+          "enum": [
+            1
+          ]
+        },
+        {
+          "type": "number",
+          "title": "two",
+          "enum": [
+            2
+          ]
+        },
+        {
+          "type": "number",
+          "title": "three",
+          "enum": [
+            3
+          ]
+        }
+      ]
+    };
+
+>>>>>>> 01291d3473929f4f33fdbe30ec13efddc3f9a0a7
     return (
       <ToolkitProvider keyField="index" data={rules} columns={columns} search >
         {
           props => (
             <div>
-              <SearchBar {...props.searchProps} />
-              {/* <FormJSON schema={schema}></FormJSON> */}
-              <Col>
-                <Modal
-                  button="Add rule"
-                  buttonColor="primary"
-                  buttonSize="md"
-                  title="Add Rule"
-                  close="Cancel"
-                  body={<FormJSON schema={schema} />}
-                  accept="Add rule"
-                  accepting={() => console.log("ADD RULE")}
-                />
-              </Col>
+              
+              <div className="row">
+                <div className="col-10">
+                <SearchBar {...props.searchProps} className="align-self-center"/>
+                {/* <FormJSON schema={schema}></FormJSON> */}
+                </div>
+                <div className="col-2">
+                  <Modal
+                    button={<AddIcon fontSize="large"/>}
+                    title="Add Rule"
+                    close="Cancel"
+                    body={<SelectType/>}
+                    accept="Add rule"
+                    accepting={() => console.log("ADD RULE")}
+                  />
+                </div>
+              </div>
               <hr />
               <BootstrapTable {...props.baseProps} pagination={paginationFactory(options)} />
 

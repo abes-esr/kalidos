@@ -1,63 +1,52 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Button, Modal } from 'react-bootstrap'
+import IconButton from '@material-ui/core/IconButton'
+import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
 
-class BootstrapModal extends React.Component {
-
-  constructor() {
-    super()
-    this.state = {
-      showHide: false
+const theme = createMuiTheme({
+  overrides: {
+    MuiIconButton: {
+      root: {
+        backgroundColor: "#6BD6D4"
+        
+      }
     }
   }
+})
+
+function BootstrapModal({button, title, body }) {
+
+  const [showHide, setShowHide] = useState(false);
 
 
-  handleModalShowHide() {
-    this.setState({ showHide: !this.state.showHide })
+  const handleModalShowHide = () => {
+    setShowHide(!showHide)
   }
 
 
-  whenClosing() {
-    // this.props.closing()
-    this.handleModalShowHide()
+  const whenClosing = () => {
+    handleModalShowHide()
   }
 
-  whenAccepting() {
-    this.props.accepting()
-    this.handleModalShowHide()
-  }
+  return (
+    <div >
+      <MuiThemeProvider theme={theme} >
+        <IconButton color="primary" onClick={() => handleModalShowHide()}>
+          {button}
+        </IconButton>
+      </MuiThemeProvider>
 
+      <Modal show={showHide}>
 
-  render() {
+        <Modal.Header closeButton onClick={() => whenClosing()}>
+          <Modal.Title>{title}</Modal.Title>
+        </Modal.Header>
 
-    return (
-      <div>
-        <Button variant={this.props.buttonColor} size={this.props.buttonSize} onClick={() => this.handleModalShowHide()}>
-          {this.props.button}
-        </Button>
+        <Modal.Body>{body}</Modal.Body>
 
-        <Modal show={this.state.showHide}>
-
-          <Modal.Header closeButton onClick={() => this.whenClosing()}>
-            <Modal.Title>{this.props.title}</Modal.Title>
-          </Modal.Header>
-
-          <Modal.Body>{this.props.body}</Modal.Body>
-
-          <Modal.Footer>
-            <Button variant="secondary" onClick={() => this.whenClosing()}>
-              {this.props.close}
-            </Button>
-
-            <Button variant="primary" onClick={() => this.whenAccepting()}>
-              {this.props.accept}
-            </Button>
-
-          </Modal.Footer>
-
-        </Modal>
-      </div>
-    )
-  }
+      </Modal>
+    </div>
+  )
 }
 
 
