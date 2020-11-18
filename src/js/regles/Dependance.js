@@ -30,16 +30,20 @@ var Dependance = function () {
                     return testString1 === testString2;
                 }
                 else if (regle.operator === "greater") {
-                    return subfield1 > subfield2;
+                    return testString1 > testString2;
+                    // return subfield1 > subfield2;
                 }
                 else if (regle.operator === "lesser") {
-                    return subfield1 < subfield2;
+                    return testString1 < testString2;
+                    // return subfield1 < subfield2;
                 }
                 else if (regle.operator === "greaterEquals") {
-                    return subfield1 >= subfield2;
+                    return testString1 >= testString2;
+                    // return subfield1 >= subfield2;
                 }
                 else if (regle.operator === "lesserEquals") {
-                    return subfield1 <= subfield2;
+                    return testString1 <= testString2;
+                    // return subfield1 <= subfield2;
                 }
             }
         }
