@@ -14,7 +14,7 @@ import paginationFactory from 'react-bootstrap-table2-paginator';
 import 'react-bootstrap-table2-paginator/dist/react-bootstrap-table2-paginator.min.css';
 import { Button, Col, Form, Row } from 'react-bootstrap';
 import ModalForm from './ModalForm';
-import AddIcon from '@material-ui/icons/Add';
+import AddCircleIcon from '@material-ui/icons/AddCircle';
 // import Fab from '@material-ui/core/Fab';
 
 function Table() {
@@ -264,11 +264,9 @@ function Table() {
                 </div>
                 <div className="col-2">
                   <Modal
-                    button={<AddIcon fontSize="large"/>}
+                    button={<AddCircleIcon fontSize="large"/>}
                     title="Add Rule"
-                    close="Cancel"
                     body={<SelectType/>}
-                    accept="Add rule"
                     accepting={() => console.log("ADD RULE")}
                   />
                 </div>

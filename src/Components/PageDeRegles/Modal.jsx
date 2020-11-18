@@ -6,7 +6,7 @@ import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
 const theme = createMuiTheme({
   overrides: {
     MuiIconButton: {
-      root: {
+      addIcon: {
         backgroundColor: "#6BD6D4"
         
       }
@@ -17,6 +17,7 @@ const theme = createMuiTheme({
 function BootstrapModal({button, title, body }) {
 
   const [showHide, setShowHide] = useState(false);
+  const [id, setId] = useState(0);
 
 
   const handleModalShowHide = () => {
