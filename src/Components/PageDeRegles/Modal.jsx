@@ -17,8 +17,6 @@ const theme = createMuiTheme({
 function BootstrapModal({button, title, body }) {
 
   const [showHide, setShowHide] = useState(false);
-  const [id, setId] = useState(0);
-
 
   const handleModalShowHide = () => {
     setShowHide(!showHide)

@@ -1,9 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Modal from './Modal';
 import SelectType from './SelectType'
-import FormJSON from "@rjsf/core";
-
-
 
 import DeleteIcon from '@material-ui/icons/Delete';
 import EditIcon from '@material-ui/icons/Edit';
@@ -221,65 +218,7 @@ function Table() {
 
   else if (!isLoaded)
     return <div>Loading...</div>;
-<<<<<<< HEAD
-  } else {
-    const schema =
-        /*{type: "number",
-        title : "Numéro de la régle"}*/
-        {properties: {
-          number: {type: "number", title: "Numéro de la régle"},
-          code: {type: "string", title: "Code de la régle"},
-          message: {type : "string", title: "Message concernant la régle" },
-          regexx: {type: "array",
-            title: " Sélectionnez le caractére interdit",
-            items: {
-              type: "string",
-              enum: ["$", "/", ":", ".","URL","?","Prénom","Nom","Résumé en français"],
-            }
-            }
-
-    }
-  };
-
-  const uiSchema = {
-      "ui:widget": "password",
-      "ui:help": "Hint: Make it strong!"};
-
-    console.log(schema)
-    const formJSON = () => { <FormJSON schema={schema} uiSchema={uiSchema} />};
-    console.log(formJSON)
-=======
-    
   else {
-
-    const schema = {
-      "type": "number",
-      "anyOf": [
-        {
-          "type": "number",
-          "title": "one",
-          "enum": [
-            1
-          ]
-        },
-        {
-          "type": "number",
-          "title": "two",
-          "enum": [
-            2
-          ]
-        },
-        {
-          "type": "number",
-          "title": "three",
-          "enum": [
-            3
-          ]
-        }
-      ]
-    };
-
->>>>>>> 01291d3473929f4f33fdbe30ec13efddc3f9a0a7
     return (
       <ToolkitProvider keyField="index" data={rules} columns={columns} search >
         {

@@ -1,8 +1,10 @@
 import React, { useState } from 'react'
 import { Button, Card, Col, Container, Form, ListGroup, Modal, Row } from 'react-bootstrap'
+import FormJSON from "@rjsf/core";
 
 const TypeList = () => {
   
+  const [useForm, setUseForm] = useState(false)
   const [type, setType] = useState("matching")
   const [indexDesc, setIndexDesc] = useState(0)
 
@@ -20,8 +22,30 @@ const TypeList = () => {
   }
 
   const handleSelectedType = () => {
-
+    setUseForm(!useForm)
   }
+
+  // TEST 
+  const schema = {
+    title: "test", 
+    type: "array",
+  items: {
+    type: "object",
+    properties: {
+        name: {
+            type: "string"
+        }
+    }
+  }
+  };
+
+  const uiSchema = {
+    items: {
+      "ui:widget": "textarea"
+    }
+  };
+
+  const Form = () => (<Row><FormJSON schema={schema} uiSchema={uiSchema} /></Row>);
 
   const List = () => (
     <Row>
@@ -49,11 +73,9 @@ const TypeList = () => {
 
   return (
     <Container>
-      <Row>
-        <List/>
-      </Row>
-      <Row className="justify-content-end">
-        <Button> Suivant </Button>
+      { useForm ? <Form/> : <List/> }
+      <Row className="p-1 justify-content-end">
+        <Button onClick={() => handleSelectedType()}> { useForm ? "Back" : "Next"} </Button>
       </Row>
   </Container>
   );
