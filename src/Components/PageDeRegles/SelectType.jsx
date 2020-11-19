@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { Button, Card, Col, Container, Form, ListGroup, Modal, Row } from 'react-bootstrap'
 import FormJSON from "@rjsf/core";
-
+import test from './forms/tes'
 const TypeList = () => {
   
   const [useForm, setUseForm] = useState(false)
@@ -26,26 +26,43 @@ const TypeList = () => {
   }
 
   // TEST 
+  // const schema = {
+  //   title: "test", 
+  //   type: "array",
+  // items: {
+  //   type: "object",
+  //   properties: {
+  //       name: {
+  //           type: "string"
+  //       }
+  //   }
+  // }
+  // };
+
+  // const uiSchema = {
+  //   items: {
+  //     "ui:widget": "textarea"
+  //   }
+  // };
+
   const schema = {
-    title: "test", 
     type: "array",
-  items: {
-    type: "object",
-    properties: {
-        name: {
-            type: "string"
-        }
-    }
-  }
-  };
-
-  const uiSchema = {
     items: {
-      "ui:widget": "textarea"
+      type: "string"
     }
   };
+  
+  function ArrayFieldTemplate(props) {
+    return (
+      <div>
+        {props.items.map(element => element.children)}
+        {props.canAdd && <button type="button" onClick={props.onAddClick}>Ajouter un nombre</button>}
+      </div>
+    );
+  }
 
-  const Form = () => (<Row><FormJSON schema={schema} uiSchema={uiSchema} /></Row>);
+  const Form = () => (<Row><FormJSON schema={test.schema} /></Row>);
+  // const Form = () => (<Row><FormJSON schema={schema} /></Row>);
 
   const List = () => (
     <Row>
