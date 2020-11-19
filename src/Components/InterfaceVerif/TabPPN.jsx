@@ -81,7 +81,7 @@ function TabPPN({ listPPN, SetPPNDisplay, SetNumPage, numPage, SetRecherchePPN, 
                 </form>
             </Row>
 
-            <Card style={{ width: '18rem' }}>
+            <Card style={{ width: '18rem', maxWidth: '100%' }}>
                 <ListGroup variant="flush">
                     {
                         listPPNPDisplay.map((row) => {

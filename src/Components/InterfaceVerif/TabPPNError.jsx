@@ -17,8 +17,8 @@ function TabPPNError({ result, PPNDisplay }) {
             <thead>
                 <tr>
                     <th>Message d'erreur</th>
-                    <th>Numéro</th>
-                    <th>Code</th>
+                    <th>Zone</th>
+                    <th>Sous zone</th>
                 </tr>
             </thead>
             <tbody>

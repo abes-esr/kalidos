@@ -1,4 +1,4 @@
-import { CLEAN_RESULT, ADD_ERROR_PPN, ADD_ERROR_TEST, SET_NOMBRE_TOTAL_PPN, SET_PPNDISPLAY, SET_NUMPAGE, SET_RECHERCHEPPN } from '../actions';
+import { CLEAN_RESULT, ADD_ERROR_PPN, ADD_ERROR_TEST, SET_NOMBRE_TOTAL_PPN, SET_PPNDISPLAY, SET_NUMPAGE, SET_RECHERCHEPPN, ADD_ERROR_PPN_ERRONNE } from '../actions';
 import fakedata from '../Components/fakedata.json';
 /*const initialState = {
   result: {},
@@ -20,7 +20,8 @@ function rootReducer(state = initialState, action) {
           PPNDisplay: 0,
           numPage: 1,
           recherchePPN: '',
-        }
+        },
+        listPPNErronne:[]
       }
 
     case ADD_ERROR_PPN:
@@ -29,6 +30,12 @@ function rootReducer(state = initialState, action) {
         ...state,
         compteurResult: state.compteurResult + 1,
       };
+    case ADD_ERROR_PPN_ERRONNE:
+      state.listPPNErronne.push(action.payload);
+      return {
+        ...state,
+        compteurResult: state.compteurResult + 1,
+      }
     case ADD_ERROR_TEST:
       state.result[111] = {
         PPN: '169450546',
