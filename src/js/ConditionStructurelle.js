@@ -1,4 +1,7 @@
 const Parcours = require("./Parcours");
+const axios = require('axios');
+const convert = require("xml-js");
+
 
 /* 
 Dependance
@@ -76,112 +79,146 @@ var ConditionStructurel = function () {
 
     var testConditionStrucutrelRules = function (rules, controlfields, datafields, resultJson) {
         rules.Generale.ConditionStructurel.forEach(function (regle) {
-                var field1 = Parcours.findDataField(datafields, regle.number);
-                if (field1 == null){
-                    field1 = Parcours.findDataField(controlfields, regle.number);
-                }
-                if (field1 != null){
-                    var checkedConds = true;
-                    regle.condition.forEach(function (condition) {
-                         if(!checkCondition(controlfields ,datafields , condition))
-                             checkedConds = false
-                    });
+            var field1 = Parcours.findDataField(datafields, regle.number);
+            if (field1 == null){
+                field1 = Parcours.findDataField(controlfields, regle.number);
+            }
+            if (field1 != null){
+                var checkedConds = true;
+                regle.condition.forEach(function (condition) {
+                    if(!checkCondition(controlfields ,datafields , condition))
+                        checkedConds = false
+                });
 
-                    if(checkedConds){
-                        var checkValues;
-                        if(regle.type.toString() === "allRequired"){
-                            checkValues = true;
-                            regle.value.forEach(function (v){
-                                 if(v.code.toString() === "" && Parcours.findDataField(datafields , v.number ) == null){
-                                     checkValues = false;
-                                 }else if(v.code.toString() !== ""){
-                                     const f = Parcours.findDataField(datafields, v.number);
-                                     if(Parcours.getSubfieldValue(f , v.code) == null)
-                                         checkValues = false;
-                                 }
-
-                            });
-
-                        }else if(regle.type.toString() === "oneRequired"){
-                            checkValues = false;
-                            regle.value.forEach(function (v){
-                                if(v.code.toString() === "" && Parcours.findDataField(datafields , v.number) != null){
-                                    checkValues = true;
-                                }else if(v.code.toString() !== ""){
-                                    const f = Parcours.findDataField(datafields, v.number);
-                                    if(Parcours.getSubfieldValue(f , v.code) != null )
-                                        checkValues = true;
-                                }
-
-                            });
-
-                        }else if(regle.type.toString() === "notRequired"){
-                            checkValues = true;
-                            regle.value.forEach(function (v){
-                                if(v.code.toString() === "" && Parcours.findDataField(datafields , v.number)){
+                if(checkedConds){
+                    var checkValues;
+                    if(regle.type.toString() === "allRequired"){
+                        checkValues = true;
+                        regle.value.forEach(function (v){
+                            if(v.code.toString() === "" && Parcours.findDataField(datafields , v.number ) == null){
+                                checkValues = false;
+                            }else if(v.code.toString() !== ""){
+                                const f = Parcours.findDataField(datafields, v.number);
+                                if(Parcours.getSubfieldValue(f , v.code) == null)
                                     checkValues = false;
-                                }else if(v.code.toString() !== ""){
-                                    const f = Parcours.findDataField(datafields, v.number);
-                                    if(Parcours.getSubfieldValue(f , v.code) != null)
-                                        checkValues = false;
+                                else if(v.reciproque){
+                                   checkReciproque(checkValues , Parcours.findDataField(controlfields, "001"), datafields, v.reciproque.number, v.reciproque.code, v.reciproque);
                                 }
+                            }
 
-                            });
+                        });
 
-                        }
+                    }else if(regle.type.toString() === "oneRequired"){
+                        checkValues = false;
+                        regle.value.forEach(function (v){
+                            if(v.code.toString() === "" && Parcours.findDataField(datafields , v.number) != null){
+                                checkValues = true;
+                            }else if(v.code.toString() !== ""){
+                                const f = Parcours.findDataField(datafields, v.number);
+                                if(Parcours.getSubfieldValue(f , v.code) != null )
+                                    checkValues = true;
+                            }else if(v.reciproque){
+                                checkReciproque(checkValues , Parcours.findDataField(controlfields, "001"), datafields, v.reciproque.number, v.reciproque.code, v.reciproque);
+                            }
 
-                        if (!checkValues){
-                            resultJson.errors.push({
-                                message: regle.message,
-                                number: regle.number,
-                            });
-                        }
+                        });
+
+                    }else if(regle.type.toString() === "notRequired"){
+                        checkValues = true;
+                        regle.value.forEach(function (v){
+                            if(v.code.toString() === "" && Parcours.findDataField(datafields , v.number)){
+                                checkValues = false;
+                            }else if(v.code.toString() !== ""){
+                                const f = Parcours.findDataField(datafields, v.number);
+                                if(Parcours.getSubfieldValue(f , v.code) != null)
+                                    checkValues = false;
+                            }else if(v.reciproque){
+                                checkReciproque(checkValues , Parcours.findDataField(controlfields, "001"), datafields, v.reciproque.number, v.reciproque.code, v.reciproque);
+                            }
+
+                        });
 
                     }
+
+                    if (!checkValues){
+                        resultJson.errors.push({
+                            message: regle.message,
+                            number: regle.number,
+                        });
+                    }
+
                 }
+            }
 
         });
     }
 
-    function checkCondition(controlefields, datafields ,condition){
-              var  field = Parcours.findDataField(datafields, condition.number);
-              if(field == null)
-                  field = Parcours.findDataField(controlefields, condition.number);
-              if(field == null){
-                  return  false;
-              }else if(condition.operator === "presente"){
-                    if(condition.code.toString() !== "")
-                        return Parcours.getSubfieldValue(field , condition.code) != null;
-                }else if(condition.operator === "matching"){
-                  if(condition.string.toString() !== ""){
-                      var subfieldValue;
-                      if (condition.code.toString() !== ""){
-                           subfieldValue = Parcours.getSubfieldValue(field , condition.code);
-                      }else{
-                           subfieldValue = field._text;
-                      }
-                      var isMatched = false;
-                      condition.string.forEach((item)=>{
-                          if(subfieldValue.substring(condition.pos[0] , condition.pos[1]).includes(item.toString())) {
-                              isMatched = true;
-                          }
-                      })
-                      return isMatched;
-                  }
-              }else if(condition.operator.toString() === "equals") {
-                    if(condition.ind1.toString() !== "")
-                        return  field._attributes.ind1.toString() === condition.ind1.toString();
-                    else if(condition.ind2.toString() !== "")
-                        return  field._attributes.ind2.toString() === condition.ind2.toString();
+    function  checkReciproque(isReciproque ,ppnSource, datafields,  number, code){
+        console.log("number = "+number);
+        var field = Parcours.findDataField(datafields, number);
+        var ppnDest = Parcours.getSubfieldValue(field , code);
+        if (ppnDest === null){
+            isReciproque = false;
+            return ;
+        }
+
+         axios.get("https://www.sudoc.fr/"+ppnDest+".xml")
+                .then(function (response) {
+                    //console.log(response.data)
+                    const data = JSON.parse(
+                        convert.xml2json(response.data, { compact: true, spaces: 2 })
+                    );
+
+                    var field = Parcours.findDataField(data.record.datafield, number);
+                    if(field == null)
+                        isReciproque = false;
+                    isReciproque = Parcours.getSubfieldValue(field , code) === ppnSource;
+                })
+                .catch(function (error) {
+                   isReciproque = false;
+                })
+
+        }
+
+        function checkCondition(controlefields, datafields ,condition){
+            var  field = Parcours.findDataField(datafields, condition.number);
+            if(field == null)
+                field = Parcours.findDataField(controlefields, condition.number);
+            if(field == null){
+                return  false;
+            }else if(condition.operator === "presente"){
+                if(condition.code.toString() !== "")
+                    return Parcours.getSubfieldValue(field , condition.code) != null;
+            }else if(condition.operator === "matching"){
+                if(condition.string.toString() !== ""){
+                    var subfieldValue;
+                    if (condition.code.toString() !== ""){
+                        subfieldValue = Parcours.getSubfieldValue(field , condition.code);
+                    }else{
+                        subfieldValue = field._text;
+                    }
+                    var isMatched = false;
+                    condition.string.forEach((item)=>{
+                        if(subfieldValue.substring(condition.pos[0] , condition.pos[1]).includes(item.toString())) {
+                            isMatched = true;
+                        }
+                    })
+                    return isMatched;
                 }
+            }else if(condition.operator.toString() === "equals") {
+                if(condition.ind1.toString() !== "")
+                    return  field._attributes.ind1.toString() === condition.ind1.toString();
+                else if(condition.ind2.toString() !== "")
+                    return  field._attributes.ind2.toString() === condition.ind2.toString();
+            }
 
-              return  true;
+            return  true;
 
-    }
+        }
 
-    return {
-        testConditionStrucutrelRules : testConditionStrucutrelRules
-    }
-}();
+        return {
+            testConditionStrucutrelRules : testConditionStrucutrelRules
+        }
+    }();
 
-module.exports = ConditionStructurel;
+    module.exports = ConditionStructurel;

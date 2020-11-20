@@ -1041,6 +1041,181 @@
                 "index": 73,
                 "number": "008",
                 "message": "Si 008 commence par Aa et présence d'une 461, alors il doit y avoir une 305 ou 225"
+            },
+            {
+                "condition" : [
+                    {
+                        "operator": "presente",
+                        "number" : "451",
+                        "code" : "",
+                        "ind1" : "",
+                        "ind2": ""
+                    }
+                ],
+                "value": [
+                    {
+                        "number" : "451",
+                        "code" : "0",
+                        "reciproque" : {
+                            "number": "451",
+                            "code": "0"
+                        }
+                    }
+                ],
+                "type": "allRequired",
+                "index": 74,
+                "number": "451",
+                "message": "Si 451, alors vérifier que la notice 451$0 contient une 451 réciproque et une 328$z"
+            },
+            {
+                "condition" : [
+                    {
+                        "operator": "presente",
+                        "number" : "452",
+                        "code" : "",
+                        "ind1" : "",
+                        "ind2": ""
+                    }
+                ],
+                "value": [
+                    {
+                        "number" : "452",
+                        "code" : "0",
+                        "reciproque" : {
+                            "number": "452",
+                            "code": "0"
+                        }
+                    }
+                ],
+                "type": "allRequired",
+                "index": 75,
+                "number": "452",
+                "message": "Si 452, alors vérifier que la notice 452$0 contient une 452 réciproque et une 328$z"
+            },
+            {
+                "condition" : [
+                    {
+                        "operator": "presente",
+                        "number" : "488",
+                        "code" : "",
+                        "ind1" : "",
+                        "ind2": ""
+                    }
+                ],
+                "value": [
+                    {
+                        "number" : "488",
+                        "code" : "0",
+                        "reciproque" : {
+                            "number": "488",
+                            "code": "0"
+                        }
+                    }
+                ],
+                "type": "allRequired",
+                "index": 76,
+                "number": "488",
+                "message": "Si 488, alors vérifier les liens réciproques de la notice en 488$0"
+            },
+            {
+                "condition" : [
+                    {
+                        "operator": "presente",
+                        "number" : "455",
+                        "code" : "",
+                        "ind1" : "",
+                        "ind2": ""
+                    }
+                ],
+                "value": [
+                    {
+                        "number" : "455",
+                        "code" : "0",
+                        "reciproque" : {
+                            "number": "456",
+                            "code": "0"
+                        }
+                    }
+                ],
+                "type": "allRequired",
+                "index": 77,
+                "number": "455",
+                "message": "Si 455, alors vérifier que la notice en 455$0 contient une 456 avec liens réciproques"
+            },
+            {
+                "condition" : [
+                    {
+                        "operator": "presente",
+                        "number" : "456",
+                        "code" : "",
+                        "ind1" : "",
+                        "ind2": ""
+                    }
+                ],
+                "value": [
+                    {
+                        "number" : "456",
+                        "code" : "0",
+                        "reciproque" : {
+                            "number": "455",
+                            "code": "0"
+                        }
+                    }
+                ],
+                "type": "allRequired",
+                "index": 78,
+                "number": "456",
+                "message": "Si 456, alors vérifier que la notice en 456$0 contient une 455 avec liens réciproques"
+            },
+            {
+                "condition" : [
+                    {
+                        "operator": "presente",
+                        "number" : "455",
+                        "code" : "",
+                        "ind1" : "",
+                        "ind2": ""
+                    }
+                ],
+                "value": [
+                    {
+                        "number" : "455",
+                        "code" : "0",
+                        "reciproque" : {
+                            "number": "456",
+                            "code": "0"
+                        }
+                    }
+                ],
+                "type": "allRequired",
+                "index": 79,
+                "number": "455",
+                "message": "Si 455, alors vérifier que la notice en 455$0 contient une 456 avec liens réciproques"
+            },
+            {
+                "condition" : [
+                    {
+                        "operator": "presente",
+                        "number" : "456",
+                        "code" : "",
+                        "ind1" : "",
+                        "ind2": ""
+                    }
+                ],
+                "value": [
+                    {
+                        "number" : "456",
+                        "code" : "0",
+                        "reciproque" : {
+                            "number": "455",
+                            "code": "0"
+                        }
+                    }
+                ],
+                "type": "allRequired",
+                "index": 80,
+                "number": "456",
+                "message": "Si 456, alors vérifier que la notice en 456$0 contient une 455 avec liens réciproques"
             }
         ],
         "Structurel": [

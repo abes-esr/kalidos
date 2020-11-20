@@ -169,13 +169,13 @@
 134	x	x	x		856	Si 008 commence par Oa et ne contient pas une 215, une 856 doit être présente		Zone 856 : une ressource électronique doit contenir l'accès
 
 
-139		x	x		451	Si 451, alors vérifier que la notice 451$0 contient une 451 réciproque et une 328$z	Exemple : http://www.sudoc.fr/19872604X.xml	Vérifier la pertinence des liens réciproques
-142		x	x		452	Si 452, alors vérifier que la notice 452$0 contient une 452 réciproque et une 328$z		Vérifier la pertinence des liens réciproques
-146	x	x	x	x	488	Si 488, alors vérifier les liens réciproques de la notice en 488$0		Vérifier la pertinence des liens réciproques
-148			x		455	Si 455, alors vérifier que la notice en 455$0 contient une 456 avec liens réciproques		Vérifier la pertinence des liens réciproques
+(PRESQUE) 139		x	x		451	Si 451, alors vérifier que la notice 451$0 contient une 451 réciproque et une 328$z	Exemple : http://www.sudoc.fr/19872604X.xml	Vérifier la pertinence des liens réciproques
+(PRESQUE)142		x	x		452	Si 452, alors vérifier que la notice 452$0 contient une 452 réciproque et une 328$z		Vérifier la pertinence des liens réciproques
+(FAIT)146	x	x	x	x	488	Si 488, alors vérifier les liens réciproques de la notice en 488$0		Vérifier la pertinence des liens réciproques
+(FAIT)148			x		455	Si 455, alors vérifier que la notice en 455$0 contient une 456 avec liens réciproques		Vérifier la pertinence des liens réciproques
 158			x		455	Si 455, alors vérifier que la notice en 455$0 ne contient pas 328$z		Vérifier la pertinence des liens réciproques
-160				x	456	Si 456, alors vérifier que la notice en 456$0 contient une 455 avec liens réciproques		Vérifier la pertinence des liens réciproques
-163	x				455	Si 455, alors vérifier que la notice en 455$0 contient une 456 avec liens réciproques		Vérifier la pertinence des liens réciproques
+(FAIT)160				x	456	Si 456, alors vérifier que la notice en 456$0 contient une 455 avec liens réciproques		Vérifier la pertinence des liens réciproques
+(FAIT)163	x				455	Si 455, alors vérifier que la notice en 455$0 contient une 456 avec liens réciproques		Vérifier la pertinence des liens réciproques
 192		x			456	Si 456, alors vérifier que la notice en 456$0 contient une 455 avec liens réciproques		Vérifier la pertinence des liens réciproques
 193		x			456	Si 456, alors vérifier que la notice en 465$0  contient  328$z		Vérifier la pertinence des liens réciproques
 194		x			456	Si 456, alors vérifier que la notice en 456$0 contient 105$a Pos. 4-7= v		Vérifier la pertinence des liens réciproques
