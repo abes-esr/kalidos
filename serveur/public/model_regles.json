@@ -16,6 +16,14 @@
                 "regex": ".*x3.*"
             },
             {
+                "index": 73,
+                "numRuleExcell" : 2,
+                "number": "100",
+                "code" : "a",
+                "message": "Zone 100 : langue de catalogage à corriger",
+                "regex": "^.{21}fre.*$"
+            },
+            {
                 "number": 701,
                 "code": "f",
                 "message": "701$f doit contenir 9 caractères",

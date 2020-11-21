@@ -29,8 +29,8 @@ function getNotice(number) {
     return JSON.parse(convert.xml2json(xmlPPN, { compact: true, spaces: 2 }));
 }
 
-function addRuleToTest(numRuleExcell) {
-    ruleTest[CATEGORIE].dependances.push(rules[CATEGORIE].dependances.find(x => x.numRuleExcell === numRuleExcell))
+function addRuleToTest(index) {
+    ruleTest[CATEGORIE].dependances.push(rules[CATEGORIE].dependances.find(x => x.index === index))
 }
 
 
@@ -43,8 +43,8 @@ test('100$a Pos. 9-12 = 214$d', () => {
         PPN: 0,
         errors: [],
     };
-    const numRuleExcell = 3;
-    addRuleToTest(numRuleExcell);
+    const index = 72;
+    addRuleToTest(index);
     Dependance.testMatchDependanceRules(CATEGORIE, ruleTest, controlfield, datafields, resultJson)
 
     expect(resultJson.errors).toStrictEqual([]);
@@ -58,8 +58,40 @@ test('100$a Pos. 9-12 = 214$d (FAIL)', () => {
         PPN: 0,
         errors: [],
     };
-    const numRuleExcell = 3;
-    addRuleToTest(numRuleExcell);
+    const index = 72;
+    addRuleToTest(index);
+    Dependance.testMatchDependanceRules(CATEGORIE, ruleTest, controlfield, datafields, resultJson)
+
+    expect(resultJson.errors).not.toStrictEqual([]);
+});
+
+
+test('Dates incohérentes : vérifier les dates zone 100', () => {
+    const notice = getNotice("001");
+    const datafields = notice.record.datafield;
+    const controlfield = notice.record.controlfield;
+    let resultJson = {
+        PPN: 0,
+        errors: [],
+    };
+    const index = 2;
+    addRuleToTest(index);
+    Dependance.testMatchDependanceRules(CATEGORIE, ruleTest, controlfield, datafields, resultJson)
+
+    expect(resultJson.errors).toStrictEqual([]);
+});
+
+
+test('Dates incohérentes : vérifier les dates zone 100 (FAIL)', () => {
+    const notice = getNotice("002");
+    const datafields = notice.record.datafield;
+    const controlfield = notice.record.controlfield;
+    let resultJson = {
+        PPN: 0,
+        errors: [],
+    };
+    const index = 2;
+    addRuleToTest(index);
     Dependance.testMatchDependanceRules(CATEGORIE, ruleTest, controlfield, datafields, resultJson)
 
     expect(resultJson.errors).not.toStrictEqual([]);

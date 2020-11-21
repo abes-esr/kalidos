@@ -30,8 +30,8 @@ function getNotice(number) {
     return JSON.parse(convert.xml2json(xmlPPN, { compact: true, spaces: 2 }));
 }
 
-function addRuleToTest(numRuleExcell) {
-    ruleTest[CATEGORIE].matching.push(rules[CATEGORIE].matching.find(x => x.numRuleExcell === numRuleExcell))
+function addRuleToTest(index) {
+    ruleTest[CATEGORIE].matching.push(rules[CATEGORIE].matching.find(x => x.index === index))
 }
 
 
@@ -46,8 +46,8 @@ test('008 doit contenir "x3"', () => {
         PPN: 0,
         errors: [],
     };
-    const numRuleExcell = 2;
-    addRuleToTest(numRuleExcell);
+    const index = 71;
+    addRuleToTest(index);
     Matching.testMatchRegexRules(CATEGORIE, ruleTest, controlfield, datafields, resultJson)
 
     expect(resultJson.errors).toStrictEqual([]);
@@ -61,8 +61,43 @@ test('008 doit contenir "x3" (FAIL)', () => {
         PPN: 0,
         errors: [],
     };
-    const numRuleExcell = 2;
-    addRuleToTest(numRuleExcell);
+    const index = 71;
+    addRuleToTest(index);
+    Matching.testMatchRegexRules(CATEGORIE, ruleTest, controlfield, datafields, resultJson)
+
+    expect(resultJson.errors).not.toStrictEqual([]);
+});
+
+
+
+
+test('Zone 100 : langue de catalogage à corriger ', () => {
+    const notice = getNotice("001");
+    const datafields = notice.record.datafield;
+    const controlfield = notice.record.controlfield;
+    let resultJson = {
+        PPN: 0,
+        errors: [],
+    };
+    const index = 73;
+    addRuleToTest(index);
+    Matching.testMatchRegexRules(CATEGORIE, ruleTest, controlfield, datafields, resultJson)
+
+    expect(resultJson.errors).toStrictEqual([]);
+});
+
+
+
+test('Zone 100 : langue de catalogage à corriger (FAIL)', () => {
+    const notice = getNotice("002");
+    const datafields = notice.record.datafield;
+    const controlfield = notice.record.controlfield;
+    let resultJson = {
+        PPN: 0,
+        errors: [],
+    };
+    const index = 73;
+    addRuleToTest(index);
     Matching.testMatchRegexRules(CATEGORIE, ruleTest, controlfield, datafields, resultJson)
 
     expect(resultJson.errors).not.toStrictEqual([]);
