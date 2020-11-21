@@ -379,11 +379,13 @@
                 "value": [
                     {
                         "number" : "101",
-                        "code" : "a"
+                        "code" : "a",
+                        "present" : true
                     },
                     {
                         "number" : "101",
-                        "code" : "c"
+                        "code" : "c",
+                        "present" : true
                     }
                 ],
                 "type": "allRequired",
@@ -406,10 +408,11 @@
             "value": [
                     {
                         "number" : "101",
-                        "code" : "c"
+                        "code" : "c",
+                        "present" : false
                     }
              ],
-            "type": "notRequired",
+            "type": "allRequired",
             "index": 45,
             "number": "101",
             "message": "Si 101 ind1=0 il ne faut pas $c"
@@ -427,15 +430,18 @@
                "value": [
                   {
                     "number" : "101",
-                    "code" : "a"
+                    "code" : "a",
+                      "present" : true
                   },
                   {
                     "number" : "101",
-                    "code" : "b"
+                    "code" : "b",
+                    "present" : true
                   },
                   {
                     "number" : "101",
-                    "code" : "c"
+                    "code" : "c",
+                    "present" : true
                   }
                 ],
                 "type": "allRequired",
@@ -456,7 +462,8 @@
                 "value": [
                     {
                         "number" : "454",
-                        "code" : ""
+                        "code" : "",
+                        "present" : true
                     }
                 ],
                 "type": "allRequired",
@@ -477,7 +484,8 @@
                 "value": [
                     {
                         "number" : "454",
-                        "code" : ""
+                        "code" : "",
+                        "present" : true
                     }
                 ],
                 "type": "allRequired",
@@ -505,7 +513,8 @@
                 "value": [
                     {
                         "number" : "410",
-                        "code" : "0"
+                        "code" : "0",
+                        "present" : true
                     }
                 ],
                 "type": "allRequired",
@@ -523,7 +532,7 @@
                             "ind2" : ""
                         },
                         {
-                            "operator": "matching",
+                            "operator": "contains_text",
                             "number" : "105",
                             "code" : "a",
                             "pos" : [0 , 3],
@@ -534,10 +543,11 @@
                 "value": [
                     {
                         "number" : "215",
-                        "code" : "c"
+                        "code" : "c",
+                        "present" : false
                     }
                 ],
-                "type": "notRequired",
+                "type": "allRequired",
                 "index": 51,
                 "number": "105",
                 "message": "Si  105 $a Pos. 0-3 = 'y' alors 215$c ne doit pas être présent"
@@ -552,7 +562,7 @@
                             "ind2" : ""
                         },
                         {
-                            "operator": "matching",
+                            "operator": "contains_text",
                             "number" : "105",
                             "code" : "a",
                             "pos" : [4 , 7],
@@ -563,7 +573,8 @@
                 "value": [
                     {
                         "number" : "320",
-                        "code" : ""
+                        "code" : "",
+                        "present" : true
                     }
                 ],
                 "type": "allRequired",
@@ -581,7 +592,7 @@
                             "ind2" : ""
                         },
                         {
-                            "operator": "matching",
+                            "operator": "contains_text",
                             "number" : "105",
                             "code" : "a",
                             "pos" : [4 , 7],
@@ -591,8 +602,9 @@
                     ],
                 "value": [
                     {
-                        "number" : "320",
-                        "code" : ""
+                        "number" : "608",
+                        "code" : "",
+                        "present" : true
                     }
                 ],
                 "type": "allRequired",
@@ -603,10 +615,9 @@
             {
                 "condition" : [
                         {
-                            "operator": "matching",
+                            "operator": "startwith_text",
                             "number" : "008",
                             "code" : "",
-                            "pos" : [0 , 2],
                             "string": ["Aa"]
 
                         }
@@ -614,7 +625,8 @@
                 "value": [
                     {
                         "number" : "106",
-                        "code" : ""
+                        "code" : "",
+                        "present" : true
                     }
                 ],
                 "type": "allRequired",
@@ -625,10 +637,9 @@
             {
                 "condition" : [
                         {
-                            "operator": "matching",
+                            "operator": "startwith_text",
                             "number" : "008",
                             "code" : "",
-                            "pos" : [0 , 2],
                             "string": ["Aa"]
 
                         }
@@ -636,11 +647,13 @@
                 "value": [
                     {
                         "number" : "215",
-                        "code" : "a"
+                        "code" : "a",
+                        "present" : true
                     },
                     {
                         "number" : "215",
-                        "code" : "d"
+                        "code" : "d",
+                        "present" : true
                     }
                 ],
                 "type": "allRequired",
@@ -661,7 +674,8 @@
                 "value": [
                     {
                         "number" : "410",
-                        "code" : ""
+                        "code" : "",
+                        "present" : true
                     }
                 ],
                 "type": "allRequired",
@@ -689,7 +703,8 @@
                 "value": [
                     {
                         "number" : "410",
-                        "code" : "0"
+                        "code" : "0",
+                        "present" : true
                     }
                 ],
                 "type": "allRequired",
@@ -717,7 +732,8 @@
                 "value": [
                     {
                         "number" : "461",
-                        "code" : ""
+                        "code" : "",
+                        "present" : true
                     }
                 ],
                 "type": "allRequired",
@@ -738,7 +754,8 @@
                 "value": [
                     {
                         "number" : "410",
-                        "code" : ""
+                        "code" : "",
+                        "present" : true
                     }
                 ],
                 "type": "allRequired",
@@ -759,7 +776,8 @@
                 "value": [
                     {
                         "number" : "330",
-                        "code" : ""
+                        "code" : "",
+                        "present" : true
                     }
                 ],
                 "type": "allRequired",
@@ -770,10 +788,9 @@
             {
                 "condition" : [
                         {
-                            "operator": "matching",
+                            "operator": "startwith_text",
                             "number" : "008",
                             "code" : "",
-                            "pos" : [0 , 2],
                             "string": ["0a"]
 
                         }
@@ -781,7 +798,8 @@
                 "value": [
                     {
                         "number" : "304",
-                        "code" : ""
+                        "code" : "",
+                        "present" : true
                     }
                 ],
                 "type": "allRequired",
@@ -792,10 +810,9 @@
             {
                 "condition" : [
                         {
-                            "operator": "matching",
+                            "operator": "startwith_text",
                             "number" : "008",
                             "code" : "",
-                            "pos" : [0 , 2],
                             "string": ["0a"]
 
                         }
@@ -803,7 +820,8 @@
                 "value": [
                     {
                         "number" : "307",
-                        "code" : ""
+                        "code" : "",
+                        "present" : true
                     }
                 ],
                 "type": "allRequired",
@@ -814,10 +832,9 @@
             {
                 "condition" : [
                         {
-                            "operator": "matching",
+                            "operator": "startwith_text",
                             "number" : "008",
                             "code" : "",
-                            "pos" : [0 , 2],
                             "string": ["0a"]
 
                         }
@@ -825,7 +842,8 @@
                 "value": [
                     {
                         "number" : "337",
-                        "code" : ""
+                        "code" : "",
+                        "present" : true
                     }
                 ],
                 "type": "allRequired",
@@ -836,10 +854,9 @@
             {
                 "condition" : [
                         {
-                            "operator": "matching",
+                            "operator": "startwith_text",
                             "number" : "008",
                             "code" : "",
-                            "pos" : [0 , 2],
                             "string": ["0a"]
 
                         }
@@ -847,7 +864,8 @@
                 "value": [
                     {
                         "number" : "230",
-                        "code" : ""
+                        "code" : "",
+                        "present" : true
                     }
                 ],
                 "type": "allRequired",
@@ -858,10 +876,9 @@
             {
                 "condition" : [
                     {
-                        "operator": "matching",
+                        "operator": "startwith_text",
                         "number" : "325",
                         "code" : "a",
-                        "pos" : [0 , 76],
                         "string": ["Document numérisé dans le cadre d'un projet de numérisation du SCD de Lyon 1"]
 
                     }
@@ -869,7 +886,8 @@
                 "value": [
                     {
                         "number" : "456",
-                        "code" : ""
+                        "code" : "",
+                        "present" : true
                     }
                 ],
                 "type": "allRequired",
@@ -880,10 +898,9 @@
             {
                 "condition" : [
                     {
-                        "operator": "matching",
+                        "operator": "startwith_text",
                         "number" : "305",
                         "code" : "a",
-                        "pos" : [0 , 57],
                         "string": ["Document numérisé dans le cadre du projet de numérisation"]
 
                     }
@@ -891,7 +908,8 @@
                 "value": [
                     {
                         "number" : "324",
-                        "code" : ""
+                        "code" : "",
+                        "present" : true
                     }
                 ],
                 "type": "allRequired",
@@ -902,10 +920,9 @@
             {
                 "condition" : [
                     {
-                        "operator": "matching",
+                        "operator": "startwith_text",
                         "number" : "305",
                         "code" : "a",
-                        "pos" : [0 , 57],
                         "string": ["Document numérisé dans le cadre du projet de numérisation"]
 
                     }
@@ -913,7 +930,8 @@
                 "value": [
                     {
                         "number" : "455",
-                        "code" : ""
+                        "code" : "",
+                        "present" : true
                     }
                 ],
                 "type": "allRequired",
@@ -924,7 +942,7 @@
             {
                 "condition" : [
                     {
-                        "operator": "matching",
+                        "operator": "contains_text",
                         "number" : "105",
                         "code" : "a",
                         "pos" : [4 , 7],
@@ -935,7 +953,8 @@
                 "value": [
                     {
                         "number" : "029",
-                        "code" : ""
+                        "code" : "",
+                        "present" : true
                     }
                 ],
                 "type": "allRequired",
@@ -946,7 +965,7 @@
             {
                 "condition" : [
                     {
-                        "operator": "matching",
+                        "operator": "contains_text",
                         "number" : "105",
                         "code" : "a",
                         "pos" : [4 , 7],
@@ -957,7 +976,8 @@
                 "value": [
                     {
                         "number" : "328",
-                        "code" : ""
+                        "code" : "",
+                        "present" : true
                     }
                 ],
                 "type": "allRequired",
@@ -968,7 +988,7 @@
             {
                 "condition" : [
                     {
-                        "operator": "matching",
+                        "operator": "contains_text",
                         "number" : "105",
                         "code" : "a",
                         "pos" : [4 , 7],
@@ -979,7 +999,8 @@
                 "value": [
                     {
                         "number" : "017",
-                        "code" : ""
+                        "code" : "",
+                        "present" : true
                     }
                 ],
                 "type": "allRequired",
@@ -990,7 +1011,7 @@
             {
                 "condition" : [
                     {
-                        "operator": "matching",
+                        "operator": "contains_text",
                         "number" : "105",
                         "code" : "a",
                         "pos" : [4 , 7],
@@ -1001,7 +1022,8 @@
                 "value": [
                     {
                         "number" : "328",
-                        "code" : "z"
+                        "code" : "z",
+                        "present" : true
                     }
                 ],
                 "type": "allRequired",
@@ -1012,10 +1034,9 @@
             {
                 "condition" : [
                     {
-                        "operator": "matching",
+                        "operator": "startwith_text",
                         "number" : "008",
                         "code" : "",
-                        "pos" : [0 , 2],
                         "string": ["Aa"]
 
                     },
@@ -1030,11 +1051,13 @@
                 "value": [
                     {
                         "number" : "305",
-                        "code" : ""
+                        "code" : "",
+                        "present" : true
                     },
                     {
                         "number" : "225",
-                        "code" : ""
+                        "code" : "",
+                        "present" : true
                     }
                 ],
                 "type": "allRequired",
@@ -1056,6 +1079,7 @@
                     {
                         "number" : "451",
                         "code" : "0",
+                        "present" : true,
                         "reciproque" : {
                             "number": "451",
                             "code": "0"
@@ -1081,6 +1105,7 @@
                     {
                         "number" : "452",
                         "code" : "0",
+                        "present" : true,
                         "reciproque" : {
                             "number": "452",
                             "code": "0"
@@ -1106,6 +1131,7 @@
                     {
                         "number" : "488",
                         "code" : "0",
+                        "present" : true,
                         "reciproque" : {
                             "number": "488",
                             "code": "0"
@@ -1131,6 +1157,7 @@
                     {
                         "number" : "455",
                         "code" : "0",
+                        "present" : true,
                         "reciproque" : {
                             "number": "456",
                             "code": "0"
@@ -1156,6 +1183,7 @@
                     {
                         "number" : "456",
                         "code" : "0",
+                        "present" : true,
                         "reciproque" : {
                             "number": "455",
                             "code": "0"
@@ -1181,6 +1209,7 @@
                     {
                         "number" : "455",
                         "code" : "0",
+                        "present" : true,
                         "reciproque" : {
                             "number": "456",
                             "code": "0"
@@ -1206,6 +1235,7 @@
                     {
                         "number" : "456",
                         "code" : "0",
+                        "present" : true,
                         "reciproque" : {
                             "number": "455",
                             "code": "0"
@@ -1216,6 +1246,151 @@
                 "index": 80,
                 "number": "456",
                 "message": "Si 456, alors vérifier que la notice en 456$0 contient une 455 avec liens réciproques"
+            },
+            {
+                "condition" : [
+                    {
+                        "operator": "presente",
+                        "number" : "328",
+                        "code" : "z",
+                        "ind1" : "",
+                        "ind2": ""
+                    },
+                    {
+                        "operator": "equals_text",
+                        "number" : "328",
+                        "code" : "z",
+                        "string": ["Reproduction de"]
+
+                    }
+                ],
+                "value": [
+                    {
+                        "number" : "029",
+                        "code" : "",
+                        "present" : true
+                    }
+                ],
+                "type": "allRequired",
+                "index": 81,
+                "number": "328",
+                "message": "Si 328$zReproduction de, alors il faut une 029"
+            },
+            {
+                "condition" : [
+                    {
+                        "operator": "presente",
+                        "number" : "328",
+                        "code" : "z",
+                        "ind1" : "",
+                        "ind2": ""
+                    },
+                    {
+                        "operator": "not_equals_text",
+                        "number" : "328",
+                        "code" : "z",
+                        "string": ["Reproduction de"]
+
+                    }
+                ],
+                "value": [
+                    {
+                        "number" : "029",
+                        "code" : "",
+                        "present" : false
+                    }
+                ],
+                "type": "allRequired",
+                "index": 82,
+                "number": "328",
+                "message": "Si 328$z n'est pas \"Reproduction de\", alors 029 ne doit pas être présente"
+            },
+            {
+                "condition" : [
+                    {
+                        "operator": "presente",
+                        "number" : "328",
+                        "code" : "z",
+                        "ind1" : "",
+                        "ind2": ""
+                    },
+                    {
+                        "operator": "equals_text",
+                        "number" : "328",
+                        "code" : "z",
+                        "string": ["Reproduction de"]
+
+                    }
+                ],
+                "value": [
+                    {
+                        "number" : "455",
+                        "code" : "",
+                        "present" : true
+                    }
+                ],
+                "type": "allRequired",
+                "index": 83,
+                "number": "328",
+                "message": "Si 328$zReproduction de, alors il faut une 455"
+            },
+            {
+                "condition" : [
+                    {
+                        "operator": "presente",
+                        "number" : "328",
+                        "code" : "z",
+                        "ind1" : "",
+                        "ind2": ""
+                    },
+                    {
+                        "operator": "equals_text",
+                        "number" : "328",
+                        "code" : "z",
+                        "string": ["Reproduction de"]
+
+                    }
+                ],
+                "value": [
+                    {
+                        "number" : "455",
+                        "code" : "",
+                        "present" : true
+                    }
+                ],
+                "type": "allRequired",
+                "index": 84,
+                "number": "328",
+                "message": "Si 328$z\"Reproduction de\", 455 doit être présente"
+            },
+            {
+                "condition" : [
+                    {
+                        "operator": "presente",
+                        "number" : "328",
+                        "code" : "z",
+                        "ind1" : "",
+                        "ind2": ""
+                    },
+                    {
+                        "operator": "equals_text",
+                        "number" : "328",
+                        "code" : "z",
+                        "string": ["Reproduction de"]
+
+                    }
+                ],
+                "value": [
+                    {
+                        "number" : "456",
+                        "code" : "",
+                        "present" : false
+                    }
+                ],
+                "type": "allRequired",
+                "index": 85,
+                "number": "328",
+                "message": "Si 328$z\"Reproduction de\" , 456 ne doit pas être présente"
             }
         ],
         "Structurel": [

@@ -156,8 +156,8 @@
 (FAIT)43	x			x	225	Si 225 ind1=2 $a alors 410$0 doit être présent		Zone 410 : obligatoire avec une 225
 (FAIT)44	x			x	225	Si 225 ind1=1 $a alors 461 doit être présent		Zone 461 : obligatoire
 (FAIT)45	x			x	225	Si 225 ind1=2 il faut au moins une 410		Zone 410 : obligatoire avec une 225
-92			x		455	Si 328$z"Reproduction de", 455 doit être présente		Vérifier les liens entre la version de soutenance et la reproduction
-93			x		456	Si 328$z"Reproduction de" , 456 ne doit pas être présente		Zone 456 incompatible avec le type de thèse (reproduction)
+(FAIT)92			x		455	Si 328$z"Reproduction de", 455 doit être présente		Vérifier les liens entre la version de soutenance et la reproduction
+(FAIT)93			x		456	Si 328$z"Reproduction de" , 456 ne doit pas être présente		Zone 456 incompatible avec le type de thèse (reproduction)
 (FAIT)105		x	x		101	Si 101$d, 330 doit être présente		Mention de résumé incohérente : vérifier zones 101 et 330
 137	x				856	Si 856$5=692669902, une 310 doit être présente		Zone E856 : une note 310 doit préciser le type d'accès restreint
 (FAIT)151	x	x	x		304	Si 008 commence par Oa,  304 doit être présente		Ressource électronique : doit contenir une zone 304
@@ -176,7 +176,7 @@
 158			x		455	Si 455, alors vérifier que la notice en 455$0 ne contient pas 328$z		Vérifier la pertinence des liens réciproques
 (FAIT)160				x	456	Si 456, alors vérifier que la notice en 456$0 contient une 455 avec liens réciproques		Vérifier la pertinence des liens réciproques
 (FAIT)163	x				455	Si 455, alors vérifier que la notice en 455$0 contient une 456 avec liens réciproques		Vérifier la pertinence des liens réciproques
-192		x			456	Si 456, alors vérifier que la notice en 456$0 contient une 455 avec liens réciproques		Vérifier la pertinence des liens réciproques
+(FAIT)192		x			456	Si 456, alors vérifier que la notice en 456$0 contient une 455 avec liens réciproques		Vérifier la pertinence des liens réciproques
 193		x			456	Si 456, alors vérifier que la notice en 465$0  contient  328$z		Vérifier la pertinence des liens réciproques
 194		x			456	Si 456, alors vérifier que la notice en 456$0 contient 105$a Pos. 4-7= v		Vérifier la pertinence des liens réciproques
 
@@ -189,10 +189,10 @@
 (FAIT)179		x	x	x	328	Si 105 $a Pos. 4-7= "m" ou "7", alors il faut une 328		Zone 328 obligatoire pour une thèse ou mémoire (soutenance)
 (FAIT)180		x			017	Si 105 $a Pos. 4-7= "v" ou "7", alors il faut une 017		Zone 017  nécessaire pour un mémoire
 (FAIT)182			x	x	328	Si 105 $a Pos. 4-7= "v", alors il faut une 328$z		Zone 328 incohérente avec le type de thèse (reproduction)
-183			x	x	029	Si 328$zReproduction de, alors il faut une 029		Zone 029 obligatoire pour une reproduction à l'identique d'une thèse
-184			x	x	029	Si 328$z n'est pas "Reproduction de", alors 029 ne doit pas être présente		Zone 029 incohérente pour une autre édition d'une thèse
+(FAIT)183			x	x	029	Si 328$zReproduction de, alors il faut une 029		Zone 029 obligatoire pour une reproduction à l'identique d'une thèse
+(FAIT)184			x	x	029	Si 328$z n'est pas "Reproduction de", alors 029 ne doit pas être présente		Zone 029 incohérente pour une autre édition d'une thèse
 190			x	x	608	Si 328$z n'est pas "Reproduction de", alors 608 $3027253139Thèses et écrits académiques ne doit pas être présente		Zone 608 : incohérente pour une autre édition d'une thèse
-191			x	x	455	Si 328$zReproduction de, alors il faut une 455		Zone 455 obligatoire pour une reproduction à l'identique d'une thèse
+(FAIT)191			x	x	455	Si 328$zReproduction de, alors il faut une 455		Zone 455 obligatoire pour une reproduction à l'identique d'une thèse
 
 (FAIT)47	x			x	461	Si 008 commence par Aa et présence d'une 461, alors il doit y avoir une 305 ou 225		Zones incohérentes : vérifier les zones 461 et 225 (monographie en plusieurs volumes) ou 305 (numéro de périodique)
 ```
