@@ -1,9 +1,8 @@
 const convert = require("xml-js");
 const path = require('path');
 const fs = require('fs');
-const Matching = require('../../regles/Matching');
+const Dependance = require('../../regles/Dependance');
 import rules from '../../../../serveur/public/model_regles.json';
-
 
 
 let CATEGORIE;
@@ -12,7 +11,7 @@ let ruleTest;
 beforeEach(() => {
     ruleTest = {
         "Generale": {
-            "matching":[]
+            "dependances":[]
         }
     }
 });
@@ -31,14 +30,12 @@ function getNotice(number) {
 }
 
 function addRuleToTest(numRuleExcell) {
-    ruleTest[CATEGORIE].matching.push(rules[CATEGORIE].matching.find(x => x.numRuleExcell === numRuleExcell))
+    ruleTest[CATEGORIE].dependances.push(rules[CATEGORIE].dependances.find(x => x.numRuleExcell === numRuleExcell))
 }
 
 
 
-// ===============================================================
-
-test('008 doit contenir "x3"', () => {
+test('100$a Pos. 9-12 = 214$d', () => {
     const notice = getNotice("001");
     const datafields = notice.record.datafield;
     const controlfield = notice.record.controlfield;
@@ -46,14 +43,14 @@ test('008 doit contenir "x3"', () => {
         PPN: 0,
         errors: [],
     };
-    const numRuleExcell = 2;
+    const numRuleExcell = 3;
     addRuleToTest(numRuleExcell);
-    Matching.testMatchRegexRules(CATEGORIE, ruleTest, controlfield, datafields, resultJson)
+    Dependance.testMatchDependanceRules(CATEGORIE, ruleTest, controlfield, datafields, resultJson)
 
     expect(resultJson.errors).toStrictEqual([]);
 });
 
-test('008 doit contenir "x3" (FAIL)', () => {
+test('100$a Pos. 9-12 = 214$d (FAIL)', () => {
     const notice = getNotice("002");
     const datafields = notice.record.datafield;
     const controlfield = notice.record.controlfield;
@@ -61,10 +58,9 @@ test('008 doit contenir "x3" (FAIL)', () => {
         PPN: 0,
         errors: [],
     };
-    const numRuleExcell = 2;
+    const numRuleExcell = 3;
     addRuleToTest(numRuleExcell);
-    Matching.testMatchRegexRules(CATEGORIE, ruleTest, controlfield, datafields, resultJson)
+    Dependance.testMatchDependanceRules(CATEGORIE, ruleTest, controlfield, datafields, resultJson)
 
     expect(resultJson.errors).not.toStrictEqual([]);
 });
-

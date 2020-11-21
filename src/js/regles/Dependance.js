@@ -15,7 +15,10 @@ var Dependance = function () {
         if (field1 != null && field2 != null) {
             const subfield1 = Parcours.getSubfieldValue(field1, regle.field1.code)
             const subfield2 = Parcours.getSubfieldValue(field2, regle.field2.code)
-            if (subfield1 != null && subfield2 != null) {
+            if (subfield2 == null) {
+                return false
+            }
+            else if (subfield1 != null && subfield2 != null) {
                 let testString1 = subfield1
                 let testString2 = subfield2
                 if (regle.field1.pos.length > 0) {
@@ -46,7 +49,7 @@ var Dependance = function () {
                     // return subfield1 <= subfield2;
                 }
             }
-        }
+        } 
         return true
     }
 
