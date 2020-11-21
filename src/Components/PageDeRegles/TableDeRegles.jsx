@@ -12,7 +12,7 @@ import 'react-bootstrap-table2-paginator/dist/react-bootstrap-table2-paginator.m
 import { Button, Col, Form, Row } from 'react-bootstrap';
 import ModalForm from './ModalForm';
 import AddCircleIcon from '@material-ui/icons/AddCircle';
-// import Fab from '@material-ui/core/Fab';
+import { generator } from './generator'
 
 function Table() {
 
@@ -219,6 +219,12 @@ function Table() {
   else if (!isLoaded)
     return <div>Loading...</div>;
   else {
+
+    generator({func:"equals to", items:["Lyon 1", "Univ Lyon 1"], isWord: true});
+    generator({func:"starts with", items:["Lyon 1", "Univ Lyon 1"], isWord: true});
+    generator({func:"starts with", items:["Univ Lyon 1"], isWord: true});
+    generator({func:"must not contain", items:["/", ":","."], isWord: false});
+    
     return (
       <ToolkitProvider keyField="index" data={rules} columns={columns} search >
         {

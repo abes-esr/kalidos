@@ -9,11 +9,11 @@ const TypeList = () => {
   const [indexDesc, setIndexDesc] = useState(0)
 
   const types = [
-    { name: "matching", type: "matching", description: "Description de matching" },
-    { name: "dependances", type: "dependances", description: "Description de dependances" },
+    { name: "Matching", type: "matching", description: "Description de matching" },
+    { name: "Dependances", type: "dependances", description: "Description de dependances" },
     { name: "Conditionnels", type: "Conditionnels", description: "Description de Conditionnels" },
     { name: "Structurel", type: "Structurel", description: "Description de Structurel" },
-    { name: "idRef", type: "idRef", description: "Description de idRef" },
+    { name: "References", type: "idRef", description: "Description de idRef" },
   ]
 
   const handleTypeChange = (selectedType) => {
@@ -90,7 +90,12 @@ const TypeList = () => {
 
   return (
     <Container>
-      { useForm ? <Form/> : <List/> }
+      <Container>
+        <Row>Chose a type of rule :</Row>
+        <Row>
+          { useForm ? <Form/> : <List/> }
+        </Row>
+      </Container>
       <Row className="p-1 justify-content-end">
         <Button onClick={() => handleSelectedType()}> { useForm ? "Back" : "Next"} </Button>
       </Row>
@@ -99,3 +104,4 @@ const TypeList = () => {
 }
 
 export default TypeList;
+
