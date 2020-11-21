@@ -1,179 +1,179 @@
 <record>
-<leader> clm0 22 450 </leader>
-<controlfield tag="001">249630257</controlfield>
-<controlfield tag="002">38</controlfield>
-<controlfield tag="003">http://www.sudoc.fr/249630257</controlfield>
-<controlfield tag="004">20201008</controlfield>
-<controlfield tag="005">20201009031134.000</controlfield>
-<controlfield tag="006">692669902</controlfield>
-<controlfield tag="007">0499</controlfield>
-<controlfield tag="008">Oax3</controlfield>
-<datafield tag="029" ind1=" " ind2=" ">
-<subfield code="a">FR</subfield>
-<subfield code="b">20??LYO1D049</subfield>
-</datafield>
-<datafield tag="035" ind1=" " ind2=" ">
-<subfield code="a">(OCoLC)1199129496</subfield>
-</datafield>
-<datafield tag="100" ind1=" " ind2=" ">
-<subfield code="a">20??1008d2020 k y0frey50 ba</subfield>
-</datafield>
-<datafield tag="101" ind1="0" ind2=" ">
-<subfield code="a">fre</subfield>
-<subfield code="d">fre</subfield>
-</datafield>
-<datafield tag="105" ind1=" " ind2=" ">
-<subfield code="a">a va 000yy</subfield>
-</datafield>
-<datafield tag="135" ind1=" " ind2=" ">
-<subfield code="a">dr|||||||||||</subfield>
-</datafield>
-<datafield tag="181" ind1=" " ind2=" ">
-<subfield code="6">z01</subfield>
-<subfield code="c">txt</subfield>
-<subfield code="2">rdacontent</subfield>
-</datafield>
-<datafield tag="181" ind1=" " ind2="1">
-<subfield code="6">z01</subfield>
-<subfield code="a">i#</subfield>
-<subfield code="b">xxxe##</subfield>
-</datafield>
-<datafield tag="182" ind1=" " ind2=" ">
-<subfield code="6">z01</subfield>
-<subfield code="c">c</subfield>
-<subfield code="2">rdamedia</subfield>
-</datafield>
-<datafield tag="182" ind1=" " ind2="1">
-<subfield code="6">z01</subfield>
-<subfield code="a">b</subfield>
-</datafield>
-<datafield tag="183" ind1=" " ind2="1">
-<subfield code="6">z01</subfield>
-<subfield code="a">ceb</subfield>
-<subfield code="2">rdacarrier</subfield>
-</datafield>
-<datafield tag="200" ind1="1" ind2=" ">
-<subfield code="a">
+    <leader> clm0 22 450 </leader>
+    <controlfield tag="001">249630257</controlfield>
+    <controlfield tag="002">38</controlfield>
+    <controlfield tag="003">http://www.sudoc.fr/249630257</controlfield>
+    <controlfield tag="004">20201008</controlfield>
+    <controlfield tag="005">20201009031134.000</controlfield>
+    <controlfield tag="006">692669902</controlfield>
+    <controlfield tag="007">0499</controlfield>
+    <controlfield tag="008">Oax3</controlfield>
+    <datafield tag="029" ind1=" " ind2=" ">
+        <subfield code="a">FR</subfield>
+        <subfield code="b">20??LYO1D049</subfield>
+    </datafield>
+    <datafield tag="035" ind1=" " ind2=" ">
+        <subfield code="a">(OCoLC)1199129496</subfield>
+    </datafield>
+    <datafield tag="100" ind1=" " ind2=" ">
+        <subfield code="a">20??1008d2020 k y0frey50 ba</subfield>
+    </datafield>
+    <datafield tag="101" ind1="0" ind2=" ">
+        <subfield code="a">fre</subfield>
+        <subfield code="d">fre</subfield>
+    </datafield>
+    <datafield tag="105" ind1=" " ind2=" ">
+        <subfield code="a">a va 000yy</subfield>
+    </datafield>
+    <datafield tag="135" ind1=" " ind2=" ">
+        <subfield code="a">dr|||||||||||</subfield>
+    </datafield>
+    <datafield tag="181" ind1=" " ind2=" ">
+        <subfield code="6">z01</subfield>
+        <subfield code="c">txt</subfield>
+        <subfield code="2">rdacontent</subfield>
+    </datafield>
+    <datafield tag="181" ind1=" " ind2="1">
+        <subfield code="6">z01</subfield>
+        <subfield code="a">i#</subfield>
+        <subfield code="b">xxxe##</subfield>
+    </datafield>
+    <datafield tag="182" ind1=" " ind2=" ">
+        <subfield code="6">z01</subfield>
+        <subfield code="c">c</subfield>
+        <subfield code="2">rdamedia</subfield>
+    </datafield>
+    <datafield tag="182" ind1=" " ind2="1">
+        <subfield code="6">z01</subfield>
+        <subfield code="a">b</subfield>
+    </datafield>
+    <datafield tag="183" ind1=" " ind2="1">
+        <subfield code="6">z01</subfield>
+        <subfield code="a">ceb</subfield>
+        <subfield code="2">rdacarrier</subfield>
+    </datafield>
+    <datafield tag="200" ind1="1" ind2=" ">
+        <subfield code="a">
 Intérêt de la désépithélialisation d'un greffon conjonctif prélevé au palais dans le cadre d'une greffe de tissu conjonctif enfouie
-</subfield>
-<subfield code="f">Julie Walter</subfield>
-<subfield code="g">sous la direction de Julien Gonin</subfield>
-</datafield>
-<datafield tag="214" ind1=" " ind2="2">
-<subfield code="a">Lyon</subfield>
-<subfield code="c">Bibliothèque Lyon 1</subfield>
-<subfield code="d">20??</subfield>
-</datafield>
-<datafield tag="230" ind1=" " ind2=" ">
-<subfield code="a">Données textuelles (1 fichier PDF : X Ko)</subfield>
-</datafield>
-</datafield>
-<datafield tag="307" ind1=" " ind2=" ">
-<subfield code="a">L'impression du document génère ? p.</subfield>
-</datafield>
-<datafield tag="320" ind1=" " ind2=" ">
-<subfield code="a">Bibliogr. f. 45-50</subfield>
-</datafield>
-<datafield tag="328" ind1=" " ind2="0">
-<subfield code="z">Reproduction de</subfield>
-<subfield code="b">Thèse d'exercice</subfield>
-<subfield code="c">Discipline</subfield>
-<subfield code="e">Lyon 1</subfield>
-<subfield code="d">2020</subfield>
-</datafield>
-<datafield tag="455" ind1=" " ind2="|">
-<subfield code="0">249464764</subfield>
-<subfield code="t">
+        </subfield>
+        <subfield code="f">Julie Walter</subfield>
+        <subfield code="g">sous la direction de Julien Gonin</subfield>
+    </datafield>
+    <datafield tag="214" ind1=" " ind2="2">
+        <subfield code="a">Lyon</subfield>
+        <subfield code="c">Bibliothèque Lyon 1</subfield>
+        <subfield code="d">20??</subfield>
+    </datafield>
+    <datafield tag="230" ind1=" " ind2=" ">
+        <subfield code="a">Données textuelles (1 fichier PDF : X Ko)</subfield>
+    </datafield>
+    <!-- </datafield> -->
+    <datafield tag="307" ind1=" " ind2=" ">
+        <subfield code="a">L'impression du document génère ? p.</subfield>
+    </datafield>
+    <datafield tag="320" ind1=" " ind2=" ">
+        <subfield code="a">Bibliogr. f. 45-50</subfield>
+    </datafield>
+    <datafield tag="328" ind1=" " ind2="0">
+        <subfield code="z">Reproduction de</subfield>
+        <subfield code="b">Thèse d'exercice</subfield>
+        <subfield code="c">Discipline</subfield>
+        <subfield code="e">Lyon 1</subfield>
+        <subfield code="d">2020</subfield>
+    </datafield>
+    <datafield tag="455" ind1=" " ind2="|">
+        <subfield code="0">249464764</subfield>
+        <subfield code="t">
 Intérêt de la désépithélialisation d'un greffon conjonctif prélevé au palais dans le cadre d'une greffe de tissu conjonctif enfouie
-</subfield>
-<subfield code="f">Julie Walter</subfield>
-<subfield code="d">2020</subfield>
-<subfield code="p">1 vol. (50 f.)</subfield>
-</datafield>
-<datafield tag="579" ind1=" " ind2=" ">
-<subfield code="1">0499</subfield>
-<subfield code="3">249646773</subfield>
-<subfield code="t">
+        </subfield>
+        <subfield code="f">Julie Walter</subfield>
+        <subfield code="d">2020</subfield>
+        <subfield code="p">1 vol. (50 f.)</subfield>
+    </datafield>
+    <datafield tag="579" ind1=" " ind2=" ">
+        <subfield code="1">0499</subfield>
+        <subfield code="3">249646773</subfield>
+        <subfield code="t">
 Intérêt de la désépithélialisation d'un greffon conjonctif prélevé au palais dans le cadre d'une greffe de tissu conjonctif enfouie
-</subfield>
-</datafield>
-<datafield tag="606" ind1=" " ind2=" ">
-<subfield code="3">027425614</subfield>
-<subfield code="a">Parodontologie</subfield>
-<subfield code="2">rameau</subfield>
-</datafield>
-<datafield tag="606" ind1=" " ind2=" ">
-<subfield code="3">027227707</subfield>
-<subfield code="a">Greffe (chirurgie)</subfield>
-<subfield code="2">rameau</subfield>
-</datafield>
-<datafield tag="606" ind1=" " ind2=" ">
-<subfield code="3">028190068</subfield>
-<subfield code="a">Palais (anatomie)</subfield>
-<subfield code="2">rameau</subfield>
-</datafield>
-<datafield tag="608" ind1=" " ind2=" ">
-<subfield code="3">027253139</subfield>
-<subfield code="a">Thèses et écrits académiques</subfield>
-<subfield code="2">rameau</subfield>
-</datafield>
-<datafield tag="608" ind1=" " ind2=" ">
-<subfield code="3">027253139</subfield>
-<subfield code="a">Thèses et écrits académiques</subfield>
-<subfield code="2">rameau</subfield>
-</datafield>
-<datafield tag="700" ind1=" " ind2="1">
-<subfield code="3">249464276</subfield>
-<subfield code="a">Walter</subfield>
-<subfield code="b">Julie</subfield>
-<subfield code="f">1995-....</subfield>
-<subfield code="4">020</subfield>
-</datafield>
-<datafield tag="701" ind1=" " ind2="1">
-<subfield code="a">Nom du co-auteur</subfield>
-<subfield code="b">Prénom</subfield>
-<subfield code="f">1987-....</subfield>
-<subfield code="4">727</subfield>
-</datafield>
-<datafield tag="702" ind1=" " ind2="1">
-<subfield code="a">Nom du co-auteur</subfield>
-<subfield code="b">Prénom</subfield>
-<subfield code="f">1987-....</subfield>
-<subfield code="4">070</subfield>
-</datafield>
-<datafield tag="711" ind1="0" ind2="2">
-<subfield code="3">026402823</subfield>
-<subfield code="a">Université Claude Bernard</subfield>
-<subfield code="c">Lyon</subfield>
-<subfield code="4">295</subfield>
-</datafield>
-<datafield tag="801" ind1=" " ind2="3">
-<subfield code="a">FR</subfield>
-<subfield code="b">Abes</subfield>
-<subfield code="c">20201009</subfield>
-<subfield code="g">AFNOR</subfield>
-</datafield>
-<datafield tag="856" ind1="4" ind2=" ">
-<subfield code="5">692669902:676500129</subfield>
-<subfield code="q">PDF</subfield>
-<subfield code="u">URL</subfield>
-<subfield code="z">
+        </subfield>
+    </datafield>
+    <datafield tag="606" ind1=" " ind2=" ">
+        <subfield code="3">027425614</subfield>
+        <subfield code="a">Parodontologie</subfield>
+        <subfield code="2">rameau</subfield>
+    </datafield>
+    <datafield tag="606" ind1=" " ind2=" ">
+        <subfield code="3">027227707</subfield>
+        <subfield code="a">Greffe (chirurgie)</subfield>
+        <subfield code="2">rameau</subfield>
+    </datafield>
+    <datafield tag="606" ind1=" " ind2=" ">
+        <subfield code="3">028190068</subfield>
+        <subfield code="a">Palais (anatomie)</subfield>
+        <subfield code="2">rameau</subfield>
+    </datafield>
+    <datafield tag="608" ind1=" " ind2=" ">
+        <subfield code="3">027253139</subfield>
+        <subfield code="a">Thèses et écrits académiques</subfield>
+        <subfield code="2">rameau</subfield>
+    </datafield>
+    <datafield tag="608" ind1=" " ind2=" ">
+        <subfield code="3">027253139</subfield>
+        <subfield code="a">Thèses et écrits académiques</subfield>
+        <subfield code="2">rameau</subfield>
+    </datafield>
+    <datafield tag="700" ind1=" " ind2="1">
+        <subfield code="3">249464276</subfield>
+        <subfield code="a">Walter</subfield>
+        <subfield code="b">Julie</subfield>
+        <subfield code="f">1995-....</subfield>
+        <subfield code="4">020</subfield>
+    </datafield>
+    <datafield tag="701" ind1=" " ind2="1">
+        <subfield code="a">Nom du co-auteur</subfield>
+        <subfield code="b">Prénom</subfield>
+        <subfield code="f">1987-....</subfield>
+        <subfield code="4">727</subfield>
+    </datafield>
+    <datafield tag="702" ind1=" " ind2="1">
+        <subfield code="a">Nom du co-auteur</subfield>
+        <subfield code="b">Prénom</subfield>
+        <subfield code="f">1987-....</subfield>
+        <subfield code="4">070</subfield>
+    </datafield>
+    <datafield tag="711" ind1="0" ind2="2">
+        <subfield code="3">026402823</subfield>
+        <subfield code="a">Université Claude Bernard</subfield>
+        <subfield code="c">Lyon</subfield>
+        <subfield code="4">295</subfield>
+    </datafield>
+    <datafield tag="801" ind1=" " ind2="3">
+        <subfield code="a">FR</subfield>
+        <subfield code="b">Abes</subfield>
+        <subfield code="c">20201009</subfield>
+        <subfield code="g">AFNOR</subfield>
+    </datafield>
+    <datafield tag="856" ind1="4" ind2=" ">
+        <subfield code="5">692669902:676500129</subfield>
+        <subfield code="q">PDF</subfield>
+        <subfield code="u">URL</subfield>
+        <subfield code="z">
 Accès au texte intégral
-</subfield>
-</datafield>
-<datafield tag="930" ind1=" " ind2=" ">
-<subfield code="5">692669902:676500129</subfield>
-<subfield code="b">692669902</subfield>
-<subfield code="j">u</subfield>
-</datafield>
-<datafield tag="940" ind1=" " ind2=" ">
-<subfield code="5">692669902:676500129</subfield>
-<subfield code="a">20201008</subfield>
-<subfield code="b">x</subfield>
-</datafield>
-<datafield tag="941" ind1=" " ind2=" ">
-<subfield code="5">692669902:676500129</subfield>
-<subfield code="a">20201008</subfield>
-<subfield code="b">10:39:25.000</subfield>
-</datafield>
+        </subfield>
+    </datafield>
+    <datafield tag="930" ind1=" " ind2=" ">
+        <subfield code="5">692669902:676500129</subfield>
+        <subfield code="b">692669902</subfield>
+        <subfield code="j">u</subfield>
+    </datafield>
+    <datafield tag="940" ind1=" " ind2=" ">
+        <subfield code="5">692669902:676500129</subfield>
+        <subfield code="a">20201008</subfield>
+        <subfield code="b">x</subfield>
+    </datafield>
+    <datafield tag="941" ind1=" " ind2=" ">
+        <subfield code="5">692669902:676500129</subfield>
+        <subfield code="a">20201008</subfield>
+        <subfield code="b">10:39:25.000</subfield>
+    </datafield>
 </record>
