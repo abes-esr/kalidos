@@ -9,6 +9,13 @@
                 "regex": "(?:(?!\\$).)+"
             },
             {
+                "index": 71,
+                "numRuleExcell" : 2,
+                "number": "008",
+                "message": "Zone 008 erronée",
+                "regex": ".*x3.*"
+            },
+            {
                 "number": 701,
                 "code": "f",
                 "message": "701$f doit contenir 9 caractères",

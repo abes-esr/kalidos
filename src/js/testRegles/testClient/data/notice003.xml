@@ -1,0 +1,314 @@
+<record>
+<leader> clm0 22 450 </leader>
+<controlfield tag="001">248990705</controlfield>
+<controlfield tag="002">38</controlfield>
+<controlfield tag="003">http://www.sudoc.fr/248990705</controlfield>
+<controlfield tag="004">20200909</controlfield>
+<controlfield tag="005">20201009012625.000</controlfield>
+<controlfield tag="006">4001</controlfield>
+<controlfield tag="007">4001</controlfield>
+<controlfield tag="008">Oax3</controlfield>
+<datafield tag="029" ind1=" " ind2=" ">
+<subfield code="a">FR</subfield>
+<subfield code="b">2020LYSE1120</subfield>
+</datafield>
+<datafield tag="033" ind1=" " ind2=" ">
+<subfield code="a">http://www.theses.fr/2020LYSE1120</subfield>
+</datafield>
+<datafield tag="035" ind1=" " ind2=" ">
+<subfield code="a">(OCoLC)1193978615</subfield>
+</datafield>
+<datafield tag="035" ind1=" " ind2=" ">
+<subfield code="a">STAR132362</subfield>
+</datafield>
+<datafield tag="100" ind1=" " ind2=" ">
+<subfield code="a">20200909d2020 k y0frey50 ba</subfield>
+</datafield>
+<datafield tag="101" ind1="0" ind2=" ">
+<subfield code="a">eng</subfield>
+<subfield code="d">fre</subfield>
+<subfield code="d">eng</subfield>
+</datafield>
+<datafield tag="102" ind1=" " ind2=" ">
+<subfield code="a">FR</subfield>
+</datafield>
+<datafield tag="105" ind1=" " ind2=" ">
+<subfield code="a">y ma 00|yy</subfield>
+</datafield>
+<datafield tag="135" ind1=" " ind2=" ">
+<subfield code="a">dr|||||||||||</subfield>
+</datafield>
+<datafield tag="181" ind1=" " ind2=" ">
+<subfield code="6">z01</subfield>
+<subfield code="c">txt</subfield>
+<subfield code="2">rdacontent</subfield>
+</datafield>
+<datafield tag="181" ind1=" " ind2="1">
+<subfield code="6">z01</subfield>
+<subfield code="a">i#</subfield>
+<subfield code="b">xxxe##</subfield>
+</datafield>
+<datafield tag="182" ind1=" " ind2=" ">
+<subfield code="6">z01</subfield>
+<subfield code="c">c</subfield>
+<subfield code="2">rdamedia</subfield>
+</datafield>
+<datafield tag="182" ind1=" " ind2="1">
+<subfield code="6">z01</subfield>
+<subfield code="a">b</subfield>
+</datafield>
+<datafield tag="183" ind1=" " ind2="1">
+<subfield code="6">z01</subfield>
+<subfield code="a">ceb</subfield>
+<subfield code="2">rdacarrier</subfield>
+</datafield>
+<datafield tag="200" ind1="1" ind2=" ">
+<subfield code="a">
+Recherche de règles de prédiction dans un contexte d'Intelligence Ambiante
+</subfield>
+<subfield code="e">étude de du noyau Z</subfield>
+<subfield code="e">Etude de cas</subfield>
+<subfield code="f">Benoit Vuillemin</subfield>
+<subfield code="g">
+sous la direction de Salima Hassas et de Laëtitia Matignon et de Rozenn Nicol et de Lionel Delphin-Poulat
+</subfield>
+</datafield>
+<datafield tag="214" ind1=" " ind2="1">
+<subfield code="d">2020</subfield>
+</datafield>
+<datafield tag="230" ind1=" " ind2=" ">
+<subfield code="a">Données textuelles</subfield>
+</datafield>
+<datafield tag="304" ind1=" " ind2=" ">
+<subfield code="a">Titre provenant de l'écran-titre</subfield>
+</datafield>
+<datafield tag="314" ind1=" " ind2=" ">
+<subfield code="a">
+Ecole(s) Doctorale(s) : École Doctorale d'Informatique et Mathématiques (Lyon)
+</subfield>
+</datafield>
+<datafield tag="314" ind1=" " ind2=" ">
+<subfield code="a">
+Partenaire(s) de recherche : Université Claude Bernard (Lyon) (établissement opérateur d'inscription), LIRIS - Laboratoire d'Informatique en Image et Systèmes d'information (Rhône) (Laboratoire)
+</subfield>
+</datafield>
+<datafield tag="314" ind1=" " ind2=" ">
+<subfield code="a">
+Autre(s) contribution(s) : Amal El Fallah Seghrouchni (Président du jury) ; Salima Hassas, Laëtitia Matignon, Rozenn Nicol, Philippe Fournier-Viger, Patrick Reignier, Pierre-Antoine Champin, Amedeo Napoli (Membre(s) du jury) ; Philippe Fournier-Viger, Patrick Reignier (Rapporteur(s))
+</subfield>
+</datafield>
+<datafield tag="328" ind1=" " ind2="0">
+<subfield code="b">Thèse de doctorat</subfield>
+<subfield code="c">Informatique</subfield>
+<subfield code="e">Lyon</subfield>
+<subfield code="d">2020</subfield>
+</datafield>
+<datafield tag="330" ind1=" " ind2=" ">
+<subfield code="a">
+Cette thèse traite du sujet de l’intelligence ambiante, fusion entre l’intelligence artificielle et l’internet des objets. L’objectif de ce travail est d’extraire des règles de prédiction à partir des données fournies par les objets connectés dans un environnement, afin de proposer aux utilisateurs des automatisations. Notre principale motivation repose sur la confidentialité, les interactions entre utilisateurs et l’explicabilité du fonctionnement du système. Dans ce contexte, plusieurs contributions ont été apportées. La première est une architecture d’intelligence ambiante qui fonctionne localement et traite les données provenant d’un seul environnement connecté. La seconde est un processus de discrétisation sans a priori sur les données d’entrée, permettant de prendre en compte les différentes données provenant de divers objets. La troisième est un nouvel algorithme de recherche de règles sur une série temporelle, qui évite les limitations des algorithmes de l’état de l’art. L’approche a été validée par des tests sur deux bases de données réelles. Enfin, les perspectives de développement du système sont présentées
+</subfield>
+</datafield>
+<datafield tag="330" ind1=" " ind2=" ">
+<subfield code="a">
+This thesis deals with the subject of Ambient Intelligence, the fusion between Artificial Intelligence and the Internet of Things. The goal of this work is to extract prediction rules from the data provided by connected objects in an environment, in order to propose automation to users. Our main concern relies on privacy, user interactions, and the explainability of the system’s operation. In this context, several contributions were made. The first is an ambient intelligence architecture that operates locally, and processes data from a single connected environment. The second is a discretization process without a priori on the input data, allowing to take into account different kinds of data from various objects. The third is a new algorithm for searching rules over a time series, which avoids the limitations of stateoftheart algorithms. The approach was validated by tests on two real databases. Finally, prospects for future developments in the system are presented
+</subfield>
+</datafield>
+<datafield tag="337" ind1=" " ind2=" ">
+<subfield code="a">
+Configuration requise : un logiciel capable de lire un fichier au format : PDF
+</subfield>
+</datafield>
+<datafield tag="541" ind1="|" ind2=" ">
+<subfield code="a">
+Prediction rule mining in an Ambient Intelligence context
+</subfield>
+<subfield code="z">eng</subfield>
+</datafield>
+<datafield tag="606" ind1=" " ind2=" ">
+<subfield code="3">027869970</subfield>
+<subfield code="a">Séries chronologiques</subfield>
+<subfield code="2">rameau</subfield>
+</datafield>
+<datafield tag="606" ind1=" " ind2=" ">
+<subfield code="3">027234541</subfield>
+<subfield code="a">Intelligence artificielle</subfield>
+<subfield code="2">rameau</subfield>
+</datafield>
+<datafield tag="608" ind1=" " ind2=" ">
+<subfield code="3">027253139</subfield>
+<subfield code="a">Thèses et écrits académiques</subfield>
+<subfield code="2">rameau</subfield>
+</datafield>
+<datafield tag="610" ind1="0" ind2=" ">
+<subfield code="a">Règles de prédiction</subfield>
+</datafield>
+<datafield tag="610" ind1="0" ind2=" ">
+<subfield code="a">Recherche de règles</subfield>
+</datafield>
+<datafield tag="610" ind1="0" ind2=" ">
+<subfield code="a">Séries temporelles</subfield>
+</datafield>
+<datafield tag="610" ind1="0" ind2=" ">
+<subfield code="a">Recherche d'habitudes</subfield>
+</datafield>
+<datafield tag="610" ind1="0" ind2=" ">
+<subfield code="a">Intelligence ambiante</subfield>
+</datafield>
+<datafield tag="610" ind1="0" ind2=" ">
+<subfield code="a">Internet des objets</subfield>
+</datafield>
+<datafield tag="610" ind1="0" ind2=" ">
+<subfield code="a">Informatique ubiquitaire</subfield>
+</datafield>
+<datafield tag="686" ind1=" " ind2=" ">
+<subfield code="a">004</subfield>
+<subfield code="2">TEF</subfield>
+</datafield>
+<datafield tag="700" ind1=" " ind2="1">
+<subfield code="3">248987569</subfield>
+<subfield code="a">Vuillemin</subfield>
+<subfield code="b">Benoit</subfield>
+<subfield code="f">1993-....</subfield>
+<subfield code="4">070</subfield>
+</datafield>
+<datafield tag="701" ind1=" " ind2="1">
+<subfield code="3">083298398</subfield>
+<subfield code="a">Hassas</subfield>
+<subfield code="b">Salima</subfield>
+<subfield code="f">1964-....</subfield>
+<subfield code="4">727</subfield>
+<subfield code="4">555</subfield>
+</datafield>
+<datafield tag="701" ind1=" " ind2="1">
+<subfield code="3">134644239</subfield>
+<subfield code="a">Matignon</subfield>
+<subfield code="b">Laëtitia</subfield>
+<subfield code="f">1982-</subfield>
+<subfield code="4">727</subfield>
+<subfield code="4">555</subfield>
+</datafield>
+<datafield tag="701" ind1=" " ind2="1">
+<subfield code="3">169285073</subfield>
+<subfield code="a">Nicol</subfield>
+<subfield code="b">Rozenn</subfield>
+<subfield code="4">727</subfield>
+<subfield code="4">555</subfield>
+</datafield>
+<datafield tag="701" ind1=" " ind2="1">
+<subfield code="3">248987909</subfield>
+<subfield code="a">Delphin-Poulat</subfield>
+<subfield code="b">Lionel</subfield>
+<subfield code="f">19..-....</subfield>
+<subfield code="4">727</subfield>
+</datafield>
+<datafield tag="701" ind1=" " ind2="1">
+<subfield code="3">059818360</subfield>
+<subfield code="a">El Fallah Seghrouchni</subfield>
+<subfield code="b">Amal</subfield>
+<subfield code="f">19..-....</subfield>
+<subfield code="4">956</subfield>
+</datafield>
+<datafield tag="701" ind1=" " ind2="1">
+<subfield code="3">198692153</subfield>
+<subfield code="a">Fournier-Viger</subfield>
+<subfield code="b">Philippe</subfield>
+<subfield code="4">958</subfield>
+<subfield code="4">555</subfield>
+</datafield>
+<datafield tag="701" ind1=" " ind2="1">
+<subfield code="3">135685494</subfield>
+<subfield code="a">Reignier</subfield>
+<subfield code="b">Patrick</subfield>
+<subfield code="4">958</subfield>
+<subfield code="4">555</subfield>
+</datafield>
+<datafield tag="701" ind1=" " ind2="1">
+<subfield code="3">070968675</subfield>
+<subfield code="a">Champin</subfield>
+<subfield code="b">Pierre-Antoine</subfield>
+<subfield code="f">1974-....</subfield>
+<subfield code="4">555</subfield>
+</datafield>
+<datafield tag="701" ind1=" " ind2="1">
+<subfield code="3">034282297</subfield>
+<subfield code="a">Napoli</subfield>
+<subfield code="b">Amedeo</subfield>
+<subfield code="4">555</subfield>
+</datafield>
+<datafield tag="711" ind1="0" ind2="2">
+<subfield code="3">190915757</subfield>
+<subfield code="a">Université de Lyon</subfield>
+<subfield code="c">2015-....</subfield>
+<subfield code="4">295</subfield>
+</datafield>
+<datafield tag="711" ind1="0" ind2="2">
+<subfield code="3">148390757</subfield>
+<subfield code="a">
+École doctorale en Informatique et Mathématiques de Lyon
+</subfield>
+<subfield code="4">996</subfield>
+</datafield>
+<datafield tag="711" ind1="0" ind2="2">
+<subfield code="3">026402823</subfield>
+<subfield code="a">Université Claude Bernard</subfield>
+<subfield code="c">Lyon</subfield>
+<subfield code="4">985</subfield>
+</datafield>
+<datafield tag="711" ind1="0" ind2="2">
+<subfield code="3">149705271</subfield>
+<subfield code="a">
+LIRIS - Laboratoire d'Informatique en Image et Systèmes d'information
+</subfield>
+<subfield code="c">Rhône</subfield>
+<subfield code="4">981</subfield>
+</datafield>
+<datafield tag="720" ind1="0" ind2="2">
+<subfield code="3">070278393</subfield>
+<subfield code="a">Rockefeller (famille)</subfield>
+<subfield code="4">981</subfield>
+</datafield>
+<datafield tag="721" ind1="0" ind2="2">
+<subfield code="3">070278393</subfield>
+<subfield code="a">Rockefeller (famille)</subfield>
+<subfield code="4">981</subfield>
+</datafield>
+<datafield tag="722" ind1="0" ind2="2">
+<subfield code="3">070278393</subfield>
+<subfield code="a">Rockefeller (famille)</subfield>
+<subfield code="4">981</subfield>
+</datafield>
+<datafield tag="801" ind1=" " ind2="3">
+<subfield code="a">FR</subfield>
+<subfield code="b">Abes</subfield>
+<subfield code="c">20201009</subfield>
+<subfield code="g">AFNOR</subfield>
+</datafield>
+<datafield tag="856" ind1="4" ind2=" ">
+<subfield code="q">PDF</subfield>
+<subfield code="s">3069363</subfield>
+<subfield code="u">http://www.theses.fr/2020LYSE1120/document</subfield>
+<subfield code="z">Accès au texte intégral</subfield>
+</datafield>
+<datafield tag="856" ind1="4" ind2=" ">
+<subfield code="u">https://tel.archives-ouvertes.fr/tel-02934428</subfield>
+</datafield>
+<datafield tag="930" ind1=" " ind2=" ">
+<subfield code="5">692669902:671854844</subfield>
+<subfield code="b">692669902</subfield>
+<subfield code="j">g</subfield>
+</datafield>
+<datafield tag="940" ind1=" " ind2=" ">
+<subfield code="5">692669902:671854844</subfield>
+<subfield code="a">20200909</subfield>
+<subfield code="b">x</subfield>
+</datafield>
+<datafield tag="941" ind1=" " ind2=" ">
+<subfield code="5">692669902:671854844</subfield>
+<subfield code="a">20200909</subfield>
+<subfield code="b">12:09:29.000</subfield>
+</datafield>
+<datafield tag="991" ind1=" " ind2=" ">
+<subfield code="5">692669902:671854844</subfield>
+<subfield code="a">exemplaire créé automatiquement par STAR</subfield>
+</datafield>
+</record>

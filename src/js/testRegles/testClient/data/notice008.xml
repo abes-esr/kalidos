@@ -1,0 +1,154 @@
+<record>
+<leader> cam0 22 450 </leader>
+<controlfield tag="001">24971423X</controlfield>
+<controlfield tag="002">38</controlfield>
+<controlfield tag="003">http://www.sudoc.fr/24971423X</controlfield>
+<controlfield tag="004">20201012</controlfield>
+<controlfield tag="005">20201013140137.000</controlfield>
+<controlfield tag="006">693882213</controlfield>
+<controlfield tag="007">693882213</controlfield>
+<controlfield tag="008">Aax3</controlfield>
+<datafield tag="029" ind1=" " ind2=" ">
+<subfield code="a">FR</subfield>
+<subfield code="b">2020LYO1D039</subfield>
+</datafield>
+<datafield tag="035" ind1=" " ind2=" ">
+<subfield code="a">(OCoLC)1200044218</subfield>
+</datafield>
+<datafield tag="100" ind1=" " ind2=" ">
+<subfield code="a">20201012d2020 k y0frey50 ba</subfield>
+</datafield>
+<datafield tag="101" ind1="0" ind2=" ">
+<subfield code="a">fre</subfield>
+<subfield code="d">fre</subfield>
+</datafield>
+<datafield tag="102" ind1=" " ind2=" ">
+<subfield code="a">FR</subfield>
+</datafield>
+<datafield tag="105" ind1=" " ind2=" ">
+<subfield code="a">a ya 000yy</subfield>
+</datafield>
+<datafield tag="106" ind1=" " ind2=" ">
+<subfield code="a">r</subfield>
+</datafield>
+<datafield tag="181" ind1=" " ind2=" ">
+<subfield code="6">z01</subfield>
+<subfield code="c">txt</subfield>
+<subfield code="2">rdacontent</subfield>
+</datafield>
+<datafield tag="181" ind1=" " ind2="1">
+<subfield code="6">z01</subfield>
+<subfield code="a">i#</subfield>
+<subfield code="b">xxxe##</subfield>
+</datafield>
+<datafield tag="182" ind1=" " ind2=" ">
+<subfield code="6">z01</subfield>
+<subfield code="c">n</subfield>
+<subfield code="2">rdamedia</subfield>
+</datafield>
+<datafield tag="182" ind1=" " ind2="1">
+<subfield code="6">z01</subfield>
+<subfield code="a">n</subfield>
+</datafield>
+<datafield tag="183" ind1=" " ind2="1">
+<subfield code="6">z01</subfield>
+<subfield code="a">nga</subfield>
+<subfield code="2">rdacarrier</subfield>
+</datafield>
+<datafield tag="200" ind1="1" ind2=" ">
+<subfield code="a">
+Présentation et analyse économique d'une alternative de soin dans les Ehpads avec une unité mobile
+</subfield>
+<subfield code="f">Miguel Dominguez</subfield>
+<subfield code="g">sous la direction de Christophe Jeannin</subfield>
+</datafield>
+<datafield tag="214" ind1=" " ind2="1">
+<subfield code="d">2020</subfield>
+</datafield>
+<datafield tag="215" ind1=" " ind2=" ">
+<subfield code="c">ill.</subfield>
+<subfield code="d">30 cm</subfield>
+</datafield>
+<datafield tag="320" ind1=" " ind2=" ">
+<subfield code="a">Bibliogr. f. 52-54. Index</subfield>
+</datafield>
+<datafield tag="328" ind1=" " ind2="0">
+<subfield code="b">Thèse d'exercice</subfield>
+<subfield code="c">Odontologie. Chirurgie dentaire</subfield>
+<subfield code="e">Lyon 1</subfield>
+<subfield code="d">2020</subfield>
+</datafield>
+<datafield tag="330" ind1=" " ind2=" ">
+<subfield code="a">
+Le vieillissement de la population est une donnée acquise. L'augmentation du nombre de personnes âgées entraine une augmentation proportionnelle des besoins de santé. Cependant, plusieurs enquêtes sur le recours aux soins bucco-dentaires montrent que malgré l'augmentation des besoins, la consommation diminue avec l'âge. Il s'agit donc d'un problème majeur de santé publique. L'écart entre les besoins de soins des patients et leur consommation devient de plus en plus important et semble croître avec l'état de dépendance des personnes âgées. On se retrouve ainsi pour les patients en EHPAD dans une spirale terrible. Ainsi, il est parfois possible de retrouver certains patients avec de nombreux foyers de haute septicité non traités. Effet paradoxal puisque leur présence en EHPAD entourés de professionnels de santé devrait permettre un bon maintien de leur état de santé et notamment de leur santé orale. De plus, les données acquises de la science ont démontré que l'état dentaire aggrave les comorbidités et que les comorbidités aggravent l'état dentaire, le tout interférant avec la qualité de vie. Cette problématique s'inscrit donc de façon globale pour améliorer le bien-être, la santé des patients résidant en EHPAD mais aussi pour réduire les dépenses de santé. En effet, l'augmentation des comorbidités sur la santé entraîne donc une augmentation des soins médicaux nécessaires et donc des dépenses de santé afférentes. La mise en place d'une nouvelle approche thérapeutique d'unité de soin mobile, comme celle du SBDM, (association créée dans un cadre expérimental) répond à des enjeux sanitaires mais également économiques pour les différents organismes et structures payeurs
+</subfield>
+</datafield>
+<datafield tag="606" ind1=" " ind2=" ">
+<subfield code="3">159823102</subfield>
+<subfield code="a">
+Établissements d'hébergement pour personnes âgées dépendantes
+</subfield>
+<subfield code="2">rameau</subfield>
+</datafield>
+<datafield tag="606" ind1=" " ind2=" ">
+<subfield code="3">055336450</subfield>
+<subfield code="a">Personnes âgées</subfield>
+<subfield code="x">Soins dentaires</subfield>
+<subfield code="2">rameau</subfield>
+</datafield>
+<datafield tag="606" ind1=" " ind2=" ">
+<subfield code="3">035736283</subfield>
+<subfield code="a">Comorbidité</subfield>
+<subfield code="2">rameau</subfield>
+</datafield>
+<datafield tag="606" ind1=" " ind2=" ">
+<subfield code="3">238105830</subfield>
+<subfield code="a">Équipes mobiles hospitalières</subfield>
+<subfield code="2">rameau</subfield>
+</datafield>
+<datafield tag="608" ind1=" " ind2=" ">
+<subfield code="3">02886431X</subfield>
+<subfield code="a">Actes de congrès</subfield>
+<subfield code="2">rameau</subfield>
+</datafield>
+<datafield tag="700" ind1=" " ind2="1">
+<subfield code="3">249713152</subfield>
+<subfield code="a">Dominguez</subfield>
+<subfield code="b">Miguel</subfield>
+<subfield code="f">1989-....</subfield>
+<subfield code="4">070</subfield>
+</datafield>
+<datafield tag="701" ind1=" " ind2="1">
+<subfield code="3">112318657</subfield>
+<subfield code="a">Jeannin</subfield>
+<subfield code="b">Christophe</subfield>
+<subfield code="4">727</subfield>
+</datafield>
+<datafield tag="711" ind1="0" ind2="2">
+<subfield code="3">026402823</subfield>
+<subfield code="a">Université Claude Bernard</subfield>
+<subfield code="c">Lyon</subfield>
+<subfield code="4">295</subfield>
+</datafield>
+<datafield tag="801" ind1=" " ind2="3">
+<subfield code="a">FR</subfield>
+<subfield code="b">Abes</subfield>
+<subfield code="c">20201013</subfield>
+<subfield code="g">AFNOR</subfield>
+</datafield>
+<datafield tag="930" ind1=" " ind2=" ">
+<subfield code="5">693882213:676773680</subfield>
+<subfield code="b">693882213</subfield>
+<subfield code="j">g</subfield>
+</datafield>
+<datafield tag="940" ind1=" " ind2=" ">
+<subfield code="5">693882213:676773680</subfield>
+<subfield code="a">20201012</subfield>
+<subfield code="b">x</subfield>
+</datafield>
+<datafield tag="941" ind1=" " ind2=" ">
+<subfield code="5">693882213:676773680</subfield>
+<subfield code="a">20201012</subfield>
+<subfield code="b">16:41:40.000</subfield>
+</datafield>
+</record>

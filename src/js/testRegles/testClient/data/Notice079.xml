@@ -1,0 +1,193 @@
+<record>
+<leader> cam0 22 450 </leader>
+<controlfield tag="001">249739860</controlfield>
+<controlfield tag="002">38</controlfield>
+<controlfield tag="003">http://www.sudoc.fr/249739860</controlfield>
+<controlfield tag="004">20201013</controlfield>
+<controlfield tag="005">20201014061336.000</controlfield>
+<controlfield tag="006">693882101</controlfield>
+<controlfield tag="007">0499</controlfield>
+<controlfield tag="008">Aax3</controlfield>
+<datafield tag="029" ind1=" " ind2=" ">
+<subfield code="a">FR</subfield>
+<subfield code="b">2017LIL2E155</subfield>
+</datafield>
+<datafield tag="035" ind1=" " ind2=" ">
+<subfield code="a">(OCoLC)1200167226</subfield>
+</datafield>
+<datafield tag="100" ind1=" " ind2=" ">
+<subfield code="a">20201013d2020 k y0frey50 ba</subfield>
+</datafield>
+<datafield tag="101" ind1="0" ind2=" ">
+<subfield code="a">fre</subfield>
+<subfield code="d">fre</subfield>
+</datafield>
+<datafield tag="102" ind1=" " ind2=" ">
+<subfield code="a">FR</subfield>
+</datafield>
+<datafield tag="105" ind1=" " ind2=" ">
+<subfield code="a">y va 00|yy</subfield>
+</datafield>
+<datafield tag="106" ind1=" " ind2=" ">
+<subfield code="a">r</subfield>
+</datafield>
+<datafield tag="181" ind1=" " ind2=" ">
+<subfield code="6">z01</subfield>
+<subfield code="c">txt</subfield>
+<subfield code="2">rdacontent</subfield>
+</datafield>
+<datafield tag="181" ind1=" " ind2="1">
+<subfield code="6">z01</subfield>
+<subfield code="a">i#</subfield>
+<subfield code="b">xxxe##</subfield>
+</datafield>
+<datafield tag="182" ind1=" " ind2=" ">
+<subfield code="6">z01</subfield>
+<subfield code="c">n</subfield>
+<subfield code="2">rdamedia</subfield>
+</datafield>
+<datafield tag="182" ind1=" " ind2="1">
+<subfield code="6">z01</subfield>
+<subfield code="a">n</subfield>
+</datafield>
+<datafield tag="183" ind1=" " ind2="1">
+<subfield code="6">z01</subfield>
+<subfield code="a">nga</subfield>
+<subfield code="2">rdacarrier</subfield>
+</datafield>
+<datafield tag="200" ind1="1" ind2=" ">
+<subfield code="a">
+L'association, outil d'acquisition d'une pharmacie d'officine
+</subfield>
+<subfield code="f">Cyrille Fillion</subfield>
+<subfield code="g">sous la direction de Thomas Morgenroth</subfield>
+</datafield>
+<datafield tag="214" ind1=" " ind2="2">
+<subfield code="a">[Lyon]</subfield>
+<subfield code="c">[Bibliothèque Lyon 1]</subfield>
+<subfield code="d">2020</subfield>
+</datafield>
+<datafield tag="215" ind1=" " ind2=" ">
+<subfield code="a">1 vol. (92 f.)</subfield>
+<subfield code="c">ill.</subfield>
+<subfield code="d">30 cm</subfield>
+</datafield>
+<datafield tag="320" ind1=" " ind2=" ">
+<subfield code="a">Bibliogr. f. 90-92</subfield>
+</datafield>
+<datafield tag="328" ind1=" " ind2="0">
+<subfield code="z">Reproduction de</subfield>
+<subfield code="b">Thèse d'exercice</subfield>
+<subfield code="c">Pharmacie</subfield>
+<subfield code="e">Lille 2</subfield>
+<subfield code="d">2017</subfield>
+</datafield>
+<datafield tag="330" ind1=" " ind2=" ">
+<subfield code="a">
+Aujourd'hui les pharmacies les plus adaptables à l'évolution de la profession sont les officines de grande taille qui restent fortement valorisées. L'apport demandé par les banques est par conséquent très élevé et le travail du titulaire toujours plus important. L'installation en association peut alors devenir une solution adaptée permettant de répondre aux besoins financiers et humains. L'organisation de l'association conditionne la réussite du projet sur le long terme, il convient donc de choisir la forme sociétaire adaptée au profil des différentes associations envisageables. Enfin, l'association ne peut pas se faire sans un solide encadrement au moyen du règlement intérieur pour gérer les relations avec l'entreprise et le pacte d'associés pour la gestion des relations entre les associés.
+</subfield>
+</datafield>
+<datafield tag="455" ind1=" " ind2="|">
+<subfield code="0">224421093</subfield>
+<subfield code="t">
+L'association, outil d'acquisition d'une pharmacie d'officine
+</subfield>
+<subfield code="f">Cyrille Fillion</subfield>
+<subfield code="d">2017</subfield>
+</datafield>
+<datafield tag="579" ind1=" " ind2=" ">
+<subfield code="1">0499</subfield>
+<subfield code="3">249746867</subfield>
+<subfield code="t">
+L'association, outil d'acquisition d'une pharmacie d'officine
+</subfield>
+</datafield>
+<datafield tag="606" ind1=" " ind2=" ">
+<subfield code="3">027338932</subfield>
+<subfield code="a">Pharmacies d'officine</subfield>
+<subfield code="2">rameau</subfield>
+</datafield>
+<datafield tag="606" ind1=" " ind2=" ">
+<subfield code="3">027228096</subfield>
+<subfield code="a">Gestion d'entreprise</subfield>
+<subfield code="2">rameau</subfield>
+</datafield>
+<datafield tag="606" ind1=" " ind2=" ">
+<subfield code="3">027288137</subfield>
+<subfield code="a">Chefs d'entreprise</subfield>
+<subfield code="2">rameau</subfield>
+</datafield>
+<datafield tag="606" ind1=" " ind2=" ">
+<subfield code="3">040757943</subfield>
+<subfield code="a">Pharmacies</subfield>
+<subfield code="3">038961342</subfield>
+<subfield code="x">économie</subfield>
+<subfield code="3">040839486</subfield>
+<subfield code="x">Dissertation universitaire</subfield>
+<subfield code="2">fmesh</subfield>
+</datafield>
+<datafield tag="606" ind1=" " ind2=" ">
+<subfield code="3">040757951</subfield>
+<subfield code="a">Pharmaciens</subfield>
+<subfield code="3">038961830</subfield>
+<subfield code="x">tendances</subfield>
+<subfield code="3">040839486</subfield>
+<subfield code="x">Dissertation universitaire</subfield>
+<subfield code="2">fmesh</subfield>
+</datafield>
+<datafield tag="608" ind1=" " ind2=" ">
+<subfield code="3">027253139</subfield>
+<subfield code="a">Thèses et écrits académiques</subfield>
+<subfield code="2">rameau</subfield>
+</datafield>
+<datafield tag="610" ind1="0" ind2=" ">
+<subfield code="a">
+association ; officine ; financement ; organisation ; encadrement
+</subfield>
+</datafield>
+<datafield tag="676" ind1=" " ind2=" ">
+<subfield code="a">610</subfield>
+</datafield>
+<datafield tag="700" ind1=" " ind2="1">
+<subfield code="3">224420364</subfield>
+<subfield code="a">Fillion</subfield>
+<subfield code="b">Cyrille</subfield>
+<subfield code="f">1993-....</subfield>
+<subfield code="4">070</subfield>
+</datafield>
+<datafield tag="701" ind1=" " ind2="1">
+<subfield code="3">13536132X</subfield>
+<subfield code="a">Morgenroth</subfield>
+<subfield code="b">Thomas</subfield>
+<subfield code="f">1979-....</subfield>
+<subfield code="4">727</subfield>
+</datafield>
+<datafield tag="711" ind1="0" ind2="2">
+<subfield code="3">026404389</subfield>
+<subfield code="a">Université du droit et de la santé</subfield>
+<subfield code="c">Lille</subfield>
+<subfield code="c">1969-2017</subfield>
+<subfield code="4">295</subfield>
+</datafield>
+<datafield tag="801" ind1=" " ind2="3">
+<subfield code="a">FR</subfield>
+<subfield code="b">Abes</subfield>
+<subfield code="c">20201014</subfield>
+<subfield code="g">AFNOR</subfield>
+</datafield>
+<datafield tag="930" ind1=" " ind2=" ">
+<subfield code="5">693882101:676861229</subfield>
+<subfield code="b">693882101</subfield>
+<subfield code="j">u</subfield>
+</datafield>
+<datafield tag="940" ind1=" " ind2=" ">
+<subfield code="5">693882101:676861229</subfield>
+<subfield code="a">20201013</subfield>
+<subfield code="b">x</subfield>
+</datafield>
+<datafield tag="941" ind1=" " ind2=" ">
+<subfield code="5">693882101:676861229</subfield>
+<subfield code="a">20201013</subfield>
+<subfield code="b">16:15:02.000</subfield>
+</datafield>
+</record>

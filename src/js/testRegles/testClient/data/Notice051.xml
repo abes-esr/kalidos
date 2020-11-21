@@ -1,0 +1,171 @@
+<record>
+<leader> clm0 22 450 </leader>
+<controlfield tag="001">249053985</controlfield>
+<controlfield tag="002">38</controlfield>
+<controlfield tag="003">http://www.sudoc.fr/249053985</controlfield>
+<controlfield tag="004">20200914</controlfield>
+<controlfield tag="005">20200921101145.000</controlfield>
+<controlfield tag="006">692669902</controlfield>
+<controlfield tag="007">693882101</controlfield>
+<controlfield tag="008">Oax3</controlfield>
+<datafield tag="035" ind1=" " ind2=" ">
+<subfield code="a">(OCoLC)1195525685</subfield>
+</datafield>
+<datafield tag="100" ind1=" " ind2=" ">
+<subfield code="a">20200914d2020 k y0frey50 ba</subfield>
+</datafield>
+<datafield tag="101" ind1="0" ind2=" ">
+<subfield code="a">fre</subfield>
+<subfield code="d">fre</subfield>
+</datafield>
+<datafield tag="102" ind1=" " ind2=" ">
+<subfield code="a">FR</subfield>
+</datafield>
+<datafield tag="105" ind1=" " ind2=" ">
+<subfield code="a">a va 000yy</subfield>
+</datafield>
+<datafield tag="135" ind1=" " ind2=" ">
+<subfield code="a">dr|||||||||||</subfield>
+</datafield>
+<datafield tag="181" ind1=" " ind2=" ">
+<subfield code="6">z01</subfield>
+<subfield code="c">txt</subfield>
+<subfield code="2">rdacontent</subfield>
+</datafield>
+<datafield tag="181" ind1=" " ind2="1">
+<subfield code="6">z01</subfield>
+<subfield code="a">i#</subfield>
+<subfield code="b">xxxe##</subfield>
+</datafield>
+<datafield tag="182" ind1=" " ind2=" ">
+<subfield code="6">z01</subfield>
+<subfield code="c">c</subfield>
+<subfield code="2">rdamedia</subfield>
+</datafield>
+<datafield tag="182" ind1=" " ind2="1">
+<subfield code="6">z01</subfield>
+<subfield code="a">b</subfield>
+</datafield>
+<datafield tag="183" ind1=" " ind2="1">
+<subfield code="6">z01</subfield>
+<subfield code="a">ceb</subfield>
+<subfield code="2">rdacarrier</subfield>
+</datafield>
+<datafield tag="200" ind1="1" ind2=" ">
+<subfield code="a">Troubles neurodéveloppementaux et microbiote</subfield>
+<subfield code="e">quelles sont les connaissances actuelles ?</subfield>
+<subfield code="e">
+quel est le niveau de preuve d'une dysbiose dans les troubles neurodéveloppementaux ?
+</subfield>
+<subfield code="e">
+quelles informations peut-on apporter aux familles en attente de traitement pour leurs enfants ?
+</subfield>
+<subfield code="f">Marine Sevil</subfield>
+<subfield code="g">sous la direction de Marie-Maude Geoffray</subfield>
+</datafield>
+<datafield tag="214" ind1=" " ind2="2">
+<subfield code="a">Lyon</subfield>
+<subfield code="c">Bibliothèque Lyon 1</subfield>
+<subfield code="d">2020</subfield>
+</datafield>
+<datafield tag="230" ind1=" " ind2=" ">
+<subfield code="a">Données textuelles (1 fichier PDF : 5086 Ko)</subfield>
+</datafield>
+<datafield tag="304" ind1=" " ind2=" ">
+<subfield code="a">
+Titre provenant de la page de titre du document numérisé
+</subfield>
+</datafield>
+<datafield tag="307" ind1=" " ind2=" ">
+<subfield code="a">L'impression du document génère 73 p.</subfield>
+</datafield>
+<datafield tag="320" ind1=" " ind2=" ">
+<subfield code="a">Bibliogr. p. 61-71</subfield>
+</datafield>
+<datafield tag="328" ind1=" " ind2="0">
+<subfield code="z">Autre édition de</subfield>
+<subfield code="b">Thèse d'exercice</subfield>
+<subfield code="c">Médecine. Psychiatrie</subfield>
+<subfield code="e">Lyon 1</subfield>
+<subfield code="d">2018</subfield>
+</datafield>
+<datafield tag="330" ind1=" " ind2=" ">
+<subfield code="a">
+Certaines études ont suggéré que le microbiote pourrait jouer un rôle clé dans les troubles neurodéveloppementaux. Plus de 500 articles sont parus sur le sujet en 5 ans mais il n'existe pas de revue systématique sur les données actuelles humaines. Notre objectif est de réaliser une revue systématique de la littérature à la recherche de preuves soutenant l'existence d'une altération (qualitative ou quantitative) du microbiote chez des patients de moins de 30 ans souffrant de troubles neurodéveloppementaux. Les recherches ont été effectuées dans 3 bases de données : MEDLINE, Scopus et PsycINFO. Nous avons retenu uniquement les études originales en français ou en anglais, qui incluaient au moins 10 patients de moins de 30 ans ayant reçu un diagnostic de TND. La dysbiose était définie comme un changement dans la composition quantitative et/ou qualitative du microbiote. Notre recherche a trouvé 507 études qui ont été importées sur " www.covidence.com". Le double screening a retenu 30 articles correspondant à nos critères. Sur les 30 études incluses, 27 trouvent des différences significatives entre le microbiote des patients ayant un TND et celui des témoins mais les résultats sont discordants. Il n'est pas possible de compiler les données pour une méta-analyse car les méthodes utilisées ne sont pas standardisées et diffèrent grandement d'une étude à l'autre. Les 30 études prises individuellement ayant un faible niveau de preuve, il n'est pas possible de conclure sur l'existence d'une dysbiose dans les TND. Si les publications sur le sujet se multiplient, il s'agit pour l'instant principalement de revues ou d'études pilotes présentant une faible validité interne et des méthodes non standardisées. Il n'y a pour l'instant pas de faits solides soutenant l'existence d'une dysbiose chez les patients ayant un TND
+</subfield>
+</datafield>
+<datafield tag="337" ind1=" " ind2=" ">
+<subfield code="a">
+Un logiciel capable de lire un fichier au format PDF
+</subfield>
+</datafield>
+<datafield tag="455" ind1=" " ind2="|">
+<subfield code="0">249053454</subfield>
+<subfield code="t">Troubles neurodéveloppementaux et microbiote</subfield>
+<subfield code="o">quelles sont les connaissances actuelles ?</subfield>
+<subfield code="o">
+quel est le niveau de preuve d’une dysbiose dans les troubles neurodéveloppementaux ?
+</subfield>
+<subfield code="o">
+quelles informations peut-on apporter aux familles en attente de traitement pour leurs enfants ?
+</subfield>
+<subfield code="f">Marine Sevil</subfield>
+<subfield code="d">2018</subfield>
+<subfield code="p">1 vol. (71 f.)</subfield>
+</datafield>
+<datafield tag="579" ind1=" " ind2=" ">
+<subfield code="1">0499</subfield>
+<subfield code="3">249073277</subfield>
+<subfield code="t">
+Troubles neurodéveloppementaux et microbiote, Quelles sont les connaissances actuelles?, Quel est le niveau de preuve d’une dysbiose dans les troubles neurodéveloppementaux ?, Quelles informations peut-on apporter aux familles en attente de traitement pour leurs enfants ?
+</subfield>
+</datafield>
+<datafield tag="606" ind1=" " ind2=" ">
+<subfield code="3">031459056</subfield>
+<subfield code="a">Troubles du développement</subfield>
+<subfield code="2">rameau</subfield>
+</datafield>
+<datafield tag="606" ind1=" " ind2=" ">
+<subfield code="3">152403221</subfield>
+<subfield code="a">Microflore</subfield>
+<subfield code="2">rameau</subfield>
+</datafield>
+<datafield tag="606" ind1=" " ind2=" ">
+<subfield code="3">199682852</subfield>
+<subfield code="a">Dysbiose</subfield>
+<subfield code="2">rameau</subfield>
+</datafield>
+<datafield tag="700" ind1=" " ind2="1">
+<subfield code="3">24905258X</subfield>
+<subfield code="a">Sevil</subfield>
+<subfield code="b">Marine</subfield>
+<subfield code="f">1989-....</subfield>
+<subfield code="4">070</subfield>
+</datafield>
+<datafield tag="801" ind1=" " ind2="3">
+<subfield code="a">FR</subfield>
+<subfield code="b">Abes</subfield>
+<subfield code="c">20200921</subfield>
+<subfield code="g">AFNOR</subfield>
+</datafield>
+<datafield tag="856" ind1="4" ind2=" ">
+<subfield code="q">PDF</subfield>
+<subfield code="u">https://n2t.net/ark:/47881/m6cc0zvq</subfield>
+<subfield code="z">Accès au texte intégral</subfield>
+</datafield>
+<datafield tag="930" ind1=" " ind2=" ">
+<subfield code="5">692669902:672701359</subfield>
+<subfield code="b">692669902</subfield>
+<subfield code="j">g</subfield>
+</datafield>
+<datafield tag="940" ind1=" " ind2=" ">
+<subfield code="5">692669902:672701359</subfield>
+<subfield code="a">20200914</subfield>
+<subfield code="b">x</subfield>
+</datafield>
+<datafield tag="941" ind1=" " ind2=" ">
+<subfield code="5">692669902:672701359</subfield>
+<subfield code="a">20200914</subfield>
+<subfield code="b">10:43:09.000</subfield>
+</datafield>
+</record>

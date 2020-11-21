@@ -1,0 +1,202 @@
+<record>
+<leader> cam0 22 1 450 </leader>
+<controlfield tag="001">097872105</controlfield>
+<controlfield tag="002">45,91,98</controlfield>
+<controlfield tag="003">http://www.sudoc.fr/097872105</controlfield>
+<controlfield tag="004">20060309</controlfield>
+<controlfield tag="005">20190414232252.000</controlfield>
+<controlfield tag="006">751052304</controlfield>
+<controlfield tag="007">1999</controlfield>
+<controlfield tag="008">Aar3</controlfield>
+<datafield tag="035" ind1=" " ind2=" ">
+<subfield code="a">097872156</subfield>
+<subfield code="9">sudoc</subfield>
+</datafield>
+<datafield tag="035" ind1=" " ind2=" ">
+<subfield code="a">(OCoLC)369102183</subfield>
+</datafield>
+<datafield tag="035" ind1=" " ind2=" ">
+<subfield code="1">91</subfield>
+<subfield code="a">BP902470001201</subfield>
+</datafield>
+<datafield tag="100" ind1=" " ind2=" ">
+<subfield code="a">20060309d1927 k y0frey50 ba</subfield>
+</datafield>
+<datafield tag="101" ind1="0" ind2=" ">
+<subfield code="a">fre</subfield>
+</datafield>
+<datafield tag="102" ind1=" " ind2=" ">
+<subfield code="a">FR</subfield>
+</datafield>
+<datafield tag="105" ind1=" " ind2=" ">
+<subfield code="a">y m 000yy</subfield>
+</datafield>
+<datafield tag="106" ind1=" " ind2=" ">
+<subfield code="a">r</subfield>
+</datafield>
+<datafield tag="181" ind1=" " ind2=" ">
+<subfield code="6">z01</subfield>
+<subfield code="c">txt</subfield>
+<subfield code="2">rdacontent</subfield>
+</datafield>
+<datafield tag="181" ind1=" " ind2="1">
+<subfield code="6">z01</subfield>
+<subfield code="a">i#</subfield>
+<subfield code="b">xxxe##</subfield>
+</datafield>
+<datafield tag="182" ind1=" " ind2=" ">
+<subfield code="6">z01</subfield>
+<subfield code="c">n</subfield>
+<subfield code="2">rdamedia</subfield>
+</datafield>
+<datafield tag="182" ind1=" " ind2="1">
+<subfield code="6">z01</subfield>
+<subfield code="a">n</subfield>
+</datafield>
+<datafield tag="200" ind1="1" ind2=" ">
+<subfield code="a">
+Contribution à l'étude de l'immunité chez les végétaux
+</subfield>
+<subfield code="f">Pierre Nobécourt</subfield>
+</datafield>
+<datafield tag="210" ind1=" " ind2=" ">
+<subfield code="a">Lyon</subfield>
+<subfield code="c">Impr. Bosc</subfield>
+<subfield code="d">1927</subfield>
+</datafield>
+<datafield tag="215" ind1=" " ind2=" ">
+<subfield code="a">1 vol. (175 p.)</subfield>
+<subfield code="d">In-8o</subfield>
+</datafield>
+<datafield tag="328" ind1=" " ind2=" ">
+<subfield code="a">Thèse... Fac. sciences. Lyon. 1927</subfield>
+</datafield>
+<datafield tag="459" ind1=" " ind2="|">
+<subfield code="0">089351053</subfield>
+<subfield code="t">
+Contribution à l'étude de l'immunité chez les végétaux
+</subfield>
+<subfield code="b">Texte imprimé</subfield>
+<subfield code="f">Pierre Nobécourt,...</subfield>
+<subfield code="c">Lyon</subfield>
+<subfield code="n">impr. BOSC frères & RIOU</subfield>
+<subfield code="d">1927</subfield>
+<subfield code="p">1 vol. (175 p.)</subfield>
+</datafield>
+<datafield tag="579" ind1=" " ind2=" ">
+<subfield code="1">0499</subfield>
+<subfield code="3">211288748</subfield>
+</datafield>
+<datafield tag="700" ind1=" " ind2="1">
+<subfield code="3">068781059</subfield>
+<subfield code="a">Nobécourt</subfield>
+<subfield code="b">Pierre André Alexandre</subfield>
+<subfield code="f">1871-1943</subfield>
+<subfield code="4">070</subfield>
+</datafield>
+<datafield tag="801" ind1=" " ind2="3">
+<subfield code="a">FR</subfield>
+<subfield code="b">Abes</subfield>
+<subfield code="c">20190414</subfield>
+<subfield code="g">AFNOR</subfield>
+<subfield code="h">097872156</subfield>
+</datafield>
+<datafield tag="930" ind1=" " ind2=" ">
+<subfield code="5">341722106:367462656</subfield>
+<subfield code="b">341722106</subfield>
+<subfield code="c">magasin des thèses</subfield>
+<subfield code="a">95040-1927-4</subfield>
+<subfield code="j">g</subfield>
+<subfield code="t">rs</subfield>
+</datafield>
+<datafield tag="940" ind1=" " ind2=" ">
+<subfield code="5">341722106:367462656</subfield>
+<subfield code="a">20090608</subfield>
+<subfield code="b">x</subfield>
+</datafield>
+<datafield tag="941" ind1=" " ind2=" ">
+<subfield code="5">341722106:367462656</subfield>
+<subfield code="a">20090608</subfield>
+<subfield code="b">09:59:34.000</subfield>
+</datafield>
+<datafield tag="991" ind1=" " ind2=" ">
+<subfield code="5">341722106:367462656</subfield>
+<subfield code="a">JOUVE-94-RETRO-LOC-05-60-001</subfield>
+<subfield code="b">BC023876-20090608-30G_0015_00238_01</subfield>
+</datafield>
+<datafield tag="930" ind1=" " ind2=" ">
+<subfield code="5">751062107:35075862X</subfield>
+<subfield code="b">751062107</subfield>
+<subfield code="a">48317</subfield>
+<subfield code="j">s</subfield>
+</datafield>
+<datafield tag="940" ind1=" " ind2=" ">
+<subfield code="5">751062107:35075862X</subfield>
+<subfield code="a">20081106</subfield>
+<subfield code="b">x</subfield>
+</datafield>
+<datafield tag="941" ind1=" " ind2=" ">
+<subfield code="5">751062107:35075862X</subfield>
+<subfield code="a">20130125</subfield>
+<subfield code="b">16:28:18.000</subfield>
+</datafield>
+<datafield tag="991" ind1=" " ind2=" ">
+<subfield code="5">751062107:35075862X</subfield>
+<subfield code="a">Rétroconversion BIUP-LOC-2008</subfield>
+<subfield code="b">BP902470001201</subfield>
+</datafield>
+<datafield tag="930" ind1=" " ind2=" ">
+<subfield code="5">751052304:262132214</subfield>
+<subfield code="b">751052304</subfield>
+<subfield code="a">185 881</subfield>
+<subfield code="j">s</subfield>
+</datafield>
+<datafield tag="940" ind1=" " ind2=" ">
+<subfield code="5">751052304:262132214</subfield>
+<subfield code="a">20060309</subfield>
+<subfield code="b">x</subfield>
+</datafield>
+<datafield tag="941" ind1=" " ind2=" ">
+<subfield code="5">751052304:262132214</subfield>
+<subfield code="a">20060309</subfield>
+<subfield code="b">13:54:49.000</subfield>
+</datafield>
+<datafield tag="991" ind1=" " ind2=" ">
+<subfield code="5">751052304:262132214</subfield>
+<subfield code="a">JOUVE-SD-RETRO-CRE-SAI-05-60-001</subfield>
+<subfield code="b">BC05000125-20060309-02B_0011_00712_01</subfield>
+</datafield>
+<datafield tag="999" ind1=" " ind2=" ">
+<subfield code="5">751052304:262132214</subfield>
+<subfield code="a">1NO</subfield>
+<subfield code="b">1ZRETRO</subfield>
+<subfield code="f">R</subfield>
+</datafield>
+<datafield tag="930" ind1=" " ind2=" ">
+<subfield code="5">751052304:262132419</subfield>
+<subfield code="b">751052304</subfield>
+<subfield code="a">187 648</subfield>
+<subfield code="j">s</subfield>
+</datafield>
+<datafield tag="940" ind1=" " ind2=" ">
+<subfield code="5">751052304:262132419</subfield>
+<subfield code="a">20060309</subfield>
+<subfield code="b">x</subfield>
+</datafield>
+<datafield tag="941" ind1=" " ind2=" ">
+<subfield code="5">751052304:262132419</subfield>
+<subfield code="a">20130702</subfield>
+<subfield code="b">19:05:58.000</subfield>
+</datafield>
+<datafield tag="991" ind1=" " ind2=" ">
+<subfield code="5">751052304:262132419</subfield>
+<subfield code="a">JOUVE-SD-RETRO-CRE-SAI-05-60-001</subfield>
+<subfield code="b">BC05000125-20060309-02B_0011_00713_01</subfield>
+</datafield>
+<datafield tag="999" ind1=" " ind2=" ">
+<subfield code="5">751052304:262132419</subfield>
+<subfield code="a">1NO</subfield>
+<subfield code="b">1ZRETRO</subfield>
+<subfield code="f">R</subfield>
+</datafield>
+</record>

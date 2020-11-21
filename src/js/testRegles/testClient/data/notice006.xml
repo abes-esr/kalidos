@@ -1,0 +1,141 @@
+<record>
+<leader> nam0 22 450 </leader>
+<controlfield tag="001">249951622</controlfield>
+<controlfield tag="002">38</controlfield>
+<controlfield tag="003">http://www.sudoc.fr/249951622</controlfield>
+<controlfield tag="004">20201023</controlfield>
+<controlfield tag="005">20201023142648.000</controlfield>
+<controlfield tag="006">693882213</controlfield>
+<controlfield tag="007">693882213</controlfield>
+<controlfield tag="008">Aax3</controlfield>
+<datafield tag="029" ind1=" " ind2=" ">
+<subfield code="a">FR</subfield>
+<subfield code="b">2020LYO1D035</subfield>
+</datafield>
+<datafield tag="035" ind1=" " ind2=" ">
+<subfield code="a">(OCoLC)1201303805</subfield>
+</datafield>
+<datafield tag="100" ind1=" " ind2=" ">
+<subfield code="a">20201023d2020 k y0frey50 ba</subfield>
+</datafield>
+<datafield tag="101" ind1="2" ind2=" ">
+<subfield code="a">fre</subfield>
+<subfield code="d">fre</subfield>
+</datafield>
+<datafield tag="102" ind1=" " ind2=" ">
+<subfield code="a">FR</subfield>
+</datafield>
+<datafield tag="105" ind1=" " ind2=" ">
+<subfield code="a">a ma 000yy</subfield>
+</datafield>
+<datafield tag="109" ind1=" " ind2=" ">
+<subfield code="a">r</subfield>
+</datafield>
+<datafield tag="181" ind1=" " ind2=" ">
+<subfield code="6">z01</subfield>
+<subfield code="c">txt</subfield>
+<subfield code="2">rdacontent</subfield>
+</datafield>
+<datafield tag="181" ind1=" " ind2="1">
+<subfield code="6">z01</subfield>
+<subfield code="a">i#</subfield>
+<subfield code="b">xxxe##</subfield>
+</datafield>
+<datafield tag="182" ind1=" " ind2=" ">
+<subfield code="6">z01</subfield>
+<subfield code="c">n</subfield>
+<subfield code="2">rdamedia</subfield>
+</datafield>
+<datafield tag="182" ind1=" " ind2="1">
+<subfield code="6">z01</subfield>
+<subfield code="a">n</subfield>
+</datafield>
+<datafield tag="183" ind1=" " ind2="1">
+<subfield code="6">z01</subfield>
+<subfield code="a">nga</subfield>
+<subfield code="2">rdacarrier</subfield>
+</datafield>
+<datafield tag="200" ind1="1" ind2=" ">
+<subfield code="a">
+La dentine. Nouveau matérieu de préservation et d'augmentation du niveau osseux
+</subfield>
+<subfield code="f">Roman Tourolle</subfield>
+<subfield code="g">sous la direction de Sophie Veyre</subfield>
+</datafield>
+<datafield tag="210" ind1=" " ind2="1">
+<subfield code="d">2020</subfield>
+</datafield>
+<datafield tag="215" ind1=" " ind2=" ">
+<subfield code="a">1 vol. (82 f.)</subfield>
+<subfield code="d">30 cm</subfield>
+</datafield>
+<datafield tag="328" ind1=" " ind2="0">
+<subfield code="b">Thèse d'exercice</subfield>
+<subfield code="c">Odontologie. Chirurgie dentaire</subfield>
+<subfield code="e">Lyon 1</subfield>
+<subfield code="d">2020</subfield>
+</datafield>
+<datafield tag="330" ind1=" " ind2=" ">
+<subfield code="a">
+Dans les années 1990, D. Buser et al. ainsi que K. Warrer et al. montrent sur modèle animal qu'il est possible d'obtenir avec succès une ostéointégration d'implants en présence de fragments dentaires retenus intentionnellement. En 2012, F.Schwarz réussit à mettre en évidence d'un point de vue histologique la première « dentointégration » d'un implant en titane. Fort de ces différentes observations, F. Schwarz émet l'hypothèse qu'une autogreffe de racine dentaire en bloc peut conduire à une augmentation du volume osseux et ensuite permettre, en cas d'implantation, une ostéointégration comparable à celle des greffes d'apposition osseuse en bloc. F. Schwarz prouve que le concept fonctionne sur modèle animal puis, en 2016 l'applique chez l'homme avec des résultats très prometteurs. En effet, il observe une résorption post opératoire des greffons dentinaires significativement plus faible que pour les greffons d'os autogènes
+</subfield>
+</datafield>
+<datafield tag="606" ind1=" " ind2=" ">
+<subfield code="3">027231798</subfield>
+<subfield code="a">Dentine</subfield>
+<subfield code="2">rameau</subfield>
+</datafield>
+<datafield tag="606" ind1=" " ind2=" ">
+<subfield code="3">029063981</subfield>
+<subfield code="a">Os</subfield>
+<subfield code="x">Greffe</subfield>
+<subfield code="2">rameau</subfield>
+</datafield>
+<datafield tag="606" ind1=" " ind2=" ">
+<subfield code="3">034188371</subfield>
+<subfield code="a">Implants ostéo-intégrés (odontostomatologie)</subfield>
+<subfield code="2">rameau</subfield>
+</datafield>
+<datafield tag="700" ind1=" " ind2="1">
+<subfield code="3">249951347</subfield>
+<subfield code="a">Tourolle</subfield>
+<subfield code="b">Roman</subfield>
+<subfield code="f">1994-....</subfield>
+<subfield code="4">070</subfield>
+</datafield>
+<datafield tag="701" ind1=" " ind2="1">
+<subfield code="3">112106994</subfield>
+<subfield code="a">Veyre-Goulet</subfield>
+<subfield code="b">Sophie</subfield>
+<subfield code="f">1976-....</subfield>
+<subfield code="4">727</subfield>
+</datafield>
+<datafield tag="711" ind1="0" ind2="2">
+<subfield code="3">026402823</subfield>
+<subfield code="a">Université Claude Bernard</subfield>
+<subfield code="c">Lyon</subfield>
+<subfield code="4">295</subfield>
+</datafield>
+<datafield tag="801" ind1=" " ind2="3">
+<subfield code="a">FR</subfield>
+<subfield code="b">Abes</subfield>
+<subfield code="c">20201023</subfield>
+<subfield code="g">AFNOR</subfield>
+</datafield>
+<datafield tag="930" ind1=" " ind2=" ">
+<subfield code="5">693882213:677583028</subfield>
+<subfield code="b">693882213</subfield>
+<subfield code="a">T 10979</subfield>
+<subfield code="j">u</subfield>
+</datafield>
+<datafield tag="940" ind1=" " ind2=" ">
+<subfield code="5">693882213:677583028</subfield>
+<subfield code="a">20201023</subfield>
+<subfield code="b">x</subfield>
+</datafield>
+<datafield tag="941" ind1=" " ind2=" ">
+<subfield code="5">693882213:677583028</subfield>
+<subfield code="a">20201023</subfield>
+<subfield code="b">14:28:23.000</subfield>
+</datafield>
+</record>

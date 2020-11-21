@@ -1,0 +1,642 @@
+record>
+<leader> cam0 22 450 </leader>
+<controlfield tag="001">003466752</controlfield>
+<controlfield tag="002">
+4,5,6,8,12,15,16,18,19,21,24,27,29,30,35,36,38,39,41,42,45,49,50,51,53,56,57,58,59,60,62,63,67,68,79,80,82,83,84,85,86,88,93,102,167,170,174,177,184
+</controlfield>
+<controlfield tag="003">http://www.sudoc.fr/003466752</controlfield>
+<controlfield tag="004">19950207</controlfield>
+<controlfield tag="005">20200107181148.000</controlfield>
+<controlfield tag="006">9999</controlfield>
+<controlfield tag="007">1999</controlfield>
+<controlfield tag="008">Aax3</controlfield>
+<datafield tag="010" ind1=" " ind2=" ">
+<subfield code="a">2-8041-1595-X</subfield>
+<subfield code="b">br.</subfield>
+</datafield>
+<datafield tag="020" ind1=" " ind2=" ">
+<subfield code="a">FR</subfield>
+<subfield code="b">09908687</subfield>
+</datafield>
+<datafield tag="021" ind1=" " ind2=" ">
+<subfield code="a">FR</subfield>
+<subfield code="b">DL 98-50382 (D1)</subfield>
+</datafield>
+<datafield tag="033" ind1=" " ind2=" ">
+<subfield code="a">http://catalogue.bnf.fr/ark:/12148/cb37002860w</subfield>
+<subfield code="2">BNF</subfield>
+<subfield code="d">20180711</subfield>
+</datafield>
+<datafield tag="035" ind1=" " ind2=" ">
+<subfield code="a">049704761</subfield>
+<subfield code="9">sudoc</subfield>
+</datafield>
+<datafield tag="035" ind1=" " ind2=" ">
+<subfield code="a">010947353</subfield>
+<subfield code="9">sudoc</subfield>
+</datafield>
+<datafield tag="035" ind1=" " ind2=" ">
+<subfield code="a">007599293</subfield>
+<subfield code="9">sudoc</subfield>
+</datafield>
+<datafield tag="035" ind1=" " ind2=" ">
+<subfield code="a">071629106</subfield>
+<subfield code="9">sudoc</subfield>
+</datafield>
+<datafield tag="035" ind1=" " ind2=" ">
+<subfield code="a">075319896</subfield>
+<subfield code="9">sudoc</subfield>
+</datafield>
+<datafield tag="035" ind1=" " ind2=" ">
+<subfield code="a">(OCoLC)31870143</subfield>
+</datafield>
+<datafield tag="035" ind1=" " ind2=" ">
+<subfield code="a">sib0582307</subfield>
+</datafield>
+<datafield tag="035" ind1=" " ind2=" ">
+<subfield code="a">sib0920821</subfield>
+</datafield>
+<datafield tag="035" ind1=" " ind2=" ">
+<subfield code="a">frBN018455176</subfield>
+</datafield>
+<datafield tag="035" ind1=" " ind2=" ">
+<subfield code="a">sib1248887</subfield>
+</datafield>
+<datafield tag="035" ind1=" " ind2=" ">
+<subfield code="a">DYNIX_BUFDF_62421</subfield>
+</datafield>
+<datafield tag="035" ind1=" " ind2=" ">
+<subfield code="a">DYNIX_BUPTP_52389</subfield>
+</datafield>
+<datafield tag="035" ind1=" " ind2=" ">
+<subfield code="a">urouen146924</subfield>
+</datafield>
+<datafield tag="035" ind1=" " ind2=" ">
+<subfield code="a">DYNIX_BUNAN_170742</subfield>
+</datafield>
+<datafield tag="035" ind1=" " ind2=" ">
+<subfield code="a">urouen80657</subfield>
+</datafield>
+<datafield tag="035" ind1=" " ind2=" ">
+<subfield code="a">bua68314</subfield>
+</datafield>
+<datafield tag="035" ind1=" " ind2=" ">
+<subfield code="a">ocm31870143</subfield>
+</datafield>
+<datafield tag="035" ind1=" " ind2=" ">
+<subfield code="a">frBN024136539</subfield>
+</datafield>
+<datafield tag="035" ind1=" " ind2=" ">
+<subfield code="a">FRBNF370028600000007</subfield>
+<subfield code="z">FRBNF37002860</subfield>
+<subfield code="d">20180711</subfield>
+</datafield>
+<datafield tag="035" ind1=" " ind2=" ">
+<subfield code="1">6</subfield>
+<subfield code="a">DYNIX_BUANG_253562</subfield>
+</datafield>
+<datafield tag="035" ind1=" " ind2=" ">
+<subfield code="1">15</subfield>
+<subfield code="a">IFAQ-14463</subfield>
+</datafield>
+<datafield tag="035" ind1=" " ind2=" ">
+<subfield code="1">15</subfield>
+<subfield code="a">IFAQ-14463</subfield>
+</datafield>
+<datafield tag="035" ind1=" " ind2=" ">
+<subfield code="1">15</subfield>
+<subfield code="a">IFAQ-14463</subfield>
+</datafield>
+<datafield tag="035" ind1=" " ind2=" ">
+<subfield code="1">15</subfield>
+<subfield code="a">IFAQ-14463</subfield>
+</datafield>
+<datafield tag="035" ind1=" " ind2=" ">
+<subfield code="1">16</subfield>
+<subfield code="a">IUFMBretagne79869</subfield>
+</datafield>
+<datafield tag="035" ind1=" " ind2=" ">
+<subfield code="1">16</subfield>
+<subfield code="a">IUFMBretagne79869</subfield>
+</datafield>
+<datafield tag="035" ind1=" " ind2=" ">
+<subfield code="1">16</subfield>
+<subfield code="a">IUFMBretagne79869</subfield>
+</datafield>
+<datafield tag="035" ind1=" " ind2=" ">
+<subfield code="1">16</subfield>
+<subfield code="a">IUFMBretagne79869</subfield>
+</datafield>
+<datafield tag="035" ind1=" " ind2=" ">
+<subfield code="1">18</subfield>
+<subfield code="a">02-0001842</subfield>
+</datafield>
+<datafield tag="035" ind1=" " ind2=" ">
+<subfield code="1">19</subfield>
+<subfield code="a">CERGY217952</subfield>
+</datafield>
+<datafield tag="035" ind1=" " ind2=" ">
+<subfield code="1">19</subfield>
+<subfield code="a">CERGY217952</subfield>
+</datafield>
+<datafield tag="035" ind1=" " ind2=" ">
+<subfield code="1">21</subfield>
+<subfield code="a">354200</subfield>
+</datafield>
+<datafield tag="035" ind1=" " ind2=" ">
+<subfield code="1">21</subfield>
+<subfield code="a">354200</subfield>
+</datafield>
+<datafield tag="035" ind1=" " ind2=" ">
+<subfield code="1">21</subfield>
+<subfield code="a">354200</subfield>
+</datafield>
+<datafield tag="035" ind1=" " ind2=" ">
+<subfield code="1">21</subfield>
+<subfield code="a">354200</subfield>
+</datafield>
+<datafield tag="035" ind1=" " ind2=" ">
+<subfield code="1">24</subfield>
+<subfield code="a">367025</subfield>
+</datafield>
+<datafield tag="035" ind1=" " ind2=" ">
+<subfield code="1">38</subfield>
+<subfield code="a">IULY10686</subfield>
+</datafield>
+<datafield tag="035" ind1=" " ind2=" ">
+<subfield code="1">38</subfield>
+<subfield code="a">IULY10686</subfield>
+</datafield>
+<datafield tag="035" ind1=" " ind2=" ">
+<subfield code="1">38</subfield>
+<subfield code="a">IULY10686</subfield>
+</datafield>
+<datafield tag="035" ind1=" " ind2=" ">
+<subfield code="1">38</subfield>
+<subfield code="a">IULY10686</subfield>
+</datafield>
+<datafield tag="035" ind1=" " ind2=" ">
+<subfield code="1">38</subfield>
+<subfield code="a">IULY10686</subfield>
+</datafield>
+<datafield tag="035" ind1=" " ind2=" ">
+<subfield code="1">38</subfield>
+<subfield code="a">IULY10686</subfield>
+</datafield>
+<datafield tag="035" ind1=" " ind2=" ">
+<subfield code="1">38</subfield>
+<subfield code="a">IULY10686</subfield>
+</datafield>
+<datafield tag="035" ind1=" " ind2=" ">
+<subfield code="1">38</subfield>
+<subfield code="a">IULY10686</subfield>
+</datafield>
+<datafield tag="035" ind1=" " ind2=" ">
+<subfield code="1">38</subfield>
+<subfield code="a">IULY10686</subfield>
+</datafield>
+<datafield tag="035" ind1=" " ind2=" ">
+<subfield code="1">38</subfield>
+<subfield code="a">IULY10686</subfield>
+</datafield>
+<datafield tag="035" ind1=" " ind2=" ">
+<subfield code="1">38</subfield>
+<subfield code="a">IULY10686</subfield>
+</datafield>
+<datafield tag="035" ind1=" " ind2=" ">
+<subfield code="1">38</subfield>
+<subfield code="a">IULY10686</subfield>
+</datafield>
+<datafield tag="035" ind1=" " ind2=" ">
+<subfield code="1">53</subfield>
+<subfield code="a">9440000596</subfield>
+</datafield>
+<datafield tag="035" ind1=" " ind2=" ">
+<subfield code="1">60</subfield>
+<subfield code="a">EVRDOC00011064</subfield>
+</datafield>
+<datafield tag="035" ind1=" " ind2=" ">
+<subfield code="1">60</subfield>
+<subfield code="a">ROUDOC00027093</subfield>
+</datafield>
+<datafield tag="035" ind1=" " ind2=" ">
+<subfield code="1">84</subfield>
+<subfield code="a">ALP000251855</subfield>
+</datafield>
+<datafield tag="035" ind1=" " ind2=" ">
+<subfield code="1">84</subfield>
+<subfield code="a">7842</subfield>
+</datafield>
+<datafield tag="035" ind1=" " ind2=" ">
+<subfield code="1">84</subfield>
+<subfield code="a">ALP000251855</subfield>
+</datafield>
+<datafield tag="035" ind1=" " ind2=" ">
+<subfield code="1">84</subfield>
+<subfield code="a">ALP000251855</subfield>
+</datafield>
+<datafield tag="035" ind1=" " ind2=" ">
+<subfield code="1">102</subfield>
+<subfield code="a">N2_199119</subfield>
+</datafield>
+<datafield tag="035" ind1=" " ind2=" ">
+<subfield code="1">102</subfield>
+<subfield code="a">N2_199119</subfield>
+</datafield>
+<datafield tag="035" ind1=" " ind2=" ">
+<subfield code="1">102</subfield>
+<subfield code="a">PPPLLFBL0205005926</subfield>
+</datafield>
+<datafield tag="035" ind1=" " ind2=" ">
+<subfield code="1">170</subfield>
+<subfield code="a">68314</subfield>
+</datafield>
+<datafield tag="035" ind1=" " ind2=" ">
+<subfield code="1">170</subfield>
+<subfield code="a">68314</subfield>
+</datafield>
+<datafield tag="035" ind1=" " ind2=" ">
+<subfield code="1">170</subfield>
+<subfield code="a">68314</subfield>
+</datafield>
+<datafield tag="035" ind1=" " ind2=" ">
+<subfield code="1">170</subfield>
+<subfield code="a">68314</subfield>
+</datafield>
+<datafield tag="035" ind1=" " ind2=" ">
+<subfield code="1">170</subfield>
+<subfield code="a">68314</subfield>
+</datafield>
+<datafield tag="035" ind1=" " ind2=" ">
+<subfield code="1">170</subfield>
+<subfield code="a">68314</subfield>
+</datafield>
+<datafield tag="035" ind1=" " ind2=" ">
+<subfield code="1">170</subfield>
+<subfield code="a">68314</subfield>
+</datafield>
+<datafield tag="035" ind1=" " ind2=" ">
+<subfield code="1">170</subfield>
+<subfield code="a">68314</subfield>
+</datafield>
+<datafield tag="035" ind1=" " ind2=" ">
+<subfield code="1">170</subfield>
+<subfield code="a">68314</subfield>
+</datafield>
+<datafield tag="035" ind1=" " ind2=" ">
+<subfield code="1">174</subfield>
+<subfield code="a">ICP95868</subfield>
+</datafield>
+<datafield tag="035" ind1=" " ind2=" ">
+<subfield code="1">177</subfield>
+<subfield code="a">57321</subfield>
+</datafield>
+<datafield tag="035" ind1=" " ind2=" ">
+<subfield code="1">184</subfield>
+<subfield code="a">1604</subfield>
+</datafield>
+<datafield tag="073" ind1=" " ind2="1">
+<subfield code="a">9782804115951</subfield>
+</datafield>
+<datafield tag="100" ind1=" " ind2=" ">
+<subfield code="a">19950207h19941994k y0frey50 ba</subfield>
+</datafield>
+<datafield tag="101" ind1="1" ind2=" ">
+<subfield code="a">fre</subfield>
+<subfield code="c">eng</subfield>
+</datafield>
+<datafield tag="102" ind1=" " ind2=" ">
+<subfield code="a">BE</subfield>
+</datafield>
+<datafield tag="105" ind1=" " ind2=" ">
+<subfield code="a">a a 001yy</subfield>
+</datafield>
+<datafield tag="106" ind1=" " ind2=" ">
+<subfield code="a">r</subfield>
+</datafield>
+<datafield tag="181" ind1=" " ind2=" ">
+<subfield code="6">z01</subfield>
+<subfield code="c">txt</subfield>
+<subfield code="2">rdacontent</subfield>
+</datafield>
+<datafield tag="181" ind1=" " ind2="1">
+<subfield code="6">z01</subfield>
+<subfield code="a">i#</subfield>
+<subfield code="b">xxxe##</subfield>
+</datafield>
+<datafield tag="182" ind1=" " ind2=" ">
+<subfield code="6">z01</subfield>
+<subfield code="c">n</subfield>
+<subfield code="2">rdamedia</subfield>
+</datafield>
+<datafield tag="182" ind1=" " ind2="1">
+<subfield code="6">z01</subfield>
+<subfield code="a">n</subfield>
+</datafield>
+<datafield tag="183" ind1=" " ind2="1">
+<subfield code="6">z01</subfield>
+<subfield code="a">nga</subfield>
+<subfield code="2">rdacarrier</subfield>
+</datafield>
+<datafield tag="200" ind1="1" ind2=" ">
+<subfield code="a">Théories du développement de l'enfant</subfield>
+<subfield code="e">études comparatives</subfield>
+<subfield code="f">R. Murray Thomas, Claudine Michel</subfield>
+<subfield code="g">préface de Gilbert de Landsheere</subfield>
+</datafield>
+<datafield tag="214" ind1=" " ind2="0">
+<subfield code="a">Bruxelles</subfield>
+<subfield code="c">De Boeck Université</subfield>
+</datafield>
+<datafield tag="214" ind1=" " ind2="4">
+<subfield code="d">C 1994</subfield>
+</datafield>
+<datafield tag="215" ind1=" " ind2=" ">
+<subfield code="a">1 vol. (XX-572 p.)</subfield>
+<subfield code="c">ill., couv. ill.</subfield>
+<subfield code="d">24 cm</subfield>
+</datafield>
+<datafield tag="225" ind1="2" ind2=" ">
+<subfield code="a">Questions de personne</subfield>
+<subfield code="x">0779-9179</subfield>
+<subfield code="v">1994</subfield>
+</datafield>
+<datafield tag="305" ind1=" " ind2=" ">
+<subfield code="a">Autres tirages : 1996, 1997, 4ème tirage en 2005</subfield>
+</datafield>
+<datafield tag="317" ind1=" " ind2=" ">
+<subfield code="5">452342208:605657882</subfield>
+<subfield code="a">Fonds de conservation ESPE CVL</subfield>
+</datafield>
+<datafield tag="319" ind1=" " ind2=" ">
+<subfield code="1">6</subfield>
+<subfield code="a">
+http://buadistant.univ-angers.fr/login?url=http://www.cairn.info/theories-du-developpement-de-l-enfant--9782804115951.htm
+</subfield>
+</datafield>
+<datafield tag="320" ind1=" " ind2=" ">
+<subfield code="a">Bibliogr. p. 549-572</subfield>
+</datafield>
+<datafield tag="410" ind1=" " ind2="|">
+<subfield code="0">00304405X</subfield>
+<subfield code="t">Questions de personne (Bruxelles)</subfield>
+<subfield code="x">0779-9179</subfield>
+<subfield code="v">1994</subfield>
+</datafield>
+<datafield tag="452" ind1=" " ind2="|">
+<subfield code="0">184515785</subfield>
+<subfield code="t">Théories du développement de l'enfant</subfield>
+<subfield code="o">études comparatives</subfield>
+<subfield code="f">R. Murray Thomas, Claudine Michel</subfield>
+<subfield code="c">Bruxelles</subfield>
+<subfield code="n">De Boeck Supérieur</subfield>
+<subfield code="d">2015</subfield>
+<subfield code="s">Questions de personne</subfield>
+<subfield code="y">978-2-80730-348-5</subfield>
+</datafield>
+<datafield tag="454" ind1=" " ind2="|">
+<subfield code="t">Comparing theories of child development</subfield>
+</datafield>
+<datafield tag="461" ind1=" " ind2=" ">
+<subfield code="a">Bibliogr. p. 549-572</subfield>
+</datafield>
+<datafield tag="579" ind1=" " ind2=" ">
+<subfield code="1">0499</subfield>
+<subfield code="3">210968745</subfield>
+<subfield code="t">Comparing theories of child development</subfield>
+</datafield>
+<datafield tag="606" ind1=" " ind2=" ">
+<subfield code="3">040680401</subfield>
+<subfield code="a">Développement de l'enfant</subfield>
+<subfield code="2">fmesh</subfield>
+</datafield>
+<datafield tag="606" ind1=" " ind2=" ">
+<subfield code="3">027241637</subfield>
+<subfield code="a">Psychologie du développement</subfield>
+<subfield code="2">rameau</subfield>
+</datafield>
+<datafield tag="606" ind1=" " ind2=" ">
+<subfield code="3">027245438</subfield>
+<subfield code="a">Psychologie génétique</subfield>
+<subfield code="2">rameau</subfield>
+</datafield>
+<datafield tag="606" ind1=" " ind2=" ">
+<subfield code="3">027300218</subfield>
+<subfield code="a">Psychologie de l'apprentissage</subfield>
+<subfield code="2">rameau</subfield>
+</datafield>
+<datafield tag="606" ind1=" " ind2=" ">
+<subfield code="3">040680495</subfield>
+<subfield code="a">Psychologie de l'enfant</subfield>
+<subfield code="2">fmesh</subfield>
+</datafield>
+<datafield tag="608" ind1=" " ind2=" ">
+<subfield code="3">02886431X</subfield>
+<subfield code="a">Actes de congrès</subfield>
+<subfield code="2">rameau</subfield>
+</datafield>
+<datafield tag="675" ind1=" " ind2=" ">
+<subfield code="a">1</subfield>
+<subfield code="v">Éd. 1967</subfield>
+</datafield>
+<datafield tag="676" ind1=" " ind2=" ">
+<subfield code="a">100</subfield>
+</datafield>
+<datafield tag="676" ind1=" " ind2=" ">
+<subfield code="a">155.4</subfield>
+<subfield code="v">21</subfield>
+</datafield>
+<datafield tag="680" ind1=" " ind2=" ">
+<subfield code="a">BF723</subfield>
+</datafield>
+<datafield tag="686" ind1=" " ind2=" ">
+<subfield code="a">WS 105</subfield>
+<subfield code="2">usnlm</subfield>
+</datafield>
+<datafield tag="686" ind1=" " ind2=" ">
+<subfield code="1">5</subfield>
+<subfield code="a">155.4</subfield>
+<subfield code="2">Dewey</subfield>
+</datafield>
+<datafield tag="686" ind1=" " ind2=" ">
+<subfield code="1">35</subfield>
+<subfield code="a">155.4</subfield>
+<subfield code="2">Dewey</subfield>
+</datafield>
+<datafield tag="686" ind1=" " ind2=" ">
+<subfield code="1">57</subfield>
+<subfield code="a">155.4</subfield>
+<subfield code="2">Dewey</subfield>
+</datafield>
+<datafield tag="686" ind1=" " ind2=" ">
+<subfield code="1">68</subfield>
+<subfield code="a">155.4</subfield>
+<subfield code="2">Dewey</subfield>
+</datafield>
+<datafield tag="686" ind1=" " ind2=" ">
+<subfield code="1">83</subfield>
+<subfield code="a">155.4</subfield>
+<subfield code="b">THO</subfield>
+<subfield code="2">Dewey</subfield>
+</datafield>
+<datafield tag="686" ind1=" " ind2=" ">
+<subfield code="1">102</subfield>
+<subfield code="a">155.4</subfield>
+<subfield code="2">Dewey</subfield>
+</datafield>
+<datafield tag="686" ind1=" " ind2=" ">
+<subfield code="1">102</subfield>
+<subfield code="a">155.4</subfield>
+<subfield code="2">Dewey</subfield>
+</datafield>
+<datafield tag="700" ind1=" " ind2="1">
+<subfield code="3">050130315</subfield>
+<subfield code="a">Thomas</subfield>
+<subfield code="b">R. Murray</subfield>
+<subfield code="f">1921-....</subfield>
+<subfield code="4">070</subfield>
+</datafield>
+<datafield tag="701" ind1=" " ind2="1">
+<subfield code="3">061794031</subfield>
+<subfield code="a">Michel</subfield>
+<subfield code="b">Claudine</subfield>
+<subfield code="4">070</subfield>
+</datafield>
+<datafield tag="702" ind1=" " ind2="1">
+<subfield code="3">026814951</subfield>
+<subfield code="a">De Landsheere</subfield>
+<subfield code="b">Gilbert</subfield>
+<subfield code="f">1921-2001</subfield>
+<subfield code="4">080</subfield>
+</datafield>
+<datafield tag="801" ind1=" " ind2="3">
+<subfield code="a">FR</subfield>
+<subfield code="b">Abes</subfield>
+<subfield code="c">20200107</subfield>
+<subfield code="g">AFNOR</subfield>
+<subfield code="h">049704761</subfield>
+</datafield>
+<datafield tag="801" ind1=" " ind2="3">
+<subfield code="a">FR</subfield>
+<subfield code="b">Abes</subfield>
+<subfield code="c">20200107</subfield>
+<subfield code="g">AFNOR</subfield>
+<subfield code="h">010947353</subfield>
+</datafield>
+<datafield tag="801" ind1=" " ind2="3">
+<subfield code="a">FR</subfield>
+<subfield code="b">Abes</subfield>
+<subfield code="c">20200107</subfield>
+<subfield code="g">AFNOR</subfield>
+<subfield code="h">007599293</subfield>
+</datafield>
+<datafield tag="801" ind1=" " ind2="3">
+<subfield code="a">FR</subfield>
+<subfield code="b">Abes</subfield>
+<subfield code="c">20200107</subfield>
+<subfield code="g">AFNOR</subfield>
+<subfield code="h">071629106</subfield>
+</datafield>
+<datafield tag="801" ind1=" " ind2="3">
+<subfield code="a">FR</subfield>
+<subfield code="b">Abes</subfield>
+<subfield code="c">20200107</subfield>
+<subfield code="g">AFNOR</subfield>
+<subfield code="h">075319896</subfield>
+</datafield>
+<datafield tag="801" ind1=" " ind2="3">
+<subfield code="a">FR</subfield>
+<subfield code="b">BN</subfield>
+<subfield code="c">19990129</subfield>
+<subfield code="g">AFNOR</subfield>
+</datafield>
+<datafield tag="801" ind1=" " ind2="3">
+<subfield code="a">FR</subfield>
+<subfield code="b">SF</subfield>
+<subfield code="c">19990209</subfield>
+</datafield>
+<datafield tag="801" ind1=" " ind2="1">
+<subfield code="a">US</subfield>
+<subfield code="b">OCLC</subfield>
+<subfield code="g">AACR2</subfield>
+</datafield>
+<datafield tag="801" ind1=" " ind2="2">
+<subfield code="a">FR</subfield>
+<subfield code="b">AUROC</subfield>
+</datafield>
+<datafield tag="930" ind1=" " ind2=" ">
+<subfield code="5">130012224:378424068</subfield>
+<subfield code="b">130012224</subfield>
+<subfield code="a">155.4 THO</subfield>
+<subfield code="j">g</subfield>
+</datafield>
+<datafield tag="940" ind1=" " ind2=" ">
+<subfield code="5">130012224:378424068</subfield>
+<subfield code="a">20091021</subfield>
+<subfield code="b">x</subfield>
+</datafield>
+<datafield tag="941" ind1=" " ind2=" ">
+<subfield code="5">130012224:378424068</subfield>
+<subfield code="a">20100713</subfield>
+<subfield code="b">09:30:32.000</subfield>
+</datafield>
+<datafield tag="991" ind1=" " ind2=" ">
+<subfield code="5">130012224:378424068</subfield>
+<subfield code="a">Exemplaire créé automatiquement par l'ABES</subfield>
+</datafield>
+<datafield tag="915" ind1=" " ind2=" ">
+<subfield code="5">130552106:075698390</subfield>
+<subfield code="a">E/28787</subfield>
+</datafield>
+<datafield tag="917" ind1=" " ind2=" ">
+<subfield code="5">130552106:075698390</subfield>
+<subfield code="a">aaxx</subfield>
+</datafield>
+<datafield tag="930" ind1=" " ind2=" ">
+<subfield code="5">130552106:075698390</subfield>
+<subfield code="b">130552106</subfield>
+<subfield code="e">FUMC</subfield>
+<subfield code="j">u</subfield>
+</datafield>
+<datafield tag="940" ind1=" " ind2=" ">
+<subfield code="5">130552106:075698390</subfield>
+<subfield code="a">20000316</subfield>
+<subfield code="b">x</subfield>
+</datafield>
+<datafield tag="941" ind1=" " ind2=" ">
+<subfield code="5">130552106:075698390</subfield>
+<subfield code="a">20100716</subfield>
+<subfield code="b">10:11:11.000</subfield>
+</datafield>
+<datafield tag="999" ind1=" " ind2=" ">
+<subfield code="5">130552106:075698390</subfield>
+<subfield code="z">E/28787</subfield>
+</datafield>
+<datafield tag="915" ind1=" " ind2=" ">
+<subfield code="5">130552106:11121243X</subfield>
+<subfield code="a">E/29235</subfield>
+</datafield>
+<datafield tag="917" ind1=" " ind2=" ">
+<subfield code="5">130552106:11121243X</subfield>
+<subfield code="a">aaxx</subfield>
+</datafield>
+<datafield tag="930" ind1=" " ind2=" ">
+<subfield code="5">130552106:11121243X</subfield>
+<subfield code="b">130552106</subfield>
+<subfield code="e">FUMC</subfield>
+<subfield code="j">u</subfield>
+</datafield>
+<datafield tag="940" ind1=" " ind2=" ">
+<subfield code="5">130552106:11121243X</subfield>
+<subfield code="a">20000316</subfield>
+<subfield code="b">x</subfield>
+</datafield>
+<datafield tag="941" ind1=" " ind2=" ">
+<subfield code="5">130552106:11121243X</subfield>
+<subfield code="a">20100716</subfield>
+<subfield code="b">10:11:11.000</subfield>
+</datafield>
+<datafield tag="999" ind1=" " ind2=" ">
+<subfield code="5">130552106:11121243X</subfield>
+<subfield code="z">E/29235</subfield>
+</datafield>
