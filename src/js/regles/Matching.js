@@ -6,7 +6,7 @@ var Matching = function () {
             if (regle.number instanceof Array) {
                 testMatchRegexNumberArray(regle, datafields, resultJson)
             } else {
-                testMatchRegexNumber(regle, datafields, resultJson)
+                testMatchRegexNumber(regle, datafields, controlfields, resultJson)
             }
         });
     }
@@ -28,7 +28,7 @@ var Matching = function () {
         return addError;
     }
 
-    var testMatchRegexNumber = function (regle, datafields, resultJson) {
+    var testMatchRegexNumber = function (regle, datafields, controlfields, resultJson) {
         const regex = RegExp(regle.regex, 'g');
         datafields.forEach(function (field) {
             if (field._attributes.tag.toString() === regle.number.toString() || regle.number === "GLOBAL") {
@@ -55,6 +55,22 @@ var Matching = function () {
                 }
             }
         });
+        //Cas ou la contrainte est dans le controlfield
+        const matchControlField = RegExp("^00.*", 'g');
+        if(!(regle.number instanceof Array) && RegExp(matchControlField).test(regle.number)) {
+            
+            const field_control = Parcours.findDataField(controlfields, regle.number)
+            if(field_control != null) {
+                const value = field_control._text
+                if(!RegExp(regex).test(value)) {
+                    resultJson.errors.push({
+                        message: regle.message,
+                        number: regle.number,
+                        code: regle.code,
+                    });
+                }
+            }
+        }
     }
 
     var matchAll = function (textField, value) {

@@ -41,13 +41,14 @@ function addRuleToTest(numRuleExcell) {
 test('008 doit contenir "x3"', () => {
     const notice = getNotice("001");
     const datafields = notice.record.datafield;
+    const controlfield = notice.record.controlfield;
     let resultJson = {
         PPN: 0,
         errors: [],
     };
     const numRuleExcell = 2;
     addRuleToTest(numRuleExcell);
-    Matching.testMatchRegexRules(CATEGORIE, ruleTest, undefined, datafields, resultJson)
+    Matching.testMatchRegexRules(CATEGORIE, ruleTest, controlfield, datafields, resultJson)
 
     expect(resultJson.errors).toStrictEqual([]);
 });
@@ -55,13 +56,14 @@ test('008 doit contenir "x3"', () => {
 test('008 doit contenir "x3" (FAIL)', () => {
     const notice = getNotice("002");
     const datafields = notice.record.datafield;
+    const controlfield = notice.record.controlfield;
     let resultJson = {
         PPN: 0,
         errors: [],
     };
     const numRuleExcell = 2;
     addRuleToTest(numRuleExcell);
-    Matching.testMatchRegexRules(CATEGORIE, ruleTest, undefined, datafields, resultJson)
+    Matching.testMatchRegexRules(CATEGORIE, ruleTest, controlfield, datafields, resultJson)
 
     expect(resultJson.errors).not.toStrictEqual([]);
 });

@@ -41,13 +41,14 @@ test('caractères interdits : $', () => {
     const nameFile = number + '_' + code;
     const PPN = getPPN(nameFile + '/' + nameFile + '.xml');
     const datafields = PPN.record.datafield;
+    const controlfield = PPN.record.controlfield;
     let resultJson = {
         PPN: 0,
         errors: [],
     };
     const index = 1;
     addRuleToTest(index);
-    Matching.testMatchRegexRules(CATEGORIE, ruleTest, undefined, datafields, resultJson)
+    Matching.testMatchRegexRules(CATEGORIE, ruleTest, controlfield, datafields, resultJson)
 
     expect(resultJson.errors).toStrictEqual([]);
 });
@@ -58,13 +59,14 @@ test('caractères interdits : $ FAIL', () => {
     const nameFile = number + '_' + code;
     const PPN = getPPN(nameFile + '/' + nameFile + '_Fail.xml');
     const datafields = PPN.record.datafield;
+    const controlfield = PPN.record.controlfield;
     let resultJson = {
         PPN: 0,
         errors: [],
     };
     const index = 1;
     addRuleToTest(index);
-    Matching.testMatchRegexRules(CATEGORIE, ruleTest, undefined, datafields, resultJson)
+    Matching.testMatchRegexRules(CATEGORIE, ruleTest, controlfield, datafields, resultJson)
     expect(resultJson.errors).not.toStrictEqual([]);
 });
 
@@ -77,13 +79,14 @@ test('701$f doit contenir 9 caractères', () => {
     const nameFile = number + '_' + code;
     const PPN = getPPN(nameFile + '/' + nameFile + '.xml');
     const datafields = PPN.record.datafield;
+    const controlfield = PPN.record.controlfield;
     let resultJson = {
         PPN: 0,
         errors: [],
     };
     const index = 5;
     addRuleToTest(index);
-    Matching.testMatchRegexRules(CATEGORIE, ruleTest, undefined, datafields, resultJson)
+    Matching.testMatchRegexRules(CATEGORIE, ruleTest, controlfield, datafields, resultJson)
 
     expect(resultJson.errors).toStrictEqual([]);
 });
@@ -94,13 +97,14 @@ test('701$f doit contenir 9 caractères FAIL', () => {
     const nameFile = number + '_' + code;
     const PPN = getPPN(nameFile + '/' + nameFile + '_Fail.xml');
     const datafields = PPN.record.datafield;
+    const controlfield = PPN.record.controlfield;
     let resultJson = {
         PPN: 0,
         errors: [],
     };
     const index = 5;
     addRuleToTest(index);
-    Matching.testMatchRegexRules(CATEGORIE, ruleTest, undefined, datafields, resultJson)
+    Matching.testMatchRegexRules(CATEGORIE, ruleTest, controlfield, datafields, resultJson)
     expect(resultJson.errors).not.toStrictEqual([]);
 });
 
@@ -112,6 +116,7 @@ test('200$c ne doit pas contenir le caractère / ou : ou .', () => {
     const nameFile = number + '_' + code;
     const PPN = getPPN(nameFile + '/' + nameFile + '.xml');
     const datafields = PPN.record.datafield;
+    const controlfield = PPN.record.controlfield;
     let resultJson = {
         PPN: 0,
         errors: [],
@@ -119,7 +124,7 @@ test('200$c ne doit pas contenir le caractère / ou : ou .', () => {
 
     const index = 6;
     addRuleToTest(index);
-    Matching.testMatchRegexRules(CATEGORIE, ruleTest, undefined, datafields, resultJson)
+    Matching.testMatchRegexRules(CATEGORIE, ruleTest, controlfield, datafields, resultJson)
 
     expect(resultJson.errors).toStrictEqual([]);
 });
@@ -130,13 +135,14 @@ test('200$c ne doit pas contenir le caractère / ou : ou . FAIL', () => {
     const nameFile = number + '_' + code;
     const PPN = getPPN(nameFile + '/' + nameFile + '_Fail.xml');
     const datafields = PPN.record.datafield;
+    const controlfield = PPN.record.controlfield;
     let resultJson = {
         PPN: 0,
         errors: [],
     };
     const index = 6;
     addRuleToTest(index);
-    Matching.testMatchRegexRules(CATEGORIE, ruleTest, undefined, datafields, resultJson)
+    Matching.testMatchRegexRules(CATEGORIE, ruleTest, controlfield, datafields, resultJson)
     expect(resultJson.errors).not.toStrictEqual([]);
 });
 
@@ -146,6 +152,7 @@ test('200$c ne doit pas contenir le caractère / ou : ou . FAIL', () => {
     const nameFile = number + '_' + code;
     const PPN = getPPN(nameFile + '/' + nameFile + '_Fail2.xml');
     const datafields = PPN.record.datafield;
+    const controlfield = PPN.record.controlfield;
     let resultJson = {
         PPN: 0,
         errors: [],
@@ -153,7 +160,7 @@ test('200$c ne doit pas contenir le caractère / ou : ou . FAIL', () => {
 
     const index = 6;
     addRuleToTest(index);
-    Matching.testMatchRegexRules(CATEGORIE, ruleTest, undefined, datafields, resultJson)
+    Matching.testMatchRegexRules(CATEGORIE, ruleTest, controlfield, datafields, resultJson)
     expect(resultJson.errors).not.toStrictEqual([]);
 });
 
@@ -163,6 +170,7 @@ test('200$c ne doit pas contenir le caractère / ou : ou . FAIL', () => {
     const nameFile = number + '_' + code;
     const PPN = getPPN(nameFile + '/' + nameFile + '_Fail3.xml');
     const datafields = PPN.record.datafield;
+    const controlfield = PPN.record.controlfield;
     let resultJson = {
         PPN: 0,
         errors: [],
@@ -170,7 +178,7 @@ test('200$c ne doit pas contenir le caractère / ou : ou . FAIL', () => {
 
     const index = 6;
     addRuleToTest(index);
-    Matching.testMatchRegexRules(CATEGORIE, ruleTest, undefined, datafields, resultJson)
+    Matching.testMatchRegexRules(CATEGORIE, ruleTest, controlfield, datafields, resultJson)
     expect(resultJson.errors).not.toStrictEqual([]);
 });
 
@@ -182,13 +190,14 @@ test('200$d doit commencer par espace =', () => {
     const nameFile = number + '_' + code;
     const PPN = getPPN(nameFile + '/' + nameFile + '.xml');
     const datafields = PPN.record.datafield;
+    const controlfield = PPN.record.controlfield;
     let resultJson = {
         PPN: 0,
         errors: [],
     };
     const index = 7;
     addRuleToTest(index);
-    Matching.testMatchRegexRules(CATEGORIE, ruleTest, undefined, datafields, resultJson)
+    Matching.testMatchRegexRules(CATEGORIE, ruleTest, controlfield, datafields, resultJson)
 
     expect(resultJson.errors).toStrictEqual([]);
 });
@@ -199,13 +208,14 @@ test('200$d doit commencer par espace = FAIL', () => {
     const nameFile = number + '_' + code;
     const PPN = getPPN(nameFile + '/' + nameFile + '_Fail.xml');
     const datafields = PPN.record.datafield;
+    const controlfield = PPN.record.controlfield;
     let resultJson = {
         PPN: 0,
         errors: [],
     };
     const index = 7;
     addRuleToTest(index);
-    Matching.testMatchRegexRules(CATEGORIE, ruleTest, undefined, datafields, resultJson)
+    Matching.testMatchRegexRules(CATEGORIE, ruleTest, controlfield, datafields, resultJson)
     expect(resultJson.errors).not.toStrictEqual([]);
 });
 
@@ -218,6 +228,7 @@ test('856$u ne doit pas contenir URL', () => {
     const nameFile = number + '_' + code;
     const PPN = getPPN(nameFile + '/' + nameFile + '.xml');
     const datafields = PPN.record.datafield;
+    const controlfield = PPN.record.controlfield;
     let resultJson = {
         PPN: 0,
         errors: [],
@@ -225,7 +236,7 @@ test('856$u ne doit pas contenir URL', () => {
 
     const index = 8;
     addRuleToTest(index);
-    Matching.testMatchRegexRules(CATEGORIE, ruleTest, undefined, datafields, resultJson)
+    Matching.testMatchRegexRules(CATEGORIE, ruleTest, controlfield, datafields, resultJson)
 
     expect(resultJson.errors).toStrictEqual([]);
 });
@@ -236,13 +247,14 @@ test('856$u ne doit pas contenir URL FAIL', () => {
     const nameFile = number + '_' + code;
     const PPN = getPPN(nameFile + '/' + nameFile + '_Fail.xml');
     const datafields = PPN.record.datafield;
+    const controlfield = PPN.record.controlfield;
     let resultJson = {
         PPN: 0,
         errors: [],
     };
     const index = 8;
     addRuleToTest(index);
-    Matching.testMatchRegexRules(CATEGORIE, ruleTest, undefined, datafields, resultJson)
+    Matching.testMatchRegexRules(CATEGORIE, ruleTest, controlfield, datafields, resultJson)
     expect(resultJson.errors).not.toStrictEqual([]);
 });
 
@@ -255,6 +267,7 @@ test('100$a ne doit pas contenir le caractère ?', () => {
     const nameFile = number + '_' + code;
     const PPN = getPPN(nameFile + '/' + nameFile + '.xml');
     const datafields = PPN.record.datafield;
+    const controlfield = PPN.record.controlfield;
     let resultJson = {
         PPN: 0,
         errors: [],
@@ -262,7 +275,7 @@ test('100$a ne doit pas contenir le caractère ?', () => {
 
     const index = 9;
     addRuleToTest(index);
-    Matching.testMatchRegexRules(CATEGORIE, ruleTest, undefined, datafields, resultJson)
+    Matching.testMatchRegexRules(CATEGORIE, ruleTest, controlfield, datafields, resultJson)
     expect(resultJson.errors).toStrictEqual([]);
 });
 
@@ -272,6 +285,7 @@ test('100$a ne doit pas contenir le caractère ? FAIL', () => {
     const nameFile = number + '_' + code;
     const PPN = getPPN(nameFile + '/' + nameFile + '_Fail.xml');
     const datafields = PPN.record.datafield;
+    const controlfield = PPN.record.controlfield;
     let resultJson = {
         PPN: 0,
         errors: [],
@@ -279,7 +293,7 @@ test('100$a ne doit pas contenir le caractère ? FAIL', () => {
 
     const index = 9;
     addRuleToTest(index);
-    Matching.testMatchRegexRules(CATEGORIE, ruleTest, undefined, datafields, resultJson)
+    Matching.testMatchRegexRules(CATEGORIE, ruleTest, controlfield, datafields, resultJson)
     expect(resultJson.errors).not.toStrictEqual([]);
 });
 
@@ -292,13 +306,14 @@ test('307$a ne doit pas contenir le caractère ?', () => {
     const nameFile = number + '_' + code;
     const PPN = getPPN(nameFile + '/' + nameFile + '.xml');
     const datafields = PPN.record.datafield;
+    const controlfield = PPN.record.controlfield;
     let resultJson = {
         PPN: 0,
         errors: [],
     };
     const index = 10;
     addRuleToTest(index);
-    Matching.testMatchRegexRules(CATEGORIE, ruleTest, undefined, datafields, resultJson)
+    Matching.testMatchRegexRules(CATEGORIE, ruleTest, controlfield, datafields, resultJson)
 
     expect(resultJson.errors).toStrictEqual([]);
 });
@@ -309,13 +324,14 @@ test('307$a ne doit pas contenir le caractère ? FAIL', () => {
     const nameFile = number + '_' + code;
     const PPN = getPPN(nameFile + '/' + nameFile + '_Fail.xml');
     const datafields = PPN.record.datafield;
+    const controlfield = PPN.record.controlfield;
     let resultJson = {
         PPN: 0,
         errors: [],
     };
     const index = 10;
     addRuleToTest(index);
-    Matching.testMatchRegexRules(CATEGORIE, ruleTest, undefined, datafields, resultJson)
+    Matching.testMatchRegexRules(CATEGORIE, ruleTest, controlfield, datafields, resultJson)
     expect(resultJson.errors).not.toStrictEqual([]);
 });
 
@@ -328,6 +344,7 @@ test('700$b ne doit pas contenir Prénom', () => {
     const nameFile = number + '_' + code;
     const PPN = getPPN(nameFile + '/' + nameFile + '.xml');
     const datafields = PPN.record.datafield;
+    const controlfield = PPN.record.controlfield;
     let resultJson = {
         PPN: 0,
         errors: [],
@@ -335,7 +352,7 @@ test('700$b ne doit pas contenir Prénom', () => {
 
     const index = 11;
     addRuleToTest(index);
-    Matching.testMatchRegexRules(CATEGORIE, ruleTest, undefined, datafields, resultJson)
+    Matching.testMatchRegexRules(CATEGORIE, ruleTest, controlfield, datafields, resultJson)
 
     expect(resultJson.errors).toStrictEqual([]);
 });
@@ -346,13 +363,14 @@ test('700$b ne doit pas contenir Prénom FAIL', () => {
     const nameFile = number + '_' + code;
     const PPN = getPPN(nameFile + '/' + nameFile + '_Fail.xml');
     const datafields = PPN.record.datafield;
+    const controlfield = PPN.record.controlfield;
     let resultJson = {
         PPN: 0,
         errors: [],
     };
     const index = 11;
     addRuleToTest(index);
-    Matching.testMatchRegexRules(CATEGORIE, ruleTest, undefined, datafields, resultJson)
+    Matching.testMatchRegexRules(CATEGORIE, ruleTest, controlfield, datafields, resultJson)
     expect(resultJson.errors).not.toStrictEqual([]);
 });
 
@@ -364,6 +382,7 @@ test('7X0 et 7X1 ne doit pas contenir $4=020, 050, 060, 075, 080, 140, 150, 160,
     const nameFile = number + '_' + code;
     const PPN = getPPN(nameFile + '/' + nameFile + '.xml');
     const datafields = PPN.record.datafield;
+    const controlfield = PPN.record.controlfield;
     let resultJson = {
         PPN: 0,
         errors: [],
@@ -371,7 +390,7 @@ test('7X0 et 7X1 ne doit pas contenir $4=020, 050, 060, 075, 080, 140, 150, 160,
 
     const index = 38;
     addRuleToTest(index);
-    Matching.testMatchRegexRules(CATEGORIE, ruleTest, undefined, datafields, resultJson)
+    Matching.testMatchRegexRules(CATEGORIE, ruleTest, controlfield, datafields, resultJson)
 
     expect(resultJson.errors).toStrictEqual([]);
 });
@@ -382,6 +401,7 @@ test('7X0 et 7X1 ne doit pas contenir $4=020, 050, 060, 075, 080, 140, 150, 160,
     const nameFile = number + '_' + code;
     const PPN = getPPN(nameFile + '/' + nameFile + '_Fail.xml');
     const datafields = PPN.record.datafield;
+    const controlfield = PPN.record.controlfield;
     let resultJson = {
         PPN: 0,
         errors: [],
@@ -389,7 +409,7 @@ test('7X0 et 7X1 ne doit pas contenir $4=020, 050, 060, 075, 080, 140, 150, 160,
 
     const index = 38;
     addRuleToTest(index);
-    Matching.testMatchRegexRules(CATEGORIE, ruleTest, undefined, datafields, resultJson)
+    Matching.testMatchRegexRules(CATEGORIE, ruleTest, controlfield, datafields, resultJson)
     expect(resultJson.errors).not.toStrictEqual([]);
 });
 
@@ -400,13 +420,14 @@ test('214$d ne doit pas contenir le caractère ?', () => {
     const nameFile = number + '_' + code;
     const PPN = getPPN(nameFile + '/' + nameFile + '.xml');
     const datafields = PPN.record.datafield;
+    const controlfield = PPN.record.controlfield;
     let resultJson = {
         PPN: 0,
         errors: [],
     };
     const index = 12;
     addRuleToTest(index);
-    Matching.testMatchRegexRules(CATEGORIE, ruleTest, undefined, datafields, resultJson);
+    Matching.testMatchRegexRules(CATEGORIE, ruleTest, controlfield, datafields, resultJson);
     expect(resultJson.errors).toStrictEqual([]);
 });
 
@@ -416,6 +437,7 @@ test('214$d ne doit pas contenir le caractère ? FAIL', () => {
     const nameFile = number + '_' + code;
     const PPN = getPPN(nameFile + '/' + nameFile + '_Fail.xml');
     const datafields = PPN.record.datafield;
+    const controlfield = PPN.record.controlfield;
     let resultJson = {
         PPN: 0,
         errors: [],
@@ -423,7 +445,7 @@ test('214$d ne doit pas contenir le caractère ? FAIL', () => {
 
     const index = 12;
     addRuleToTest(index);
-    Matching.testMatchRegexRules(CATEGORIE, ruleTest, undefined, datafields, resultJson)
+    Matching.testMatchRegexRules(CATEGORIE, ruleTest, controlfield, datafields, resultJson)
     expect(resultJson.errors).not.toStrictEqual([]);
 });
 
@@ -433,13 +455,14 @@ test('Ne doit pas contenir le caractère ’', () => {
     const number = 'global';
     const PPN = getPPN(number + '/' + number + '.xml');
     const datafields = PPN.record.datafield;
+    const controlfield = PPN.record.controlfield;
     let resultJson = {
         PPN: 0,
         errors: [],
     };
     const index = 25;
     addRuleToTest(index);
-    Matching.testMatchRegexRules(CATEGORIE, ruleTest, undefined, datafields, resultJson);
+    Matching.testMatchRegexRules(CATEGORIE, ruleTest, controlfield, datafields, resultJson);
     expect(resultJson.errors).toStrictEqual([]);
 });
 
@@ -447,6 +470,7 @@ test('Ne doit pas contenir le caractère ’ FAIL', () => {
     const number = 'global';
     const PPN = getPPN(number + '/' + number + '_Fail.xml');
     const datafields = PPN.record.datafield;
+    const controlfield = PPN.record.controlfield;
     let resultJson = {
         PPN: 0,
         errors: [],
@@ -454,7 +478,7 @@ test('Ne doit pas contenir le caractère ’ FAIL', () => {
 
     const index = 25;
     addRuleToTest(index);
-    Matching.testMatchRegexRules(CATEGORIE, ruleTest, undefined, datafields, resultJson)
+    Matching.testMatchRegexRules(CATEGORIE, ruleTest, controlfield, datafields, resultJson)
     expect(resultJson.errors).not.toStrictEqual([]);
 });
 
@@ -466,6 +490,7 @@ test('029$a=FR', () => {
     const nameFile = number + '_' + code;
     const PPN = getPPN(nameFile + '/' + nameFile + '.xml');
     const datafields = PPN.record.datafield;
+    const controlfield = PPN.record.controlfield;
     let resultJson = {
         PPN: 0,
         errors: [],
@@ -473,7 +498,7 @@ test('029$a=FR', () => {
 
     const index = 13;
     addRuleToTest(index);
-    Matching.testMatchRegexRules(CATEGORIE, ruleTest, undefined, datafields, resultJson)
+    Matching.testMatchRegexRules(CATEGORIE, ruleTest, controlfield, datafields, resultJson)
 
     expect(resultJson.errors).toStrictEqual([]);
 });
@@ -484,13 +509,14 @@ test('029$a=FR FAIL', () => {
     const nameFile = number + '_' + code;
     const PPN = getPPN(nameFile + '/' + nameFile + '_Fail.xml');
     const datafields = PPN.record.datafield;
+    const controlfield = PPN.record.controlfield;
     let resultJson = {
         PPN: 0,
         errors: [],
     };
     const index = 13;
     addRuleToTest(index);
-    Matching.testMatchRegexRules(CATEGORIE, ruleTest, undefined, datafields, resultJson)
+    Matching.testMatchRegexRules(CATEGORIE, ruleTest, controlfield, datafields, resultJson)
     expect(resultJson.errors).not.toStrictEqual([]);
 });
 
@@ -503,13 +529,14 @@ test('700$a ne doit pas contenir Nom', () => {
     const nameFile = number + '_' + code;
     const PPN = getPPN(nameFile + '/' + nameFile + '.xml');
     const datafields = PPN.record.datafield;
+    const controlfield = PPN.record.controlfield;
     let resultJson = {
         PPN: 0,
         errors: [],
     };
     const index = 14;
     addRuleToTest(index);
-    Matching.testMatchRegexRules(CATEGORIE, ruleTest, undefined, datafields, resultJson)
+    Matching.testMatchRegexRules(CATEGORIE, ruleTest, controlfield, datafields, resultJson)
 
     expect(resultJson.errors).toStrictEqual([]);
 });
@@ -520,13 +547,14 @@ test('700$a ne doit pas contenir Nom FAIL', () => {
     const nameFile = number + '_' + code;
     const PPN = getPPN(nameFile + '/' + nameFile + '_Fail.xml');
     const datafields = PPN.record.datafield;
+    const controlfield = PPN.record.controlfield;
     let resultJson = {
         PPN: 0,
         errors: [],
     };
     const index = 14;
     addRuleToTest(index);
-    Matching.testMatchRegexRules(CATEGORIE, ruleTest, undefined, datafields, resultJson)
+    Matching.testMatchRegexRules(CATEGORIE, ruleTest, controlfield, datafields, resultJson)
     expect(resultJson.errors).not.toStrictEqual([]);
 });
 
@@ -539,6 +567,7 @@ test('701$b ne doit pas contenir Prénom', () => {
     const nameFile = number + '_' + code;
     const PPN = getPPN(nameFile + '/' + nameFile + '.xml');
     const datafields = PPN.record.datafield;
+    const controlfield = PPN.record.controlfield;
     let resultJson = {
         PPN: 0,
         errors: [],
@@ -546,7 +575,7 @@ test('701$b ne doit pas contenir Prénom', () => {
 
     const index = 15;
     addRuleToTest(index);
-    Matching.testMatchRegexRules(CATEGORIE, ruleTest, undefined, datafields, resultJson)
+    Matching.testMatchRegexRules(CATEGORIE, ruleTest, controlfield, datafields, resultJson)
 
     expect(resultJson.errors).toStrictEqual([]);
 });
@@ -557,6 +586,7 @@ test('701$b ne doit pas contenir Prénom FAIL', () => {
     const nameFile = number + '_' + code;
     const PPN = getPPN(nameFile + '/' + nameFile + '_Fail.xml');
     const datafields = PPN.record.datafield;
+    const controlfield = PPN.record.controlfield;
     let resultJson = {
         PPN: 0,
         errors: [],
@@ -564,7 +594,7 @@ test('701$b ne doit pas contenir Prénom FAIL', () => {
 
     const index = 15;
     addRuleToTest(index);
-    Matching.testMatchRegexRules(CATEGORIE, ruleTest, undefined, datafields, resultJson)
+    Matching.testMatchRegexRules(CATEGORIE, ruleTest, controlfield, datafields, resultJson)
     expect(resultJson.errors).not.toStrictEqual([]);
 });
 
@@ -577,6 +607,7 @@ test('606$a ne doit pas contenir vedette', () => {
     const nameFile = number + '_' + code;
     const PPN = getPPN(nameFile + '/' + nameFile + '.xml');
     const datafields = PPN.record.datafield;
+    const controlfield = PPN.record.controlfield;
     let resultJson = {
         PPN: 0,
         errors: [],
@@ -584,7 +615,7 @@ test('606$a ne doit pas contenir vedette', () => {
 
     const index = 16;
     addRuleToTest(index);
-    Matching.testMatchRegexRules(CATEGORIE, ruleTest, undefined, datafields, resultJson)
+    Matching.testMatchRegexRules(CATEGORIE, ruleTest, controlfield, datafields, resultJson)
 
     expect(resultJson.errors).toStrictEqual([]);
 });
@@ -595,6 +626,7 @@ test('606$a ne doit pas contenir vedette FAIL', () => {
     const nameFile = number + '_' + code;
     const PPN = getPPN(nameFile + '/' + nameFile + '_Fail.xml');
     const datafields = PPN.record.datafield;
+    const controlfield = PPN.record.controlfield;
     let resultJson = {
         PPN: 0,
         errors: [],
@@ -602,7 +634,7 @@ test('606$a ne doit pas contenir vedette FAIL', () => {
 
     const index = 16;
     addRuleToTest(index);
-    Matching.testMatchRegexRules(CATEGORIE, ruleTest, undefined, datafields, resultJson)
+    Matching.testMatchRegexRules(CATEGORIE, ruleTest, controlfield, datafields, resultJson)
     expect(resultJson.errors).not.toStrictEqual([]);
 });
 
@@ -614,6 +646,7 @@ test('330$a ne doit pas contenir Résumé en français', () => {
     const nameFile = number + '_' + code;
     const PPN = getPPN(nameFile + '/' + nameFile + '.xml');
     const datafields = PPN.record.datafield;
+    const controlfield = PPN.record.controlfield;
     let resultJson = {
         PPN: 0,
         errors: [],
@@ -621,7 +654,7 @@ test('330$a ne doit pas contenir Résumé en français', () => {
 
     const index = 17;
     addRuleToTest(index);
-    Matching.testMatchRegexRules(CATEGORIE, ruleTest, undefined, datafields, resultJson)
+    Matching.testMatchRegexRules(CATEGORIE, ruleTest, controlfield, datafields, resultJson)
 
     expect(resultJson.errors).toStrictEqual([]);
 });
@@ -632,6 +665,7 @@ test('330$a ne doit pas contenir Résumé en français FAIL', () => {
     const nameFile = number + '_' + code;
     const PPN = getPPN(nameFile + '/' + nameFile + '_Fail.xml');
     const datafields = PPN.record.datafield;
+    const controlfield = PPN.record.controlfield;
     let resultJson = {
         PPN: 0,
         errors: [],
@@ -639,7 +673,7 @@ test('330$a ne doit pas contenir Résumé en français FAIL', () => {
 
     const index = 17;
     addRuleToTest(index);
-    Matching.testMatchRegexRules(CATEGORIE, ruleTest, undefined, datafields, resultJson)
+    Matching.testMatchRegexRules(CATEGORIE, ruleTest, controlfield, datafields, resultJson)
     expect(resultJson.errors).not.toStrictEqual([]);
 });
 
@@ -652,13 +686,14 @@ test("328$e = Lyon 1 ou Université de Lyon", () => {
     const nameFile = number + '_' + code;
     const PPN = getPPN(nameFile + '/' + nameFile + '.xml');
     const datafields = PPN.record.datafield;
+    const controlfield = PPN.record.controlfield;
     let resultJson = {
         PPN: 0,
         errors: [],
     };
     const index = 18;
     addRuleToTest(index);
-    Matching.testMatchRegexRules(CATEGORIE, ruleTest, undefined, datafields, resultJson)
+    Matching.testMatchRegexRules(CATEGORIE, ruleTest, controlfield, datafields, resultJson)
 
     expect(resultJson.errors).toStrictEqual([]);
 });
@@ -669,13 +704,14 @@ test('328$e = Lyon 1 ou Université de Lyon FAIL', () => {
     const nameFile = number + '_' + code;
     const PPN = getPPN(nameFile + '/' + nameFile + '_Fail.xml');
     const datafields = PPN.record.datafield;
+    const controlfield = PPN.record.controlfield;
     let resultJson = {
         PPN: 0,
         errors: [],
     };
     const index = 18;
     addRuleToTest(index);
-    Matching.testMatchRegexRules(CATEGORIE, ruleTest, undefined, datafields, resultJson)
+    Matching.testMatchRegexRules(CATEGORIE, ruleTest, controlfield, datafields, resultJson)
     expect(resultJson.errors).not.toStrictEqual([]);
 });
 
@@ -688,13 +724,14 @@ test("328$d ne doit pas contenir le caractère ?", () => {
     const nameFile = number + '_' + code;
     const PPN = getPPN(nameFile + '/' + nameFile + '.xml');
     const datafields = PPN.record.datafield;
+    const controlfield = PPN.record.controlfield;
     let resultJson = {
         PPN: 0,
         errors: [],
     };
     const index = 19;
     addRuleToTest(index);
-    Matching.testMatchRegexRules(CATEGORIE, ruleTest, undefined, datafields, resultJson)
+    Matching.testMatchRegexRules(CATEGORIE, ruleTest, controlfield, datafields, resultJson)
 
     expect(resultJson.errors).toStrictEqual([]);
 });
@@ -705,6 +742,7 @@ test('328$d ne doit pas contenir le caractère ? FAIL', () => {
     const nameFile = number + '_' + code;
     const PPN = getPPN(nameFile + '/' + nameFile + '_Fail.xml');
     const datafields = PPN.record.datafield;
+    const controlfield = PPN.record.controlfield;
     let resultJson = {
         PPN: 0,
         errors: [],
@@ -712,7 +750,7 @@ test('328$d ne doit pas contenir le caractère ? FAIL', () => {
 
     const index = 19;
     addRuleToTest(index);
-    Matching.testMatchRegexRules(CATEGORIE, ruleTest, undefined, datafields, resultJson)
+    Matching.testMatchRegexRules(CATEGORIE, ruleTest, controlfield, datafields, resultJson)
     expect(resultJson.errors).not.toStrictEqual([]);
 });
 
@@ -725,6 +763,7 @@ test("200$g ne doit pas finir par sous la direction de", () => {
     const nameFile = number + '_' + code;
     const PPN = getPPN(nameFile + '/' + nameFile + '.xml');
     const datafields = PPN.record.datafield;
+    const controlfield = PPN.record.controlfield;
     let resultJson = {
         PPN: 0,
         errors: [],
@@ -732,7 +771,7 @@ test("200$g ne doit pas finir par sous la direction de", () => {
 
     const index = 21;
     addRuleToTest(index);
-    Matching.testMatchRegexRules(CATEGORIE, ruleTest, undefined, datafields, resultJson)
+    Matching.testMatchRegexRules(CATEGORIE, ruleTest, controlfield, datafields, resultJson)
 
     expect(resultJson.errors).toStrictEqual([]);
 });
@@ -743,6 +782,7 @@ test('200$g ne doit pas finir par sous la direction de FAIL', () => {
     const nameFile = number + '_' + code;
     const PPN = getPPN(nameFile + '/' + nameFile + '_Fail.xml');
     const datafields = PPN.record.datafield;
+    const controlfield = PPN.record.controlfield;
     let resultJson = {
         PPN: 0,
         errors: [],
@@ -750,7 +790,7 @@ test('200$g ne doit pas finir par sous la direction de FAIL', () => {
 
     const index = 21;
     addRuleToTest(index);
-    Matching.testMatchRegexRules(CATEGORIE, ruleTest, undefined, datafields, resultJson)
+    Matching.testMatchRegexRules(CATEGORIE, ruleTest, controlfield, datafields, resultJson)
     expect(resultJson.errors).not.toStrictEqual([]);
 });
 
@@ -763,6 +803,7 @@ test("200$e ne doit pas être complément du titre", () => {
     const nameFile = number + '_' + code;
     const PPN = getPPN(nameFile + '/' + nameFile + '.xml');
     const datafields = PPN.record.datafield;
+    const controlfield = PPN.record.controlfield;
     let resultJson = {
         PPN: 0,
         errors: [],
@@ -770,7 +811,7 @@ test("200$e ne doit pas être complément du titre", () => {
 
     const index = 22;
     addRuleToTest(index);
-    Matching.testMatchRegexRules(CATEGORIE, ruleTest, undefined, datafields, resultJson)
+    Matching.testMatchRegexRules(CATEGORIE, ruleTest, controlfield, datafields, resultJson)
 
     expect(resultJson.errors).toStrictEqual([]);
 });
@@ -781,6 +822,7 @@ test('200$e ne doit pas être complément du titre FAIL', () => {
     const nameFile = number + '_' + code;
     const PPN = getPPN(nameFile + '/' + nameFile + '_Fail.xml');
     const datafields = PPN.record.datafield;
+    const controlfield = PPN.record.controlfield;
     let resultJson = {
         PPN: 0,
         errors: [],
@@ -788,7 +830,7 @@ test('200$e ne doit pas être complément du titre FAIL', () => {
 
     const index = 22;
     addRuleToTest(index);
-    Matching.testMatchRegexRules(CATEGORIE, ruleTest, undefined, datafields, resultJson)
+    Matching.testMatchRegexRules(CATEGORIE, ruleTest, controlfield, datafields, resultJson)
     expect(resultJson.errors).not.toStrictEqual([]);
 });
 
@@ -800,6 +842,7 @@ test("200$a ne doit pas être Le Titre", () => {
     const nameFile = number + '_' + code;
     const PPN = getPPN(nameFile + '/' + nameFile + '.xml');
     const datafields = PPN.record.datafield;
+    const controlfield = PPN.record.controlfield;
     let resultJson = {
         PPN: 0,
         errors: [],
@@ -807,7 +850,7 @@ test("200$a ne doit pas être Le Titre", () => {
 
     const index = 23;
     addRuleToTest(index);
-    Matching.testMatchRegexRules(CATEGORIE, ruleTest, undefined, datafields, resultJson)
+    Matching.testMatchRegexRules(CATEGORIE, ruleTest, controlfield, datafields, resultJson)
 
     expect(resultJson.errors).toStrictEqual([]);
 });
@@ -818,6 +861,7 @@ test('200$a ne doit pas être Le Titre FAIL', () => {
     const nameFile = number + '_' + code;
     const PPN = getPPN(nameFile + '/' + nameFile + '_Fail.xml');
     const datafields = PPN.record.datafield;
+    const controlfield = PPN.record.controlfield;
     let resultJson = {
         PPN: 0,
         errors: [],
@@ -825,7 +869,7 @@ test('200$a ne doit pas être Le Titre FAIL', () => {
 
     const index = 23;
     addRuleToTest(index);
-    Matching.testMatchRegexRules(CATEGORIE, ruleTest, undefined, datafields, resultJson)
+    Matching.testMatchRegexRules(CATEGORIE, ruleTest, controlfield, datafields, resultJson)
     expect(resultJson.errors).not.toStrictEqual([]);
 });
 
@@ -838,6 +882,7 @@ test("029$b ne doit pas contenir le caractère ?", () => {
     const nameFile = number + '_' + code;
     const PPN = getPPN(nameFile + '/' + nameFile + '.xml');
     const datafields = PPN.record.datafield;
+    const controlfield = PPN.record.controlfield;
     let resultJson = {
         PPN: 0,
         errors: [],
@@ -845,7 +890,7 @@ test("029$b ne doit pas contenir le caractère ?", () => {
 
     const index = 24;
     addRuleToTest(index);
-    Matching.testMatchRegexRules(CATEGORIE, ruleTest, undefined, datafields, resultJson)
+    Matching.testMatchRegexRules(CATEGORIE, ruleTest, controlfield, datafields, resultJson)
 
     expect(resultJson.errors).toStrictEqual([]);
 });
@@ -856,6 +901,7 @@ test('029$b ne doit pas contenir le caractère ? FAIL', () => {
     const nameFile = number + '_' + code;
     const PPN = getPPN(nameFile + '/' + nameFile + '_Fail.xml');
     const datafields = PPN.record.datafield;
+    const controlfield = PPN.record.controlfield;
     let resultJson = {
         PPN: 0,
         errors: [],
@@ -863,7 +909,7 @@ test('029$b ne doit pas contenir le caractère ? FAIL', () => {
 
     const index = 24;
     addRuleToTest(index);
-    Matching.testMatchRegexRules(CATEGORIE, ruleTest, undefined, datafields, resultJson)
+    Matching.testMatchRegexRules(CATEGORIE, ruleTest, controlfield, datafields, resultJson)
     expect(resultJson.errors).not.toStrictEqual([]);
 });
 
@@ -876,6 +922,7 @@ test("200$e ne doit pas contenir le caractère / ou : ou .", () => {
     const nameFile = number + '_' + code;
     const PPN = getPPN(nameFile + '/' + nameFile + '.xml');
     const datafields = PPN.record.datafield;
+    const controlfield = PPN.record.controlfield;
     let resultJson = {
         PPN: 0,
         errors: [],
@@ -883,7 +930,7 @@ test("200$e ne doit pas contenir le caractère / ou : ou .", () => {
 
     const index = 26;
     addRuleToTest(index);
-    Matching.testMatchRegexRules(CATEGORIE, ruleTest, undefined, datafields, resultJson)
+    Matching.testMatchRegexRules(CATEGORIE, ruleTest, controlfield, datafields, resultJson)
 
     expect(resultJson.errors).toStrictEqual([]);
 });
@@ -894,6 +941,7 @@ test('200$e ne doit pas contenir le caractère / ou : ou . FAIL', () => {
     const nameFile = number + '_' + code;
     const PPN = getPPN(nameFile + '/' + nameFile + '_Fail.xml');
     const datafields = PPN.record.datafield;
+    const controlfield = PPN.record.controlfield;
     let resultJson = {
         PPN: 0,
         errors: [],
@@ -901,7 +949,7 @@ test('200$e ne doit pas contenir le caractère / ou : ou . FAIL', () => {
 
     const index = 26;
     addRuleToTest(index);
-    Matching.testMatchRegexRules(CATEGORIE, ruleTest, undefined, datafields, resultJson)
+    Matching.testMatchRegexRules(CATEGORIE, ruleTest, controlfield, datafields, resultJson)
     expect(resultJson.errors).not.toStrictEqual([]);
 });
 
