@@ -37,6 +37,26 @@ var Parcours = function () {
         return null
     }
 
+
+    const getIdentifiantValue = function(field,codeCondition,codeIdentifiant) {
+        let retour = null;
+        if (field != null && field.subfield instanceof Array) {
+            for (let i in field.subfield) {
+                if(field.subfield[i]._attributes.code === codeIdentifiant) {
+                    retour =  field.subfield[i]._text
+                }
+                if(field.subfield[i]._attributes.code === codeCondition && retour != null) { 
+                    return retour
+                }
+            }
+        }else if (field != null) {
+            if (field.subfield._attributes.code === codeIdentifiant) {
+                return field.subfield._text
+            }
+        } 
+        return null
+    }
+
     const testCode = function(field,code) {
         if (field != null && field.subfield instanceof Array) {
             for (let i in field.subfield) {
@@ -87,7 +107,8 @@ var Parcours = function () {
         getSubfieldValue:getSubfieldValue,
         getCategories : getCategories,
         getTypes : getTypes,
-        testCode : testCode
+        testCode : testCode,
+        getIdentifiantValue : getIdentifiantValue
     }
 }();
 

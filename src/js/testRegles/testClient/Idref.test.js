@@ -478,21 +478,38 @@ test("Si 722, vérifier dans Idref, à partir de l'identifiant $3, que 008 comme
 
 
 // ===============================================================
-
 test("Si 6XX$x et $2rameau, vérifier dans Idref, à partir de l'identifiant $3, que 008 commence par Td", () => {
     const notice = "011"
-    const number = ["600", "602", "604", "605"]
-    const index = [74,75,76,77]
+    const number = "600"
+    const index = 74
     let resultJson = {
         PPN: 0,
         errors: [],
     };
-    for (let i in number) {
-        const sudoc = getNotice(notice);
-        const idref = getIdref(notice, number[i]);
-        const datafields = sudoc.record.datafield;
-        addRuleToTest(index[i]);
-        testIdRefRules(CATEGORIE, ruleTest, idref, datafields, resultJson)
-    }
+
+    const sudoc = getNotice(notice);
+    const idref = getIdref(notice, number);
+    const datafields = sudoc.record.datafield;
+    addRuleToTest(index);
+    testIdRefRules(CATEGORIE, ruleTest, idref, datafields, resultJson)
+
     expect(resultJson.errors).toStrictEqual([]);
+});
+
+test("Si 6XX$x et $2rameau, vérifier dans Idref, à partir de l'identifiant $3, que 008 commence par Td", () => {
+    const notice = "012"
+    const number = "600"
+    const index = 74
+    let resultJson = {
+        PPN: 0,
+        errors: [],
+    };
+
+    const sudoc = getNotice(notice);
+    const idref = getIdref(notice, number);
+    const datafields = sudoc.record.datafield;
+    addRuleToTest(index);
+    testIdRefRules(CATEGORIE, ruleTest, idref, datafields, resultJson)
+
+    expect(resultJson.errors).not.toStrictEqual([]);
 });

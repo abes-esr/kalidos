@@ -1,111 +1,117 @@
 <record>
-    <leader> cx a22 3 45 </leader>
-    <controlfield tag="001">026814722</controlfield>
-    <controlfield tag="003">http://www.idref.fr/026814722</controlfield>
-    <controlfield tag="004">19750826</controlfield>
-    <controlfield tag="005">20200307161941.000</controlfield>
+    <leader> cx j22 3 45 </leader>
+    <controlfield tag="001">028633067</controlfield>
+    <controlfield tag="003">http://www.idref.fr/028633067</controlfield>
+    <controlfield tag="004">19870619</controlfield>
+    <controlfield tag="005">20200504112550.000</controlfield>
     <controlfield tag="006">0004</controlfield>
-    <controlfield tag="007">751052102</controlfield>
-    <controlfield tag="008">Tp5</controlfield>
-    <datafield tag="010" ind1=" " ind2=" ">
-    <subfield code="a">0000000123214771</subfield>
-    <subfield code="2">ISNI</subfield>
-    <subfield code="C">BNF</subfield>
-    <subfield code="d">20150918</subfield>
-    </datafield>
+    <controlfield tag="007">341720001</controlfield>
+    <controlfield tag="008">Td8</controlfield>
     <datafield tag="033" ind1=" " ind2=" ">
-    <subfield code="a">http://catalogue.bnf.fr/ark:/12148/cb11898878m</subfield>
+    <subfield code="a">http://catalogue.bnf.fr/ark:/12148/cb12042895g</subfield>
     <subfield code="2">BNF</subfield>
-    <subfield code="d">20150918</subfield>
+    <subfield code="d">20160115</subfield>
     </datafield>
     <datafield tag="035" ind1=" " ind2=" ">
-    <subfield code="a">027379310</subfield>
-    <subfield code="9">sudoc</subfield>
+    <subfield code="a">frBN003415400</subfield>
     </datafield>
     <datafield tag="035" ind1=" " ind2=" ">
-    <subfield code="a">frBN001673971</subfield>
-    </datafield>
-    <datafield tag="035" ind1=" " ind2=" ">
-    <subfield code="a">frBN000661133</subfield>
-    </datafield>
-    <datafield tag="035" ind1=" " ind2=" ">
-    <subfield code="a">FRBNF118988780</subfield>
-    <subfield code="z">FRBNF11898878</subfield>
-    </datafield>
-    <datafield tag="035" ind1=" " ind2=" ">
-    <subfield code="a">http://viaf.org/viaf/104172730</subfield>
-    <subfield code="2">VIAF</subfield>
-    <subfield code="C">VIAF</subfield>
-    <subfield code="d">20200302</subfield>
+    <subfield code="a">FRBNF120428956</subfield>
+    <subfield code="z">FRBNF12042895</subfield>
     </datafield>
     <datafield tag="100" ind1=" " ind2=" ">
-    <subfield code="a">19750826afrey50 ba0</subfield>
-    </datafield>
-    <datafield tag="101" ind1=" " ind2=" ">
-    <subfield code="a">ita</subfield>
-    </datafield>
-    <datafield tag="102" ind1=" " ind2=" ">
-    <subfield code="a">IT</subfield>
-    </datafield>
-    <datafield tag="103" ind1=" " ind2=" ">
-    <subfield code="a"> 18880710 </subfield>
-    <subfield code="b"> 19781119 </subfield>
+    <subfield code="a">19870619afrey50 ba0</subfield>
     </datafield>
     <datafield tag="106" ind1=" " ind2=" ">
-    <subfield code="a">0</subfield>
-    <subfield code="b">1</subfield>
-    <subfield code="c">0</subfield>
-    </datafield>
-    <datafield tag="120" ind1=" " ind2=" ">
-    <subfield code="a">ba</subfield>
+    <subfield code="a">2</subfield>
+    <subfield code="b">2</subfield>
+    <subfield code="c">1</subfield>
     </datafield>
     <datafield tag="152" ind1=" " ind2=" ">
-    <subfield code="a">AFNOR</subfield>
+    <subfield code="b">rameau</subfield>
     </datafield>
-    <datafield tag="200" ind1=" " ind2="1">
+    <datafield tag="250" ind1=" " ind2=" ">
     <subfield code="7">ba0yba0y</subfield>
-    <subfield code="8">freita</subfield>
-    <subfield code="9">0</subfield>
-    <subfield code="a">De Chirico</subfield>
-    <subfield code="b">Giorgio</subfield>
-    <subfield code="f">1888-1978</subfield>
-    </datafield>
-    <datafield tag="340" ind1=" " ind2=" ">
-    <subfield code="7">ba0yba0y</subfield>
-    <subfield code="a">Peintre</subfield>
-    </datafield>
-    <datafield tag="400" ind1=" " ind2="1">
-    <subfield code="7">ba0yba0y</subfield>
-    <subfield code="8">freita</subfield>
     <subfield code="9">#</subfield>
-    <subfield code="a">Chirico</subfield>
-    <subfield code="b">Giorgio De</subfield>
+    <subfield code="a">Critique et interprétation</subfield>
+    </datafield>
+    <datafield tag="305" ind1="1" ind2=" ">
+    <subfield code="7">ba0yba0y</subfield>
+    <subfield code="a">
+    Voir aussi la subdivision Appréciation aux compositions musicales, littératures, livres sacrés, personnes, titres et sujets noms communs appropriés (domaines artistique, culturel, etc.)
+    </subfield>
+    </datafield>
+    <datafield tag="330" ind1="1" ind2=" ">
+    <subfield code="7">ba0yba0y</subfield>
+    <subfield code="a">
+    S'emploie uniquement en subdivision aux personnes pour des études critiques sur l'ensemble de leurs oeuvres
+    </subfield>
+    </datafield>
+    <datafield tag="330" ind1="1" ind2=" ">
+    <subfield code="7">ba0yba0y</subfield>
+    <subfield code="a">
+    Pour les études concernant la réception des oeuvres par le public, employer la subdivision Appréciation
+    </subfield>
+    </datafield>
+    <datafield tag="550" ind1=" " ind2=" ">
+    <subfield code="0">Voir aussi</subfield>
+    <subfield code="3">027554643</subfield>
+    <subfield code="5">z|xxx</subfield>
+    <subfield code="7">ba0yba0y</subfield>
+    <subfield code="a">Cinéma</subfield>
+    <subfield code="x">Histoire et critique</subfield>
+    </datafield>
+    <datafield tag="550" ind1=" " ind2=" ">
+    <subfield code="0">Voir aussi</subfield>
+    <subfield code="3">027801152</subfield>
+    <subfield code="5">z|xxx</subfield>
+    <subfield code="7">ba0yba0y</subfield>
+    <subfield code="a">Critique marxiste</subfield>
+    </datafield>
+    <datafield tag="550" ind1=" " ind2=" ">
+    <subfield code="0">Voir aussi</subfield>
+    <subfield code="3">02802351X</subfield>
+    <subfield code="5">z|xxx</subfield>
+    <subfield code="7">ba0yba0y</subfield>
+    <subfield code="a">Critique féministe</subfield>
+    </datafield>
+    <datafield tag="550" ind1=" " ind2=" ">
+    <subfield code="0">Voir aussi</subfield>
+    <subfield code="3">180182927</subfield>
+    <subfield code="5">z|xxx</subfield>
+    <subfield code="7">ba0yba0y</subfield>
+    <subfield code="a">Critique</subfield>
+    </datafield>
+    <datafield tag="550" ind1=" " ind2=" ">
+    <subfield code="0">Voir aussi</subfield>
+    <subfield code="3">02779489X</subfield>
+    <subfield code="5">z|xxx</subfield>
+    <subfield code="7">ba0yba0y</subfield>
+    <subfield code="a">Appréciation</subfield>
+    </datafield>
+    <datafield tag="686" ind1=" " ind2=" ">
+    <subfield code="a">801</subfield>
+    <subfield code="c">Littérature générale</subfield>
+    <subfield code="2">Note de regroupement par domaine</subfield>
+    </datafield>
+    <datafield tag="801" ind1=" " ind2="0">
+    <subfield code="a">FR</subfield>
+    <subfield code="b">FR-751131015</subfield>
+    <subfield code="c">20050127</subfield>
     </datafield>
     <datafield tag="801" ind1=" " ind2="3">
     <subfield code="a">FR</subfield>
     <subfield code="b">Abes</subfield>
-    <subfield code="c">20200307</subfield>
+    <subfield code="c">20200504</subfield>
     <subfield code="g">AFNOR</subfield>
-    <subfield code="h">027379310</subfield>
     </datafield>
-    <datafield tag="810" ind1=" " ind2=" ">
+    <datafield tag="898" ind1=" " ind2=" ">
     <subfield code="a">
-    Penso alla pittura solo scopo della vita mia / Giorgio De Chirico, 1987
+    Réforme Rameau janvier 2019 Td ouverte à la subd. géogr.
     </subfield>
+    <subfield code="d">20190215</subfield>
     </datafield>
-    <datafield tag="810" ind1=" " ind2=" ">
-    <subfield code="a">Bénézit, 1976</subfield>
-    </datafield>
-    <datafield tag="810" ind1=" " ind2=" ">
-    <subfield code="a">GDEL</subfield>
-    </datafield>
-    <datafield tag="810" ind1=" " ind2=" ">
-    <subfield code="a">LCNA, 1986</subfield>
-    </datafield>
-    <datafield tag="900" ind1=" " ind2=" ">
-    <subfield code="a">De Chirico, Giorgio (1888-1978)</subfield>
-    </datafield>
-    <datafield tag="901" ind1=" " ind2=" ">
-    <subfield code="a">Chirico, Giorgio De</subfield>
+    <datafield tag="950" ind1=" " ind2=" ">
+    <subfield code="a">Critique et interprétation</subfield>
     </datafield>
     </record>

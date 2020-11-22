@@ -90,7 +90,13 @@ var IdRef = function () {
      */
     var identifiantNotice = function (datafields ,regle){
         const field = Parcours.findDataField(datafields, regle.identifiant.number)
-        const identifiant = Parcours.getSubfieldValue(field,regle.identifiant.code)
+        let identifiant;
+        if(regle.condition[0].code != null) {
+            identifiant = Parcours.getIdentifiantValue(field, regle.condition[0].code ,regle.identifiant.code)
+        } else {
+            identifiant = Parcours.getSubfieldValue(field,regle.identifiant.code)
+        }
+        
         return identifiant
     }
 
