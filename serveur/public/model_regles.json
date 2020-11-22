@@ -1082,6 +1082,94 @@
                     "regex": "^Ta.*"
                 },
                 "message": "Incohérence zone 7XX : vérifier l'étiquette et le type de notice d'autorité"
+            },
+            {
+                "index": 74,
+                "condition" : [{
+                    "number" : "600",
+                    "code" : "x"
+                },
+                {
+                    "number" : "600",
+                    "code" : "2",
+                    "regex" : "^rameau$"
+                }
+                ],
+                "identifiant":{
+                    "number" : "600",
+                    "code":"3"
+                },
+                "verification" : {
+                    "number" : "008",
+                    "regex": "^Td.*"
+                },
+                "message": "Incohérence indexation : vérifier que la zone 6XX est liée à une autorité RAMEAU"
+            },
+            {
+                "index": 75,
+                "condition" : [{
+                    "number" : "602",
+                    "code" : "x"
+                },
+                {
+                    "number" : "602",
+                    "code" : "2",
+                    "regex" : "^rameau$"
+                }
+                ],
+                "identifiant":{
+                    "number" : "602",
+                    "code":"3"
+                },
+                "verification" : {
+                    "number" : "008",
+                    "regex": "^Td.*"
+                },
+                "message": "Incohérence indexation : vérifier que la zone 6XX est liée à une autorité RAMEAU"
+            },
+            {
+                "index": 76,
+                "condition" : [{
+                    "number" : "604",
+                    "code" : "x"
+                },
+                {
+                    "number" : "604",
+                    "code" : "2",
+                    "regex" : "^rameau$"
+                }
+                ],
+                "identifiant":{
+                    "number" : "604",
+                    "code":"3"
+                },
+                "verification" : {
+                    "number" : "008",
+                    "regex": "^Td.*"
+                },
+                "message": "Incohérence indexation : vérifier que la zone 6XX est liée à une autorité RAMEAU"
+            },
+            {
+                "index": 77,
+                "condition" : [{
+                    "number" : "605",
+                    "code" : "x"
+                },
+                {
+                    "number" : "605",
+                    "code" : "2",
+                    "regex" : "^rameau$"
+                }
+                ],
+                "identifiant":{
+                    "number" : "605",
+                    "code":"3"
+                },
+                "verification" : {
+                    "number" : "008",
+                    "regex": "^Td.*"
+                },
+                "message": "Incohérence indexation : vérifier que la zone 6XX est liée à une autorité RAMEAU"
             }
         ]
     },

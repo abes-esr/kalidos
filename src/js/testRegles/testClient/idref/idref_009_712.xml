@@ -1,0 +1,166 @@
+<record>
+    <leader> cx b22 3 45 </leader>
+    <controlfield tag="001">026402823</controlfield>
+    <controlfield tag="003">http://www.idref.fr/026402823</controlfield>
+    <controlfield tag="004">19840309</controlfield>
+    <controlfield tag="005">20201028143800.000</controlfield>
+    <controlfield tag="006">0004</controlfield>
+    <controlfield tag="007">384212103</controlfield>
+    <controlfield tag="008">Tb5</controlfield>
+    <datafield tag="010" ind1=" " ind2=" ">
+    <subfield code="a">0000000121686185</subfield>
+    <subfield code="2">ISNI</subfield>
+    <subfield code="C">BNF</subfield>
+    <subfield code="d">20150918</subfield>
+    </datafield>
+    <datafield tag="033" ind1=" " ind2=" ">
+    <subfield code="a">http://catalogue.bnf.fr/ark:/12148/cb118656850</subfield>
+    <subfield code="2">BNF</subfield>
+    <subfield code="d">20150918</subfield>
+    </datafield>
+    <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">028025172</subfield>
+    <subfield code="9">sudoc</subfield>
+    </datafield>
+    <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">167239880</subfield>
+    <subfield code="9">sudoc</subfield>
+    </datafield>
+    <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">frBN000036594</subfield>
+    </datafield>
+    <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">frBN002332898</subfield>
+    </datafield>
+    <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">FRBNF11865685X</subfield>
+    <subfield code="z">FRBNF11865685</subfield>
+    </datafield>
+    <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">http://viaf.org/viaf/138972729</subfield>
+    <subfield code="2">VIAF</subfield>
+    <subfield code="C">VIAF</subfield>
+    <subfield code="d">20200302</subfield>
+    </datafield>
+    <datafield tag="100" ind1=" " ind2=" ">
+    <subfield code="a">19840309afrey50 ba0</subfield>
+    </datafield>
+    <datafield tag="101" ind1=" " ind2=" ">
+    <subfield code="a">fre</subfield>
+    </datafield>
+    <datafield tag="102" ind1=" " ind2=" ">
+    <subfield code="a">FR</subfield>
+    </datafield>
+    <datafield tag="106" ind1=" " ind2=" ">
+    <subfield code="a">0</subfield>
+    <subfield code="b">1</subfield>
+    <subfield code="c">0</subfield>
+    </datafield>
+    <datafield tag="150" ind1=" " ind2=" ">
+    <subfield code="a">z</subfield>
+    </datafield>
+    <datafield tag="152" ind1=" " ind2=" ">
+    <subfield code="a">AFNOR</subfield>
+    </datafield>
+    <datafield tag="210" ind1="0" ind2="2">
+    <subfield code="7">ba0yba0y</subfield>
+    <subfield code="9">0</subfield>
+    <subfield code="a">Université Claude Bernard</subfield>
+    <subfield code="c">Lyon</subfield>
+    </datafield>
+    <datafield tag="330" ind1="1" ind2=" ">
+    <subfield code="7">ba0yba0y</subfield>
+    <subfield code="a">
+    Ne pas confondre avec l'Université Lumière qui se trouve au Quai Claude Bernard à Lyon
+    </subfield>
+    </datafield>
+    <datafield tag="340" ind1=" " ind2=" ">
+    <subfield code="7">ba0yba0y</subfield>
+    <subfield code="a">
+    Adresse : 43, Bd du 11 Novembre 1918, 69100 Villeurbanne
+    </subfield>
+    </datafield>
+    <datafield tag="410" ind1="0" ind2="2">
+    <subfield code="7">ba0yba0y</subfield>
+    <subfield code="9">#</subfield>
+    <subfield code="a">UCBL</subfield>
+    </datafield>
+    <datafield tag="410" ind1="0" ind2="2">
+    <subfield code="7">ba0yba0y</subfield>
+    <subfield code="9">#</subfield>
+    <subfield code="a">Université Claude Bernard</subfield>
+    <subfield code="b">Domaine Scientifique de la Doua</subfield>
+    <subfield code="c">Lyon 1</subfield>
+    </datafield>
+    <datafield tag="410" ind1="0" ind2="2">
+    <subfield code="7">ba0yba0y</subfield>
+    <subfield code="9">#</subfield>
+    <subfield code="a">Université Claude Bernard Lyon 1</subfield>
+    </datafield>
+    <datafield tag="410" ind1="0" ind2="2">
+    <subfield code="7">ba0yba0y</subfield>
+    <subfield code="9">#</subfield>
+    <subfield code="a">Université de Lyon I</subfield>
+    </datafield>
+    <datafield tag="410" ind1="0" ind2="2">
+    <subfield code="7">ba0yba0y</subfield>
+    <subfield code="9">#</subfield>
+    <subfield code="a">Université de Lyon 1</subfield>
+    </datafield>
+    <datafield tag="410" ind1="0" ind2="2">
+    <subfield code="7">ba0yba0y</subfield>
+    <subfield code="9">#</subfield>
+    <subfield code="a">Lyon 1</subfield>
+    </datafield>
+    <datafield tag="415" ind1=" " ind2=" ">
+    <subfield code="7">ba0yba0y</subfield>
+    <subfield code="9">1</subfield>
+    <subfield code="a">Lyon (Rhône)</subfield>
+    <subfield code="x">Université de Lyon I</subfield>
+    </datafield>
+    <datafield tag="801" ind1=" " ind2="3">
+    <subfield code="a">FR</subfield>
+    <subfield code="b">Abes</subfield>
+    <subfield code="c">20201028</subfield>
+    <subfield code="g">AFNOR</subfield>
+    <subfield code="h">028025172</subfield>
+    </datafield>
+    <datafield tag="801" ind1=" " ind2="3">
+    <subfield code="a">FR</subfield>
+    <subfield code="b">Abes</subfield>
+    <subfield code="c">20201028</subfield>
+    <subfield code="g">AFNOR</subfield>
+    <subfield code="h">167239880</subfield>
+    </datafield>
+    <datafield tag="810" ind1=" " ind2=" ">
+    <subfield code="a">
+    Evaluation des potentialités d'habitat du bouquetin ibérique dans le Parc National des Pyrénées / Caroline Couteau, maître de stage Eric Sourp, 2008
+    </subfield>
+    </datafield>
+    <datafield tag="910" ind1=" " ind2=" ">
+    <subfield code="a">Université Claude Bernard (Lyon)</subfield>
+    </datafield>
+    <datafield tag="911" ind1=" " ind2=" ">
+    <subfield code="a">UCBL</subfield>
+    </datafield>
+    <datafield tag="911" ind1=" " ind2=" ">
+    <subfield code="a">
+    Université Claude Bernard. Domaine Scientifique de la Doua (Lyon 1)
+    </subfield>
+    </datafield>
+    <datafield tag="911" ind1=" " ind2=" ">
+    <subfield code="a">Université Claude Bernard Lyon 1</subfield>
+    </datafield>
+    <datafield tag="911" ind1=" " ind2=" ">
+    <subfield code="a">Université de Lyon I</subfield>
+    </datafield>
+    <datafield tag="911" ind1=" " ind2=" ">
+    <subfield code="a">Université de Lyon 1</subfield>
+    </datafield>
+    <datafield tag="911" ind1=" " ind2=" ">
+    <subfield code="a">Lyon 1</subfield>
+    </datafield>
+    <datafield tag="916" ind1=" " ind2=" ">
+    <subfield code="a">Lyon (Rhône) -- Université de Lyon I</subfield>
+    </datafield>
+    </record>
