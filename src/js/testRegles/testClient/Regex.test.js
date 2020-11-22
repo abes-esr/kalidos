@@ -26,7 +26,7 @@ afterAll(() => {
 
 function getNotice(number) {
     //const xmlPPN = fs.readFileSync(path.join(__dirname, 'data/notice' + numberNotice +'.xml'), 'utf8');
-    const xmlPPN = fs.readFileSync(path.join(__dirname, 'data/notice' + number + '.xml'), 'utf8');
+    const xmlPPN = fs.readFileSync(path.join(__dirname, 'data/Notice' + number + '.xml'), 'utf8');
     return JSON.parse(convert.xml2json(xmlPPN, { compact: true, spaces: 2 }));
 }
 
@@ -742,7 +742,7 @@ test('7X0 et 7X1 ne doit pas contenir $4=020, 050, 060, 075, 080, 140, 150, 160,
     const index = 38
     addRuleToTest(index);
     Matching.testMatchRegexRules(CATEGORIE, ruleTest, controlfield, datafields, resultJson)
-    
+
     expect(resultJson.errors).toStrictEqual([]);
 });
 
@@ -788,6 +788,38 @@ test('7X2 $4=020, 050, 060, 075, 080, 140, 150, 160, 310, 320, 390, 450, 490, 50
         errors: [],
     };
     const index = 39;
+    addRuleToTest(index);
+    Matching.testMatchRegexRules(CATEGORIE, ruleTest, controlfield, datafields, resultJson)
+
+    expect(resultJson.errors).not.toStrictEqual([]);
+});
+
+// =================================================
+
+// test('Zones 7XX : code fonction, vérifier qu\'il s\'agit d\'un éditeur scientifique ou d\'un directeur de publication ?', () => {
+//     const notice = getNotice("017");
+//     const datafields = notice.record.datafield;
+//     const controlfield = notice.record.controlfield;
+//     let resultJson = {
+//         PPN: 0,
+//         errors: [],
+//     };
+//     const index = 510
+//     addRuleToTest(index);
+//     Matching.testMatchRegexRules(CATEGORIE, ruleTest, controlfield, datafields, resultJson)
+    
+//     expect(resultJson.errors).toStrictEqual([]);
+// });
+
+test('Zones 7XX : code fonction, vérifier qu\'il s\'agit d\'un éditeur scientifique ou d\'un directeur de publication ? (FAIL)', () => {
+    const notice = getNotice("032");
+    const datafields = notice.record.datafield;
+    const controlfield = notice.record.controlfield;
+    let resultJson = {
+        PPN: 0,
+        errors: [],
+    };
+    const index = 510;
     addRuleToTest(index);
     Matching.testMatchRegexRules(CATEGORIE, ruleTest, controlfield, datafields, resultJson)
 
