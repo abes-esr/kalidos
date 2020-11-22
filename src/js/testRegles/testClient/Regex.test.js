@@ -794,70 +794,7 @@ test('7X2 $4=020, 050, 060, 075, 080, 140, 150, 160, 310, 320, 390, 450, 490, 50
     expect(resultJson.errors).not.toStrictEqual([]);
 });
 
-// =================================================
 
-// test('Zones 7XX : code fonction, vérifier qu\'il s\'agit d\'un éditeur scientifique ou d\'un directeur de publication ?', () => {
-//     const notice = getNotice("017");
-//     const datafields = notice.record.datafield;
-//     const controlfield = notice.record.controlfield;
-//     let resultJson = {
-//         PPN: 0,
-//         errors: [],
-//     };
-//     const index = 510
-//     addRuleToTest(index);
-//     Matching.testMatchRegexRules(CATEGORIE, ruleTest, controlfield, datafields, resultJson)
-    
-//     expect(resultJson.errors).toStrictEqual([]);
-// });
-
-test('Zones 7XX : code fonction, vérifier qu\'il s\'agit d\'un éditeur scientifique ou d\'un directeur de publication ? (FAIL)', () => {
-    const notice = getNotice("032");
-    const datafields = notice.record.datafield;
-    const controlfield = notice.record.controlfield;
-    let resultJson = {
-        PPN: 0,
-        errors: [],
-    };
-    const index = 510;
-    addRuleToTest(index);
-    Matching.testMatchRegexRules(CATEGORIE, ruleTest, controlfield, datafields, resultJson)
-
-    expect(resultJson.errors).not.toStrictEqual([]);
-});
-
-
-// =================================================
-
-// test('Zones 7XX : code fonction, vérifier qu\'il s\'agit d\'un éditeur scientifique ou d\'un directeur de publication ?', () => {
-//     const notice = getNotice("017");
-//     const datafields = notice.record.datafield;
-//     const controlfield = notice.record.controlfield;
-//     let resultJson = {
-//         PPN: 0,
-//         errors: [],
-//     };
-//     const index = 511
-//     addRuleToTest(index);
-//     Matching.testMatchRegexRules(CATEGORIE, ruleTest, controlfield, datafields, resultJson)
-    
-//     expect(resultJson.errors).toStrictEqual([]);
-// });
-
-test('Zones 7XX : code fonction, vérifier qu\'il s\'agit d\'un éditeur scientifique ou d\'un directeur de publication ? (FAIL)', () => {
-    const notice = getNotice("032");
-    const datafields = notice.record.datafield;
-    const controlfield = notice.record.controlfield;
-    let resultJson = {
-        PPN: 0,
-        errors: [],
-    };
-    const index = 511;
-    addRuleToTest(index);
-    Matching.testMatchRegexRules(CATEGORIE, ruleTest, controlfield, datafields, resultJson)
-
-    expect(resultJson.errors).not.toStrictEqual([]);
-});
 
 // =================================================
 

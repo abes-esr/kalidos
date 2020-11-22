@@ -1,0 +1,113 @@
+<record>
+    <leader> cx j22 3 45 </leader>
+    <controlfield tag="001">032988184</controlfield>
+    <controlfield tag="003">http://www.idref.fr/032988184</controlfield>
+    <controlfield tag="004">19940506</controlfield>
+    <controlfield tag="005">20191125145907.000</controlfield>
+    <controlfield tag="006">0004</controlfield>
+    <controlfield tag="007">341720001</controlfield>
+    <controlfield tag="008">Td8</controlfield>
+    <datafield tag="033" ind1=" " ind2=" ">
+    <subfield code="a">http://catalogue.bnf.fr/ark:/12148/cb12390279n</subfield>
+    <subfield code="2">BNF</subfield>
+    <subfield code="d">20191125</subfield>
+    </datafield>
+    <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">frBN010178485</subfield>
+    </datafield>
+    <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">FRBNF123902797</subfield>
+    <subfield code="z">FRBNF12390279</subfield>
+    </datafield>
+    <datafield tag="100" ind1=" " ind2=" ">
+    <subfield code="a">19940506afrey50 ba0</subfield>
+    </datafield>
+    <datafield tag="106" ind1=" " ind2=" ">
+    <subfield code="a">2</subfield>
+    <subfield code="b">1</subfield>
+    <subfield code="c">1</subfield>
+    </datafield>
+    <datafield tag="152" ind1=" " ind2=" ">
+    <subfield code="b">rameau</subfield>
+    </datafield>
+    <datafield tag="250" ind1=" " ind2=" ">
+    <subfield code="7">ba0yba0y</subfield>
+    <subfield code="9">#</subfield>
+    <subfield code="a">Athlétisme féminin</subfield>
+    </datafield>
+    <datafield tag="450" ind1=" " ind2=" ">
+    <subfield code="7">ba0yba0y</subfield>
+    <subfield code="9">#</subfield>
+    <subfield code="a">Athlétisme pour femmes</subfield>
+    </datafield>
+    <datafield tag="450" ind1=" " ind2=" ">
+    <subfield code="7">ba0yba0y</subfield>
+    <subfield code="9">#</subfield>
+    <subfield code="a">Femmes, Athlétisme pour</subfield>
+    </datafield>
+    <datafield tag="550" ind1=" " ind2=" ">
+    <subfield code="0">Voir aussi</subfield>
+    <subfield code="3">02786698X</subfield>
+    <subfield code="5">z|xxx</subfield>
+    <subfield code="7">ba0yba0y</subfield>
+    <subfield code="a">Femmes athlètes</subfield>
+    </datafield>
+    <datafield tag="550" ind1=" " ind2=" ">
+    <subfield code="3">032987013</subfield>
+    <subfield code="5">h|xxx</subfield>
+    <subfield code="7">ba0yba0y</subfield>
+    <subfield code="a">Course à pied féminine</subfield>
+    </datafield>
+    <datafield tag="550" ind1=" " ind2=" ">
+    <subfield code="3">027229203</subfield>
+    <subfield code="5">g|xxx</subfield>
+    <subfield code="7">ba0yba0y</subfield>
+    <subfield code="a">Athlétisme</subfield>
+    </datafield>
+    <datafield tag="550" ind1=" " ind2=" ">
+    <subfield code="3">050602101</subfield>
+    <subfield code="5">g|xxx</subfield>
+    <subfield code="7">ba0yba0y</subfield>
+    <subfield code="a">Sports féminins</subfield>
+    </datafield>
+    <datafield tag="686" ind1=" " ind2=" ">
+    <subfield code="a">300</subfield>
+    <subfield code="c">Sciences sociales</subfield>
+    <subfield code="2">Note de regroupement par domaine</subfield>
+    </datafield>
+    <datafield tag="686" ind1=" " ind2=" ">
+    <subfield code="a">793</subfield>
+    <subfield code="c">Sports</subfield>
+    <subfield code="2">Note de regroupement par domaine</subfield>
+    </datafield>
+    <datafield tag="801" ind1=" " ind2="0">
+    <subfield code="a">FR</subfield>
+    <subfield code="b">FR-751131015</subfield>
+    <subfield code="c">20130807</subfield>
+    </datafield>
+    <datafield tag="801" ind1=" " ind2="3">
+    <subfield code="a">FR</subfield>
+    <subfield code="b">Abes</subfield>
+    <subfield code="c">20191125</subfield>
+    <subfield code="g">AFNOR</subfield>
+    </datafield>
+    <datafield tag="810" ind1=" " ind2=" ">
+    <subfield code="a">
+    Robert des sports : dict. de la langue des sports / G. Petiot, 1982 (art. : Athlétisme)
+    </subfield>
+    </datafield>
+    <datafield tag="810" ind1=" " ind2=" ">
+    <subfield code="a">
+    L'athlétisme au féminin : colloque - http://www.athle.fr (2012-12-10)
+    </subfield>
+    </datafield>
+    <datafield tag="950" ind1=" " ind2=" ">
+    <subfield code="a">Athlétisme féminin</subfield>
+    </datafield>
+    <datafield tag="951" ind1=" " ind2=" ">
+    <subfield code="a">Athlétisme pour femmes</subfield>
+    </datafield>
+    <datafield tag="951" ind1=" " ind2=" ">
+    <subfield code="a">Femmes, Athlétisme pour</subfield>
+    </datafield>
+    </record>

@@ -1,0 +1,78 @@
+<record>
+    <leader> cx a22 3 45 </leader>
+    <controlfield tag="001">09813972X</controlfield>
+    <controlfield tag="003">http://www.idref.fr/09813972X</controlfield>
+    <controlfield tag="004">20060314</controlfield>
+    <controlfield tag="005">20201021071127.000</controlfield>
+    <controlfield tag="006">692662101</controlfield>
+    <controlfield tag="007">692662101</controlfield>
+    <controlfield tag="008">Tp5</controlfield>
+    <datafield tag="010" ind1=" " ind2=" ">
+    <subfield code="a">0000000359119930</subfield>
+    <subfield code="2">ISNI</subfield>
+    <subfield code="C">VIAF</subfield>
+    <subfield code="d">20200401</subfield>
+    </datafield>
+    <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">http://viaf.org/viaf/215032514</subfield>
+    <subfield code="2">VIAF</subfield>
+    <subfield code="C">VIAF</subfield>
+    <subfield code="d">20200401</subfield>
+    </datafield>
+    <datafield tag="100" ind1=" " ind2=" ">
+    <subfield code="a">20060314afrey50 ba0</subfield>
+    </datafield>
+    <datafield tag="101" ind1=" " ind2=" ">
+    <subfield code="a">fre</subfield>
+    </datafield>
+    <datafield tag="102" ind1=" " ind2=" ">
+    <subfield code="a">FR</subfield>
+    </datafield>
+    <datafield tag="103" ind1=" " ind2=" ">
+    <subfield code="a"> 1976 </subfield>
+    </datafield>
+    <datafield tag="106" ind1=" " ind2=" ">
+    <subfield code="a">0</subfield>
+    <subfield code="b">1</subfield>
+    <subfield code="c">0</subfield>
+    </datafield>
+    <datafield tag="120" ind1=" " ind2=" ">
+    <subfield code="a">aa</subfield>
+    </datafield>
+    <datafield tag="152" ind1=" " ind2=" ">
+    <subfield code="a">AFNOR</subfield>
+    </datafield>
+    <datafield tag="200" ind1=" " ind2="1">
+    <subfield code="7">ba0yba0y</subfield>
+    <subfield code="8">frefre</subfield>
+    <subfield code="9">0</subfield>
+    <subfield code="a">Rosol</subfield>
+    <subfield code="b">Nathalie</subfield>
+    <subfield code="f">1976-....</subfield>
+    </datafield>
+    <datafield tag="340" ind1=" " ind2=" ">
+    <subfield code="7">ba0yba0y</subfield>
+    <subfield code="a">
+    Titulaire d'un doctorat en Sciences et Techniques en Activités Physiques et Sportives (Lyon 1)
+    </subfield>
+    </datafield>
+    <datafield tag="686" ind1=" " ind2=" ">
+    <subfield code="a">SCANR</subfield>
+    <subfield code="c">102020</subfield>
+    <subfield code="2">ESR</subfield>
+    </datafield>
+    <datafield tag="801" ind1=" " ind2="3">
+    <subfield code="a">FR</subfield>
+    <subfield code="b">Abes</subfield>
+    <subfield code="c">20201021</subfield>
+    <subfield code="g">AFNOR</subfield>
+    </datafield>
+    <datafield tag="810" ind1=" " ind2=" ">
+    <subfield code="a">
+    L'athlétisme féminin en France : (1912-fin des années 1970) : des athlètes en quête d'identité / Nathalie Rosol ; sous la direction de Thierry Terret et de Jean Saint-Martin [Thèse 2005]
+    </subfield>
+    </datafield>
+    <datafield tag="900" ind1=" " ind2=" ">
+    <subfield code="a">Rosol, Nathalie (1976-....)</subfield>
+    </datafield>
+    </record>
