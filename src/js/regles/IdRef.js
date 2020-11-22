@@ -78,16 +78,16 @@ var IdRef = function () {
             retour.push(fields[j])
             valid = false;
             for (let i in regle.condition) {
-                if(regle.condition[i].code != null && regle.condition[i].regex != null){
-                    valid = testValueCode(fields[j],regle.condition[i].code,regle.condition[i].regex)
+                if (regle.condition[i].code != null && regle.condition[i].regex != null) {
+                    valid = testValueCode(fields[j], regle.condition[i].code, regle.condition[i].regex)
                 }
-                else if(regle.condition[i].code != null) {
-                    valid = Parcours.testCode(fields[j],regle.condition[i].code)
+                else if (regle.condition[i].code != null) {
+                    valid = Parcours.testCode(fields[j], regle.condition[i].code)
                 } else {
                     valid = fields[j] != null
                 }
-    
-                if(!valid) {
+
+                if (!valid) {
                     retour.pop()
                 }
             }
@@ -96,12 +96,12 @@ var IdRef = function () {
     }
 
 
-    function validEmptyArray(datafields, regle){
+    function validEmptyArray(datafields, regle) {
         const fields = Parcours.findDataFields(datafields, regle.condition[0].number)
         return !fields.length > 0
     }
 
-    function addError(regle,resultJson) {
+    function addError(regle, resultJson) {
         resultJson.errors.push({
             message: regle.message + " ( " + regle.index + " ) ",
             number: regle.number,
@@ -110,7 +110,7 @@ var IdRef = function () {
     }
 
 
-     
+
 
     /**
      * Recupere l'idantifiant à utiliser pour requeter le serveur externe
@@ -119,11 +119,19 @@ var IdRef = function () {
      */
     var identifiantNotice = function (fields, regle) {
         let identifiant = [];
-        for(let i in fields) {
+        let idValue;
+        for (let i in fields) {
             if (regle.condition[0].code != null) {
-                identifiant.push(Parcours.getIdentifiantValue(fields[i], regle.condition[0].code, regle.identifiant.code))
+                idValue = Parcours.getIdentifiantValue(fields[i], regle.condition[0].code, regle.identifiant.code)
+                if (idValue != null) {
+                    identifiant.push(idValue)
+                }
+
             } else {
-                identifiant.push(Parcours.getSubfieldValue(fields[i], regle.identifiant.code))
+                idValue = Parcours.getSubfieldValue(fields[i], regle.identifiant.code)
+                if (idValue != null) {
+                    identifiant.push(idValue)
+                }
             }
         }
 
@@ -134,30 +142,27 @@ var IdRef = function () {
         rules[categorie].idRef.forEach(function (regle) {
             const fieldsValid = conditionNotice(datafields, regle)
             if (fieldsValid.length > 0) {
-                console.log("fieldsValid : " , fieldsValid)
                 const identifiant = identifiantNotice(fieldsValid, regle)
-                if(identifiant.length > 0) {
-                    for(let i in identifiant) {
+                if (identifiant.length > 0) {
+                    for (let i in identifiant) {
                         getRequest(identifiant[i], regle, resultJson)
                     }
                 } else {
-                    addError(regle,resultJson)
+                    addError(regle, resultJson)
                 }
-            } else if(!validEmptyArray(datafields, regle)) {
-                addError(regle,resultJson)
             }
         });
     }
 
-    
+
 
     return {
         testIdRefRules: testIdRefRules,
         validateIdRef: validateIdRef,
         conditionNotice: conditionNotice,
         identifiantNotice: identifiantNotice,
-        validEmptyArray : validEmptyArray,
-        addError : addError
+        validEmptyArray: validEmptyArray,
+        addError: addError
     }
 }();
 

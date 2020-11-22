@@ -53,9 +53,7 @@ function testIdRefRules(categorie, rules,idrule, idrefs, datafields, resultJson)
                 } else {
                     IdRef.addError(regle, resultJson)
                 }
-            } else if (!IdRef.validEmptyArray(datafields, regle)) {
-                IdRef.addError(regle, resultJson)
-            }
+            } 
         }
     });
 }
