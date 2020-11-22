@@ -445,6 +445,28 @@
                 ],
                 "match": "one",
                 "message": "Zones 7XX : code fonction, vérifier qu'il s'agit d'un éditeur scientifique ou d'un directeur de publication ?"
+            },
+            {
+                "index": 511,
+                "number": 200,
+                "code": [
+                    "f",
+                    "g"
+                ],
+                "value": [
+                    ".*éd\\..*",
+                    ".*édited.*",
+                    ".*édit.*"
+                ],
+                "match": "one",
+                "message": "Zones 7XX : code fonction, vérifier qu'il s'agit d'un éditeur scientifique ou d'un directeur de publication ?"
+            },
+            {
+                "index": 512,
+                "number": 230,
+                "code": "a",
+                "regex": "(?:(?!Mo).)+",
+                "message": "Zone 230 : corriger le poids en Ko"
             }
         ],
         "dependances": [
