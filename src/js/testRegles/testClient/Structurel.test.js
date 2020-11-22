@@ -258,3 +258,32 @@ test('Zones 7XX : lier à une notice d\'autorité (FAIL)', () => {
     Structurel.testMatchStructurelRules(CATEGORIE,ruleTest,undefined,datafields,resultJson);
     expect(resultJson.errors).not.toStrictEqual([]);
 });
+
+
+// ===============================================
+
+test('Zone 328 : revoir la valeur des indicateurs', () => {
+    const notice = getNotice("015");
+    const datafields = notice.record.datafield;
+    let resultJson = {
+        PPN: 0,
+        errors: [],
+    };
+    const index = 46;
+    addRuleToTest(index);
+    Structurel.testMatchStructurelRules(CATEGORIE,ruleTest,undefined,datafields,resultJson);
+    expect(resultJson.errors).toStrictEqual([]);
+});
+
+test('Zone 328 : revoir la valeur des indicateurs (FAIL)', () => {
+    const notice = getNotice("016");
+    const datafields = notice.record.datafield;
+    let resultJson = {
+        PPN: 0,
+        errors: [],
+    };
+    const index = 46;
+    addRuleToTest(index);
+    Structurel.testMatchStructurelRules(CATEGORIE,ruleTest,undefined,datafields,resultJson);
+    expect(resultJson.errors).not.toStrictEqual([]);
+});

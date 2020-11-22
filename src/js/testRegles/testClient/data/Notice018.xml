@@ -22,6 +22,10 @@
         <subfield code="a">fre</subfield>
         <subfield code="d">fre</subfield>
     </datafield>
+    <datafield tag="102" ind1="0" ind2=" ">
+        <subfield code="a">fre</subfield>
+        <subfield code="d">fre</subfield>
+    </datafield>
     <datafield tag="105" ind1=" " ind2=" ">
         <subfield code="a">a va 000yy</subfield>
     </datafield>

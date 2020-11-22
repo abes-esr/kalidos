@@ -117,8 +117,8 @@
             {
                 "number": "328",
                 "code": "e",
-                "message": "328$e = Lyon 1 ou Université de Lyon",
-                "regex": "(Lyon 1)|(Université de Lyon)",
+                "message": "328$e = Lyon 1 ou Université de Lyon ou Lyon",
+                "regex": "(Lyon 1)|(Université de Lyon)|(Lyon)",
                 "index": 18
             },
             {
@@ -433,6 +433,83 @@
                 "code": "a",
                 "regex": "(?:(?!Mo).)+",
                 "message": "Zone 230 : corriger le poids en Ko"
+            },
+            {
+                "index": 513,
+                "number": 230,
+                "code": "a",
+                "regex": "(?:(?!,).)+",
+                "message": "Zone 230 : corriger le poids en Ko"
+            },
+            {
+                "index": 514,
+                "number": 230,
+                "code": "a",
+                "regex": "(?:(?!X Ko).)+",
+                "message": "Zone 230 : corriger le poids en Ko"
+            },
+            {
+                "index": 515,
+                "number": 215,
+                "code": "a",
+                "regex": "(?:(?!nombre de).)+",
+                "message": "Zone 215 : compléter la pagination"
+            },
+            {
+                "index": 516,
+                "number": "029",
+                "code": "b",
+                "regex": ".{12}",
+                "message": "Zone 029 : le numéro d'ordre doit contenir 12 caractères"
+            },
+            {
+                "index": 517,
+                "number": "102",
+                "code": "a",
+                "regex": "^FR$",
+                "message": "Zone 102 $a doit être FR"
+            },
+            {
+                "index": 518,
+                "number": "200",
+                "code": "f",
+                "regex": "(?:(?!Auteur).)+",
+                "message": "Zone 200 : compléter le nom de l'auteur"
+            },
+            {
+                "index": 519,
+                "number": "320",
+                "code": "a",
+                "regex": "(?:(?!p\\. ou f\\.).)+",
+                "message": "Zone 320 à compléter"
+            },
+            {
+                "index": 520,
+                "number": 328,
+                "code": "c",
+                "message": "Zone 328$c : les sous-disciplines doivent être séparées par un point",
+                "regex": "(?:(?![:;\\?\\/]).)+"
+            },
+            {
+                "index": 521,
+                "number": 328,
+                "code": "c",
+                "message": "Zone 328$c compléter la discipline",
+                "regex": "(?:(?!Discipline).)+"
+            },
+            {
+                "index": 522,
+                "number": 328,
+                "code": "d",
+                "message": "Zone 328$d doit contenir uniquement l'année de soutenance",
+                "regex": "^[0-9]{4}$"
+            },
+            {
+                "index": 523,
+                "number": 328,
+                "code": "d",
+                "message": "Zone 328$d doit contenir uniquement l'année de soutenance",
+                "regex": "(?:(?![\\?;,]).)+"
             }
         ],
         "dependances": [

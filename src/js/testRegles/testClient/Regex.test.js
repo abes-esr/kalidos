@@ -828,3 +828,690 @@ test('Zone 230 : corriger le poids en Ko (FAIL)', () => {
     expect(resultJson.errors).not.toStrictEqual([]);
 });
 
+// =================================================
+
+test('Zone 230 : corriger le poids en Ko ?', () => {
+    const notice = getNotice("001");
+    const datafields = notice.record.datafield;
+    const controlfield = notice.record.controlfield;
+    let resultJson = {
+        PPN: 0,
+        errors: [],
+    };
+    const index = 513
+    addRuleToTest(index);
+    Matching.testMatchRegexRules(CATEGORIE, ruleTest, controlfield, datafields, resultJson)
+    
+    expect(resultJson.errors).toStrictEqual([]);
+});
+
+test('Zone 230 : corriger le poids en Ko (FAIL)', () => {
+    const notice = getNotice("002");
+    const datafields = notice.record.datafield;
+    const controlfield = notice.record.controlfield;
+    let resultJson = {
+        PPN: 0,
+        errors: [],
+    };
+    const index = 513;
+    addRuleToTest(index);
+    Matching.testMatchRegexRules(CATEGORIE, ruleTest, controlfield, datafields, resultJson)
+
+    expect(resultJson.errors).not.toStrictEqual([]);
+});
+
+// =================================================
+
+test('Zone 230 : corriger le poids en Ko ?', () => {
+    const notice = getNotice("017");
+    const datafields = notice.record.datafield;
+    const controlfield = notice.record.controlfield;
+    let resultJson = {
+        PPN: 0,
+        errors: [],
+    };
+    const index = 514
+    addRuleToTest(index);
+    Matching.testMatchRegexRules(CATEGORIE, ruleTest, controlfield, datafields, resultJson)
+    
+    expect(resultJson.errors).toStrictEqual([]);
+});
+
+test('Zone 230 : corriger le poids en Ko (FAIL)', () => {
+    const notice = getNotice("018");
+    const datafields = notice.record.datafield;
+    const controlfield = notice.record.controlfield;
+    let resultJson = {
+        PPN: 0,
+        errors: [],
+    };
+    const index = 514;
+    addRuleToTest(index);
+    Matching.testMatchRegexRules(CATEGORIE, ruleTest, controlfield, datafields, resultJson)
+
+    expect(resultJson.errors).not.toStrictEqual([]);
+});
+
+// =================================================
+
+test('Zone 215 : compléter la pagination', () => {
+    const notice = getNotice("021");
+    const datafields = notice.record.datafield;
+    const controlfield = notice.record.controlfield;
+    let resultJson = {
+        PPN: 0,
+        errors: [],
+    };
+    const index = 515
+    addRuleToTest(index);
+    Matching.testMatchRegexRules(CATEGORIE, ruleTest, controlfield, datafields, resultJson)
+    
+    expect(resultJson.errors).toStrictEqual([]);
+});
+
+test('Zone 215 : compléter la pagination (FAIL)', () => {
+    const notice = getNotice("022");
+    const datafields = notice.record.datafield;
+    const controlfield = notice.record.controlfield;
+    let resultJson = {
+        PPN: 0,
+        errors: [],
+    };
+    const index = 515;
+    addRuleToTest(index);
+    Matching.testMatchRegexRules(CATEGORIE, ruleTest, controlfield, datafields, resultJson)
+
+    expect(resultJson.errors).not.toStrictEqual([]);
+});
+
+// =================================================
+
+test('Zone 029 : le numéro d\'ordre doit contenir 12 caractères', () => {
+    const notice = getNotice("015");
+    const datafields = notice.record.datafield;
+    const controlfield = notice.record.controlfield;
+    let resultJson = {
+        PPN: 0,
+        errors: [],
+    };
+    const index = 516
+    addRuleToTest(index);
+    Matching.testMatchRegexRules(CATEGORIE, ruleTest, controlfield, datafields, resultJson)
+    
+    expect(resultJson.errors).toStrictEqual([]);
+});
+
+test('Zone 029 : le numéro d\'ordre doit contenir 12 caractères (FAIL)', () => {
+    const notice = getNotice("016");
+    const datafields = notice.record.datafield;
+    const controlfield = notice.record.controlfield;
+    let resultJson = {
+        PPN: 0,
+        errors: [],
+    };
+    const index = 516;
+    addRuleToTest(index);
+    Matching.testMatchRegexRules(CATEGORIE, ruleTest, controlfield, datafields, resultJson)
+
+    expect(resultJson.errors).not.toStrictEqual([]);
+});
+
+
+// =================================================
+
+test('029$b ne doit pas contenir le caractère ?', () => {
+    const notice = getNotice("017");
+    const datafields = notice.record.datafield;
+    const controlfield = notice.record.controlfield;
+    let resultJson = {
+        PPN: 0,
+        errors: [],
+    };
+    const index = 24;
+    addRuleToTest(index);
+    Matching.testMatchRegexRules(CATEGORIE, ruleTest, controlfield, datafields, resultJson)
+    
+    expect(resultJson.errors).toStrictEqual([]);
+});
+
+test('029$b ne doit pas contenir le caractère ? (FAIL)', () => {
+    const notice = getNotice("018");
+    const datafields = notice.record.datafield;
+    const controlfield = notice.record.controlfield;
+    let resultJson = {
+        PPN: 0,
+        errors: [],
+    };
+    const index = 24;
+    addRuleToTest(index);
+    Matching.testMatchRegexRules(CATEGORIE, ruleTest, controlfield, datafields, resultJson)
+
+    expect(resultJson.errors).not.toStrictEqual([]);
+});
+
+
+// =================================================
+
+test('029$a=FR', () => {
+    const notice = getNotice("015");
+    const datafields = notice.record.datafield;
+    const controlfield = notice.record.controlfield;
+    let resultJson = {
+        PPN: 0,
+        errors: [],
+    };
+    const index = 13;
+    addRuleToTest(index);
+    Matching.testMatchRegexRules(CATEGORIE, ruleTest, controlfield, datafields, resultJson)
+    
+    expect(resultJson.errors).toStrictEqual([]);
+});
+
+test('029$a=FR (FAIL)', () => {
+    const notice = getNotice("016");
+    const datafields = notice.record.datafield;
+    const controlfield = notice.record.controlfield;
+    let resultJson = {
+        PPN: 0,
+        errors: [],
+    };
+    const index = 13;
+    addRuleToTest(index);
+    Matching.testMatchRegexRules(CATEGORIE, ruleTest, controlfield, datafields, resultJson)
+
+    expect(resultJson.errors).not.toStrictEqual([]);
+});
+
+
+// =================================================
+
+test('100$a ne doit pas contenir le caractère "?"', () => {
+    const notice = getNotice("017");
+    const datafields = notice.record.datafield;
+    const controlfield = notice.record.controlfield;
+    let resultJson = {
+        PPN: 0,
+        errors: [],
+    };
+    const index = 9;
+    addRuleToTest(index);
+    Matching.testMatchRegexRules(CATEGORIE, ruleTest, controlfield, datafields, resultJson)
+    
+    expect(resultJson.errors).toStrictEqual([]);
+});
+
+test('100$a ne doit pas contenir le caractère "?" (FAIL)', () => {
+    const notice = getNotice("018");
+    const datafields = notice.record.datafield;
+    const controlfield = notice.record.controlfield;
+    let resultJson = {
+        PPN: 0,
+        errors: [],
+    };
+    const index = 9;
+    addRuleToTest(index);
+    Matching.testMatchRegexRules(CATEGORIE, ruleTest, controlfield, datafields, resultJson)
+    
+    expect(resultJson.errors).not.toStrictEqual([]);
+});
+
+
+// =================================================
+
+test('Zone 102 $a doit être FR', () => {
+    const notice = getNotice("017");
+    const datafields = notice.record.datafield;
+    const controlfield = notice.record.controlfield;
+    let resultJson = {
+        PPN: 0,
+        errors: [],
+    };
+    const index = 517;
+    addRuleToTest(index);
+    Matching.testMatchRegexRules(CATEGORIE, ruleTest, controlfield, datafields, resultJson)
+    
+    expect(resultJson.errors).toStrictEqual([]);
+});
+
+test('Zone 102 $a doit être FR (FAIL)', () => {
+    const notice = getNotice("018");
+    const datafields = notice.record.datafield;
+    const controlfield = notice.record.controlfield;
+    let resultJson = {
+        PPN: 0,
+        errors: [],
+    };
+    const index = 517;
+    addRuleToTest(index);
+    Matching.testMatchRegexRules(CATEGORIE, ruleTest, controlfield, datafields, resultJson)
+
+    expect(resultJson.errors).not.toStrictEqual([]);
+});
+
+
+// =================================================
+
+test('200$a ne doit pas être Le Titre', () => {
+    const notice = getNotice("015");
+    const datafields = notice.record.datafield;
+    const controlfield = notice.record.controlfield;
+    let resultJson = {
+        PPN: 0,
+        errors: [],
+    };
+    const index = 23;
+    addRuleToTest(index);
+    Matching.testMatchRegexRules(CATEGORIE, ruleTest, controlfield, datafields, resultJson)
+    
+    expect(resultJson.errors).toStrictEqual([]);
+});
+
+test('200$a ne doit pas être Le Titre (FAIL)', () => {
+    const notice = getNotice("016");
+    const datafields = notice.record.datafield;
+    const controlfield = notice.record.controlfield;
+    let resultJson = {
+        PPN: 0,
+        errors: [],
+    };
+    const index = 23;
+    addRuleToTest(index);
+    Matching.testMatchRegexRules(CATEGORIE, ruleTest, controlfield, datafields, resultJson)
+    
+    expect(resultJson.errors).not.toStrictEqual([]);
+});
+
+
+// =================================================
+
+test('200$e ne doit pas être complément du titre', () => {
+    const notice = getNotice("015");
+    const datafields = notice.record.datafield;
+    const controlfield = notice.record.controlfield;
+    let resultJson = {
+        PPN: 0,
+        errors: [],
+    };
+    const index = 22;
+    addRuleToTest(index);
+    Matching.testMatchRegexRules(CATEGORIE, ruleTest, controlfield, datafields, resultJson)
+    
+    expect(resultJson.errors).toStrictEqual([]);
+});
+
+test('200$e ne doit pas être complément du titre (FAIL)', () => {
+    const notice = getNotice("016");
+    const datafields = notice.record.datafield;
+    const controlfield = notice.record.controlfield;
+    let resultJson = {
+        PPN: 0,
+        errors: [],
+    };
+    const index = 22;
+    addRuleToTest(index);
+    Matching.testMatchRegexRules(CATEGORIE, ruleTest, controlfield, datafields, resultJson)
+    
+    expect(resultJson.errors).not.toStrictEqual([]);
+});
+
+
+// =================================================
+
+test('Zone 200 : compléter le nom de l\'auteur', () => {
+    const notice = getNotice("015");
+    const datafields = notice.record.datafield;
+    const controlfield = notice.record.controlfield;
+    let resultJson = {
+        PPN: 0,
+        errors: [],
+    };
+    const index = 518;
+    addRuleToTest(index);
+    Matching.testMatchRegexRules(CATEGORIE, ruleTest, controlfield, datafields, resultJson)
+    
+    expect(resultJson.errors).toStrictEqual([]);
+});
+
+test('Zone 200 : compléter le nom de l\'auteur (FAIL)', () => {
+    const notice = getNotice("016");
+    const datafields = notice.record.datafield;
+    const controlfield = notice.record.controlfield;
+    let resultJson = {
+        PPN: 0,
+        errors: [],
+    };
+    const index = 518;
+    addRuleToTest(index);
+    Matching.testMatchRegexRules(CATEGORIE, ruleTest, controlfield, datafields, resultJson)
+    
+    expect(resultJson.errors).not.toStrictEqual([]);
+});
+
+
+// =================================================
+
+test('200$g ne doit pas finir par sous la direction de', () => {
+    const notice = getNotice("015");
+    const datafields = notice.record.datafield;
+    const controlfield = notice.record.controlfield;
+    let resultJson = {
+        PPN: 0,
+        errors: [],
+    };
+    const index = 21;
+    addRuleToTest(index);
+    Matching.testMatchRegexRules(CATEGORIE, ruleTest, controlfield, datafields, resultJson)
+    
+    expect(resultJson.errors).toStrictEqual([]);
+});
+
+test('200$g ne doit pas finir par sous la direction de (FAIL)', () => {
+    const notice = getNotice("016");
+    const datafields = notice.record.datafield;
+    const controlfield = notice.record.controlfield;
+    let resultJson = {
+        PPN: 0,
+        errors: [],
+    };
+    const index = 21;
+    addRuleToTest(index);
+    Matching.testMatchRegexRules(CATEGORIE, ruleTest, controlfield, datafields, resultJson)
+    
+    expect(resultJson.errors).not.toStrictEqual([]);
+});
+
+
+// =================================================
+
+test('214$d ne doit pas contenir le caractère ?', () => {
+    const notice = getNotice("017");
+    const datafields = notice.record.datafield;
+    const controlfield = notice.record.controlfield;
+    let resultJson = {
+        PPN: 0,
+        errors: [],
+    };
+    const index = 12;
+    addRuleToTest(index);
+    Matching.testMatchRegexRules(CATEGORIE, ruleTest, controlfield, datafields, resultJson)
+    
+    expect(resultJson.errors).toStrictEqual([]);
+});
+
+test('214$d ne doit pas contenir le caractère ? (FAIL)', () => {
+    const notice = getNotice("018");
+    const datafields = notice.record.datafield;
+    const controlfield = notice.record.controlfield;
+    let resultJson = {
+        PPN: 0,
+        errors: [],
+    };
+    const index = 12;
+    addRuleToTest(index);
+    Matching.testMatchRegexRules(CATEGORIE, ruleTest, controlfield, datafields, resultJson)
+    
+    expect(resultJson.errors).not.toStrictEqual([]);
+});
+
+
+// =================================================
+
+test('230$a ne doit pas contenir le caractère ?', () => {
+    const notice = getNotice("027");
+    const datafields = notice.record.datafield;
+    const controlfield = notice.record.controlfield;
+    let resultJson = {
+        PPN: 0,
+        errors: [],
+    };
+    const index = 20;
+    addRuleToTest(index);
+    Matching.testMatchRegexRules(CATEGORIE, ruleTest, controlfield, datafields, resultJson)
+    
+    expect(resultJson.errors).toStrictEqual([]);
+});
+
+test('230$a ne doit pas contenir le caractère ? (FAIL)', () => {
+    const notice = getNotice("028");
+    const datafields = notice.record.datafield;
+    const controlfield = notice.record.controlfield;
+    let resultJson = {
+        PPN: 0,
+        errors: [],
+    };
+    const index = 20;
+    addRuleToTest(index);
+    Matching.testMatchRegexRules(CATEGORIE, ruleTest, controlfield, datafields, resultJson)
+    
+    expect(resultJson.errors).not.toStrictEqual([]);
+});
+
+
+// =================================================
+
+test('307$a ne doit pas contenir le caractère ?', () => {
+    const notice = getNotice("017");
+    const datafields = notice.record.datafield;
+    const controlfield = notice.record.controlfield;
+    let resultJson = {
+        PPN: 0,
+        errors: [],
+    };
+    const index = 10;
+    addRuleToTest(index);
+    Matching.testMatchRegexRules(CATEGORIE, ruleTest, controlfield, datafields, resultJson)
+    
+    expect(resultJson.errors).toStrictEqual([]);
+});
+
+test('307$a ne doit pas contenir le caractère ? (FAIL)', () => {
+    const notice = getNotice("018");
+    const datafields = notice.record.datafield;
+    const controlfield = notice.record.controlfield;
+    let resultJson = {
+        PPN: 0,
+        errors: [],
+    };
+    const index = 10;
+    addRuleToTest(index);
+    Matching.testMatchRegexRules(CATEGORIE, ruleTest, controlfield, datafields, resultJson)
+    
+    expect(resultJson.errors).not.toStrictEqual([]);
+});
+
+
+// =================================================
+
+test('Zone 320 à compléter', () => {
+    const notice = getNotice("015");
+    const datafields = notice.record.datafield;
+    const controlfield = notice.record.controlfield;
+    let resultJson = {
+        PPN: 0,
+        errors: [],
+    };
+    const index = 519;
+    addRuleToTest(index);
+    Matching.testMatchRegexRules(CATEGORIE, ruleTest, controlfield, datafields, resultJson)
+    
+    expect(resultJson.errors).toStrictEqual([]);
+});
+
+test('Zone 320 à compléter (FAIL)', () => {
+    const notice = getNotice("016");
+    const datafields = notice.record.datafield;
+    const controlfield = notice.record.controlfield;
+    let resultJson = {
+        PPN: 0,
+        errors: [],
+    };
+    const index = 519;
+    addRuleToTest(index);
+    Matching.testMatchRegexRules(CATEGORIE, ruleTest, controlfield, datafields, resultJson)
+    
+    expect(resultJson.errors).not.toStrictEqual([]);
+});
+
+
+// =================================================
+
+test('Zone 328$c : les sous-disciplines doivent être séparées par un point', () => {
+    const notice = getNotice("015");
+    const datafields = notice.record.datafield;
+    const controlfield = notice.record.controlfield;
+    let resultJson = {
+        PPN: 0,
+        errors: [],
+    };
+    const index = 520;
+    addRuleToTest(index);
+    Matching.testMatchRegexRules(CATEGORIE, ruleTest, controlfield, datafields, resultJson)
+    
+    expect(resultJson.errors).toStrictEqual([]);
+});
+
+test('Zone 328$c : les sous-disciplines doivent être séparées par un point (FAIL)', () => {
+    const notice = getNotice("016");
+    const datafields = notice.record.datafield;
+    const controlfield = notice.record.controlfield;
+    let resultJson = {
+        PPN: 0,
+        errors: [],
+    };
+    const index = 520;
+    addRuleToTest(index);
+    Matching.testMatchRegexRules(CATEGORIE, ruleTest, controlfield, datafields, resultJson)
+    
+    expect(resultJson.errors).not.toStrictEqual([]);
+});
+
+// =================================================
+
+test('Zone 328$c compléter la discipline', () => {
+    const notice = getNotice("017");
+    const datafields = notice.record.datafield;
+    const controlfield = notice.record.controlfield;
+    let resultJson = {
+        PPN: 0,
+        errors: [],
+    };
+    const index = 521;
+    addRuleToTest(index);
+    Matching.testMatchRegexRules(CATEGORIE, ruleTest, controlfield, datafields, resultJson)
+    
+    expect(resultJson.errors).toStrictEqual([]);
+});
+
+test('Zone 328$c compléter la discipline (FAIL)', () => {
+    const notice = getNotice("018");
+    const datafields = notice.record.datafield;
+    const controlfield = notice.record.controlfield;
+    let resultJson = {
+        PPN: 0,
+        errors: [],
+    };
+    const index = 521;
+    addRuleToTest(index);
+    Matching.testMatchRegexRules(CATEGORIE, ruleTest, controlfield, datafields, resultJson)
+    
+    expect(resultJson.errors).not.toStrictEqual([]);
+});
+
+
+// =================================================
+
+test('Zone 328$d doit contenir uniquement l\'année de soutenance', () => {
+    const notice = getNotice("015");
+    const datafields = notice.record.datafield;
+    const controlfield = notice.record.controlfield;
+    let resultJson = {
+        PPN: 0,
+        errors: [],
+    };
+    const index = 522;
+    addRuleToTest(index);
+    Matching.testMatchRegexRules(CATEGORIE, ruleTest, controlfield, datafields, resultJson)
+    
+    expect(resultJson.errors).toStrictEqual([]);
+});
+
+test('Zone 328$d doit contenir uniquement l\'année de soutenance (FAIL)', () => {
+    const notice = getNotice("016");
+    const datafields = notice.record.datafield;
+    const controlfield = notice.record.controlfield;
+    let resultJson = {
+        PPN: 0,
+        errors: [],
+    };
+    const index = 522;
+    addRuleToTest(index);
+    Matching.testMatchRegexRules(CATEGORIE, ruleTest, controlfield, datafields, resultJson)
+    
+    expect(resultJson.errors).not.toStrictEqual([]);
+});
+
+// =================================================
+
+test('Zone 328$d doit contenir uniquement l\'année de soutenance', () => {
+    const notice = getNotice("015");
+    const datafields = notice.record.datafield;
+    const controlfield = notice.record.controlfield;
+    let resultJson = {
+        PPN: 0,
+        errors: [],
+    };
+    const index = 523;
+    addRuleToTest(index);
+    Matching.testMatchRegexRules(CATEGORIE, ruleTest, controlfield, datafields, resultJson)
+    
+    expect(resultJson.errors).toStrictEqual([]);
+});
+
+test('Zone 328$d doit contenir uniquement l\'année de soutenance (FAIL)', () => {
+    const notice = getNotice("016");
+    const datafields = notice.record.datafield;
+    const controlfield = notice.record.controlfield;
+    let resultJson = {
+        PPN: 0,
+        errors: [],
+    };
+    const index = 523;
+    addRuleToTest(index);
+    Matching.testMatchRegexRules(CATEGORIE, ruleTest, controlfield, datafields, resultJson)
+    
+    expect(resultJson.errors).not.toStrictEqual([]);
+});
+
+
+// =================================================
+
+test('Zone 328$d doit contenir uniquement l\'année de soutenance', () => {
+    const notice = getNotice("015");
+    const datafields = notice.record.datafield;
+    const controlfield = notice.record.controlfield;
+    let resultJson = {
+        PPN: 0,
+        errors: [],
+    };
+    const index = 18;
+    addRuleToTest(index);
+    Matching.testMatchRegexRules(CATEGORIE, ruleTest, controlfield, datafields, resultJson)
+    
+    expect(resultJson.errors).toStrictEqual([]);
+});
+
+test('Zone 328$d doit contenir uniquement l\'année de soutenance (FAIL)', () => {
+    const notice = getNotice("016");
+    const datafields = notice.record.datafield;
+    const controlfield = notice.record.controlfield;
+    let resultJson = {
+        PPN: 0,
+        errors: [],
+    };
+    const index = 18;
+    addRuleToTest(index);
+    Matching.testMatchRegexRules(CATEGORIE, ruleTest, controlfield, datafields, resultJson)
+    
+    expect(resultJson.errors).not.toStrictEqual([]);
+});
+
