@@ -126,30 +126,30 @@ var IdRef = function () {
                 identifiant.push(Parcours.getSubfieldValue(fields[i], regle.identifiant.code))
             }
         }
-        
 
         return identifiant
     }
 
     var testIdRefRules = function (categorie, rules, controlfields, datafields, resultJson) {
-        //getRequest("https://www.idref.fr/032317956.xml")
         rules[categorie].idRef.forEach(function (regle) {
-            if (conditionNotice(datafields, regle)) {
-                const identifiant = identifiantNotice(datafields, regle)
-                if (identifiant != null) {
-                    getRequest(identifiant, regle, resultJson)
+            const fieldsValid = conditionNotice(datafields, regle)
+            if (fieldsValid.length > 0) {
+                console.log("fieldsValid : " , fieldsValid)
+                const identifiant = identifiantNotice(fieldsValid, regle)
+                if(identifiant.length > 0) {
+                    for(let i in identifiant) {
+                        getRequest(identifiant[i], regle, resultJson)
+                    }
                 } else {
-
-
-                    resultJson.errors.push({
-                        message: regle.message + " ( " + regle.index + " ) ",
-                        number: regle.number,
-                        code: regle.code
-                    });
+                    addError(regle,resultJson)
                 }
+            } else if(!validEmptyArray(datafields, regle)) {
+                addError(regle,resultJson)
             }
         });
     }
+
+    
 
     return {
         testIdRefRules: testIdRefRules,

@@ -564,3 +564,47 @@ test("Si 6XX$x et $2rameau, vérifier dans Idref, à partir de l'identifiant $3,
 
     expect(resultJson.errors).not.toStrictEqual([]);
 });
+
+
+// ===============================================================
+
+test("Si 6XX$x et $2fmesh, vérifier dans Idref, à partir de l'identifiant $3, que 008 commence par Tl", () => {
+    const notice = "013"
+    const number = "606"
+    const index = 59
+    let resultJson = {
+        PPN: 0,
+        errors: [],
+    };
+
+    const sudoc = getNotice(notice);
+    const idref = getIdref(notice, number);
+    const idrefs = []
+    idrefs.push(idref)
+    const datafields = sudoc.record.datafield;
+    addRuleToTest(index);
+    testIdRefRules(CATEGORIE, ruleTest, idrefs, datafields, resultJson)
+
+    expect(resultJson.errors).toStrictEqual([]);
+});
+
+
+test("Si 6XX$x et $2fmesh, vérifier dans Idref, à partir de l'identifiant $3, que 008 commence par Tl (FAIL)", () => {
+    const notice = "014"
+    const number = "606"
+    const index = 59
+    let resultJson = {
+        PPN: 0,
+        errors: [],
+    };
+
+    const sudoc = getNotice(notice);
+    const idref = getIdref(notice, number);
+    const idrefs = []
+    idrefs.push(idref)
+    const datafields = sudoc.record.datafield;
+    addRuleToTest(index);
+    testIdRefRules(CATEGORIE, ruleTest, idrefs, datafields, resultJson)
+
+    expect(resultJson.errors).not.toStrictEqual([]);
+});
