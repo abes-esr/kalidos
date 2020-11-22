@@ -16,6 +16,20 @@ var Parcours = function () {
         return retour;
     }
 
+
+    const findDataFields = function (datafields, number) {
+        let retour = []
+        let count = 0;
+        datafields.forEach(function (field) {
+            if (field._attributes.tag == number) {
+                field.num = count
+                retour.push(field)
+                count ++
+            }
+        });
+        return retour;
+    }
+
     /**
      * retourne la valeur d'un champ d'une notice
      * @param {*} field 
@@ -108,7 +122,8 @@ var Parcours = function () {
         getCategories : getCategories,
         getTypes : getTypes,
         testCode : testCode,
-        getIdentifiantValue : getIdentifiantValue
+        getIdentifiantValue : getIdentifiantValue,
+        findDataFields : findDataFields
     }
 }();
 
