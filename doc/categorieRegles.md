@@ -125,8 +125,8 @@
 143	x	x	x	x	452	Si 008 commence par Oa et 452 présente, alors vérifier que notice 452$0 contient une 008 qui commence par Aa		Vérifier la pertinence des liens réciproques
 144	x	x	x	x	452	Si 008 commence par Aa et 452 présente, alors vérifier que notice 452$0 contient une 008 qui commence par Oa		Vérifier la pertinence des liens réciproques
 159			x		455	Si 455, alors vérifier que la notice en 455$0 contient 105$a Pos. 4-7= m		Vérifier la pertinence des liens réciproques
-161				x	456	Si 456, alors vérifier que la notice en 456$0 contient une 008 qui commence par Oa		Vérifier la pertinence des liens réciproques
-162	x				455	Si 455, alors vérifier que la notice en 455$0 contient une 008 qui commence par Aa		Vérifier la pertinence des liens réciproques
+(Supprimer)161				x	456	Si 456, alors vérifier que la notice en 456$0 contient une 008 qui commence par Oa		Vérifier la pertinence des liens réciproques
+(Supprimer)162	x				455	Si 455, alors vérifier que la notice en 455$0 contient une 008 qui commence par Aa		Vérifier la pertinence des liens réciproques
 
 168	x				214	Si 305$a commence par "Document numérisé dans le cadre du projet de numérisation", 214 $aLyon et $cBibliothèque Lyon 1		Document numérique FA : corriger la zone 214 $aLyon et $cBibliothèque Lyon 1
 
@@ -172,7 +172,7 @@
 (PRESQUE) 139		x	x		451	Si 451, alors vérifier que la notice 451$0 contient une 451 réciproque et une 328$z	Exemple : http://www.sudoc.fr/19872604X.xml	Vérifier la pertinence des liens réciproques
 (PRESQUE)142		x	x		452	Si 452, alors vérifier que la notice 452$0 contient une 452 réciproque et une 328$z		Vérifier la pertinence des liens réciproques
 (FAIT)146	x	x	x	x	488	Si 488, alors vérifier les liens réciproques de la notice en 488$0		Vérifier la pertinence des liens réciproques
-(FAIT)148			x		455	Si 455, alors vérifier que la notice en 455$0 contient une 456 avec liens réciproques		Vérifier la pertinence des liens réciproques
+(Supprimer)148			x		455	Si 455, alors vérifier que la notice en 455$0 contient une 456 avec liens réciproques		Vérifier la pertinence des liens réciproques
 158			x		455	Si 455, alors vérifier que la notice en 455$0 ne contient pas 328$z		Vérifier la pertinence des liens réciproques
 (FAIT)160				x	456	Si 456, alors vérifier que la notice en 456$0 contient une 455 avec liens réciproques		Vérifier la pertinence des liens réciproques
 (FAIT)163	x				455	Si 455, alors vérifier que la notice en 455$0 contient une 456 avec liens réciproques		Vérifier la pertinence des liens réciproques
@@ -192,7 +192,7 @@
 (FAIT)183			x	x	029	Si 328$zReproduction de, alors il faut une 029		Zone 029 obligatoire pour une reproduction à l'identique d'une thèse
 (FAIT)184			x	x	029	Si 328$z n'est pas "Reproduction de", alors 029 ne doit pas être présente		Zone 029 incohérente pour une autre édition d'une thèse
 190			x	x	608	Si 328$z n'est pas "Reproduction de", alors 608 $3027253139Thèses et écrits académiques ne doit pas être présente		Zone 608 : incohérente pour une autre édition d'une thèse
-(FAIT)191			x	x	455	Si 328$zReproduction de, alors il faut une 455		Zone 455 obligatoire pour une reproduction à l'identique d'une thèse
+(Supprimer)191			x	x	455	Si 328$zReproduction de, alors il faut une 455		Zone 455 obligatoire pour une reproduction à l'identique d'une thèse
 
 (FAIT)47	x			x	461	Si 008 commence par Aa et présence d'une 461, alors il doit y avoir une 305 ou 225		Zones incohérentes : vérifier les zones 461 et 225 (monographie en plusieurs volumes) ou 305 (numéro de périodique)
 ```

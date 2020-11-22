@@ -153,7 +153,8 @@ var Matching = function () {
 
 
     return {
-        testMatchRegexRules: testMatchRegexRules
+        testMatchRegexRules: testMatchRegexRules,
+        testMatchRegexNumber: testMatchRegexNumber
     }
 }();
 

@@ -364,6 +364,24 @@
                 "message": "210$d = 328$d pos1-2 (FAIL TEST)"
             }
         ],
+        "ConditionMatching" : [
+            {
+                "condition" :  [
+                    {
+                        "operator": "equals",
+                        "number" : "101",
+                        "code" : "",
+                        "ind1" : "",
+                        "ind2" : ""
+                    }
+                ],
+                "number": 101,
+                "code": "d",
+                "message": "200$d doit commencer par espace =",
+                "regex": "^[^=].*",
+                "index": 7
+            }
+        ],
         "ConditionStructurel": [
             {
                 "condition" :  [
@@ -1147,84 +1165,6 @@
                 "condition" : [
                     {
                         "operator": "presente",
-                        "number" : "455",
-                        "code" : "",
-                        "ind1" : "",
-                        "ind2": ""
-                    }
-                ],
-                "value": [
-                    {
-                        "number" : "455",
-                        "code" : "0",
-                        "present" : true,
-                        "reciproque" : {
-                            "number": "456",
-                            "code": "0"
-                        }
-                    }
-                ],
-                "type": "allRequired",
-                "index": 77,
-                "number": "455",
-                "message": "Si 455, alors vérifier que la notice en 455$0 contient une 456 avec liens réciproques"
-            },
-            {
-                "condition" : [
-                    {
-                        "operator": "presente",
-                        "number" : "456",
-                        "code" : "",
-                        "ind1" : "",
-                        "ind2": ""
-                    }
-                ],
-                "value": [
-                    {
-                        "number" : "456",
-                        "code" : "0",
-                        "present" : true,
-                        "reciproque" : {
-                            "number": "455",
-                            "code": "0"
-                        }
-                    }
-                ],
-                "type": "allRequired",
-                "index": 78,
-                "number": "456",
-                "message": "Si 456, alors vérifier que la notice en 456$0 contient une 455 avec liens réciproques"
-            },
-            {
-                "condition" : [
-                    {
-                        "operator": "presente",
-                        "number" : "455",
-                        "code" : "",
-                        "ind1" : "",
-                        "ind2": ""
-                    }
-                ],
-                "value": [
-                    {
-                        "number" : "455",
-                        "code" : "0",
-                        "present" : true,
-                        "reciproque" : {
-                            "number": "456",
-                            "code": "0"
-                        }
-                    }
-                ],
-                "type": "allRequired",
-                "index": 79,
-                "number": "455",
-                "message": "Si 455, alors vérifier que la notice en 455$0 contient une 456 avec liens réciproques"
-            },
-            {
-                "condition" : [
-                    {
-                        "operator": "presente",
                         "number" : "456",
                         "code" : "",
                         "ind1" : "",
@@ -1304,35 +1244,6 @@
                 "index": 82,
                 "number": "328",
                 "message": "Si 328$z n'est pas \"Reproduction de\", alors 029 ne doit pas être présente"
-            },
-            {
-                "condition" : [
-                    {
-                        "operator": "presente",
-                        "number" : "328",
-                        "code" : "z",
-                        "ind1" : "",
-                        "ind2": ""
-                    },
-                    {
-                        "operator": "equals_text",
-                        "number" : "328",
-                        "code" : "z",
-                        "string": ["Reproduction de"]
-
-                    }
-                ],
-                "value": [
-                    {
-                        "number" : "455",
-                        "code" : "",
-                        "present" : true
-                    }
-                ],
-                "type": "allRequired",
-                "index": 83,
-                "number": "328",
-                "message": "Si 328$zReproduction de, alors il faut une 455"
             },
             {
                 "condition" : [
