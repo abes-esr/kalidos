@@ -1,0 +1,8 @@
+<record>
+    <datafield tag="200" ind1=" " ind2=" ">
+        <subfield code="c">toto</subfield>
+    </datafield>
+    <datafield tag="" ind1="" ind2="">
+        <subfield code=""></subfield>
+    </datafield>
+</record>

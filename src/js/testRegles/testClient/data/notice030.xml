@@ -1,0 +1,183 @@
+<record>
+<leader> clm0 22 450 </leader>
+<controlfield tag="001">242559174</controlfield>
+<controlfield tag="002">38</controlfield>
+<controlfield tag="003">http://www.sudoc.fr/242559174</controlfield>
+<controlfield tag="004">20200224</controlfield>
+<controlfield tag="005">20200225035949.000</controlfield>
+<controlfield tag="006">692669902</controlfield>
+<controlfield tag="007">0499</controlfield>
+<controlfield tag="008">Oax3</controlfield>
+<datafield tag="035" ind1=" " ind2=" ">
+<subfield code="a">(OCoLC)1143610264</subfield>
+</datafield>
+<datafield tag="100" ind1=" " ind2=" ">
+<subfield code="a">20200224d2019 k y0frey50 ba</subfield>
+</datafield>
+<datafield tag="101" ind1="0" ind2=" ">
+<subfield code="a">fre</subfield>
+<subfield code="d">fre</subfield>
+</datafield>
+<datafield tag="102" ind1=" " ind2=" ">
+<subfield code="a">FR</subfield>
+</datafield>
+<datafield tag="105" ind1=" " ind2=" ">
+<subfield code="a">a va 000yy</subfield>
+</datafield>
+<datafield tag="135" ind1=" " ind2=" ">
+<subfield code="a">dr|||||||||||</subfield>
+</datafield>
+<datafield tag="181" ind1=" " ind2=" ">
+<subfield code="6">z01</subfield>
+<subfield code="c">txt</subfield>
+<subfield code="2">rdacontent</subfield>
+</datafield>
+<datafield tag="181" ind1=" " ind2="1">
+<subfield code="6">z01</subfield>
+<subfield code="a">i#</subfield>
+<subfield code="b">xxxe##</subfield>
+</datafield>
+<datafield tag="182" ind1=" " ind2=" ">
+<subfield code="6">z01</subfield>
+<subfield code="c">c</subfield>
+<subfield code="2">rdamedia</subfield>
+</datafield>
+<datafield tag="182" ind1=" " ind2="1">
+<subfield code="6">z01</subfield>
+<subfield code="a">b</subfield>
+</datafield>
+<datafield tag="183" ind1=" " ind2="1">
+<subfield code="6">z01</subfield>
+<subfield code="a">ceb</subfield>
+<subfield code="2">rdacarrier</subfield>
+</datafield>
+<datafield tag="200" ind1="1" ind2=" ">
+<subfield code="a">
+Evaluation de l'orientation mésio-distale des dents grâce au Cone Beam
+</subfield>
+<subfield code="e">comparaison de 4 clichés panoramiques</subfield>
+<subfield code="f">Myriam Marty</subfield>
+<subfield code="g">sous la direction de Claire Pernier</subfield>
+</datafield>
+<datafield tag="214" ind1=" " ind2="2">
+<subfield code="a">Lyon1</subfield>
+<subfield code="c">Bibliothèque Lyon 1</subfield>
+<subfield code="d">2019</subfield>
+</datafield>
+<datafield tag="230" ind1=" " ind2=" ">
+<subfield code="a">Données textuelles (1 fichier PDF : 19153 Ko)</subfield>
+</datafield>
+<datafield tag="304" ind1=" " ind2=" ">
+<subfield code="a">
+Titre provenant de la page de titre du document numérisé
+</subfield>
+</datafield>
+<datafield tag="307" ind1=" " ind2=" ">
+<subfield code="a">L'impression du document génère 43 p.</subfield>
+</datafield>
+<datafield tag="320" ind1=" " ind2=" ">
+<subfield code="a">Bibliogr. f. 35-36</subfield>
+</datafield>
+<datafield tag="328" ind1=" " ind2="0">
+<subfield code="b">Mémoire de DES</subfield>
+<subfield code="c">Odontologie. Orthopédie dento-faciale</subfield>
+<subfield code="e">Lyon 1</subfield>
+<subfield code="d">2019</subfield>
+</datafield>
+<datafield tag="330" ind1=" " ind2=" ">
+<subfield code="a">
+L'orientation mésio-distale des dents est un point clé du diagnostic et de la thérapeutique orthodontique. Pour l'apprécier l'orthodontiste s'appuie sur son examen clinique et sur la radiographie anoramique. Or un manque de fiabilité est reproché à cette dernière. Cela nous a amené à nous demander si les clichés panoramiques issus des acquisitions cone beam (CB) présentaient de meilleurs résultats dans cette évaluation ? Quels sont les secteurs les plus sensibles aux déformations selon les examens? Existe-t-il des facteurs de confusion ? Nous avons conduit une étude rétrospective unicentrique de 4 groupes comparés à partir de 19 patients, ayant bénéficié d'une panoramique classique et d'un CB bimaxillaire le même jour. À partir de ces examens, 4 clichés ont été comparés : - C1 : panoramique conventionnelle - C2 : panoramique automatique issue du CB - C3 : panoramique issue du CB, reconstruite selon le plan d'occlusion et l'arcade maxillaire- C4 : panoramique issue du CB, reconstruite selon le plan d'occlusion et l'arcade mandibulaire Les axes radiculaires ont été appréciés de façon binaire (orientation mésio-distale adéquate ou inadéquate) par 4 examinateurs de différents niveaux d'expérience sur les 4 clichés pour chaque dent de chaque patient. Leurs résultats ont été comparés à un gold standard définit à l'aide d'une reconstruction tridimensionnelle des arcades. Ce travail expose les protocoles de mise en oeuvre des clichés panoramiques C3 et C4 que nous avons testé, ainsi que les résultats de la comparaison des 4 clichés en termes de sensibilité et de spécificité. Notre analyse statistique a permis de répondre aux questions posées.
+</subfield>
+</datafield>
+<datafield tag="337" ind1=" " ind2=" ">
+<subfield code="a">
+Nécessite un navigateur internet ; un lecteur de fichier PDF
+</subfield>
+</datafield>
+<datafield tag="456" ind1=" " ind2="|">
+<subfield code="0">240637836</subfield>
+<subfield code="t">
+Evaluation de l'orientation mésio-distale des dents grâce au Cone Beam
+</subfield>
+<subfield code="o">comparaison de 4 clichés panoramiques</subfield>
+<subfield code="f">Myriam Marty</subfield>
+<subfield code="d">2019</subfield>
+<subfield code="p">1 vol. (36 f.)</subfield>
+</datafield>
+<datafield tag="579" ind1=" " ind2=" ">
+<subfield code="1">0499</subfield>
+<subfield code="3">242606113</subfield>
+</datafield>
+<datafield tag="606" ind1=" " ind2=" ">
+<subfield code="3">147646359</subfield>
+<subfield code="a">Tomographie volumétrique à faisceau conique</subfield>
+<subfield code="2">rameau</subfield>
+</datafield>
+<datafield tag="606" ind1=" " ind2=" ">
+<subfield code="3">027244415</subfield>
+<subfield code="a">Orthodontie</subfield>
+<subfield code="2">rameau</subfield>
+</datafield>
+<datafield tag="606" ind1=" " ind2=" ">
+<subfield code="3">027256782</subfield>
+<subfield code="a">Dents</subfield>
+<subfield code="3">027315738</subfield>
+<subfield code="x">Radiographie</subfield>
+<subfield code="2">rameau</subfield>
+</datafield>
+<datafield tag="606" ind1=" " ind2=" ">
+<subfield code="3">027588505</subfield>
+<subfield code="a">Études de cas</subfield>
+<subfield code="2">rameau</subfield>
+</datafield>
+<datafield tag="608" ind1=" " ind2=" ">
+<subfield code="3">027253139</subfield>
+<subfield code="a">Thèses et écrits académiques</subfield>
+<subfield code="2">rameau</subfield>
+</datafield>
+<datafield tag="700" ind1=" " ind2="1">
+<subfield code="3">240632699</subfield>
+<subfield code="a">Marty</subfield>
+<subfield code="b">Myriam</subfield>
+<subfield code="f">1992-....</subfield>
+<subfield code="4">070</subfield>
+</datafield>
+<datafield tag="701" ind1=" " ind2="1">
+<subfield code="3">085203912</subfield>
+<subfield code="a">Pernier</subfield>
+<subfield code="b">Claire</subfield>
+<subfield code="4">727</subfield>
+</datafield>
+<datafield tag="711" ind1="0" ind2="2">
+<subfield code="3">026402823</subfield>
+<subfield code="a">Université Claude Bernard</subfield>
+<subfield code="c">Lyon</subfield>
+<subfield code="4">295</subfield>
+</datafield>
+<datafield tag="801" ind1=" " ind2="3">
+<subfield code="a">FR</subfield>
+<subfield code="b">Abes</subfield>
+<subfield code="c">20200225</subfield>
+<subfield code="g">AFNOR</subfield>
+</datafield>
+<datafield tag="856" ind1="4" ind2=" ">
+<subfield code="q">PDF</subfield>
+<subfield code="u">https://n2t.net/ark:/47881/m6x34wr8</subfield>
+<subfield code="z">Accès au texte intégral</subfield>
+</datafield>
+<datafield tag="930" ind1=" " ind2=" ">
+<subfield code="5">692669902:656228482</subfield>
+<subfield code="b">692669902</subfield>
+<subfield code="j">g</subfield>
+</datafield>
+<datafield tag="940" ind1=" " ind2=" ">
+<subfield code="5">692669902:656228482</subfield>
+<subfield code="a">20200224</subfield>
+<subfield code="b">x</subfield>
+</datafield>
+<datafield tag="941" ind1=" " ind2=" ">
+<subfield code="5">692669902:656228482</subfield>
+<subfield code="a">20200224</subfield>
+<subfield code="b">12:08:51.000</subfield>
+</datafield>
+</record>

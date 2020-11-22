@@ -13,22 +13,12 @@ const Router_App = () => (
                     <div className="sidebar-brand-icon rotate-n-15">
                         <i className="fas fa-laugh-wink"></i>
                     </div>
-                    <div className="sidebar-brand-text mx-3">SB Admin <sup>2</sup></div>
+                    <div className="sidebar-brand-text mx-3">Projet Bu</div>
                 </Link>
 
 
                 <hr className="sidebar-divider my-0"></hr>
-
-                <li className="nav-item active">
-                    <Link to="/" className="nav-link">
-                        <i className="fas fa-fw fa-chart-area"></i>
-                        <span>Accueil</span>
-                    </Link>
-                </li>
-
-                <hr className="sidebar-divider"></hr>
-
-                <div className="sidebar-heading">Interface</div>
+                
                 <li className="nav-item">
                     <Link to="/" className="nav-link">
                         <i className="fas fa-fw fa-chart-area"></i>
@@ -36,21 +26,15 @@ const Router_App = () => (
                     </Link>
                 </li>
                 <li className="nav-item">
-                    <Link to="/examplePage2" className="nav-link">
-                        <i className="fas fa-fw fa-cog"></i>
-                        <span>ExamplePage2</span>
-                    </Link>
-                </li>
-                <li className="nav-item">
-                    <Link to="/examplePage3" className="nav-link">
-                        <i className="fas fa-fw fa-wrench"></i>
-                        <span>ExamplePage3</span>
-                    </Link>
-                </li>
-                <li className="nav-item">
                     <Link to="/interfaceVerif" className="nav-link">
                         <i className="fas fa-fw fa-wrench"></i>
                         <span>InterfaceVerif</span>
+                    </Link>
+                </li>
+                <li className="nav-item">
+                    <Link to="/interfaceRegles" className="nav-link">
+                        <i className="fas fa-fw fa-wrench"></i>
+                        <span>Interface des règles</span>
                     </Link>
                 </li>
             </ul>

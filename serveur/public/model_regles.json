@@ -2,17 +2,26 @@
     "Generale": {
         "matching": [
             {
-                "index": 0,
-                "number": "200",
-                "code": "b",
-                "message": "valeur présente"
-            },
-            {
                 "index": 1,
                 "number": 201,
                 "code": "c",
                 "message": "caractères interdits : $",
-                "regex": ".*[^$].*"
+                "regex": "(?:(?!\\$).)+"
+            },
+            {
+                "index": 71,
+                "numRuleExcell" : 2,
+                "number": "008",
+                "message": "Zone 008 erronée",
+                "regex": ".*x3.*"
+            },
+            {
+                "index": 73,
+                "numRuleExcell" : 2,
+                "number": "100",
+                "code" : "a",
+                "message": "Zone 100 : langue de catalogage à corriger",
+                "regex": "^.{21}fre.*$"
             },
             {
                 "number": 701,
@@ -25,49 +34,49 @@
                 "number": 200,
                 "code": "c",
                 "message": "200$c ne doit pas contenir le caractère / ou : ou .",
-                "regex": ".*[^/.].*",
+                "regex": "(?:(?![/:.]).)+",
                 "index": 6
             },
             {
                 "number": 200,
                 "code": "d",
                 "message": "200$d doit commencer par espace =",
-                "regex": "^[^=].*",
+                "regex": "^( =).*",
                 "index": 7
             },
             {
                 "number": "856",
                 "code": "u",
                 "message": "856$u ne doit pas contenir URL",
-                "regex": ".*[^(URL)].*",
+                "regex": "(?:(?!URL).)+",
                 "index": 8
             },
             {
                 "number": "100",
                 "code": "a",
                 "message": "100$a ne doit pas contenir le caractère ?",
-                "regex": ".*[^?].*",
+                "regex": "(?:(?!\\?).)+",
                 "index": 9
             },
             {
                 "number": "307",
                 "code": "a",
                 "message": "307$a ne doit pas contenir le caractère ?",
-                "regex": ".*[^?].*",
+                "regex": "(?:(?!\\?).)+",
                 "index": 10
             },
             {
                 "number": "700",
                 "code": "b",
                 "message": "700$b ne doit pas contenir Prénom",
-                "regex": ".*[^(Prénom)].*",
+                "regex": "(?:(?!Prénom).)+",
                 "index": 11
             },
             {
                 "number": "214",
                 "code": "d",
                 "message": "214$d ne doit pas contenir le caractère ?",
-                "regex": ".*[^?].*",
+                "regex": "(?:(?!\\?).)+",
                 "index": 12
             },
             {
@@ -81,33 +90,33 @@
                 "number": "700",
                 "code": "a",
                 "message": "700$a ne doit pas contenir Nom",
-                "regex": ".*[^(Nom)].*",
+                "regex": "(?:(?!Nom).)+",
                 "index": 14
             },
             {
                 "number": "701",
                 "code": "b",
                 "message": "701$b ne doit pas contenir Prénom",
-                "regex": ".*[^(Prénom)].*",
+                "regex": "(?:(?!Prénom).)+",
                 "index": 15
             },
             {
                 "number": "606",
                 "code": "a",
                 "message": "606$a ne doit pas contenir vedette",
-                "regex": ".*[^(vedette)].*",
+                "regex": "(?:(?!vedette).)+",
                 "index": 16
             },
             {
                 "number": "330",
                 "code": "a",
                 "message": "330$a ne doit pas contenir Résumé en français",
-                "regex": ".*[^(Résumé en français)].*",
+                "regex": "(?:(?!Résumé en français).)+",
                 "index": 17
             },
             {
                 "number": "328",
-                "code": "d",
+                "code": "e",
                 "message": "328$e = Lyon 1 ou Université de Lyon",
                 "regex": "(Lyon 1)|(Université de Lyon)",
                 "index": 18
@@ -116,64 +125,57 @@
                 "number": "328",
                 "code": "d",
                 "message": "328$d ne doit pas contenir le caractère ?",
-                "regex": ".*[^?].*",
+                "regex": ".(?:(?!\\?).)+",
                 "index": 19
             },
             {
                 "number": "230",
                 "code": "a",
                 "message": "230$a ne doit pas contenir le caractère ?",
-                "regex": ".*[^?].*",
+                "regex": "(?:(?!\\?).)+",
                 "index": 20
             },
             {
                 "number": "200",
                 "code": "g",
                 "message": "200$g ne doit pas finir par sous la direction de",
-                "regex": ".*[^(sous la direction de)]",
+                "regex": ".*(?<!sous la direction de)$",
                 "index": 21
             },
             {
                 "number": "200",
                 "code": "e",
                 "message": "200$e ne doit pas être complément du titre",
-                "regex": "[^(complément du titre)]",
+                "regex": "^(?!complément du titre).*$",
                 "index": 22
             },
             {
                 "number": "200",
                 "code": "a",
                 "message": "200$a ne doit pas être Le Titre",
-                "regex": "[^(Le Titre)]",
+                "regex": "^(?!Le Titre).*$",
                 "index": 23
             },
             {
                 "number": "029",
                 "code": "b",
                 "message": "029$b ne doit pas contenir le caractère ?",
-                "regex": ".*[^?].*",
+                "regex": "(?:(?!\\?).)+",
                 "index": 24
             },
             {
                 "number": "GLOBAL",
                 "code": "",
                 "message": "Ne doit pas contenir le caractère ’",
-                "regex": ".*[^'].*",
+                "regex": "(?:(?!’).)+",
                 "index": 25
             },
             {
                 "number": 200,
                 "code": "e",
                 "message": "200$e ne doit pas contenir le caractère / ou : ou .",
-                "regex": ".*[^/.].*",
+                "regex": "(?:(?![/:.]).)+",
                 "index": 26
-            },
-            {
-                "number": 200,
-                "code": "d",
-                "message": "200$d doit commencer par espace =",
-                "regex": "^( =).*",
-                "index": 27
             },
             {
                 "index": 37,
@@ -190,8 +192,8 @@
                 ],
                 "code": "4",
                 "value": [
-                    "^((?!205).)*$",
-                    "^((?!727).)*$"
+                    "^205$",
+                    "^727$"
                 ],
                 "match": "all",
                 "message": "7XX $4 ne doit pas être 205 ou 727 (FAIL TEST)"
@@ -321,987 +323,104 @@
                 "field1": {
                     "number": "100",
                     "code": "a",
-                    "pos":[9,13]
+                    "pos": [
+                        9,
+                        13
+                    ]
                 },
                 "field2": {
                     "number": "100",
                     "code": "a",
-                    "pos":[13,17]
+                    "pos": [
+                        13,
+                        17
+                    ]
                 },
                 "operator": "greaterEquals",
                 "message": "Dates incohérentes : vérifier les dates zone 100",
-                "numRegle" : 4
+                "numRuleExcell": 4
             },
             {
                 "index": 43,
                 "field1": {
                     "number": "029",
                     "code": "b",
-                    "pos":[0,4]
+                    "pos": [
+                        0,
+                        4
+                    ]
                 },
                 "field2": {
                     "number": "328",
                     "code": "d",
-                    "pos":[]
+                    "pos": []
                 },
                 "operator": "equals",
                 "message": "Année de soutenance : l'année en 029 et 328 doivent être identiques",
-                "numRegle" : 101
+                "numRuleExcell": 101
             },
             {
                 "index": 43,
                 "field1": {
                     "number": "210",
                     "code": "d",
-                    "pos":[]
+                    "pos": []
                 },
                 "field2": {
                     "number": "328",
                     "code": "d",
-                    "pos":[0,2]
+                    "pos": [
+                        0,
+                        2
+                    ]
                 },
                 "operator": "equals",
                 "message": "210$d = 328$d pos1-2 (FAIL TEST)"
-            }
-        ],
-        "ConditionMatching" : [
-            {
-                "condition" :  [
-                    {
-                        "operator": "equals",
-                        "number" : "101",
-                        "code" : "",
-                        "ind1" : "",
-                        "ind2" : ""
-                    }
-                ],
-                "number": 101,
-                "code": "d",
-                "message": "200$d doit commencer par espace =",
-                "regex": "^[^=].*",
-                "index": 7
-            }
-        ],
-        "ConditionStructurel": [
-            {
-                "condition" :  [
-                        {
-                            "operator": "equals",
-                            "number" : "101",
-                            "code" : "",
-                            "ind1" : "1",
-                            "ind2" : ""
-                        }
-                ],
-
-                "value": [
-                    {
-                        "number" : "101",
-                        "code" : "a",
-                        "present" : true
-                    },
-                    {
-                        "number" : "101",
-                        "code" : "c",
-                        "present" : true
-                    }
-                ],
-                "type": "allRequired",
-
-                "index": 44,
-                "number": "101",
-                "message": "Si 101 ind1=1 il faut au moins un $a et $c"
-            },
-
-            {
-            "condition" :  [
-                    {
-                        "operator": "equals",
-                        "number" : "101",
-                        "code" : "",
-                        "ind1" : "0",
-                        "ind2" : ""
-                    }
-            ],
-            "value": [
-                    {
-                        "number" : "101",
-                        "code" : "c",
-                        "present" : false
-                    }
-             ],
-            "type": "allRequired",
-            "index": 45,
-            "number": "101",
-            "message": "Si 101 ind1=0 il ne faut pas $c"
-        },
-        {
-                "condition" : [
-                        {
-                            "operator": "equals",
-                            "number" : "101",
-                            "code" : "",
-                            "ind1" : "2",
-                            "ind2" : ""
-                        }
-                ],
-               "value": [
-                  {
-                    "number" : "101",
-                    "code" : "a",
-                      "present" : true
-                  },
-                  {
-                    "number" : "101",
-                    "code" : "b",
-                    "present" : true
-                  },
-                  {
-                    "number" : "101",
-                    "code" : "c",
-                    "present" : true
-                  }
-                ],
-                "type": "allRequired",
-                "index": 46,
-                "number": "101",
-                "message": "Si 101 ind1=2 il faut au moins une $a, $b et $c"
-        },
-            {
-                "condition" :[
-                        {
-                            "operator": "equals",
-                            "number" : "101",
-                            "code" : "",
-                            "ind1" : "1",
-                            "ind2" : ""
-                        }
-                ],
-                "value": [
-                    {
-                        "number" : "454",
-                        "code" : "",
-                        "present" : true
-                    }
-                ],
-                "type": "allRequired",
-                "index": 47,
-                "number": "101",
-                "message": "Si 101 ind1=1 il faut une 454"
             },
             {
-                "condition" : [
-                        {
-                            "operator": "equals",
-                            "number" : "101",
-                            "code" : "",
-                            "ind1" : "2",
-                            "ind2" : ""
-                        }
-                ],
-                "value": [
-                    {
-                        "number" : "454",
-                        "code" : "",
-                        "present" : true
-                    }
-                ],
-                "type": "allRequired",
-                "index": 48,
-                "number": "101",
-                "message": "Si 101 ind1=2 il faut une 454"
-            },
-            {
-                "condition" : [
-                        {
-                            "operator": "equals",
-                            "number" : "225",
-                            "code" : "",
-                            "ind1" : "0",
-                            "ind2" : ""
-                        },
-                        {
-                            "operator": "presente",
-                            "number" : "225",
-                            "code" : "a",
-                            "ind1" : "",
-                            "ind2" : ""
-                        }
-                ],
-                "value": [
-                    {
-                        "number" : "410",
-                        "code" : "0",
-                        "present" : true
-                    }
-                ],
-                "type": "allRequired",
-                "index": 50,
-                "number": "225",
-                "message": "Si 225 ind1=0 $a alors 410$0 doit être présent"
-            },
-            {
-                "condition" : [
-                        {
-                            "operator": "presente",
-                            "number" : "105",
-                            "code" : "a",
-                            "ind1" : "",
-                            "ind2" : ""
-                        },
-                        {
-                            "operator": "contains_text",
-                            "number" : "105",
-                            "code" : "a",
-                            "pos" : [0 , 3],
-                            "string": ["y"]
-
-                        }
-                    ],
-                "value": [
-                    {
-                        "number" : "215",
-                        "code" : "c",
-                        "present" : false
-                    }
-                ],
-                "type": "allRequired",
-                "index": 51,
-                "number": "105",
-                "message": "Si  105 $a Pos. 0-3 = 'y' alors 215$c ne doit pas être présent"
-            },
-            {
-                "condition" :[
-                        {
-                            "operator": "presente",
-                            "number" : "105",
-                            "code" : "a",
-                            "ind1" : "",
-                            "ind2" : ""
-                        },
-                        {
-                            "operator": "contains_text",
-                            "number" : "105",
-                            "code" : "a",
-                            "pos" : [4 , 7],
-                            "string": ["a"]
-
-                        }
-                    ],
-                "value": [
-                    {
-                        "number" : "320",
-                        "code" : "",
-                        "present" : true
-                    }
-                ],
-                "type": "allRequired",
-                "index": 52,
-                "number": "105",
-                "message": "Si 105 $a Pos. 4-7 =a alors il faut une 320"
-            },
-            {
-                "condition" : [
-                        {
-                            "operator": "presente",
-                            "number" : "105",
-                            "code" : "a",
-                            "ind1" : "",
-                            "ind2" : ""
-                        },
-                        {
-                            "operator": "contains_text",
-                            "number" : "105",
-                            "code" : "a",
-                            "pos" : [4 , 7],
-                            "string": ["t", "m", "l", "q", "j", "f", "e", "b" , "7"]
-
-                        }
-                    ],
-                "value": [
-                    {
-                        "number" : "608",
-                        "code" : "",
-                        "present" : true
-                    }
-                ],
-                "type": "allRequired",
-                "index": 53,
-                "number": "105",
-                "message": "Si 105 $a Pos. 4-7= t, m, l, q, j, f, e, b ou 7 il faut la présence d'une 608"
-            },
-            {
-                "condition" : [
-                        {
-                            "operator": "startwith_text",
-                            "number" : "008",
-                            "code" : "",
-                            "string": ["Aa"]
-
-                        }
-                    ],
-                "value": [
-                    {
-                        "number" : "106",
-                        "code" : "",
-                        "present" : true
-                    }
-                ],
-                "type": "allRequired",
-                "index": 54,
-                "number": "008",
-                "message": "Si 008 commence par Aa, présence obligatoire d'une zone 106"
-            },
-            {
-                "condition" : [
-                        {
-                            "operator": "startwith_text",
-                            "number" : "008",
-                            "code" : "",
-                            "string": ["Aa"]
-
-                        }
-                    ],
-                "value": [
-                    {
-                        "number" : "215",
-                        "code" : "a",
-                        "present" : true
-                    },
-                    {
-                        "number" : "215",
-                        "code" : "d",
-                        "present" : true
-                    }
-                ],
-                "type": "allRequired",
-                "index": 55,
-                "number": "008",
-                "message": "Si 008 commence par Aa, 215 $a et $d obligatoires"
-            },
-            {
-                "condition" : [
-                        {
-                            "operator": "equals",
-                            "number" : "225",
-                            "code" : "",
-                            "ind1" : "0",
-                            "ind2" : ""
-                        }
-                    ],
-                "value": [
-                    {
-                        "number" : "410",
-                        "code" : "",
-                        "present" : true
-                    }
-                ],
-                "type": "allRequired",
-                "index": 56,
-                "number": "225",
-                "message": "Si 225 ind1=0 il faut au moins une 410"
-            },
-            {
-                "condition" : [
-                        {
-                            "operator": "presente",
-                            "number" : "225",
-                            "code" : "a",
-                            "ind1" : "",
-                            "ind2" : ""
-                        },
-                        {
-                            "operator": "equals",
-                            "number" : "225",
-                            "code" : "",
-                            "ind1" : "2",
-                            "ind2" : ""
-                        }
-                    ],
-                "value": [
-                    {
-                        "number" : "410",
-                        "code" : "0",
-                        "present" : true
-                    }
-                ],
-                "type": "allRequired",
-                "index": 58,
-                "number": "225",
-                "message": "Si 225 ind1=2 $a alors 410$0 doit être présent"
-            },
-            {
-                "condition" : [
-                        {
-                            "operator": "presente",
-                            "number" : "225",
-                            "code" : "a",
-                            "ind1" : "",
-                            "ind2" : ""
-                        },
-                        {
-                            "operator": "equals",
-                            "number" : "225",
-                            "code" : "",
-                            "ind1" : "1",
-                            "ind2" : ""
-                        }
-                    ],
-                "value": [
-                    {
-                        "number" : "461",
-                        "code" : "",
-                        "present" : true
-                    }
-                ],
-                "type": "allRequired",
-                "index": 59,
-                "number": "225",
-                "message": "Si 225 ind1=1 $a alors 461 doit être présent"
-            },
-            {
-                "condition" : [
-                        {
-                            "operator": "equals",
-                            "number" : "225",
-                            "code" : "",
-                            "ind1" : "2",
-                            "ind2" : ""
-                        }
-                    ],
-                "value": [
-                    {
-                        "number" : "410",
-                        "code" : "",
-                        "present" : true
-                    }
-                ],
-                "type": "allRequired",
-                "index": 60,
-                "number": "225",
-                "message": "Si 225 ind1=2 il faut au moins une 410"
-            },
-            {
-                "condition" : [
-                        {
-                            "operator": "presente",
-                            "number" : "101",
-                            "code" : "d",
-                            "ind1" : "",
-                            "ind2" : ""
-                        }
-                    ],
-                "value": [
-                    {
-                        "number" : "330",
-                        "code" : "",
-                        "present" : true
-                    }
-                ],
-                "type": "allRequired",
-                "index": 61,
-                "number": "101",
-                "message": "Si 101$d, 330 doit être présente"
-            },
-            {
-                "condition" : [
-                        {
-                            "operator": "startwith_text",
-                            "number" : "008",
-                            "code" : "",
-                            "string": ["0a"]
-
-                        }
-                    ],
-                "value": [
-                    {
-                        "number" : "304",
-                        "code" : "",
-                        "present" : true
-                    }
-                ],
-                "type": "allRequired",
-                "index": 62,
-                "number": "008",
-                "message": "Si 008 commence par Oa,  304 doit être présente"
-            },
-            {
-                "condition" : [
-                        {
-                            "operator": "startwith_text",
-                            "number" : "008",
-                            "code" : "",
-                            "string": ["0a"]
-
-                        }
-                    ],
-                "value": [
-                    {
-                        "number" : "307",
-                        "code" : "",
-                        "present" : true
-                    }
-                ],
-                "type": "allRequired",
-                "index": 63,
-                "number": "008",
-                "message": "Si 008 commence par Oa, 307 doit être présente"
-            },
-            {
-                "condition" : [
-                        {
-                            "operator": "startwith_text",
-                            "number" : "008",
-                            "code" : "",
-                            "string": ["0a"]
-
-                        }
-                    ],
-                "value": [
-                    {
-                        "number" : "337",
-                        "code" : "",
-                        "present" : true
-                    }
-                ],
-                "type": "allRequired",
-                "index": 64,
-                "number": "008",
-                "message": "Si 008 commence par Oa, 337 doit être présente"
-            },
-            {
-                "condition" : [
-                        {
-                            "operator": "startwith_text",
-                            "number" : "008",
-                            "code" : "",
-                            "string": ["0a"]
-
-                        }
-                    ],
-                "value": [
-                    {
-                        "number" : "230",
-                        "code" : "",
-                        "present" : true
-                    }
-                ],
-                "type": "allRequired",
-                "index": 65,
-                "number": "008",
-                "message": "Si 008 commence par Oa, 230 doit être présente"
-            },
-            {
-                "condition" : [
-                    {
-                        "operator": "startwith_text",
-                        "number" : "325",
-                        "code" : "a",
-                        "string": ["Document numérisé dans le cadre d'un projet de numérisation du SCD de Lyon 1"]
-
-                    }
-                ],
-                "value": [
-                    {
-                        "number" : "456",
-                        "code" : "",
-                        "present" : true
-                    }
-                ],
-                "type": "allRequired",
-                "index": 66,
-                "number": "325",
-                "message": "Si 325$a commence par \"Document numérisé dans le cadre d'un projet de numérisation du SCD de Lyon 1\", 456 doit être présente"
-            },
-            {
-                "condition" : [
-                    {
-                        "operator": "startwith_text",
-                        "number" : "305",
-                        "code" : "a",
-                        "string": ["Document numérisé dans le cadre du projet de numérisation"]
-
-                    }
-                ],
-                "value": [
-                    {
-                        "number" : "324",
-                        "code" : "",
-                        "present" : true
-                    }
-                ],
-                "type": "allRequired",
-                "index": 67,
-                "number": "305",
-                "message": "Si 305$a commence par \"Document numérisé dans le cadre du projet de numérisation\", doit contenir une 324"
-            },
-            {
-                "condition" : [
-                    {
-                        "operator": "startwith_text",
-                        "number" : "305",
-                        "code" : "a",
-                        "string": ["Document numérisé dans le cadre du projet de numérisation"]
-
-                    }
-                ],
-                "value": [
-                    {
-                        "number" : "455",
-                        "code" : "",
-                        "present" : true
-                    }
-                ],
-                "type": "allRequired",
-                "index": 68,
-                "number": "305",
-                "message": "Si 305$a commence par \"Document numérisé dans le cadre du projet de numérisation\", doit contenir une 455"
-            },
-            {
-                "condition" : [
-                    {
-                        "operator": "contains_text",
-                        "number" : "105",
-                        "code" : "a",
-                        "pos" : [4 , 7],
-                        "string": ["m"]
-
-                    }
-                ],
-                "value": [
-                    {
-                        "number" : "029",
-                        "code" : "",
-                        "present" : true
-                    }
-                ],
-                "type": "allRequired",
-                "index": 69,
-                "number": "105",
-                "message": "Si 105 $a Pos. 4-7= \"m\", alors il faut une 029"
-            },
-            {
-                "condition" : [
-                    {
-                        "operator": "contains_text",
-                        "number" : "105",
-                        "code" : "a",
-                        "pos" : [4 , 7],
-                        "string": ["m" , "7"]
-
-                    }
-                ],
-                "value": [
-                    {
-                        "number" : "328",
-                        "code" : "",
-                        "present" : true
-                    }
-                ],
-                "type": "allRequired",
-                "index": 70,
-                "number": "105",
-                "message": "Si 105 $a Pos. 4-7= \"m\" ou \"7\", alors il faut une 328"
-            },
-            {
-                "condition" : [
-                    {
-                        "operator": "contains_text",
-                        "number" : "105",
-                        "code" : "a",
-                        "pos" : [4 , 7],
-                        "string": ["v" , "7"]
-
-                    }
-                ],
-                "value": [
-                    {
-                        "number" : "017",
-                        "code" : "",
-                        "present" : true
-                    }
-                ],
-                "type": "allRequired",
-                "index": 71,
-                "number": "105",
-                "message": "Si 105 $a Pos. 4-7= \"v\" ou \"7\", alors il faut une 017"
-            },
-            {
-                "condition" : [
-                    {
-                        "operator": "contains_text",
-                        "number" : "105",
-                        "code" : "a",
-                        "pos" : [4 , 7],
-                        "string": ["v"]
-
-                    }
-                ],
-                "value": [
-                    {
-                        "number" : "328",
-                        "code" : "z",
-                        "present" : true
-                    }
-                ],
-                "type": "allRequired",
                 "index": 72,
-                "number": "105",
-                "message": "Si 105 $a Pos. 4-7= \"v\", alors il faut une 328$z"
+                "numRuleExcell":3,
+                "field1": {
+                    "number": "100",
+                    "code": "a",
+                    "pos": [9,13]
+                },
+                "field2": {
+                    "number": "214",
+                    "code": "d",
+                    "pos": [
+                    ]
+                },
+                "operator": "equals",
+                "message": "100$a Pos. 9-12 = 214$d"
+            }
+        ],
+        "Conditionnels": [
+            {
+                "index": 3,
+                "number": "",
+                "operator": "and",
+                "parameter1": "Aax",
+                "parameter2": "461",
+                "or": [
+                    "305",
+                    "225"
+                ],
+                "and": [],
+                "message": "Si Aax et 461 il doit y avoir une 305 ou 225"
             },
             {
-                "condition" : [
-                    {
-                        "operator": "startwith_text",
-                        "number" : "008",
-                        "code" : "",
-                        "string": ["Aa"]
-
-                    },
-                    {
-                        "operator": "presente",
-                        "number" : "461",
-                        "code" : "",
-                        "ind1" : "",
-                        "ind2": ""
-                    }
+                "index": 4,
+                "number": "101",
+                "operator": "equals",
+                "parameter1": "ind1",
+                "parameter2": "1",
+                "or": [],
+                "and": [
+                    "a",
+                    "c"
                 ],
-                "value": [
-                    {
-                        "number" : "305",
-                        "code" : "",
-                        "present" : true
-                    },
-                    {
-                        "number" : "225",
-                        "code" : "",
-                        "present" : true
-                    }
-                ],
-                "type": "allRequired",
-                "index": 73,
-                "number": "008",
-                "message": "Si 008 commence par Aa et présence d'une 461, alors il doit y avoir une 305 ou 225"
-            },
-            {
-                "condition" : [
-                    {
-                        "operator": "presente",
-                        "number" : "451",
-                        "code" : "",
-                        "ind1" : "",
-                        "ind2": ""
-                    }
-                ],
-                "value": [
-                    {
-                        "number" : "451",
-                        "code" : "0",
-                        "present" : true,
-                        "reciproque" : {
-                            "number": "451",
-                            "code": "0"
-                        }
-                    }
-                ],
-                "type": "allRequired",
-                "index": 74,
-                "number": "451",
-                "message": "Si 451, alors vérifier que la notice 451$0 contient une 451 réciproque et une 328$z"
-            },
-            {
-                "condition" : [
-                    {
-                        "operator": "presente",
-                        "number" : "452",
-                        "code" : "",
-                        "ind1" : "",
-                        "ind2": ""
-                    }
-                ],
-                "value": [
-                    {
-                        "number" : "452",
-                        "code" : "0",
-                        "present" : true,
-                        "reciproque" : {
-                            "number": "452",
-                            "code": "0"
-                        }
-                    }
-                ],
-                "type": "allRequired",
-                "index": 75,
-                "number": "452",
-                "message": "Si 452, alors vérifier que la notice 452$0 contient une 452 réciproque et une 328$z"
-            },
-            {
-                "condition" : [
-                    {
-                        "operator": "presente",
-                        "number" : "488",
-                        "code" : "",
-                        "ind1" : "",
-                        "ind2": ""
-                    }
-                ],
-                "value": [
-                    {
-                        "number" : "488",
-                        "code" : "0",
-                        "present" : true,
-                        "reciproque" : {
-                            "number": "488",
-                            "code": "0"
-                        }
-                    }
-                ],
-                "type": "allRequired",
-                "index": 76,
-                "number": "488",
-                "message": "Si 488, alors vérifier les liens réciproques de la notice en 488$0"
-            },
-            {
-                "condition" : [
-                    {
-                        "operator": "presente",
-                        "number" : "456",
-                        "code" : "",
-                        "ind1" : "",
-                        "ind2": ""
-                    }
-                ],
-                "value": [
-                    {
-                        "number" : "456",
-                        "code" : "0",
-                        "present" : true,
-                        "reciproque" : {
-                            "number": "455",
-                            "code": "0"
-                        }
-                    }
-                ],
-                "type": "allRequired",
-                "index": 80,
-                "number": "456",
-                "message": "Si 456, alors vérifier que la notice en 456$0 contient une 455 avec liens réciproques"
-            },
-            {
-                "condition" : [
-                    {
-                        "operator": "presente",
-                        "number" : "328",
-                        "code" : "z",
-                        "ind1" : "",
-                        "ind2": ""
-                    },
-                    {
-                        "operator": "equals_text",
-                        "number" : "328",
-                        "code" : "z",
-                        "string": ["Reproduction de"]
-
-                    }
-                ],
-                "value": [
-                    {
-                        "number" : "029",
-                        "code" : "",
-                        "present" : true
-                    }
-                ],
-                "type": "allRequired",
-                "index": 81,
-                "number": "328",
-                "message": "Si 328$zReproduction de, alors il faut une 029"
-            },
-            {
-                "condition" : [
-                    {
-                        "operator": "presente",
-                        "number" : "328",
-                        "code" : "z",
-                        "ind1" : "",
-                        "ind2": ""
-                    },
-                    {
-                        "operator": "not_equals_text",
-                        "number" : "328",
-                        "code" : "z",
-                        "string": ["Reproduction de"]
-
-                    }
-                ],
-                "value": [
-                    {
-                        "number" : "029",
-                        "code" : "",
-                        "present" : false
-                    }
-                ],
-                "type": "allRequired",
-                "index": 82,
-                "number": "328",
-                "message": "Si 328$z n'est pas \"Reproduction de\", alors 029 ne doit pas être présente"
-            },
-            {
-                "condition" : [
-                    {
-                        "operator": "presente",
-                        "number" : "328",
-                        "code" : "z",
-                        "ind1" : "",
-                        "ind2": ""
-                    },
-                    {
-                        "operator": "equals_text",
-                        "number" : "328",
-                        "code" : "z",
-                        "string": ["Reproduction de"]
-
-                    }
-                ],
-                "value": [
-                    {
-                        "number" : "455",
-                        "code" : "",
-                        "present" : true
-                    }
-                ],
-                "type": "allRequired",
-                "index": 84,
-                "number": "328",
-                "message": "Si 328$z\"Reproduction de\", 455 doit être présente"
-            },
-            {
-                "condition" : [
-                    {
-                        "operator": "presente",
-                        "number" : "328",
-                        "code" : "z",
-                        "ind1" : "",
-                        "ind2": ""
-                    },
-                    {
-                        "operator": "equals_text",
-                        "number" : "328",
-                        "code" : "z",
-                        "string": ["Reproduction de"]
-
-                    }
-                ],
-                "value": [
-                    {
-                        "number" : "456",
-                        "code" : "",
-                        "present" : false
-                    }
-                ],
-                "type": "allRequired",
-                "index": 85,
-                "number": "328",
-                "message": "Si 328$z\"Reproduction de\" , 456 ne doit pas être présente"
+                "message": "Si 101 ind1=1 il faut au moins un $a et $c"
             }
         ],
         "Structurel": [
@@ -1325,7 +444,8 @@
                 "ind2": "",
                 "code": "",
                 "type": "required",
-                "message": "181 obligatoire"
+                "message": "La notice doit contenir au moins une zone 181",
+                "numRuleExcell": 22
             },
             {
                 "index": 30,
@@ -1336,7 +456,8 @@
                 "ind2": "",
                 "code": "",
                 "type": "required",
-                "message": "182 obligatoire"
+                "message": "La notice doit contenir au moins une zone 182",
+                "numRuleExcell": 23
             },
             {
                 "index": 31,
@@ -1347,7 +468,8 @@
                 "ind2": "",
                 "code": "",
                 "type": "required",
-                "message": "183 obligatoire"
+                "message": "La notice doit contenir au moins zone 183",
+                "numRuleExcell": 24
             },
             {
                 "index": 32,
@@ -1358,7 +480,8 @@
                 "ind2": "",
                 "code": "",
                 "type": "exclude",
-                "message": "309 ne doit pas être présente"
+                "message": "Supprimer la zone 309 une fois la correction demandée effectuée",
+                "numRuleExcell": 46
             },
             {
                 "index": 33,
@@ -1377,7 +500,8 @@
                 "ind2": "",
                 "code": "",
                 "type": "required one",
-                "message": "7XX obligatoire"
+                "message": "Mention d'auteur obligatoire",
+                "numRuleExcell": 85
             },
             {
                 "index": 34,
@@ -1396,7 +520,450 @@
                 "ind2": "",
                 "code": "3",
                 "type": "contains code",
-                "message": "7XX doit toujours contenir un $3"
+                "message": "Zones 7XX : lier à une notice d'autorité",
+                "numRuleExcell": 86
+            },
+            {
+                "number": [
+                    "200"
+                ],
+                "ind1": "",
+                "ind2": "",
+                "code": "b",
+                "type": "exclude",
+                "message": "Zone 200$d : à remplacer par les zones 181, 182 et 183",
+                "numRuleExcell": 27,
+                "index": 44
+            },
+            {
+                "number": [
+                    "210"
+                ],
+                "ind1": "",
+                "ind2": "",
+                "code": "",
+                "type": "exclude",
+                "message": "Zone 210 à remplacer par 214 (document en main)",
+                "numRuleExcell": 32,
+                "index": 45
+            },{
+                "number": [
+                    "328"
+                ],
+                "ind1": " ",
+                "ind2": "0",
+                "code": "",
+                "type": "index",
+                "message": "Zone 328 : revoir la valeur des indicateurs",
+                "numRuleExcell": 117,
+                "index": 46
+            },
+            {
+                "number": [
+                    "328"
+                ],
+                "ind1": "",
+                "ind2": "",
+                "code": "z",
+                "type": "exclude",
+                "message": "Zone 328 incohérente avec le statut de la thèse : une reproduction doit contenir la sous-zone $z",
+                "numRuleExcell": 118,
+                "index": 47
+            },
+            {
+                "number": [
+                    "455"
+                ],
+                "ind1": "",
+                "ind2": "",
+                "code": "",
+                "type": "exclude",
+                "message": "Zone 455 incompatible avec le type de thèse (soutenance)",
+                "numRuleExcell": 145,
+                "index": 48
+            },
+            {
+                "number": [
+                    "456"
+                ],
+                "ind1": "",
+                "ind2": "",
+                "code": "",
+                "type": "exclude",
+                "message": "Zone 456 incompatible avec le type de thèse (reproduction)",
+                "numRuleExcell": 147,
+                "index": 49
+            },
+            {
+                "number": [
+                    "303"
+                ],
+                "ind1": "",
+                "ind2": "",
+                "code": "",
+                "type": "required",
+                "message": "Ressource électronique : doit contenir une zone 303",
+                "numRuleExcell": 155,
+                "index": 50
+            },
+            {
+                "number": [
+                    "339"
+                ],
+                "ind1": "",
+                "ind2": "",
+                "code": "",
+                "type": "required",
+                "message": "Ressource électronique : doit contenir une zone 339",
+                "numRuleExcell": 156,
+                "index": 51
+            },
+            {
+                "number": [
+                    "608"
+                ],
+                "ind1": "",
+                "ind2": "",
+                "code": "3",
+                "type": "required with value",
+                "value":"027253139",
+                "message": "Zone 608 : indexation Forme-Genre obligatoire (PPN 027253139)",
+                "numRuleExcell": 126,
+                "index": 51
+            }
+        ],
+        "idRef": [
+            {
+                "index": 52,
+                "numRuleExcell": 69,
+                "condition" : [{
+                    "number" : "701",
+                    "code" : "a"
+                }],
+                "identifiant":{
+                    "number" : "701",
+                    "code":"3"
+                },
+                "verification" : {
+                    "number" : "008",
+                    "regex": "^Tp.*"
+                },
+                "message": "Incohérence zone 7XX : vérifier l'étiquette et le type de notice d'autorité"
+            },
+            {
+                "index": 53,
+                "numRuleExcell": 48,
+                "condition" : [{
+                    "number" : "600",
+                    "code" : "a"
+                }],
+                "identifiant":{
+                    "number" : "600",
+                    "code":"3"
+                },
+                "verification" : {
+                    "number" : "008",
+                    "regex": "^Tp.*"
+                },
+                "message": "Incohérence indexation : vérifier les zones 6XX et le type de notice d'autorité"
+            },
+            {
+                "index": 54,
+                "numRuleExcell": 50,
+                "condition" : [{
+                    "number" : "601",
+                    "code" : "a"
+                }],
+                "identifiant":{
+                    "number" : "601",
+                    "code":"3"
+                },
+                "verification" : {
+                    "number" : "008",
+                    "regex": "^Tp.*"
+                },
+                "message": "Incohérence indexation : vérifier les zones 6XX et le type de notice d'autorité"
+            },
+            {
+                "index": 55,
+                "numRuleExcell": 52,
+                "condition" : [{
+                    "number" : "602",
+                    "code" : "a"
+                }],
+                "identifiant":{
+                    "number" : "602",
+                    "code":"3"
+                },
+                "verification" : {
+                    "number" : "008",
+                    "regex": "^Ta.*"
+                },
+                "message": "Incohérence indexation : vérifier les zones 6XX et le type de notice d'autorité"
+            },
+            {
+                "index": 56,
+                "numRuleExcell": 54,
+                "condition" : [{
+                    "number" : "604",
+                    "code" : "a"
+                }],
+                "identifiant":{
+                    "number" : "604",
+                    "code":"3"
+                },
+                "verification" : {
+                    "number" : "008",
+                    "regex": "^Tq.*"
+                },
+                "message": "Incohérence indexation : vérifier les zones 6XX et le type de notice d'autorité"
+            },
+            {
+                "index": 57,
+                "numRuleExcell": 56,
+                "condition" : [{
+                    "number" : "605",
+                    "code" : "a"
+                }],
+                "identifiant":{
+                    "number" : "605",
+                    "code":"3"
+                },
+                "verification" : {
+                    "number" : "008",
+                    "regex": "^Tu.*"
+                },
+                "message": "Incohérence indexation : vérifier les zones 6XX et le type de notice d'autorité"
+            },
+            {
+                "index": 58,
+                "numRuleExcell": 58,
+                "condition" : [{
+                    "number" : "606",
+                    "code" : "a"
+                },
+                {
+                    "number" : "606",
+                    "code" : "2",
+                    "regex" : "^rameau$"
+                }
+                ],
+                "identifiant":{
+                    "number" : "606",
+                    "code":"3"
+                },
+                "verification" : {
+                    "number" : "008",
+                    "regex": "^Td.*"
+                },
+                "message": "Incohérence indexation : vérifier les zones 6XX et le type de notice d'autorité"
+            },
+            {
+                "index": 59,
+                "numRuleExcell": 60,
+                "condition" : [{
+                    "number" : "606",
+                    "code" : "a"
+                },
+                {
+                    "number" : "606",
+                    "code" : "2",
+                    "regex" : "^fmesh$"
+                }
+                ],
+                "identifiant":{
+                    "number" : "606",
+                    "code":"3"
+                },
+                "verification" : {
+                    "number" : "008",
+                    "regex": "^Tl.*"
+                },
+                "message": "Incohérence indexation : vérifier les zones 6XX et le type de notice d'autorité"
+            },
+            {
+                "index": 60,
+                "numRuleExcell": 61,
+                "condition" : [{
+                    "number" : "607",
+                    "code" : "a"
+                }
+                ],
+                "identifiant":{
+                    "number" : "607",
+                    "code":"3"
+                },
+                "verification" : {
+                    "number" : "008",
+                    "regex": "^Tg.*"
+                },
+                "message": "Incohérence indexation : vérifier les zones 6XX et le type de notice d'autorité"
+            },
+            {
+                "index": 61,
+                "numRuleExcell": 62,
+                "condition" : [{
+                    "number" : "608",
+                    "code" : "a"
+                }
+                ],
+                "identifiant":{
+                    "number" : "608",
+                    "code":"3"
+                },
+                "verification" : {
+                    "number" : "008",
+                    "regex": "^Tf.*"
+                },
+                "message": "Incohérence indexation : vérifier les zones 6XX et le type de notice d'autorité"
+            },
+            {
+                "index": 62,
+                "numRuleExcell": 65,
+                "condition" : [{
+                    "number" : "616",
+                    "code" : "a"
+                }
+                ],
+                "identifiant":{
+                    "number" : "616",
+                    "code":"3"
+                },
+                "verification" : {
+                    "number" : "008",
+                    "regex": "^Tm.*"
+                },
+                "message": "Incohérence indexation : vérifier les zones 6XX et le type de notice d'autorité"
+            },
+            {
+                "index": 63,
+                "numRuleExcell": 67,
+                "condition" : [{
+                    "number" : "700",
+                    "code" : "a"
+                }
+                ],
+                "identifiant":{
+                    "number" : "700",
+                    "code":"3"
+                },
+                "verification" : {
+                    "number" : "008",
+                    "regex": "^Tp.*"
+                },
+                "message": "Incohérence zone 7XX : vérifier l'étiquette et le type de notice d'autorité"
+            },
+            {
+                "index": 64,
+                "numRuleExcell": 70,
+                "condition" : [{
+                    "number" : "702"
+                }],
+                "identifiant":{
+                    "number" : "702",
+                    "code":"3"
+                },
+                "verification" : {
+                    "number" : "008",
+                    "regex": "^Tp.*"
+                },
+                "message": "Incohérence zone 7XX : vérifier l'étiquette et le type de notice d'autorité"
+            },
+            {
+                "index": 65,
+                "numRuleExcell": 71,
+                "condition" : [{
+                    "number" : "710"
+                }],
+                "identifiant":{
+                    "number" : "710",
+                    "code":"3"
+                },
+                "verification" : {
+                    "number" : "008",
+                    "regex": "^Tb.*"
+                },
+                "message": "Incohérence zone 7XX : vérifier l'étiquette et le type de notice d'autorité"
+            },
+            {
+                "index": 66,
+                "numRuleExcell": 72,
+                "condition" : [{
+                    "number" : "711"
+                }],
+                "identifiant":{
+                    "number" : "711",
+                    "code":"3"
+                },
+                "verification" : {
+                    "number" : "008",
+                    "regex": "^Tb.*"
+                },
+                "message": "Incohérence zone 7XX : vérifier l'étiquette et le type de notice d'autorité"
+            },
+            {
+                "index": 67,
+                "numRuleExcell": 72,
+                "condition" : [{
+                    "number" : "712"
+                }],
+                "identifiant":{
+                    "number" : "712",
+                    "code":"3"
+                },
+                "verification" : {
+                    "number" : "008",
+                    "regex": "^Tb.*"
+                },
+                "message": "Incohérence zone 7XX : vérifier l'étiquette et le type de notice d'autorité"
+            },
+            {
+                "index": 68,
+                "numRuleExcell": 74,
+                "condition" : [{
+                    "number" : "720"
+                }],
+                "identifiant":{
+                    "number" : "720",
+                    "code":"3"
+                },
+                "verification" : {
+                    "number" : "008",
+                    "regex": "^Ta.*"
+                },
+                "message": "Incohérence zone 7XX : vérifier l'étiquette et le type de notice d'autorité"
+            },
+            {
+                "index": 69,
+                "numRuleExcell": 75,
+                "condition" : [{
+                    "number" : "721"
+                }],
+                "identifiant":{
+                    "number" : "721",
+                    "code":"3"
+                },
+                "verification" : {
+                    "number" : "008",
+                    "regex": "^Ta.*"
+                },
+                "message": "Incohérence zone 7XX : vérifier l'étiquette et le type de notice d'autorité"
+            },
+            {
+                "index": 70,
+                "numRuleExcell": 76,
+                "condition" : [{
+                    "number" : "722"
+                }],
+                "identifiant":{
+                    "number" : "722",
+                    "code":"3"
+                },
+                "verification" : {
+                    "number" : "008",
+                    "regex": "^Ta.*"
+                },
+                "message": "Incohérence zone 7XX : vérifier l'étiquette et le type de notice d'autorité"
             }
         ]
     },
@@ -1412,6 +979,9 @@
         ],
         "Structurel": [
             {}
+        ],
+        "idRef": [
+            {}
         ]
     },
     "Electronique": {
@@ -1426,6 +996,10 @@
         ],
         "Structurel": [
             {}
+        ],
+        "idRef": [
+            {}
         ]
+        
     }
 }

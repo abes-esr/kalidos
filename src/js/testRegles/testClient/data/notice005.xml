@@ -1,0 +1,155 @@
+<record>
+<leader> nam0 22 450 </leader>
+<controlfield tag="001">249987031</controlfield>
+<controlfield tag="002">38</controlfield>
+<controlfield tag="003">http://www.sudoc.fr/249987031</controlfield>
+<controlfield tag="004">20201027</controlfield>
+<controlfield tag="005">20201027105420.000</controlfield>
+<controlfield tag="006">693882213</controlfield>
+<controlfield tag="007">693882213</controlfield>
+<controlfield tag="008">Aax3</controlfield>
+<datafield tag="029" ind1=" " ind2=" ">
+<subfield code="a">FR</subfield>
+<subfield code="b">2020LYO1D052</subfield>
+</datafield>
+<datafield tag="035" ind1=" " ind2=" ">
+<subfield code="a">(OCoLC)1201687797</subfield>
+</datafield>
+<datafield tag="100" ind1=" " ind2=" ">
+<subfield code="a">20201027d2020 k y0frey50 ba</subfield>
+</datafield>
+<datafield tag="101" ind1="2" ind2=" ">
+<subfield code="a">fre</subfield>
+<subfield code="b">eng</subfield>
+<subfield code="c">esp</subfield>
+<subfield code="d">fre</subfield>
+</datafield>
+<datafield tag="102" ind1=" " ind2=" ">
+<subfield code="a">FR</subfield>
+</datafield>
+<datafield tag="105" ind1=" " ind2=" ">
+<subfield code="a">a ma 000yy</subfield>
+</datafield>
+<datafield tag="106" ind1=" " ind2=" ">
+<subfield code="a">r</subfield>
+</datafield>
+<datafield tag="181" ind1=" " ind2=" ">
+<subfield code="6">z01</subfield>
+<subfield code="c">txt</subfield>
+<subfield code="2">rdacontent</subfield>
+</datafield>
+<datafield tag="181" ind1=" " ind2="1">
+<subfield code="6">z01</subfield>
+<subfield code="a">i#</subfield>
+<subfield code="b">xxxe##</subfield>
+</datafield>
+<datafield tag="182" ind1=" " ind2=" ">
+<subfield code="6">z01</subfield>
+<subfield code="c">n</subfield>
+<subfield code="2">rdamedia</subfield>
+</datafield>
+<datafield tag="182" ind1=" " ind2="1">
+<subfield code="6">z01</subfield>
+<subfield code="a">n</subfield>
+</datafield>
+<datafield tag="183" ind1=" " ind2="1">
+<subfield code="6">z01</subfield>
+<subfield code="a">nga</subfield>
+<subfield code="2">rdacarrier</subfield>
+</datafield>
+<datafield tag="200" ind1="1" ind2=" ">
+<subfield code="a">
+Utilisation de la navigation guidée implantaire pour un omnipraticien
+</subfield>
+<subfield code="f">Yasmine Khattabi</subfield>
+<subfield code="g">sous la direction de Patrick Exbrayat</subfield>
+</datafield>
+<datafield tag="214" ind1=" " ind2="1">
+<subfield code="d">2020</subfield>
+</datafield>
+<datafield tag="215" ind1=" " ind2=" ">
+<subfield code="a">1 vol. (50 f.)</subfield>
+<subfield code="c">ill.</subfield>
+<subfield code="d">30 cm</subfield>
+</datafield>
+<datafield tag="320" ind1=" " ind2=" ">
+<subfield code="a">Bibliogr. f. 48-50</subfield>
+</datafield>
+<datafield tag="328" ind1=" " ind2="0">
+<subfield code="b">Thèse d'exercice</subfield>
+<subfield code="c">Odontologie. Chirurgie dentaire</subfield>
+<subfield code="e">Lyon 1</subfield>
+<subfield code="d">2020</subfield>
+</datafield>
+<datafield tag="330" ind1=" " ind2=" ">
+<subfield code="a">
+Dans le cadre de sa pratique quotidienne, l'omnipraticien est amené à proposer l'implantologie aux patients comme solution thérapeutique à un édentement. La réussite thérapeutique est liée à la rigueur de planification et à la stratégie chirurgicale du praticien. La position des implants est, en effet, tributaire de deux paramètres indissociables : l'anatomie du patient et le projet prothétique. La planification implantaire permet de présager cette position en répondant aux impératifs anatomiques (osseux, structures nobles à risque,…) : le praticien utilise pour cela les données tridimensionnelles issues du cone beam ainsi que le projet prothétique. Au cours de la chirurgie, le praticien tente de retranscrire de manière la plus fidèle possible cette planification en s'adaptant au site opératoire : l'utilisation de guides chirurgicaux a apporté de la précision supplémentaire vis à vis de la chirurgie à main levée et permis de modifier le déroulement des interventions (chirurgie sans lambeau). De nombreuses technologies continuent à apparaître : la navigation dynamique ou robotique passive qui transforme les repères chirurgicaux conventionnelles. Mais de nombreux omnipraticiens restent réticents face à ces dispositifs. L'objectif de cette thèse est de caractériser l'ensemble de la navigation guidée comparé à la chirurgie à main levée, et ainsi évaluer son utilité pour un omnipraticien dans sa pratique quotidienne. Les résultats d'un sondage réalisé dans le cadre de cette thèse, permettra d'apprécier l'avis de praticiens à ce sujet
+</subfield>
+</datafield>
+<datafield tag="454" ind1=" " ind2="|">
+<subfield code="t">Hokuhokusei ni kumo to ike</subfield>
+<subfield code="h">Vol. 3</subfield>
+</datafield>
+<datafield tag="606" ind1=" " ind2=" ">
+<subfield code="3">027455610</subfield>
+<subfield code="a">Dentistes</subfield>
+<subfield code="2">rameau</subfield>
+</datafield>
+<datafield tag="606" ind1=" " ind2=" ">
+<subfield code="3">027252892</subfield>
+<subfield code="a">Prothèses dentaires</subfield>
+<subfield code="x">Technologie</subfield>
+<subfield code="2">rameau</subfield>
+</datafield>
+<datafield tag="606" ind1=" " ind2=" ">
+<subfield code="3">234745576</subfield>
+<subfield code="a">Chirurgie assistée par ordinateur</subfield>
+<subfield code="2">rameau</subfield>
+</datafield>
+<datafield tag="608" ind1=" " ind2=" ">
+<subfield code="3">027253139</subfield>
+<subfield code="a">Thèses et écrits académiques</subfield>
+<subfield code="2">rameau</subfield>
+</datafield>
+<datafield tag="700" ind1=" " ind2="1">
+<subfield code="3">249986590</subfield>
+<subfield code="a">Khattabi</subfield>
+<subfield code="b">Yasmine</subfield>
+<subfield code="f">1996-....</subfield>
+<subfield code="4">070</subfield>
+</datafield>
+<datafield tag="701" ind1=" " ind2="1">
+<subfield code="3">110102231</subfield>
+<subfield code="a">Exbrayat</subfield>
+<subfield code="b">Patrick</subfield>
+<subfield code="4">727</subfield>
+</datafield>
+<datafield tag="711" ind1="0" ind2="2">
+<subfield code="3">026402823</subfield>
+<subfield code="a">Université Claude Bernard</subfield>
+<subfield code="c">Lyon</subfield>
+<subfield code="4">295</subfield>
+</datafield>
+<datafield tag="801" ind1=" " ind2="3">
+<subfield code="a">FR</subfield>
+<subfield code="b">Abes</subfield>
+<subfield code="c">20201027</subfield>
+<subfield code="g">AFNOR</subfield>
+</datafield>
+<datafield tag="930" ind1=" " ind2=" ">
+<subfield code="5">693882213:677746415</subfield>
+<subfield code="b">693882213</subfield>
+<subfield code="a">T 10996</subfield>
+<subfield code="j">u</subfield>
+</datafield>
+<datafield tag="940" ind1=" " ind2=" ">
+<subfield code="5">693882213:677746415</subfield>
+<subfield code="a">20201027</subfield>
+<subfield code="b">x</subfield>
+</datafield>
+<datafield tag="941" ind1=" " ind2=" ">
+<subfield code="5">693882213:677746415</subfield>
+<subfield code="a">20201027</subfield>
+<subfield code="b">10:57:46.000</subfield>
+</datafield>
+</record>

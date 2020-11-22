@@ -1,0 +1,227 @@
+<record>
+<leader> cam0 22 450 </leader>
+<controlfield tag="001">089351053</controlfield>
+<controlfield tag="002">4,38,56</controlfield>
+<controlfield tag="003">http://www.sudoc.fr/089351053</controlfield>
+<controlfield tag="004">19930330</controlfield>
+<controlfield tag="005">20200307202232.000</controlfield>
+<controlfield tag="006">9999</controlfield>
+<controlfield tag="007">1999</controlfield>
+<controlfield tag="008">Aax3</controlfield>
+<datafield tag="029" ind1=" " ind2=" ">
+<subfield code="a">FR</subfield>
+<subfield code="b">1927LYON0078</subfield>
+</datafield>
+<datafield tag="035" ind1=" " ind2=" ">
+<subfield code="a">(OCoLC)458901366</subfield>
+</datafield>
+<datafield tag="035" ind1=" " ind2=" ">
+<subfield code="a">PRITEC.SCDUFC.050191227001</subfield>
+</datafield>
+<datafield tag="035" ind1=" " ind2=" ">
+<subfield code="a">PRITEC.MARSEILLE.011050451001</subfield>
+</datafield>
+<datafield tag="035" ind1=" " ind2=" ">
+<subfield code="a">CG012500530201P</subfield>
+</datafield>
+<datafield tag="100" ind1=" " ind2=" ">
+<subfield code="a">19930330d1927 k y0frey50 ba</subfield>
+</datafield>
+<datafield tag="101" ind1="0" ind2=" ">
+<subfield code="a">fre</subfield>
+</datafield>
+<datafield tag="102" ind1=" " ind2=" ">
+<subfield code="a">FR</subfield>
+</datafield>
+<datafield tag="105" ind1=" " ind2=" ">
+<subfield code="a">a ma 000yy</subfield>
+</datafield>
+<datafield tag="106" ind1=" " ind2=" ">
+<subfield code="a">r</subfield>
+</datafield>
+<datafield tag="181" ind1=" " ind2=" ">
+<subfield code="6">z01</subfield>
+<subfield code="c">txt</subfield>
+<subfield code="2">rdacontent</subfield>
+</datafield>
+<datafield tag="181" ind1=" " ind2="1">
+<subfield code="6">z01</subfield>
+<subfield code="a">i#</subfield>
+<subfield code="b">xxxe##</subfield>
+</datafield>
+<datafield tag="182" ind1=" " ind2=" ">
+<subfield code="6">z01</subfield>
+<subfield code="c">n</subfield>
+<subfield code="2">rdamedia</subfield>
+</datafield>
+<datafield tag="182" ind1=" " ind2="1">
+<subfield code="6">z01</subfield>
+<subfield code="a">n</subfield>
+</datafield>
+<datafield tag="200" ind1="1" ind2=" ">
+<subfield code="a">
+Contribution à l'étude de l'immunité chez les végétaux
+</subfield>
+<subfield code="f">Pierre Nobécourt,...</subfield>
+<subfield code="g">sous la direction de M. Gérard, M. Beauverie</subfield>
+</datafield>
+<datafield tag="210" ind1=" " ind2=" ">
+<subfield code="a">Lyon</subfield>
+<subfield code="c">impr. BOSC frères & RIOU</subfield>
+<subfield code="d">1927</subfield>
+</datafield>
+<datafield tag="215" ind1=" " ind2=" ">
+<subfield code="a">1 vol. (175 p.)</subfield>
+<subfield code="c">ill.</subfield>
+<subfield code="d">25 cm</subfield>
+</datafield>
+<datafield tag="320" ind1=" " ind2=" ">
+<subfield code="a">Bibliogr. p.155-172</subfield>
+</datafield>
+<datafield tag="328" ind1=" " ind2="0">
+<subfield code="b">Thèse de doctorat</subfield>
+<subfield code="c">Sciences naturelles</subfield>
+<subfield code="e">Université de Lyon</subfield>
+<subfield code="d">1927</subfield>
+</datafield>
+<datafield tag="456" ind1=" " ind2="|">
+<subfield code="0">097872105</subfield>
+<subfield code="t">
+Contribution à l'étude de l'immunité chez les végétaux
+</subfield>
+<subfield code="f">Pierre Nobécourt</subfield>
+<subfield code="c">Lyon</subfield>
+<subfield code="n">Impr. Bosc</subfield>
+<subfield code="d">1927</subfield>
+<subfield code="p">1 vol. (175 p.)</subfield>
+</datafield>
+<datafield tag="579" ind1=" " ind2=" ">
+<subfield code="1">0499</subfield>
+<subfield code="3">211288748</subfield>
+</datafield>
+<datafield tag="606" ind1=" " ind2=" ">
+<subfield code="3">027247279</subfield>
+<subfield code="a">Plantes</subfield>
+<subfield code="3">027657825</subfield>
+<subfield code="x">Immunité</subfield>
+<subfield code="2">rameau</subfield>
+</datafield>
+<datafield tag="606" ind1=" " ind2=" ">
+<subfield code="3">02724041X</subfield>
+<subfield code="a">Mycoses</subfield>
+<subfield code="2">rameau</subfield>
+</datafield>
+<datafield tag="608" ind1=" " ind2=" ">
+<subfield code="3">027253139</subfield>
+<subfield code="a">Thèses et écrits académiques</subfield>
+<subfield code="2">rameau</subfield>
+</datafield>
+<datafield tag="686" ind1=" " ind2=" ">
+<subfield code="a">570</subfield>
+<subfield code="2">TEF</subfield>
+</datafield>
+<datafield tag="700" ind1=" " ind2="1">
+<subfield code="3">068781059</subfield>
+<subfield code="a">Nobécourt</subfield>
+<subfield code="b">Pierre André Alexandre</subfield>
+<subfield code="f">1871-1943</subfield>
+<subfield code="4">070</subfield>
+</datafield>
+<datafield tag="701" ind1=" " ind2="1">
+<subfield code="3">090075919</subfield>
+<subfield code="a">Gérard</subfield>
+<subfield code="b">René Constant</subfield>
+<subfield code="f">1858-1935</subfield>
+<subfield code="4">727</subfield>
+</datafield>
+<datafield tag="701" ind1=" " ind2="1">
+<subfield code="3">076332292</subfield>
+<subfield code="a">Beauverie</subfield>
+<subfield code="b">Jean-Jules</subfield>
+<subfield code="f">1874-1938</subfield>
+<subfield code="4">727</subfield>
+</datafield>
+<datafield tag="711" ind1="0" ind2="2">
+<subfield code="3">028025261</subfield>
+<subfield code="a">Université de Lyon</subfield>
+<subfield code="c">1896-1970</subfield>
+<subfield code="4">295</subfield>
+</datafield>
+<datafield tag="801" ind1=" " ind2="3">
+<subfield code="a">FR</subfield>
+<subfield code="b">Abes</subfield>
+<subfield code="c">20200307</subfield>
+<subfield code="g">AFNOR</subfield>
+</datafield>
+<datafield tag="801" ind1=" " ind2="1">
+<subfield code="a">FR</subfield>
+<subfield code="b">BNF</subfield>
+<subfield code="c">19970523</subfield>
+</datafield>
+<datafield tag="801" ind1=" " ind2="1">
+<subfield code="a">FR</subfield>
+<subfield code="b">250562103</subfield>
+<subfield code="c">20031201</subfield>
+</datafield>
+<datafield tag="830" ind1=" " ind2=" ">
+<subfield code="a">
+Réforme Rameau Genre-Forme retro thèses (ne pas supprimer)
+</subfield>
+</datafield>
+<datafield tag="917" ind1=" " ind2=" ">
+<subfield code="5">130552104:242446507</subfield>
+<subfield code="a">aaxx</subfield>
+</datafield>
+<datafield tag="930" ind1=" " ind2=" ">
+<subfield code="5">130552104:242446507</subfield>
+<subfield code="b">130552104</subfield>
+<subfield code="j">g</subfield>
+</datafield>
+<datafield tag="940" ind1=" " ind2=" ">
+<subfield code="5">130552104:242446507</subfield>
+<subfield code="a">20050928</subfield>
+<subfield code="b">x</subfield>
+</datafield>
+<datafield tag="941" ind1=" " ind2=" ">
+<subfield code="5">130552104:242446507</subfield>
+<subfield code="a">20120323</subfield>
+<subfield code="b">15:16:04.000</subfield>
+</datafield>
+<datafield tag="930" ind1=" " ind2=" ">
+<subfield code="5">692662101:48443439X</subfield>
+<subfield code="b">692662101</subfield>
+<subfield code="j">g</subfield>
+</datafield>
+<datafield tag="940" ind1=" " ind2=" ">
+<subfield code="5">692662101:48443439X</subfield>
+<subfield code="a">20130702</subfield>
+<subfield code="b">x</subfield>
+</datafield>
+<datafield tag="941" ind1=" " ind2=" ">
+<subfield code="5">692662101:48443439X</subfield>
+<subfield code="a">20130702</subfield>
+<subfield code="b">16:19:50.000</subfield>
+</datafield>
+<datafield tag="991" ind1=" " ind2=" ">
+<subfield code="5">692662101:48443439X</subfield>
+<subfield code="a">
+RETRO-2013-FINANCEMENT ABES-LOC-Lyon1 Sciences thèses
+</subfield>
+</datafield>
+<datafield tag="930" ind1=" " ind2=" ">
+<subfield code="5">861942102:256472637</subfield>
+<subfield code="b">861942102</subfield>
+<subfield code="a">355519-1927-3</subfield>
+<subfield code="j">u</subfield>
+</datafield>
+<datafield tag="940" ind1=" " ind2=" ">
+<subfield code="5">861942102:256472637</subfield>
+<subfield code="a">20060221</subfield>
+<subfield code="b">x</subfield>
+</datafield>
+<datafield tag="941" ind1=" " ind2=" ">
+<subfield code="5">861942102:256472637</subfield>
+<subfield code="a">20060221</subfield>
+<subfield code="b">13:10:59.000</subfield>
+</datafield>
+</record>

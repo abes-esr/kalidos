@@ -1,0 +1,147 @@
+<record>
+<leader> clm0 22 450 </leader>
+<controlfield tag="001">16623267X</controlfield>
+<controlfield tag="002">38</controlfield>
+<controlfield tag="003">http://www.sudoc.fr/16623267X</controlfield>
+<controlfield tag="004">20121213</controlfield>
+<controlfield tag="005">20200225040021.000</controlfield>
+<controlfield tag="006">692669902</controlfield>
+<controlfield tag="007">0499</controlfield>
+<controlfield tag="008">Oax3</controlfield>
+<datafield tag="035" ind1=" " ind2=" ">
+<subfield code="a">(OCoLC)835639352</subfield>
+</datafield>
+<datafield tag="100" ind1=" " ind2=" ">
+<subfield code="a">20121213e20121685m y0frey50 ba</subfield>
+</datafield>
+<datafield tag="101" ind1="0" ind2=" ">
+<subfield code="a">lat</subfield>
+</datafield>
+<datafield tag="102" ind1=" " ind2=" ">
+<subfield code="a">NL</subfield>
+</datafield>
+<datafield tag="105" ind1=" " ind2=" ">
+<subfield code="a">y # 000|y</subfield>
+</datafield>
+<datafield tag="135" ind1=" " ind2=" ">
+<subfield code="a">dr|||||||||||</subfield>
+</datafield>
+<datafield tag="200" ind1="1" ind2=" ">
+<subfield code="a">
+Anatomie des plantes, qui contient une description exacte de leurs parties & de leurs usages, & qui fait voir comment elles se forment, & comment elles croissent
+</subfield>
+<subfield code="b">Ressource électronique</subfield>
+<subfield code="f">
+Par Mr. Nehemias Grew... Et l'Ame des plantes, par Mr. Dedu... Avec un Receuil [!] d'experiences & observations curieuses faites par Mrs. Grew & Boyle...
+</subfield>
+</datafield>
+<datafield tag="214" ind1=" " ind2="2">
+<subfield code="a">Lyon</subfield>
+<subfield code="c">Bibliothèque Lyon 1</subfield>
+<subfield code="d">2012</subfield>
+</datafield>
+<datafield tag="230" ind1=" " ind2=" ">
+<subfield code="a">Données textuelles (1 fichier PDF : 32786 Ko)</subfield>
+</datafield>
+<datafield tag="310" ind1=" " ind2=" ">
+<subfield code="a">Added t.p. engr</subfield>
+</datafield>
+<datafield tag="303" ind1=" " ind2=" ">
+<subfield code="a">L’impression du document génère 438 p.</subfield>
+</datafield>
+<datafield tag="304" ind1=" " ind2=" ">
+<subfield code="a">
+Titre provenant de la page de titre du document numérisé
+</subfield>
+</datafield>
+<datafield tag="305" ind1=" " ind2=" ">
+<subfield code="a">
+Document numérisé dans le cadre du projet de numérisation du SCD Lyon 1, corpus Histoire de la botanique
+</subfield>
+</datafield>
+<datafield tag="324" ind1=" " ind2=" ">
+<subfield code="a">
+Numérisation de l'édition de Leide : P. van der Aa, 1685
+</subfield>
+</datafield>
+<datafield tag="337" ind1=" " ind2=" ">
+<subfield code="a">
+Nécessite un navigateur internet ; un lecteur de fichier PDF
+</subfield>
+</datafield>
+<datafield tag="339" ind1=" " ind2=" ">
+<subfield code="a">
+Nécessite un navigateur internet ; un lecteur de fichier PDF
+</subfield>
+</datafield>
+<datafield tag="455" ind1=" " ind2="|">
+<subfield code="0">042601142</subfield>
+<subfield code="t">
+Anatomie des plantes, qui contient une description exacte de leurs parties & de leurs usages, & qui fait voir comment elles se forment, & comment elles croissent . Par Mr. Nehemias Grew : enrichie de tailles-douces et l'Ame des plantes, par Mr. Dedu ...Avec un Receuil [!] d'experiences & observations curieuses faites par Mrs. Grew & Boyle ...
+</subfield>
+<subfield code="d">1685</subfield>
+<subfield code="p">1 vol. (6 p. l., 310 p., 1 l., 108 p. )</subfield>
+</datafield>
+<datafield tag="606" ind1=" " ind2=" ">
+<subfield code="a">Botany</subfield>
+<subfield code="x">Anatomy</subfield>
+<subfield code="2">lc</subfield>
+</datafield>
+<datafield tag="606" ind1=" " ind2=" ">
+<subfield code="a">Botany</subfield>
+<subfield code="x">Pre-Linnean works</subfield>
+<subfield code="2">lc</subfield>
+</datafield>
+<datafield tag="606" ind1=" " ind2=" ">
+<subfield code="3">027296644</subfield>
+<subfield code="a">Plantes</subfield>
+<subfield code="x">Anatomie</subfield>
+<subfield code="2">rameau</subfield>
+</datafield>
+<datafield tag="606" ind1=" " ind2=" ">
+<subfield code="3">03175449X</subfield>
+<subfield code="a">Botanique</subfield>
+<subfield code="x">Ouvrages prélinnéens</subfield>
+<subfield code="2">rameau</subfield>
+</datafield>
+<datafield tag="620" ind1=" " ind2=" ">
+<subfield code="d">Leiden</subfield>
+</datafield>
+<datafield tag="680" ind1=" " ind2=" ">
+<subfield code="a">QK41</subfield>
+</datafield>
+<datafield tag="700" ind1=" " ind2="1">
+<subfield code="3">030575982</subfield>
+<subfield code="a">Grew</subfield>
+<subfield code="b">Nehemiah</subfield>
+<subfield code="f">1641-1712</subfield>
+<subfield code="4">070</subfield>
+</datafield>
+<datafield tag="801" ind1=" " ind2="3">
+<subfield code="a">FR</subfield>
+<subfield code="b">Abes</subfield>
+<subfield code="c">20200225</subfield>
+<subfield code="g">AFNOR</subfield>
+</datafield>
+<datafield tag="856" ind1="4" ind2=" ">
+<subfield code="5">692669902:658713531</subfield>
+<subfield code="q">PDF</subfield>
+<subfield code="u">http://n2t.net/ark:/47881/m6bp00s1</subfield>
+<subfield code="z">Accès au texte intégral</subfield>
+</datafield>
+<datafield tag="930" ind1=" " ind2=" ">
+<subfield code="5">692669902:469700769</subfield>
+<subfield code="b">692669902</subfield>
+<subfield code="j">g</subfield>
+</datafield>
+<datafield tag="940" ind1=" " ind2=" ">
+<subfield code="5">692669902:469700769</subfield>
+<subfield code="a">20121213</subfield>
+<subfield code="b">x</subfield>
+</datafield>
+<datafield tag="941" ind1=" " ind2=" ">
+<subfield code="5">692669902:469700769</subfield>
+<subfield code="a">20121213</subfield>
+<subfield code="b">10:40:50.000</subfield>
+</datafield>
+</record>

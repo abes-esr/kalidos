@@ -1,0 +1,150 @@
+<record>
+<leader> nlm0 22 450 </leader>
+<controlfield tag="001">250025876</controlfield>
+<controlfield tag="002">38</controlfield>
+<controlfield tag="003">http://www.sudoc.fr/002</controlfield>
+<controlfield tag="004">20201028</controlfield>
+<controlfield tag="005">20201028180747.000</controlfield>
+<controlfield tag="006">692669902</controlfield>
+<controlfield tag="007">692669902</controlfield>
+<controlfield tag="008">Oar3</controlfield>
+<datafield tag="029" ind1=" " ind2=" ">
+</datafield>
+<datafield tag="035" ind1=" " ind2=" ">
+<subfield code="a">(OCoLC)1202148633</subfield>
+</datafield>
+<datafield tag="100" ind1=" " ind2=" ">
+<subfield code="a">20201028d20202021k y0engy50 b|</subfield>
+</datafield>
+<datafield tag="101" ind1="1" ind2=" ">
+<subfield code="a">fre</subfield>
+<subfield code="d">fre</subfield>
+</datafield>
+<datafield tag="102" ind1=" " ind2=" ">
+<subfield code="a">FR</subfield>
+</datafield>
+<datafield tag="105" ind1=" " ind2=" ">
+<subfield code="a">a ma 000y|</subfield>
+</datafield>
+<datafield tag="135" ind1=" " ind2=" ">
+<subfield code="a">dr|||||||||||</subfield>
+</datafield>
+<datafield tag="200" ind1="1" ind2=" ">
+<subfield code="a">
+Les brochures d'information : dans l'amélioration de la qualité de vie
+</subfield>
+<subfield code="d">=Handbook of primatology : congres</subfield>
+<subfield code="f">Clément Navarro</subfield>
+<subfield code="g">sous la direction de Nora Moumjid</subfield>
+</datafield>
+<datafield tag="214" ind1=" " ind2="1">
+<subfield code="a">SCD Lyon</subfield>
+</datafield>
+<datafield tag="230" ind1=" " ind2=" ">
+<subfield code="a">Données textuelles (1 fichier PDF : 5,8 Mo)</subfield>
+</datafield>
+<datafield tag="304" ind1=" " ind2=" ">
+<subfield code="a">Titre provenant de l'écran-titre</subfield>
+</datafield>
+<datafield tag="307" ind1=" " ind2=" ">
+<subfield code="a">L'impression du document génère 119 p.</subfield>
+</datafield>
+<datafield tag="310" ind1=" " ind2=" ">
+<subfield code="a">
+L'accès à cette ressource est réservé aux membres de Lyon 1 après authentification
+</subfield>
+</datafield>
+<datafield tag="320" ind1=" " ind2=" ">
+<subfield code="a">Bibliogr. p. 112-117</subfield>
+</datafield>
+<datafield tag="328" ind1=" " ind2="0">
+<subfield code="b">Thèse d'exercice</subfield>
+<subfield code="c">Pharmacie</subfield>
+<subfield code="e">Lyon 1</subfield>
+<subfield code="d">2020</subfield>
+</datafield>
+<datafield tag="330" ind1=" " ind2=" ">
+<subfield code="a">
+Le diabète est défini comme une affection métabolique caractérisée par une élévation chronique de la concentration de sucre dans le sang. La prévalence globale mondiale de cette maladie ne cesse d'augmenter depuis les années 2000 et risque de devenir la 7ème cause de décès dans le monde en 2030. Conformément aux recommandations de la HAS, relatives à la stratégie médicamenteuse du contrôle glycémique du DT2 (2013), les piliers de la prise en charge des patients sont dans un premier temps leurs connaissances de la maladie et l'application des mesures hygiéno-diététiques au quotidien, et dans un second temps, les traitements médicamenteux si les modifications de l'hygiène de vie ne suffisent pas. Malheureusement, en dépit des progrès réalisés dans la prise en charge du DT2, seuls 50% des patients possèdent un taux d'HbA1c compris dans l'objectif thérapeutique, ce qui constitue donc un facteur de risque pour le développement de complications (maladies cardiovasculaires, rétinopathies, syndrome du pied du diabétique). On peut ainsi se demander si le modèle standard de prise en charge, qui consiste à quelques visites durant l'année avec le professionnel de santé (diabétologue, médecin généraliste) est insuffisant pour une prise en charge optimale, que ce soit dans la mise en application des mesures hygiéno-diététiques ou dans la gestion médicamenteuse. Conformément aux recommandations de l'OMS, relatives aux stratégies Européennes contre les maladies non transmissibles (2016), il est essentiel que les patients puissent jouer un rôle actif dans la gestion de la maladie en améliorant leurs connaissances et leurs compétences en matière de changement de comportement nécessaires aux soins à long terme. Pour ce faire, l'éducation des patients, via des outils d'informations, semble adaptée pour minimiser l'impact clinique de la maladie et ainsi améliorer la qualité de vie. En effet, depuis plusieurs années, de nombreux organismes tels que les organisations publiques de santé, les laboratoires pharmaceutiques et les associations de patients, élaborent des outils d'informations de type brochures, dédiés aux patients diabétiques afin de les accompagner au quotidien, concernant les mesures hygiéno-diététiques et les informations sur la pathologie. Dans ce cadre, la question à laquelle notre thèse vise à répondre est celle de l'impact des brochures d'informations mises à disposition des patients dans la prise en charge du diabète de type II et dans l'amélioration de leur qualité de vie
+</subfield>
+</datafield>
+<datafield tag="337" ind1=" " ind2=" ">
+<subfield code="a">
+Nécessite un navigateur internet ; un lecteur de fichier PDF
+</subfield>
+</datafield>
+<datafield tag="606" ind1=" " ind2=" ">
+<subfield code="3">171573994</subfield>
+<subfield code="a">Diabète non-insulinodépendant</subfield>
+<subfield code="2">rameau</subfield>
+</datafield>
+<datafield tag="606" ind1=" " ind2=" ">
+<subfield code="3">027610586</subfield>
+<subfield code="a">Éducation des patients</subfield>
+<subfield code="2">rameau</subfield>
+</datafield>
+<datafield tag="606" ind1=" " ind2=" ">
+<subfield code="3">06482344X</subfield>
+<subfield code="a">Brochure pédagogique pour le patient</subfield>
+<subfield code="2">rameau</subfield>
+</datafield>
+<datafield tag="608" ind1=" " ind2=" ">
+<subfield code="3">027253139</subfield>
+<subfield code="a">Thèses et écrits académiques</subfield>
+<subfield code="2">rameau</subfield>
+</datafield>
+<datafield tag="608" ind1=" " ind2=" ">
+<subfield code="3">078994403</subfield>
+<subfield code="a">La petite Lili</subfield>
+<subfield code="3">086305646</subfield>
+<subfield code="z">20e siècle</subfield>
+<subfield code="2">rameaux</subfield>
+</datafield>
+<datafield tag="700" ind1=" " ind2="1">
+<subfield code="3">250025868</subfield>
+<subfield code="a">Navarro</subfield>
+<subfield code="b">Clément</subfield>
+<subfield code="f">1991-....</subfield>
+<subfield code="4">070</subfield>
+</datafield>
+<datafield tag="701" ind1=" " ind2="1">
+<subfield code="a">Moumjid-Ferdjaoui</subfield>
+<subfield code="b">Nora</subfield>
+<subfield code="4">000</subfield>
+</datafield>
+<datafield tag="711" ind1="0" ind2="2">
+<subfield code="3">026402823</subfield>
+<subfield code="a">Université Claude Bernard</subfield>
+<subfield code="c">Lyon</subfield>
+<subfield code="4">205</subfield>
+</datafield>
+<datafield tag="801" ind1=" " ind2="3">
+<subfield code="a">FR</subfield>
+<subfield code="b">Abes</subfield>
+<subfield code="c">20201028</subfield>
+<subfield code="g">AFNOR</subfield>
+</datafield>
+<datafield tag="856" ind1="4" ind2=" ">
+<subfield code="5">692669902:678007861</subfield>
+<subfield code="q">https://n2t.net/ark:/47881/m6jh3kkn</subfield>
+<subfield code="u">Adresse url</subfield>
+<subfield code="z">
+Accès réservé aux membres de Lyon 1 après authentification
+</subfield>
+</datafield>
+<datafield tag="930" ind1=" " ind2=" ">
+<subfield code="5">692669902:678007861</subfield>
+<subfield code="b">692669902</subfield>
+<subfield code="j">u</subfield>
+</datafield>
+<datafield tag="940" ind1=" " ind2=" ">
+<subfield code="5">692669902:678007861</subfield>
+<subfield code="a">20201028</subfield>
+<subfield code="b">x</subfield>
+</datafield>
+<datafield tag="941" ind1=" " ind2=" ">
+<subfield code="5">692669902:678007861</subfield>
+<subfield code="a">20201028</subfield>
+<subfield code="b">18:04:02.000</subfield>
+</datafield>
+</record>

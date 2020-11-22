@@ -1,0 +1,186 @@
+<record>
+    <leader> cx j22 3 45 </leader>
+    <controlfield tag="001">055821650</controlfield>
+    <controlfield tag="003">http://www.idref.fr/055821650</controlfield>
+    <controlfield tag="004">20010320</controlfield>
+    <controlfield tag="005">20190222173607.000</controlfield>
+    <controlfield tag="006">0004</controlfield>
+    <controlfield tag="007">1999</controlfield>
+    <controlfield tag="008">Td8</controlfield>
+    <datafield tag="033" ind1=" " ind2=" ">
+    <subfield code="a">http://catalogue.bnf.fr/ark:/12148/cb136115620</subfield>
+    <subfield code="2">BNF</subfield>
+    <subfield code="d">20160115</subfield>
+    </datafield>
+    <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">frBN015402211</subfield>
+    </datafield>
+    <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">FRBNF136115621</subfield>
+    <subfield code="z">FRBNF13611562</subfield>
+    </datafield>
+    <datafield tag="100" ind1=" " ind2=" ">
+    <subfield code="a">20010320afrey50 ba0</subfield>
+    </datafield>
+    <datafield tag="106" ind1=" " ind2=" ">
+    <subfield code="a">2</subfield>
+    <subfield code="b">1</subfield>
+    <subfield code="c">1</subfield>
+    </datafield>
+    <datafield tag="152" ind1=" " ind2=" ">
+    <subfield code="b">rameau</subfield>
+    </datafield>
+    <datafield tag="250" ind1=" " ind2=" ">
+    <subfield code="7">ba0yba0y</subfield>
+    <subfield code="9">#</subfield>
+    <subfield code="a">Cadavres</subfield>
+    </datafield>
+    <datafield tag="305" ind1="1" ind2=" ">
+    <subfield code="7">ba0yba0y</subfield>
+    <subfield code="a">
+    Voir aussi la subdivision Carcasses aux êtres vivants
+    </subfield>
+    </datafield>
+    <datafield tag="450" ind1=" " ind2=" ">
+    <subfield code="7">ba0yba0y</subfield>
+    <subfield code="9">#</subfield>
+    <subfield code="a">Cadavres animaux</subfield>
+    </datafield>
+    <datafield tag="450" ind1=" " ind2=" ">
+    <subfield code="7">ba0yba0y</subfield>
+    <subfield code="9">#</subfield>
+    <subfield code="a">Cadavres humains</subfield>
+    </datafield>
+    <datafield tag="450" ind1=" " ind2=" ">
+    <subfield code="7">ba0yba0y</subfield>
+    <subfield code="9">#</subfield>
+    <subfield code="a">Corps humain après la mort</subfield>
+    </datafield>
+    <datafield tag="450" ind1=" " ind2=" ">
+    <subfield code="7">ba0yba0y</subfield>
+    <subfield code="9">#</subfield>
+    <subfield code="a">Corps morts</subfield>
+    </datafield>
+    <datafield tag="450" ind1=" " ind2=" ">
+    <subfield code="7">ba0yba0y</subfield>
+    <subfield code="9">#</subfield>
+    <subfield code="a">Dépouilles mortelles</subfield>
+    </datafield>
+    <datafield tag="550" ind1=" " ind2=" ">
+    <subfield code="0">Voir aussi</subfield>
+    <subfield code="3">027828263</subfield>
+    <subfield code="5">z|xxx</subfield>
+    <subfield code="7">ba0yba0y</subfield>
+    <subfield code="a">Embaumement</subfield>
+    </datafield>
+    <datafield tag="550" ind1=" " ind2=" ">
+    <subfield code="0">Voir aussi</subfield>
+    <subfield code="3">050598643</subfield>
+    <subfield code="5">z|xxx</subfield>
+    <subfield code="7">ba0yba0y</subfield>
+    <subfield code="a">Crémation</subfield>
+    </datafield>
+    <datafield tag="550" ind1=" " ind2=" ">
+    <subfield code="0">Voir aussi</subfield>
+    <subfield code="3">153280883</subfield>
+    <subfield code="5">z|xxx</subfield>
+    <subfield code="7">ba0yba0y</subfield>
+    <subfield code="a">Charniers</subfield>
+    </datafield>
+    <datafield tag="550" ind1=" " ind2=" ">
+    <subfield code="0">Voir aussi</subfield>
+    <subfield code="3">029653894</subfield>
+    <subfield code="5">z|xxx</subfield>
+    <subfield code="7">ba0yba0y</subfield>
+    <subfield code="a">Transis</subfield>
+    </datafield>
+    <datafield tag="550" ind1=" " ind2=" ">
+    <subfield code="0">Voir aussi</subfield>
+    <subfield code="3">028644913</subfield>
+    <subfield code="5">z|xxx</subfield>
+    <subfield code="7">ba0yba0y</subfield>
+    <subfield code="a">Carcasses</subfield>
+    </datafield>
+    <datafield tag="550" ind1=" " ind2=" ">
+    <subfield code="0">Voir aussi</subfield>
+    <subfield code="3">031714773</subfield>
+    <subfield code="5">z|xxx</subfield>
+    <subfield code="7">ba0yba0y</subfield>
+    <subfield code="a">Animaux morts</subfield>
+    </datafield>
+    <datafield tag="550" ind1=" " ind2=" ">
+    <subfield code="0">Voir aussi</subfield>
+    <subfield code="3">027655458</subfield>
+    <subfield code="5">z|xxx</subfield>
+    <subfield code="7">ba0yba0y</subfield>
+    <subfield code="a">Mort (biologie)</subfield>
+    </datafield>
+    <datafield tag="550" ind1=" " ind2=" ">
+    <subfield code="0">Voir aussi</subfield>
+    <subfield code="3">027791912</subfield>
+    <subfield code="5">z|xxx</subfield>
+    <subfield code="7">ba0yba0y</subfield>
+    <subfield code="a">Morts</subfield>
+    </datafield>
+    <datafield tag="550" ind1=" " ind2=" ">
+    <subfield code="0">Voir aussi</subfield>
+    <subfield code="3">061618063</subfield>
+    <subfield code="5">z|xxx</subfield>
+    <subfield code="7">ba0yba0y</subfield>
+    <subfield code="a">Phénomènes cadavériques</subfield>
+    </datafield>
+    <datafield tag="550" ind1=" " ind2=" ">
+    <subfield code="3">027410366</subfield>
+    <subfield code="5">h|xxx</subfield>
+    <subfield code="7">ba0yba0y</subfield>
+    <subfield code="a">Restes humains (archéologie)</subfield>
+    </datafield>
+    <datafield tag="686" ind1=" " ind2=" ">
+    <subfield code="a">570</subfield>
+    <subfield code="c">Biologie</subfield>
+    <subfield code="2">Note de regroupement par domaine</subfield>
+    </datafield>
+    <datafield tag="686" ind1=" " ind2=" ">
+    <subfield code="a">610</subfield>
+    <subfield code="c">Médecine</subfield>
+    <subfield code="2">Note de regroupement par domaine</subfield>
+    </datafield>
+    <datafield tag="801" ind1=" " ind2="0">
+    <subfield code="a">FR</subfield>
+    <subfield code="b">FR-751131015</subfield>
+    <subfield code="c">20010320</subfield>
+    </datafield>
+    <datafield tag="801" ind1=" " ind2="3">
+    <subfield code="a">FR</subfield>
+    <subfield code="b">Abes</subfield>
+    <subfield code="c">20190222</subfield>
+    <subfield code="g">AFNOR</subfield>
+    </datafield>
+    <datafield tag="815" ind1=" " ind2=" ">
+    <subfield code="a">Laval RVM, 2001-01</subfield>
+    </datafield>
+    <datafield tag="898" ind1=" " ind2=" ">
+    <subfield code="a">
+    Réforme Rameau janvier 2019 Td ouverte à la subd. géogr.
+    </subfield>
+    <subfield code="d">20190215</subfield>
+    </datafield>
+    <datafield tag="950" ind1=" " ind2=" ">
+    <subfield code="a">Cadavres</subfield>
+    </datafield>
+    <datafield tag="951" ind1=" " ind2=" ">
+    <subfield code="a">Cadavres animaux</subfield>
+    </datafield>
+    <datafield tag="951" ind1=" " ind2=" ">
+    <subfield code="a">Cadavres humains</subfield>
+    </datafield>
+    <datafield tag="951" ind1=" " ind2=" ">
+    <subfield code="a">Corps humain après la mort</subfield>
+    </datafield>
+    <datafield tag="951" ind1=" " ind2=" ">
+    <subfield code="a">Corps morts</subfield>
+    </datafield>
+    <datafield tag="951" ind1=" " ind2=" ">
+    <subfield code="a">Dépouilles mortelles</subfield>
+    </datafield>
+    </record>
