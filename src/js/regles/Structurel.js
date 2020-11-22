@@ -32,7 +32,7 @@ var Structurel = function () {
                 // numberError.push(regle.number[item]);
 
                 if (field != null && field.subfield instanceof Array) {
-                    for (i in field.subfield) {
+                    for (let i in field.subfield) {
                         if (field.subfield[i]._attributes.code === regle.code) {
                             if (regle.type == "contains code") {
                                 valid -= 1;

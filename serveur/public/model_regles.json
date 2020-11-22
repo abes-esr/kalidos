@@ -40,8 +40,8 @@
             {
                 "number": 200,
                 "code": "d",
-                "message": "200$d doit commencer par espace =",
-                "regex": "^( =).*",
+                "message": "200$d doit commencer par = espace",
+                "regex": "^(= ).*",
                 "index": 7
             },
             {
@@ -315,6 +315,158 @@
                 ],
                 "match": "all",
                 "message": "941 $a != 020, 20130524 (FAIL TEST)"
+            },
+            {
+                "number": "100",
+                "code": "a",
+                "message": "Données codées à compléter",
+                "regex": "(?:(?!\\|).)+",
+                "index": 500
+            },
+            {
+                "number": "105",
+                "code": "a",
+                "message": "Zone 105 à compléter",
+                "regex": "(?:(?!\\|).)+",
+                "index": 501
+            },
+            {
+                "number": "200",
+                "code": "a",
+                "message": "Zone 200 : supprimer le double espace",
+                "regex": "(?:(?!(  )).)+",
+                "index": 502
+            },
+            {
+                "number": 200,
+                "code": "a",
+                "message": "200$a ne doit pas contenir le caractère / ou : ou .",
+                "regex": "(?:(?![/:.]).)+",
+                "index": 503
+            },
+            {
+                "number": 200,
+                "code": "d",
+                "message": "200$d ne doit pas contenir le caractère / ou : ou .",
+                "regex": "(?:(?![/:.]).)+",
+                "index": 504
+            },
+            {
+                "number": 700,
+                "code": "f",
+                "message": "Vérifier les dates de l'autorité auteur",
+                "regex": ".{9}.*$",
+                "index": 505
+            },
+            {
+                "number": 701,
+                "code": "f",
+                "message": "Vérifier les dates de l'autorité auteur",
+                "regex": ".{9}.*$",
+                "index": 506
+            },
+            {
+                "index": 507,
+                "number": [
+                    "600",
+                    "601",
+                    "602",
+                    "604",
+                    "605",
+                    "606",
+                    "607",
+                    "608"
+                ],
+                "code": "2",
+                "value": [
+                    "^((?!RAMEAU).)*$",
+                    "^((?!Rameau).)*$",
+                    "^((?!Ram).)*$",
+                    "^((?!ram).)*$"
+                ],
+                "match": "all",
+                "message": "Zones 6XX : $2 mal orthographié"
+            },
+            {
+                "index": 508,
+                "number": [
+                    "700",
+                    "701",
+                    "702",
+                    "710",
+                    "711",
+                    "712",
+                    "720",
+                    "721",
+                    "722"
+                ],
+                "code": "4",
+                "value": [
+                    "^((?!000).)*$"
+                ],
+                "match": "all",
+                "message": "Zones 7XX : code fonction erroné"
+            },
+            {
+                "index": 509,
+                "number": [
+                    "700",
+                    "701",
+                    "702",
+                    "710",
+                    "711",
+                    "712",
+                    "720",
+                    "721",
+                    "722"
+                ],
+                "code": "4",
+                "value": [
+                    "^((?!205).)*$"
+                ],
+                "match": "all",
+                "message": "Zones 7XX : code fonction à employer uniquement lorsqu'aucune autre fonction plus spécifique ne convient"
+            },
+            {
+                "index": 510,
+                "number": [
+                    "700",
+                    "710",
+                    "720",
+                    "701",
+                    "711",
+                    "721"
+                ],
+                "code": "4340",
+                "value": [
+                    ".*éd\\..*",
+                    ".*édited.*",
+                    ".*édit.*"
+                ],
+                "match": "one",
+                "message": "Zones 7XX : code fonction, vérifier qu'il s'agit d'un éditeur scientifique ou d'un directeur de publication ?"
+            },
+            {
+                "index": 511,
+                "number": 200,
+                "code": [
+                    "f",
+                    "g"
+                ],
+                "value": [
+                    ".*éd\\..*",
+                    ".*édited.*",
+                    ".*édit.*"
+                ],
+                "match": "one",
+                "message": "Zones 7XX : code fonction, vérifier qu'il s'agit d'un éditeur scientifique ou d'un directeur de publication ?"
+            },
+            {
+                "index": 512,
+                "number": 230,
+                "code": "a",
+                "regex": "(?:(?!Mo).)+",
+                "message": "Zone 230 : corriger le poids en Ko"
             }
         ],
         "dependances": [
@@ -360,7 +512,7 @@
                 "numRuleExcell": 101
             },
             {
-                "index": 43,
+                "index": 499,
                 "field1": {
                     "number": "210",
                     "code": "d",
