@@ -1,4 +1,7 @@
 
+
+// caracter #
+
 export function must_contain(isWord, words) {
   let isOne = words.length > 1 ;
   return isOne ? ['.*', '.*'] : isWord? ['.*(', ').*'] : ['.*[', '].*']

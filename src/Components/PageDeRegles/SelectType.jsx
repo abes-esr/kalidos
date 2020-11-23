@@ -1,8 +1,11 @@
 import React, { useState } from 'react'
-import { Button, Card, Col, Container, Form, ListGroup, Modal, Row } from 'react-bootstrap'
+import { Button, Card, Col, Container, ListGroup, Row } from 'react-bootstrap'
+import Form from 'react-bootstrap/Form'
 import FormJSON from "@rjsf/core";
-import test from './forms/tes'
-const TypeList = () => {
+import { getSchema } from './forms/matching'
+import ArrayFieldTemplate from './forms/ArrayFieldTemplate'
+
+const TypeList = ({categories}) => {
   
   const [useForm, setUseForm] = useState(false)
   const [type, setType] = useState("matching")
@@ -16,6 +19,29 @@ const TypeList = () => {
     { name: "References", type: "idRef", description: "Description de idRef" },
   ]
 
+  const rules = {
+    rules: [
+      "must contain",
+      "must not contain",
+      "equals to",
+      "not equals to",
+      "starts with",
+      "not starts with",
+      "ends with",
+      "not ends with"
+    ],
+    names: [
+      "Must contain",
+      "Must not contain",
+      "Equals to",
+      "Not equals to",
+      "Starts with",
+      "Not starts with",
+      "Ends with",
+      "Not ends with"
+    ]
+  }
+
   const handleTypeChange = (selectedType) => {
     setType(selectedType)
     setIndexDesc(types.findIndex(t => t.type == selectedType))
@@ -25,81 +51,65 @@ const TypeList = () => {
     setUseForm(!useForm)
   }
 
-  // TEST 
-  // const schema = {
-  //   title: "test", 
-  //   type: "array",
-  // items: {
-  //   type: "object",
-  //   properties: {
-  //       name: {
-  //           type: "string"
-  //       }
-  //   }
-  // }
-  // };
-
-  // const uiSchema = {
-  //   items: {
-  //     "ui:widget": "textarea"
-  //   }
-  // };
-
-  const schema = {
-    type: "array",
-    items: {
-      type: "string"
-    }
-  };
+  const schema = getSchema(categories, rules)
   
-  function ArrayFieldTemplate(props) {
-    return (
-      <div>
-        {props.items.map(element => element.children)}
-        {props.canAdd && <button type="button" onClick={props.onAddClick}>Ajouter un nombre</button>}
-      </div>
-    );
+  const onSubmit = ({formData}, e) => {
+    console.log(type)
+    console.log("Data submitted: ",  formData)
   }
 
-  const Form = () => (<Row><FormJSON schema={test.schema} /></Row>);
-  // const Form = () => (<Row><FormJSON schema={schema} /></Row>);
 
-  const List = () => (
-    <Row>
-      <Col>
-        <ListGroup>
-          { 
-            types.map( type => {
-              return(
-                <ListGroup.Item key={type.type} action onClick={() => handleTypeChange(type.type)}>
-                  {type.name}
-                </ListGroup.Item>
-              );
-            }) 
-          }
-        </ListGroup>
-      </Col>
-      <Col>
-        <Card>
-          <Card.Body>{types[indexDesc].description}</Card.Body>
-        </Card>
-      </Col>
+  const Footer = () => (
+    <Row className="justify-content-end">
+      {useForm && <Button className="m-1" variant="primary" type="submit">Submit</Button>}
+      <Button className="m-1" variant="secondary" onClick={() => handleSelectedType()}> { useForm ? "Back" : "Next"} </Button>
     </Row>
   )
 
+  const Form = () => (
+    <FormJSON 
+      className="col-12"
+      schema={schema}
+      ArrayFieldTemplate={ArrayFieldTemplate}
+      onSubmit={onSubmit}
+    >
+    { <Footer/>}
+    </FormJSON>
+  )
+
+  const List = () => (
+    <Container>
+      <Row>
+        <Col>
+          <ListGroup>
+            { 
+              types.map( type => {
+                return(
+                  <ListGroup.Item key={type.type} action onClick={() => handleTypeChange(type.type)}>
+                    {type.name}
+                  </ListGroup.Item>
+                );
+              }) 
+            }
+          </ListGroup>
+        </Col>
+        <Col>
+          <Card>
+            <Card.Body>{types[indexDesc].description}</Card.Body>
+          </Card>
+        </Col>
+      </Row>
+      <Footer/>
+    </Container>
+  )
 
   return (
     <Container>
-      <Container>
-        <Row>Chose a type of rule :</Row>
-        <Row>
-          { useForm ? <Form/> : <List/> }
-        </Row>
-      </Container>
-      <Row className="p-1 justify-content-end">
-        <Button onClick={() => handleSelectedType()}> { useForm ? "Back" : "Next"} </Button>
+      { !useForm && <Row> Chose a type of rule : </Row>}
+      <Row>
+        { useForm ? <Form/> : <List/> }
       </Row>
-  </Container>
+    </Container>
   );
 }
 

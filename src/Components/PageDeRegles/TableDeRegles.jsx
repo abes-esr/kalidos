@@ -19,9 +19,9 @@ function Table() {
   const [error, setError] = useState(null);
   const [isLoaded, setIsLoaded] = useState(false);
   const [rules, setRules] = useState([]);
-  const [category, setCategory] = useState([]);
+  const [categories, setCategory] = useState([]);
   const { SearchBar } = Search;
-
+  
   const options = {
     paginationSize: 4,
     pageStartIndex: 0,
@@ -41,9 +41,9 @@ function Table() {
 
   const filtering = (result) => {
     let rules = []
-    let categories = []
+    let c = []
     for (const category in result) { // category => {Generale, Memoire, Electronique}
-      categories.push(category)
+      c.push(category)
       /***************************************************************
        *     IF TO REMOVE ONCE MEMORE AND ELECTRONIQUE ARE ADDED
        ***************************************************************/
@@ -64,7 +64,7 @@ function Table() {
         }
       }
     }
-    setCategory(categories)
+    setCategory(c)
     return rules
   };
 
@@ -117,28 +117,28 @@ function Table() {
   const columns = [
     {
       dataField: 'category',
-      text: 'category',
+      text: 'Type de document',
       headerStyle: (colum, colIndex) => {
         return { width: '15%', whiteSpace: 'nowrap' };
       }
     },
     {
       dataField: 'number',
-      text: 'number',
+      text: 'Zone',
       headerStyle: (colum, colIndex) => {
         return { width: '10%', whiteSpace: 'nowrap' };
       }
     },
     {
       dataField: 'code',
-      text: 'code',
+      text: 'Sous zone',
       headerStyle: (colum, colIndex) => {
         return { width: '10%', whiteSpace: 'nowrap' };
       }
     },
     {
       dataField: 'message',
-      text: 'message'
+      text: 'Vérification'
     },
     {
       dataField: "action",
@@ -149,23 +149,23 @@ function Table() {
         return { width: '10%', whiteSpace: 'nowrap'};
       },
       formatter: (cell, row) => {
-        const optionsCat = category.map(c => <option key={c}> {c} </option>)
+        const optionsCat = categories.map(c => <option key={c}> {c} </option>)
         const editForm = (() => (
           <div>
             <Form.Group controlId="formType">
-              <Form.Label>Category</Form.Label>
+              <Form.Label>Type de document</Form.Label>
               <Form.Control as="select">{optionsCat}</Form.Control>
             </Form.Group>
             <Form.Group controlId="formNumber">
-              <Form.Label>Number</Form.Label>
+              <Form.Label>Zone</Form.Label>
               <Form.Control placeholder={row.number} defaultValue={row.number} />
             </Form.Group>
             <Form.Group controlId="formCode">
-              <Form.Label>Code</Form.Label>
+              <Form.Label>Sous zone</Form.Label>
               <Form.Control placeholder={row.code} defaultValue={row.code} />
             </Form.Group>
             <Form.Group controlId="formMessage">
-              <Form.Label>Message</Form.Label>
+              <Form.Label>Vérification</Form.Label>
               <Form.Control placeholder={row.message} defaultValue={row.message} />
             </Form.Group>
           </div>
@@ -224,7 +224,7 @@ function Table() {
     generator({func:"starts with", items:["Lyon 1", "Univ Lyon 1"], isWord: true});
     generator({func:"starts with", items:["Univ Lyon 1"], isWord: true});
     generator({func:"must not contain", items:["/", ":","."], isWord: false});
-    
+    console.log(categories)
     return (
       <ToolkitProvider keyField="index" data={rules} columns={columns} search >
         {
@@ -240,7 +240,7 @@ function Table() {
                   <Modal
                     button={<AddCircleIcon fontSize="large"/>}
                     title="Add Rule"
-                    body={<SelectType/>}
+                    body={<SelectType categories={categories}/>}
                     accepting={() => console.log("ADD RULE")}
                   />
                 </div>

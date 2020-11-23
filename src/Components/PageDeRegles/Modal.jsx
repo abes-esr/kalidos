@@ -1,18 +1,6 @@
 import React, { useState } from 'react'
-import { Button, Modal } from 'react-bootstrap'
+import { Modal } from 'react-bootstrap'
 import IconButton from '@material-ui/core/IconButton'
-import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
-
-const theme = createMuiTheme({
-  overrides: {
-    MuiIconButton: {
-      addIcon: {
-        backgroundColor: "#6BD6D4"
-        
-      }
-    }
-  }
-})
 
 function BootstrapModal({button, title, body }) {
 
@@ -29,11 +17,9 @@ function BootstrapModal({button, title, body }) {
 
   return (
     <div >
-      <MuiThemeProvider theme={theme} >
-        <IconButton color="primary" onClick={() => handleModalShowHide()}>
-          {button}
-        </IconButton>
-      </MuiThemeProvider>
+      <IconButton color="primary" onClick={() => handleModalShowHide()}>
+        {button}
+      </IconButton>
 
       <Modal show={showHide}>
 
