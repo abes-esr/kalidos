@@ -1276,6 +1276,50 @@
                     "regex": "^Td.*"
                 },
                 "message": "Incohérence indexation : vérifier que la zone 6XX est liée à une autorité RAMEAU"
+            },
+            {
+                "index": 75,
+                "condition" : [{
+                    "number" : "606",
+                    "code" : "y"
+                },
+                {
+                    "number" : "606",
+                    "code" : "2",
+                    "regex" : "^rameau$"
+                }
+                ],
+                "identifiant":{
+                    "number" : "606",
+                    "code":"3"
+                },
+                "verification" : {
+                    "number" : "008",
+                    "regex": "^Tg.*"
+                },
+                "message": "Incohérence indexation : vérifier que la zone 6XX est liée à une autorité RAMEAU"
+            },
+            {
+                "index": 76,
+                "condition" : [{
+                    "number" : "606",
+                    "code" : "z"
+                },
+                {
+                    "number" : "606",
+                    "code" : "2",
+                    "regex" : "^rameau$"
+                }
+                ],
+                "identifiant":{
+                    "number" : "606",
+                    "code":"3"
+                },
+                "verification" : {
+                    "number" : "008",
+                    "regex": "^Tz.*"
+                },
+                "message": "Incohérence indexation : vérifier que la zone 6XX est liée à une autorité RAMEAU"
             }
             
         ]

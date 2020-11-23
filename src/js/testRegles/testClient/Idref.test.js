@@ -784,3 +784,136 @@ test("Si 608$a, vérifier dans Idref, à partir de l'identifiant $3, que 008 com
 
     expect(resultJson.errors).not.toStrictEqual([]);
 });
+
+
+// ===============================================================
+
+test("Si 616$a, vérifier dans Idref, à partir de l'identifiant $3, que 008 commence par Tm", () => {
+    const notice = "009"
+    const number = "616"
+    const index = 62
+    let resultJson = {
+        PPN: 0,
+        errors: [],
+    };
+
+    const sudoc = getNotice(notice);
+    const idref = getIdref(notice, number);
+    const idrefs = []
+    idrefs.push(idref)
+    const datafields = sudoc.record.datafield;
+    addRuleToTest(index);
+    testIdRefRules(CATEGORIE, ruleTest, idrefs, datafields, resultJson)
+
+    expect(resultJson.errors).toStrictEqual([]);
+});
+
+
+test("Si 616$a, vérifier dans Idref, à partir de l'identifiant $3, que 008 commence par Tm (FAIL)", () => {
+    const notice = "010"
+    const number = "616"
+    const index = 62
+    let resultJson = {
+        PPN: 0,
+        errors: [],
+    };
+
+    const sudoc = getNotice(notice);
+    const idref = getIdref(notice, number);
+    const idrefs = []
+    idrefs.push(idref)
+    const datafields = sudoc.record.datafield;
+    addRuleToTest(index);
+    testIdRefRules(CATEGORIE, ruleTest, idrefs, datafields, resultJson)
+
+    expect(resultJson.errors).not.toStrictEqual([]);
+});
+
+
+
+// ===============================================================
+
+test("Si 6XX$y et $2rameau, vérifier dans Idref, à partir de l'identifiant $3, que 008 commence par Tg", () => {
+    const notice = "013"
+    const number = "606"
+    const index = 75
+    let resultJson = {
+        PPN: 0,
+        errors: [],
+    };
+
+    const sudoc = getNotice(notice);
+    const idref = getIdref(notice, number+"_y");
+    const idrefs = []
+    idrefs.push(idref)
+    const datafields = sudoc.record.datafield;
+    addRuleToTest(index);
+    testIdRefRules(CATEGORIE, ruleTest, idrefs, datafields, resultJson)
+
+    expect(resultJson.errors).toStrictEqual([]);
+});
+
+
+test("Si 6XX$y et $2rameau, vérifier dans Idref, à partir de l'identifiant $3, que 008 commence par Tg (FAIL)", () => {
+    const notice = "014"
+    const number = "606"
+    const index = 75
+    let resultJson = {
+        PPN: 0,
+        errors: [],
+    };
+
+    const sudoc = getNotice(notice);
+    const idref = getIdref(notice, number+"_y");
+    const idrefs = []
+    idrefs.push(idref)
+    const datafields = sudoc.record.datafield;
+    addRuleToTest(index);
+    testIdRefRules(CATEGORIE, ruleTest, idrefs, datafields, resultJson)
+
+    expect(resultJson.errors).not.toStrictEqual([]);
+});
+
+
+// ===============================================================
+
+test("Si 6XX$z et $2rameau, vérifier dans Idref, à partir de l'identifiant $3, que 008 commence par Tz", () => {
+    const notice = "013"
+    const number = "606"
+    const index = 76
+    let resultJson = {
+        PPN: 0,
+        errors: [],
+    };
+
+    const sudoc = getNotice(notice);
+    const idref = getIdref(notice, number+"_z");
+    const idrefs = []
+    idrefs.push(idref)
+    const datafields = sudoc.record.datafield;
+    addRuleToTest(index);
+    testIdRefRules(CATEGORIE, ruleTest, idrefs, datafields, resultJson)
+
+    expect(resultJson.errors).toStrictEqual([]);
+});
+
+
+test("Si 6XX$z et $2rameau, vérifier dans Idref, à partir de l'identifiant $3, que 008 commence par Tz(FAIL)", () => {
+    const notice = "014"
+    const number = "606"
+    const index = 76
+    let resultJson = {
+        PPN: 0,
+        errors: [],
+    };
+
+    const sudoc = getNotice(notice);
+    const idref = getIdref(notice, number+"_z");
+    const idrefs = []
+    idrefs.push(idref)
+    const datafields = sudoc.record.datafield;
+    addRuleToTest(index);
+    testIdRefRules(CATEGORIE, ruleTest, idrefs, datafields, resultJson)
+
+    expect(resultJson.errors).not.toStrictEqual([]);
+});

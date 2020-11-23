@@ -1,0 +1,126 @@
+<record>
+    <leader> cx j22 3 45 </leader>
+    <controlfield tag="001">086305646</controlfield>
+    <controlfield tag="003">http://www.idref.fr/086305646</controlfield>
+    <controlfield tag="004">20050428</controlfield>
+    <controlfield tag="005">20150928095326.000</controlfield>
+    <controlfield tag="006">1999</controlfield>
+    <controlfield tag="007">1999</controlfield>
+    <controlfield tag="008">Tz8</controlfield>
+    <datafield tag="033" ind1=" " ind2=" ">
+    <subfield code="a">http://catalogue.bnf.fr/ark:/12148/cb11975995h</subfield>
+    <subfield code="2">BNF</subfield>
+    <subfield code="d">20150928</subfield>
+    </datafield>
+    <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">frBN002123731</subfield>
+    </datafield>
+    <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">028658752</subfield>
+    </datafield>
+    <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">FRBNF119759959</subfield>
+    <subfield code="z">FRBNF11975995</subfield>
+    </datafield>
+    <datafield tag="100" ind1=" " ind2=" ">
+    <subfield code="a">20050428afrey50 ba0</subfield>
+    </datafield>
+    <datafield tag="106" ind1=" " ind2=" ">
+    <subfield code="a">2</subfield>
+    <subfield code="b">2</subfield>
+    <subfield code="c">0</subfield>
+    </datafield>
+    <datafield tag="152" ind1=" " ind2=" ">
+    <subfield code="b">rameau</subfield>
+    </datafield>
+    <datafield tag="250" ind1=" " ind2=" ">
+    <subfield code="7">ba0yba0y</subfield>
+    <subfield code="9">#</subfield>
+    <subfield code="a">20e siècle</subfield>
+    </datafield>
+    <datafield tag="330" ind1="1" ind2=" ">
+    <subfield code="7">ba0yba0y</subfield>
+    <subfield code="a">
+    S'emploie uniquement en subdivision chronologique [sans subd. géogr.] à tous sujets noms communs et noms propres, à l'exception des personnes et des sujets pour lesquels il existe un découpage chronologique spécifique
+    </subfield>
+    </datafield>
+    <datafield tag="450" ind1=" " ind2=" ">
+    <subfield code="7">ba0yba0y</subfield>
+    <subfield code="9">#</subfield>
+    <subfield code="a">20e siècle (subdivision)</subfield>
+    </datafield>
+    <datafield tag="550" ind1=" " ind2=" ">
+    <subfield code="0">Voir aussi</subfield>
+    <subfield code="3">033472890</subfield>
+    <subfield code="5">z|xxx</subfield>
+    <subfield code="7">ba0yba0y</subfield>
+    <subfield code="a">1945-....</subfield>
+    </datafield>
+    <datafield tag="550" ind1=" " ind2=" ">
+    <subfield code="0">Voir aussi</subfield>
+    <subfield code="3">027279561</subfield>
+    <subfield code="5">z|xxx</subfield>
+    <subfield code="7">ba0yba0y</subfield>
+    <subfield code="a">Histoire universelle</subfield>
+    <subfield code="z">20e siècle</subfield>
+    </datafield>
+    <datafield tag="550" ind1=" " ind2=" ">
+    <subfield code="0">Voir aussi</subfield>
+    <subfield code="3">027338983</subfield>
+    <subfield code="5">z|xxx</subfield>
+    <subfield code="7">ba0yba0y</subfield>
+    <subfield code="a">Vingtième siècle</subfield>
+    </datafield>
+    <datafield tag="550" ind1=" " ind2=" ">
+    <subfield code="3">027794687</subfield>
+    <subfield code="5">h|xxx</subfield>
+    <subfield code="7">ba0yba0y</subfield>
+    <subfield code="a">1900-1945</subfield>
+    </datafield>
+    <datafield tag="550" ind1=" " ind2=" ">
+    <subfield code="3">027794342</subfield>
+    <subfield code="5">h|xxx</subfield>
+    <subfield code="7">ba0yba0y</subfield>
+    <subfield code="a">1945-1990</subfield>
+    </datafield>
+    <datafield tag="550" ind1=" " ind2=" ">
+    <subfield code="3">077318714</subfield>
+    <subfield code="5">g|xxx</subfield>
+    <subfield code="7">ba0yba0y</subfield>
+    <subfield code="a">1800-....</subfield>
+    </datafield>
+    <datafield tag="686" ind1=" " ind2=" ">
+    <subfield code="a">900</subfield>
+    <subfield code="c">Histoire</subfield>
+    <subfield code="2">Note de regroupement par domaine</subfield>
+    </datafield>
+    <datafield tag="801" ind1=" " ind2="0">
+    <subfield code="a">FR</subfield>
+    <subfield code="b">FR-751131015</subfield>
+    <subfield code="c">20121016</subfield>
+    </datafield>
+    <datafield tag="801" ind1=" " ind2="3">
+    <subfield code="a">FR</subfield>
+    <subfield code="b">Abes</subfield>
+    <subfield code="c">20150928</subfield>
+    <subfield code="g">AFNOR</subfield>
+    </datafield>
+    <datafield tag="822" ind1=" " ind2=" ">
+    <subfield code="a">20th century</subfield>
+    <subfield code="v">
+    LCSH (en ligne), 2012-10-16 (subdivision aux compositions musicales, langues, littératures, catégories d'écrivains et vedettes d'art)
+    </subfield>
+    </datafield>
+    <datafield tag="822" ind1=" " ind2=" ">
+    <subfield code="a">History -- 20th century</subfield>
+    <subfield code="v">
+    LCSH (en ligne), 2012-10-16 (subdivision à différents sujets)
+    </subfield>
+    </datafield>
+    <datafield tag="950" ind1=" " ind2=" ">
+    <subfield code="a">20e siècle</subfield>
+    </datafield>
+    <datafield tag="951" ind1=" " ind2=" ">
+    <subfield code="a">20e siècle (subdivision)</subfield>
+    </datafield>
+    </record>

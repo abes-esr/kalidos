@@ -86,10 +86,9 @@ var IdRef = function () {
                 } else {
                     valid = fields[j] != null
                 }
-
-                if (!valid) {
-                    retour.pop()
-                }
+            }
+            if (!valid) {
+                retour.pop()
             }
         }
         return retour
