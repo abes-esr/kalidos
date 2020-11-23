@@ -48,6 +48,7 @@ function testIdRefRules(categorie, rules, idrefs, datafields, resultJson) {
                 IdRef.addError(regle,resultJson)
             }
         } 
+        const titi = 0;
     });
 }
 
@@ -600,6 +601,183 @@ test("Si 6XX$x et $2fmesh, vérifier dans Idref, à partir de l'identifiant $3, 
     const idref = getIdref(notice, number);
     const idrefs = []
     idrefs.push(idref)
+    const datafields = sudoc.record.datafield;
+    addRuleToTest(index);
+    testIdRefRules(CATEGORIE, ruleTest, idrefs, datafields, resultJson)
+
+    expect(resultJson.errors).not.toStrictEqual([]);
+});
+
+
+
+// ===============================================================
+
+test("Si 606$a et $2rameau, vérifier dans Idref, à partir de l'identifiant $3, que 008 commence par Td", () => {
+    const notice = "009"
+    const number = "606"
+    const index = 58
+    let resultJson = {
+        PPN: 0,
+        errors: [],
+    };
+
+    const sudoc = getNotice(notice);
+    const idref = getIdref(notice, number);
+    const idrefs = []
+    idrefs.push(idref)
+    const datafields = sudoc.record.datafield;
+    addRuleToTest(index);
+    testIdRefRules(CATEGORIE, ruleTest, idrefs, datafields, resultJson)
+
+    expect(resultJson.errors).toStrictEqual([]);
+});
+
+
+// test("Si 606$a et $2rameau, vérifier dans Idref, à partir de l'identifiant $3, que 008 commence par Td (FAIL)", () => {
+//     const notice = "010"
+//     const number = "606"
+//     const index = 58
+//     let resultJson = {
+//         PPN: 0,
+//         errors: [],
+//     };
+
+//     const sudoc = getNotice(notice);
+//     const idrefs = []
+//     const datafields = sudoc.record.datafield;
+//     addRuleToTest(index);
+//     testIdRefRules(CATEGORIE, ruleTest, idrefs, datafields, resultJson)
+
+//     expect(resultJson.errors).not.toStrictEqual([]);
+// });
+
+
+// ===============================================================
+
+test("Si 606$a et $2fmesh, vérifier dans Idref, à partir de l'identifiant $3, que 008 commence par Tl", () => {
+    const notice = "009"
+    const number = "606_fmesh"
+    const index = 59
+    let resultJson = {
+        PPN: 0,
+        errors: [],
+    };
+
+    const sudoc = getNotice(notice);
+    const idref = getIdref(notice, number);
+    const idrefs = []
+    idrefs.push(idref)
+    const datafields = sudoc.record.datafield;
+    addRuleToTest(index);
+    testIdRefRules(CATEGORIE, ruleTest, idrefs, datafields, resultJson)
+
+    expect(resultJson.errors).toStrictEqual([]);
+});
+
+
+test("Si 606$a et $2fmesh, vérifier dans Idref, à partir de l'identifiant $3, que 008 commence par Tl (FAIL)", () => {
+    const notice = "010"
+    const number = "606_fmesh"
+    const index = 59
+    let resultJson = {
+        PPN: 0,
+        errors: [],
+    };
+
+    const sudoc = getNotice(notice);
+    const idref = getIdref(notice, number);
+    const idrefs = []
+    idrefs.push(idref)
+    const datafields = sudoc.record.datafield;
+    addRuleToTest(index);
+    testIdRefRules(CATEGORIE, ruleTest, idrefs, datafields, resultJson)
+
+    expect(resultJson.errors).not.toStrictEqual([]);
+});
+
+
+// ===============================================================
+
+test("Si 607$a, vérifier dans Idref, à partir de l'identifiant $3, que 008 commence par Tg", () => {
+    const notice = "009"
+    const number = "607"
+    const index = 60
+    let resultJson = {
+        PPN: 0,
+        errors: [],
+    };
+
+    const sudoc = getNotice(notice);
+    const idref = getIdref(notice, number);
+    const idrefs = []
+    idrefs.push(idref)
+    const datafields = sudoc.record.datafield;
+    addRuleToTest(index);
+    testIdRefRules(CATEGORIE, ruleTest, idrefs, datafields, resultJson)
+
+    expect(resultJson.errors).toStrictEqual([]);
+});
+
+
+test("Si 607$a, vérifier dans Idref, à partir de l'identifiant $3, que 008 commence par Tg (FAIL)", () => {
+    const notice = "010"
+    const number = "607"
+    const index = 60
+    let resultJson = {
+        PPN: 0,
+        errors: [],
+    };
+
+    const sudoc = getNotice(notice);
+    const idref = getIdref(notice, number);
+    const idrefs = []
+    idrefs.push(idref)
+    const datafields = sudoc.record.datafield;
+    addRuleToTest(index);
+    testIdRefRules(CATEGORIE, ruleTest, idrefs, datafields, resultJson)
+
+    expect(resultJson.errors).not.toStrictEqual([]);
+});
+
+
+// ===============================================================
+
+test("Si 608$a, vérifier dans Idref, à partir de l'identifiant $3, que 008 commence par Tf", () => {
+    const notice = "009"
+    const number = "608"
+    const index = 61
+    let resultJson = {
+        PPN: 0,
+        errors: [],
+    };
+
+    const sudoc = getNotice(notice);
+    const idref = getIdref(notice, number);
+    const idrefs = []
+    idrefs.push(idref)
+    const datafields = sudoc.record.datafield;
+    addRuleToTest(index);
+    testIdRefRules(CATEGORIE, ruleTest, idrefs, datafields, resultJson)
+
+    expect(resultJson.errors).toStrictEqual([]);
+});
+
+
+test("Si 608$a, vérifier dans Idref, à partir de l'identifiant $3, que 008 commence par Tf (FAIL)", () => {
+    const notice = "002"
+    const number = "608"
+    const index = 61
+    let resultJson = {
+        PPN: 0,
+        errors: [],
+    };
+
+    const sudoc = getNotice(notice);
+    const idref1 = getIdref(notice, number+"_1");
+    const idref2 = getIdref(notice, number+"_2");
+    const idrefs = []
+    idrefs.push(idref1)
+    idrefs.push(idref2)
     const datafields = sudoc.record.datafield;
     addRuleToTest(index);
     testIdRefRules(CATEGORIE, ruleTest, idrefs, datafields, resultJson)
