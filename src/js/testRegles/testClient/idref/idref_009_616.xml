@@ -1,0 +1,55 @@
+<record>
+    <leader> nx d22 3 45 </leader>
+    <controlfield tag="001">243805942</controlfield>
+    <controlfield tag="003">http://www.idref.fr/243805942</controlfield>
+    <controlfield tag="004">20200507</controlfield>
+    <controlfield tag="005">20200507104639.000</controlfield>
+    <controlfield tag="006">160152201</controlfield>
+    <controlfield tag="007">160152201</controlfield>
+    <controlfield tag="008">Tm5</controlfield>
+    <datafield tag="100" ind1=" " ind2=" ">
+    <subfield code="a">20200507afrey50 ba0</subfield>
+    </datafield>
+    <datafield tag="101" ind1=" " ind2=" ">
+    <subfield code="a">eng</subfield>
+    </datafield>
+    <datafield tag="102" ind1=" " ind2=" ">
+    <subfield code="a">US</subfield>
+    </datafield>
+    <datafield tag="103" ind1=" " ind2=" ">
+    <subfield code="a"> 2005 </subfield>
+    </datafield>
+    <datafield tag="106" ind1=" " ind2=" ">
+    <subfield code="a">0</subfield>
+    <subfield code="b">1</subfield>
+    <subfield code="c">0</subfield>
+    </datafield>
+    <datafield tag="152" ind1=" " ind2=" ">
+    <subfield code="a">AFNOR</subfield>
+    </datafield>
+    <datafield tag="216" ind1=" " ind2=" ">
+    <subfield code="7">ba0yba0y</subfield>
+    <subfield code="a">Unity</subfield>
+    <subfield code="c">marque déposée</subfield>
+    </datafield>
+    <datafield tag="340" ind1=" " ind2=" ">
+    <subfield code="7">ba0yba0y</subfield>
+    <subfield code="a">
+    Unity est un moteur de jeu multiplateforme développé par Unity Technologies.
+    </subfield>
+    </datafield>
+    <datafield tag="801" ind1=" " ind2="3">
+    <subfield code="a">FR</subfield>
+    <subfield code="b">Abes</subfield>
+    <subfield code="c">20200507</subfield>
+    <subfield code="g">AFNOR</subfield>
+    </datafield>
+    <datafield tag="810" ind1=" " ind2=" ">
+    <subfield code="a">
+    Building virtual reality with Unity and Steam VR / Jeff W. Murray, 2017
+    </subfield>
+    </datafield>
+    <datafield tag="960" ind1=" " ind2=" ">
+    <subfield code="a">Unity (marque déposée)</subfield>
+    </datafield>
+    </record>

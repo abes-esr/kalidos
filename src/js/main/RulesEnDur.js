@@ -9,7 +9,7 @@ const IdRef = require("../regles/IdRef");
 
 let result = {};
 
-const PPN_EN_DUR = '192132741'
+const PPN_EN_DUR = '169450678'
 const CATEGORIE = "Generale";
 const TYPE = "matching";
 const NEWRULE = {

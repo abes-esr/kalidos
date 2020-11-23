@@ -1,0 +1,141 @@
+<record>
+    <leader> cx c22 3 45 </leader>
+    <controlfield tag="001">027479862</controlfield>
+    <controlfield tag="003">http://www.idref.fr/027479862</controlfield>
+    <controlfield tag="004">19850620</controlfield>
+    <controlfield tag="005">20200921112526.000</controlfield>
+    <controlfield tag="006">0004</controlfield>
+    <controlfield tag="007">341720001</controlfield>
+    <controlfield tag="008">Tg5</controlfield>
+    <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">092732526</subfield>
+    <subfield code="9">sudoc</subfield>
+    </datafield>
+    <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">221095721</subfield>
+    <subfield code="9">sudoc</subfield>
+    </datafield>
+    <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">frBN001778844</subfield>
+    </datafield>
+    <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">FRBNF119510833</subfield>
+    <subfield code="z">FRBNF11951083</subfield>
+    </datafield>
+    <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">http://viaf.org/viaf/139502152</subfield>
+    <subfield code="2">VIAF</subfield>
+    <subfield code="C">VIAF</subfield>
+    <subfield code="d">20200401</subfield>
+    </datafield>
+    <datafield tag="100" ind1=" " ind2=" ">
+    <subfield code="a">19850620afrey50 ba0</subfield>
+    </datafield>
+    <datafield tag="106" ind1=" " ind2=" ">
+    <subfield code="a">2</subfield>
+    <subfield code="b">0</subfield>
+    <subfield code="c">0</subfield>
+    </datafield>
+    <datafield tag="152" ind1=" " ind2=" ">
+    <subfield code="b">rameau</subfield>
+    </datafield>
+    <datafield tag="215" ind1=" " ind2=" ">
+    <subfield code="7">ba0yba0y</subfield>
+    <subfield code="9">1</subfield>
+    <subfield code="a">Provence-Alpes-Côte d'Azur (France)</subfield>
+    </datafield>
+    <datafield tag="415" ind1=" " ind2=" ">
+    <subfield code="7">ba0yba0y</subfield>
+    <subfield code="9">1</subfield>
+    <subfield code="a">PACA</subfield>
+    </datafield>
+    <datafield tag="415" ind1=" " ind2=" ">
+    <subfield code="7">ba0yba0y</subfield>
+    <subfield code="9">1</subfield>
+    <subfield code="a">Provence-Alpes-Côte d'Azur</subfield>
+    </datafield>
+    <datafield tag="415" ind1=" " ind2=" ">
+    <subfield code="7">ba0yba0y</subfield>
+    <subfield code="9">1</subfield>
+    <subfield code="a">Provence-Côte d'Azur (France)</subfield>
+    </datafield>
+    <datafield tag="415" ind1=" " ind2=" ">
+    <subfield code="7">ba0yba0y</subfield>
+    <subfield code="9">1</subfield>
+    <subfield code="a">P.A.C.A.</subfield>
+    </datafield>
+    <datafield tag="415" ind1=" " ind2=" ">
+    <subfield code="7">ba0yba0y</subfield>
+    <subfield code="9">1</subfield>
+    <subfield code="a">Région Provence-Alpes-Côte d'Azur</subfield>
+    </datafield>
+    <datafield tag="415" ind1=" " ind2=" ">
+    <subfield code="7">ba0yba0y</subfield>
+    <subfield code="9">1</subfield>
+    <subfield code="a">Région P.A.C.A.</subfield>
+    </datafield>
+    <datafield tag="415" ind1=" " ind2=" ">
+    <subfield code="7">ba0yba0y</subfield>
+    <subfield code="9">1</subfield>
+    <subfield code="a">Région PACA.</subfield>
+    </datafield>
+    <datafield tag="515" ind1=" " ind2=" ">
+    <subfield code="3">027266257</subfield>
+    <subfield code="7">ba0yba0y</subfield>
+    <subfield code="a">Provence (France)</subfield>
+    </datafield>
+    <datafield tag="515" ind1=" " ind2=" ">
+    <subfield code="3">027768686</subfield>
+    <subfield code="5">g|xxx</subfield>
+    <subfield code="7">ba0yba0y</subfield>
+    <subfield code="a">France (sud-est)</subfield>
+    </datafield>
+    <datafield tag="515" ind1=" " ind2=" ">
+    <subfield code="3">02872819X</subfield>
+    <subfield code="5">g|xxx</subfield>
+    <subfield code="7">ba0yba0y</subfield>
+    <subfield code="a">France</subfield>
+    <subfield code="x">Régions</subfield>
+    </datafield>
+    <datafield tag="801" ind1=" " ind2="3">
+    <subfield code="a">FR</subfield>
+    <subfield code="b">Abes</subfield>
+    <subfield code="c">20200921</subfield>
+    <subfield code="g">AFNOR</subfield>
+    <subfield code="h">092732526</subfield>
+    </datafield>
+    <datafield tag="801" ind1=" " ind2="3">
+    <subfield code="a">FR</subfield>
+    <subfield code="b">Abes</subfield>
+    <subfield code="c">20200921</subfield>
+    <subfield code="g">AFNOR</subfield>
+    <subfield code="h">221095721</subfield>
+    </datafield>
+    <datafield tag="810" ind1=" " ind2=" ">
+    <subfield code="a">GLU</subfield>
+    </datafield>
+    <datafield tag="915" ind1=" " ind2=" ">
+    <subfield code="a">Provence-Alpes-Côte d'Azur (France)</subfield>
+    </datafield>
+    <datafield tag="916" ind1=" " ind2=" ">
+    <subfield code="a">PACA</subfield>
+    </datafield>
+    <datafield tag="916" ind1=" " ind2=" ">
+    <subfield code="a">Provence-Alpes-Côte d'Azur</subfield>
+    </datafield>
+    <datafield tag="916" ind1=" " ind2=" ">
+    <subfield code="a">Provence-Côte d'Azur (France)</subfield>
+    </datafield>
+    <datafield tag="916" ind1=" " ind2=" ">
+    <subfield code="a">P.A.C.A.</subfield>
+    </datafield>
+    <datafield tag="916" ind1=" " ind2=" ">
+    <subfield code="a">Région Provence-Alpes-Côte d'Azur</subfield>
+    </datafield>
+    <datafield tag="916" ind1=" " ind2=" ">
+    <subfield code="a">Région P.A.C.A.</subfield>
+    </datafield>
+    <datafield tag="916" ind1=" " ind2=" ">
+    <subfield code="a">Région PACA.</subfield>
+    </datafield>
+    </record>

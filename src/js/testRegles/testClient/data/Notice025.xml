@@ -1,0 +1,142 @@
+<record>
+    <leader> nam0 22 450 </leader>
+    <controlfield tag="001">249919575</controlfield>
+    <controlfield tag="002">38</controlfield>
+    <controlfield tag="003">http://www.sudoc.fr/249919575</controlfield>
+    <controlfield tag="004">20201022</controlfield>
+    <controlfield tag="005">20201022103328.000</controlfield>
+    <controlfield tag="006">692662214</controlfield>
+    <controlfield tag="007">692662214</controlfield>
+    <controlfield tag="008">Aax3</controlfield>
+    <datafield tag="017" ind1=" " ind2=" ">
+        <subfield code="a">2020LYO1D037</subfield>
+        <subfield code="2">MEMLyon1</subfield>
+    </datafield>
+    <datafield tag="035" ind1=" " ind2=" ">
+        <subfield code="a">(OCoLC)1201225358</subfield>
+    </datafield>
+    <datafield tag="100" ind1=" " ind2=" ">
+        <subfield code="a">20201022d2020 m y0frey50 ba</subfield>
+    </datafield>
+    <datafield tag="101" ind1="0" ind2=" ">
+        <subfield code="a">fre</subfield>
+    </datafield>
+    <datafield tag="102" ind1=" " ind2=" ">
+        <subfield code="a">FR</subfield>
+    </datafield>
+    <datafield tag="105" ind1=" " ind2=" ">
+        <subfield code="a">y 7a 000yy</subfield>
+    </datafield>
+    <datafield tag="106" ind1=" " ind2=" ">
+        <subfield code="a">r</subfield>
+    </datafield>
+    <datafield tag="181" ind1=" " ind2=" ">
+        <subfield code="6">z01</subfield>
+        <subfield code="c">txt</subfield>
+        <subfield code="2">rdacontent</subfield>
+    </datafield>
+    <datafield tag="181" ind1=" " ind2="1">
+        <subfield code="6">z01</subfield>
+        <subfield code="a">i#</subfield>
+        <subfield code="b">xxxe##</subfield>
+    </datafield>
+    <datafield tag="182" ind1=" " ind2=" ">
+        <subfield code="6">z01</subfield>
+        <subfield code="c">n</subfield>
+        <subfield code="2">rdamedia</subfield>
+    </datafield>
+    <datafield tag="182" ind1=" " ind2="1">
+        <subfield code="6">z01</subfield>
+        <subfield code="a">n</subfield>
+    </datafield>
+    <datafield tag="183" ind1=" " ind2="1">
+        <subfield code="6">z01</subfield>
+        <subfield code="a">nga</subfield>
+        <subfield code="2">rdacarrier</subfield>
+    </datafield>
+    <datafield tag="200" ind1="1" ind2=" ">
+        <subfield code="a">Mise en place de la résilience organisationnelle</subfield>
+        <subfield code="e">
+le cadre de santé face à la crise sanitaire COVID 19
+        </subfield>
+        <subfield code="f">Emeline Dauphant</subfield>
+    </datafield>
+    <datafield tag="214" ind1=" " ind2="1">
+        <subfield code="d">2020</subfield>
+    </datafield>
+    <datafield tag="215" ind1=" " ind2=" ">
+        <subfield code="a">1 vol. (60 f.)</subfield>
+        <subfield code="d">30 cm</subfield>
+    </datafield>
+    <datafield tag="320" ind1=" " ind2=" ">
+        <subfield code="a">Bibliogr. f. 58-59. Annexes</subfield>
+    </datafield>
+    <datafield tag="328" ind1=" " ind2="0">
+        <subfield code="b">Mémoire de DU</subfield>
+        <subfield code="c">Gestion et management des services de santé</subfield>
+        <subfield code="e">Lyon 1</subfield>
+        <subfield code="d">2020</subfield>
+    </datafield>
+    <datafield tag="606" ind1=" " ind2=" ">
+        <subfield code="3">24359934X</subfield>
+        <subfield code="a">Covid-19</subfield>
+        <subfield code="3">027226794</subfield>
+        <subfield code="y">France</subfield>
+        <subfield code="2">rameau</subfield>
+    </datafield>
+    <datafield tag="606" ind1=" " ind2=" ">
+        <subfield code="3">159823102</subfield>
+        <subfield code="a">
+Établissements d'hébergement pour personnes âgées dépendantes
+        </subfield>
+        <subfield code="2">rameau</subfield>
+    </datafield>
+    <datafield tag="606" ind1=" " ind2=" ">
+        <subfield code="3">027588580</subfield>
+        <subfield code="a">Changement organisationnel</subfield>
+        <subfield code="2">rameau</subfield>
+    </datafield>
+    <datafield tag="608" ind1=" " ind2=" ">
+        <subfield code="3">027253139</subfield>
+        <subfield code="a">Thèses et écrits académiques</subfield>
+        <subfield code="2">rameau</subfield>
+    </datafield>
+    <datafield tag="700" ind1=" " ind2="1">
+        <subfield code="3">249919702</subfield>
+        <subfield code="a">Dauphant</subfield>
+        <subfield code="b">Emeline</subfield>
+        <subfield code="4">070</subfield>
+    </datafield>
+    <datafield tag="711" ind1="0" ind2="2">
+        <subfield code="3">165096993</subfield>
+        <subfield code="a">IUT Lyon 1</subfield>
+        <subfield code="4">295</subfield>
+    </datafield>
+    <datafield tag="711" ind1="0" ind2="2">
+        <subfield code="3">026402823</subfield>
+        <subfield code="a">Université Claude Bernard</subfield>
+        <subfield code="c">Lyon</subfield>
+        <subfield code="4">295</subfield>
+    </datafield>
+    <datafield tag="801" ind1=" " ind2="3">
+        <subfield code="a">FR</subfield>
+        <subfield code="b">Abes</subfield>
+        <subfield code="c">20201022</subfield>
+        <subfield code="g">AFNOR</subfield>
+    </datafield>
+    <datafield tag="930" ind1=" " ind2=" ">
+        <subfield code="5">692662214:677455453</subfield>
+        <subfield code="b">692662214</subfield>
+        <subfield code="j">g</subfield>
+    </datafield>
+    <datafield tag="940" ind1=" " ind2=" ">
+        <subfield code="5">692662214:677455453</subfield>
+        <subfield code="a">20201022</subfield>
+        <subfield code="b">x</subfield>
+    </datafield>
+    <datafield tag="941" ind1=" " ind2=" ">
+        <subfield code="5">692662214:677455453</subfield>
+        <subfield code="a">20201022</subfield>
+        <subfield code="b">10:33:41.000</subfield>
+    </datafield>
+</record>

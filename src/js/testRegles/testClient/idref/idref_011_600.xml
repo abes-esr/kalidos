@@ -1,0 +1,117 @@
+<record>
+    <leader> cx j22 3 45 </leader>
+    <controlfield tag="001">028633067</controlfield>
+    <controlfield tag="003">http://www.idref.fr/028633067</controlfield>
+    <controlfield tag="004">19870619</controlfield>
+    <controlfield tag="005">20200504112550.000</controlfield>
+    <controlfield tag="006">0004</controlfield>
+    <controlfield tag="007">341720001</controlfield>
+    <controlfield tag="008">Td8</controlfield>
+    <datafield tag="033" ind1=" " ind2=" ">
+    <subfield code="a">http://catalogue.bnf.fr/ark:/12148/cb12042895g</subfield>
+    <subfield code="2">BNF</subfield>
+    <subfield code="d">20160115</subfield>
+    </datafield>
+    <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">frBN003415400</subfield>
+    </datafield>
+    <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">FRBNF120428956</subfield>
+    <subfield code="z">FRBNF12042895</subfield>
+    </datafield>
+    <datafield tag="100" ind1=" " ind2=" ">
+    <subfield code="a">19870619afrey50 ba0</subfield>
+    </datafield>
+    <datafield tag="106" ind1=" " ind2=" ">
+    <subfield code="a">2</subfield>
+    <subfield code="b">2</subfield>
+    <subfield code="c">1</subfield>
+    </datafield>
+    <datafield tag="152" ind1=" " ind2=" ">
+    <subfield code="b">rameau</subfield>
+    </datafield>
+    <datafield tag="250" ind1=" " ind2=" ">
+    <subfield code="7">ba0yba0y</subfield>
+    <subfield code="9">#</subfield>
+    <subfield code="a">Critique et interprétation</subfield>
+    </datafield>
+    <datafield tag="305" ind1="1" ind2=" ">
+    <subfield code="7">ba0yba0y</subfield>
+    <subfield code="a">
+    Voir aussi la subdivision Appréciation aux compositions musicales, littératures, livres sacrés, personnes, titres et sujets noms communs appropriés (domaines artistique, culturel, etc.)
+    </subfield>
+    </datafield>
+    <datafield tag="330" ind1="1" ind2=" ">
+    <subfield code="7">ba0yba0y</subfield>
+    <subfield code="a">
+    S'emploie uniquement en subdivision aux personnes pour des études critiques sur l'ensemble de leurs oeuvres
+    </subfield>
+    </datafield>
+    <datafield tag="330" ind1="1" ind2=" ">
+    <subfield code="7">ba0yba0y</subfield>
+    <subfield code="a">
+    Pour les études concernant la réception des oeuvres par le public, employer la subdivision Appréciation
+    </subfield>
+    </datafield>
+    <datafield tag="550" ind1=" " ind2=" ">
+    <subfield code="0">Voir aussi</subfield>
+    <subfield code="3">027554643</subfield>
+    <subfield code="5">z|xxx</subfield>
+    <subfield code="7">ba0yba0y</subfield>
+    <subfield code="a">Cinéma</subfield>
+    <subfield code="x">Histoire et critique</subfield>
+    </datafield>
+    <datafield tag="550" ind1=" " ind2=" ">
+    <subfield code="0">Voir aussi</subfield>
+    <subfield code="3">027801152</subfield>
+    <subfield code="5">z|xxx</subfield>
+    <subfield code="7">ba0yba0y</subfield>
+    <subfield code="a">Critique marxiste</subfield>
+    </datafield>
+    <datafield tag="550" ind1=" " ind2=" ">
+    <subfield code="0">Voir aussi</subfield>
+    <subfield code="3">02802351X</subfield>
+    <subfield code="5">z|xxx</subfield>
+    <subfield code="7">ba0yba0y</subfield>
+    <subfield code="a">Critique féministe</subfield>
+    </datafield>
+    <datafield tag="550" ind1=" " ind2=" ">
+    <subfield code="0">Voir aussi</subfield>
+    <subfield code="3">180182927</subfield>
+    <subfield code="5">z|xxx</subfield>
+    <subfield code="7">ba0yba0y</subfield>
+    <subfield code="a">Critique</subfield>
+    </datafield>
+    <datafield tag="550" ind1=" " ind2=" ">
+    <subfield code="0">Voir aussi</subfield>
+    <subfield code="3">02779489X</subfield>
+    <subfield code="5">z|xxx</subfield>
+    <subfield code="7">ba0yba0y</subfield>
+    <subfield code="a">Appréciation</subfield>
+    </datafield>
+    <datafield tag="686" ind1=" " ind2=" ">
+    <subfield code="a">801</subfield>
+    <subfield code="c">Littérature générale</subfield>
+    <subfield code="2">Note de regroupement par domaine</subfield>
+    </datafield>
+    <datafield tag="801" ind1=" " ind2="0">
+    <subfield code="a">FR</subfield>
+    <subfield code="b">FR-751131015</subfield>
+    <subfield code="c">20050127</subfield>
+    </datafield>
+    <datafield tag="801" ind1=" " ind2="3">
+    <subfield code="a">FR</subfield>
+    <subfield code="b">Abes</subfield>
+    <subfield code="c">20200504</subfield>
+    <subfield code="g">AFNOR</subfield>
+    </datafield>
+    <datafield tag="898" ind1=" " ind2=" ">
+    <subfield code="a">
+    Réforme Rameau janvier 2019 Td ouverte à la subd. géogr.
+    </subfield>
+    <subfield code="d">20190215</subfield>
+    </datafield>
+    <datafield tag="950" ind1=" " ind2=" ">
+    <subfield code="a">Critique et interprétation</subfield>
+    </datafield>
+    </record>

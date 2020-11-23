@@ -40,8 +40,8 @@
             {
                 "number": 200,
                 "code": "d",
-                "message": "200$d doit commencer par espace =",
-                "regex": "^( =).*",
+                "message": "200$d doit commencer par = espace",
+                "regex": "^(= ).*",
                 "index": 7
             },
             {
@@ -117,8 +117,8 @@
             {
                 "number": "328",
                 "code": "e",
-                "message": "328$e = Lyon 1 ou Université de Lyon",
-                "regex": "(Lyon 1)|(Université de Lyon)",
+                "message": "328$e = Lyon 1 ou Université de Lyon ou Lyon",
+                "regex": "(Lyon 1)|(Université de Lyon)|(Lyon)",
                 "index": 18
             },
             {
@@ -315,6 +315,296 @@
                 ],
                 "match": "all",
                 "message": "941 $a != 020, 20130524 (FAIL TEST)"
+            },
+            {
+                "number": "100",
+                "code": "a",
+                "message": "Données codées à compléter",
+                "regex": "(?:(?!\\|).)+",
+                "index": 500
+            },
+            {
+                "number": "105",
+                "code": "a",
+                "message": "Zone 105 à compléter",
+                "regex": "(?:(?!\\|).)+",
+                "index": 501
+            },
+            {
+                "number": "200",
+                "code": "a",
+                "message": "Zone 200 : supprimer le double espace",
+                "regex": "(?:(?!(  )).)+",
+                "index": 502
+            },
+            {
+                "number": 200,
+                "code": "a",
+                "message": "200$a ne doit pas contenir le caractère / ou : ou .",
+                "regex": "(?:(?![/:.]).)+",
+                "index": 503
+            },
+            {
+                "number": 200,
+                "code": "d",
+                "message": "200$d ne doit pas contenir le caractère / ou : ou .",
+                "regex": "(?:(?![/:.]).)+",
+                "index": 504
+            },
+            {
+                "number": 700,
+                "code": "f",
+                "message": "Vérifier les dates de l'autorité auteur",
+                "regex": ".{9}.*$",
+                "index": 505
+            },
+            {
+                "number": 701,
+                "code": "f",
+                "message": "Vérifier les dates de l'autorité auteur",
+                "regex": ".{9}.*$",
+                "index": 506
+            },
+            {
+                "index": 507,
+                "number": [
+                    "600",
+                    "601",
+                    "602",
+                    "604",
+                    "605",
+                    "606",
+                    "607",
+                    "608"
+                ],
+                "code": "2",
+                "value": [
+                    "^((?!RAMEAU).)*$",
+                    "^((?!Rameau).)*$",
+                    "^((?!Ram).)*$",
+                    "^((?!ram).)*$"
+                ],
+                "match": "all",
+                "message": "Zones 6XX : $2 mal orthographié"
+            },
+            {
+                "index": 508,
+                "number": [
+                    "700",
+                    "701",
+                    "702",
+                    "710",
+                    "711",
+                    "712",
+                    "720",
+                    "721",
+                    "722"
+                ],
+                "code": "4",
+                "value": [
+                    "^((?!000).)*$"
+                ],
+                "match": "all",
+                "message": "Zones 7XX : code fonction erroné"
+            },
+            {
+                "index": 509,
+                "number": [
+                    "700",
+                    "701",
+                    "702",
+                    "710",
+                    "711",
+                    "712",
+                    "720",
+                    "721",
+                    "722"
+                ],
+                "code": "4",
+                "value": [
+                    "^((?!205).)*$"
+                ],
+                "match": "all",
+                "message": "Zones 7XX : code fonction à employer uniquement lorsqu'aucune autre fonction plus spécifique ne convient"
+            },
+            {
+                "index": 512,
+                "number": 230,
+                "code": "a",
+                "regex": "(?:(?!Mo).)+",
+                "message": "Zone 230 : corriger le poids en Ko"
+            },
+            {
+                "index": 513,
+                "number": 230,
+                "code": "a",
+                "regex": "(?:(?!,).)+",
+                "message": "Zone 230 : corriger le poids en Ko"
+            },
+            {
+                "index": 514,
+                "number": 230,
+                "code": "a",
+                "regex": "(?:(?!X Ko).)+",
+                "message": "Zone 230 : corriger le poids en Ko"
+            },
+            {
+                "index": 515,
+                "number": 215,
+                "code": "a",
+                "regex": "(?:(?!nombre de).)+",
+                "message": "Zone 215 : compléter la pagination"
+            },
+            {
+                "index": 516,
+                "number": "029",
+                "code": "b",
+                "regex": ".{12}",
+                "message": "Zone 029 : le numéro d'ordre doit contenir 12 caractères"
+            },
+            {
+                "index": 517,
+                "number": "102",
+                "code": "a",
+                "regex": "^FR$",
+                "message": "Zone 102 $a doit être FR"
+            },
+            {
+                "index": 518,
+                "number": "200",
+                "code": "f",
+                "regex": "(?:(?!Auteur).)+",
+                "message": "Zone 200 : compléter le nom de l'auteur"
+            },
+            {
+                "index": 519,
+                "number": "320",
+                "code": "a",
+                "regex": "(?:(?!p\\. ou f\\.).)+",
+                "message": "Zone 320 à compléter"
+            },
+            {
+                "index": 520,
+                "number": 328,
+                "code": "c",
+                "message": "Zone 328$c : les sous-disciplines doivent être séparées par un point",
+                "regex": "(?:(?![:;\\?\\/]).)+"
+            },
+            {
+                "index": 521,
+                "number": 328,
+                "code": "c",
+                "message": "Zone 328$c compléter la discipline",
+                "regex": "(?:(?!Discipline).)+"
+            },
+            {
+                "index": 522,
+                "number": 328,
+                "code": "d",
+                "message": "Zone 328$d doit contenir uniquement l'année de soutenance",
+                "regex": "^[0-9]{4}$"
+            },
+            {
+                "index": 523,
+                "number": 328,
+                "code": "d",
+                "message": "Zone 328$d doit contenir uniquement l'année de soutenance",
+                "regex": "(?:(?![\\?;,]).)+"
+            },
+            {
+                "index": 524,
+                "number": "700",
+                "code": "b",
+                "message": "Zone 700 : lien auteur à effectuer",
+                "regex": "(?:(?!Prénom).)+"
+            },
+            {
+                "index": 525,
+                "number": "700",
+                "code": "4",
+                "message": "Zone 700 : le code fonction doit être 070 pour l'auteur ou co-auteur de la thèse",
+                "regex": "^070$"
+            },
+            {
+                "index": 526,
+                "number": "701",
+                "code": "a",
+                "value": [
+                    "^((?!Nom du co-auteur).)*$",
+                    "^((?!Nom du directeur).)*$"
+                ],
+                "match": "all",
+                "message": "Zone 701 : lien auteur à effectuer"
+            },
+            {
+                "index": 527,
+                "number": "339",
+                "code": "d",
+                "message": "Zone 339 : corriger avec l'année de mise en ligne",
+                "regex": "^((?!Année de mise en ligne).)*$"
+            },
+            {
+                "index": 528,
+                "number": "230",
+                "code": "a",
+                "message": "Zone 230 à compléter",
+                "regex": "^((?!X vues).)*$"
+            },
+            {
+                "index": 529,
+                "number": "307",
+                "code": "a",
+                "message": "Zone 307 à compléter",
+                "regex": "^((?!est de : X pages).)*$"
+            },
+            {
+                "index": 530,
+                "number": "303",
+                "code": "a",
+                "message": "Zone 303 à compléter",
+                "regex": "^((?!AAAA-MM-JJ).)*$"
+            },
+            {
+                "index": 531,
+                "number": "337",
+                "code": "a",
+                "message": "Zone 337 à compléter",
+                "regex": "^((?!fichier au\\(x\\) format\\(s\\)…).)*$"
+            },
+            {
+                "index": 532,
+                "number": "856",
+                "code": "2",
+                "message": "Zone 305$2 générique à remplacer-supprimer",
+                "regex": "^((?!Texte du lien).)*$"
+            },
+            {
+                "index": 533,
+                "number": "856",
+                "code": "q",
+                "message": "Zone 856$q : renseigner le format",
+                "regex": "^((?!Format).)*$"
+            },
+            {
+                "index": 534,
+                "number": "017",
+                "code": "2",
+                "message": "107$2 à corriger (\"MEMLyon1\")",
+                "regex": "^MEMLyon1$"
+            },
+            {
+                "index": 535,
+                "number": "305",
+                "code": "a",
+                "message": "Zone 305 générique à remplacer-supprimer",
+                "regex": "^(?!Note sur l'édition et l'histoire bibliographique).*$"
+            },
+            {
+                "index": 536,
+                "number": "324",
+                "code": "a",
+                "message": "Zone 324 à compléter",
+                "regex": "^(?!Reproduction numérique de l'édition de LIEU : EDITEUR, DATE).*$"
             }
         ],
         "dependances": [
@@ -360,7 +650,7 @@
                 "numRuleExcell": 101
             },
             {
-                "index": 43,
+                "index": 499,
                 "field1": {
                     "number": "210",
                     "code": "d",
@@ -680,7 +970,7 @@
                 },
                 "verification" : {
                     "number" : "008",
-                    "regex": "^Tp.*"
+                    "regex": "^Tb.*"
                 },
                 "message": "Incohérence indexation : vérifier les zones 6XX et le type de notice d'autorité"
             },
@@ -964,7 +1254,74 @@
                     "regex": "^Ta.*"
                 },
                 "message": "Incohérence zone 7XX : vérifier l'étiquette et le type de notice d'autorité"
+            },
+            {
+                "index": 74,
+                "condition" : [{
+                    "number" : "600",
+                    "code" : "x"
+                },
+                {
+                    "number" : "600",
+                    "code" : "2",
+                    "regex" : "^rameau$"
+                }
+                ],
+                "identifiant":{
+                    "number" : "600",
+                    "code":"3"
+                },
+                "verification" : {
+                    "number" : "008",
+                    "regex": "^Td.*"
+                },
+                "message": "Incohérence indexation : vérifier que la zone 6XX est liée à une autorité RAMEAU"
+            },
+            {
+                "index": 75,
+                "condition" : [{
+                    "number" : "606",
+                    "code" : "y"
+                },
+                {
+                    "number" : "606",
+                    "code" : "2",
+                    "regex" : "^rameau$"
+                }
+                ],
+                "identifiant":{
+                    "number" : "606",
+                    "code":"3"
+                },
+                "verification" : {
+                    "number" : "008",
+                    "regex": "^Tg.*"
+                },
+                "message": "Incohérence indexation : vérifier que la zone 6XX est liée à une autorité RAMEAU"
+            },
+            {
+                "index": 76,
+                "condition" : [{
+                    "number" : "606",
+                    "code" : "z"
+                },
+                {
+                    "number" : "606",
+                    "code" : "2",
+                    "regex" : "^rameau$"
+                }
+                ],
+                "identifiant":{
+                    "number" : "606",
+                    "code":"3"
+                },
+                "verification" : {
+                    "number" : "008",
+                    "regex": "^Tz.*"
+                },
+                "message": "Incohérence indexation : vérifier que la zone 6XX est liée à une autorité RAMEAU"
             }
+            
         ]
     },
     "Mémoire": {

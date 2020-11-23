@@ -1,0 +1,131 @@
+<record>
+    <leader> cx b22 3 45 </leader>
+    <controlfield tag="001">027934608</controlfield>
+    <controlfield tag="003">http://www.idref.fr/027934608</controlfield>
+    <controlfield tag="004">19851003</controlfield>
+    <controlfield tag="005">20200907110934.000</controlfield>
+    <controlfield tag="006">0004</controlfield>
+    <controlfield tag="007">341720001</controlfield>
+    <controlfield tag="008">Tb5</controlfield>
+    <datafield tag="010" ind1=" " ind2=" ">
+    <subfield code="a">000000012178966X</subfield>
+    <subfield code="2">ISNI</subfield>
+    <subfield code="C">BNF</subfield>
+    <subfield code="d">20150918</subfield>
+    </datafield>
+    <datafield tag="033" ind1=" " ind2=" ">
+    <subfield code="a">http://catalogue.bnf.fr/ark:/12148/cb11987041s</subfield>
+    <subfield code="2">BNF</subfield>
+    <subfield code="d">20150918</subfield>
+    </datafield>
+    <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">frBN002256386</subfield>
+    </datafield>
+    <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">FRBNF119870411</subfield>
+    <subfield code="z">FRBNF11987041</subfield>
+    </datafield>
+    <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">200711921G</subfield>
+    <subfield code="2">RNSR</subfield>
+    <subfield code="C">SCANR</subfield>
+    <subfield code="d">20191209</subfield>
+    </datafield>
+    <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">http://viaf.org/viaf/169536857</subfield>
+    <subfield code="2">VIAF</subfield>
+    <subfield code="C">VIAF</subfield>
+    <subfield code="d">20200401</subfield>
+    </datafield>
+    <datafield tag="100" ind1=" " ind2=" ">
+    <subfield code="a">19851003afrey50 ba0</subfield>
+    </datafield>
+    <datafield tag="101" ind1=" " ind2=" ">
+    <subfield code="a">fre</subfield>
+    </datafield>
+    <datafield tag="102" ind1=" " ind2=" ">
+    <subfield code="a">FR</subfield>
+    </datafield>
+    <datafield tag="103" ind1=" " ind2=" ">
+    <subfield code="a"> 1958 </subfield>
+    </datafield>
+    <datafield tag="106" ind1=" " ind2=" ">
+    <subfield code="a">0</subfield>
+    <subfield code="b">1</subfield>
+    <subfield code="c">0</subfield>
+    </datafield>
+    <datafield tag="150" ind1=" " ind2=" ">
+    <subfield code="a">z</subfield>
+    </datafield>
+    <datafield tag="152" ind1=" " ind2=" ">
+    <subfield code="a">AFNOR</subfield>
+    </datafield>
+    <datafield tag="210" ind1="0" ind2=" ">
+    <subfield code="7">ba0yba0y</subfield>
+    <subfield code="9">0</subfield>
+    <subfield code="a">
+    Institut de Recherches sur la Catalyse et l'Environnement de Lyon
+    </subfield>
+    <subfield code="c">Villeurbanne, Rhône</subfield>
+    </datafield>
+    <datafield tag="300" ind1="0" ind2=" ">
+    <subfield code="7">ba0yba0y</subfield>
+    <subfield code="a">
+    2 av. Einstein, 69626 Villeurbanne cedex. Tél. 04.72.44.53.00. Fax : 04.72.44.53.99
+    </subfield>
+    </datafield>
+    <datafield tag="410" ind1="0" ind2=" ">
+    <subfield code="7">ba0yba0y</subfield>
+    <subfield code="9">#</subfield>
+    <subfield code="a">IRCELYON</subfield>
+    </datafield>
+    <datafield tag="410" ind1="0" ind2=" ">
+    <subfield code="7">ba0yba0y</subfield>
+    <subfield code="9">#</subfield>
+    <subfield code="a">UMR5256</subfield>
+    <subfield code="c">Villeurbanne, Rhône</subfield>
+    </datafield>
+    <datafield tag="410" ind1="0" ind2=" ">
+    <subfield code="7">ba0yba0y</subfield>
+    <subfield code="9">#</subfield>
+    <subfield code="a">Centre national de la recherche scientifique</subfield>
+    <subfield code="c">France</subfield>
+    <subfield code="b">Institut de recherches sur la catalyse</subfield>
+    <subfield code="c">Villeurbanne, Rhône</subfield>
+    </datafield>
+    <datafield tag="410" ind1="0" ind2=" ">
+    <subfield code="7">ba0yba0y</subfield>
+    <subfield code="9">#</subfield>
+    <subfield code="a">Centre national de la recherche scientifique</subfield>
+    <subfield code="c">France</subfield>
+    <subfield code="b">Laboratoire propre</subfield>
+    <subfield code="c">5401</subfield>
+    </datafield>
+    <datafield tag="801" ind1=" " ind2="3">
+    <subfield code="a">FR</subfield>
+    <subfield code="b">Abes</subfield>
+    <subfield code="c">20200907</subfield>
+    <subfield code="g">AFNOR</subfield>
+    </datafield>
+    <datafield tag="910" ind1=" " ind2=" ">
+    <subfield code="a">
+    Institut de Recherches sur la Catalyse et l'Environnement de Lyon (Villeurbanne, Rhône)
+    </subfield>
+    </datafield>
+    <datafield tag="911" ind1=" " ind2=" ">
+    <subfield code="a">IRCELYON</subfield>
+    </datafield>
+    <datafield tag="911" ind1=" " ind2=" ">
+    <subfield code="a">UMR5256 (Villeurbanne, Rhône)</subfield>
+    </datafield>
+    <datafield tag="911" ind1=" " ind2=" ">
+    <subfield code="a">
+    Centre national de la recherche scientifique (France). Institut de recherches sur la catalyse (Villeurbanne, Rhône)
+    </subfield>
+    </datafield>
+    <datafield tag="911" ind1=" " ind2=" ">
+    <subfield code="a">
+    Centre national de la recherche scientifique (France). Laboratoire propre (5401)
+    </subfield>
+    </datafield>
+    </record>
