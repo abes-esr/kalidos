@@ -745,6 +745,114 @@
                 "message": "Si 328$zReproduction de, alors il faut une 608 $3027253139 $aThèses et écrits académiques",
                 "regex": "^Thèses et écrits académiques$",
                 "index": 1015
+            },
+            {
+                "condition" :  [
+                    {
+                        "operator": "startwith_text",
+                        "number" : "008",
+                        "code" : "",
+                        "string": ["Oa"]
+
+                    },
+                    {
+                        "operator": "presente",
+                        "number" : "451",
+                        "code" : "",
+                        "ind1" : "",
+                        "ind2" : ""
+                    }
+                ],
+                "reciproque": {
+                    "number" : 451,
+                    "code": "0"
+                },
+                "number": "008",
+                "code": "",
+                "message": "Si 008 commence par Oa et 451 présente, alors vérifier que notice 451$0 contient une 008 qui commence par Oa",
+                "regex": "^(0A).*",
+                "index": 1016
+            },
+            {
+                "condition" :  [
+                    {
+                        "operator": "startwith_text",
+                        "number" : "008",
+                        "code" : "",
+                        "string": ["Aa"]
+
+                    },
+                    {
+                        "operator": "presente",
+                        "number" : "451",
+                        "code" : "",
+                        "ind1" : "",
+                        "ind2" : ""
+                    }
+                ],
+                "reciproque": {
+                    "number" : 451,
+                    "code": "0"
+                },
+                "number": "008",
+                "code": "",
+                "message": "Si 008 commence par Aa et 451 présente, alors vérifier que notice 451$0 contient une 008 qui commence par Aa",
+                "regex": "^(Aa).*",
+                "index": 1017
+            },
+            {
+                "condition" :  [
+                    {
+                        "operator": "startwith_text",
+                        "number" : "008",
+                        "code" : "",
+                        "string": ["Oa"]
+
+                    },
+                    {
+                        "operator": "presente",
+                        "number" : "452",
+                        "code" : "",
+                        "ind1" : "",
+                        "ind2" : ""
+                    }
+                ],
+                "reciproque": {
+                    "number" : 452,
+                    "code": "0"
+                },
+                "number": "008",
+                "code": "",
+                "message": "Si 008 commence par Oa et 452 présente, alors vérifier que notice 452$0 contient une 008 qui commence par Aa",
+                "regex": "^(Aa).*",
+                "index": 1018
+            },
+            {
+                "condition" :  [
+                    {
+                        "operator": "startwith_text",
+                        "number" : "008",
+                        "code" : "",
+                        "string": ["Aa"]
+
+                    },
+                    {
+                        "operator": "presente",
+                        "number" : "452",
+                        "code" : "",
+                        "ind1" : "",
+                        "ind2" : ""
+                    }
+                ],
+                "reciproque": {
+                    "number" : 452,
+                    "code": "0"
+                },
+                "number": "008",
+                "code": "",
+                "message": "Si 008 commence par Aa et 452 présente, alors vérifier que notice 452$0 contient une 008 qui commence par Oa",
+                "regex": "^(0A).*",
+                "index": 1019
             }
         ],
         "ConditionStructurel": [

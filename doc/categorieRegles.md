@@ -120,10 +120,10 @@
 (A REVOIR)136	x	x	x		856	856$zAccès au texte intégral sauf si 856$5=692669902, alors $zAccès réservé aux membres de Lyon 1 après authentification		Zone 856 : le texte ne correspond pas au type d'accès (internet-intranet)
 138		x	x		856	Si 856$5=692669902, alors doit être présente 310 ##$aL'accès à cette ressource est réservé aux membres de Lyon 1 après authentification		Zone E856 : une note 310 doit préciser le type d'accès restreint
 
-140	x	x	x	x	451	Si 008 commence par Oa et 451 présente, alors vérifier que notice 451$0 contient une 008 qui commence par Oa		Vérifier la pertinence des liens réciproques
-141	x	x	x	x	451	Si 008 commence par Aa et 451 présente, alors vérifier que notice 451$0 contient une 008 qui commence par Aa		Vérifier la pertinence des liens réciproques
-143	x	x	x	x	452	Si 008 commence par Oa et 452 présente, alors vérifier que notice 452$0 contient une 008 qui commence par Aa		Vérifier la pertinence des liens réciproques
-144	x	x	x	x	452	Si 008 commence par Aa et 452 présente, alors vérifier que notice 452$0 contient une 008 qui commence par Oa		Vérifier la pertinence des liens réciproques
+(FAIT)140	x	x	x	x	451	Si 008 commence par Oa et 451 présente, alors vérifier que notice 451$0 contient une 008 qui commence par Oa		Vérifier la pertinence des liens réciproques
+(FAIT)141	x	x	x	x	451	Si 008 commence par Aa et 451 présente, alors vérifier que notice 451$0 contient une 008 qui commence par Aa		Vérifier la pertinence des liens réciproques
+(FAIT)143	x	x	x	x	452	Si 008 commence par Oa et 452 présente, alors vérifier que notice 452$0 contient une 008 qui commence par Aa		Vérifier la pertinence des liens réciproques
+(FAIT)144	x	x	x	x	452	Si 008 commence par Aa et 452 présente, alors vérifier que notice 452$0 contient une 008 qui commence par Oa		Vérifier la pertinence des liens réciproques
 159			x		455	Si 455, alors vérifier que la notice en 455$0 contient 105$a Pos. 4-7= m		Vérifier la pertinence des liens réciproques
 (Supprimer)161				x	456	Si 456, alors vérifier que la notice en 456$0 contient une 008 qui commence par Oa		Vérifier la pertinence des liens réciproques
 (Supprimer)162	x				455	Si 455, alors vérifier que la notice en 455$0 contient une 008 qui commence par Aa		Vérifier la pertinence des liens réciproques

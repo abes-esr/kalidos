@@ -79,7 +79,6 @@ regles ???
 var ConditionStructurel = function () {
 
     var testConditionMatchingRules = function (rules, controlfields, datafields, resultJson) {
-        console.log("resultJson", resultJson);
         rules.Generale.ConditionMatching.forEach(function (regle) {
             var field1 = Parcours.findDataField(datafields, regle.number);
             if (field1 == null){
@@ -98,14 +97,42 @@ var ConditionStructurel = function () {
                     let res = {
                         errors: [],
                     };
-                    Matching.testMatchRegexNumber(regle, datafields, controlfields , res );
+                    if(regle.reciproque){
+                        console.log("it's reciproque");
+                        var field = Parcours.findDataField(datafields, regle.reciproque.number);
+                        var ppnDest = Parcours.getSubfieldValue(field , regle.reciproque.code);
 
-                    if (res.errors.length > 0){
-                        resultJson.errors.push({
-                            message: regle.message,
-                            number: regle.number,
-                        });
+                        axios.get("https://www.sudoc.fr/"+ppnDest+".xml")
+                            .then(function (response) {
+                                const data = JSON.parse(
+                                    convert.xml2json(response.data, { compact: true, spaces: 2 })
+                                );
+                                console.log("datafield", data.record.datafield);
+                                console.log("controlefield", data.record.controlfield);
+                                Matching.testMatchRegexNumber(regle, data.record.datafield, data.record.controlfield , res );
+                                if (res.errors.length > 0) {
+                                    resultJson.errors.push({
+                                        message: regle.message,
+                                        number: regle.number,
+                                    });
+                                }
+
+                                })
+                            .catch(function (error) {
+                                console.log("error matching reciproque");
+                            })
+
+
+                    }else{
+                        Matching.testMatchRegexNumber(regle, datafields, controlfields , res );
+                        if (res.errors.length > 0){
+                            resultJson.errors.push({
+                                message: regle.message,
+                                number: regle.number,
+                            });
+                        }
                     }
+
 
                 }
             }
