@@ -31,7 +31,7 @@ function InterfaceVerif({ result, recherchePPN, compteurResult, listPPNErronne }
 
     const listPPNWithGoodName = listPPNWithError.filter((row) => { return row[1].PPN.toString().includes(recherchePPN) });
 
-    {/* old excel */}
+    //old excel
     const headers = [
         { label: "PPN", key: "ppn" },
         { label: "Erreurs", key: "error" },
@@ -69,23 +69,25 @@ function InterfaceVerif({ result, recherchePPN, compteurResult, listPPNErronne }
         csvData.push({ ppn: listPPNWithoutError[i][1]['PPN'], error: "0", message: "", number: "", code: "" })
     }
 
-    {/* new excel */}
+    // new excel
 
+    //on crée une liste des erreurs présentes dans les ppn
     const errorHeaders = [""];
 
     for (let i = 0; i < listPPNWithError.length; i++) {
         let error_number = listPPNWithError[i][1]['errors'].length;
         for (let j = 0; j < error_number; j++) {
             errorHeaders.push(
-                //numéro et code
                 listPPNWithError[i][1]['errors'][j]['number'] + " " + listPPNWithError[i][1]['errors'][j]['code']
             )
         }
     }
-    console.log(errorHeaders)
+    //on élimine les erreurs redondantes
+    const sortedHeaders = errorHeaders.reduce(function(a,b){ if (a.indexOf(b) < 0)a.push(b); return a; }, []);
 
+    //la liste des erreurs va constituer le header du excel
     const newCsvData = [];
-    newCsvData.push(errorHeaders);
+    newCsvData.push(sortedHeaders);
 
     for (let i = 0; i < listPPNWithError.length; i++) {
         let error_number = listPPNWithError[i][1]['errors'].length;
@@ -93,14 +95,13 @@ function InterfaceVerif({ result, recherchePPN, compteurResult, listPPNErronne }
         for (let j = 0; j < error_number; j++) {
             let ppnError = listPPNWithError[i][1]['errors'][j]['number'] + " " + listPPNWithError[i][1]['errors'][j]['code'];
 
-            let indexError = errorHeaders.indexOf(ppnError);
-            console.log(ppnError);
-            console.log(indexError);
+            // on regarde à quel index du header l'erreur du ppn correspond
+            let indexError = sortedHeaders.indexOf(ppnError);
 
             if (indexError > 0) {
                 let excelRow = [listPPNWithError[i][1]['PPN']];
-                for(let k = 1; k < errorHeaders.length; k++) {
-                    if (k == indexError) {
+                for(let k = 1; k < sortedHeaders.length; k++) {
+                    if (k == indexError) { // on se sert de cette index pour cocher la bonne case
                         excelRow.push("X");
                     }else {
                         excelRow.push("");
@@ -111,7 +112,9 @@ function InterfaceVerif({ result, recherchePPN, compteurResult, listPPNErronne }
         }
     }
 
-    console.log(newCsvData);
+    for (let i = 0; i < listPPNWithoutError.length; i++) {
+        newCsvData.push([ listPPNWithoutError[i][1]['PPN'], "" ]);
+    }
 
     return (
         <div>
