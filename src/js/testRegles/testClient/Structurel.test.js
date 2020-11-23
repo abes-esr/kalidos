@@ -287,3 +287,88 @@ test('Zone 328 : revoir la valeur des indicateurs (FAIL)', () => {
     Structurel.testMatchStructurelRules(CATEGORIE,ruleTest,undefined,datafields,resultJson);
     expect(resultJson.errors).not.toStrictEqual([]);
 });
+
+
+// ===============================================
+
+test('Zone 455 incompatible avec le type de thèse (soutenance)', () => {
+    const notice = getNotice("021");
+    const datafields = notice.record.datafield;
+    let resultJson = {
+        PPN: 0,
+        errors: [],
+    };
+    const index = 48;
+    addRuleToTest(index);
+    Structurel.testMatchStructurelRules(CATEGORIE,ruleTest,undefined,datafields,resultJson);
+    expect(resultJson.errors).toStrictEqual([]);
+});
+
+test('Zone 455 incompatible avec le type de thèse (soutenance) (FAIL)', () => {
+    const notice = getNotice("022");
+    const datafields = notice.record.datafield;
+    let resultJson = {
+        PPN: 0,
+        errors: [],
+    };
+    const index = 48;
+    addRuleToTest(index);
+    Structurel.testMatchStructurelRules(CATEGORIE,ruleTest,undefined,datafields,resultJson);
+    expect(resultJson.errors).not.toStrictEqual([]);
+});
+
+// ===============================================
+
+test('Ressource électronique : doit contenir une zone 303', () => {
+    const notice = getNotice("045");
+    const datafields = notice.record.datafield;
+    let resultJson = {
+        PPN: 0,
+        errors: [],
+    };
+    const index = 50;
+    addRuleToTest(index);
+    Structurel.testMatchStructurelRules(CATEGORIE,ruleTest,undefined,datafields,resultJson);
+    expect(resultJson.errors).toStrictEqual([]);
+});
+
+test('Ressource électronique : doit contenir une zone 303 (FAIL)', () => {
+    const notice = getNotice("046");
+    const datafields = notice.record.datafield;
+    let resultJson = {
+        PPN: 0,
+        errors: [],
+    };
+    const index = 50;
+    addRuleToTest(index);
+    Structurel.testMatchStructurelRules(CATEGORIE,ruleTest,undefined,datafields,resultJson);
+    expect(resultJson.errors).not.toStrictEqual([]);
+});
+
+// ===============================================
+
+test('Ressource électronique : doit contenir une zone 339', () => {
+    const notice = getNotice("045");
+    const datafields = notice.record.datafield;
+    let resultJson = {
+        PPN: 0,
+        errors: [],
+    };
+    const index = 51;
+    addRuleToTest(index);
+    Structurel.testMatchStructurelRules(CATEGORIE,ruleTest,undefined,datafields,resultJson);
+    expect(resultJson.errors).toStrictEqual([]);
+});
+
+test('Ressource électronique : doit contenir une zone 339 (FAIL)', () => {
+    const notice = getNotice("046");
+    const datafields = notice.record.datafield;
+    let resultJson = {
+        PPN: 0,
+        errors: [],
+    };
+    const index = 51;
+    addRuleToTest(index);
+    Structurel.testMatchStructurelRules(CATEGORIE,ruleTest,undefined,datafields,resultJson);
+    expect(resultJson.errors).not.toStrictEqual([]);
+});

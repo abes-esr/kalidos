@@ -510,6 +510,87 @@
                 "code": "d",
                 "message": "Zone 328$d doit contenir uniquement l'année de soutenance",
                 "regex": "(?:(?![\\?;,]).)+"
+            },
+            {
+                "index": 524,
+                "number": "700",
+                "code": "b",
+                "message": "Zone 700 : lien auteur à effectuer",
+                "regex": "(?:(?!Prénom).)+"
+            },
+            {
+                "index": 525,
+                "number": "700",
+                "code": "4",
+                "message": "Zone 700 : le code fonction doit être 070 pour l'auteur ou co-auteur de la thèse",
+                "regex": "^070$"
+            },
+            {
+                "index": 526,
+                "number": "701",
+                "code": "a",
+                "value": [
+                    "^((?!Nom du co-auteur).)*$",
+                    "^((?!Nom du directeur).)*$"
+                ],
+                "match": "all",
+                "message": "Zone 701 : lien auteur à effectuer"
+            },
+            {
+                "index": 527,
+                "number": "339",
+                "code": "d",
+                "message": "Zone 339 : corriger avec l'année de mise en ligne",
+                "regex": "^((?!Année de mise en ligne).)*$"
+            },
+            {
+                "index": 528,
+                "number": "230",
+                "code": "a",
+                "message": "Zone 230 à compléter",
+                "regex": "^((?!X vues).)*$"
+            },
+            {
+                "index": 529,
+                "number": "307",
+                "code": "a",
+                "message": "Zone 307 à compléter",
+                "regex": "^((?!est de : X pages).)*$"
+            },
+            {
+                "index": 530,
+                "number": "303",
+                "code": "a",
+                "message": "Zone 303 à compléter",
+                "regex": "^((?!AAAA-MM-JJ).)*$"
+            },
+            {
+                "index": 531,
+                "number": "337",
+                "code": "a",
+                "message": "Zone 337 à compléter",
+                "regex": "^((?!fichier au\\(x\\) format\\(s\\)…).)*$"
+            },
+            {
+                "index": 532,
+                "number": "856",
+                "code": "2",
+                "message": "Zone 305$2 générique à remplacer-supprimer",
+                "regex": "^((?!Texte du lien).)*$"
+            },
+            {
+                "index": 533,
+                "number": "856",
+                "code": "q",
+                "message": "Zone 856$q : renseigner le format",
+                "regex": "^((?!Format).)*$"
+            },
+            {
+                "index": 534,
+                "number": "017",
+                "code": "2",
+                "message": "107$2 à corriger (\"MEMLyon1\")",
+                "regex": "^MEMLyon1$"
             }
         ],
         "dependances": [
