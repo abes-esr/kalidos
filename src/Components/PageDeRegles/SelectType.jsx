@@ -3,6 +3,7 @@ import { Button, Card, Col, Container, ListGroup, Row } from 'react-bootstrap'
 import Form from 'react-bootstrap/Form'
 import FormJSON from "@rjsf/core";
 import { getSchema } from './forms/matching'
+import { getSchemaDependencies } from './forms/depences'
 import ArrayFieldTemplate from './forms/ArrayFieldTemplate'
 
 const TypeList = ({categories}) => {
@@ -51,7 +52,7 @@ const TypeList = ({categories}) => {
     setUseForm(!useForm)
   }
 
-  const schema = getSchema(categories, rules)
+  const schema = getSchemaDependencies(categories, rules)
   
   const onSubmit = ({formData}, e) => {
     console.log(type)
