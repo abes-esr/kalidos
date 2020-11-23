@@ -31,6 +31,7 @@ function InterfaceVerif({ result, recherchePPN, compteurResult, listPPNErronne }
 
     const listPPNWithGoodName = listPPNWithError.filter((row) => { return row[1].PPN.toString().includes(recherchePPN) });
 
+    {/* old excel */}
     const headers = [
         { label: "PPN", key: "ppn" },
         { label: "Erreurs", key: "error" },
@@ -68,6 +69,50 @@ function InterfaceVerif({ result, recherchePPN, compteurResult, listPPNErronne }
         csvData.push({ ppn: listPPNWithoutError[i][1]['PPN'], error: "0", message: "", number: "", code: "" })
     }
 
+    {/* new excel */}
+
+    const errorHeaders = [""];
+
+    for (let i = 0; i < listPPNWithError.length; i++) {
+        let error_number = listPPNWithError[i][1]['errors'].length;
+        for (let j = 0; j < error_number; j++) {
+            errorHeaders.push(
+                //numéro et code
+                listPPNWithError[i][1]['errors'][j]['number'] + " " + listPPNWithError[i][1]['errors'][j]['code']
+            )
+        }
+    }
+    console.log(errorHeaders)
+
+    const newCsvData = [];
+    newCsvData.push(errorHeaders);
+
+    for (let i = 0; i < listPPNWithError.length; i++) {
+        let error_number = listPPNWithError[i][1]['errors'].length;
+
+        for (let j = 0; j < error_number; j++) {
+            let ppnError = listPPNWithError[i][1]['errors'][j]['number'] + " " + listPPNWithError[i][1]['errors'][j]['code'];
+
+            let indexError = errorHeaders.indexOf(ppnError);
+            console.log(ppnError);
+            console.log(indexError);
+
+            if (indexError > 0) {
+                let excelRow = [listPPNWithError[i][1]['PPN']];
+                for(let k = 1; k < errorHeaders.length; k++) {
+                    if (k == indexError) {
+                        excelRow.push("X");
+                    }else {
+                        excelRow.push("");
+                    }
+                }
+                newCsvData.push(excelRow);  
+            }
+        }
+    }
+
+    console.log(newCsvData);
+
     return (
         <div>
             <h2>
@@ -79,13 +124,26 @@ function InterfaceVerif({ result, recherchePPN, compteurResult, listPPNErronne }
                     overlay={renderTooltip}
                 >
 
-                    <CSVLink data={csvData} headers={headers} style={{ float: "right" }}>
+                    <CSVLink data={csvData} separator={";"} headers={headers} style={{ float: "right" }}>
                         <Button variant="success">
                             <MDBIcon far icon="file-excel" />
                         </Button>
                     </CSVLink>
                 </OverlayTrigger>
             </h2>
+            <div>
+                <OverlayTrigger
+                    placement="top"
+                    delay={{ show: 250, hide: 400 }}
+                    overlay={renderTooltip}
+                >
+                    <CSVLink data={newCsvData} separator={";"} style={{ float: "right" }}>
+                        <Button variant="success">
+                            <MDBIcon far icon="file-excel" />
+                        </Button>
+                    </CSVLink>
+                </OverlayTrigger>
+            </div>
             <br></br>
             <Row>
                 {
