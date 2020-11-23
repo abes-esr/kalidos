@@ -74,9 +74,7 @@ Numérisation de l'édition de Leide : P. van der Aa, 1685
         </subfield>
     </datafield>
     <datafield tag="324" ind1=" " ind2=" ">
-        <subfield code="a">
-Reproduction numérique de l'édition de LIEU : EDITEUR, DATE
-        </subfield>
+        <subfield code="a">Reproduction numérique de l'édition de LIEU : EDITEUR, DATE</subfield>
     </datafield>
     <datafield tag="337" ind1=" " ind2=" ">
         <subfield code="a">

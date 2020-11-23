@@ -591,6 +591,20 @@
                 "code": "2",
                 "message": "107$2 à corriger (\"MEMLyon1\")",
                 "regex": "^MEMLyon1$"
+            },
+            {
+                "index": 535,
+                "number": "305",
+                "code": "a",
+                "message": "Zone 305 générique à remplacer-supprimer",
+                "regex": "^(?!Note sur l'édition et l'histoire bibliographique).*$"
+            },
+            {
+                "index": 536,
+                "number": "324",
+                "code": "a",
+                "message": "Zone 324 à compléter",
+                "regex": "^(?!Reproduction numérique de l'édition de LIEU : EDITEUR, DATE).*$"
             }
         ],
         "dependances": [

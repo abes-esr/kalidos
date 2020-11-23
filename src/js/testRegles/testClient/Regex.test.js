@@ -1935,6 +1935,7 @@ test('Zone 337 à compléter (FAIL)', () => {
 });
 
 
+
 // =================================================
 
 test('Zone 305$2 générique à remplacer-supprimer', () => {
@@ -2031,5 +2032,70 @@ test('107$2 à corriger (\"MEMLyon1\") (FAIL)', () => {
 
     expect(resultJson.errors).not.toStrictEqual([]);
 });
+
+// =================================================
+
+test('Zone 305 générique à remplacer-supprimer', () => {
+    const notice = getNotice("047");
+    const datafields = notice.record.datafield;
+    const controlfield = notice.record.controlfield;
+    let resultJson = {
+        PPN: 0,
+        errors: [],
+    };
+    const index = 535;
+    addRuleToTest(index);
+    Matching.testMatchRegexRules(CATEGORIE, ruleTest, controlfield, datafields, resultJson)
+
+    expect(resultJson.errors).toStrictEqual([]);
+});
+
+test('Zone 305 générique à remplacer-supprimer (FAIL)', () => {
+    const notice = getNotice("048");
+    const datafields = notice.record.datafield;
+    const controlfield = notice.record.controlfield;
+    let resultJson = {
+        PPN: 0,
+        errors: [],
+    };
+    const index = 535;
+    addRuleToTest(index);
+    Matching.testMatchRegexRules(CATEGORIE, ruleTest, controlfield, datafields, resultJson)
+
+    expect(resultJson.errors).not.toStrictEqual([]);
+});
+
+// =================================================
+
+test('Zone 324 à compléter', () => {
+    const notice = getNotice("047");
+    const datafields = notice.record.datafield;
+    const controlfield = notice.record.controlfield;
+    let resultJson = {
+        PPN: 0,
+        errors: [],
+    };
+    const index = 536;
+    addRuleToTest(index);
+    Matching.testMatchRegexRules(CATEGORIE, ruleTest, controlfield, datafields, resultJson)
+
+    expect(resultJson.errors).toStrictEqual([]);
+});
+
+test('Zone 324 à compléter (FAIL)', () => {
+    const notice = getNotice("048");
+    const datafields = notice.record.datafield;
+    const controlfield = notice.record.controlfield;
+    let resultJson = {
+        PPN: 0,
+        errors: [],
+    };
+    const index = 536;
+    addRuleToTest(index);
+    Matching.testMatchRegexRules(CATEGORIE, ruleTest, controlfield, datafields, resultJson)
+
+    expect(resultJson.errors).not.toStrictEqual([]);
+});
+
 
 
