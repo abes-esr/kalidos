@@ -1,11 +1,11 @@
 const axios = require('axios');
 const convert = require("xml-js");
-import { cleanResult, addErrorPPN, setNombreTotalPPN, addErrorPPNErronnee } from '../../actions/index';
+import { cleanResult, addErrorPPN, setNombreTotalPPN } from '../../actions/index';
 import store from '../../store/index';
 const Matching = require("../regles/Matching");
 const Structurel = require("../regles/Structurel");
-const Dependance = require("../regles/Dependance");
-const IdRef = require("../regles/IdRef");
+const ConditionStructurel = require("../regles/ConditionStructurelle");
+const ConditionMatching = require("../regles/ConditionMatching");
 
 const PPN_EN_DUR = '169450546'
 const CATEGORIE = "Generale";
@@ -52,7 +52,6 @@ function getSudoc(rules, PPN) {
         })
         .catch(function (error) {
             // handle error
-            store.dispatch(addErrorPPNErronnee(PPN));
             console.log(error);
         })
         .then(function () {
@@ -63,13 +62,12 @@ function getSudoc(rules, PPN) {
 function writeResult() {
     axios({
         method: 'POST',
-        url: '/result',
+        url: 'http://localhost:3000/result',
         contentType: "application/json",
         headers: {
             "Accept": "application/json",
         },
         data: store.getState().result,
-        port:3000,
     }).then(function () {
         //console.log("ok")
     })
@@ -84,13 +82,12 @@ function writeResult() {
 function deleteRule(index) {
     axios({
         method: 'DELETE',
-        url: '/rules',
+        url: 'http://localhost:3000/rules',
         contentType: "application/json",
         headers: {
             "Accept": "application/json",
             "index": index,
         },
-        port:3000,
     }).then(function () {
         console.log("suppression ok")
     })
@@ -102,12 +99,11 @@ function deleteRule(index) {
 }
 
 function updateRule(index, newRule) {
-    axios.put('/rules', newRule, {
+    axios.put('http://localhost:3000/rules', newRule, {
         headers: {
             'Content-Type': 'application/json',
             "index": index
-        },
-        port:3000,
+        }
     }).then(function () {
         console.log("modification ok")
     }).catch(function (error) {
@@ -118,7 +114,7 @@ function updateRule(index, newRule) {
 function addRule(categorie, type, rule) {
     axios({
         method: 'POST',
-        url: '/rules',
+        url: 'http://localhost:3000/rules',
         contentType: "application/json",
         headers: {
             "Accept": "application/json",
@@ -126,7 +122,6 @@ function addRule(categorie, type, rule) {
             "type": type
         },
         data: rule,
-        port:3000,
     }).then(function () {
         console.log("ok")
     })
@@ -139,7 +134,7 @@ function addRule(categorie, type, rule) {
 }
 
 function getRules(listPPN) {
-    axios.get('/rules',{port:3000})
+    axios.get('http://localhost:3000/rules')
         .then(function (response) {
 
             listPPN.forEach(PPN => getSudoc(response.data, PPN));
@@ -167,10 +162,10 @@ function verifMain(rules, sudoc) {
         PPN: controlfields[0]._text,
         errors: [],
     };
-    Matching.testMatchRegexRules(CATEGORIE,rules,controlfields,datafields , resultJson)
-    Structurel.testMatchStructurelRules(CATEGORIE,rules,controlfields,datafields , resultJson)
-    Dependance.testMatchDependanceRules(CATEGORIE,rules,controlfields,datafields , resultJson)
-    IdRef.testIdRefRules(CATEGORIE,rules,controlfields,datafields , resultJson)
+    //Matching.testMatchRegexRules(rules,controlfields,datafields , resultJson)
+    //Structurel.testMatchStructurelRules(rules,controlfields,datafields , resultJson)
+    //ConditionStructurel.testConditionStrucutrelRules(rules,controlfields,datafields , resultJson)
+    ConditionMatching.testConditionMatchingRules(rules,controlfields,datafields , resultJson)
 
 
     store.dispatch(addErrorPPN(resultJson));

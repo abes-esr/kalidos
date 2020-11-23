@@ -106,18 +106,18 @@
 ```
 
 2	x	x	x	x	100	100$a Pos. 9-12 = 214$d	Si 214 #4$d il y aura en plus "C espace" ;  si 214 #0$d il peut y avoir en plus "DL espace"	Dates incohérentes : vérifier zones 100 et 214
-11	x	x	x	x	105	Si  105 $a Pos. 0-3 différent de la valeur "y" alors 215$c ne doit pas être vide		Mention d'illustrations incohérente : vérifier zones 105 et 215
-13	x			x	105	Si 105 $a Pos. 8 = 1 alors il faut aussi une 608 ‎$302886431XActes de congrès		Mention de congrès incohérente : vérifier zones 105 et 608
-14	x	x	x	x	105	Si 105 $a Pos. 8 = 0 alors il ne doit pas y avoir 608 ‎$302886431XActes de congrès		Mention de congrès : vérifier zones 105 et 608
-15	x	x	x	x	105	Si 105 $a Pos. 10 =1 alors il faut une 320 avec la mention "Index"		Mention d'index incohérente : vérifier zones 105 et 320
-16	x	x	x	x	105	Si 105 $a Pos. 10 =0 alors il ne doit pas y avoir une 320 avec la mention "Index"		Mention d'index incohérente : vérifier zones 105 et 320
-19	x	x	x	x	105	Si 105 $a Pos. 4-7= m ou 7 il faut une 608 $3027253139Thèses et écrits académiques		Zone 608 : indexation Forme-Genre obligatoire
-33	x			x	214	Si 214 #4$d, la zone doit commencer par "C espace"		Zone 214 : qualificatifs de la date non conformes
-36	x		x	x	214	Si 214 #0 et $d, doit commencer par "DL espace" ou "[" ou un chiffre		Zone 214 : qualificatifs de la date non conforme
-149			x		214	Si 214 ind2=2, alors $aLyon		Zone 214$a incohérente avec le statut de la thèse (reproduction)
-150					214	Si 214 ind2=2, alors $cBibliothèque Lyon 1		Zone 214$c incohérente avec le statut de la thèse (reproduction)
+(FAIT)11	x	x	x	x	105	Si  105 $a Pos. 0-3 différent de la valeur "y" alors 215$c ne doit pas être vide		Mention d'illustrations incohérente : vérifier zones 105 et 215
+(FAIT/A CONFIRMER)13	x			x	105	Si 105 $a Pos. 8 = 1 alors il faut aussi une 608 ‎$302886431X $aActes de congrès			Mention de congrès incohérente : vérifier zones 105 et 608
+(FAIT/A CONFIRMER)14	x	x	x	x	105	Si 105 $a Pos. 8 = 0 alors il ne doit pas y avoir 608 ‎$302886431XActes de congrès		Mention de congrès : vérifier zones 105 et 608
+(CHECK REGEX)15	x	x	x	x	105	Si 105 $a Pos. 10 =1 alors il faut une 320 avec la mention "Index"		Mention d'index incohérente : vérifier zones 105 et 320
+(FAIT)16	x	x	x	x	105	Si 105 $a Pos. 10 =0 alors il ne doit pas y avoir une 320 avec la mention "Index"		Mention d'index incohérente : vérifier zones 105 et 320
+(FAIT)19	x	x	x	x	105	Si 105 $a Pos. 4-7= m ou 7 il faut une 608 $3027253139Thèses et écrits académiques		Zone 608 : indexation Forme-Genre obligatoire
+(FAIT)33	x			x	214	Si 214 #4$d, la zone doit commencer par "C espace"		Zone 214 : qualificatifs de la date non conformes
+(FAIT)36	x		x	x	214	Si 214 #0 et $d, doit commencer par "DL espace" ou "[" ou un chiffre		Zone 214 : qualificatifs de la date non conforme
+(FAIT)149			x		214	Si 214 ind2=2, alors $aLyon		Zone 214$a incohérente avec le statut de la thèse (reproduction)
+(FAIT)150					214	Si 214 ind2=2, alors $cBibliothèque Lyon 1		Zone 214$c incohérente avec le statut de la thèse (reproduction)
 
-136	x	x	x		856	856$zAccès au texte intégral sauf si 856$5=692669902, alors $zAccès réservé aux membres de Lyon 1 après authentification		Zone 856 : le texte ne correspond pas au type d'accès (internet-intranet)
+(A REVOIR)136	x	x	x		856	856$zAccès au texte intégral sauf si 856$5=692669902, alors $zAccès réservé aux membres de Lyon 1 après authentification		Zone 856 : le texte ne correspond pas au type d'accès (internet-intranet)
 138		x	x		856	Si 856$5=692669902, alors doit être présente 310 ##$aL'accès à cette ressource est réservé aux membres de Lyon 1 après authentification		Zone E856 : une note 310 doit préciser le type d'accès restreint
 
 140	x	x	x	x	451	Si 008 commence par Oa et 451 présente, alors vérifier que notice 451$0 contient une 008 qui commence par Oa		Vérifier la pertinence des liens réciproques
@@ -128,15 +128,15 @@
 (Supprimer)161				x	456	Si 456, alors vérifier que la notice en 456$0 contient une 008 qui commence par Oa		Vérifier la pertinence des liens réciproques
 (Supprimer)162	x				455	Si 455, alors vérifier que la notice en 455$0 contient une 008 qui commence par Aa		Vérifier la pertinence des liens réciproques
 
-168	x				214	Si 305$a commence par "Document numérisé dans le cadre du projet de numérisation", 214 $aLyon et $cBibliothèque Lyon 1		Document numérique FA : corriger la zone 214 $aLyon et $cBibliothèque Lyon 1
+(FAIT)168	x				214	Si 305$a commence par "Document numérisé dans le cadre du projet de numérisation", 214 $aLyon et $cBibliothèque Lyon 1		Document numérique FA : corriger la zone 214 $aLyon et $cBibliothèque Lyon 1
 
-177	x				455	Si 455, alors la date en 455$d = date en zone 100 position 13-16 		Dates incohérentes : vérifier la date en zone 100 et la date de la ressource liée
+(Dependence ???)177	x				455	Si 455, alors la date en 455$d = date en zone 100 position 13-16 		Dates incohérentes : vérifier la date en zone 100 et la date de la ressource liée
 
-185			x	x	701	Si 328$zReproduction de, alors il faut une 701‎$4727		Zone 701 : une reproduction à l'identique d'une thèse doit mentionner le directeur de thèse
-186			x	x	701	Si 328$z n'est pas "Reproduction de", alors 701‎$4727 ne doit pas être présente		Zone 701 : incohérente pour une autre édition d'une thèse
-187			x	x	711	Si 328$zReproduction de, alors il faut une 711‎$4295		Zone 711 : une reproduction à l'identique d'une thèse doit mentionner l'établissement de soutenance
-188			x	x	711	Si 328$z n'est pas "Reproduction de", alors 711‎$4295 ne doit pas être présente		Zone 711 : incohérente pour une autre édition d'une thèse
-189			x	x	608	Si 328$zReproduction de, alors il faut une 608 $3027253139Thèses et écrits académiques		Zone 608 : une reproduction à l'identique d'une thèse doit comporter une 608 $3027253139Thèses et écrits académiques
+(FAIT)185			x	x	701	Si 328$zReproduction de, alors il faut une 701‎$4727		Zone 701 : une reproduction à l'identique d'une thèse doit mentionner le directeur de thèse
+(FAIT)186			x	x	701	Si 328$z n'est pas "Reproduction de", alors 701‎$4727 ne doit pas être présente		Zone 701 : incohérente pour une autre édition d'une thèse
+(FAIT)187			x	x	711	Si 328$zReproduction de, alors il faut une 711‎$4295		Zone 711 : une reproduction à l'identique d'une thèse doit mentionner l'établissement de soutenance
+(FAIT)188			x	x	711	Si 328$z n'est pas "Reproduction de", alors 711‎$4295 ne doit pas être présente		Zone 711 : incohérente pour une autre édition d'une thèse
+(FAIT)189			x	x	608	Si 328$zReproduction de, alors il faut une 608 $3027253139Thèses et écrits académiques		Zone 608 : une reproduction à l'identique d'une thèse doit comporter une 608 $3027253139Thèses et écrits académiques
 ```
 ##### condition-structurel
 ```
@@ -174,7 +174,7 @@
 (FAIT)146	x	x	x	x	488	Si 488, alors vérifier les liens réciproques de la notice en 488$0		Vérifier la pertinence des liens réciproques
 (Supprimer)148			x		455	Si 455, alors vérifier que la notice en 455$0 contient une 456 avec liens réciproques		Vérifier la pertinence des liens réciproques
 158			x		455	Si 455, alors vérifier que la notice en 455$0 ne contient pas 328$z		Vérifier la pertinence des liens réciproques
-(FAIT)160				x	456	Si 456, alors vérifier que la notice en 456$0 contient une 455 avec liens réciproques		Vérifier la pertinence des liens réciproques
+(Supprimer)160				x	456	Si 456, alors vérifier que la notice en 456$0 contient une 455 avec liens réciproques		Vérifier la pertinence des liens réciproques
 (FAIT)163	x				455	Si 455, alors vérifier que la notice en 455$0 contient une 456 avec liens réciproques		Vérifier la pertinence des liens réciproques
 (FAIT)192		x			456	Si 456, alors vérifier que la notice en 456$0 contient une 455 avec liens réciproques		Vérifier la pertinence des liens réciproques
 193		x			456	Si 456, alors vérifier que la notice en 465$0  contient  328$z		Vérifier la pertinence des liens réciproques
@@ -195,6 +195,10 @@
 (Supprimer)191			x	x	455	Si 328$zReproduction de, alors il faut une 455		Zone 455 obligatoire pour une reproduction à l'identique d'une thèse
 
 (FAIT)47	x			x	461	Si 008 commence par Aa et présence d'une 461, alors il doit y avoir une 305 ou 225		Zones incohérentes : vérifier les zones 461 et 225 (monographie en plusieurs volumes) ou 305 (numéro de périodique)
+
+203		x	x		451	Si 451 et 328$z, alors vérifier que la notice 451$0 ne contient pas 328$z	Exemple : http://www.sudoc.fr/19872604X.xml	Vérifier la pertinence des liens réciproques	Notice083+084	Notice085+086																
+204		x	x		451	Si 451 et absence de 328$z, alors vérifier que la notice 451$0 contient 328$z			Notice053+054	Notice081+082																
+
 ```
 ##### condition-dependance
 ```

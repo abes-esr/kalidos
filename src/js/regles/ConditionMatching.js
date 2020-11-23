@@ -1,7 +1,7 @@
-const Parcours = require("./Parcours");
+const Parcours = require("../utile/Parcours");
 const axios = require('axios');
 const convert = require("xml-js");
-const Matching = require("./Matching");
+const Matching = require("../regles/Matching");
 
 
 /* 
@@ -78,8 +78,9 @@ regles ???
 
 var ConditionStructurel = function () {
 
-    var testConditionStrucutrelRules = function (rules, controlfields, datafields, resultJson) {
-        rules.Generale.ConditionStructurel.forEach(function (regle) {
+    var testConditionMatchingRules = function (rules, controlfields, datafields, resultJson) {
+        console.log("resultJson", resultJson);
+        rules.Generale.ConditionMatching.forEach(function (regle) {
             var field1 = Parcours.findDataField(datafields, regle.number);
             if (field1 == null){
                 field1 = Parcours.findDataField(controlfields, regle.number);
@@ -94,20 +95,17 @@ var ConditionStructurel = function () {
                 });
 
                 if(checkedConds){
-                    var checkValues;
                     let res = {
                         errors: [],
                     };
-                    Matching.testMatchRegexNumber(regle, datafields , res );
-                    if(res.errors.length > 0)
-                    console.log("res : ", res);
+                    Matching.testMatchRegexNumber(regle, datafields, controlfields , res );
 
-                    /*if (!checkValues){
+                    if (res.errors.length > 0){
                         resultJson.errors.push({
                             message: regle.message,
                             number: regle.number,
                         });
-                    }*/
+                    }
 
                 }
             }
@@ -162,6 +160,8 @@ var ConditionStructurel = function () {
                     condition.string.forEach((item)=>{
                         if(condition.operator === "contains_text" && subfieldValue.substring(condition.pos[0] , condition.pos[1]).includes(item.toString())) {
                             isMatched = true;
+                        }else if(condition.operator === "not_contains_text" && !subfieldValue.substring(condition.pos[0] , condition.pos[1]).includes(item.toString())) {
+                            isMatched = true;
                         }else if(condition.operator === "startwith_text" && subfieldValue.startsWith(item.toString())) {
                             isMatched = true;
                         }else if(condition.operator === "equals_text" &&  subfieldValue === item.toString()) {
@@ -184,7 +184,7 @@ var ConditionStructurel = function () {
         }
 
         return {
-            testConditionStrucutrelRules : testConditionStrucutrelRules
+            testConditionMatchingRules : testConditionMatchingRules
         }
     }();
 
