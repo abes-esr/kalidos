@@ -99,15 +99,22 @@ function InterfaceVerif({ result, recherchePPN, compteurResult, listPPNErronne }
             let indexError = sortedHeaders.indexOf(ppnError);
 
             if (indexError > 0) {
-                let excelRow = [listPPNWithError[i][1]['PPN']];
-                for(let k = 1; k < sortedHeaders.length; k++) {
-                    if (k == indexError) { // on se sert de cette index pour cocher la bonne case
-                        excelRow.push("X");
-                    }else {
-                        excelRow.push("");
+                if (j == 0) {
+                    let excelRow = [listPPNWithError[i][1]['PPN']];
+                    for(let k = 1; k < sortedHeaders.length; k++) {
+                        if (k == indexError) { // on se sert de cette index pour cocher la bonne case
+                            excelRow.push("X");
+                        }else {
+                            excelRow.push("");
+                        }
                     }
+                    newCsvData.push(excelRow);
+                } else {
+                    //éviter redondance des ppn
+                    let excelRow = newCsvData.pop();
+                    excelRow[indexError] = "X";
+                    newCsvData.push(excelRow);
                 }
-                newCsvData.push(excelRow);  
             }
         }
     }
