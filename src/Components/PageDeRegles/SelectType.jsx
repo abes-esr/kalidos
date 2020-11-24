@@ -3,6 +3,7 @@ import { Button, Card, Col, Container, ListGroup, Row } from 'react-bootstrap'
 import Form from 'react-bootstrap/Form'
 import FormJSON from "@rjsf/core";
 import { getSchemaMatching } from './forms/matching'
+// import { getSchemaDependencies } from './forms/depences'
 import ArrayFieldTemplate from './forms/ArrayFieldTemplate'
 import { generator, applyRule } from './generator'
 
