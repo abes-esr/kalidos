@@ -8,9 +8,12 @@ export default function ArrayFieldTemplate(props) {
   
   const AddingField = () => (
     <Row className="p-1 align-items-center">
-      <Col> {props.title} </Col>
+      <Col> 
+        <p className="text-center" >{props.title}</p>
+        <p className="text-center" >{props.description}</p>
+      </Col>
       <Col>
-        <IconButton size="small" variant="outlined" onClick={props.onAddClick}>
+        <IconButton size="small" color="primary" onClick={props.onAddClick}>
           <AddIcon/>
         </IconButton>
       </Col>

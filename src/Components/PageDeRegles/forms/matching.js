@@ -1,4 +1,4 @@
-export function getSchema(categories, rules) {
+export function getSchemaMatching(categories, rules) {
   return {
     type: "object",
     properties: {
@@ -14,14 +14,24 @@ export function getSchema(categories, rules) {
           type: "string",
         },
       },
-      regex: {
+      code: {
+        title: "Sous Zone",
+        type: "string"
+      },
+      rule: {
         title: "Regle a utiliser",
         type: "string",
         enum: rules.rules,
         enumNames: rules.names
       },
-      pattern: {
-        title: "Value", 
+      isWord:{
+        title: "Mots",
+        type: "boolean",
+        enum:  [true, false],
+      },
+      patterns: {
+        title: "Value",
+        description: "Pattern to be used by the chosen rule ",
         type: "array",
         items:{
           type:"string"
@@ -32,6 +42,11 @@ export function getSchema(categories, rules) {
         type: "string",
         enum: ["all", "one"],
       },
+      message: {
+        title: "Vérification",
+        type: "string"
+      }
     },
+    required: ["category","number","code", "isWord", "message"]
   }
 }

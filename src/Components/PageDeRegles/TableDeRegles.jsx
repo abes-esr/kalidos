@@ -12,7 +12,6 @@ import 'react-bootstrap-table2-paginator/dist/react-bootstrap-table2-paginator.m
 import { Button, Col, Form, Row } from 'react-bootstrap';
 import ModalForm from './ModalForm';
 import AddCircleIcon from '@material-ui/icons/AddCircle';
-import { generator } from './generator'
 
 function Table() {
 
@@ -26,17 +25,13 @@ function Table() {
     paginationSize: 4,
     pageStartIndex: 0,
     hidePageListOnlyOnePage: true,
-    firstPageText: 'First',
-    prePageText: 'Back',
-    nextPageText: 'Next',
-    lastPageText: 'Last',
-    nextPageTitle: 'First page',
-    prePageTitle: 'Pre page',
-    firstPageTitle: 'Next page',
-    lastPageTitle: 'Last page',
+    firstPageText: 'Premiére',
+    prePageText: 'Retour',
+    nextPageText: 'Suivant',
+    lastPageText: 'Derniére',
     showTotal: true,
     disablePageTitle: true,
-    sizePerPageList: [5, 10, 20, 50, 100]
+    sizePerPageList: [20, 50, 100]
   };
 
   const filtering = (result) => {
@@ -175,9 +170,9 @@ function Table() {
             <div className="col-5 mx-auto">
               <ModalForm
                 button={<EditIcon color="primary" fontSize="small" />}
-                title="Edit"
-                close="Cancel"
-                accept="Save changes"
+                title="Edition"
+                close="Annuler"
+                accept="Enregistrer"
                 body={() => editForm()}
                 accepting={() => editing(row)}
               />
@@ -185,10 +180,10 @@ function Table() {
             <div className="col-5 mx-auto">
               <ModalForm
                 button={<DeleteIcon color="error" fontSize="small" />}
-                title="Delete"
-                close="Cancel"
-                body="Are you sure you want to delete this rule?"
-                accept="Delete rule"
+                title="Supprimer"
+                close="Annuler"
+                body="Êtes vous sûrs de vouloir supprimer cette régle ?"
+                accept="Supprimer"
                 accepting={() => deleting(row)}
               />
             </div>
@@ -220,10 +215,6 @@ function Table() {
     return <div>Loading...</div>;
   else {
 
-    generator({func:"equals to", items:["Lyon 1", "Univ Lyon 1"], isWord: true});
-    generator({func:"starts with", items:["Lyon 1", "Univ Lyon 1"], isWord: true});
-    generator({func:"starts with", items:["Univ Lyon 1"], isWord: true});
-    generator({func:"must not contain", items:["/", ":","."], isWord: false});
     console.log(categories)
     return (
       <ToolkitProvider keyField="index" data={rules} columns={columns} search >
@@ -239,7 +230,7 @@ function Table() {
                 <div className="col-2">
                   <Modal
                     button={<AddCircleIcon fontSize="large"/>}
-                    title="Add Rule"
+                    title="Ajouter une régle"
                     body={<SelectType categories={categories}/>}
                     accepting={() => console.log("ADD RULE")}
                   />

@@ -2,8 +2,10 @@ import React, { useState } from 'react'
 import { Button, Card, Col, Container, ListGroup, Row } from 'react-bootstrap'
 import Form from 'react-bootstrap/Form'
 import FormJSON from "@rjsf/core";
-import { getSchema } from './forms/matching'
+import { getSchemaMatching } from './forms/matching'
 import ArrayFieldTemplate from './forms/ArrayFieldTemplate'
+import { generator, applyRule } from './generator'
+
 
 const TypeList = ({categories}) => {
   
@@ -12,11 +14,11 @@ const TypeList = ({categories}) => {
   const [indexDesc, setIndexDesc] = useState(0)
 
   const types = [
-    { name: "Matching", type: "matching", description: "Description de matching" },
-    { name: "Dependances", type: "dependances", description: "Description de dependances" },
-    { name: "Conditionnels", type: "Conditionnels", description: "Description de Conditionnels" },
-    { name: "Structurel", type: "Structurel", description: "Description de Structurel" },
-    { name: "References", type: "idRef", description: "Description de idRef" },
+    { name: "Matching", type: "matching", description: "Description du type matching" },
+    { name: "Dépendances", type: "dependances", description: "Description du type dependances" },
+    { name: "Conditionnels", type: "Conditionnels", description: "Description du type Conditionnels" },
+    { name: "Structurels", type: "Structurel", description: "Description du type Structurel" },
+    { name: "Références", type: "idRef", description: "Description du type idRef" },
   ]
 
   const rules = {
@@ -28,17 +30,19 @@ const TypeList = ({categories}) => {
       "starts with",
       "not starts with",
       "ends with",
-      "not ends with"
+      "not ends with",
+      "characters number"
     ],
     names: [
-      "Must contain",
-      "Must not contain",
-      "Equals to",
-      "Not equals to",
-      "Starts with",
-      "Not starts with",
-      "Ends with",
-      "Not ends with"
+      "Doit contenir",
+      "Ne doit pas contenir",
+      "Égale à",
+      "Ne soit pas égale à",
+      "Commence par ",
+      "Ne doit pas commencer par",
+      "Finit par",
+      "Ne doit pas finir par",
+      "Nombre de caracteres"
     ]
   }
 
@@ -51,18 +55,34 @@ const TypeList = ({categories}) => {
     setUseForm(!useForm)
   }
 
-  const schema = getSchema(categories, rules)
+  const schema = getSchemaMatching(categories, rules)
   
   const onSubmit = ({formData}, e) => {
     console.log(type)
     console.log("Data submitted: ",  formData)
+    
+    let obj = {}
+    obj.code = formData.code
+    obj.message = formData.message
+    
+    if ( formData.number.length == 1 ) {
+      obj.number = formData.number[0]
+      obj.regex = generator(formData.rule, formData.patterns, formData.isWord)
+    } else {
+      obj.number = formData.number
+      obj.value = applyRule(formData.rule, formData.patterns, formData.isWord)
+      obj.match = formData.match
+    }
+    
+    console.log("object :")
+    console.log(obj)
   }
 
 
   const Footer = () => (
     <Row className="justify-content-end">
-      {useForm && <Button className="m-1" variant="primary" type="submit">Submit</Button>}
-      <Button className="m-1" variant="secondary" onClick={() => handleSelectedType()}> { useForm ? "Back" : "Next"} </Button>
+      {useForm && <Button className="m-1" variant="primary" type="submit">Valider</Button>}
+      <Button className="m-1" variant="secondary" onClick={() => handleSelectedType()}> { useForm ? "Retour" : "Suivant"} </Button>
     </Row>
   )
 
@@ -73,7 +93,7 @@ const TypeList = ({categories}) => {
       ArrayFieldTemplate={ArrayFieldTemplate}
       onSubmit={onSubmit}
     >
-    { <Footer/>}
+      { <Footer/>}
     </FormJSON>
   )
 
@@ -105,7 +125,7 @@ const TypeList = ({categories}) => {
 
   return (
     <Container>
-      { !useForm && <Row> Chose a type of rule : </Row>}
+      { !useForm && <Row> Choisissez un type de régle : </Row>}
       <Row>
         { useForm ? <Form/> : <List/> }
       </Row>
