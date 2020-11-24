@@ -165,8 +165,8 @@ function verifMain(rules, sudoc) {
     };
     //Matching.testMatchRegexRules(rules,controlfields,datafields , resultJson)
     //Structurel.testMatchStructurelRules(rules,controlfields,datafields , resultJson)
-    //ConditionStructurel.testConditionStrucutrelRules(rules,controlfields,datafields , resultJson)
-    //ConditionMatching.testConditionMatchingRules(rules,controlfields,datafields , resultJson)
+    ConditionStructurel.testConditionStrucutrelRules(rules,controlfields,datafields , resultJson)
+    ConditionMatching.testConditionMatchingRules(rules,controlfields,datafields , resultJson)
     ConditionDependance.testConditionDependanceRules(rules,controlfields,datafields , resultJson)
 
 

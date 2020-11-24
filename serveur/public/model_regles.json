@@ -543,18 +543,11 @@
             {
                 "condition" :  [
                     {
-                        "operator": "equals",
-                        "number" : "214",
-                        "code" : "",
-                        "ind1" : "",
-                        "ind2" : "4"
-                    },
-                    {
                         "operator": "presente",
                         "number" : "214",
                         "code" : "d",
                         "ind1" : "",
-                        "ind2" : ""
+                        "ind2" : "4"
                     }
                 ],
                 "number": 214,
@@ -565,19 +558,13 @@
             },
             {
                 "condition" :  [
-                    {
-                        "operator": "equals",
-                        "number" : "214",
-                        "code" : "",
-                        "ind1" : "",
-                        "ind2" : "0"
-                    },
+
                     {
                         "operator": "presente",
                         "number" : "214",
                         "code" : "d",
                         "ind1" : "",
-                        "ind2" : ""
+                        "ind2" : "0"
                     }
                 ],
                 "number": 214,
@@ -589,7 +576,7 @@
             {
                 "condition" :  [
                     {
-                        "operator": "equals",
+                        "operator": "presente",
                         "number" : "214",
                         "code" : "",
                         "ind1" : "",
@@ -605,7 +592,7 @@
             {
                 "condition" :  [
                     {
-                        "operator": "equals",
+                        "operator": "presente",
                         "number" : "214",
                         "code" : "",
                         "ind1" : "",
@@ -758,9 +745,7 @@
                     {
                         "operator": "presente",
                         "number" : "451",
-                        "code" : "",
-                        "ind1" : "",
-                        "ind2" : ""
+                        "code" : ""
                     }
                 ],
                 "reciproque": {
@@ -785,9 +770,7 @@
                     {
                         "operator": "presente",
                         "number" : "451",
-                        "code" : "",
-                        "ind1" : "",
-                        "ind2" : ""
+                        "code" : ""
                     }
                 ],
                 "reciproque": {
@@ -812,9 +795,7 @@
                     {
                         "operator": "presente",
                         "number" : "452",
-                        "code" : "",
-                        "ind1" : "",
-                        "ind2" : ""
+                        "code" : ""
                     }
                 ],
                 "reciproque": {
@@ -839,9 +820,7 @@
                     {
                         "operator": "presente",
                         "number" : "452",
-                        "code" : "",
-                        "ind1" : "",
-                        "ind2" : ""
+                        "code" : ""
                     }
                 ],
                 "reciproque": {
@@ -859,9 +838,7 @@
                     {
                         "operator": "presente",
                         "number" : "455",
-                        "code" : "",
-                        "ind1" : "",
-                        "ind2" : ""
+                        "code" : ""
                     }
                 ],
                 "reciproque": {
@@ -879,9 +856,7 @@
                     {
                         "operator": "presente",
                         "number" : "856",
-                        "code" : "5",
-                        "ind1" : "",
-                        "ind2" : ""
+                        "code" : "5"
                     },
                     {
                         "operator": "equals_text",
@@ -902,9 +877,7 @@
                     {
                         "operator": "presente",
                         "number" : "856",
-                        "code" : "5",
-                        "ind1" : "",
-                        "ind2" : ""
+                        "code" : "5"
                     },
                     {
                         "operator": "not_equals_text",
@@ -925,9 +898,7 @@
                     {
                         "operator": "presente",
                         "number" : "856",
-                        "code" : "5",
-                        "ind1" : "",
-                        "ind2" : ""
+                        "code" : "5"
                     },
                     {
                         "operator": "equals_text",
@@ -950,9 +921,7 @@
                     {
                         "operator": "presente",
                         "number" : "456",
-                        "code" : "",
-                        "ind1" : "",
-                        "ind2" : ""
+                        "code" : ""
                     }
                 ],
                 "reciproque": {
@@ -1002,7 +971,7 @@
             {
                 "condition" :  [
                     {
-                        "operator": "equals",
+                        "operator": "presente",
                         "number" : "101",
                         "code" : "",
                         "ind1" : "1",
@@ -1032,7 +1001,7 @@
             {
                 "condition" :  [
                     {
-                        "operator": "equals",
+                        "operator": "presente",
                         "number" : "101",
                         "code" : "",
                         "ind1" : "0",
@@ -1054,7 +1023,7 @@
             {
                 "condition" : [
                     {
-                        "operator": "equals",
+                        "operator": "presente",
                         "number" : "101",
                         "code" : "",
                         "ind1" : "2",
@@ -1086,7 +1055,7 @@
             {
                 "condition" :[
                     {
-                        "operator": "equals",
+                        "operator": "presente",
                         "number" : "101",
                         "code" : "",
                         "ind1" : "1",
@@ -1108,7 +1077,7 @@
             {
                 "condition" : [
                     {
-                        "operator": "equals",
+                        "operator": "presente",
                         "number" : "101",
                         "code" : "",
                         "ind1" : "2",
@@ -1130,17 +1099,10 @@
             {
                 "condition" : [
                     {
-                        "operator": "equals",
-                        "number" : "225",
-                        "code" : "",
-                        "ind1" : "0",
-                        "ind2" : ""
-                    },
-                    {
                         "operator": "presente",
                         "number" : "225",
                         "code" : "a",
-                        "ind1" : "",
+                        "ind1" : "0",
                         "ind2" : ""
                     }
                 ],
@@ -1161,9 +1123,7 @@
                     {
                         "operator": "presente",
                         "number" : "105",
-                        "code" : "a",
-                        "ind1" : "",
-                        "ind2" : ""
+                        "code" : "a"
                     },
                     {
                         "operator": "contains_text",
@@ -1191,9 +1151,7 @@
                     {
                         "operator": "presente",
                         "number" : "105",
-                        "code" : "a",
-                        "ind1" : "",
-                        "ind2" : ""
+                        "code" : "a"
                     },
                     {
                         "operator": "contains_text",
@@ -1221,9 +1179,7 @@
                     {
                         "operator": "presente",
                         "number" : "105",
-                        "code" : "a",
-                        "ind1" : "",
-                        "ind2" : ""
+                        "code" : "a"
                     },
                     {
                         "operator": "contains_text",
@@ -1298,7 +1254,7 @@
             {
                 "condition" : [
                     {
-                        "operator": "equals",
+                        "operator": "presente",
                         "number" : "225",
                         "code" : "",
                         "ind1" : "0",
@@ -1323,13 +1279,6 @@
                         "operator": "presente",
                         "number" : "225",
                         "code" : "a",
-                        "ind1" : "",
-                        "ind2" : ""
-                    },
-                    {
-                        "operator": "equals",
-                        "number" : "225",
-                        "code" : "",
                         "ind1" : "2",
                         "ind2" : ""
                     }
@@ -1352,13 +1301,6 @@
                         "operator": "presente",
                         "number" : "225",
                         "code" : "a",
-                        "ind1" : "",
-                        "ind2" : ""
-                    },
-                    {
-                        "operator": "equals",
-                        "number" : "225",
-                        "code" : "",
                         "ind1" : "1",
                         "ind2" : ""
                     }
@@ -1378,7 +1320,7 @@
             {
                 "condition" : [
                     {
-                        "operator": "equals",
+                        "operator": "presente",
                         "number" : "225",
                         "code" : "",
                         "ind1" : "2",
@@ -1402,9 +1344,7 @@
                     {
                         "operator": "presente",
                         "number" : "101",
-                        "code" : "d",
-                        "ind1" : "",
-                        "ind2" : ""
+                        "code" : "d"
                     }
                 ],
                 "value": [
@@ -1677,9 +1617,7 @@
                     {
                         "operator": "presente",
                         "number" : "461",
-                        "code" : "",
-                        "ind1" : "",
-                        "ind2": ""
+                        "code" : ""
                     }
                 ],
                 "value": [
@@ -1704,9 +1642,7 @@
                     {
                         "operator": "presente",
                         "number" : "451",
-                        "code" : "",
-                        "ind1" : "",
-                        "ind2": ""
+                        "code" : ""
                     }
                 ],
                 "reciproque" : {
@@ -1739,9 +1675,7 @@
                     {
                         "operator": "presente",
                         "number" : "452",
-                        "code" : "",
-                        "ind1" : "",
-                        "ind2": ""
+                        "code" : ""
                     }
                 ],
                 "reciproque" : {
@@ -1774,9 +1708,7 @@
                     {
                         "operator": "presente",
                         "number" : "488",
-                        "code" : "",
-                        "ind1" : "",
-                        "ind2": ""
+                        "code" : ""
                     }
                 ],
                 "value": [
@@ -1800,9 +1732,7 @@
                     {
                         "operator": "presente",
                         "number" : "455",
-                        "code" : "",
-                        "ind1" : "",
-                        "ind2": ""
+                        "code" : ""
                     }
                 ],
                 "value": [
@@ -1826,9 +1756,7 @@
                     {
                         "operator": "presente",
                         "number" : "456",
-                        "code" : "",
-                        "ind1" : "",
-                        "ind2": ""
+                        "code" : ""
                     }
                 ],
                 "value": [
@@ -1852,9 +1780,7 @@
                     {
                         "operator": "presente",
                         "number" : "455",
-                        "code" : "",
-                        "ind1" : "",
-                        "ind2": ""
+                        "code" : ""
                     }
                 ],
                 "value": [
@@ -1878,9 +1804,7 @@
                     {
                         "operator": "presente",
                         "number" : "456",
-                        "code" : "",
-                        "ind1" : "",
-                        "ind2": ""
+                        "code" : ""
                     }
                 ],
                 "value": [
@@ -1904,9 +1828,7 @@
                     {
                         "operator": "presente",
                         "number" : "328",
-                        "code" : "z",
-                        "ind1" : "",
-                        "ind2": ""
+                        "code" : "z"
                     },
                     {
                         "operator": "equals_text",
@@ -1933,9 +1855,7 @@
                     {
                         "operator": "presente",
                         "number" : "328",
-                        "code" : "z",
-                        "ind1" : "",
-                        "ind2": ""
+                        "code" : "z"
                     },
                     {
                         "operator": "not_equals_text",
@@ -1962,9 +1882,7 @@
                     {
                         "operator": "presente",
                         "number" : "328",
-                        "code" : "z",
-                        "ind1" : "",
-                        "ind2": ""
+                        "code" : "z"
                     },
                     {
                         "operator": "equals_text",
@@ -1991,9 +1909,7 @@
                     {
                         "operator": "presente",
                         "number" : "328",
-                        "code" : "z",
-                        "ind1" : "",
-                        "ind2": ""
+                        "code" : "z"
                     },
                     {
                         "operator": "equals_text",
@@ -2020,9 +1936,7 @@
                     {
                         "operator": "presente",
                         "number" : "328",
-                        "code" : "z",
-                        "ind1" : "",
-                        "ind2": ""
+                        "code" : "z"
                     },
                     {
                         "operator": "equals_text",
@@ -2049,9 +1963,7 @@
                     {
                         "operator": "presente",
                         "number" : "856",
-                        "code" : "5",
-                        "ind1" : "",
-                        "ind2": ""
+                        "code" : "5"
                     },
                     {
                         "operator": "equals_text",
@@ -2105,9 +2017,7 @@
                     {
                         "operator": "present",
                         "number" : "455",
-                        "code" : "",
-                        "ind1" : "",
-                        "ind2": ""
+                        "code" : ""
                     }
                 ],
                 "reciproque": {
@@ -2131,9 +2041,7 @@
                     {
                         "operator": "presente",
                         "number" : "456",
-                        "code" : "",
-                        "ind1" : "",
-                        "ind2": ""
+                        "code" : ""
                     }
                 ],
                 "reciproque": {
@@ -2157,16 +2065,12 @@
                     {
                         "operator": "presente",
                         "number" : "451",
-                        "code" : "",
-                        "ind1" : "",
-                        "ind2": ""
+                        "code" : ""
                     },
                     {
                         "operator": "presente",
                         "number" : "328",
-                        "code" : "z",
-                        "ind1" : "",
-                        "ind2": ""
+                        "code" : "z"
                     }
                 ],
                 "reciproque": {
@@ -2190,16 +2094,12 @@
                     {
                         "operator": "presente",
                         "number" : "451",
-                        "code" : "",
-                        "ind1" : "",
-                        "ind2": ""
+                        "code" : ""
                     },
                     {
                         "operator": "not_presente",
                         "number" : "328",
-                        "code" : "z",
-                        "ind1" : "",
-                        "ind2": ""
+                        "code" : "z"
                     }
                 ],
                 "reciproque": {
@@ -2223,9 +2123,7 @@
                     {
                         "operator": "presente",
                         "number" : "455",
-                        "code" : "",
-                        "ind1" : "",
-                        "ind2": ""
+                        "code" : ""
                     }
                 ],
                 "value": [
@@ -2249,9 +2147,7 @@
                     {
                         "operator": "presente",
                         "number" : "456",
-                        "code" : "",
-                        "ind1" : "",
-                        "ind2": ""
+                        "code" : ""
                     }
                 ],
                 "value": [
@@ -2275,9 +2171,7 @@
                     {
                         "operator": "presente",
                         "number" : "105",
-                        "code" : "b",
-                        "ind1": "",
-                        "ind2": ""
+                        "code" : "b"
 
                     },
                     {
@@ -2332,6 +2226,73 @@
                 "index": 95,
                 "number": "305",
                 "message": "Si 305$a commence par \"Document numérisé dans le cadre du projet de numérisation\", 214 ind1=' ' et ind2=\"0\""
+            }
+        ],
+        "ConditionDependance": [
+            {
+                "condition" : [
+                    {
+                        "operator": "presente",
+                        "number" : "225",
+                        "code" : "",
+                        "ind1": "0",
+                        "ind2": ""
+                    }
+                ],
+                "index": 2000,
+                "field1": {
+                    "number": "225",
+                    "code": "a"
+                },
+                "field2": {
+                    "number": "410",
+                    "code": "t"
+                },
+                "operator": "not_equals",
+                "message": "Si 225 ind1=0 $a est différent du 410$t"
+            },
+            {
+                "condition" : [
+                    {
+                        "operator": "presente",
+                        "number" : "225",
+                        "code" : "",
+                        "ind1": "2",
+                        "ind2": ""
+                    }
+                ],
+                "index": 2001,
+                "field1": {
+                    "number": "225",
+                    "code": "a"
+                },
+                "field2": {
+                    "number": "410",
+                    "code": "t"
+                },
+                "operator": "equals",
+                "message": "Si 225 ind1=2 $a = 410$t"
+            },
+            {
+                "condition" : [
+                    {
+                        "operator": "presente",
+                        "number" : "455",
+                        "code" : ""
+                    }
+                ],
+                "index": 2002,
+                "field1": {
+                    "number": "455",
+                    "code": "d"
+                },
+                "field2": {
+                    "number": "100",
+                    "code": "a",
+                    "pos": [13,16]
+                },
+                "operator": "equals",
+                "message": "Si 455, alors la date en 455$d = date en zone 100 position 13-16"
             }
         ],
         "Conditionnels": [
