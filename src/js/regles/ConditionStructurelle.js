@@ -1,4 +1,5 @@
 const Parcours = require("../utile/Parcours");
+const Condition = require("../utile/Condition");
 const axios = require('axios');
 const convert = require("xml-js");
 
@@ -7,24 +8,26 @@ var ConditionStructurel = function () {
 
     var testConditionStrucutrelRules = function (rules, controlfields, datafields, resultJson) {
         rules.Generale.ConditionStructurel.forEach(function (regle) {
+            //recuperation du field a testé
             var field1 = Parcours.findDataField(datafields, regle.number);
+            //si c'est pas un datafield en cherche dans controllefield
             if (field1 == null){
                 field1 = Parcours.findDataField(controlfields, regle.number);
             }
+            //si on le field on check les conditions
             if (field1 != null){
                 var checkedConds = true;
                 regle.condition.forEach(function (condition) {
-                    if(!checkCondition(controlfields ,datafields , condition)) {
+                    if(!Condition.checkCondition(controlfields ,datafields , condition)) {
                         checkedConds = false;
                     }
-
                 });
-
+                //si les conditions sont vrai
                 if(checkedConds){
+                    //si les verification sont sur la notice reciproque
                     if(regle.reciproque){
                         var field = Parcours.findDataField(datafields, regle.reciproque.number);
                         var ppnDest = Parcours.getSubfieldValue(field , regle.reciproque.code);
-
                         axios.get("https://www.sudoc.fr/"+ppnDest+".xml")
                             .then(function (response) {
                                 const data = JSON.parse(
@@ -41,9 +44,8 @@ var ConditionStructurel = function () {
                             .catch(function (error) {
                                 console.log("error matching reciproque");
                             })
-
-
                     }else{
+                        //notice courante
                         if (!checkValues(regle, controlfields , datafields )){
                             resultJson.errors.push({
                                 message: regle.message,
@@ -51,10 +53,6 @@ var ConditionStructurel = function () {
                             });
                         }
                     }
-
-
-
-
                 }
             }
 
@@ -125,52 +123,6 @@ var ConditionStructurel = function () {
             .catch(function (error) {
                 isReciproque = false;
             })
-
-    }
-
-    function checkCondition(controlefields, datafields ,condition){
-        var  field = Parcours.findDataField(datafields, condition.number);
-        if(field == null)
-            field = Parcours.findDataField(controlefields, condition.number);
-        if(field == null){
-            return  false;
-        }else if(condition.operator === "presente"){
-            if(condition.code.toString() !== "")
-                return Parcours.getSubfieldValue(field , condition.code) != null;
-        }else if(condition.operator === "not_presente"){
-            if(condition.code.toString() !== "")
-                return !(Parcours.getSubfieldValue(field , condition.code) != null);
-        }else if(condition.operator === "contains_text" || condition.operator === "startwith_text"
-            || condition.operator === "equals_text" || condition.operator === "not_equals_text"){
-            if(condition.string.toString() !== ""){
-                var subfieldValue;
-                if (condition.code.toString() !== ""){
-                    subfieldValue = Parcours.getSubfieldValue(field , condition.code);
-                }else{
-                    subfieldValue = field._text;
-                }
-                var isMatched = false;
-                condition.string.forEach((item)=>{
-                    if(condition.operator === "contains_text" && subfieldValue.substring(condition.pos[0] , condition.pos[1]).includes(item.toString())) {
-                        isMatched = true;
-                    }else if(condition.operator === "startwith_text" && subfieldValue.startsWith(item.toString())) {
-                        isMatched = true;
-                    }else if(condition.operator === "equals_text" &&  subfieldValue === item.toString()) {
-                        isMatched = true;
-                    }else if(condition.operator === "not_equals_text" &&  subfieldValue !== item.toString()) {
-                        isMatched = true;
-                    }
-                })
-                return isMatched;
-            }
-        }else if(condition.operator.toString() === "equals") {
-            if(condition.ind1.toString() !== "")
-                return  field._attributes.ind1.toString() === condition.ind1.toString();
-            else if(condition.ind2.toString() !== "")
-                return  field._attributes.ind2.toString() === condition.ind2.toString();
-        }
-
-        return  true;
 
     }
 
