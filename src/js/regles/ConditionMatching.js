@@ -98,7 +98,6 @@ var ConditionStructurel = function () {
                         errors: [],
                     };
                     if(regle.reciproque){
-                        console.log("it's reciproque");
                         var field = Parcours.findDataField(datafields, regle.reciproque.number);
                         var ppnDest = Parcours.getSubfieldValue(field , regle.reciproque.code);
 
@@ -107,8 +106,6 @@ var ConditionStructurel = function () {
                                 const data = JSON.parse(
                                     convert.xml2json(response.data, { compact: true, spaces: 2 })
                                 );
-                                console.log("datafield", data.record.datafield);
-                                console.log("controlefield", data.record.controlfield);
                                 Matching.testMatchRegexNumber(regle, data.record.datafield, data.record.controlfield , res );
                                 if (res.errors.length > 0) {
                                     resultJson.errors.push({

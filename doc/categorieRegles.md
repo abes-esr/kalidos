@@ -105,11 +105,10 @@
 ##### condition-regex
 ```
 
-2	x	x	x	x	100	100$a Pos. 9-12 = 214$d	Si 214 #4$d il y aura en plus "C espace" ;  si 214 #0$d il peut y avoir en plus "DL espace"	Dates incohérentes : vérifier zones 100 et 214
 (FAIT)11	x	x	x	x	105	Si  105 $a Pos. 0-3 différent de la valeur "y" alors 215$c ne doit pas être vide		Mention d'illustrations incohérente : vérifier zones 105 et 215
-(FAIT/A CONFIRMER)13	x			x	105	Si 105 $a Pos. 8 = 1 alors il faut aussi une 608 ‎$302886431X $aActes de congrès			Mention de congrès incohérente : vérifier zones 105 et 608
-(FAIT/A CONFIRMER)14	x	x	x	x	105	Si 105 $a Pos. 8 = 0 alors il ne doit pas y avoir 608 ‎$302886431XActes de congrès		Mention de congrès : vérifier zones 105 et 608
-(CHECK REGEX)15	x	x	x	x	105	Si 105 $a Pos. 10 =1 alors il faut une 320 avec la mention "Index"		Mention d'index incohérente : vérifier zones 105 et 320
+(FAIT)13	x			x	105	Si 105 $a Pos. 8 = 1 alors il faut aussi une 608 ‎$302886431X $aActes de congrès			Mention de congrès incohérente : vérifier zones 105 et 608
+(FAIT)14	x	x	x	x	105	Si 105 $a Pos. 8 = 0 alors il ne doit pas y avoir 608 ‎$302886431XActes de congrès		Mention de congrès : vérifier zones 105 et 608
+(FAIT)15	x	x	x	x	105	Si 105 $a Pos. 10 =1 alors il faut une 320 avec la mention "Index"		Mention d'index incohérente : vérifier zones 105 et 320
 (FAIT)16	x	x	x	x	105	Si 105 $a Pos. 10 =0 alors il ne doit pas y avoir une 320 avec la mention "Index"		Mention d'index incohérente : vérifier zones 105 et 320
 (FAIT)19	x	x	x	x	105	Si 105 $a Pos. 4-7= m ou 7 il faut une 608 $3027253139Thèses et écrits académiques		Zone 608 : indexation Forme-Genre obligatoire
 (FAIT)33	x			x	214	Si 214 #4$d, la zone doit commencer par "C espace"		Zone 214 : qualificatifs de la date non conformes
@@ -117,20 +116,18 @@
 (FAIT)149			x		214	Si 214 ind2=2, alors $aLyon		Zone 214$a incohérente avec le statut de la thèse (reproduction)
 (FAIT)150					214	Si 214 ind2=2, alors $cBibliothèque Lyon 1		Zone 214$c incohérente avec le statut de la thèse (reproduction)
 
-(A REVOIR)136	x	x	x		856	856$zAccès au texte intégral sauf si 856$5=692669902, alors $zAccès réservé aux membres de Lyon 1 après authentification		Zone 856 : le texte ne correspond pas au type d'accès (internet-intranet)
-138		x	x		856	Si 856$5=692669902, alors doit être présente 310 ##$aL'accès à cette ressource est réservé aux membres de Lyon 1 après authentification		Zone E856 : une note 310 doit préciser le type d'accès restreint
+(FAIT)136	x	x	x		856	856$zAccès au texte intégral sauf si 856$5=692669902, alors $zAccès réservé aux membres de Lyon 1 après authentification		Zone 856 : le texte ne correspond pas au type d'accès (internet-intranet)
+(FAIT)138		x	x		856	Si 856$5=692669902, alors doit être présente 310 ##$aL'accès à cette ressource est réservé aux membres de Lyon 1 après authentification		Zone E856 : une note 310 doit préciser le type d'accès restreint
 
 (FAIT)140	x	x	x	x	451	Si 008 commence par Oa et 451 présente, alors vérifier que notice 451$0 contient une 008 qui commence par Oa		Vérifier la pertinence des liens réciproques
 (FAIT)141	x	x	x	x	451	Si 008 commence par Aa et 451 présente, alors vérifier que notice 451$0 contient une 008 qui commence par Aa		Vérifier la pertinence des liens réciproques
 (FAIT)143	x	x	x	x	452	Si 008 commence par Oa et 452 présente, alors vérifier que notice 452$0 contient une 008 qui commence par Aa		Vérifier la pertinence des liens réciproques
 (FAIT)144	x	x	x	x	452	Si 008 commence par Aa et 452 présente, alors vérifier que notice 452$0 contient une 008 qui commence par Oa		Vérifier la pertinence des liens réciproques
-159			x		455	Si 455, alors vérifier que la notice en 455$0 contient 105$a Pos. 4-7= m		Vérifier la pertinence des liens réciproques
+(FAIT)159			x		455	Si 455, alors vérifier que la notice en 455$0 contient 105$a Pos. 4-7= m		Vérifier la pertinence des liens réciproques
 (Supprimer)161				x	456	Si 456, alors vérifier que la notice en 456$0 contient une 008 qui commence par Oa		Vérifier la pertinence des liens réciproques
 (Supprimer)162	x				455	Si 455, alors vérifier que la notice en 455$0 contient une 008 qui commence par Aa		Vérifier la pertinence des liens réciproques
 
 (FAIT)168	x				214	Si 305$a commence par "Document numérisé dans le cadre du projet de numérisation", 214 $aLyon et $cBibliothèque Lyon 1		Document numérique FA : corriger la zone 214 $aLyon et $cBibliothèque Lyon 1
-
-(Dependence ???)177	x				455	Si 455, alors la date en 455$d = date en zone 100 position 13-16 		Dates incohérentes : vérifier la date en zone 100 et la date de la ressource liée
 
 (FAIT)185			x	x	701	Si 328$zReproduction de, alors il faut une 701‎$4727		Zone 701 : une reproduction à l'identique d'une thèse doit mentionner le directeur de thèse
 (FAIT)186			x	x	701	Si 328$z n'est pas "Reproduction de", alors 701‎$4727 ne doit pas être présente		Zone 701 : incohérente pour une autre édition d'une thèse
@@ -165,7 +162,7 @@
 (FAIT)153	x	x	x		337	Si 008 commence par Oa, 337 doit être présente		Ressource électronique : doit contenir une zone 337
 (FAIT)154	x	x	x		230	Si 008 commence par Oa, 230 doit être présente		Ressource électronique : doit contenir une zone 230
 
-78	x	x	x	x	6XX	6XX $a, $x ou $y doit contenir toujours $3 sauf si $2lc ou $2mesh		Zones 6XX doivent être liées à une notice d'autorité RAMEAU ou Fmesh
+(Supprimer)78	x	x	x	x	6XX	6XX $a, $x ou $y doit contenir toujours $3 sauf si $2lc ou $2mesh		Zones 6XX doivent être liées à une notice d'autorité RAMEAU ou Fmesh
 134	x	x	x		856	Si 008 commence par Oa et ne contient pas une 215, une 856 doit être présente		Zone 856 : une ressource électronique doit contenir l'accès
 
 
@@ -204,6 +201,7 @@
 ```
 40	x			x	225	Si 225 ind1=0 $a est différent du 410$t		Mention de collection incohérente : vérifier zones 410 et 225
 41	x			x	225	Si 225 ind1=2 $a = 410$t		Mention de collection incohérente : vérifier zones 410 et 225
+(Dependence ???)177	x				455	Si 455, alors la date en 455$d = date en zone 100 position 13-16 		Dates incohérentes : vérifier la date en zone 100 et la date de la ressource liée
 
 ```
 

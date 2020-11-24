@@ -489,7 +489,7 @@
                 "number": 320,
                 "code": "a",
                 "message": "Si 105 $a Pos. 10 =1 alors il faut une 320 avec la mention \"Index\"",
-                "regex": "^((Index).)+",
+                "regex": "^.*(Index).*",
                 "index": 1003
             },
             {
@@ -505,7 +505,7 @@
                 "number": 320,
                 "code": "a",
                 "message": "Si 105 $a Pos. 10 =0 alors il ne doit pas y avoir une 320 avec la mention \"Index\"",
-                "regex": "(?:(?!Index).)+",
+                "regex": "^((?!Index).)*$",
                 "index": 1004
             },
             {
@@ -853,6 +853,97 @@
                 "message": "Si 008 commence par Aa et 452 présente, alors vérifier que notice 452$0 contient une 008 qui commence par Oa",
                 "regex": "^(0A).*",
                 "index": 1019
+            },
+            {
+                "condition" :  [
+                    {
+                        "operator": "presente",
+                        "number" : "455",
+                        "code" : "",
+                        "ind1" : "",
+                        "ind2" : ""
+                    }
+                ],
+                "reciproque": {
+                    "number" : 455,
+                    "code": "0"
+                },
+                "number": "105",
+                "code": "a",
+                "message": "Si 455, alors vérifier que la notice en 455$0 contient 105$a Pos. 4-7= m",
+                "regex": "^(.{4}m|.{5}m|.{6}m).*$",
+                "index": 1020
+            },
+            {
+                "condition" :  [
+                    {
+                        "operator": "presente",
+                        "number" : "856",
+                        "code" : "5",
+                        "ind1" : "",
+                        "ind2" : ""
+                    },
+                    {
+                        "operator": "equals_text",
+                        "number" : "856",
+                        "code" : "5",
+                        "string": ["692669902"]
+
+                    }
+                ],
+                "number": "856",
+                "code": "z",
+                "message": "856$zAccès au texte intégral sauf si 856$5=692669902, alors $zAccès réservé aux membres de Lyon 1 après authentification",
+                "regex": "^Accès réservé aux membres de Lyon 1 après authentification$",
+                "index": 1021
+            },
+            {
+                "condition" :  [
+                    {
+                        "operator": "presente",
+                        "number" : "856",
+                        "code" : "5",
+                        "ind1" : "",
+                        "ind2" : ""
+                    },
+                    {
+                        "operator": "not_equals_text",
+                        "number" : "856",
+                        "code" : "5",
+                        "string": ["692669902"]
+
+                    }
+                ],
+                "number": "856",
+                "code": "z",
+                "message": "856$zAccès au texte intégral sauf si 856$5=692669902, alors $zAccès réservé aux membres de Lyon 1 après authentification",
+                "regex": "^Accès au texte intégral$",
+                "index": 1021
+            },
+            {
+                "condition" :  [
+                    {
+                        "operator": "presente",
+                        "number" : "856",
+                        "code" : "5",
+                        "ind1" : "",
+                        "ind2" : ""
+                    },
+                    {
+                        "operator": "equals_text",
+                        "number" : "856",
+                        "code" : "5",
+                        "string": ["692669902"]
+
+                    }
+                ],
+                "number": "310",
+                "ind1" : "",
+                "ind2" : "",
+                "code": "a",
+                "message": "Si 856$5=692669902, alors doit être présente 310 ##$aL'accès à cette ressource est réservé aux membres de Lyon 1 après authentification",
+                "regex": "^L'accès à cette ressource est réservé aux membres de Lyon 1 après authentification$",
+                "index": 1022
             }
         ],
         "ConditionStructurel": [
