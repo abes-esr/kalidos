@@ -205,9 +205,9 @@
 ```
 ##### condition-dependance
 ```
-40	x			x	225	Si 225 ind1=0 $a est différent du 410$t		Mention de collection incohérente : vérifier zones 410 et 225
-41	x			x	225	Si 225 ind1=2 $a = 410$t		Mention de collection incohérente : vérifier zones 410 et 225
-(Dependence ???)177	x				455	Si 455, alors la date en 455$d = date en zone 100 position 13-16 		Dates incohérentes : vérifier la date en zone 100 et la date de la ressource liée
+(FAIT)40	x			x	225	Si 225 ind1=0 $a est différent du 410$t		Mention de collection incohérente : vérifier zones 410 et 225
+(FAIT)41	x			x	225	Si 225 ind1=2 $a = 410$t		Mention de collection incohérente : vérifier zones 410 et 225
+(FAIT)177	x				455	Si 455, alors la date en 455$d = date en zone 100 position 13-16 		Dates incohérentes : vérifier la date en zone 100 et la date de la ressource liée
 
 ```
 
