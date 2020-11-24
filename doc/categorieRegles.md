@@ -134,6 +134,13 @@
 (FAIT)187			x	x	711	Si 328$zReproduction de, alors il faut une 711‎$4295		Zone 711 : une reproduction à l'identique d'une thèse doit mentionner l'établissement de soutenance
 (FAIT)188			x	x	711	Si 328$z n'est pas "Reproduction de", alors 711‎$4295 ne doit pas être présente		Zone 711 : incohérente pour une autre édition d'une thèse
 (FAIT)189			x	x	608	Si 328$zReproduction de, alors il faut une 608 $3027253139Thèses et écrits académiques		Zone 608 : une reproduction à l'identique d'une thèse doit comporter une 608 $3027253139Thèses et écrits académiques
+
+(FAIT)194		x			456	Si 456, alors vérifier que la notice en 456$0 contient 105$a Pos. 4-7= v		Vérifier la pertinence des liens réciproques
+
+
+(FAIT)190			x	x	608	Si 328$z n'est pas "Reproduction de", alors 608 $3027253139Thèses et écrits académiques ne doit pas être présente		Zone 608 : incohérente pour une autre édition d'une thèse
+
+
 ```
 ##### condition-structurel
 ```
@@ -146,7 +153,7 @@
 (FAIT)17	x	x	x	x	105	Si 105 $a Pos. 4-7 =a alors il faut une 320		Mention de bibliographie incohérente : vérifier zones 105 et 320
 (FAIT)18	x	x	x	x	105	Si 105 $a Pos. 4-7= t, m, l, q, j, f, e, b ou 7 il faut la présence d'une 608		Zone 608 : indexation Forme-Genre à vérifier
 (FAIT)21		x	x	x	106	Si 008 commence par Aa, présence obligatoire d'une zone 106		Zone 106 à compléter
-34	x	x	x	x	214	214 #0 ou 214#1 obligatoire, sauf si 105$b=v		Zone 214 incohérente : vérifier zones 105 et 214
+(FAIT)34	x	x	x	x	214	214 #0 ou 214#1 obligatoire, sauf si 105$b=v		Zone 214 incohérente : vérifier zones 105 et 214
 (FAIT)38		x	x	x	215	Si 008 commence par Aa, 215 $a et $d obligatoires		Zone 215 : collation obligatoire pour une ressource imprimée
 (FAIT)39	x			x	225	Si 225 ind1=0 il faut au moins une 410		Zone 410 : obligatoire avec une 225
 (FAIT)42	x			x	225	Si 225 ind1=0 $a alors 410$0 doit être présent		Zone 410 : obligatoire avec une 225
@@ -156,31 +163,29 @@
 (FAIT)92			x		455	Si 328$z"Reproduction de", 455 doit être présente		Vérifier les liens entre la version de soutenance et la reproduction
 (FAIT)93			x		456	Si 328$z"Reproduction de" , 456 ne doit pas être présente		Zone 456 incompatible avec le type de thèse (reproduction)
 (FAIT)105		x	x		101	Si 101$d, 330 doit être présente		Mention de résumé incohérente : vérifier zones 101 et 330
-137	x				856	Si 856$5=692669902, une 310 doit être présente		Zone E856 : une note 310 doit préciser le type d'accès restreint
+(FAIT)137	x				856	Si 856$5=692669902, une 310 doit être présente		Zone E856 : une note 310 doit préciser le type d'accès restreint
 (FAIT)151	x	x	x		304	Si 008 commence par Oa,  304 doit être présente		Ressource électronique : doit contenir une zone 304
 (FAIT)152	x	x	x		307	Si 008 commence par Oa, 307 doit être présente		Ressource électronique : doit contenir une zone 307
 (FAIT)153	x	x	x		337	Si 008 commence par Oa, 337 doit être présente		Ressource électronique : doit contenir une zone 337
 (FAIT)154	x	x	x		230	Si 008 commence par Oa, 230 doit être présente		Ressource électronique : doit contenir une zone 230
 
 (Supprimer)78	x	x	x	x	6XX	6XX $a, $x ou $y doit contenir toujours $3 sauf si $2lc ou $2mesh		Zones 6XX doivent être liées à une notice d'autorité RAMEAU ou Fmesh
-134	x	x	x		856	Si 008 commence par Oa et ne contient pas une 215, une 856 doit être présente		Zone 856 : une ressource électronique doit contenir l'accès
+(FAIT)134	x	x	x		856	Si 008 commence par Oa et ne contient pas une 215, une 856 doit être présente		Zone 856 : une ressource électronique doit contenir l'accès
 
 
-(PRESQUE) 139		x	x		451	Si 451, alors vérifier que la notice 451$0 contient une 451 réciproque et une 328$z	Exemple : http://www.sudoc.fr/19872604X.xml	Vérifier la pertinence des liens réciproques
-(PRESQUE)142		x	x		452	Si 452, alors vérifier que la notice 452$0 contient une 452 réciproque et une 328$z		Vérifier la pertinence des liens réciproques
+(FAIT) 139		x	x		451	Si 451, alors vérifier que la notice 451$0 contient une 451 réciproque et une 328$z	Exemple : http://www.sudoc.fr/19872604X.xml	Vérifier la pertinence des liens réciproques
+(FAIT)142		x	x		452	Si 452, alors vérifier que la notice 452$0 contient une 452 réciproque et une 328$z		Vérifier la pertinence des liens réciproques
 (FAIT)146	x	x	x	x	488	Si 488, alors vérifier les liens réciproques de la notice en 488$0		Vérifier la pertinence des liens réciproques
-(Supprimer)148			x		455	Si 455, alors vérifier que la notice en 455$0 contient une 456 avec liens réciproques		Vérifier la pertinence des liens réciproques
-158			x		455	Si 455, alors vérifier que la notice en 455$0 ne contient pas 328$z		Vérifier la pertinence des liens réciproques
-(Supprimer)160				x	456	Si 456, alors vérifier que la notice en 456$0 contient une 455 avec liens réciproques		Vérifier la pertinence des liens réciproques
+(FAIT)148			x		455	Si 455, alors vérifier que la notice en 455$0 contient une 456 avec liens réciproques		Vérifier la pertinence des liens réciproques
+(FAIT)158			x		455	Si 455, alors vérifier que la notice en 455$0 ne contient pas 328$z		Vérifier la pertinence des liens réciproques
+(FAIT)160				x	456	Si 456, alors vérifier que la notice en 456$0 contient une 455 avec liens réciproques		Vérifier la pertinence des liens réciproques
 (FAIT)163	x				455	Si 455, alors vérifier que la notice en 455$0 contient une 456 avec liens réciproques		Vérifier la pertinence des liens réciproques
 (FAIT)192		x			456	Si 456, alors vérifier que la notice en 456$0 contient une 455 avec liens réciproques		Vérifier la pertinence des liens réciproques
-193		x			456	Si 456, alors vérifier que la notice en 465$0  contient  328$z		Vérifier la pertinence des liens réciproques
-194		x			456	Si 456, alors vérifier que la notice en 456$0 contient 105$a Pos. 4-7= v		Vérifier la pertinence des liens réciproques
+(FAIT)193		x			456	Si 456, alors vérifier que la notice en 465$0  contient  328$z		Vérifier la pertinence des liens réciproques
 
 (FAIT)164		x	x	x	456	Si 325$a commence par "Document numérisé dans le cadre d'un projet de numérisation du SCD de Lyon 1", 456 doit être présente		Document numérisé : ajouter un lien 456 vers la reproduction
 (FAIT)165	x				324	Si 305$a commence par "Document numérisé dans le cadre du projet de numérisation", doit contenir une 324		Document numérique FA : ajouter la zone 324
 (FAIT)166	x				455	Si 305$a commence par "Document numérisé dans le cadre du projet de numérisation", doit contenir une 455		Document numérique FA : ajouter un lien 455 vers l'original
-167	x				214	Si 305$a commence par "Document numérisé dans le cadre du projet de numérisation", 214 ind1=' ' et ind2="0"		Document numérique FA : doit contenir une mention de publication en 214 (indicateurs #0)
 
 (FAIT)178		x			029	Si 105 $a Pos. 4-7= "m", alors il faut une 029		Zone 029 obligatoire pour une thèse (soutenance)
 (FAIT)179		x	x	x	328	Si 105 $a Pos. 4-7= "m" ou "7", alors il faut une 328		Zone 328 obligatoire pour une thèse ou mémoire (soutenance)
@@ -188,13 +193,14 @@
 (FAIT)182			x	x	328	Si 105 $a Pos. 4-7= "v", alors il faut une 328$z		Zone 328 incohérente avec le type de thèse (reproduction)
 (FAIT)183			x	x	029	Si 328$zReproduction de, alors il faut une 029		Zone 029 obligatoire pour une reproduction à l'identique d'une thèse
 (FAIT)184			x	x	029	Si 328$z n'est pas "Reproduction de", alors 029 ne doit pas être présente		Zone 029 incohérente pour une autre édition d'une thèse
-190			x	x	608	Si 328$z n'est pas "Reproduction de", alors 608 $3027253139Thèses et écrits académiques ne doit pas être présente		Zone 608 : incohérente pour une autre édition d'une thèse
 (Supprimer)191			x	x	455	Si 328$zReproduction de, alors il faut une 455		Zone 455 obligatoire pour une reproduction à l'identique d'une thèse
 
 (FAIT)47	x			x	461	Si 008 commence par Aa et présence d'une 461, alors il doit y avoir une 305 ou 225		Zones incohérentes : vérifier les zones 461 et 225 (monographie en plusieurs volumes) ou 305 (numéro de périodique)
 
-203		x	x		451	Si 451 et 328$z, alors vérifier que la notice 451$0 ne contient pas 328$z	Exemple : http://www.sudoc.fr/19872604X.xml	Vérifier la pertinence des liens réciproques	Notice083+084	Notice085+086																
-204		x	x		451	Si 451 et absence de 328$z, alors vérifier que la notice 451$0 contient 328$z			Notice053+054	Notice081+082																
+(FAIT)203		x	x		451	Si 451 et 328$z, alors vérifier que la notice 451$0 ne contient pas 328$z	Exemple : http://www.sudoc.fr/19872604X.xml	Vérifier la pertinence des liens réciproques	Notice083+084	Notice085+086																
+(FAIT)204		x	x		451	Si 451 et absence de 328$z, alors vérifier que la notice 451$0 contient 328$z			Notice053+054	Notice081+082			
+(FAIT)167	x				214	Si 305$a commence par "Document numérisé dans le cadre du projet de numérisation", 214 ind1=' ' et ind2="0"		Document numérique FA : doit contenir une mention de publication en 214 (indicateurs #0)
+
 
 ```
 ##### condition-dependance
