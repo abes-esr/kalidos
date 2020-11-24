@@ -685,242 +685,47 @@
                 "message": "100$a Pos. 9-12 = 214$d"
             }
         ],
-        "Conditionnels": [
-            {
-                "index": 3,
-                "number": "",
-                "operator": "and",
-                "parameter1": "Aax",
-                "parameter2": "461",
-                "or": [
-                    "305",
-                    "225"
-                ],
-                "and": [],
-                "message": "Si Aax et 461 il doit y avoir une 305 ou 225"
-            },
-            {
-                "index": 4,
-                "number": "101",
-                "operator": "equals",
-                "parameter1": "ind1",
-                "parameter2": "1",
-                "or": [],
-                "and": [
-                    "a",
-                    "c"
-                ],
-                "message": "Si 101 ind1=1 il faut au moins un $a et $c"
-            }
+        "match": "all",
+        "message": "7XX $4 ne doit pas être 205 ou 727 (FAIL TEST)"
+      },
+      {
+        "index": 38,
+        "number": [
+          "700",
+          "701",
+          "710",
+          "711",
+          "720",
+          "721"
         ],
-        "Structurel": [
-            {
-                "index": 28,
-                "number": [
-                    "200"
-                ],
-                "ind1": "",
-                "ind2": "",
-                "code": "",
-                "type": "required",
-                "message": "200 obligatoire"
-            },
-            {
-                "index": 29,
-                "number": [
-                    "181"
-                ],
-                "ind1": "",
-                "ind2": "",
-                "code": "",
-                "type": "required",
-                "message": "La notice doit contenir au moins une zone 181",
-                "numRuleExcell": 22
-            },
-            {
-                "index": 30,
-                "number": [
-                    "182"
-                ],
-                "ind1": "",
-                "ind2": "",
-                "code": "",
-                "type": "required",
-                "message": "La notice doit contenir au moins une zone 182",
-                "numRuleExcell": 23
-            },
-            {
-                "index": 31,
-                "number": [
-                    "183"
-                ],
-                "ind1": "",
-                "ind2": "",
-                "code": "",
-                "type": "required",
-                "message": "La notice doit contenir au moins zone 183",
-                "numRuleExcell": 24
-            },
-            {
-                "index": 32,
-                "number": [
-                    "309"
-                ],
-                "ind1": "",
-                "ind2": "",
-                "code": "",
-                "type": "exclude",
-                "message": "Supprimer la zone 309 une fois la correction demandée effectuée",
-                "numRuleExcell": 46
-            },
-            {
-                "index": 33,
-                "number": [
-                    "700",
-                    "701",
-                    "702",
-                    "710",
-                    "711",
-                    "712",
-                    "720",
-                    "721",
-                    "722"
-                ],
-                "ind1": "",
-                "ind2": "",
-                "code": "",
-                "type": "required one",
-                "message": "Mention d'auteur obligatoire",
-                "numRuleExcell": 85
-            },
-            {
-                "index": 34,
-                "number": [
-                    "700",
-                    "701",
-                    "702",
-                    "710",
-                    "711",
-                    "712",
-                    "720",
-                    "721",
-                    "722"
-                ],
-                "ind1": "",
-                "ind2": "",
-                "code": "3",
-                "type": "contains code",
-                "message": "Zones 7XX : lier à une notice d'autorité",
-                "numRuleExcell": 86
-            },
-            {
-                "number": [
-                    "200"
-                ],
-                "ind1": "",
-                "ind2": "",
-                "code": "b",
-                "type": "exclude",
-                "message": "Zone 200$d : à remplacer par les zones 181, 182 et 183",
-                "numRuleExcell": 27,
-                "index": 44
-            },
-            {
-                "number": [
-                    "210"
-                ],
-                "ind1": "",
-                "ind2": "",
-                "code": "",
-                "type": "exclude",
-                "message": "Zone 210 à remplacer par 214 (document en main)",
-                "numRuleExcell": 32,
-                "index": 45
-            },{
-                "number": [
-                    "328"
-                ],
-                "ind1": " ",
-                "ind2": "0",
-                "code": "",
-                "type": "index",
-                "message": "Zone 328 : revoir la valeur des indicateurs",
-                "numRuleExcell": 117,
-                "index": 46
-            },
-            {
-                "number": [
-                    "328"
-                ],
-                "ind1": "",
-                "ind2": "",
-                "code": "z",
-                "type": "exclude",
-                "message": "Zone 328 incohérente avec le statut de la thèse : une reproduction doit contenir la sous-zone $z",
-                "numRuleExcell": 118,
-                "index": 47
-            },
-            {
-                "number": [
-                    "455"
-                ],
-                "ind1": "",
-                "ind2": "",
-                "code": "",
-                "type": "exclude",
-                "message": "Zone 455 incompatible avec le type de thèse (soutenance)",
-                "numRuleExcell": 145,
-                "index": 48
-            },
-            {
-                "number": [
-                    "456"
-                ],
-                "ind1": "",
-                "ind2": "",
-                "code": "",
-                "type": "exclude",
-                "message": "Zone 456 incompatible avec le type de thèse (reproduction)",
-                "numRuleExcell": 147,
-                "index": 49
-            },
-            {
-                "number": [
-                    "303"
-                ],
-                "ind1": "",
-                "ind2": "",
-                "code": "",
-                "type": "required",
-                "message": "Ressource électronique : doit contenir une zone 303",
-                "numRuleExcell": 155,
-                "index": 50
-            },
-            {
-                "number": [
-                    "339"
-                ],
-                "ind1": "",
-                "ind2": "",
-                "code": "",
-                "type": "required",
-                "message": "Ressource électronique : doit contenir une zone 339",
-                "numRuleExcell": 156,
-                "index": 51
-            },
-            {
-                "number": [
-                    "608"
-                ],
-                "ind1": "",
-                "ind2": "",
-                "code": "3",
-                "type": "required with value",
-                "value":"027253139",
-                "message": "Zone 608 : indexation Forme-Genre obligatoire (PPN 027253139)",
-                "numRuleExcell": 126,
-                "index": 51
-            }
+        "code": "4",
+        "value": [
+          "^((?!020).)*$",
+          "^((?!050).)*$",
+          "^((?!060).)*$",
+          "^((?!075).)*$",
+          "^((?!080).)*$",
+          "^((?!140).)*$",
+          "^((?!150).)*$",
+          "^((?!160).)*$",
+          "^((?!310).)*$",
+          "^((?!320).)*$",
+          "^((?!390).)*$",
+          "^((?!450).)*$",
+          "^((?!490).)*$",
+          "^((?!500).)*$",
+          "^((?!540).)*$",
+          "^((?!580).)*$",
+          "^((?!610).)*$",
+          "^((?!620).)*$",
+          "^((?!640).)*$",
+          "^((?!625).)*$",
+          "^((?!680).)*$",
+          "^((?!700).)*$",
+          "^((?!720).)*$",
+          "^((?!740).)*$",
+          "^((?!750).)*$",
+          "^((?!735).)*$"
         ],
         "idRef": [
             {
@@ -1328,35 +1133,426 @@
         "matching": [
             {}
         ],
-        "dependances": [
-            {}
+        "code": "4",
+        "value": [
+          "020",
+          "050",
+          "060",
+          "075",
+          "080",
+          "140",
+          "150",
+          "160",
+          "310",
+          "320",
+          "390",
+          "450",
+          "490",
+          "500",
+          "540",
+          "580",
+          "610",
+          "620",
+          "640",
+          "650",
+          "680",
+          "700",
+          "720",
+          "740",
+          "750",
+          "753"
         ],
-        "Conditionnels": [
-            {}
+        "match": "one",
+        "message": "7X2 $4=020, 050, 060, 075, 080, 140, 150, 160, 310, 320, 390, 450, 490, 500, 540, 580, 610, 620, 640, 650, 680, 700, 720, 740, 750, 753"
+      },
+      {
+        "index": 40,
+        "number": [
+          "915",
+          "930",
+          "940"
         ],
-        "Structurel": [
-            {}
+        "code": "5",
+        "value": [
+          "020",
+          "050"
         ],
-        "idRef": [
-            {}
-        ]
-    },
-    "Electronique": {
-        "matching": [
-            {}
+        "match": "one",
+        "message": "9XX $5= 020, 050 (FAIL TEST)"
+      },
+      {
+        "index": 41,
+        "number": 941,
+        "code": "5",
+        "value": [
+          "020",
+          "050"
         ],
-        "dependances": [
-            {}
+        "match": "one",
+        "message": "941 $5= 020, 050 (FAIL TEST)"
+      },
+      {
+        "index": 42,
+        "number": 941,
+        "code": "a",
+        "value": [
+          "^((?!020).)*$",
+          "^((?!20130524).)*$"
         ],
-        "Conditionnels": [
-            {}
+        "match": "all",
+        "message": "941 $a != 020, 20130524 (FAIL TEST)"
+      }
+    ],
+    "dependances": [
+      {
+        "index": 2,
+        "field1": {
+          "number": "100",
+          "code": "a",
+          "pos": [
+            9,
+            13
+          ]
+        },
+        "field2": {
+          "number": "100",
+          "code": "a",
+          "pos": [
+            13,
+            17
+          ]
+        },
+        "operator": "greaterEquals",
+        "message": "Dates incohérentes : vérifier les dates zone 100",
+        "numRuleExcell": 4
+      },
+      {
+        "index": 43,
+        "field1": {
+          "number": "029",
+          "code": "b",
+          "pos": [
+            0,
+            4
+          ]
+        },
+        "field2": {
+          "number": "328",
+          "code": "d",
+          "pos": []
+        },
+        "operator": "equals",
+        "message": "Année de soutenance : l'année en 029 et 328 doivent être identiques",
+        "numRuleExcell": 101
+      },
+      {
+        "index": 43,
+        "field1": {
+          "number": "210",
+          "code": "d",
+          "pos": []
+        },
+        "field2": {
+          "number": "328",
+          "code": "d",
+          "pos": [
+            0,
+            2
+          ]
+        },
+        "operator": "equals",
+        "message": "210$d = 328$d pos1-2 (FAIL TEST)"
+      }
+    ],
+    "Conditionnels": [
+      {
+        "index": 3,
+        "number": "",
+        "operator": "and",
+        "parameter1": "Aax",
+        "parameter2": "461",
+        "or": [
+          "305",
+          "225"
         ],
-        "Structurel": [
-            {}
+        "and": [],
+        "message": "Si Aax et 461 il doit y avoir une 305 ou 225"
+      },
+      {
+        "index": 4,
+        "number": "101",
+        "operator": "equals",
+        "parameter1": "ind1",
+        "parameter2": "1",
+        "or": [],
+        "and": [
+          "a",
+          "c"
         ],
-        "idRef": [
-            {}
-        ]
-        
-    }
+        "message": "Si 101 ind1=1 il faut au moins un $a et $c"
+      }
+    ],
+    "Structurel": [
+      {
+        "index": 28,
+        "number": [
+          "200"
+        ],
+        "ind1": "",
+        "ind2": "",
+        "code": "",
+        "type": "required",
+        "message": "200 obligatoire"
+      },
+      {
+        "index": 29,
+        "number": [
+          "181"
+        ],
+        "ind1": "",
+        "ind2": "",
+        "code": "",
+        "type": "required",
+        "message": "La notice doit contenir au moins une zone 181",
+        "numRuleExcell": 22
+      },
+      {
+        "index": 30,
+        "number": [
+          "182"
+        ],
+        "ind1": "",
+        "ind2": "",
+        "code": "",
+        "type": "required",
+        "message": "La notice doit contenir au moins une zone 182",
+        "numRuleExcell": 23
+      },
+      {
+        "index": 31,
+        "number": [
+          "183"
+        ],
+        "ind1": "",
+        "ind2": "",
+        "code": "",
+        "type": "required",
+        "message": "La notice doit contenir au moins zone 183",
+        "numRuleExcell": 24
+      },
+      {
+        "index": 32,
+        "number": [
+          "309"
+        ],
+        "ind1": "",
+        "ind2": "",
+        "code": "",
+        "type": "exclude",
+        "message": "Supprimer la zone 309 une fois la correction demandée effectuée",
+        "numRuleExcell": 46
+      },
+      {
+        "index": 33,
+        "number": [
+          "700",
+          "701",
+          "702",
+          "710",
+          "711",
+          "712",
+          "720",
+          "721",
+          "722"
+        ],
+        "ind1": "",
+        "ind2": "",
+        "code": "",
+        "type": "required one",
+        "message": "Mention d'auteur obligatoire",
+        "numRuleExcell": 85
+      },
+      {
+        "index": 34,
+        "number": [
+          "700",
+          "701",
+          "702",
+          "710",
+          "711",
+          "712",
+          "720",
+          "721",
+          "722"
+        ],
+        "ind1": "",
+        "ind2": "",
+        "code": "3",
+        "type": "contains code",
+        "message": "Zones 7XX : lier à une notice d'autorité",
+        "numRuleExcell": 86
+      },
+      {
+        "number": [
+          "200"
+        ],
+        "ind1": "",
+        "ind2": "",
+        "code": "b",
+        "type": "exclude",
+        "message": "Zone 200$d : à remplacer par les zones 181, 182 et 183",
+        "numRuleExcell": 27,
+        "index": 44
+      },
+      {
+        "number": [
+          "210"
+        ],
+        "ind1": "",
+        "ind2": "",
+        "code": "",
+        "type": "exclude",
+        "message": "Zone 210 à remplacer par 214 (document en main)",
+        "numRuleExcell": 32,
+        "index": 45
+      },
+      {
+        "number": [
+          "328"
+        ],
+        "ind1": " ",
+        "ind2": "0",
+        "code": "",
+        "type": "index",
+        "message": "Zone 328 : revoir la valeur des indicateurs",
+        "numRuleExcell": 117,
+        "index": 46
+      },
+      {
+        "number": [
+          "328"
+        ],
+        "ind1": "",
+        "ind2": "",
+        "code": "z",
+        "type": "exclude",
+        "message": "Zone 328 incohérente avec le statut de la thèse : une reproduction doit contenir la sous-zone $z",
+        "numRuleExcell": 118,
+        "index": 47
+      },
+      {
+        "number": [
+          "455"
+        ],
+        "ind1": "",
+        "ind2": "",
+        "code": "",
+        "type": "exclude",
+        "message": "Zone 455 incompatible avec le type de thèse (soutenance)",
+        "numRuleExcell": 145,
+        "index": 48
+      },
+      {
+        "number": [
+          "456"
+        ],
+        "ind1": "",
+        "ind2": "",
+        "code": "",
+        "type": "exclude",
+        "message": "Zone 456 incompatible avec le type de thèse (reproduction)",
+        "numRuleExcell": 147,
+        "index": 49
+      },
+      {
+        "number": [
+          "303"
+        ],
+        "ind1": "",
+        "ind2": "",
+        "code": "",
+        "type": "required",
+        "message": "Ressource électronique : doit contenir une zone 303",
+        "numRuleExcell": 155,
+        "index": 50
+      },
+      {
+        "number": [
+          "339"
+        ],
+        "ind1": "",
+        "ind2": "",
+        "code": "",
+        "type": "required",
+        "message": "Ressource électronique : doit contenir une zone 339",
+        "numRuleExcell": 156,
+        "index": 51
+      },
+      {
+        "number": [
+          "608"
+        ],
+        "ind1": "",
+        "ind2": "",
+        "code": "3",
+        "type": "required with value",
+        "value": "027253139",
+        "message": "Zone 608 : indexation Forme-Genre obligatoire (PPN 027253139)",
+        "numRuleExcell": 126,
+        "index": 51
+      }
+    ],
+    "idRef": [
+      {
+        "index": 52,
+        "numRuleExcell": 69,
+        "condition": {
+          "number": "701",
+          "code": "a"
+        },
+        "identifiant": {
+          "code": "3"
+        },
+        "verification": {
+          "number": "008",
+          "regex": "^Tp.*"
+        },
+        "message": "Incohérence zone 7XX : vérifier l'étiquette et le type de notice d'autorité"
+      }
+    ]
+  },
+  "Mémoire": {
+    "matching": [
+      {}
+    ],
+    "dependances": [
+      {}
+    ],
+    "Conditionnels": [
+      {}
+    ],
+    "Structurel": [
+      {}
+    ],
+    "idRef": [
+      {}
+    ]
+  },
+  "Electronique": {
+    "matching": [
+      {}
+    ],
+    "dependances": [
+      {}
+    ],
+    "Conditionnels": [
+      {}
+    ],
+    "Structurel": [
+      {}
+    ],
+    "idRef": [
+      {}
+    ]
+  }
 }
