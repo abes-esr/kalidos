@@ -19,7 +19,13 @@ const mapStateToProps = (state) => ({
 
 const renderTooltip = (props) => (
     <Tooltip id="button-tooltip" {...props}>
-        Génération d'un fichier excel
+        Générer excel avec descriptif complet
+    </Tooltip>
+);
+
+const renderTooltip2 = (props) => (
+    <Tooltip id="button-tooltip" {...props}>
+        Générer excel à double entrée
     </Tooltip>
 );
 
@@ -101,13 +107,11 @@ function InterfaceVerif({ result, recherchePPN, compteurResult, listPPNErronne }
             if (indexError > 0) {
                 if (j == 0) {
                     let excelRow = [listPPNWithError[i][1]['PPN']];
-                    for(let k = 1; k < sortedHeaders.length; k++) {
-                        if (k == indexError) { // on se sert de cette index pour cocher la bonne case
-                            excelRow.push("X");
-                        }else {
-                            excelRow.push("");
-                        }
+                    for (let k = 1; k < sortedHeaders.length; k++) {
+                        excelRow.push("");
                     }
+                    // on se sert de cette index pour cocher la bonne case
+                    excelRow[indexError] = "X";
                     newCsvData.push(excelRow);
                 } else {
                     //éviter redondance des ppn
@@ -128,13 +132,9 @@ function InterfaceVerif({ result, recherchePPN, compteurResult, listPPNErronne }
             <h2>
                 Interface de Verification
 
-                <OverlayTrigger
-                    placement="top"
-                    delay={{ show: 250, hide: 400 }}
-                    overlay={renderTooltip}
-                >
+                <OverlayTrigger placement="top" delay={{ show: 250, hide: 400 }} overlay={renderTooltip}>
 
-                    <CSVLink data={csvData} separator={";"} headers={headers} style={{ float: "right" }}>
+                    <CSVLink data={csvData} filename={"recap_erreurs_completBU.csv"} separator={";"} headers={headers} style={{ float: "right" }}>
                         <Button variant="success">
                             <MDBIcon far icon="file-excel" />
                         </Button>
@@ -142,12 +142,9 @@ function InterfaceVerif({ result, recherchePPN, compteurResult, listPPNErronne }
                 </OverlayTrigger>
             </h2>
             <div>
-                <OverlayTrigger
-                    placement="top"
-                    delay={{ show: 250, hide: 400 }}
-                    overlay={renderTooltip}
-                >
-                    <CSVLink data={newCsvData} separator={";"} style={{ float: "right" }}>
+                <OverlayTrigger placement="top" delay={{ show: 250, hide: 400 }} overlay={renderTooltip2}>
+
+                    <CSVLink data={newCsvData} filename={"recap_erreursBU.csv"} separator={";"} style={{ float: "right" }}>
                         <Button variant="success">
                             <MDBIcon far icon="file-excel" />
                         </Button>
@@ -161,7 +158,6 @@ function InterfaceVerif({ result, recherchePPN, compteurResult, listPPNErronne }
                         <Card12 title={'Liste de PPN inexistants'} content={<div>{listPPNErronne.join(" / ")}</div>} /> :
                         <div></div>
                 }
-
             </Row>
             <Row>
                 <Card4 title={'Erreurs par PPN'} content={<TabPPN listPPN={listPPNWithGoodName} />} />
@@ -172,4 +168,3 @@ function InterfaceVerif({ result, recherchePPN, compteurResult, listPPNErronne }
 }
 
 export default connect(mapStateToProps)(InterfaceVerif);
-
