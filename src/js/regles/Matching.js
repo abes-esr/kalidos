@@ -6,7 +6,7 @@ var Matching = function () {
             if (regle.number instanceof Array) {
                 testMatchRegexNumberArray(regle, datafields, resultJson)
             } else {
-                testMatchRegexNumber(regle, datafields, resultJson)
+                testMatchRegexNumber(regle, datafields, controlfields, resultJson)
             }
         });
     }
@@ -18,17 +18,18 @@ var Matching = function () {
             addError = addError || regle.match === "all" && !matchAll(field, regle.value);
             addError = addError || regle.match === "one" && !matchOne(field, regle.value);
             if (text != undefined) {
-                const match = text.toString().match(regex);
+                const textWithoutLineBreak = text.toString().replace(/\n/g, '');
+                const match = textWithoutLineBreak.match(regex);
                 // if (regle.number == "700") {
                 //     console.log(text, regex, match, match && text === match[0]);
                 // }
-                addError = addError || !(match && text === match[0]);
+                addError = addError || !(match && textWithoutLineBreak === match[0]);
             }
         }
         return addError;
     }
 
-    var testMatchRegexNumber = function (regle, datafields, resultJson) {
+    var testMatchRegexNumber = function (regle, datafields, controlfields, resultJson) {
         const regex = RegExp(regle.regex, 'g');
         datafields.forEach(function (field) {
             if (field._attributes.tag.toString() === regle.number.toString() || regle.number === "GLOBAL") {
@@ -55,10 +56,26 @@ var Matching = function () {
                 }
             }
         });
+        //Cas ou la contrainte est dans le controlfield
+        const matchControlField = RegExp("^00.*", 'g');
+        if(!(regle.number instanceof Array) && RegExp(matchControlField).test(regle.number)) {
+            
+            const field_control = Parcours.findDataField(controlfields, regle.number)
+            if(field_control != null) {
+                const value = field_control._text
+                if(!RegExp(regex).test(value)) {
+                    resultJson.errors.push({
+                        message: regle.message,
+                        number: regle.number,
+                        code: regle.code,
+                    });
+                }
+            }
+        }
     }
 
     var matchAll = function (textField, value) {
-        for (j in value) {
+        for (const j in value) {
             //console.log(value[j] , " : " , field.subfield[i]._text , " -> " , !RegExp(value[j]).test(field.subfield[i]._text))
             if (!RegExp(value[j]).test(textField)) {
                 return false
@@ -68,7 +85,7 @@ var Matching = function () {
     }
 
     var matchOne = function (textField, value) {
-        for (j in value) {
+        for (const j in value) {
             if (RegExp(value[j]).test(textField)) {
                 return true;
             }
@@ -86,7 +103,7 @@ var Matching = function () {
             numberError.push(regle.number[item])
             let matchvalid = true
             if (field != null && field.subfield instanceof Array) {
-                for (i in field.subfield) {
+                for (let i in field.subfield) {
                     if (field.subfield[i]._attributes.code === regle.code) {
                         if (regle.match === "all") {
                             matchvalid = matchAll(field.subfield[i]._text, value)

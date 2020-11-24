@@ -13,22 +13,12 @@ const Router_App = () => (
                     <div className="sidebar-brand-icon rotate-n-15">
                         <i className="fas fa-laugh-wink"></i>
                     </div>
-                    <div className="sidebar-brand-text mx-3">SB Admin <sup>2</sup></div>
+                    <div className="sidebar-brand-text mx-3">Projet Bu</div>
                 </Link>
 
 
                 <hr className="sidebar-divider my-0"></hr>
-
-                <li className="nav-item active">
-                    <Link to="/" className="nav-link">
-                        <i className="fas fa-fw fa-chart-area"></i>
-                        <span>Accueil</span>
-                    </Link>
-                </li>
-
-                <hr className="sidebar-divider"></hr>
-
-                <div className="sidebar-heading">Interface</div>
+                
                 <li className="nav-item">
                     <Link to="/" className="nav-link">
                         <i className="fas fa-fw fa-chart-area"></i>

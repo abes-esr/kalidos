@@ -1,0 +1,330 @@
+<record>
+    <leader> cx l22 3 45 </leader>
+    <controlfield tag="001">027253139</controlfield>
+    <controlfield tag="003">http://www.idref.fr/027253139</controlfield>
+    <controlfield tag="004">19810513</controlfield>
+    <controlfield tag="005">20200227113030.000</controlfield>
+    <controlfield tag="006">0004</controlfield>
+    <controlfield tag="007">1999</controlfield>
+    <controlfield tag="008">Tf8</controlfield>
+    <datafield tag="033" ind1=" " ind2=" ">
+    <subfield code="a">http://catalogue.bnf.fr/ark:/12148/cb119336105</subfield>
+    <subfield code="2">BNF</subfield>
+    <subfield code="d">20170328</subfield>
+    </datafield>
+    <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">034947124</subfield>
+    <subfield code="9">sudoc</subfield>
+    </datafield>
+    <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">frBN01322744X</subfield>
+    </datafield>
+    <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">frBN001547435</subfield>
+    </datafield>
+    <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">FRBNF119336101</subfield>
+    <subfield code="z">FRBNF11933610</subfield>
+    </datafield>
+    <datafield tag="100" ind1=" " ind2=" ">
+    <subfield code="a">19810513afrey50 ba0</subfield>
+    </datafield>
+    <datafield tag="106" ind1=" " ind2=" ">
+    <subfield code="a">2</subfield>
+    <subfield code="b">0</subfield>
+    <subfield code="c">1</subfield>
+    </datafield>
+    <datafield tag="152" ind1=" " ind2=" ">
+    <subfield code="b">rameau</subfield>
+    </datafield>
+    <datafield tag="180" ind1=" " ind2=" ">
+    <subfield code="a">a</subfield>
+    </datafield>
+    <datafield tag="280" ind1=" " ind2=" ">
+    <subfield code="7">ba0yba0y</subfield>
+    <subfield code="9">#</subfield>
+    <subfield code="a">Thèses et écrits académiques</subfield>
+    </datafield>
+    <datafield tag="330" ind1="1" ind2=" ">
+    <subfield code="7">ba0yba0y</subfield>
+    <subfield code="a">
+    S'emploie également en subdivision de sujet ou de forme. Cette subdivision s'applique à tous sujets noms communs et noms propres pour des travaux universitaires sur ces sujets, qu'ils soient sous forme écrite, graphique ou autre
+    </subfield>
+    </datafield>
+    <datafield tag="330" ind1="1" ind2=" ">
+    <subfield code="7">ba0yba0y</subfield>
+    <subfield code="a">
+    Aux collectivités (établissements d'enseignement), s'emploie pour les travaux universitaires sur ces établissements, ainsi que pour les thèses qui y sont soutenues [Note d'application à mettre à jour]
+    </subfield>
+    </datafield>
+    <datafield tag="480" ind1=" " ind2=" ">
+    <subfield code="7">ba0yba0y</subfield>
+    <subfield code="9">#</subfield>
+    <subfield code="a">Dissertations académiques</subfield>
+    </datafield>
+    <datafield tag="480" ind1=" " ind2=" ">
+    <subfield code="7">ba0yba0y</subfield>
+    <subfield code="9">#</subfield>
+    <subfield code="a">Doctorat, Thèses de</subfield>
+    </datafield>
+    <datafield tag="480" ind1=" " ind2=" ">
+    <subfield code="7">ba0yba0y</subfield>
+    <subfield code="9">#</subfield>
+    <subfield code="a">Écrits académiques</subfield>
+    </datafield>
+    <datafield tag="480" ind1=" " ind2=" ">
+    <subfield code="7">ba0yba0y</subfield>
+    <subfield code="9">#</subfield>
+    <subfield code="a">Maîtrise, Mémoires de</subfield>
+    </datafield>
+    <datafield tag="480" ind1=" " ind2=" ">
+    <subfield code="7">ba0yba0y</subfield>
+    <subfield code="9">#</subfield>
+    <subfield code="a">Master, Mémoires de</subfield>
+    </datafield>
+    <datafield tag="480" ind1=" " ind2=" ">
+    <subfield code="7">ba0yba0y</subfield>
+    <subfield code="9">#</subfield>
+    <subfield code="a">Mémoires de maîtrise</subfield>
+    </datafield>
+    <datafield tag="480" ind1=" " ind2=" ">
+    <subfield code="7">ba0yba0y</subfield>
+    <subfield code="9">#</subfield>
+    <subfield code="a">Mémoires de master</subfield>
+    </datafield>
+    <datafield tag="480" ind1=" " ind2=" ">
+    <subfield code="7">ba0yba0y</subfield>
+    <subfield code="9">#</subfield>
+    <subfield code="a">Mémoires professionnels</subfield>
+    </datafield>
+    <datafield tag="480" ind1=" " ind2=" ">
+    <subfield code="7">ba0yba0y</subfield>
+    <subfield code="9">#</subfield>
+    <subfield code="a">Projets de fin d'études</subfield>
+    </datafield>
+    <datafield tag="480" ind1=" " ind2=" ">
+    <subfield code="7">ba0yba0y</subfield>
+    <subfield code="9">#</subfield>
+    <subfield code="a">Rédaction de travaux de recherche</subfield>
+    </datafield>
+    <datafield tag="480" ind1=" " ind2=" ">
+    <subfield code="7">ba0yba0y</subfield>
+    <subfield code="9">#</subfield>
+    <subfield code="a">Thèses</subfield>
+    </datafield>
+    <datafield tag="480" ind1=" " ind2=" ">
+    <subfield code="7">ba0yba0y</subfield>
+    <subfield code="9">#</subfield>
+    <subfield code="a">Thèses d'université</subfield>
+    </datafield>
+    <datafield tag="480" ind1=" " ind2=" ">
+    <subfield code="7">ba0yba0y</subfield>
+    <subfield code="9">#</subfield>
+    <subfield code="a">Thèses de 3e cycle</subfield>
+    </datafield>
+    <datafield tag="480" ind1=" " ind2=" ">
+    <subfield code="7">ba0yba0y</subfield>
+    <subfield code="9">#</subfield>
+    <subfield code="a">Thèses de doctorat</subfield>
+    </datafield>
+    <datafield tag="480" ind1=" " ind2=" ">
+    <subfield code="7">ba0yba0y</subfield>
+    <subfield code="9">#</subfield>
+    <subfield code="a">Thèses professionnelles</subfield>
+    </datafield>
+    <datafield tag="480" ind1=" " ind2=" ">
+    <subfield code="7">ba0yba0y</subfield>
+    <subfield code="9">#</subfield>
+    <subfield code="a">Travaux académiques</subfield>
+    </datafield>
+    <datafield tag="480" ind1=" " ind2=" ">
+    <subfield code="7">ba0yba0y</subfield>
+    <subfield code="9">#</subfield>
+    <subfield code="a">Travaux d'étudiants</subfield>
+    </datafield>
+    <datafield tag="480" ind1=" " ind2=" ">
+    <subfield code="7">ba0yba0y</subfield>
+    <subfield code="9">#</subfield>
+    <subfield code="a">Travaux de fin d'études</subfield>
+    </datafield>
+    <datafield tag="480" ind1=" " ind2=" ">
+    <subfield code="7">ba0yba0y</subfield>
+    <subfield code="9">#</subfield>
+    <subfield code="a">Travaux de recherche</subfield>
+    </datafield>
+    <datafield tag="480" ind1=" " ind2=" ">
+    <subfield code="7">ba0yba0y</subfield>
+    <subfield code="9">#</subfield>
+    <subfield code="a">Travaux universitaires</subfield>
+    </datafield>
+    <datafield tag="550" ind1=" " ind2=" ">
+    <subfield code="0">Voir aussi</subfield>
+    <subfield code="3">153931167</subfield>
+    <subfield code="5">z|xxx</subfield>
+    <subfield code="7">ba0yba0y</subfield>
+    <subfield code="a">Corpus (recherche)</subfield>
+    </datafield>
+    <datafield tag="550" ind1=" " ind2=" ">
+    <subfield code="0">Voir aussi</subfield>
+    <subfield code="3">03503775X</subfield>
+    <subfield code="5">z|xxx</subfield>
+    <subfield code="7">ba0yba0y</subfield>
+    <subfield code="a">Disputations</subfield>
+    </datafield>
+    <datafield tag="550" ind1=" " ind2=" ">
+    <subfield code="0">Voir aussi</subfield>
+    <subfield code="3">146676165</subfield>
+    <subfield code="5">z|xxx</subfield>
+    <subfield code="7">ba0yba0y</subfield>
+    <subfield code="a">Doctorants</subfield>
+    </datafield>
+    <datafield tag="550" ind1=" " ind2=" ">
+    <subfield code="0">Voir aussi</subfield>
+    <subfield code="3">035347600</subfield>
+    <subfield code="5">z|xxx</subfield>
+    <subfield code="7">ba0yba0y</subfield>
+    <subfield code="a">Thèses et écrits académiques</subfield>
+    <subfield code="x">Catalogage</subfield>
+    </datafield>
+    <datafield tag="550" ind1=" " ind2=" ">
+    <subfield code="0">Voir aussi</subfield>
+    <subfield code="3">027254879</subfield>
+    <subfield code="5">z|xxx</subfield>
+    <subfield code="7">ba0yba0y</subfield>
+    <subfield code="a">Universités</subfield>
+    </datafield>
+    <datafield tag="550" ind1=" " ind2=" ">
+    <subfield code="3">02725450X</subfield>
+    <subfield code="5">g|xxx</subfield>
+    <subfield code="7">ba0yba0y</subfield>
+    <subfield code="a">Travail intellectuel</subfield>
+    </datafield>
+    <datafield tag="580" ind1=" " ind2=" ">
+    <subfield code="3">03066358X</subfield>
+    <subfield code="5">g|xxx</subfield>
+    <subfield code="7">ba0yba0y</subfield>
+    <subfield code="a">Littérature grise</subfield>
+    </datafield>
+    <datafield tag="686" ind1=" " ind2=" ">
+    <subfield code="a">020</subfield>
+    <subfield code="c">Sciences de l'information</subfield>
+    <subfield code="2">Note de regroupement par domaine</subfield>
+    </datafield>
+    <datafield tag="686" ind1=" " ind2=" ">
+    <subfield code="a">370</subfield>
+    <subfield code="c">Education et enseignement</subfield>
+    <subfield code="2">Note de regroupement par domaine</subfield>
+    </datafield>
+    <datafield tag="801" ind1=" " ind2="3">
+    <subfield code="a">FR</subfield>
+    <subfield code="b">Abes</subfield>
+    <subfield code="c">20200227</subfield>
+    <subfield code="g">AFNOR</subfield>
+    <subfield code="h">034947124</subfield>
+    </datafield>
+    <datafield tag="801" ind1=" " ind2="0">
+    <subfield code="a">FR</subfield>
+    <subfield code="b">FR-751131015</subfield>
+    <subfield code="c">20170320</subfield>
+    </datafield>
+    <datafield tag="810" ind1=" " ind2=" ">
+    <subfield code="a">
+    LCSH : Dissertations, Academic (tête de vedette) ; Dissertations (subdivision)
+    </subfield>
+    </datafield>
+    <datafield tag="810" ind1=" " ind2=" ">
+    <subfield code="a">
+    Thèses  autres écrits académiques : identification et localisation / Bibliothèque nationale de France, Département de recherche bibliographique, 2005
+    </subfield>
+    </datafield>
+    <datafield tag="822" ind1=" " ind2=" ">
+    <subfield code="a">Dissertations, Academic</subfield>
+    </datafield>
+    <datafield tag="822" ind1=" " ind2=" ">
+    <subfield code="a">Dissertations</subfield>
+    </datafield>
+    <datafield tag="822" ind1=" " ind2=" ">
+    <subfield code="a">Thèses et écrits académiques</subfield>
+    </datafield>
+    <datafield tag="898" ind1=" " ind2=" ">
+    <subfield code="a">
+    Réforme Rameau janvier 2019 Td ouverte à la subd. géogr.
+    </subfield>
+    <subfield code="d">20190215</subfield>
+    </datafield>
+    <datafield tag="898" ind1=" " ind2=" ">
+    <subfield code="a">Réforme Rameau Genre-Forme</subfield>
+    <subfield code="d">20190426</subfield>
+    </datafield>
+    <datafield tag="898" ind1=" " ind2=" ">
+    <subfield code="a">Import BnF Genre-Forme</subfield>
+    <subfield code="d">20200225</subfield>
+    </datafield>
+    <datafield tag="898" ind1=" " ind2=" ">
+    <subfield code="a">Import BnF Autorités liées Genre-Forme</subfield>
+    <subfield code="d">20200225</subfield>
+    </datafield>
+    <datafield tag="980" ind1=" " ind2=" ">
+    <subfield code="a">Thèses et écrits académiques</subfield>
+    </datafield>
+    <datafield tag="981" ind1=" " ind2=" ">
+    <subfield code="a">Dissertations académiques</subfield>
+    </datafield>
+    <datafield tag="981" ind1=" " ind2=" ">
+    <subfield code="a">Doctorat, Thèses de</subfield>
+    </datafield>
+    <datafield tag="981" ind1=" " ind2=" ">
+    <subfield code="a">Écrits académiques</subfield>
+    </datafield>
+    <datafield tag="981" ind1=" " ind2=" ">
+    <subfield code="a">Maîtrise, Mémoires de</subfield>
+    </datafield>
+    <datafield tag="981" ind1=" " ind2=" ">
+    <subfield code="a">Master, Mémoires de</subfield>
+    </datafield>
+    <datafield tag="981" ind1=" " ind2=" ">
+    <subfield code="a">Mémoires de maîtrise</subfield>
+    </datafield>
+    <datafield tag="981" ind1=" " ind2=" ">
+    <subfield code="a">Mémoires de master</subfield>
+    </datafield>
+    <datafield tag="981" ind1=" " ind2=" ">
+    <subfield code="a">Mémoires professionnels</subfield>
+    </datafield>
+    <datafield tag="981" ind1=" " ind2=" ">
+    <subfield code="a">Projets de fin d'études</subfield>
+    </datafield>
+    <datafield tag="981" ind1=" " ind2=" ">
+    <subfield code="a">Rédaction de travaux de recherche</subfield>
+    </datafield>
+    <datafield tag="981" ind1=" " ind2=" ">
+    <subfield code="a">Thèses</subfield>
+    </datafield>
+    <datafield tag="981" ind1=" " ind2=" ">
+    <subfield code="a">Thèses d'université</subfield>
+    </datafield>
+    <datafield tag="981" ind1=" " ind2=" ">
+    <subfield code="a">Thèses de 3e cycle</subfield>
+    </datafield>
+    <datafield tag="981" ind1=" " ind2=" ">
+    <subfield code="a">Thèses de doctorat</subfield>
+    </datafield>
+    <datafield tag="981" ind1=" " ind2=" ">
+    <subfield code="a">Thèses professionnelles</subfield>
+    </datafield>
+    <datafield tag="981" ind1=" " ind2=" ">
+    <subfield code="a">Travaux académiques</subfield>
+    </datafield>
+    <datafield tag="981" ind1=" " ind2=" ">
+    <subfield code="a">Travaux d'étudiants</subfield>
+    </datafield>
+    <datafield tag="981" ind1=" " ind2=" ">
+    <subfield code="a">Travaux de fin d'études</subfield>
+    </datafield>
+    <datafield tag="981" ind1=" " ind2=" ">
+    <subfield code="a">Travaux de recherche</subfield>
+    </datafield>
+    <datafield tag="981" ind1=" " ind2=" ">
+    <subfield code="a">Travaux universitaires</subfield>
+    </datafield>
+    </record>

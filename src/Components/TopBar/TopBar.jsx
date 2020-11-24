@@ -1,41 +1,41 @@
 
 import React from 'react';
 import { connect } from 'react-redux';
-import { ProgressBar } from 'react-bootstrap';
+import { ProgressBar, Row, Col } from 'react-bootstrap';
 
 const mapStateToProps = (state) => ({
     compteurResult: state.compteurResult,
-    nombreTotalPPN: state.nombreTotalPPN
+    nombreTotalPPN: state.nombreTotalPPN,
+    result: state.result,
+    listPPNErronne: state.listPPNErronne,
 });
 
-function TopBar({ compteurResult, nombreTotalPPN }) {
+function TopBar({ compteurResult, nombreTotalPPN, result, listPPNErronne }) {
     const width = parseInt(100 * compteurResult / nombreTotalPPN);
+    const arrayResult = Object.keys(result).map((key) => [Number(key), result[key]]);
+    const nombreErreurTotal = arrayResult.length === 0 ? 0 : arrayResult.map(x => x[1].errors.length).reduce((total, x) => total + x);
     let progressBar = '';
+
     if (compteurResult != nombreTotalPPN) {
         progressBar = <div className="progress" style={{ marginLeft: '17%', width: '66%' }}>
-            <ProgressBar animated now={width} style={{width:'100%', animationDuration:'0.01s'}} label={`${width}%`} />;
+            <ProgressBar animated now={width} style={{ width: '100%', animationDuration: '0.01s' }} label={`${width}%`} />;
         </div>
+    } else {
+        progressBar = <Row style={{ marginLeft: '17%', width: '66%', fontWeight: 'bold' }}>
+            <Col className="text-primary" style={{ textAlign: 'center' }}>
+                Nombre de PPN testés : {nombreTotalPPN}
+            </Col>
+            <Col className="text-warning" style={{ textAlign: 'center' }}>
+                Nombre d'erreurs totals : {nombreErreurTotal}
+            </Col>
+            <Col className="text-danger" style={{ textAlign: 'center' }}>
+                Nombre de PPN inexistants : {listPPNErronne.length}
+            </Col>
+        </Row>;
     }
     return (
         <nav className="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
             {progressBar}
-
-            {/* <button id="sidebarToggleTop" className="btn btn-link d-md-none rounded-circle mr-3">
-            <i className="fa fa-bars"></i>
-        </button>
-
-        <form className="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
-            <div className="input-group">
-                <input type="text" className="form-control bg-light border-0 small" placeholder="Search for..."
-                    aria-label="Search" aria-describedby="basic-addon2"></input>
-                <div className="input-group-append">
-                    <button className="btn btn-primary" type="button">
-                        <i className="fas fa-search fa-sm"></i>
-                    </button>
-                </div>
-            </div>
-        </form> */}
-
         </nav>
     );
 }

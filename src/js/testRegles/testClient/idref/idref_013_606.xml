@@ -1,0 +1,290 @@
+<record>
+    <leader> cx j22 3 45 </leader>
+    <controlfield tag="001">184183944</controlfield>
+    <controlfield tag="003">http://www.idref.fr/184183944</controlfield>
+    <controlfield tag="004">20150303</controlfield>
+    <controlfield tag="005">20190823163225.000</controlfield>
+    <controlfield tag="006">4994</controlfield>
+    <controlfield tag="007">4994</controlfield>
+    <controlfield tag="008">Tl8</controlfield>
+    <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">mesD064726</subfield>
+    <subfield code="d">20190823</subfield>
+    </datafield>
+    <datafield tag="100" ind1=" " ind2=" ">
+    <subfield code="a">20150303afrey50 ba0</subfield>
+    </datafield>
+    <datafield tag="106" ind1=" " ind2=" ">
+    <subfield code="a">2</subfield>
+    <subfield code="b">1</subfield>
+    <subfield code="c">#</subfield>
+    </datafield>
+    <datafield tag="152" ind1=" " ind2=" ">
+    <subfield code="b">FMESH</subfield>
+    </datafield>
+    <datafield tag="250" ind1=" " ind2=" ">
+    <subfield code="7">ba0yba0y</subfield>
+    <subfield code="8">frefre</subfield>
+    <subfield code="9">#</subfield>
+    <subfield code="a">Tumeurs du sein triple-négatives</subfield>
+    </datafield>
+    <datafield tag="300" ind1=" " ind2=" ">
+    <subfield code="7">ba0yba0y</subfield>
+    <subfield code="a">
+    Breast neoplasms that do not express ESTROGEN RECEPTORS; PROGESTERONE RECEPTORS; and do not overexpress the NEU RECEPTOR/HER-2 PROTO-ONCOGENE PROTEIN
+    </subfield>
+    </datafield>
+    <datafield tag="330" ind1="1" ind2=" ">
+    <subfield code="7">ba0yba0y</subfield>
+    <subfield code="a">
+    coordinate IM with histological type of neoplasm (IM)
+    </subfield>
+    </datafield>
+    <datafield tag="450" ind1=" " ind2=" ">
+    <subfield code="7">ba0yba0y</subfield>
+    <subfield code="8">freeng</subfield>
+    <subfield code="9">#</subfield>
+    <subfield code="a">
+    ER-Negative PR-Negative HER2-Negative Breast Neoplasms
+    </subfield>
+    </datafield>
+    <datafield tag="450" ind1=" " ind2=" ">
+    <subfield code="7">ba0yba0y</subfield>
+    <subfield code="8">freeng</subfield>
+    <subfield code="9">#</subfield>
+    <subfield code="a">
+    ER Negative PR Negative HER2 Negative Breast Neoplasms
+    </subfield>
+    </datafield>
+    <datafield tag="450" ind1=" " ind2=" ">
+    <subfield code="7">ba0yba0y</subfield>
+    <subfield code="8">freeng</subfield>
+    <subfield code="9">#</subfield>
+    <subfield code="a">Triple-Negative Breast Cancer</subfield>
+    </datafield>
+    <datafield tag="450" ind1=" " ind2=" ">
+    <subfield code="7">ba0yba0y</subfield>
+    <subfield code="8">freeng</subfield>
+    <subfield code="9">#</subfield>
+    <subfield code="a">Breast Cancer, Triple-Negative</subfield>
+    </datafield>
+    <datafield tag="450" ind1=" " ind2=" ">
+    <subfield code="7">ba0yba0y</subfield>
+    <subfield code="8">freeng</subfield>
+    <subfield code="9">#</subfield>
+    <subfield code="a">Breast Cancers, Triple-Negative</subfield>
+    </datafield>
+    <datafield tag="450" ind1=" " ind2=" ">
+    <subfield code="7">ba0yba0y</subfield>
+    <subfield code="8">freeng</subfield>
+    <subfield code="9">#</subfield>
+    <subfield code="a">Triple-Negative Breast Cancers</subfield>
+    </datafield>
+    <datafield tag="450" ind1=" " ind2=" ">
+    <subfield code="7">ba0yba0y</subfield>
+    <subfield code="8">freeng</subfield>
+    <subfield code="9">#</subfield>
+    <subfield code="a">Triple-Negative Breast Neoplasm</subfield>
+    </datafield>
+    <datafield tag="450" ind1=" " ind2=" ">
+    <subfield code="7">ba0yba0y</subfield>
+    <subfield code="8">freeng</subfield>
+    <subfield code="9">#</subfield>
+    <subfield code="a">Breast Neoplasm, Triple-Negative</subfield>
+    </datafield>
+    <datafield tag="450" ind1=" " ind2=" ">
+    <subfield code="7">ba0yba0y</subfield>
+    <subfield code="8">freeng</subfield>
+    <subfield code="9">#</subfield>
+    <subfield code="a">Breast Neoplasms, Triple-Negative</subfield>
+    </datafield>
+    <datafield tag="450" ind1=" " ind2=" ">
+    <subfield code="7">ba0yba0y</subfield>
+    <subfield code="8">freeng</subfield>
+    <subfield code="9">#</subfield>
+    <subfield code="a">Triple Negative Breast Neoplasm</subfield>
+    </datafield>
+    <datafield tag="450" ind1=" " ind2=" ">
+    <subfield code="7">ba0yba0y</subfield>
+    <subfield code="8">freeng</subfield>
+    <subfield code="9">#</subfield>
+    <subfield code="a">Triple-Negative Breast Neoplasms</subfield>
+    </datafield>
+    <datafield tag="450" ind1=" " ind2=" ">
+    <subfield code="7">ba0yba0y</subfield>
+    <subfield code="8">freeng</subfield>
+    <subfield code="9">#</subfield>
+    <subfield code="a">
+    ER-Negative PR-Negative HER2-Negative Breast Cancer
+    </subfield>
+    </datafield>
+    <datafield tag="450" ind1=" " ind2=" ">
+    <subfield code="7">ba0yba0y</subfield>
+    <subfield code="8">freeng</subfield>
+    <subfield code="9">#</subfield>
+    <subfield code="a">
+    ER Negative PR Negative HER2 Negative Breast Cancer
+    </subfield>
+    </datafield>
+    <datafield tag="450" ind1=" " ind2=" ">
+    <subfield code="7">ba0yba0y</subfield>
+    <subfield code="8">freeng</subfield>
+    <subfield code="9">#</subfield>
+    <subfield code="a">Triple Negative Breast Cancer</subfield>
+    </datafield>
+    <datafield tag="450" ind1=" " ind2=" ">
+    <subfield code="7">ba0yba0y</subfield>
+    <subfield code="8">frefre</subfield>
+    <subfield code="9">#</subfield>
+    <subfield code="a">Cancer du sein négatif pour ER, PR et HER2</subfield>
+    </datafield>
+    <datafield tag="450" ind1=" " ind2=" ">
+    <subfield code="7">ba0yba0y</subfield>
+    <subfield code="8">frefre</subfield>
+    <subfield code="9">#</subfield>
+    <subfield code="a">Cancer du sein triple-négatif</subfield>
+    </datafield>
+    <datafield tag="450" ind1=" " ind2=" ">
+    <subfield code="7">ba0yba0y</subfield>
+    <subfield code="8">frefre</subfield>
+    <subfield code="9">#</subfield>
+    <subfield code="a">Tumeurs du sein négatives pour ER, PR et HER2</subfield>
+    </datafield>
+    <datafield tag="450" ind1=" " ind2=" ">
+    <subfield code="7">ba0yba0y</subfield>
+    <subfield code="8">frefre</subfield>
+    <subfield code="9">#</subfield>
+    <subfield code="a">Cancer du sein négatif pour ER, PR et HER2</subfield>
+    </datafield>
+    <datafield tag="450" ind1=" " ind2=" ">
+    <subfield code="7">ba0yba0y</subfield>
+    <subfield code="8">frefre</subfield>
+    <subfield code="9">#</subfield>
+    <subfield code="a">Cancer du sein triple-négatif</subfield>
+    </datafield>
+    <datafield tag="450" ind1=" " ind2=" ">
+    <subfield code="7">ba0yba0y</subfield>
+    <subfield code="8">frefre</subfield>
+    <subfield code="9">#</subfield>
+    <subfield code="a">Tumeurs du sein négatives pour ER, PR et HER2</subfield>
+    </datafield>
+    <datafield tag="686" ind1=" " ind2=" ">
+    <subfield code="a">C04.588.180.788</subfield>
+    <subfield code="2">mesh</subfield>
+    </datafield>
+    <datafield tag="686" ind1=" " ind2=" ">
+    <subfield code="a">C17.800.090.500.788</subfield>
+    <subfield code="2">mesh</subfield>
+    </datafield>
+    <datafield tag="750" ind1=" " ind2=" ">
+    <subfield code="7">ba0yba0y</subfield>
+    <subfield code="8">freeng</subfield>
+    <subfield code="9">#</subfield>
+    <subfield code="a">Triple Negative Breast Neoplasms</subfield>
+    </datafield>
+    <datafield tag="801" ind1=" " ind2="#">
+    <subfield code="a">FR</subfield>
+    <subfield code="b">INSERM</subfield>
+    <subfield code="c">20190823</subfield>
+    </datafield>
+    <datafield tag="801" ind1=" " ind2="#">
+    <subfield code="a">FR</subfield>
+    <subfield code="b">NLM</subfield>
+    <subfield code="c">20190823</subfield>
+    </datafield>
+    <datafield tag="801" ind1=" " ind2="1">
+    <subfield code="a">FR</subfield>
+    <subfield code="b">INSERM</subfield>
+    <subfield code="c">20190823</subfield>
+    </datafield>
+    <datafield tag="801" ind1=" " ind2="0">
+    <subfield code="a">US</subfield>
+    <subfield code="b">NLM</subfield>
+    <subfield code="c">20190823</subfield>
+    </datafield>
+    <datafield tag="820" ind1=" " ind2=" ">
+    <subfield code="a">
+    Qualificatifs autorisés : DI / PS / IM / MI / DG / PP / RH / SC / EN / ET / MO / EP / BL / CF / CI / CN / DH / DT / TH / CH / PX / UR / VI / VE / HI / BS / CL / CO / EC / EM / GE / NU / RT / SU / EH / PC / PA / UL / ME
+    </subfield>
+    </datafield>
+    <datafield tag="820" ind1=" " ind2=" ">
+    <subfield code="a">2014</subfield>
+    </datafield>
+    <datafield tag="836" ind1=" " ind2=" ">
+    <subfield code="b">Breast Neoplasms (2006-2013)</subfield>
+    </datafield>
+    <datafield tag="950" ind1=" " ind2=" ">
+    <subfield code="a">Tumeurs du sein triple-négatives</subfield>
+    </datafield>
+    <datafield tag="951" ind1=" " ind2=" ">
+    <subfield code="a">
+    ER-Negative PR-Negative HER2-Negative Breast Neoplasms
+    </subfield>
+    </datafield>
+    <datafield tag="951" ind1=" " ind2=" ">
+    <subfield code="a">
+    ER Negative PR Negative HER2 Negative Breast Neoplasms
+    </subfield>
+    </datafield>
+    <datafield tag="951" ind1=" " ind2=" ">
+    <subfield code="a">Triple-Negative Breast Cancer</subfield>
+    </datafield>
+    <datafield tag="951" ind1=" " ind2=" ">
+    <subfield code="a">Breast Cancer, Triple-Negative</subfield>
+    </datafield>
+    <datafield tag="951" ind1=" " ind2=" ">
+    <subfield code="a">Breast Cancers, Triple-Negative</subfield>
+    </datafield>
+    <datafield tag="951" ind1=" " ind2=" ">
+    <subfield code="a">Triple-Negative Breast Cancers</subfield>
+    </datafield>
+    <datafield tag="951" ind1=" " ind2=" ">
+    <subfield code="a">Triple-Negative Breast Neoplasm</subfield>
+    </datafield>
+    <datafield tag="951" ind1=" " ind2=" ">
+    <subfield code="a">Breast Neoplasm, Triple-Negative</subfield>
+    </datafield>
+    <datafield tag="951" ind1=" " ind2=" ">
+    <subfield code="a">Breast Neoplasms, Triple-Negative</subfield>
+    </datafield>
+    <datafield tag="951" ind1=" " ind2=" ">
+    <subfield code="a">Triple Negative Breast Neoplasm</subfield>
+    </datafield>
+    <datafield tag="951" ind1=" " ind2=" ">
+    <subfield code="a">Triple-Negative Breast Neoplasms</subfield>
+    </datafield>
+    <datafield tag="951" ind1=" " ind2=" ">
+    <subfield code="a">
+    ER-Negative PR-Negative HER2-Negative Breast Cancer
+    </subfield>
+    </datafield>
+    <datafield tag="951" ind1=" " ind2=" ">
+    <subfield code="a">
+    ER Negative PR Negative HER2 Negative Breast Cancer
+    </subfield>
+    </datafield>
+    <datafield tag="951" ind1=" " ind2=" ">
+    <subfield code="a">Triple Negative Breast Cancer</subfield>
+    </datafield>
+    <datafield tag="951" ind1=" " ind2=" ">
+    <subfield code="a">Cancer du sein négatif pour ER, PR et HER2</subfield>
+    </datafield>
+    <datafield tag="951" ind1=" " ind2=" ">
+    <subfield code="a">Cancer du sein triple-négatif</subfield>
+    </datafield>
+    <datafield tag="951" ind1=" " ind2=" ">
+    <subfield code="a">Tumeurs du sein négatives pour ER, PR et HER2</subfield>
+    </datafield>
+    <datafield tag="951" ind1=" " ind2=" ">
+    <subfield code="a">Cancer du sein négatif pour ER, PR et HER2</subfield>
+    </datafield>
+    <datafield tag="951" ind1=" " ind2=" ">
+    <subfield code="a">Cancer du sein triple-négatif</subfield>
+    </datafield>
+    <datafield tag="951" ind1=" " ind2=" ">
+    <subfield code="a">Tumeurs du sein négatives pour ER, PR et HER2</subfield>
+    </datafield>
+    <datafield tag="952" ind1=" " ind2=" ">
+    <subfield code="a">Triple Negative Breast Neoplasms</subfield>
+    </datafield>
+    </record>

@@ -1,0 +1,153 @@
+<record>
+<leader> nam0 22 450 </leader>
+<controlfield tag="001">249922924</controlfield>
+<controlfield tag="002">38</controlfield>
+<controlfield tag="003">http://www.sudoc.fr/249922924</controlfield>
+<controlfield tag="004">20201022</controlfield>
+<controlfield tag="005">20201022114232.000</controlfield>
+<controlfield tag="006">693882213</controlfield>
+<controlfield tag="007">693882213</controlfield>
+<controlfield tag="008">Aax3</controlfield>
+<datafield tag="029" ind1=" " ind2=" ">
+<subfield code="a">FR</subfield>
+<subfield code="b">2020LYO1D018</subfield>
+</datafield>
+<datafield tag="035" ind1=" " ind2=" ">
+<subfield code="a">(OCoLC)1201229346</subfield>
+</datafield>
+<datafield tag="100" ind1=" " ind2=" ">
+<subfield code="a">20201022d2020 k y0frey50 ba</subfield>
+</datafield>
+<datafield tag="101" ind1="0" ind2=" ">
+<subfield code="a">fre</subfield>
+<subfield code="d">fre</subfield>
+</datafield>
+<datafield tag="102" ind1=" " ind2=" ">
+<subfield code="a">FR</subfield>
+</datafield>
+<datafield tag="105" ind1=" " ind2=" ">
+<subfield code="a">a ya 000yy</subfield>
+</datafield>
+<datafield tag="106" ind1=" " ind2=" ">
+<subfield code="a">r</subfield>
+</datafield>
+<datafield tag="181" ind1=" " ind2=" ">
+<subfield code="6">z01</subfield>
+<subfield code="c">txt</subfield>
+<subfield code="2">rdacontent</subfield>
+</datafield>
+<datafield tag="181" ind1=" " ind2="1">
+<subfield code="6">z01</subfield>
+<subfield code="a">i#</subfield>
+<subfield code="b">xxxe##</subfield>
+</datafield>
+<datafield tag="182" ind1=" " ind2=" ">
+<subfield code="6">z01</subfield>
+<subfield code="c">n</subfield>
+<subfield code="2">rdamedia</subfield>
+</datafield>
+<datafield tag="182" ind1=" " ind2="1">
+<subfield code="6">z01</subfield>
+<subfield code="a">n</subfield>
+</datafield>
+<datafield tag="183" ind1=" " ind2="1">
+<subfield code="6">z01</subfield>
+<subfield code="a">nga</subfield>
+<subfield code="2">rdacarrier</subfield>
+</datafield>
+<datafield tag="200" ind1="1" ind2=" ">
+<subfield code="a">
+De la dépose des maxillaires à la virtopsie en identification odontologique
+</subfield>
+<subfield code="e">
+état des lieux en 2019 et techniques alternatives chirurgicales et numériques
+</subfield>
+<subfield code="f">Myriam Bidar</subfield>
+<subfield code="g">sous la direction de Cheraz Tafrount</subfield>
+</datafield>
+<datafield tag="214" ind1=" " ind2="1">
+<subfield code="d">2020</subfield>
+</datafield>
+<datafield tag="215" ind1=" " ind2=" ">
+<subfield code="a">1 vol. (83 f.)</subfield>
+<subfield code="d">30 cm</subfield>
+</datafield>
+<datafield tag="320" ind1=" " ind2=" ">
+<subfield code="a">Bibliogr. f. 79-83</subfield>
+</datafield>
+<datafield tag="328" ind1=" " ind2="0">
+<subfield code="b">Thèse d'exercice</subfield>
+<subfield code="c">Odontologie. Chirurgie dentaire</subfield>
+<subfield code="e">Lyon 1</subfield>
+<subfield code="d">2020</subfield>
+</datafield>
+<datafield tag="330" ind1=" " ind2=" ">
+<subfield code="a">
+De l'ex-femme de l'empereur Claudius par Agrippina, aux victimes de l'incendie du Bazar de la Charité en 1897, l'identification odontologique a toujours eu une place de choix pour l'identification des victimes. Afin d'avoir accès à l'intégralité des structures dentaire, l'autopsie oro-faciale peut être nécessaire. La dépose des maxillaires est notamment une technique très décrite dans la littérature. Cependant, n'est-il pas paradoxal que, pour rendre son identité au défunt, il puisse être nécessaire de lui retirer la partie de son corps dont émanait son identité de son vivant ? Qu'en est-il de la restitution du corps à la famille après l'autopsie ? Les juridictions en vigueur sont assez floues concernant la pratique de diverses techniques thanatologiques mutilantes. Malgré cela, les recommandations d'Interpol qui ont suivi le tsunami de 2004 semblent avoir changé les moeurs concernant la dépose des maxillaires, qui n'est pas préconisée par cette instance. Qu'en est-il de la pratique réelle des experts en France ? Celle-ci n'est pas décrite dans la littérature. Ainsi, cette thèse veut présenter le résultat d'un questionnaire soumis aux experts en identification odontologique en France afin d'évaluer leurs pratiques. Naturellement, nous nous sommes ensuite intéressés aux alternatives chirurgicales et numériques existantes, et tout particulièrement aux outils permettant une virtopsie ou autopsie virtuelle, ainsi qu'aux caméras intra-orales
+</subfield>
+</datafield>
+<datafield tag="606" ind1=" " ind2=" ">
+<subfield code="3">02982883X</subfield>
+<subfield code="a">Odontostomatologie médico-légale</subfield>
+<subfield code="2">rameau</subfield>
+</datafield>
+<datafield tag="606" ind1=" " ind2=" ">
+<subfield code="3">027278727</subfield>
+<subfield code="a">Face</subfield>
+<subfield code="3">027427129</subfield>
+<subfield code="x">Autopsie</subfield>
+<subfield code="2">rameau</subfield>
+</datafield>
+<datafield tag="606" ind1=" " ind2=" ">
+<subfield code="3">027457931</subfield>
+<subfield code="a">Maxillaires</subfield>
+<subfield code="2">rameau</subfield>
+</datafield>
+<datafield tag="608" ind1=" " ind2=" ">
+<subfield code="3">027253139</subfield>
+<subfield code="a">Thèses et écrits académiques</subfield>
+<subfield code="2">rameau</subfield>
+</datafield>
+<datafield tag="700" ind1=" " ind2="1">
+<subfield code="3">249922576</subfield>
+<subfield code="a">Bidar</subfield>
+<subfield code="b">Myriam</subfield>
+<subfield code="f">1995-....</subfield>
+<subfield code="4">070</subfield>
+</datafield>
+<datafield tag="701" ind1=" " ind2="1">
+<subfield code="3">139087966</subfield>
+<subfield code="a">Tafrount</subfield>
+<subfield code="b">Chéraz</subfield>
+<subfield code="f">1983-....</subfield>
+<subfield code="4">727</subfield>
+</datafield>
+<datafield tag="711" ind1="0" ind2="2">
+<subfield code="3">026402823</subfield>
+<subfield code="a">Université Claude Bernard</subfield>
+<subfield code="c">Lyon</subfield>
+<subfield code="4">295</subfield>
+</datafield>
+<datafield tag="801" ind1=" " ind2="3">
+<subfield code="a">FR</subfield>
+<subfield code="b">Abes</subfield>
+<subfield code="c">20201022</subfield>
+<subfield code="g">AFNOR</subfield>
+</datafield>
+<datafield tag="930" ind1=" " ind2=" ">
+<subfield code="5">693882213:677467095</subfield>
+<subfield code="b">693882213</subfield>
+<subfield code="a">T 10962</subfield>
+<subfield code="j">u</subfield>
+</datafield>
+<datafield tag="940" ind1=" " ind2=" ">
+<subfield code="5">693882213:677467095</subfield>
+<subfield code="a">20201022</subfield>
+<subfield code="b">x</subfield>
+</datafield>
+<datafield tag="941" ind1=" " ind2=" ">
+<subfield code="5">693882213:677467095</subfield>
+<subfield code="a">20201022</subfield>
+<subfield code="b">11:42:44.000</subfield>
+</datafield>
+</record>

@@ -206,29 +206,31 @@
 
 ### Ajax
 ```
-48	x	x	x	x	600	Si 600$a, vérifier dans Idref, à partir de l'identifiant $3, que 008 =Tp	Vérification externe Idref : https://www.idref.fr/PPN.xml	Incohérence indexation : vérifier les zones 6XX et le type de notice d'autorité
-50	x	x	x	x	601	Si 601$a, vérifier dans Idref, à partir de l'identifiant $3, que 008 =Tb	Vérification externe Idref : https://www.idref.fr/PPN.xml	Incohérence indexation : vérifier les zones 6XX et le type de notice d'autorité
-52	x	x	x	x	602	Si 602$a, vérifier dans Idref, à partir de l'identifiant $3, que 008 =Ta	Vérification externe Idref : https://www.idref.fr/PPN.xml	Incohérence indexation : vérifier les zones 6XX et le type de notice d'autorité
-54	x	x	x	x	604	Si 604$a, vérifier dans Idref, à partir de l'identifiant $3, que 008 =Tq	Vérification externe Idref : https://www.idref.fr/PPN.xml	Incohérence indexation : vérifier les zones 6XX et le type de notice d'autorité
-56	x	x	x	x	605	Si 605$a, vérifier dans Idref, à partir de l'identifiant $3, que 008 =Tu	Vérification externe Idref : https://www.idref.fr/PPN.xml	Incohérence indexation : vérifier les zones 6XX et le type de notice d'autorité
-58	x	x	x	x	606	Si 606$a et $2rameau, vérifier dans Idref, à partir de l'identifiant $3, que 008 =Td	Vérification externe Idref : https://www.idref.fr/PPN.xml	Incohérence indexation : vérifier les zones 6XX et le type de notice d'autorité
-60	x	x	x	x	607	Si 606$a et $2fmesh, vérifier dans Idref, à partir de l'identifiant $3, que 008 =Tl	Vérification externe Idref : https://www.idref.fr/PPN.xml	Incohérence indexation : vérifier les zones 6XX et le type de notice d'autorité
-61	x	x	x	x	607	Si 607$a, vérifier dans Idref, à partir de l'identifiant $3, que 008 =Tg	Vérification externe Idref : https://www.idref.fr/PPN.xml	Incohérence indexation : vérifier les zones 6XX et le type de notice d'autorité
-63	x	x	x	x	608	Si 608$a, vérifier dans Idref, à partir de l'identifiant $3, que 008 =Tf	Vérification externe Idref : https://www.idref.fr/PPN.xml	Incohérence indexation : vérifier les zones 6XX et le type de notice d'autorité
-65	x	x	x	x	616	Si 616$a, vérifier dans Idref, à partir de l'identifiant $3, que 008 =Tm	Vérification externe Idref : https://www.idref.fr/PPN.xml	Incohérence indexation : vérifier les zones 6XX et le type de notice d'autorité
-67	x	x	x	x	700	Si 700, vérifier dans Idref, à partir de l'identifiant $3, que 008=Tp	Vérification externe Idref : https://www.idref.fr/PPN.xml	Incohérence zone 7XX : vérifier l'étiquette et le type de notice d'autorité
-69	x	x	x	x	701	Si 701, vérifier dans Idref ,à partir de l'identifiant $3, que 008=Tp	Vérification externe Idref : https://www.idref.fr/PPN.xml	Incohérence zone 7XX : vérifier l'étiquette et le type de notice d'autorité
-70	x	x	x	x	702	Si 702, vérifier dans Idref, à partir de l'identifiant $3, que 008=Tp	Vérification externe Idref : https://www.idref.fr/PPN.xml	Incohérence zone 7XX : vérifier l'étiquette et le type de notice d'autorité
-71	x	x	x	x	710	Si 710, vérifier dans Idref, à partir de l'identifiant $3, que 008=Tb	Vérification externe Idref : https://www.idref.fr/PPN.xml	Incohérence zone 7XX : vérifier l'étiquette et le type de notice d'autorité
-72	x	x	x	x	711	Si 711, vérifier dans Idref, à partir de l'identifiant $3, que 008=Tb	Vérification externe Idref : https://www.idref.fr/PPN.xml	Incohérence zone 7XX : vérifier l'étiquette et le type de notice d'autorité
-73	x	x	x	x	712	Si 712, vérifier dans Idref, à partir de l'identifiant $3, que 008=Tb	Vérification externe Idref : https://www.idref.fr/PPN.xml	Incohérence zone 7XX : vérifier l'étiquette et le type de notice d'autorité
-74	x	x	x	x	720	Si 720, vérifier dans Idref, à partir de l'identifiant $3, que 008=Ta	Vérification externe Idref : https://www.idref.fr/PPN.xml	Incohérence zone 7XX : vérifier l'étiquette et le type de notice d'autorité
-75	x	x	x	x	721	Si 721, vérifier dans Idref, à partir de l'identifiant $3, que 008=Ta	Vérification externe Idref : https://www.idref.fr/PPN.xml	Incohérence zone 7XX : vérifier l'étiquette et le type de notice d'autorité
-76	x	x	x	x	722	Si 722, vérifier dans Idref, à partir de l'identifiant $3, que 008=Ta	Vérification externe Idref : https://www.idref.fr/PPN.xml	Incohérence zone 7XX : vérifier l'étiquette et le type de notice d'autorité
+(FAIT) 48	x	x	x	x	600	Si 600$a, vérifier dans Idref, à partir de l'identifiant $3, que 008 =Tp	Vérification externe Idref : https://www.idref.fr/PPN.xml	Incohérence indexation : vérifier les zones 6XX et le type de notice d'autorité
+(FAIT) 50	x	x	x	x	601	Si 601$a, vérifier dans Idref, à partir de l'identifiant $3, que 008 =Tb	Vérification externe Idref : https://www.idref.fr/PPN.xml	Incohérence indexation : vérifier les zones 6XX et le type de notice d'autorité
+(FAIT) 52	x	x	x	x	602	Si 602$a, vérifier dans Idref, à partir de l'identifiant $3, que 008 =Ta	Vérification externe Idref : https://www.idref.fr/PPN.xml	Incohérence indexation : vérifier les zones 6XX et le type de notice d'autorité
+(FAIT) 54	x	x	x	x	604	Si 604$a, vérifier dans Idref, à partir de l'identifiant $3, que 008 =Tq	Vérification externe Idref : https://www.idref.fr/PPN.xml	Incohérence indexation : vérifier les zones 6XX et le type de notice d'autorité
+(FAIT) 56	x	x	x	x	605	Si 605$a, vérifier dans Idref, à partir de l'identifiant $3, que 008 =Tu	Vérification externe Idref : https://www.idref.fr/PPN.xml	Incohérence indexation : vérifier les zones 6XX et le type de notice d'autorité
+(FAIT) 58	x	x	x	x	606	Si 606$a et $2rameau, vérifier dans Idref, à partir de l'identifiant $3, que 008 =Td	Vérification externe Idref : https://www.idref.fr/PPN.xml	Incohérence indexation : vérifier les zones 6XX et le type de notice d'autorité
+(FAIT) 60	x	x	x	x	607	Si 606$a et $2fmesh, vérifier dans Idref, à partir de l'identifiant $3, que 008 =Tl	Vérification externe Idref : https://www.idref.fr/PPN.xml	Incohérence indexation : vérifier les zones 6XX et le type de notice d'autorité
+(FAIT) 61	x	x	x	x	607	Si 607$a, vérifier dans Idref, à partir de l'identifiant $3, que 008 =Tg	Vérification externe Idref : https://www.idref.fr/PPN.xml	Incohérence indexation : vérifier les zones 6XX et le type de notice d'autorité
+(FAIT) 63	x	x	x	x	608	Si 608$a, vérifier dans Idref, à partir de l'identifiant $3, que 008 =Tf	Vérification externe Idref : https://www.idref.fr/PPN.xml	Incohérence indexation : vérifier les zones 6XX et le type de notice d'autorité
+(FAIT) 65	x	x	x	x	616	Si 616$a, vérifier dans Idref, à partir de l'identifiant $3, que 008 =Tm	Vérification externe Idref : https://www.idref.fr/PPN.xml	Incohérence indexation : vérifier les zones 6XX et le type de notice d'autorité
+(FAIT) 67	x	x	x	x	700	Si 700, vérifier dans Idref, à partir de l'identifiant $3, que 008=Tp	Vérification externe Idref : https://www.idref.fr/PPN.xml	Incohérence zone 7XX : vérifier l'étiquette et le type de notice d'autorité
+(FAIT) 69	x	x	x	x	701	Si 701, vérifier dans Idref ,à partir de l'identifiant $3, que 008=Tp	Vérification externe Idref : https://www.idref.fr/PPN.xml	Incohérence zone 7XX : vérifier l'étiquette et le type de notice d'autorité
+(FAIT) 70	x	x	x	x	702	Si 702, vérifier dans Idref, à partir de l'identifiant $3, que 008=Tp	Vérification externe Idref : https://www.idref.fr/PPN.xml	Incohérence zone 7XX : vérifier l'étiquette et le type de notice d'autorité
+(FAIT) 71	x	x	x	x	710	Si 710, vérifier dans Idref, à partir de l'identifiant $3, que 008=Tb	Vérification externe Idref : https://www.idref.fr/PPN.xml	Incohérence zone 7XX : vérifier l'étiquette et le type de notice d'autorité
+(FAIT) 72	x	x	x	x	711	Si 711, vérifier dans Idref, à partir de l'identifiant $3, que 008=Tb	Vérification externe Idref : https://www.idref.fr/PPN.xml	Incohérence zone 7XX : vérifier l'étiquette et le type de notice d'autorité
+(FAIT) 73	x	x	x	x	712	Si 712, vérifier dans Idref, à partir de l'identifiant $3, que 008=Tb	Vérification externe Idref : https://www.idref.fr/PPN.xml	Incohérence zone 7XX : vérifier l'étiquette et le type de notice d'autorité
+(FAIT) 74	x	x	x	x	720	Si 720, vérifier dans Idref, à partir de l'identifiant $3, que 008=Ta	Vérification externe Idref : https://www.idref.fr/PPN.xml	Incohérence zone 7XX : vérifier l'étiquette et le type de notice d'autorité
+(FAIT) 75	x	x	x	x	721	Si 721, vérifier dans Idref, à partir de l'identifiant $3, que 008=Ta	Vérification externe Idref : https://www.idref.fr/PPN.xml	Incohérence zone 7XX : vérifier l'étiquette et le type de notice d'autorité
+(FAIT) 76	x	x	x	x	722	Si 722, vérifier dans Idref, à partir de l'identifiant $3, que 008=Ta	Vérification externe Idref : https://www.idref.fr/PPN.xml	Incohérence zone 7XX : vérifier l'étiquette et le type de notice d'autorité
 79	x	x	x	x	6XX	Si 6XX$x et $2rameau, vérifier dans Idref, à partir de l'identifiant $3, que 008=Td	Vérification externe Idref : https://www.idref.fr/PPN.xml	Incohérence indexation : vérifier que la zone 6XX est liée à une autorité RAMEAU
 80	x	x	x	x	6XX	Si 6XX$x et $2fmesh, vérifier dans Idref, à partir de l'identifiant $3, que 008=Tl	Vérification externe Idref : https://www.idref.fr/PPN.xml	Incohérence indexation : vérifier que la zone 6XX est liée à une autorité fmesh
 81	x	x	x	x	6XX	Si 6XX$y et $2rameau, vérifier dans Idref, à partir de l'identifiant $3, que 008=Tg	Vérification externe Idref : https://www.idref.fr/PPN.xml	Incohérence indexation : vérifier que la zone 6XX est liée à une autorité RAMEAU
 82	x	x	x	x	6XX	Si 6XX$z et $2rameau, vérifier dans Idref, à partir de l'identifiant $3, que 008=Tz	Vérification externe Idref : https://www.idref.fr/PPN.xml	Incohérence indexation : vérifier que la zone 6XX est liée à une autorité RAMEAU
+
+Pour les 6XX la prof creera une regle par XX voulu
 ```
 
 
@@ -238,7 +240,6 @@
 37	x		x	x	214	Si plusieurs zones 214, doivent respecter l'ordre des chiffres de l'ind2		Zones 214 : garder l'ordre des indicateurs
 
 106		x	x		101	Si plusieurs 101$d, il doit y avoir autant de 330		Mention de résumé incohérente : vérifier zones 101 et le nombre de zones 330
-
 ```
 
 

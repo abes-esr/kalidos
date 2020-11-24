@@ -1,0 +1,59 @@
+<record>
+    <leader> cx c22 3 45 </leader>
+    <controlfield tag="001">027303594</controlfield>
+    <controlfield tag="003">http://www.idref.fr/027303594</controlfield>
+    <controlfield tag="004">19810323</controlfield>
+    <controlfield tag="005">20200921110837.000</controlfield>
+    <controlfield tag="006">0004</controlfield>
+    <controlfield tag="007">341720001</controlfield>
+    <controlfield tag="008">Tg5</controlfield>
+    <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">frBN001596119</subfield>
+    </datafield>
+    <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">FRBNF11937490X</subfield>
+    <subfield code="z">FRBNF11937490</subfield>
+    </datafield>
+    <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">http://viaf.org/viaf/173145240</subfield>
+    <subfield code="2">VIAF</subfield>
+    <subfield code="C">VIAF</subfield>
+    <subfield code="d">20200401</subfield>
+    </datafield>
+    <datafield tag="100" ind1=" " ind2=" ">
+    <subfield code="a">19810323afrey50 ba0</subfield>
+    </datafield>
+    <datafield tag="106" ind1=" " ind2=" ">
+    <subfield code="a">2</subfield>
+    <subfield code="b">0</subfield>
+    <subfield code="c">0</subfield>
+    </datafield>
+    <datafield tag="152" ind1=" " ind2=" ">
+    <subfield code="b">rameau</subfield>
+    </datafield>
+    <datafield tag="215" ind1=" " ind2=" ">
+    <subfield code="7">ba0yba0y</subfield>
+    <subfield code="9">1</subfield>
+    <subfield code="a">Le Havre (Seine-Maritime)</subfield>
+    </datafield>
+    <datafield tag="415" ind1=" " ind2=" ">
+    <subfield code="7">ba0yba0y</subfield>
+    <subfield code="9">1</subfield>
+    <subfield code="a">Havre, Le (Seine-Maritime)</subfield>
+    </datafield>
+    <datafield tag="801" ind1=" " ind2="3">
+    <subfield code="a">FR</subfield>
+    <subfield code="b">Abes</subfield>
+    <subfield code="c">20200921</subfield>
+    <subfield code="g">AFNOR</subfield>
+    </datafield>
+    <datafield tag="810" ind1=" " ind2=" ">
+    <subfield code="a">Dict. comm. 1984</subfield>
+    </datafield>
+    <datafield tag="915" ind1=" " ind2=" ">
+    <subfield code="a">Le Havre (Seine-Maritime)</subfield>
+    </datafield>
+    <datafield tag="916" ind1=" " ind2=" ">
+    <subfield code="a">Havre, Le (Seine-Maritime)</subfield>
+    </datafield>
+    </record>

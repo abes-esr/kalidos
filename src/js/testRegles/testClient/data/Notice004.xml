@@ -1,0 +1,339 @@
+<record>
+<leader> clm0 22 450 </leader>
+<controlfield tag="001">248736159</controlfield>
+<controlfield tag="002">38</controlfield>
+<controlfield tag="003">http://www.sudoc.fr/248736159</controlfield>
+<controlfield tag="004">20200831</controlfield>
+<controlfield tag="005">20201009011731.000</controlfield>
+<controlfield tag="006">4001</controlfield>
+<controlfield tag="007">4001</controlfield>
+<controlfield tag="008">Oax3</controlfield>
+<datafield tag="029" ind1=" " ind2=" ">
+<subfield code="a">FR</subfield>
+<subfield code="b">2020LYSE1077</subfield>
+</datafield>
+<datafield tag="033" ind1=" " ind2=" ">
+<subfield code="a">http://www.theses.fr/2020LYSE1077</subfield>
+</datafield>
+<datafield tag="035" ind1=" " ind2=" ">
+<subfield code="a">(OCoLC)1191824098</subfield>
+</datafield>
+<datafield tag="035" ind1=" " ind2=" ">
+<subfield code="a">STAR131192</subfield>
+</datafield>
+<datafield tag="100" ind1=" " ind2=" ">
+<subfield code="a">20200831d2020 k y0frey50 ba</subfield>
+</datafield>
+<datafield tag="101" ind1="0" ind2=" ">
+<subfield code="a">eng</subfield>
+<subfield code="c">fre</subfield>
+<subfield code="d">fre</subfield>
+<subfield code="d">eng</subfield>
+</datafield>
+<datafield tag="102" ind1=" " ind2=" ">
+<subfield code="a">FR</subfield>
+</datafield>
+<datafield tag="105" ind1=" " ind2=" ">
+<subfield code="a">y ma 00|yy</subfield>
+</datafield>
+<datafield tag="135" ind1=" " ind2=" ">
+<subfield code="a">dr|||||||||||</subfield>
+</datafield>
+<datafield tag="181" ind1=" " ind2=" ">
+<subfield code="6">z01</subfield>
+<subfield code="c">txt</subfield>
+<subfield code="2">rdacontent</subfield>
+</datafield>
+<datafield tag="181" ind1=" " ind2="1">
+<subfield code="6">z01</subfield>
+<subfield code="a">i#</subfield>
+<subfield code="b">xxxe##</subfield>
+</datafield>
+<datafield tag="182" ind1=" " ind2=" ">
+<subfield code="6">z01</subfield>
+<subfield code="c">c</subfield>
+<subfield code="2">rdamedia</subfield>
+</datafield>
+<datafield tag="182" ind1=" " ind2="1">
+<subfield code="6">z01</subfield>
+<subfield code="a">b</subfield>
+</datafield>
+<datafield tag="183" ind1=" " ind2="1">
+<subfield code="6">z01</subfield>
+<subfield code="a">ceb</subfield>
+<subfield code="2">rdacarrier</subfield>
+</datafield>
+<datafield tag="200" ind1="1" ind2=" ">
+<subfield code="a">
+Synthèse de nouveaux "Covalent Triazine/Frameworks" pour la photoréduction du dioxyde de carbone
+</subfield>
+<subfield code="b">Ressource électronique</subfield>
+<subfield code="e">étude de la molécule Z:1</subfield>
+<subfield code="c">Synthèse de l'ancien Triazine. Etude de dix cas</subfield>
+<subfield code="f">Marcelo Alves Favaro</subfield>
+<subfield code="g">
+sous la direction de Jérôme Canivet et de Regina Palkovits
+</subfield>
+</datafield>
+<datafield tag="214" ind1=" " ind2="1">
+<subfield code="d">2020</subfield>
+</datafield>
+<datafield tag="230" ind1=" " ind2=" ">
+<subfield code="a">Données textuelles</subfield>
+</datafield>
+<datafield tag="300" ind1=" " ind2=" ">
+<subfield code="a">Thèse soutenue en co-tutelle</subfield>
+</datafield>
+<datafield tag="304" ind1=" " ind2=" ">
+<subfield code="a">Titre provenant de l'écran-titre</subfield>
+</datafield>
+<datafield tag="314" ind1=" " ind2=" ">
+<subfield code="a">
+Ecole(s) Doctorale(s) : École Doctorale de Chimie (Lyon)
+</subfield>
+</datafield>
+<datafield tag="314" ind1=" " ind2=" ">
+<subfield code="a">
+Partenaire(s) de recherche : Université Claude Bernard (Lyon) (établissement opérateur d’inscription), Institut de Recherches sur la Catalyse et l'Environnement de Lyon (Villeurbanne, Rhône) (Laboratoire)
+</subfield>
+</datafield>
+<datafield tag="314" ind1=" " ind2=" ">
+<subfield code="a">
+Autre(s) contribution(s) : Bruno Andrioletti (Président du jury) ; Jérôme Canivet, Regina Palkovits, Bruno Andrioletti, Sophie Carenco, Dirk De Vos, Stefania Albonetti, Carmen Claver, Marcel Liauw (Membre(s) du jury) ; Sophie Carenco, Dirk De Vos (Rapporteur(s))
+</subfield>
+</datafield>
+<datafield tag="328" ind1=" " ind2="0">
+<subfield code="b">Thèse de doctorat</subfield>
+<subfield code="c">Chimie Industrielle Durable</subfield>
+<subfield code="e">Lyon</subfield>
+<subfield code="d">2020</subfield>
+</datafield>
+<datafield tag="328" ind1=" " ind2="0">
+<subfield code="b">Thèse de doctorat</subfield>
+<subfield code="c">Chimie Industrielle Durable</subfield>
+<subfield code="e">
+Rheinisch-westfälische technische Hochschule (Aix-la-Chapelle, Allemagne)
+</subfield>
+<subfield code="d">2020</subfield>
+</datafield>
+<datafield tag="330" ind1=" " ind2=" ">
+<subfield code="a">
+L'utilisation de la lumière solaire comme source d'énergie renouvelable pour promouvoir la conversion du dioxyde de carbone (CO2) est une approche intéressante pour aborder la production durable de produits chimiques et de combustibles ainsi que pour lutter contre le dérèglement climatique. Cependant, dans la plupart des systèmes photocatalytiques, l'utilisation d'un photosensibilisateur homogène représente une limitation clé pour les réactions à long terme en raison de sa faible stabilité. Par conséquent, de nouveaux matériaux photocatalyseurs et processus photocatalytiques plus efficaces et stables sont nécessaires. Ici, la stratégie de structuration au niveau moléculaire des photocatalyseurs CTF est présentée, cherchant à améliorer leur stabilité à long terme. L'intégration de centres photoactifs dans un support moléculaire défini améliore leur stabilité photocatalytique. De plus, l'incorporation de fractions chélatantes, telles que la bipyridine, offre une possibilité unique d'hétérogénéisation de complexes organométalliques, bénéficiant à la fois d'une sélectivité et d'une activité améliorées comparées au catalyseur moléculaire analogue et d'une manipulation et d'une séparation facile grâce à sa nature hétérogène. L’utlisation de macroligand, solides agissant comme le ligand dans le complexe moléculaire correspondant, est une stratégie attrayante pour combler l'écart entre la catalyse homogène et hétérogène. Dans cette thèse, la synthèse de CTF simple par condensation a été réalisée afin d'optimiser les paramètres et de mettre en évidence les principaux avantages et inconvénients de cette méthode. De plus, l'approche a été étendue à la synthèse de matériaux fonctionnalisés, basés sur des ligands bipyridiniques. En utilisant la stratégie de conception modulaire, le contenu d'un ligand dans le matériaux a été précisément contrôlé pour la première fois. De plus, en choisissant judicieusement le précurseur adapté et son contenu, il est possible de contrôler soigneusement les propriétés comme l'absorption de la lumière et la porosité, repoussant les limites du contrôle moléculaire sur la synthèse des CTF. À cet égard, les CTF basés sur la bipyridine ont été précisément conçus afin de contenir à la fois un fragment photoactif et un site de chélation pour l'hétérogénéisation des catalyseurs moléculaires au sein de la structure. Dans notre concept tout-en-un, un complexe rhodium a été hétérogénéisé au sein de macroligands CTF contenant différentes quantités de bipyridine. Ces matériaux catalysent la photoréduction du dioxyde de carbone en formiate activée par la lumière visible avec des activité de l’ordre de 4 h-1
+</subfield>
+</datafield>
+<datafield tag="330" ind1=" " ind2=" ">
+<subfield code="a">
+Using sunlight as a renewable source of energy to promote carbon dioxide (CO2) conversion is an interesting approach to address sustainable chemicals and fuels production as well as mitigation of climate change. However, in most photocatalytic systems, the utilization of a homogeneous photosensitizer represents a key limitation for long-term reactions due to its low stability. Therefore, novel, more efficient and stable photocatalyst materials and photocatalytic processes are required. Here, the strategy of structuration at the molecular-level of CTF photocatalysts is presented, seeking to enhance their long-term stability. The integration of photo-active centers into a molecularly defined support improve their photocatalytic stability. Moreover, the incorporation of chelating moieties, such as bipyridine, offers a unique possibility for heterogenization of organometallic complex, profiting at the same time from enhanced selectivity and activity from the molecular catalyst and easy handling and separation from its heterogeneous nature. Macroligands, a solid acting like the ligand in the corresponding molecular complex, is a pivotal strategy to bridge the gap between homogeneous and heterogeneous catalysis.In this thesis, the synthesis of simple CTFs through condensation was done in order to optimize the parameters and highlight the main advantages and drawbacks of this method. Additionally, the approach was extended to the synthesis of functionalized materials, based on bipyridine ligands. Using the strategy of modular design, the content of a ligand within the framework was precisely controlled for the first time. Additionally, by judiciously chosen the proper tailored precursor and its content, it is possible to carefully control properties like light absorption and porosity, pushing the boundaries of molecular control on the synthesis of CTFs. In this regard, CTFs based on bipyridine were precisely designed in order to contain both, a photoactive moiety and a chelating site for the heterogenization of molecular catalysts within the structure. In our all-in-one concept, a (Cp*)-Rhodium complex was heterogenized within CTFs macroligands containing different amounts of bipyridine. Those materials catalyze the carbon dioxide photoreduction to formate, driven by visible light at TOFs around 4 h-1
+</subfield>
+</datafield>
+<datafield tag="337" ind1=" " ind2=" ">
+<subfield code="a">
+Configuration requise : un logiciel capable de lire un fichier au format : PDF
+</subfield>
+</datafield>
+<datafield tag="541" ind1="|" ind2=" ">
+<subfield code="a">
+Synthesis of new Covalent Triazine Frameworks for Carbon Dioxide Photoreduction
+</subfield>
+<subfield code="z">eng</subfield>
+</datafield>
+<datafield tag="606" ind1=" " ind2=" ">
+<subfield code="a">Dioxyde de carbone</subfield>
+<subfield code="2">rameau</subfield>
+</datafield>
+<datafield tag="606" ind1=" " ind2=" ">
+<subfield code="3">193126524</subfield>
+<subfield code="a">Photoréduction</subfield>
+<subfield code="2">rameau</subfield>
+</datafield>
+<datafield tag="607" ind1=" " ind2=" ">
+<subfield code="a">Bipyridine</subfield>
+<subfield code="2">rameau</subfield>
+</datafield>
+<datafield tag="606" ind1=" " ind2=" ">
+<subfield code="a">Catalyse</subfield>
+<subfield code="2">rameau</subfield>
+</datafield>
+<datafield tag="608" ind1=" " ind2=" ">
+<subfield code="3">027253139</subfield>
+<subfield code="a">Thèses et écrits académiques</subfield>
+<subfield code="2">rameau</subfield>
+</datafield>
+<datafield tag="610" ind1="0" ind2=" ">
+<subfield code="a">Dioxyde de Carbone</subfield>
+</datafield>
+<datafield tag="610" ind1="0" ind2=" ">
+<subfield code="a">Covalent Triazine Framework</subfield>
+</datafield>
+<datafield tag="610" ind1="0" ind2=" ">
+<subfield code="a">Macroligand</subfield>
+</datafield>
+<datafield tag="610" ind1="0" ind2=" ">
+<subfield code="a">Photocatalyse</subfield>
+</datafield>
+<datafield tag="686" ind1=" " ind2=" ">
+<subfield code="a">540</subfield>
+<subfield code="2">TEF</subfield>
+</datafield>
+<datafield tag="700" ind1=" " ind2="1">
+<subfield code="3">248684620</subfield>
+<subfield code="a">Alves Favaro</subfield>
+<subfield code="b">Marcelo</subfield>
+<subfield code="f">1989-....</subfield>
+<subfield code="4">070</subfield>
+</datafield>
+<datafield tag="701" ind1=" " ind2="1">
+<subfield code="3">190141271</subfield>
+<subfield code="a">Canivet</subfield>
+<subfield code="b">Jérôme</subfield>
+<subfield code="f">19..-...</subfield>
+<subfield code="4">727</subfield>
+<subfield code="4">555</subfield>
+</datafield>
+<datafield tag="701" ind1=" " ind2="1">
+<subfield code="3">245148698</subfield>
+<subfield code="a">Palkovits</subfield>
+<subfield code="b">Regina</subfield>
+<subfield code="f">19..-....</subfield>
+<subfield code="4">727</subfield>
+<subfield code="4">555</subfield>
+</datafield>
+<datafield tag="701" ind1=" " ind2="1">
+<subfield code="3">157348148</subfield>
+<subfield code="a">Andrioletti</subfield>
+<subfield code="b">Bruno</subfield>
+<subfield code="f">1968-....</subfield>
+<subfield code="4">956</subfield>
+<subfield code="4">555</subfield>
+</datafield>
+<datafield tag="701" ind1=" " ind2="1">
+<subfield code="3">161430279</subfield>
+<subfield code="a">Carenco</subfield>
+<subfield code="b">Sophie</subfield>
+<subfield code="f">1984-....</subfield>
+<subfield code="4">958</subfield>
+<subfield code="4">555</subfield>
+</datafield>
+<datafield tag="701" ind1=" " ind2="1">
+<subfield code="3">185272649</subfield>
+<subfield code="a">De Vos</subfield>
+<subfield code="b">Dirk</subfield>
+<subfield code="f">1947-....</subfield>
+<subfield code="c">
+Auteur d'une thèse sur la synthèse et les propriétés de composés du plomb
+</subfield>
+<subfield code="4">958</subfield>
+<subfield code="4">555</subfield>
+</datafield>
+<datafield tag="701" ind1=" " ind2="1">
+<subfield code="3">194266591</subfield>
+<subfield code="a">Albonetti</subfield>
+<subfield code="b">Stefania</subfield>
+<subfield code="4">555</subfield>
+</datafield>
+<datafield tag="701" ind1=" " ind2="1">
+<subfield code="3">079159591</subfield>
+<subfield code="a">Claver</subfield>
+<subfield code="b">Carmen</subfield>
+<subfield code="4">555</subfield>
+</datafield>
+<datafield tag="701" ind1=" " ind2="1">
+<subfield code="3">200078739</subfield>
+<subfield code="a">Liauw</subfield>
+<subfield code="b">Marcel</subfield>
+<subfield code="f">19..-....</subfield>
+<subfield code="4">555</subfield>
+</datafield>
+<datafield tag="711" ind1="0" ind2="2">
+<subfield code="3">190915757</subfield>
+<subfield code="a">Université de Lyon</subfield>
+<subfield code="c">2015-....</subfield>
+<subfield code="4">295</subfield>
+</datafield>
+<datafield tag="711" ind1="0" ind2="2">
+<subfield code="3">074130323</subfield>
+<subfield code="a">Rheinisch-westfälische technische Hochschule</subfield>
+<subfield code="c">Aix-la-Chapelle, Allemagne</subfield>
+<subfield code="4">995</subfield>
+</datafield>
+<datafield tag="711" ind1="0" ind2="2">
+<subfield code="3">149115261</subfield>
+<subfield code="a">École Doctorale de Chimie</subfield>
+<subfield code="c">Lyon</subfield>
+<subfield code="4">996</subfield>
+</datafield>
+<datafield tag="711" ind1="0" ind2="2">
+<subfield code="3">026402823</subfield>
+<subfield code="a">Université Claude Bernard</subfield>
+<subfield code="c">Lyon</subfield>
+<subfield code="4">985</subfield>
+</datafield>
+<datafield tag="711" ind1="0" ind2="2">
+<subfield code="3">027934608</subfield>
+<subfield code="a">
+Institut de Recherches sur la Catalyse et l'Environnement de Lyon
+</subfield>
+<subfield code="c">Villeurbanne, Rhône</subfield>
+<subfield code="4">981</subfield>
+</datafield>
+<datafield tag="720" ind1="0" ind2="2">
+<subfield code="3">027934608</subfield>
+<subfield code="a">
+Institut de Recherches sur la Catalyse et l'Environnement de Lyon
+</subfield>
+<subfield code="c">Villeurbanne, Rhône</subfield>
+<subfield code="4">981</subfield>
+</datafield>
+<datafield tag="721" ind1="0" ind2="2">
+<subfield code="3">027934608</subfield>
+<subfield code="a">
+Institut de Recherches sur la Catalyse et l'Environnement de Lyon
+</subfield>
+<subfield code="c">Villeurbanne, Rhône</subfield>
+<subfield code="4">981</subfield>
+</datafield>
+<datafield tag="722" ind1="0" ind2="2">
+<subfield code="3">027934608</subfield>
+<subfield code="a">
+Institut de Recherches sur la Catalyse et l'Environnement de Lyon
+</subfield>
+<subfield code="c">Villeurbanne, Rhône</subfield>
+<subfield code="4">981</subfield>
+
+
+</datafield>
+<datafield tag="801" ind1=" " ind2="3">
+<subfield code="a">FR</subfield>
+<subfield code="b">Abes</subfield>
+<subfield code="c">20201009</subfield>
+<subfield code="g">AFNOR</subfield>
+</datafield>
+<datafield tag="856" ind1="4" ind2=" ">
+<subfield code="q">PDF</subfield>
+<subfield code="s">16561358</subfield>
+<subfield code="u">http://www.theses.fr/2020LYSE1077/document</subfield>
+<subfield code="z">Accès au texte intégral</subfield>
+</datafield>
+<datafield tag="856" ind1="4" ind2=" ">
+<subfield code="u">https://tel.archives-ouvertes.fr/tel-02926134</subfield>
+</datafield>
+<datafield tag="930" ind1=" " ind2=" ">
+<subfield code="5">692669902:67081489X</subfield>
+<subfield code="b">692669902</subfield>
+<subfield code="j">g</subfield>
+</datafield>
+<datafield tag="940" ind1=" " ind2=" ">
+<subfield code="5">692669902:67081489X</subfield>
+<subfield code="a">20200901</subfield>
+<subfield code="b">x</subfield>
+</datafield>
+<datafield tag="941" ind1=" " ind2=" ">
+<subfield code="5">692669902:67081489X</subfield>
+<subfield code="a">20200901</subfield>
+<subfield code="b">08:34:43.000</subfield>
+</datafield>
+<datafield tag="991" ind1=" " ind2=" ">
+<subfield code="5">692669902:67081489X</subfield>
+<subfield code="a">exemplaire créé automatiquement par STAR</subfield>
+</datafield>
+</record>

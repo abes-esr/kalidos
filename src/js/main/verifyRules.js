@@ -1,6 +1,6 @@
 const axios = require('axios');
 const convert = require("xml-js");
-import { cleanResult, addErrorPPN, setNombreTotalPPN } from '../../actions/index';
+import { cleanResult, addErrorPPN, setNombreTotalPPN, addErrorPPNErronnee } from '../../actions/index';
 import store from '../../store/index';
 const Matching = require("../regles/Matching");
 const Structurel = require("../regles/Structurel");
@@ -52,6 +52,7 @@ function getSudoc(rules, PPN) {
         })
         .catch(function (error) {
             // handle error
+            store.dispatch(addErrorPPNErronnee(PPN));
             console.log(error);
         })
         .then(function () {

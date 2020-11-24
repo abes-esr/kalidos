@@ -1,0 +1,207 @@
+<record>
+<leader> clm0 22 450 </leader>
+<controlfield tag="001">224421093</controlfield>
+<controlfield tag="002">35</controlfield>
+<controlfield tag="003">http://www.sudoc.fr/224421093</controlfield>
+<controlfield tag="004">20180221</controlfield>
+<controlfield tag="005">20201014061336.000</controlfield>
+<controlfield tag="006">593509902</controlfield>
+<controlfield tag="007">0499</controlfield>
+<controlfield tag="008">Oax3</controlfield>
+<datafield tag="029" ind1=" " ind2=" ">
+<subfield code="a">FR</subfield>
+<subfield code="b">2017LIL2E155</subfield>
+</datafield>
+<datafield tag="035" ind1=" " ind2=" ">
+<subfield code="a">(OCoLC)1023802782</subfield>
+</datafield>
+<datafield tag="100" ind1=" " ind2=" ">
+<subfield code="a">20180221d2017 k y0frey50 ba</subfield>
+</datafield>
+<datafield tag="101" ind1="0" ind2=" ">
+<subfield code="a">fre</subfield>
+<subfield code="d">fre</subfield>
+</datafield>
+<datafield tag="102" ind1=" " ind2=" ">
+<subfield code="a">FR</subfield>
+</datafield>
+<datafield tag="105" ind1=" " ind2=" ">
+<subfield code="a">y ma 00|yy</subfield>
+</datafield>
+<datafield tag="135" ind1=" " ind2=" ">
+<subfield code="a">dr|||||||||||</subfield>
+</datafield>
+<datafield tag="181" ind1=" " ind2=" ">
+<subfield code="6">z01</subfield>
+<subfield code="c">txt</subfield>
+<subfield code="2">rdacontent</subfield>
+</datafield>
+<datafield tag="181" ind1=" " ind2="1">
+<subfield code="6">z01</subfield>
+<subfield code="a">i#</subfield>
+<subfield code="b">xxxe##</subfield>
+</datafield>
+<datafield tag="182" ind1=" " ind2=" ">
+<subfield code="6">z01</subfield>
+<subfield code="c">c</subfield>
+<subfield code="2">rdamedia</subfield>
+</datafield>
+<datafield tag="182" ind1=" " ind2="1">
+<subfield code="6">z01</subfield>
+<subfield code="a">b</subfield>
+</datafield>
+<datafield tag="183" ind1=" " ind2="1">
+<subfield code="6">z01</subfield>
+<subfield code="a">ceb</subfield>
+<subfield code="2">rdacarrier</subfield>
+</datafield>
+<datafield tag="200" ind1="1" ind2=" ">
+<subfield code="a">
+L'association, outil d'acquisition d'une pharmacie d'officine
+</subfield>
+<subfield code="f">Cyrille Fillion</subfield>
+<subfield code="g">sous la direction de Thomas Morgenroth</subfield>
+</datafield>
+<datafield tag="214" ind1=" " ind2="1">
+<subfield code="d">2017</subfield>
+</datafield>
+<datafield tag="230" ind1=" " ind2=" ">
+<subfield code="a">Données textuelles</subfield>
+</datafield>
+<datafield tag="304" ind1=" " ind2=" ">
+<subfield code="a">Titre provenant de l'écran-titre</subfield>
+</datafield>
+<datafield tag="328" ind1=" " ind2="0">
+<subfield code="b">Thèse d'exercice</subfield>
+<subfield code="c">Pharmacie</subfield>
+<subfield code="e">Lille 2</subfield>
+<subfield code="d">2017</subfield>
+</datafield>
+<datafield tag="330" ind1=" " ind2=" ">
+<subfield code="a">
+Aujourd'hui les pharmacies les plus adaptables à l'évolution de la profession sont les officines de grande taille qui restent fortement valorisées. L'apport demandé par les banques est par conséquent très élevé et le travail du titulaire toujours plus important. L'installation en association peut alors devenir une solution adaptée permettant de répondre aux besoins financiers et humains. L'organisation de l'association conditionne la réussite du projet sur le long terme, il convient donc de choisir la forme sociétaire adaptée au profil des différentes associations envisageables. Enfin, l'association ne peut pas se faire sans un solide encadrement au moyen du règlement intérieur pour gérer les relations avec l'entreprise et le pacte d'associés pour la gestion des relations entre les associés.
+</subfield>
+</datafield>
+<datafield tag="337" ind1=" " ind2=" ">
+<subfield code="a">
+Nécessite un logiciel capable de lire un fichier au format PDF
+</subfield>
+</datafield>
+<datafield tag="456" ind1=" " ind2="|">
+<subfield code="0">249739860</subfield>
+<subfield code="t">
+L'association, outil d'acquisition d'une pharmacie d'officine
+</subfield>
+<subfield code="f">Cyrille Fillion</subfield>
+<subfield code="c">[Lyon]</subfield>
+<subfield code="n">[Bibliothèque Lyon 1]</subfield>
+<subfield code="d">2020</subfield>
+<subfield code="p">1 vol. (92 f.)</subfield>
+</datafield>
+<datafield tag="579" ind1=" " ind2=" ">
+<subfield code="1">0499</subfield>
+<subfield code="3">249746867</subfield>
+<subfield code="t">
+L'association, outil d'acquisition d'une pharmacie d'officine
+</subfield>
+</datafield>
+<datafield tag="606" ind1=" " ind2=" ">
+<subfield code="3">027338932</subfield>
+<subfield code="a">Pharmacies d'officine</subfield>
+<subfield code="2">rameau</subfield>
+</datafield>
+<datafield tag="606" ind1=" " ind2=" ">
+<subfield code="3">027228096</subfield>
+<subfield code="a">Gestion d'entreprise</subfield>
+<subfield code="2">rameau</subfield>
+</datafield>
+<datafield tag="606" ind1=" " ind2=" ">
+<subfield code="3">027288137</subfield>
+<subfield code="a">Chefs d'entreprise</subfield>
+<subfield code="2">rameau</subfield>
+</datafield>
+<datafield tag="606" ind1=" " ind2=" ">
+<subfield code="3">040757943</subfield>
+<subfield code="a">Pharmacies</subfield>
+<subfield code="3">038961342</subfield>
+<subfield code="x">économie</subfield>
+<subfield code="3">040839486</subfield>
+<subfield code="x">Dissertation universitaire</subfield>
+<subfield code="2">fmesh</subfield>
+</datafield>
+<datafield tag="606" ind1=" " ind2=" ">
+<subfield code="3">040757951</subfield>
+<subfield code="a">Pharmaciens</subfield>
+<subfield code="3">038961830</subfield>
+<subfield code="x">tendances</subfield>
+<subfield code="3">040839486</subfield>
+<subfield code="x">Dissertation universitaire</subfield>
+<subfield code="2">fmesh</subfield>
+</datafield>
+<datafield tag="608" ind1=" " ind2=" ">
+<subfield code="3">027253139</subfield>
+<subfield code="a">Thèses et écrits académiques</subfield>
+<subfield code="2">rameau</subfield>
+</datafield>
+<datafield tag="610" ind1="0" ind2=" ">
+<subfield code="a">
+association ; officine ; financement ; organisation ; encadrement
+</subfield>
+</datafield>
+<datafield tag="676" ind1=" " ind2=" ">
+<subfield code="a">610</subfield>
+</datafield>
+<datafield tag="700" ind1=" " ind2="1">
+<subfield code="3">224420364</subfield>
+<subfield code="a">Fillion</subfield>
+<subfield code="b">Cyrille</subfield>
+<subfield code="f">1993-....</subfield>
+<subfield code="4">070</subfield>
+</datafield>
+<datafield tag="701" ind1=" " ind2="1">
+<subfield code="3">13536132X</subfield>
+<subfield code="a">Morgenroth</subfield>
+<subfield code="b">Thomas</subfield>
+<subfield code="f">1979-....</subfield>
+<subfield code="4">727</subfield>
+</datafield>
+<datafield tag="711" ind1="0" ind2="2">
+<subfield code="3">026404389</subfield>
+<subfield code="a">Université du droit et de la santé</subfield>
+<subfield code="c">Lille</subfield>
+<subfield code="c">1969-2017</subfield>
+<subfield code="4">295</subfield>
+</datafield>
+<datafield tag="801" ind1=" " ind2="3">
+<subfield code="a">FR</subfield>
+<subfield code="b">Abes</subfield>
+<subfield code="c">20201014</subfield>
+<subfield code="g">AFNOR</subfield>
+</datafield>
+<datafield tag="830" ind1=" " ind2=" ">
+<subfield code="a">
+Réforme Rameau Genre-Forme retro thèses (ne pas supprimer)
+</subfield>
+</datafield>
+<datafield tag="856" ind1=" " ind2=" ">
+<subfield code="q">PDF</subfield>
+<subfield code="u">
+http://pepite-depot.univ-lille2.fr/nuxeo/site/esupversions/fc5cda6a-2e38-4449-ba4a-db053902e2f2
+</subfield>
+</datafield>
+<datafield tag="930" ind1=" " ind2=" ">
+<subfield code="5">593509902:603163874</subfield>
+<subfield code="b">593509902</subfield>
+<subfield code="j">u</subfield>
+</datafield>
+<datafield tag="940" ind1=" " ind2=" ">
+<subfield code="5">593509902:603163874</subfield>
+<subfield code="a">20180221</subfield>
+<subfield code="b">x3</subfield>
+</datafield>
+<datafield tag="941" ind1=" " ind2=" ">
+<subfield code="5">593509902:603163874</subfield>
+<subfield code="a">20190712</subfield>
+<subfield code="b">03:31:51.000</subfield>
+</datafield>
+</record>

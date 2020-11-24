@@ -1,0 +1,151 @@
+<record>
+    <leader> cx a22 3 45 </leader>
+    <controlfield tag="001">077350936</controlfield>
+    <controlfield tag="003">http://www.idref.fr/077350936</controlfield>
+    <controlfield tag="004">20010514</controlfield>
+    <controlfield tag="005">20201022075712.000</controlfield>
+    <controlfield tag="006">0004</controlfield>
+    <controlfield tag="007">674829902</controlfield>
+    <controlfield tag="008">Tp5</controlfield>
+    <datafield tag="010" ind1=" " ind2=" ">
+    <subfield code="a">0000000114884626</subfield>
+    <subfield code="2">ISNI</subfield>
+    <subfield code="C">BNF</subfield>
+    <subfield code="d">20150918</subfield>
+    </datafield>
+    <datafield tag="033" ind1=" " ind2=" ">
+    <subfield code="a">http://catalogue.bnf.fr/ark:/12148/cb13616304g</subfield>
+    <subfield code="2">BNF</subfield>
+    <subfield code="d">20150918</subfield>
+    </datafield>
+    <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">055751679</subfield>
+    <subfield code="9">sudoc</subfield>
+    </datafield>
+    <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">frBN015468453</subfield>
+    </datafield>
+    <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">FRBNF13616304X</subfield>
+    <subfield code="z">FRBNF13616304</subfield>
+    </datafield>
+    <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">http://viaf.org/viaf/19854853</subfield>
+    <subfield code="2">VIAF</subfield>
+    <subfield code="C">VIAF</subfield>
+    <subfield code="d">20200401</subfield>
+    </datafield>
+    <datafield tag="100" ind1=" " ind2=" ">
+    <subfield code="a">20010514afrey50 ba0</subfield>
+    </datafield>
+    <datafield tag="101" ind1=" " ind2=" ">
+    <subfield code="a">fre</subfield>
+    </datafield>
+    <datafield tag="102" ind1=" " ind2=" ">
+    <subfield code="a">FR</subfield>
+    </datafield>
+    <datafield tag="103" ind1=" " ind2=" ">
+    <subfield code="a"> 1966 </subfield>
+    </datafield>
+    <datafield tag="106" ind1=" " ind2=" ">
+    <subfield code="a">0</subfield>
+    <subfield code="b">1</subfield>
+    <subfield code="c">0</subfield>
+    </datafield>
+    <datafield tag="120" ind1=" " ind2=" ">
+    <subfield code="a">ba</subfield>
+    </datafield>
+    <datafield tag="152" ind1=" " ind2=" ">
+    <subfield code="a">AFNOR</subfield>
+    </datafield>
+    <datafield tag="200" ind1=" " ind2="1">
+    <subfield code="7">ba0yba0y</subfield>
+    <subfield code="8">frefre</subfield>
+    <subfield code="9">0</subfield>
+    <subfield code="a">Saint-Martin</subfield>
+    <subfield code="b">Jean</subfield>
+    <subfield code="f">1966-....</subfield>
+    </datafield>
+    <datafield tag="340" ind1=" " ind2=" ">
+    <subfield code="7">ba0yba0y</subfield>
+    <subfield code="a">
+    Maître de conférence en sciences et techniques des activités physiques et sportives à l'Université de Lyon I (UFRSTAPS) depuis 1999. Membre du Centre de recherche et d'innovation sur le sport (en 2000). Doyen de la Faculté des sciences du sport de l’Université de Strasbourg (2016).
+    </subfield>
+    </datafield>
+    <datafield tag="400" ind1=" " ind2="1">
+    <subfield code="7">ba0yba0y</subfield>
+    <subfield code="8">frefre</subfield>
+    <subfield code="9">#</subfield>
+    <subfield code="a">Martin</subfield>
+    <subfield code="b">Jean Saint-</subfield>
+    </datafield>
+    <datafield tag="400" ind1=" " ind2="1">
+    <subfield code="7">ba0yba0y</subfield>
+    <subfield code="8">frefre</subfield>
+    <subfield code="9">#</subfield>
+    <subfield code="a">Saint-Martin</subfield>
+    <subfield code="b">Jean-Philippe</subfield>
+    </datafield>
+    <datafield tag="400" ind1=" " ind2="1">
+    <subfield code="7">ba0yba0y</subfield>
+    <subfield code="8">frefre</subfield>
+    <subfield code="9">#</subfield>
+    <subfield code="a">Martin</subfield>
+    <subfield code="b">Jean-Philippe Saint-</subfield>
+    </datafield>
+    <datafield tag="510" ind1="0" ind2="1">
+    <subfield code="0">2019</subfield>
+    <subfield code="3">131056549</subfield>
+    <subfield code="5">x|xkx</subfield>
+    <subfield code="7">ba0yba0y</subfield>
+    <subfield code="a">Université de Strasbourg</subfield>
+    <subfield code="c">2009-....</subfield>
+    </datafield>
+    <datafield tag="510" ind1="0" ind2="1">
+    <subfield code="0">2019</subfield>
+    <subfield code="3">157555968</subfield>
+    <subfield code="5">x|xkx</subfield>
+    <subfield code="7">ba0yba0y</subfield>
+    <subfield code="a">Sport et sciences sociales</subfield>
+    <subfield code="c">Strasbourg</subfield>
+    </datafield>
+    <datafield tag="686" ind1=" " ind2=" ">
+    <subfield code="a">SCANR</subfield>
+    <subfield code="c">102020</subfield>
+    <subfield code="2">ESR</subfield>
+    </datafield>
+    <datafield tag="801" ind1=" " ind2="3">
+    <subfield code="a">FR</subfield>
+    <subfield code="b">Abes</subfield>
+    <subfield code="c">20201022</subfield>
+    <subfield code="g">AFNOR</subfield>
+    <subfield code="h">055751679</subfield>
+    </datafield>
+    <datafield tag="801" ind1=" " ind2="0">
+    <subfield code="a">FR</subfield>
+    <subfield code="b">BnF</subfield>
+    <subfield code="c">20031006</subfield>
+    </datafield>
+    <datafield tag="810" ind1=" " ind2=" ">
+    <subfield code="a">
+    Le sport français dans l'entre-deux-guerres : regards croisés sur les influences étrangères / Jean-Philippe Saint-Martin, Thierry Terret, 2000
+    </subfield>
+    </datafield>
+    <datafield tag="810" ind1=" " ind2=" ">
+    <subfield code="a">
+    Éducations physiques françaises et exemplarités étrangères entre 1815 et 1914 / Jean Saint-Martin, 2003
+    </subfield>
+    </datafield>
+    <datafield tag="900" ind1=" " ind2=" ">
+    <subfield code="a">Saint-Martin, Jean (1966-....)</subfield>
+    </datafield>
+    <datafield tag="901" ind1=" " ind2=" ">
+    <subfield code="a">Martin, Jean Saint-</subfield>
+    </datafield>
+    <datafield tag="901" ind1=" " ind2=" ">
+    <subfield code="a">Saint-Martin, Jean-Philippe</subfield>
+    </datafield>
+    <datafield tag="901" ind1=" " ind2=" ">
+    <subfield code="a">Martin, Jean-Philippe Saint-</subfield>
+    </datafield>
+    </record>

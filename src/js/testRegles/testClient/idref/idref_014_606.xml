@@ -1,0 +1,109 @@
+<record>
+    <leader> cx l22 3 45 </leader>
+    <controlfield tag="001">028630661</controlfield>
+    <controlfield tag="003">http://www.idref.fr/028630661</controlfield>
+    <controlfield tag="004">19870617</controlfield>
+    <controlfield tag="005">20200227113854.000</controlfield>
+    <controlfield tag="006">0004</controlfield>
+    <controlfield tag="007">1999</controlfield>
+    <controlfield tag="008">Tf8</controlfield>
+    <datafield tag="033" ind1=" " ind2=" ">
+    <subfield code="a">http://catalogue.bnf.fr/ark:/12148/cb12042702c</subfield>
+    <subfield code="2">BNF</subfield>
+    <subfield code="d">20160115</subfield>
+    </datafield>
+    <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">frBN003413431</subfield>
+    </datafield>
+    <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">FRBNF120427021</subfield>
+    <subfield code="z">FRBNF12042702</subfield>
+    </datafield>
+    <datafield tag="100" ind1=" " ind2=" ">
+    <subfield code="a">19870617afrey50 ba0</subfield>
+    </datafield>
+    <datafield tag="106" ind1=" " ind2=" ">
+    <subfield code="a">2</subfield>
+    <subfield code="b">0</subfield>
+    <subfield code="c">1</subfield>
+    </datafield>
+    <datafield tag="152" ind1=" " ind2=" ">
+    <subfield code="b">rameau</subfield>
+    </datafield>
+    <datafield tag="180" ind1=" " ind2=" ">
+    <subfield code="a">a</subfield>
+    </datafield>
+    <datafield tag="280" ind1=" " ind2=" ">
+    <subfield code="7">ba0yba0y</subfield>
+    <subfield code="9">#</subfield>
+    <subfield code="a">Plans</subfield>
+    </datafield>
+    <datafield tag="330" ind1="1" ind2=" ">
+    <subfield code="7">ba0yba0y</subfield>
+    <subfield code="a">
+    S'emploie également en subdivision aux collectivités (à l'exception des types de collectivité), ainsi qu'après la vedette Villes et les autres vedettes désignant des catégories particulières de villes, à propos de cartes à grande échelle de ces villes, isolées ou réunies dans un recueil
+    </subfield>
+    </datafield>
+    <datafield tag="550" ind1=" " ind2=" ">
+    <subfield code="0">Voir aussi</subfield>
+    <subfield code="3">084149612</subfield>
+    <subfield code="5">z|xxx</subfield>
+    <subfield code="7">ba0yba0y</subfield>
+    <subfield code="a">Calcul d'itinéraires routiers</subfield>
+    </datafield>
+    <datafield tag="550" ind1=" " ind2=" ">
+    <subfield code="0">Voir aussi</subfield>
+    <subfield code="3">02723195X</subfield>
+    <subfield code="5">z|xxx</subfield>
+    <subfield code="7">ba0yba0y</subfield>
+    <subfield code="a">Dessin industriel</subfield>
+    </datafield>
+    <datafield tag="580" ind1=" " ind2=" ">
+    <subfield code="0">Voir aussi</subfield>
+    <subfield code="3">027497259</subfield>
+    <subfield code="5">z|xxx</subfield>
+    <subfield code="7">ba0yba0y</subfield>
+    <subfield code="a">Cartes</subfield>
+    </datafield>
+    <datafield tag="686" ind1=" " ind2=" ">
+    <subfield code="a">910</subfield>
+    <subfield code="c">Géographie, tourisme (guides) et voyages</subfield>
+    <subfield code="2">Note de regroupement par domaine</subfield>
+    </datafield>
+    <datafield tag="801" ind1=" " ind2="0">
+    <subfield code="a">FR</subfield>
+    <subfield code="b">FR-751131015</subfield>
+    <subfield code="c">20190624</subfield>
+    </datafield>
+    <datafield tag="801" ind1=" " ind2="3">
+    <subfield code="a">FR</subfield>
+    <subfield code="b">Abes</subfield>
+    <subfield code="c">20200227</subfield>
+    <subfield code="g">AFNOR</subfield>
+    </datafield>
+    <datafield tag="822" ind1=" " ind2=" ">
+    <subfield code="a">Plans</subfield>
+    </datafield>
+    <datafield tag="822" ind1=" " ind2=" ">
+    <subfield code="a">Maps</subfield>
+    </datafield>
+    <datafield tag="898" ind1=" " ind2=" ">
+    <subfield code="a">Réforme Rameau Td subdivisions aux lieux</subfield>
+    <subfield code="d">20190220</subfield>
+    </datafield>
+    <datafield tag="898" ind1=" " ind2=" ">
+    <subfield code="a">Réforme Rameau Genre-Forme</subfield>
+    <subfield code="d">20190426</subfield>
+    </datafield>
+    <datafield tag="898" ind1=" " ind2=" ">
+    <subfield code="a">Import BnF Genre-Forme</subfield>
+    <subfield code="d">20200225</subfield>
+    </datafield>
+    <datafield tag="898" ind1=" " ind2=" ">
+    <subfield code="a">Import BnF Autorités liées Genre-Forme</subfield>
+    <subfield code="d">20200225</subfield>
+    </datafield>
+    <datafield tag="980" ind1=" " ind2=" ">
+    <subfield code="a">Plans</subfield>
+    </datafield>
+    </record>
