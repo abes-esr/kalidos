@@ -22,10 +22,10 @@ var Dependance = function () {
                 let testString1 = subfield1
                 let testString2 = subfield2
 
-                if (field1.pos && regle.field1.pos.length > 0) {
+                if (regle.field1.pos && regle.field1.pos.length > 0) {
                     testString1 = subfield1.slice(regle.field1.pos[0], regle.field1.pos[1])
                 }
-                if (field2.pos && regle.field2.pos.length > 0) {
+                if (regle.field2.pos && regle.field2.pos.length > 0) {
                     testString2 = subfield2.slice(regle.field2.pos[0], regle.field2.pos[1])
                 }
 

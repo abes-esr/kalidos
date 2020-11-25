@@ -33,7 +33,8 @@ var Matching = function () {
         const regex = RegExp(regle.regex, 'g');
         datafields.forEach(function (field) {
             if ((field._attributes.tag.toString() === regle.number.toString() || regle.number === "GLOBAL")
-            && ((regle.ind1 && regle.ind1 === field._attributes.ind1.toString().trim() && regle.ind2 === field._attributes.ind2.toString().trim()) || !regle.ind1)) {
+            && (!regle.ind1 || (regle.ind1 && regle.ind1 === field._attributes.ind1.toString().trim() ))
+            && (!regle.ind2 || (regle.ind2 && regle.ind2 === field._attributes.ind2.toString().trim()))) {
                 if (field.subfield instanceof Array) {
                     field.subfield.forEach(function (subfield) {
                         let addError = matchFactoriser(regle, regex, subfield._text, subfield._text, subfield._attributes.code);
