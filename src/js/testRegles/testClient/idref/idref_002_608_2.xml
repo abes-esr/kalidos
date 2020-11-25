@@ -1,0 +1,130 @@
+<record>
+    <leader> cx f22 3 45 </leader>
+    <controlfield tag="001">078994403</controlfield>
+    <controlfield tag="003">http://www.idref.fr/078994403</controlfield>
+    <controlfield tag="004">20040603</controlfield>
+    <controlfield tag="005">20200918162820.000</controlfield>
+    <controlfield tag="006">0004</controlfield>
+    <controlfield tag="007">341720001</controlfield>
+    <controlfield tag="008">Tu5</controlfield>
+    <datafield tag="033" ind1=" " ind2=" ">
+    <subfield code="a">http://catalogue.bnf.fr/ark:/12148/cb145481478</subfield>
+    <subfield code="2">BNF</subfield>
+    <subfield code="d">20150918</subfield>
+    </datafield>
+    <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">FRBNF145481475</subfield>
+    <subfield code="z">FRBNF14548147</subfield>
+    </datafield>
+    <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">http://viaf.org/viaf/294514948</subfield>
+    <subfield code="2">VIAF</subfield>
+    <subfield code="C">VIAF</subfield>
+    <subfield code="d">20200401</subfield>
+    </datafield>
+    <datafield tag="100" ind1=" " ind2=" ">
+    <subfield code="a">20040603afrey50 ba0</subfield>
+    </datafield>
+    <datafield tag="101" ind1=" " ind2=" ">
+    <subfield code="a">fre</subfield>
+    </datafield>
+    <datafield tag="102" ind1=" " ind2=" ">
+    <subfield code="a">FR</subfield>
+    <subfield code="a">CA</subfield>
+    </datafield>
+    <datafield tag="103" ind1=" " ind2=" ">
+    <subfield code="a"> 2003 </subfield>
+    <subfield code="b"> 2003 </subfield>
+    </datafield>
+    <datafield tag="106" ind1=" " ind2=" ">
+    <subfield code="a">0</subfield>
+    <subfield code="b">1</subfield>
+    <subfield code="c">0</subfield>
+    </datafield>
+    <datafield tag="152" ind1=" " ind2=" ">
+    <subfield code="a">AFNOR</subfield>
+    </datafield>
+    <datafield tag="230" ind1=" " ind2=" ">
+    <subfield code="7">ba0yba0y</subfield>
+    <subfield code="8">frefre</subfield>
+    <subfield code="9">0</subfield>
+    <subfield code="a">La petite Lili</subfield>
+    <subfield code="n">film</subfield>
+    </datafield>
+    <datafield tag="300" ind1=" " ind2=" ">
+    <subfield code="7">ba0yba0y</subfield>
+    <subfield code="a">
+    Fiction long métrage. D'après "La Mouette" de Tchekhov
+    </subfield>
+    </datafield>
+    <datafield tag="300" ind1=" " ind2=" ">
+    <subfield code="7">ba0yba0y</subfield>
+    <subfield code="a">Date de réalisation : 2003</subfield>
+    </datafield>
+    <datafield tag="300" ind1=" " ind2=" ">
+    <subfield code="7">ba0yba0y</subfield>
+    <subfield code="a">Réalisateur : Claude Miller</subfield>
+    </datafield>
+    <datafield tag="430" ind1=" " ind2=" ">
+    <subfield code="7">ba0yba0y</subfield>
+    <subfield code="8">freeng</subfield>
+    <subfield code="9">#</subfield>
+    <subfield code="a">Little Lili</subfield>
+    <subfield code="n">film</subfield>
+    </datafield>
+    <datafield tag="440" ind1=" " ind2=" ">
+    <subfield code="7">ba0yba0y</subfield>
+    <subfield code="9">#</subfield>
+    <subfield code="a">Miller, Claude (1942-2012)</subfield>
+    <subfield code="t">La petite Lili</subfield>
+    </datafield>
+    <datafield tag="440" ind1=" " ind2=" ">
+    <subfield code="7">ba0yba0y</subfield>
+    <subfield code="9">#</subfield>
+    <subfield code="a">Miller, Claude (1942-2012)</subfield>
+    <subfield code="t">Little Lili</subfield>
+    </datafield>
+    <datafield tag="500" ind1=" " ind2="1">
+    <subfield code="0">Réalisé par</subfield>
+    <subfield code="3">030195322</subfield>
+    <subfield code="5">z|xxx</subfield>
+    <subfield code="7">ba0yba0y</subfield>
+    <subfield code="a">Miller</subfield>
+    <subfield code="b">Claude</subfield>
+    <subfield code="f">1942-2012</subfield>
+    </datafield>
+    <datafield tag="801" ind1=" " ind2="0">
+    <subfield code="a">FR</subfield>
+    <subfield code="b">BnF</subfield>
+    <subfield code="c">20040609</subfield>
+    </datafield>
+    <datafield tag="801" ind1=" " ind2="3">
+    <subfield code="a">FR</subfield>
+    <subfield code="b">Abes</subfield>
+    <subfield code="c">20200918</subfield>
+    <subfield code="g">AFNOR</subfield>
+    </datafield>
+    <datafield tag="810" ind1=" " ind2=" ">
+    <subfield code="a">
+    "La petite Lili" / photogr. de Frédérique Barraja ; textes de Claude Miller, 2003
+    </subfield>
+    </datafield>
+    <datafield tag="810" ind1=" " ind2=" ">
+    <subfield code="a">Internet, www.imdb.com/, 2005-09-22</subfield>
+    <subfield code="b">
+    La petite Lili (autre forme du titre : Little Lili). Film de fiction long-métrage réalisé par Claude Miller en 2003. Co-production France / Canada tournée en langue française
+    </subfield>
+    </datafield>
+    <datafield tag="930" ind1=" " ind2=" ">
+    <subfield code="a">La petite Lili (film)</subfield>
+    </datafield>
+    <datafield tag="931" ind1=" " ind2=" ">
+    <subfield code="a">Little Lili (film)</subfield>
+    </datafield>
+    <datafield tag="941" ind1=" " ind2=" ">
+    <subfield code="a">Miller, Claude (1942-2012). La petite Lili</subfield>
+    </datafield>
+    <datafield tag="941" ind1=" " ind2=" ">
+    <subfield code="a">Miller, Claude (1942-2012). Little Lili</subfield>
+    </datafield>
+    </record>

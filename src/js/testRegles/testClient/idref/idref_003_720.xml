@@ -1,0 +1,59 @@
+<record>
+    <leader> cx e22 3 45 </leader>
+    <controlfield tag="001">070278393</controlfield>
+    <controlfield tag="003">http://www.idref.fr/070278393</controlfield>
+    <controlfield tag="004">20030326</controlfield>
+    <controlfield tag="005">20200121090252.000</controlfield>
+    <controlfield tag="006">751025206</controlfield>
+    <controlfield tag="007">751025206</controlfield>
+    <controlfield tag="008">Ta5</controlfield>
+    <datafield tag="100" ind1=" " ind2=" ">
+    <subfield code="a">20030326afrey50 ba0</subfield>
+    </datafield>
+    <datafield tag="101" ind1=" " ind2=" ">
+    <subfield code="a">eng</subfield>
+    </datafield>
+    <datafield tag="102" ind1=" " ind2=" ">
+    <subfield code="a">US</subfield>
+    </datafield>
+    <datafield tag="106" ind1=" " ind2=" ">
+    <subfield code="a">0</subfield>
+    <subfield code="b">1</subfield>
+    <subfield code="c">0</subfield>
+    </datafield>
+    <datafield tag="152" ind1=" " ind2=" ">
+    <subfield code="a">AFNOR</subfield>
+    </datafield>
+    <datafield tag="220" ind1=" " ind2=" ">
+    <subfield code="7">ba0yba0y</subfield>
+    <subfield code="a">Rockefeller</subfield>
+    <subfield code="c">famille</subfield>
+    </datafield>
+    <datafield tag="300" ind1=" " ind2=" ">
+    <subfield code="7">ba0yba0y</subfield>
+    <subfield code="a">
+    La richissime famille Rockefeller est presque aussi célèbre pour sa philanthropie que pour son empire industriel. John D. Rockefeller, président du géant pétrolier Standard Oil, a accumulé une vaste fortune en englobant (et en avalant) d'autres compagnies afin de restreindre la concurrence. Il fonda la Rockefeller Foundation afin de moderniser la charité; il donnait ainsi à ses nombreux efforts en éducation, en médecine et en religion le même esprit d'ordre et de rationalité qu'à ses affaires. Cet esprit se retrouve chez son petit-fils, Nelson Rockefeller, gouverneur de l'Etat de New York et vice-président des États-Unis, dans son intérêt passionné pour l'art moderne et la culture.
+    </subfield>
+    </datafield>
+    <datafield tag="420" ind1=" " ind2=" ">
+    <subfield code="7">ba0yba0y</subfield>
+    <subfield code="a">Rockfeller</subfield>
+    </datafield>
+    <datafield tag="801" ind1=" " ind2="3">
+    <subfield code="a">FR</subfield>
+    <subfield code="b">Abes</subfield>
+    <subfield code="c">20200121</subfield>
+    <subfield code="g">AFNOR</subfield>
+    </datafield>
+    <datafield tag="810" ind1=" " ind2=" ">
+    <subfield code="a">
+    The Rockefeller family home: KyKuit.- New York, Abbeville Press, 1998
+    </subfield>
+    </datafield>
+    <datafield tag="920" ind1=" " ind2=" ">
+    <subfield code="a">Rockefeller (famille)</subfield>
+    </datafield>
+    <datafield tag="921" ind1=" " ind2=" ">
+    <subfield code="a">Rockfeller</subfield>
+    </datafield>
+    </record>

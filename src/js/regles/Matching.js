@@ -18,11 +18,12 @@ var Matching = function () {
             addError = addError || regle.match === "all" && !matchAll(field, regle.value);
             addError = addError || regle.match === "one" && !matchOne(field, regle.value);
             if (text != undefined) {
-                const match = text.toString().match(regex);
+                const textWithoutLineBreak = text.toString().replace(/\n/g, '');
+                const match = textWithoutLineBreak.match(regex);
                 // if (regle.number == "700") {
                 //     console.log(text, regex, match, match && text === match[0]);
                 // }
-                addError = addError || !(match && text === match[0]);
+                addError = addError || !(match && textWithoutLineBreak === match[0]);
             }
         }
         return addError;
@@ -103,7 +104,7 @@ var Matching = function () {
             numberError.push(regle.number[item])
             let matchvalid = true
             if (field != null && field.subfield instanceof Array) {
-                for (i in field.subfield) {
+                for (let i in field.subfield) {
                     if (field.subfield[i]._attributes.code === regle.code) {
                         if (regle.match === "all") {
                             matchvalid = matchAll(field.subfield[i]._text, value)

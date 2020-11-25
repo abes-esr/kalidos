@@ -19,7 +19,13 @@ const mapStateToProps = (state) => ({
 
 const renderTooltip = (props) => (
     <Tooltip id="button-tooltip" {...props}>
-        Génération d'un fichier excel
+        Générer excel avec descriptif complet
+    </Tooltip>
+);
+
+const renderTooltip2 = (props) => (
+    <Tooltip id="button-tooltip" {...props}>
+        Générer excel à double entrée
     </Tooltip>
 );
 
@@ -31,6 +37,7 @@ function InterfaceVerif({ result, recherchePPN, compteurResult, listPPNErronne }
 
     const listPPNWithGoodName = listPPNWithError.filter((row) => { return row[1].PPN.toString().includes(recherchePPN) });
 
+    //old excel
     const headers = [
         { label: "PPN", key: "ppn" },
         { label: "Erreurs", key: "error" },
@@ -68,24 +75,82 @@ function InterfaceVerif({ result, recherchePPN, compteurResult, listPPNErronne }
         csvData.push({ ppn: listPPNWithoutError[i][1]['PPN'], error: "0", message: "", number: "", code: "" })
     }
 
+    // new excel
+
+    //on crée une liste des erreurs présentes dans les ppn
+    const errorHeaders = [""];
+
+    for (let i = 0; i < listPPNWithError.length; i++) {
+        let error_number = listPPNWithError[i][1]['errors'].length;
+        for (let j = 0; j < error_number; j++) {
+            errorHeaders.push(
+                listPPNWithError[i][1]['errors'][j]['number'] + " " + listPPNWithError[i][1]['errors'][j]['code']
+            )
+        }
+    }
+    //on élimine les erreurs redondantes
+    const sortedHeaders = errorHeaders.reduce(function(a,b){ if (a.indexOf(b) < 0)a.push(b); return a; }, []);
+
+    //la liste des erreurs va constituer le header du excel
+    const newCsvData = [];
+    newCsvData.push(sortedHeaders);
+
+    for (let i = 0; i < listPPNWithError.length; i++) {
+        let error_number = listPPNWithError[i][1]['errors'].length;
+
+        for (let j = 0; j < error_number; j++) {
+            let ppnError = listPPNWithError[i][1]['errors'][j]['number'] + " " + listPPNWithError[i][1]['errors'][j]['code'];
+
+            // on regarde à quel index du header l'erreur du ppn correspond
+            let indexError = sortedHeaders.indexOf(ppnError);
+
+            if (indexError > 0) {
+                if (j == 0) {
+                    let excelRow = [listPPNWithError[i][1]['PPN']];
+                    for (let k = 1; k < sortedHeaders.length; k++) {
+                        excelRow.push("");
+                    }
+                    // on se sert de cette index pour cocher la bonne case
+                    excelRow[indexError] = "X";
+                    newCsvData.push(excelRow);
+                } else {
+                    //éviter redondance des ppn
+                    let excelRow = newCsvData.pop();
+                    excelRow[indexError] = "X";
+                    newCsvData.push(excelRow);
+                }
+            }
+        }
+    }
+
+    for (let i = 0; i < listPPNWithoutError.length; i++) {
+        newCsvData.push([ listPPNWithoutError[i][1]['PPN'], "" ]);
+    }
+
     return (
         <div>
             <h2>
                 Interface de Verification
 
-                <OverlayTrigger
-                    placement="top"
-                    delay={{ show: 250, hide: 400 }}
-                    overlay={renderTooltip}
-                >
+                <OverlayTrigger placement="top" delay={{ show: 250, hide: 400 }} overlay={renderTooltip}>
 
-                    <CSVLink data={csvData} headers={headers} style={{ float: "right" }}>
+                    <CSVLink data={csvData} filename={"recap_erreurs_completBU.csv"} separator={";"} headers={headers} style={{ float: "right" }}>
                         <Button variant="success">
                             <MDBIcon far icon="file-excel" />
                         </Button>
                     </CSVLink>
                 </OverlayTrigger>
             </h2>
+            <div>
+                <OverlayTrigger placement="top" delay={{ show: 250, hide: 400 }} overlay={renderTooltip2}>
+
+                    <CSVLink data={newCsvData} filename={"recap_erreursBU.csv"} separator={";"} style={{ float: "right" }}>
+                        <Button variant="success">
+                            <MDBIcon far icon="file-excel" />
+                        </Button>
+                    </CSVLink>
+                </OverlayTrigger>
+            </div>
             <br></br>
             <Row>
                 {
@@ -93,7 +158,6 @@ function InterfaceVerif({ result, recherchePPN, compteurResult, listPPNErronne }
                         <Card12 title={'Liste de PPN inexistants'} content={<div>{listPPNErronne.join(" / ")}</div>} /> :
                         <div></div>
                 }
-
             </Row>
             <Row>
                 <Card4 title={'Erreurs par PPN'} content={<TabPPN listPPN={listPPNWithGoodName} />} />
@@ -104,4 +168,3 @@ function InterfaceVerif({ result, recherchePPN, compteurResult, listPPNErronne }
 }
 
 export default connect(mapStateToProps)(InterfaceVerif);
-

@@ -16,6 +16,20 @@ var Parcours = function () {
         return retour;
     }
 
+
+    const findDataFields = function (datafields, number) {
+        let retour = []
+        let count = 0;
+        datafields.forEach(function (field) {
+            if (field._attributes.tag == number) {
+                field.num = count
+                retour.push(field)
+                count ++
+            }
+        });
+        return retour;
+    }
+
     /**
      * retourne la valeur d'un champ d'une notice
      * @param {*} field 
@@ -32,6 +46,26 @@ var Parcours = function () {
             if (field.subfield._attributes.code === code) {
                 return field.subfield._text
 
+            }
+        } 
+        return null
+    }
+
+
+    const getIdentifiantValue = function(field,codeCondition,codeIdentifiant) {
+        let retour = null;
+        if (field != null && field.subfield instanceof Array) {
+            for (let i in field.subfield) {
+                if(field.subfield[i]._attributes.code === codeIdentifiant) {
+                    retour =  field.subfield[i]._text
+                }
+                if(field.subfield[i]._attributes.code === codeCondition && retour != null) { 
+                    return retour
+                }
+            }
+        }else if (field != null) {
+            if (field.subfield._attributes.code === codeIdentifiant) {
+                return field.subfield._text
             }
         } 
         return null
@@ -87,7 +121,9 @@ var Parcours = function () {
         getSubfieldValue:getSubfieldValue,
         getCategories : getCategories,
         getTypes : getTypes,
-        testCode : testCode
+        testCode : testCode,
+        getIdentifiantValue : getIdentifiantValue,
+        findDataFields : findDataFields
     }
 }();
 

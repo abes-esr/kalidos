@@ -1,63 +1,37 @@
-import React from 'react'
-import { Button, Modal } from 'react-bootstrap'
+import React, { useState } from 'react'
+import { Modal } from 'react-bootstrap'
+import IconButton from '@material-ui/core/IconButton'
 
-class BootstrapModal extends React.Component {
+function BootstrapModal({button, title, body }) {
 
-  constructor() {
-    super()
-    this.state = {
-      showHide: false
-    }
+  const [showHide, setShowHide] = useState(false);
+
+  const handleModalShowHide = () => {
+    setShowHide(!showHide)
   }
 
 
-  handleModalShowHide() {
-    this.setState({ showHide: !this.state.showHide })
+  const whenClosing = () => {
+    handleModalShowHide()
   }
 
+  return (
+    <div >
+      <IconButton color="primary" onClick={() => handleModalShowHide()}>
+        {button}
+      </IconButton>
 
-  whenClosing() {
-    // this.props.closing()
-    this.handleModalShowHide()
-  }
+      <Modal show={showHide}>
 
-  whenAccepting() {
-    this.props.accepting()
-    this.handleModalShowHide()
-  }
+        <Modal.Header closeButton onClick={() => whenClosing()}>
+          <Modal.Title>{title}</Modal.Title>
+        </Modal.Header>
 
+        <Modal.Body>{body}</Modal.Body>
 
-  render() {
-
-    return (
-      <div>
-        <Button variant={this.props.buttonColor} size={this.props.buttonSize} onClick={() => this.handleModalShowHide()}>
-          {this.props.button}
-        </Button>
-
-        <Modal show={this.state.showHide}>
-
-          <Modal.Header closeButton onClick={() => this.whenClosing()}>
-            <Modal.Title>{this.props.title}</Modal.Title>
-          </Modal.Header>
-
-          <Modal.Body>{this.props.body}</Modal.Body>
-
-          <Modal.Footer>
-            <Button variant="secondary" onClick={() => this.whenClosing()}>
-              {this.props.close}
-            </Button>
-
-            <Button variant="primary" onClick={() => this.whenAccepting()}>
-              {this.props.accept}
-            </Button>
-
-          </Modal.Footer>
-
-        </Modal>
-      </div>
-    )
-  }
+      </Modal>
+    </div>
+  )
 }
 
 

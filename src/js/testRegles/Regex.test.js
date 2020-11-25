@@ -184,7 +184,7 @@ test('200$c ne doit pas contenir le caractère / ou : ou . FAIL', () => {
 
 // ===============================================================
 
-test('200$d doit commencer par espace =', () => {
+test('200$d doit commencer par = espace', () => {
     const number = 200;
     const code = "d";
     const nameFile = number + '_' + code;
@@ -202,7 +202,7 @@ test('200$d doit commencer par espace =', () => {
     expect(resultJson.errors).toStrictEqual([]);
 });
 
-test('200$d doit commencer par espace = FAIL', () => {
+test('200$d doit commencer par = espace FAIL', () => {
     const number = 200;
     const code = "d";
     const nameFile = number + '_' + code;
