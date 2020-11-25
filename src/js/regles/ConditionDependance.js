@@ -8,7 +8,6 @@ var ConditionStructurel = function() {
     var testConditionDependanceRules = function(rules, controlfields, datafields, resultJson) {
         rules.Generale.ConditionDependance.forEach(function(regle) {
 
-                    console.log(regle);
                     var checkedConds = true;
                     regle.condition.forEach(function(condition) {
                         if (!Condition.checkCondition(controlfields, datafields, condition)) {

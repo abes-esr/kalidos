@@ -685,32 +685,1904 @@
               "message": "100$a Pos. 9-12 = 214$d"
           }
       ],
-      "Conditionnels": [
+      "ConditionMatching" : [
           {
-              "index": 3,
-              "number": "",
-              "operator": "and",
-              "parameter1": "Aax",
-              "parameter2": "461",
-              "or": [
-                  "305",
-                  "225"
+              "condition" :  [
+                  {
+                      "operator": "not_contains_text",
+                      "number" : "105",
+                      "code" : "a",
+                      "pos" : [0 , 3],
+                      "string": ["y"]
+                  }
               ],
-              "and": [],
-              "message": "Si Aax et 461 il doit y avoir une 305 ou 225"
+              "number": 215,
+              "code": "c",
+              "message": "Si  105 $a Pos. 0-3 différent de la valeur \"y\" alors 215$c ne doit pas être vide",
+              "regex": "^.+",
+              "index": 1000
           },
           {
-              "index": 4,
-              "number": "101",
-              "operator": "equals",
-              "parameter1": "ind1",
-              "parameter2": "1",
-              "or": [],
-              "and": [
-                  "a",
-                  "c"
+              "condition" :  [
+                  {
+                      "operator": "contains_text",
+                      "number" : "105",
+                      "code" : "a",
+                      "pos" : [8 , 9],
+                      "string": ["1"]
+                  }
               ],
+              "number": 608,
+              "code": "3",
+              "message": "Si 105 $a Pos. 8 = 1 alors il faut aussi une 608 $302886431XActes de congrès",
+              "regex": "^02886431X$",
+              "index": 1001
+          },
+          {
+              "condition" :  [
+                  {
+                      "operator": "contains_text",
+                      "number" : "105",
+                      "code" : "a",
+                      "pos" : [8 , 9],
+                      "string": ["1"]
+                  }
+              ],
+              "number": 608,
+              "code": "a",
+              "message": "Si 105 $a Pos. 8 = 1 alors il faut aussi une 608 $302886431XActes de congrès",
+              "regex": "^Actes de congrès$",
+              "index": 1001
+          },
+          {
+              "condition" :  [
+                  {
+                      "operator": "contains_text",
+                      "number" : "105",
+                      "code" : "a",
+                      "pos" : [8 , 9],
+                      "string": ["0"]
+                  }
+              ],
+              "number": 608,
+              "code": "3",
+              "message": "Si 105 $a Pos. 8 = 0 alors il ne doit pas y avoir 608 $302886431X ou $aActes de congrès",
+              "regex": "^(?!02886431X$).*$",
+              "index": 1002
+          },
+          {
+              "condition" :  [
+                  {
+                      "operator": "contains_text",
+                      "number" : "105",
+                      "code" : "a",
+                      "pos" : [8 , 9],
+                      "string": ["0"]
+                  }
+              ],
+              "number": 608,
+              "code": "a",
+              "message": "Si 105 $a Pos. 8 = 0 alors il ne doit pas y avoir 608 $302886431X ou $aActes de congrès",
+              "regex": "^(?!Actes de congrès$).*$",
+              "index": 1002
+          },
+          {
+              "condition" :  [
+                  {
+                      "operator": "contains_text",
+                      "number" : "105",
+                      "code" : "a",
+                      "pos" : [10 , 11],
+                      "string": ["1"]
+                  }
+              ],
+              "number": 320,
+              "code": "a",
+              "message": "Si 105 $a Pos. 10 =1 alors il faut une 320 avec la mention \"Index\"",
+              "regex": "^.*(Index).*",
+              "index": 1003
+          },
+          {
+              "condition" :  [
+                  {
+                      "operator": "contains_text",
+                      "number" : "105",
+                      "code" : "a",
+                      "pos" : [10 , 11],
+                      "string": ["0"]
+                  }
+              ],
+              "number": 320,
+              "code": "a",
+              "message": "Si 105 $a Pos. 10 =0 alors il ne doit pas y avoir une 320 avec la mention \"Index\"",
+              "regex": "^((?!Index).)*$",
+              "index": 1004
+          },
+          {
+              "condition" :  [
+                  {
+                      "operator": "contains_text",
+                      "number" : "105",
+                      "code" : "a",
+                      "pos" : [4 , 7],
+                      "string": ["m", "7"]
+                  }
+              ],
+              "number": 608,
+              "code": "3",
+              "message": "Si 105 $a Pos. 4-7= m ou 7 il faut une 608 $3027253139 et $a Thèses et écrits académiques",
+              "regex": "^027253139$",
+              "index": 1005
+          },
+          {
+              "condition" :  [
+                  {
+                      "operator": "contains_text",
+                      "number" : "105",
+                      "code" : "a",
+                      "pos" : [4 , 7],
+                      "string": ["m", "7"]
+                  }
+              ],
+              "number": 608,
+              "code": "a",
+              "message": "Si 105 $a Pos. 4-7= m ou 7 il faut une 608 $3027253139 et $a Thèses et écrits académiques",
+              "regex": "^Thèses et écrits académiques$",
+              "index": 1005
+          },
+          {
+              "condition" :  [
+                  {
+                      "operator": "presente",
+                      "number" : "214",
+                      "code" : "d",
+                      "ind1" : "",
+                      "ind2" : "4"
+                  }
+              ],
+              "number": 214,
+              "code": "d",
+              "message": "Si 214 #4$d, la zone doit commencer par \"C espace\"",
+              "regex": "^(C ).*",
+              "index": 1006
+          },
+          {
+              "condition" :  [
+
+                  {
+                      "operator": "presente",
+                      "number" : "214",
+                      "code" : "d",
+                      "ind1" : "",
+                      "ind2" : "0"
+                  }
+              ],
+              "number": 214,
+              "code": "d",
+              "message": "Si 214 #0 et $d, doit commencer par \"DL espace\" ou \"[\" ou un chiffre",
+              "regex": "^(C |DL |\\[|[0-9]).*",
+              "index": 1007
+          },
+          {
+              "condition" :  [
+                  {
+                      "operator": "presente",
+                      "number" : "214",
+                      "code" : "",
+                      "ind1" : "",
+                      "ind2" : "2"
+                  }
+              ],
+              "number": 214,
+              "code": "a",
+              "message": "Si 214 ind2=2, alors $aLyon",
+              "regex": "^Lyon$",
+              "index": 1008
+          },
+          {
+              "condition" :  [
+                  {
+                      "operator": "presente",
+                      "number" : "214",
+                      "code" : "",
+                      "ind1" : "",
+                      "ind2" : "2"
+                  }
+              ],
+              "number": 214,
+              "code": "c",
+              "message": "Si 214 ind2=2, alors $cBibliothèque Lyon 1",
+              "regex": "^Bibliothèque Lyon 1$",
+              "index": 1009
+          },
+          {
+              "condition" :  [
+                  {
+                      "operator": "startwith_text",
+                      "number" : "305",
+                      "code" : "a",
+                      "string": ["Document numérisé dans le cadre du projet de numérisation"]
+
+                  }
+              ],
+              "number": 214,
+              "code": "a",
+              "message": "Si 305$a commence par \"Document numérisé dans le cadre du projet de numérisation\", 214 $aLyon et $cBibliothèque Lyon 1",
+              "regex": "^Lyon$",
+              "index": 1010
+          },
+          {
+              "condition" :  [
+                  {
+                      "operator": "startwith_text",
+                      "number" : "305",
+                      "code" : "a",
+                      "string": ["Document numérisé dans le cadre du projet de numérisation"]
+
+                  }
+              ],
+              "number": 214,
+              "code": "a",
+              "message": "Si 305$a commence par \"Document numérisé dans le cadre du projet de numérisation\", 214 $aLyon et $cBibliothèque Lyon 1",
+              "regex": "^Bibliothèque Lyon 1$",
+              "index": 1010
+          },
+          {
+              "condition" :  [
+                  {
+                      "operator": "equals_text",
+                      "number" : "328",
+                      "code" : "z",
+                      "string": ["Reproduction de"]
+
+                  }
+              ],
+              "number": 701,
+              "code": "4",
+              "message": "Si 328$zReproduction de, alors il faut une 701$4727",
+              "regex": "^727$",
+              "index": 1011
+          },
+          {
+              "condition" :  [
+                  {
+                      "operator": "not_equals_text",
+                      "number" : "328",
+                      "code" : "z",
+                      "string": ["Reproduction de"]
+
+                  }
+              ],
+              "number": 701,
+              "code": "4",
+              "message": "Si 328$z n'est pas \"Reproduction de\", alors 701$4727 ne doit pas être présente",
+              "regex": "^(?:(?!727).)*",
+              "index": 1012
+          },
+          {
+              "condition" :  [
+                  {
+                      "operator": "equals_text",
+                      "number" : "328",
+                      "code" : "z",
+                      "string": ["Reproduction de"]
+
+                  }
+              ],
+              "number": 711,
+              "code": "4",
+              "message": "Si 328$zReproduction de, alors il faut une 711$4295",
+              "regex": "^295$",
+              "index": 1013
+          },
+          {
+              "condition" :  [
+                  {
+                      "operator": "not_equals_text",
+                      "number" : "328",
+                      "code" : "z",
+                      "string": ["Reproduction de"]
+
+                  }
+              ],
+              "number": 711,
+              "code": "4",
+              "message": "Si 328$z n'est pas \"Reproduction de\", alors 711$4295 ne doit pas être présente",
+              "regex": "^(?:(?!295).)*",
+              "index": 1014
+          },
+          {
+              "condition" :  [
+                  {
+                      "operator": "equals_text",
+                      "number" : "328",
+                      "code" : "z",
+                      "string": ["Reproduction de"]
+
+                  }
+              ],
+              "number": 608,
+              "code": "3",
+              "message": "Si 328$zReproduction de, alors il faut une 608 $3027253139 $aThèses et écrits académiques",
+              "regex": "^027253139$",
+              "index": 1015
+          },
+          {
+              "condition" :  [
+                  {
+                      "operator": "equals_text",
+                      "number" : "328",
+                      "code" : "z",
+                      "string": ["Reproduction de"]
+
+                  }
+              ],
+              "number": 608,
+              "code": "a",
+              "message": "Si 328$zReproduction de, alors il faut une 608 $3027253139 $aThèses et écrits académiques",
+              "regex": "^Thèses et écrits académiques$",
+              "index": 1015
+          },
+          {
+              "condition" :  [
+                  {
+                      "operator": "startwith_text",
+                      "number" : "008",
+                      "code" : "",
+                      "string": ["Oa"]
+
+                  },
+                  {
+                      "operator": "presente",
+                      "number" : "451",
+                      "code" : ""
+                  }
+              ],
+              "reciproque": {
+                  "number" : 451,
+                  "code": "0"
+              },
+              "number": "008",
+              "code": "",
+              "message": "Si 008 commence par Oa et 451 présente, alors vérifier que notice 451$0 contient une 008 qui commence par Oa",
+              "regex": "^(0A).*",
+              "index": 1016
+          },
+          {
+              "condition" :  [
+                  {
+                      "operator": "startwith_text",
+                      "number" : "008",
+                      "code" : "",
+                      "string": ["Aa"]
+
+                  },
+                  {
+                      "operator": "presente",
+                      "number" : "451",
+                      "code" : ""
+                  }
+              ],
+              "reciproque": {
+                  "number" : 451,
+                  "code": "0"
+              },
+              "number": "008",
+              "code": "",
+              "message": "Si 008 commence par Aa et 451 présente, alors vérifier que notice 451$0 contient une 008 qui commence par Aa",
+              "regex": "^(Aa).*",
+              "index": 1017
+          },
+          {
+              "condition" :  [
+                  {
+                      "operator": "startwith_text",
+                      "number" : "008",
+                      "code" : "",
+                      "string": ["Oa"]
+
+                  },
+                  {
+                      "operator": "presente",
+                      "number" : "452",
+                      "code" : ""
+                  }
+              ],
+              "reciproque": {
+                  "number" : 452,
+                  "code": "0"
+              },
+              "number": "008",
+              "code": "",
+              "message": "Si 008 commence par Oa et 452 présente, alors vérifier que notice 452$0 contient une 008 qui commence par Aa",
+              "regex": "^(Aa).*",
+              "index": 1018
+          },
+          {
+              "condition" :  [
+                  {
+                      "operator": "startwith_text",
+                      "number" : "008",
+                      "code" : "",
+                      "string": ["Aa"]
+
+                  },
+                  {
+                      "operator": "presente",
+                      "number" : "452",
+                      "code" : ""
+                  }
+              ],
+              "reciproque": {
+                  "number" : 452,
+                  "code": "0"
+              },
+              "number": "008",
+              "code": "",
+              "message": "Si 008 commence par Aa et 452 présente, alors vérifier que notice 452$0 contient une 008 qui commence par Oa",
+              "regex": "^(0A).*",
+              "index": 1019
+          },
+          {
+              "condition" :  [
+                  {
+                      "operator": "presente",
+                      "number" : "455",
+                      "code" : ""
+                  }
+              ],
+              "reciproque": {
+                  "number" : 455,
+                  "code": "0"
+              },
+              "number": "105",
+              "code": "a",
+              "message": "Si 455, alors vérifier que la notice en 455$0 contient 105$a Pos. 4-7= m",
+              "regex": "^(.{4}m|.{5}m|.{6}m).*$",
+              "index": 1020
+          },
+          {
+              "condition" :  [
+                  {
+                      "operator": "presente",
+                      "number" : "856",
+                      "code" : "5"
+                  },
+                  {
+                      "operator": "equals_text",
+                      "number" : "856",
+                      "code" : "5",
+                      "string": ["692669902"]
+
+                  }
+              ],
+              "number": "856",
+              "code": "z",
+              "message": "856$zAccès au texte intégral sauf si 856$5=692669902, alors $zAccès réservé aux membres de Lyon 1 après authentification",
+              "regex": "^Accès réservé aux membres de Lyon 1 après authentification$",
+              "index": 1021
+          },
+          {
+              "condition" :  [
+                  {
+                      "operator": "presente",
+                      "number" : "856",
+                      "code" : "5"
+                  },
+                  {
+                      "operator": "not_equals_text",
+                      "number" : "856",
+                      "code" : "5",
+                      "string": ["692669902"]
+
+                  }
+              ],
+              "number": "856",
+              "code": "z",
+              "message": "856$zAccès au texte intégral sauf si 856$5=692669902, alors $zAccès réservé aux membres de Lyon 1 après authentification",
+              "regex": "^Accès au texte intégral$",
+              "index": 1021
+          },
+          {
+              "condition" :  [
+                  {
+                      "operator": "presente",
+                      "number" : "856",
+                      "code" : "5"
+                  },
+                  {
+                      "operator": "equals_text",
+                      "number" : "856",
+                      "code" : "5",
+                      "string": ["692669902"]
+
+                  }
+              ],
+              "number": "310",
+              "ind1" : "",
+              "ind2" : "",
+              "code": "a",
+              "message": "Si 856$5=692669902, alors doit être présente 310 ##$aL'accès à cette ressource est réservé aux membres de Lyon 1 après authentification",
+              "regex": "^L'accès à cette ressource est réservé aux membres de Lyon 1 après authentification$",
+              "index": 1022
+          },
+          {
+              "condition" :  [
+                  {
+                      "operator": "presente",
+                      "number" : "456",
+                      "code" : ""
+                  }
+              ],
+              "reciproque": {
+                  "number" : 456,
+                  "code": "0"
+              },
+              "number": "105",
+              "code": "a",
+              "message": "Si 456, alors vérifier que la notice en 456$0 contient 105$a Pos. 4-7= v",
+              "regex": "^(.{4}v|.{5}v|.{6}v).*$",
+              "index": 1023
+          },
+          {
+              "condition" :  [
+                  {
+                      "operator": "not_equals_text",
+                      "number" : "328",
+                      "code" : "z",
+                      "string": ["Reproduction de"]
+
+                  }
+              ],
+              "number": 608,
+              "code": "3",
+              "message": "Si 328$z n'est pas \"Reproduction de\", alors 608 $3027253139Thèses et écrits académiques ne doit pas être présente",
+              "regex": "^(?:(?!027253139).)*",
+              "index": 1024
+          },
+          {
+              "condition" :  [
+                  {
+                      "operator": "not_equals_text",
+                      "number" : "328",
+                      "code" : "z",
+                      "string": ["Reproduction de"]
+
+                  }
+              ],
+              "number": 608,
+              "code": "a",
+              "message": "Si 328$z n'est pas \"Reproduction de\", alors 608 $3027253139Thèses et écrits académiques ne doit pas être présente",
+              "regex": "^(?:(?!Thèses et écrits académiques).)*",
+              "index": 1024
+          }
+      ],
+      "ConditionStructurel": [
+          {
+              "condition" :  [
+                  {
+                      "operator": "presente",
+                      "number" : "101",
+                      "code" : "",
+                      "ind1" : "1",
+                      "ind2" : ""
+                  }
+              ],
+
+              "value": [
+                  {
+                      "number" : "101",
+                      "code" : "a",
+                      "present" : true
+                  },
+                  {
+                      "number" : "101",
+                      "code" : "c",
+                      "present" : true
+                  }
+              ],
+              "type": "allRequired",
+
+              "index": 1025,
+              "number": "101",
               "message": "Si 101 ind1=1 il faut au moins un $a et $c"
+          },
+
+          {
+              "condition" :  [
+                  {
+                      "operator": "presente",
+                      "number" : "101",
+                      "code" : "",
+                      "ind1" : "0",
+                      "ind2" : ""
+                  }
+              ],
+              "value": [
+                  {
+                      "number" : "101",
+                      "code" : "c",
+                      "present" : false
+                  }
+              ],
+              "type": "allRequired",
+              "index": 1026,
+              "number": "101",
+              "message": "Si 101 ind1=0 il ne faut pas $c"
+          },
+          {
+              "condition" : [
+                  {
+                      "operator": "presente",
+                      "number" : "101",
+                      "code" : "",
+                      "ind1" : "2",
+                      "ind2" : ""
+                  }
+              ],
+              "value": [
+                  {
+                      "number" : "101",
+                      "code" : "a",
+                      "present" : true
+                  },
+                  {
+                      "number" : "101",
+                      "code" : "b",
+                      "present" : true
+                  },
+                  {
+                      "number" : "101",
+                      "code" : "c",
+                      "present" : true
+                  }
+              ],
+              "type": "allRequired",
+              "index": 1027,
+              "number": "101",
+              "message": "Si 101 ind1=2 il faut au moins une $a, $b et $c"
+          },
+          {
+              "condition" :[
+                  {
+                      "operator": "presente",
+                      "number" : "101",
+                      "code" : "",
+                      "ind1" : "1",
+                      "ind2" : ""
+                  }
+              ],
+              "value": [
+                  {
+                      "number" : "454",
+                      "code" : "",
+                      "present" : true
+                  }
+              ],
+              "type": "allRequired",
+              "index": 1028,
+              "number": "101",
+              "message": "Si 101 ind1=1 il faut une 454"
+          },
+          {
+              "condition" : [
+                  {
+                      "operator": "presente",
+                      "number" : "101",
+                      "code" : "",
+                      "ind1" : "2",
+                      "ind2" : ""
+                  }
+              ],
+              "value": [
+                  {
+                      "number" : "454",
+                      "code" : "",
+                      "present" : true
+                  }
+              ],
+              "type": "allRequired",
+              "index": 1029,
+              "number": "101",
+              "message": "Si 101 ind1=2 il faut une 454"
+          },
+          {
+              "condition" : [
+                  {
+                      "operator": "presente",
+                      "number" : "225",
+                      "code" : "a",
+                      "ind1" : "0",
+                      "ind2" : ""
+                  }
+              ],
+              "value": [
+                  {
+                      "number" : "410",
+                      "code" : "0",
+                      "present" : true
+                  }
+              ],
+              "type": "allRequired",
+              "index": 1030,
+              "number": "225",
+              "message": "Si 225 ind1=0 $a alors 410$0 doit être présent"
+          },
+          {
+              "condition" : [
+                  {
+                      "operator": "presente",
+                      "number" : "105",
+                      "code" : "a"
+                  },
+                  {
+                      "operator": "contains_text",
+                      "number" : "105",
+                      "code" : "a",
+                      "pos" : [0 , 3],
+                      "string": ["y"]
+
+                  }
+              ],
+              "value": [
+                  {
+                      "number" : "215",
+                      "code" : "c",
+                      "present" : false
+                  }
+              ],
+              "type": "allRequired",
+              "index": 1031,
+              "number": "105",
+              "message": "Si  105 $a Pos. 0-3 = 'y' alors 215$c ne doit pas être présent"
+          },
+          {
+              "condition" :[
+                  {
+                      "operator": "presente",
+                      "number" : "105",
+                      "code" : "a"
+                  },
+                  {
+                      "operator": "contains_text",
+                      "number" : "105",
+                      "code" : "a",
+                      "pos" : [4 , 7],
+                      "string": ["a"]
+
+                  }
+              ],
+              "value": [
+                  {
+                      "number" : "320",
+                      "code" : "",
+                      "present" : true
+                  }
+              ],
+              "type": "allRequired",
+              "index": 1032,
+              "number": "105",
+              "message": "Si 105 $a Pos. 4-7 =a alors il faut une 320"
+          },
+          {
+              "condition" : [
+                  {
+                      "operator": "presente",
+                      "number" : "105",
+                      "code" : "a"
+                  },
+                  {
+                      "operator": "contains_text",
+                      "number" : "105",
+                      "code" : "a",
+                      "pos" : [4 , 7],
+                      "string": ["t", "m", "l", "q", "j", "f", "e", "b" , "7"]
+
+                  }
+              ],
+              "value": [
+                  {
+                      "number" : "608",
+                      "code" : "",
+                      "present" : true
+                  }
+              ],
+              "type": "allRequired",
+              "index": 1033,
+              "number": "105",
+              "message": "Si 105 $a Pos. 4-7= t, m, l, q, j, f, e, b ou 7 il faut la présence d'une 608"
+          },
+          {
+              "condition" : [
+                  {
+                      "operator": "startwith_text",
+                      "number" : "008",
+                      "code" : "",
+                      "string": ["Aa"]
+
+                  }
+              ],
+              "value": [
+                  {
+                      "number" : "106",
+                      "code" : "",
+                      "present" : true
+                  }
+              ],
+              "type": "allRequired",
+              "index": 1034,
+              "number": "008",
+              "message": "Si 008 commence par Aa, présence obligatoire d'une zone 106"
+          },
+          {
+              "condition" : [
+                  {
+                      "operator": "startwith_text",
+                      "number" : "008",
+                      "code" : "",
+                      "string": ["Aa"]
+
+                  }
+              ],
+              "value": [
+                  {
+                      "number" : "215",
+                      "code" : "a",
+                      "present" : true
+                  },
+                  {
+                      "number" : "215",
+                      "code" : "d",
+                      "present" : true
+                  }
+              ],
+              "type": "allRequired",
+              "index": 1035,
+              "number": "008",
+              "message": "Si 008 commence par Aa, 215 $a et $d obligatoires"
+          },
+          {
+              "condition" : [
+                  {
+                      "operator": "presente",
+                      "number" : "225",
+                      "code" : "",
+                      "ind1" : "0",
+                      "ind2" : ""
+                  }
+              ],
+              "value": [
+                  {
+                      "number" : "410",
+                      "code" : "",
+                      "present" : true
+                  }
+              ],
+              "type": "allRequired",
+              "index": 1036,
+              "number": "225",
+              "message": "Si 225 ind1=0 il faut au moins une 410"
+          },
+          {
+              "condition" : [
+                  {
+                      "operator": "presente",
+                      "number" : "225",
+                      "code" : "a",
+                      "ind1" : "2",
+                      "ind2" : ""
+                  }
+              ],
+              "value": [
+                  {
+                      "number" : "410",
+                      "code" : "0",
+                      "present" : true
+                  }
+              ],
+              "type": "allRequired",
+              "index": 1037,
+              "number": "225",
+              "message": "Si 225 ind1=2 $a alors 410$0 doit être présent"
+          },
+          {
+              "condition" : [
+                  {
+                      "operator": "presente",
+                      "number" : "225",
+                      "code" : "a",
+                      "ind1" : "1",
+                      "ind2" : ""
+                  }
+              ],
+              "value": [
+                  {
+                      "number" : "461",
+                      "code" : "",
+                      "present" : true
+                  }
+              ],
+              "type": "allRequired",
+              "index": 1038,
+              "number": "225",
+              "message": "Si 225 ind1=1 $a alors 461 doit être présent"
+          },
+          {
+              "condition" : [
+                  {
+                      "operator": "presente",
+                      "number" : "225",
+                      "code" : "",
+                      "ind1" : "2",
+                      "ind2" : ""
+                  }
+              ],
+              "value": [
+                  {
+                      "number" : "410",
+                      "code" : "",
+                      "present" : true
+                  }
+              ],
+              "type": "allRequired",
+              "index": 1039,
+              "number": "225",
+              "message": "Si 225 ind1=2 il faut au moins une 410"
+          },
+          {
+              "condition" : [
+                  {
+                      "operator": "presente",
+                      "number" : "101",
+                      "code" : "d"
+                  }
+              ],
+              "value": [
+                  {
+                      "number" : "330",
+                      "code" : "",
+                      "present" : true
+                  }
+              ],
+              "type": "allRequired",
+              "index": 1040,
+              "number": "101",
+              "message": "Si 101$d, 330 doit être présente"
+          },
+          {
+              "condition" : [
+                  {
+                      "operator": "startwith_text",
+                      "number" : "008",
+                      "code" : "",
+                      "string": ["0a"]
+
+                  }
+              ],
+              "value": [
+                  {
+                      "number" : "304",
+                      "code" : "",
+                      "present" : true
+                  }
+              ],
+              "type": "allRequired",
+              "index": 1041,
+              "number": "008",
+              "message": "Si 008 commence par Oa,  304 doit être présente"
+          },
+          {
+              "condition" : [
+                  {
+                      "operator": "startwith_text",
+                      "number" : "008",
+                      "code" : "",
+                      "string": ["0a"]
+
+                  }
+              ],
+              "value": [
+                  {
+                      "number" : "307",
+                      "code" : "",
+                      "present" : true
+                  }
+              ],
+              "type": "allRequired",
+              "index": 1042,
+              "number": "008",
+              "message": "Si 008 commence par Oa, 307 doit être présente"
+          },
+          {
+              "condition" : [
+                  {
+                      "operator": "startwith_text",
+                      "number" : "008",
+                      "code" : "",
+                      "string": ["0a"]
+
+                  }
+              ],
+              "value": [
+                  {
+                      "number" : "337",
+                      "code" : "",
+                      "present" : true
+                  }
+              ],
+              "type": "allRequired",
+              "index": 1043,
+              "number": "008",
+              "message": "Si 008 commence par Oa, 337 doit être présente"
+          },
+          {
+              "condition" : [
+                  {
+                      "operator": "startwith_text",
+                      "number" : "008",
+                      "code" : "",
+                      "string": ["0a"]
+
+                  }
+              ],
+              "value": [
+                  {
+                      "number" : "230",
+                      "code" : "",
+                      "present" : true
+                  }
+              ],
+              "type": "allRequired",
+              "index": 1044,
+              "number": "008",
+              "message": "Si 008 commence par Oa, 230 doit être présente"
+          },
+          {
+              "condition" : [
+                  {
+                      "operator": "startwith_text",
+                      "number" : "325",
+                      "code" : "a",
+                      "string": ["Document numérisé dans le cadre d'un projet de numérisation du SCD de Lyon 1"]
+
+                  }
+              ],
+              "value": [
+                  {
+                      "number" : "456",
+                      "code" : "",
+                      "present" : true
+                  }
+              ],
+              "type": "allRequired",
+              "index": 1045,
+              "number": "325",
+              "message": "Si 325$a commence par \"Document numérisé dans le cadre d'un projet de numérisation du SCD de Lyon 1\", 456 doit être présente"
+          },
+          {
+              "condition" : [
+                  {
+                      "operator": "startwith_text",
+                      "number" : "305",
+                      "code" : "a",
+                      "string": ["Document numérisé dans le cadre du projet de numérisation"]
+
+                  }
+              ],
+              "value": [
+                  {
+                      "number" : "324",
+                      "code" : "",
+                      "present" : true
+                  }
+              ],
+              "type": "allRequired",
+              "index": 1046,
+              "number": "305",
+              "message": "Si 305$a commence par \"Document numérisé dans le cadre du projet de numérisation\", doit contenir une 324"
+          },
+          {
+              "condition" : [
+                  {
+                      "operator": "startwith_text",
+                      "number" : "305",
+                      "code" : "a",
+                      "string": ["Document numérisé dans le cadre du projet de numérisation"]
+
+                  }
+              ],
+              "value": [
+                  {
+                      "number" : "455",
+                      "code" : "",
+                      "present" : true
+                  }
+              ],
+              "type": "allRequired",
+              "index": 1047,
+              "number": "305",
+              "message": "Si 305$a commence par \"Document numérisé dans le cadre du projet de numérisation\", doit contenir une 455"
+          },
+          {
+              "condition" : [
+                  {
+                      "operator": "contains_text",
+                      "number" : "105",
+                      "code" : "a",
+                      "pos" : [4 , 7],
+                      "string": ["m"]
+
+                  }
+              ],
+              "value": [
+                  {
+                      "number" : "029",
+                      "code" : "",
+                      "present" : true
+                  }
+              ],
+              "type": "allRequired",
+              "index": 1048,
+              "number": "105",
+              "message": "Si 105 $a Pos. 4-7= \"m\", alors il faut une 029"
+          },
+          {
+              "condition" : [
+                  {
+                      "operator": "contains_text",
+                      "number" : "105",
+                      "code" : "a",
+                      "pos" : [4 , 7],
+                      "string": ["m" , "7"]
+
+                  }
+              ],
+              "value": [
+                  {
+                      "number" : "328",
+                      "code" : "",
+                      "present" : true
+                  }
+              ],
+              "type": "allRequired",
+              "index": 1049,
+              "number": "105",
+              "message": "Si 105 $a Pos. 4-7= \"m\" ou \"7\", alors il faut une 328"
+          },
+          {
+              "condition" : [
+                  {
+                      "operator": "contains_text",
+                      "number" : "105",
+                      "code" : "a",
+                      "pos" : [4 , 7],
+                      "string": ["v" , "7"]
+
+                  }
+              ],
+              "value": [
+                  {
+                      "number" : "017",
+                      "code" : "",
+                      "present" : true
+                  }
+              ],
+              "type": "allRequired",
+              "index": 1050,
+              "number": "105",
+              "message": "Si 105 $a Pos. 4-7= \"v\" ou \"7\", alors il faut une 017"
+          },
+          {
+              "condition" : [
+                  {
+                      "operator": "contains_text",
+                      "number" : "105",
+                      "code" : "a",
+                      "pos" : [4 , 7],
+                      "string": ["v"]
+
+                  }
+              ],
+              "value": [
+                  {
+                      "number" : "328",
+                      "code" : "z",
+                      "present" : true
+                  }
+              ],
+              "type": "allRequired",
+              "index": 1051,
+              "number": "105",
+              "message": "Si 105 $a Pos. 4-7= \"v\", alors il faut une 328$z"
+          },
+          {
+              "condition" : [
+                  {
+                      "operator": "startwith_text",
+                      "number" : "008",
+                      "code" : "",
+                      "string": ["Aa"]
+
+                  },
+                  {
+                      "operator": "presente",
+                      "number" : "461",
+                      "code" : ""
+                  }
+              ],
+              "value": [
+                  {
+                      "number" : "305",
+                      "code" : "",
+                      "present" : true
+                  },
+                  {
+                      "number" : "225",
+                      "code" : "",
+                      "present" : true
+                  }
+              ],
+              "type": "allRequired",
+              "index": 1052,
+              "number": "008",
+              "message": "Si 008 commence par Aa et présence d'une 461, alors il doit y avoir une 305 ou 225"
+          },
+          {
+              "condition" : [
+                  {
+                      "operator": "presente",
+                      "number" : "451",
+                      "code" : ""
+                  }
+              ],
+              "reciproque" : {
+                  "number": "451",
+                  "code": "0"
+              },
+              "value": [
+                  {
+                      "number" : "451",
+                      "code" : "0",
+                      "present" : true,
+                      "reciproque" : {
+                          "number": "451",
+                          "code": "0"
+                      }
+                  },
+                  {
+                      "number" : "328",
+                      "code" : "z",
+                      "present" : true
+                  }
+              ],
+              "type": "allRequired",
+              "index": 1053,
+              "number": "451",
+              "message": "Si 451, alors vérifier que la notice 451$0 contient une 451 réciproque et une 328$z"
+          },
+          {
+              "condition" : [
+                  {
+                      "operator": "presente",
+                      "number" : "452",
+                      "code" : ""
+                  }
+              ],
+              "reciproque" : {
+                  "number": "452",
+                  "code": "0"
+              },
+              "value": [
+                  {
+                      "number" : "452",
+                      "code" : "0",
+                      "present" : true,
+                      "reciproque" : {
+                          "number": "452",
+                          "code": "0"
+                      }
+                  },
+                  {
+                      "number" : "328",
+                      "code" : "z",
+                      "present" : true
+                  }
+              ],
+              "type": "allRequired",
+              "index": 1054,
+              "number": "452",
+              "message": "Si 452, alors vérifier que la notice 452$0 contient une 452 réciproque et une 328$z"
+          },
+          {
+              "condition" : [
+                  {
+                      "operator": "presente",
+                      "number" : "488",
+                      "code" : ""
+                  }
+              ],
+              "value": [
+                  {
+                      "number" : "488",
+                      "code" : "0",
+                      "present" : true,
+                      "reciproque" : {
+                          "number": "488",
+                          "code": "0"
+                      }
+                  }
+              ],
+              "type": "allRequired",
+              "index": 1055,
+              "number": "488",
+              "message": "Si 488, alors vérifier les liens réciproques de la notice en 488$0"
+          },
+          {
+              "condition" : [
+                  {
+                      "operator": "presente",
+                      "number" : "455",
+                      "code" : ""
+                  }
+              ],
+              "value": [
+                  {
+                      "number" : "455",
+                      "code" : "0",
+                      "present" : true,
+                      "reciproque" : {
+                          "number": "456",
+                          "code": "0"
+                      }
+                  }
+              ],
+              "type": "allRequired",
+              "index": 1056,
+              "number": "455",
+              "message": "Si 455, alors vérifier que la notice en 455$0 contient une 456 avec liens réciproques"
+          },
+          {
+              "condition" : [
+                  {
+                      "operator": "presente",
+                      "number" : "456",
+                      "code" : ""
+                  }
+              ],
+              "value": [
+                  {
+                      "number" : "456",
+                      "code" : "0",
+                      "present" : true,
+                      "reciproque" : {
+                          "number": "455",
+                          "code": "0"
+                      }
+                  }
+              ],
+              "type": "allRequired",
+              "index": 1057,
+              "number": "456",
+              "message": "Si 456, alors vérifier que la notice en 456$0 contient une 455 avec liens réciproques"
+          },
+          {
+              "condition" : [
+                  {
+                      "operator": "presente",
+                      "number" : "455",
+                      "code" : ""
+                  }
+              ],
+              "value": [
+                  {
+                      "number" : "455",
+                      "code" : "0",
+                      "present" : true,
+                      "reciproque" : {
+                          "number": "456",
+                          "code": "0"
+                      }
+                  }
+              ],
+              "type": "allRequired",
+              "index": 1058,
+              "number": "455",
+              "message": "Si 455, alors vérifier que la notice en 455$0 contient une 456 avec liens réciproques"
+          },
+          {
+              "condition" : [
+                  {
+                      "operator": "presente",
+                      "number" : "456",
+                      "code" : ""
+                  }
+              ],
+              "value": [
+                  {
+                      "number" : "456",
+                      "code" : "0",
+                      "present" : true,
+                      "reciproque" : {
+                          "number": "455",
+                          "code": "0"
+                      }
+                  }
+              ],
+              "type": "allRequired",
+              "index": 1059,
+              "number": "456",
+              "message": "Si 456, alors vérifier que la notice en 456$0 contient une 455 avec liens réciproques"
+          },
+          {
+              "condition" : [
+                  {
+                      "operator": "presente",
+                      "number" : "328",
+                      "code" : "z"
+                  },
+                  {
+                      "operator": "equals_text",
+                      "number" : "328",
+                      "code" : "z",
+                      "string": ["Reproduction de"]
+
+                  }
+              ],
+              "value": [
+                  {
+                      "number" : "029",
+                      "code" : "",
+                      "present" : true
+                  }
+              ],
+              "type": "allRequired",
+              "index": 1060,
+              "number": "328",
+              "message": "Si 328$zReproduction de, alors il faut une 029"
+          },
+          {
+              "condition" : [
+                  {
+                      "operator": "presente",
+                      "number" : "328",
+                      "code" : "z"
+                  },
+                  {
+                      "operator": "not_equals_text",
+                      "number" : "328",
+                      "code" : "z",
+                      "string": ["Reproduction de"]
+
+                  }
+              ],
+              "value": [
+                  {
+                      "number" : "029",
+                      "code" : "",
+                      "present" : false
+                  }
+              ],
+              "type": "allRequired",
+              "index": 1061,
+              "number": "328",
+              "message": "Si 328$z n'est pas \"Reproduction de\", alors 029 ne doit pas être présente"
+          },
+          {
+              "condition" : [
+                  {
+                      "operator": "presente",
+                      "number" : "328",
+                      "code" : "z"
+                  },
+                  {
+                      "operator": "equals_text",
+                      "number" : "328",
+                      "code" : "z",
+                      "string": ["Reproduction de"]
+
+                  }
+              ],
+              "value": [
+                  {
+                      "number" : "455",
+                      "code" : "",
+                      "present" : true
+                  }
+              ],
+              "type": "allRequired",
+              "index": 1062,
+              "number": "328",
+              "message": "Si 328$zReproduction de, alors il faut une 455"
+          },
+          {
+              "condition" : [
+                  {
+                      "operator": "presente",
+                      "number" : "328",
+                      "code" : "z"
+                  },
+                  {
+                      "operator": "equals_text",
+                      "number" : "328",
+                      "code" : "z",
+                      "string": ["Reproduction de"]
+
+                  }
+              ],
+              "value": [
+                  {
+                      "number" : "455",
+                      "code" : "",
+                      "present" : true
+                  }
+              ],
+              "type": "allRequired",
+              "index": 1063,
+              "number": "328",
+              "message": "Si 328$z\"Reproduction de\", 455 doit être présente"
+          },
+          {
+              "condition" : [
+                  {
+                      "operator": "presente",
+                      "number" : "328",
+                      "code" : "z"
+                  },
+                  {
+                      "operator": "equals_text",
+                      "number" : "328",
+                      "code" : "z",
+                      "string": ["Reproduction de"]
+
+                  }
+              ],
+              "value": [
+                  {
+                      "number" : "456",
+                      "code" : "",
+                      "present" : false
+                  }
+              ],
+              "type": "allRequired",
+              "index": 1064,
+              "number": "328",
+              "message": "Si 328$z\"Reproduction de\" , 456 ne doit pas être présente"
+          },
+          {
+              "condition" : [
+                  {
+                      "operator": "presente",
+                      "number" : "856",
+                      "code" : "5"
+                  },
+                  {
+                      "operator": "equals_text",
+                      "number" : "856",
+                      "code" : "5",
+                      "string": ["692669902"]
+
+                  }
+              ],
+              "value": [
+                  {
+                      "number" : "310",
+                      "code" : "",
+                      "present" : true
+                  }
+              ],
+              "type": "allRequired",
+              "index": 1065,
+              "number": "856",
+              "message": "Si 856$5=692669902, une 310 doit être présente"
+          },
+          {
+              "condition" : [
+                  {
+                      "operator": "startwith_text",
+                      "number" : "008",
+                      "code" : "",
+                      "string": ["Oa"]
+
+                  },
+                  {
+                      "operator": "not_presente",
+                      "number" : "215",
+                      "code" : ""
+                  }
+              ],
+              "value": [
+                  {
+                      "number" : "856",
+                      "code" : "",
+                      "present" : true
+                  }
+              ],
+              "type": "allRequired",
+              "index": 1066,
+              "number": "008",
+              "message": "Si 008 commence par Oa et ne contient pas une 215, une 856 doit être présente"
+          },
+          {
+              "condition" : [
+                  {
+                      "operator": "present",
+                      "number" : "455",
+                      "code" : ""
+                  }
+              ],
+              "reciproque": {
+                  "number": "455",
+                  "code": "0"
+              },
+              "value": [
+                  {
+                      "number" : "328",
+                      "code" : "z",
+                      "present" : false
+                  }
+              ],
+              "type": "allRequired",
+              "index": 1067,
+              "number": "455",
+              "message": "Si 455, alors vérifier que la notice en 455$0 ne contient pas 328$z"
+          },
+          {
+              "condition" : [
+                  {
+                      "operator": "presente",
+                      "number" : "456",
+                      "code" : ""
+                  }
+              ],
+              "reciproque": {
+                  "number": "456",
+                  "code": "0"
+              },
+              "value": [
+                  {
+                      "number" : "328",
+                      "code" : "z",
+                      "present" : true
+                  }
+              ],
+              "type": "allRequired",
+              "index": 1068,
+              "number": "456",
+              "message": "Si 456, alors vérifier que la notice en 465$0  contient  328$z"
+          },
+          {
+              "condition" : [
+                  {
+                      "operator": "presente",
+                      "number" : "451",
+                      "code" : ""
+                  },
+                  {
+                      "operator": "presente",
+                      "number" : "328",
+                      "code" : "z"
+                  }
+              ],
+              "reciproque": {
+                  "number": "451",
+                  "code": "0"
+              },
+              "value": [
+                  {
+                      "number" : "328",
+                      "code" : "z",
+                      "present" : false
+                  }
+              ],
+              "type": "allRequired",
+              "index": 1069,
+              "number": "451",
+              "message": "Si 451 et 328$z, alors vérifier que la notice 451$0 ne contient pas 328$z"
+          },
+          {
+              "condition" : [
+                  {
+                      "operator": "presente",
+                      "number" : "451",
+                      "code" : ""
+                  },
+                  {
+                      "operator": "not_presente",
+                      "number" : "328",
+                      "code" : "z"
+                  }
+              ],
+              "reciproque": {
+                  "number": "451",
+                  "code": "0"
+              },
+              "value": [
+                  {
+                      "number" : "328",
+                      "code" : "z",
+                      "present" : true
+                  }
+              ],
+              "type": "allRequired",
+              "index": 1070,
+              "number": "451",
+              "message": "Si 451 et absence de 328$z, alors vérifier que la notice 451$0 contient 328$z"
+          },
+          {
+              "condition" : [
+                  {
+                      "operator": "presente",
+                      "number" : "455",
+                      "code" : ""
+                  }
+              ],
+              "value": [
+                  {
+                      "number" : "456",
+                      "code" : "0",
+                      "present" : true,
+                      "reciproque" : {
+                          "number": "455",
+                          "code": "0"
+                      }
+                  }
+              ],
+              "type": "allRequired",
+              "index": 1071,
+              "number": "455",
+              "message": "Si 455, alors vérifier que la notice en 455$0 contient une 456 avec liens réciproques"
+          },
+          {
+              "condition" : [
+                  {
+                      "operator": "presente",
+                      "number" : "456",
+                      "code" : ""
+                  }
+              ],
+              "value": [
+                  {
+                      "number" : "455",
+                      "code" : "0",
+                      "present" : true,
+                      "reciproque" : {
+                          "number": "456",
+                          "code": "0"
+                      }
+                  }
+              ],
+              "type": "allRequired",
+              "index": 1072,
+              "number": "455",
+              "message": "Si 456, alors vérifier que la notice en 456$0 contient une 455 avec liens réciproques"
+          },
+          {
+              "condition" : [
+                  {
+                      "operator": "presente",
+                      "number" : "105",
+                      "code" : "b"
+
+                  },
+                  {
+                      "operator": "not_equals_text",
+                      "number" : "105",
+                      "code" : "b",
+                      "string": ["v"]
+
+                  }
+              ],
+              "value": [
+                  {
+                      "number" : "214",
+                      "code" : "",
+                      "ind1" : "",
+                      "ind2" : "0",
+                      "present" : true
+                  },
+                  {
+                      "number" : "214",
+                      "code" : "",
+                      "ind1" : "",
+                      "ind2" : "1",
+                      "present" : true
+                  }
+              ],
+              "type": "oneRequired",
+              "index": 1073,
+              "number": "105",
+              "message": "214\t214 #0 ou 214#1 obligatoire, sauf si 105$b=v"
+          },
+          {
+              "condition" : [
+                  {
+                      "operator": "startwith_text",
+                      "number" : "305",
+                      "code" : "a",
+                      "string": ["Document numérisé dans le cadre du projet de numérisation"]
+
+                  }
+              ],
+              "value": [
+                  {
+                      "number" : "214",
+                      "code" : "",
+                      "ind1" : "",
+                      "ind2" : "0",
+                      "present" : true
+                  }
+              ],
+              "type": "allRequired",
+              "index": 1074,
+              "number": "305",
+              "message": "Si 305$a commence par \"Document numérisé dans le cadre du projet de numérisation\", 214 ind1=' ' et ind2=\"0\""
+          }
+      ],
+      "ConditionDependance": [
+          {
+              "condition" : [
+                  {
+                      "operator": "presente",
+                      "number" : "225",
+                      "code" : "",
+                      "ind1": "0",
+                      "ind2": ""
+                  }
+              ],
+              "index": 2000,
+              "field1": {
+                  "number": "225",
+                  "code": "a"
+              },
+              "field2": {
+                  "number": "410",
+                  "code": "t"
+              },
+              "operator": "not_equals",
+              "message": "Si 225 ind1=0 $a est différent du 410$t"
+          },
+          {
+              "condition" : [
+                  {
+                      "operator": "presente",
+                      "number" : "225",
+                      "code" : "",
+                      "ind1": "2",
+                      "ind2": ""
+                  }
+              ],
+              "index": 1075,
+              "field1": {
+                  "number": "225",
+                  "code": "a"
+              },
+              "field2": {
+                  "number": "410",
+                  "code": "t"
+              },
+              "operator": "equals",
+              "message": "Si 225 ind1=2 $a = 410$t"
+          },
+          {
+              "condition" : [
+                  {
+                      "operator": "presente",
+                      "number" : "455",
+                      "code" : ""
+                  }
+              ],
+              "index": 1076,
+              "field1": {
+                  "number": "455",
+                  "code": "d"
+              },
+              "field2": {
+                  "number": "100",
+                  "code": "a",
+                  "pos": [13,16]
+              },
+              "operator": "equals",
+              "message": "Si 455, alors la date en 455$d = date en zone 100 position 13-16"
           }
       ],
       "Structurel": [

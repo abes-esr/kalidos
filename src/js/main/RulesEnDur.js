@@ -2,7 +2,6 @@ const axios = require('axios');
 const convert = require("xml-js");
 const Matching = require("../regles/Matching");
 const Structurel = require("../regles/Structurel");
-const Conditionnel = require("../regles/Conditionnel");
 const Dependance = require("../regles/Dependance");
 const IdRef = require("../regles/IdRef");
 

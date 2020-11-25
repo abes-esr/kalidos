@@ -4,6 +4,8 @@ import { cleanResult, addErrorPPN, setNombreTotalPPN } from '../../actions/index
 import store from '../../store/index';
 const Matching = require("../regles/Matching");
 const Structurel = require("../regles/Structurel");
+const Dependance = require("../regles/Dependance");
+const IdRef = require("../regles/IdRef");
 const ConditionStructurel = require("../regles/ConditionStructurelle");
 const ConditionMatching = require("../regles/ConditionMatching");
 const ConditionDependance = require("../regles/ConditionDependance");
@@ -163,8 +165,11 @@ function verifMain(rules, sudoc) {
         PPN: controlfields[0]._text,
         errors: [],
     };
-    //Matching.testMatchRegexRules(rules,controlfields,datafields , resultJson)
-    //Structurel.testMatchStructurelRules(rules,controlfields,datafields , resultJson)
+
+    Matching.testMatchRegexRules(CATEGORIE,rules,controlfields,datafields , resultJson)
+    Structurel.testMatchStructurelRules(CATEGORIE,rules,controlfields,datafields , resultJson)
+    Dependance.testMatchDependanceRules(CATEGORIE,rules,controlfields,datafields , resultJson)
+    IdRef.testIdRefRules(CATEGORIE,rules,controlfields,datafields , resultJson)
     ConditionStructurel.testConditionStrucutrelRules(rules,controlfields,datafields , resultJson)
     ConditionMatching.testConditionMatchingRules(rules,controlfields,datafields , resultJson)
     ConditionDependance.testConditionDependanceRules(rules,controlfields,datafields , resultJson)
