@@ -16,6 +16,19 @@ var Parcours = function () {
         return retour;
     }
 
+    const findDataFieldById = function (datafields, number , ind1 , ind2) {
+        let retour = null
+        datafields.forEach(function (field) {
+            if (field._attributes.tag == number && field._attributes.ind1.toString().trim() === ind1
+                && field._attributes.ind2.toString().trim() === ind2) {
+                retour = field
+                return field
+            }
+        });
+
+        return retour;
+    }
+
 
     const findDataFields = function (datafields, number) {
         let retour = []
@@ -29,6 +42,7 @@ var Parcours = function () {
         });
         return retour;
     }
+
 
     /**
      * retourne la valeur d'un champ d'une notice
@@ -114,6 +128,10 @@ var Parcours = function () {
         return types
     }
 
+    const slice = function (start, end, text){
+        return text.slice(start > 0 ? start -1  : 0, end);
+    }
+
 
 
     return {
@@ -123,7 +141,9 @@ var Parcours = function () {
         getTypes : getTypes,
         testCode : testCode,
         getIdentifiantValue : getIdentifiantValue,
-        findDataFields : findDataFields
+        findDataFields : findDataFields,
+        slice : slice,
+        findDataFieldById : findDataFieldById
     }
 }();
 

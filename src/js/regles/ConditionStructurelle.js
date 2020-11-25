@@ -24,6 +24,7 @@ var ConditionStructurel = function () {
                 });
                 //si les conditions sont vrai
                 if(checkedConds){
+                    console.log("condition verifié");
                     //si les verification sont sur la notice reciproque
                     if(regle.reciproque){
                         var field = Parcours.findDataField(datafields, regle.reciproque.number);
@@ -60,6 +61,7 @@ var ConditionStructurel = function () {
     }
 
     function checkValues(regle, controlfields , datafields){
+
         var checkValues;
         if(regle.type.toString() === "allRequired"){
             checkValues = true;
@@ -67,8 +69,9 @@ var ConditionStructurel = function () {
                 if(v.code.toString() === "" && (Parcours.findDataField(datafields , v.number ) == null) === v.present){
                     checkValues = false;
                 }else if(v.code.toString() !== ""){
-                    const f = Parcours.findDataField(datafields, v.number);
-                    if((Parcours.getSubfieldValue(f , v.code) == null) === v.present)
+                    const field = Parcours.findDataField(datafields, v.number);
+                    const subfield = Parcours.getSubfieldValue(field , v.code);
+                    if((subfield != null)  != v.present)
                         checkValues = false;
                     else if(v.reciproque){
                         checkReciproque(checkValues , Parcours.findDataField(controlfields, "001"), datafields, v.reciproque.number, v.reciproque.code, v.reciproque);

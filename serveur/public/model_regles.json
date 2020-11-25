@@ -1255,6 +1255,90 @@
               "message": "Si 328$z n'est pas \"Reproduction de\", alors 608 $3027253139Thèses et écrits académiques ne doit pas être présente",
               "regex": "^(?:(?!Thèses et écrits académiques).)*",
               "index": 1024
+          },
+          {
+              "condition" :  [
+                  {
+                      "operator": "presente",
+                      "number" : "600",
+                      "code" : ""
+                  }
+              ],
+              "number": 600,
+              "code": "2",
+              "message": "Si 600 $2rameau doit être présent",
+              "regex": "^rameau$",
+              "index": 1078
+          },
+          {
+              "condition" :  [
+                  {
+                      "operator": "presente",
+                      "number" : "601",
+                      "code" : ""
+                  }
+              ],
+              "number": 601,
+              "code": "2",
+              "message": "Si 601 $2rameau doit être présent",
+              "regex": "^rameau$",
+              "index": 1079
+          },
+          {
+              "condition" :  [
+                  {
+                      "operator": "presente",
+                      "number" : "602",
+                      "code" : ""
+                  }
+              ],
+              "number": 602,
+              "code": "2",
+              "message": "Si 602 $2rameau doit être présent",
+              "regex": "^rameau$",
+              "index": 1080
+          },
+          {
+              "condition" :  [
+                  {
+                      "operator": "presente",
+                      "number" : "604",
+                      "code" : ""
+                  }
+              ],
+              "number": 604,
+              "code": "2",
+              "message": "Si 604 $2rameau doit être présent",
+              "regex": "^rameau$",
+              "index": 1081
+          },
+          {
+              "condition" :  [
+                  {
+                      "operator": "presente",
+                      "number" : "605",
+                      "code" : ""
+                  }
+              ],
+              "number": 605,
+              "code": "2",
+              "message": "Si 605 $2rameau doit être présent",
+              "regex": "^rameau$",
+              "index": 1082
+          },
+          {
+              "condition" :  [
+                  {
+                      "operator": "presente",
+                      "number" : "607",
+                      "code" : ""
+                  }
+              ],
+              "number": 607,
+              "code": "2",
+              "message": "Si 607 $2rameau doit être présent",
+              "regex": "^rameau$",
+              "index": 1083
           }
       ],
       "ConditionStructurel": [
@@ -1922,7 +2006,7 @@
                       "present" : true
                   }
               ],
-              "type": "allRequired",
+              "type": "oneRequired",
               "index": 1052,
               "number": "008",
               "message": "Si 008 commence par Aa et présence d'une 461, alors il doit y avoir une 305 ou 225"
@@ -2516,6 +2600,87 @@
               "index": 1074,
               "number": "305",
               "message": "Si 305$a commence par \"Document numérisé dans le cadre du projet de numérisation\", 214 ind1=' ' et ind2=\"0\""
+          },
+          {
+              "condition" : [
+                  {
+                      "operator": "presente",
+                      "number" : "214",
+                      "code" : "",
+                      "ind1" : "",
+                      "ind2" : "1"
+
+                  }
+              ],
+              "value": [
+                  {
+                      "number" : "214",
+                      "code" : "d",
+                      "present" : true
+                  }
+              ],
+              "type": "allRequired",
+              "index": 1077,
+              "number": "214",
+              "message": "Si 214 #1 $d obligatoire"
+          },
+          {
+              "condition" : [
+                  {
+                      "operator": "presente",
+                      "number" : "105",
+                      "code" : "a"
+                  },
+                  {
+                      "operator": "contains_text",
+                      "number" : "105",
+                      "code" : "a",
+                      "pos" : [4 , 7],
+                      "string": ["v"]
+                  }
+              ],
+              "value": [
+                  {
+                      "number" : "214",
+                      "code" : "",
+                      "ind1" : "0",
+                      "ind2": "2",
+                      "present" : true
+                  }
+              ],
+              "type": "allRequired",
+              "index": 1084,
+              "number": "105",
+              "message": "Si 105 $a Pos. 4-7= \"v\", 214 ind2=\"0\" ou ind2=\"2\""
+          },
+          {
+              "condition" : [
+                  {
+                      "operator": "presente",
+                      "number" : "105",
+                      "code" : "a"
+                  },
+                  {
+                      "operator": "contains_text",
+                      "number" : "105",
+                      "code" : "a",
+                      "pos" : [4 , 7],
+                      "string": ["m"]
+                  }
+              ],
+              "value": [
+                  {
+                      "number" : "214",
+                      "code" : "",
+                      "ind1" : "",
+                      "ind2": "2",
+                      "present" : true
+                  }
+              ],
+              "type": "allRequired",
+              "index": 1085,
+              "number": "105",
+              "message": "Si 105 $a Pos. 4-7= m, 214 ind2=\"1\""
           }
       ],
       "ConditionDependance": [

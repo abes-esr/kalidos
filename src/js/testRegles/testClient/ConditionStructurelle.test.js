@@ -65,3 +65,818 @@ test("Si 101 ind1=1 il faut au moins un $a et $c (FAIL)", () => {
 
 
 // ===============================================================
+
+test("Si 101 ind1=0 il ne faut pas $c", () => {
+    const notice = "003"
+    const index = 1026
+    const sudoc = getNotice(notice);
+    const datafields = sudoc.record.datafield;
+    const controlfields = sudoc.record.controlfield;;
+    let resultJson = {
+        PPN: 0,
+        errors: [],
+    };
+    addRuleToTest(index);
+    ConditionStructurelle.testConditionStrucutrelRules(ruleTest,controlfields,datafields , resultJson);
+    expect(resultJson.errors).toStrictEqual([]);
+});
+
+
+test("Si 101 ind1=0 il ne faut pas $c (FAIL)", () => {
+    const notice = "004"
+    const index = 1026
+    const sudoc = getNotice(notice);
+    const datafields = sudoc.record.datafield;
+    const controlfields = sudoc.record.controlfield;;
+    let resultJson = {
+        PPN: 0,
+        errors: [],
+    };
+    addRuleToTest(index);
+    ConditionStructurelle.testConditionStrucutrelRules(ruleTest,controlfields,datafields , resultJson);
+    expect(resultJson.errors).not.toStrictEqual([]);
+});
+
+
+// ===============================================================
+
+test("Si 101 ind1=2 il faut au moins une $a, $b et $c", () => {
+    const notice = "005"
+    const index = 1027
+    const sudoc = getNotice(notice);
+    const datafields = sudoc.record.datafield;
+    const controlfields = sudoc.record.controlfield;;
+    let resultJson = {
+        PPN: 0,
+        errors: [],
+    };
+    addRuleToTest(index);
+    ConditionStructurelle.testConditionStrucutrelRules(ruleTest,controlfields,datafields , resultJson);
+    expect(resultJson.errors).toStrictEqual([]);
+});
+
+
+test("Si 101 ind1=2 il faut au moins une $a, $b et $c (FAIL)", () => {
+    const notice = "006"
+    const index = 1027
+    const sudoc = getNotice(notice);
+    const datafields = sudoc.record.datafield;
+    const controlfields = sudoc.record.controlfield;;
+    let resultJson = {
+        PPN: 0,
+        errors: [],
+    };
+    addRuleToTest(index);
+    ConditionStructurelle.testConditionStrucutrelRules(ruleTest,controlfields,datafields , resultJson);
+    expect(resultJson.errors).not.toStrictEqual([]);
+});
+
+
+// ===============================================================
+
+test("Si 101 ind1=1 il faut une 454", () => {
+    const notice = "001"
+    const index = 1028
+    const sudoc = getNotice(notice);
+    const datafields = sudoc.record.datafield;
+    const controlfields = sudoc.record.controlfield;;
+    let resultJson = {
+        PPN: 0,
+        errors: [],
+    };
+    addRuleToTest(index);
+    ConditionStructurelle.testConditionStrucutrelRules(ruleTest,controlfields,datafields , resultJson);
+    expect(resultJson.errors).toStrictEqual([]);
+});
+
+
+test("Si 101 ind1=1 il faut une 454 (FAIL)", () => {
+    const notice = "002"
+    const index = 1028
+    const sudoc = getNotice(notice);
+    const datafields = sudoc.record.datafield;
+    const controlfields = sudoc.record.controlfield;;
+    let resultJson = {
+        PPN: 0,
+        errors: [],
+    };
+    addRuleToTest(index);
+    ConditionStructurelle.testConditionStrucutrelRules(ruleTest,controlfields,datafields , resultJson);
+    expect(resultJson.errors).not.toStrictEqual([]);
+});
+
+
+// ===============================================================
+
+test("Si 101 ind1=2 il faut une 454", () => {
+    const notice = "005"
+    const index = 1029
+    const sudoc = getNotice(notice);
+    const datafields = sudoc.record.datafield;
+    const controlfields = sudoc.record.controlfield;;
+    let resultJson = {
+        PPN: 0,
+        errors: [],
+    };
+    addRuleToTest(index);
+    ConditionStructurelle.testConditionStrucutrelRules(ruleTest,controlfields,datafields , resultJson);
+    expect(resultJson.errors).toStrictEqual([]);
+});
+
+
+test("Si 101 ind1=2 il faut une 454 (FAIL)", () => {
+    const notice = "006"
+    const index = 1029
+    const sudoc = getNotice(notice);
+    const datafields = sudoc.record.datafield;
+    const controlfields = sudoc.record.controlfield;;
+    let resultJson = {
+        PPN: 0,
+        errors: [],
+    };
+    addRuleToTest(index);
+    ConditionStructurelle.testConditionStrucutrelRules(ruleTest,controlfields,datafields , resultJson);
+    expect(resultJson.errors).not.toStrictEqual([]);
+});
+
+
+// ===============================================================
+
+test("Si  105 $a Pos. 0-3 = 'y' alors 215$c ne doit pas être présent", () => {
+    const notice = "007"
+    const index = 1031
+    const sudoc = getNotice(notice);
+    const datafields = sudoc.record.datafield;
+    const controlfields = sudoc.record.controlfield;;
+    let resultJson = {
+        PPN: 0,
+        errors: [],
+    };
+    addRuleToTest(index);
+    ConditionStructurelle.testConditionStrucutrelRules(ruleTest,controlfields,datafields , resultJson);
+    expect(resultJson.errors).toStrictEqual([]);
+});
+
+
+test("Si  105 $a Pos. 0-3 = 'y' alors 215$c ne doit pas être présent (FAIL)", () => {
+    const notice = "008"
+    const index = 1031
+    const sudoc = getNotice(notice);
+    const datafields = sudoc.record.datafield;
+    const controlfields = sudoc.record.controlfield;;
+    let resultJson = {
+        PPN: 0,
+        errors: [],
+    };
+    addRuleToTest(index);
+    ConditionStructurelle.testConditionStrucutrelRules(ruleTest,controlfields,datafields , resultJson);
+    expect(resultJson.errors).not.toStrictEqual([]);
+});
+
+
+// ===============================================================
+
+test("Si 105 $a Pos. 4-7 =a alors il faut une 320", () => {
+    const notice = "005"
+    const index = 1032
+    const sudoc = getNotice(notice);
+    const datafields = sudoc.record.datafield;
+    const controlfields = sudoc.record.controlfield;;
+    let resultJson = {
+        PPN: 0,
+        errors: [],
+    };
+    addRuleToTest(index);
+    ConditionStructurelle.testConditionStrucutrelRules(ruleTest,controlfields,datafields , resultJson);
+    expect(resultJson.errors).toStrictEqual([]);
+});
+
+
+test("Si 105 $a Pos. 4-7 =a alors il faut une 320 (FAIL)", () => {
+    const notice = "006"
+    const index = 1032
+    const sudoc = getNotice(notice);
+    const datafields = sudoc.record.datafield;
+    const controlfields = sudoc.record.controlfield;;
+    let resultJson = {
+        PPN: 0,
+        errors: [],
+    };
+    addRuleToTest(index);
+    ConditionStructurelle.testConditionStrucutrelRules(ruleTest,controlfields,datafields , resultJson);
+    expect(resultJson.errors).not.toStrictEqual([]);
+});
+
+
+// =======================ORANGE========================================
+
+test("Si 105 $a Pos. 4-7= t, m, l, q, j, f, e, b ou 7 il faut la présence d'une 608", () => {
+    const notice = "005"
+    const index = 1033
+    const sudoc = getNotice(notice);
+    const datafields = sudoc.record.datafield;
+    const controlfields = sudoc.record.controlfield;
+    let resultJson = {
+        PPN: 0,
+        errors: [],
+    };
+    addRuleToTest(index);
+    ConditionStructurelle.testConditionStrucutrelRules(ruleTest,controlfields,datafields , resultJson);
+    expect(resultJson.errors).toStrictEqual([]);
+});
+
+
+test("Si 105 $a Pos. 4-7= t, m, l, q, j, f, e, b ou 7 il faut la présence d'une 608 (FAIL)", () => {
+    const notice = "006"
+    const index = 1033
+    const sudoc = getNotice(notice);
+    const datafields = sudoc.record.datafield;
+    const controlfields = sudoc.record.controlfield;
+    let resultJson = {
+        PPN: 0,
+        errors: [],
+    };
+    addRuleToTest(index);
+    ConditionStructurelle.testConditionStrucutrelRules(ruleTest,controlfields,datafields , resultJson);
+    expect(resultJson.errors).not.toStrictEqual([]);
+});
+
+
+// ===============================================================
+
+test("Si 008 commence par Aa, présence obligatoire d'une zone 106", () => {
+    const notice = "005"
+    const index = 1034
+    const sudoc = getNotice(notice);
+    const datafields = sudoc.record.datafield;
+    const controlfields = sudoc.record.controlfield;
+    let resultJson = {
+        PPN: 0,
+        errors: [],
+    };
+    addRuleToTest(index);
+    ConditionStructurelle.testConditionStrucutrelRules(ruleTest,controlfields,datafields , resultJson);
+    expect(resultJson.errors).toStrictEqual([]);
+});
+
+
+test("Si 008 commence par Aa, présence obligatoire d'une zone 106 (FAIL)", () => {
+    const notice = "006"
+    const index = 1034
+    const sudoc = getNotice(notice);
+    const datafields = sudoc.record.datafield;
+    const controlfields = sudoc.record.controlfield;
+    let resultJson = {
+        PPN: 0,
+        errors: [],
+    };
+    addRuleToTest(index);
+    ConditionStructurelle.testConditionStrucutrelRules(ruleTest,controlfields,datafields , resultJson);
+    expect(resultJson.errors).not.toStrictEqual([]);
+});
+
+
+// ===============================================================
+
+test("Si 214 #1 $d obligatoire", () => {
+    const notice = "009"
+    const index = 1077
+    const sudoc = getNotice(notice);
+    const datafields = sudoc.record.datafield;
+    const controlfields = sudoc.record.controlfield;
+    let resultJson = {
+        PPN: 0,
+        errors: [],
+    };
+    addRuleToTest(index);
+    ConditionStructurelle.testConditionStrucutrelRules(ruleTest,controlfields,datafields , resultJson);
+    expect(resultJson.errors).toStrictEqual([]);
+});
+
+
+test("Si 214 #1 $d obligatoire (FAIL)", () => {
+    const notice = "002"
+    const index = 1077
+    const sudoc = getNotice(notice);
+    const datafields = sudoc.record.datafield;
+    const controlfields = sudoc.record.controlfield;
+    let resultJson = {
+        PPN: 0,
+        errors: [],
+    };
+    addRuleToTest(index);
+    ConditionStructurelle.testConditionStrucutrelRules(ruleTest,controlfields,datafields , resultJson);
+    expect(resultJson.errors).not.toStrictEqual([]);
+});
+
+
+// ===============================================================
+
+test("Si 008 commence par Aa, 215 $a et $d obligatoires", () => {
+    const notice = "009"
+    const index = 1035
+    const sudoc = getNotice(notice);
+    const datafields = sudoc.record.datafield;
+    const controlfields = sudoc.record.controlfield;
+    let resultJson = {
+        PPN: 0,
+        errors: [],
+    };
+    addRuleToTest(index);
+    ConditionStructurelle.testConditionStrucutrelRules(ruleTest,controlfields,datafields , resultJson);
+    expect(resultJson.errors).toStrictEqual([]);
+});
+
+
+test("Si 008 commence par Aa, 215 $a et $d obligatoires (FAIL)", () => {
+    const notice = "010"
+    const index = 1035
+    const sudoc = getNotice(notice);
+    const datafields = sudoc.record.datafield;
+    const controlfields = sudoc.record.controlfield;
+    let resultJson = {
+        PPN: 0,
+        errors: [],
+    };
+    addRuleToTest(index);
+    ConditionStructurelle.testConditionStrucutrelRules(ruleTest,controlfields,datafields , resultJson);
+    expect(resultJson.errors).not.toStrictEqual([]);
+});
+
+test("Si 008 commence par Aa, 215 $a et $d obligatoires (FAIL)", () => {
+    const notice = "008"
+    const index = 1035
+    const sudoc = getNotice(notice);
+    const datafields = sudoc.record.datafield;
+    const controlfields = sudoc.record.controlfield;
+    let resultJson = {
+        PPN: 0,
+        errors: [],
+    };
+    addRuleToTest(index);
+    ConditionStructurelle.testConditionStrucutrelRules(ruleTest,controlfields,datafields , resultJson);
+    expect(resultJson.errors).not.toStrictEqual([]);
+});
+
+// ===============================================================
+
+test("Si 225 ind1=0 il faut au moins une 410", () => {
+    const notice = "031"
+    const index = 1036
+    const sudoc = getNotice(notice);
+    const datafields = sudoc.record.datafield;
+    const controlfields = sudoc.record.controlfield;
+    let resultJson = {
+        PPN: 0,
+        errors: [],
+    };
+    addRuleToTest(index);
+    ConditionStructurelle.testConditionStrucutrelRules(ruleTest,controlfields,datafields , resultJson);
+    expect(resultJson.errors).toStrictEqual([]);
+});
+
+
+test("Si 225 ind1=0 il faut au moins une 410 (FAIL)", () => {
+    const notice = "032"
+    const index = 1036
+    const sudoc = getNotice(notice);
+    const datafields = sudoc.record.datafield;
+    const controlfields = sudoc.record.controlfield;
+    let resultJson = {
+        PPN: 0,
+        errors: [],
+    };
+    addRuleToTest(index);
+    ConditionStructurelle.testConditionStrucutrelRules(ruleTest,controlfields,datafields , resultJson);
+    expect(resultJson.errors).not.toStrictEqual([]);
+});
+
+// ===============================================================
+
+test("Si 225 ind1=0 $a alors 410$0 doit être présent", () => {
+    const notice = "037"
+    const index = 1030
+    const sudoc = getNotice(notice);
+    const datafields = sudoc.record.datafield;
+    const controlfields = sudoc.record.controlfield;
+    let resultJson = {
+        PPN: 0,
+        errors: [],
+    };
+    addRuleToTest(index);
+    ConditionStructurelle.testConditionStrucutrelRules(ruleTest,controlfields,datafields , resultJson);
+    expect(resultJson.errors).toStrictEqual([]);
+});
+
+test("Si 225 ind1=0 $a alors 410$0 doit être présent", () => {
+    const notice = "039"
+    const index = 1030
+    const sudoc = getNotice(notice);
+    const datafields = sudoc.record.datafield;
+    const controlfields = sudoc.record.controlfield;
+    let resultJson = {
+        PPN: 0,
+        errors: [],
+    };
+    addRuleToTest(index);
+    ConditionStructurelle.testConditionStrucutrelRules(ruleTest,controlfields,datafields , resultJson);
+    expect(resultJson.errors).toStrictEqual([]);
+});
+
+
+test("Si 225 ind1=0 $a alors 410$0 doit être présent (FAIL)", () => {
+    const notice = "038"
+    const index = 1030
+    const sudoc = getNotice(notice);
+    const datafields = sudoc.record.datafield;
+    const controlfields = sudoc.record.controlfield;
+    let resultJson = {
+        PPN: 0,
+        errors: [],
+    };
+    addRuleToTest(index);
+    ConditionStructurelle.testConditionStrucutrelRules(ruleTest,controlfields,datafields , resultJson);
+    expect(resultJson.errors).not.toStrictEqual([]);
+});
+
+test("Si 225 ind1=0 $a alors 410$0 doit être présent (FAIL)", () => {
+    const notice = "040"
+    const index = 1030
+    const sudoc = getNotice(notice);
+    const datafields = sudoc.record.datafield;
+    const controlfields = sudoc.record.controlfield;
+    let resultJson = {
+        PPN: 0,
+        errors: [],
+    };
+    addRuleToTest(index);
+    ConditionStructurelle.testConditionStrucutrelRules(ruleTest,controlfields,datafields , resultJson);
+    expect(resultJson.errors).not.toStrictEqual([]);
+});
+
+
+// ===============================================================
+
+test("Si 225 ind1=2 $a alors 410$0 doit être présent", () => {
+    const notice = "037"
+    const index = 1030
+    const sudoc = getNotice(notice);
+    const datafields = sudoc.record.datafield;
+    const controlfields = sudoc.record.controlfield;
+    let resultJson = {
+        PPN: 0,
+        errors: [],
+    };
+    addRuleToTest(index);
+    ConditionStructurelle.testConditionStrucutrelRules(ruleTest,controlfields,datafields , resultJson);
+    expect(resultJson.errors).toStrictEqual([]);
+});
+
+test("Si 225 ind1=2 $a alors 410$0 doit être présent", () => {
+    const notice = "039"
+    const index = 1030
+    const sudoc = getNotice(notice);
+    const datafields = sudoc.record.datafield;
+    const controlfields = sudoc.record.controlfield;
+    let resultJson = {
+        PPN: 0,
+        errors: [],
+    };
+    addRuleToTest(index);
+    ConditionStructurelle.testConditionStrucutrelRules(ruleTest,controlfields,datafields , resultJson);
+    expect(resultJson.errors).toStrictEqual([]);
+});
+
+
+test("Si 225 ind1=2 $a alors 410$0 doit être présent (FAIL)", () => {
+    const notice = "038"
+    const index = 1030
+    const sudoc = getNotice(notice);
+    const datafields = sudoc.record.datafield;
+    const controlfields = sudoc.record.controlfield;
+    let resultJson = {
+        PPN: 0,
+        errors: [],
+    };
+    addRuleToTest(index);
+    ConditionStructurelle.testConditionStrucutrelRules(ruleTest,controlfields,datafields , resultJson);
+    expect(resultJson.errors).not.toStrictEqual([]);
+});
+
+test("Si 225 ind1=2 $a alors 410$0 doit être présent (FAIL)", () => {
+    const notice = "040"
+    const index = 1030
+    const sudoc = getNotice(notice);
+    const datafields = sudoc.record.datafield;
+    const controlfields = sudoc.record.controlfield;
+    let resultJson = {
+        PPN: 0,
+        errors: [],
+    };
+    addRuleToTest(index);
+    ConditionStructurelle.testConditionStrucutrelRules(ruleTest,controlfields,datafields , resultJson);
+    expect(resultJson.errors).not.toStrictEqual([]);
+});
+
+
+// ===============================================================
+
+test("Si 225 ind1=1 $a alors 461 doit être présent", () => {
+    const notice = "041"
+    const index = 1038
+    const sudoc = getNotice(notice);
+    const datafields = sudoc.record.datafield;
+    const controlfields = sudoc.record.controlfield;
+    let resultJson = {
+        PPN: 0,
+        errors: [],
+    };
+    addRuleToTest(index);
+    ConditionStructurelle.testConditionStrucutrelRules(ruleTest,controlfields,datafields , resultJson);
+    expect(resultJson.errors).toStrictEqual([]);
+});
+
+
+test("Si 225 ind1=1 $a alors 461 doit être présent (FAIL)", () => {
+    const notice = "042"
+    const index = 1038
+    const sudoc = getNotice(notice);
+    const datafields = sudoc.record.datafield;
+    const controlfields = sudoc.record.controlfield;
+    let resultJson = {
+        PPN: 0,
+        errors: [],
+    };
+    addRuleToTest(index);
+    ConditionStructurelle.testConditionStrucutrelRules(ruleTest,controlfields,datafields , resultJson);
+    expect(resultJson.errors).not.toStrictEqual([]);
+});
+
+// ===============================================================
+
+test("Si 225 ind1=2 il faut au moins une 410", () => {
+    const notice = "037"
+    const index = 1039
+    const sudoc = getNotice(notice);
+    const datafields = sudoc.record.datafield;
+    const controlfields = sudoc.record.controlfield;
+    let resultJson = {
+        PPN: 0,
+        errors: [],
+    };
+    addRuleToTest(index);
+    ConditionStructurelle.testConditionStrucutrelRules(ruleTest,controlfields,datafields , resultJson);
+    expect(resultJson.errors).toStrictEqual([]);
+});
+
+
+test("Si 225 ind1=2 il faut au moins une 410 (FAIL)", () => {
+    const notice = "038"
+    const index = 1039
+    const sudoc = getNotice(notice);
+    const datafields = sudoc.record.datafield;
+    const controlfields = sudoc.record.controlfield;
+    let resultJson = {
+        PPN: 0,
+        errors: [],
+    };
+    addRuleToTest(index);
+    ConditionStructurelle.testConditionStrucutrelRules(ruleTest,controlfields,datafields , resultJson);
+    expect(resultJson.errors).not.toStrictEqual([]);
+});
+
+// ==========ORANGE=====================================================
+
+test("Si 008 commence par Aa et présence d'une 461, alors il doit y avoir une 305 ou 225", () => {
+    const notice = "041"
+    const index = 1052
+    const sudoc = getNotice(notice);
+    const datafields = sudoc.record.datafield;
+    const controlfields = sudoc.record.controlfield;
+    let resultJson = {
+        PPN: 0,
+        errors: [],
+    };
+    addRuleToTest(index);
+    ConditionStructurelle.testConditionStrucutrelRules(ruleTest,controlfields,datafields , resultJson);
+    expect(resultJson.errors).toStrictEqual([]);
+});
+
+
+test("Si 008 commence par Aa et présence d'une 461, alors il doit y avoir une 305 ou 225 (FAIL)", () => {
+    const notice = "042"
+    const index = 1052
+    const sudoc = getNotice(notice);
+    const datafields = sudoc.record.datafield;
+    const controlfields = sudoc.record.controlfield;
+    let resultJson = {
+        PPN: 0,
+        errors: [],
+    };
+    addRuleToTest(index);
+    ConditionStructurelle.testConditionStrucutrelRules(ruleTest,controlfields,datafields , resultJson);
+    expect(resultJson.errors).not.toStrictEqual([]);
+});
+
+// ===============================================================
+
+
+test("Si 328$z\"Reproduction de\", 455 doit être présente", () => {
+    const notice = "043"
+    const index = 1063
+    const sudoc = getNotice(notice);
+    const datafields = sudoc.record.datafield;
+    const controlfields = sudoc.record.controlfield;
+    let resultJson = {
+        PPN: 0,
+        errors: [],
+    };
+    addRuleToTest(index);
+    ConditionStructurelle.testConditionStrucutrelRules(ruleTest,controlfields,datafields , resultJson);
+    expect(resultJson.errors).toStrictEqual([]);
+});
+
+
+test("Si 328$z\"Reproduction de\", 455 doit être présente (FAIL)", () => {
+    const notice = "044"
+    const index = 1063
+    const sudoc = getNotice(notice);
+    const datafields = sudoc.record.datafield;
+    const controlfields = sudoc.record.controlfield;
+    let resultJson = {
+        PPN: 0,
+        errors: [],
+    };
+    addRuleToTest(index);
+    ConditionStructurelle.testConditionStrucutrelRules(ruleTest,controlfields,datafields , resultJson);
+    expect(resultJson.errors).not.toStrictEqual([]);
+});
+
+// ===============================================================
+
+
+
+test("Si 328$z\"Reproduction de\" , 456 ne doit pas être présente", () => {
+    const notice = "043"
+    const index = 1064
+    const sudoc = getNotice(notice);
+    const datafields = sudoc.record.datafield;
+    const controlfields = sudoc.record.controlfield;
+    let resultJson = {
+        PPN: 0,
+        errors: [],
+    };
+    addRuleToTest(index);
+    ConditionStructurelle.testConditionStrucutrelRules(ruleTest,controlfields,datafields , resultJson);
+    expect(resultJson.errors).toStrictEqual([]);
+});
+
+
+test("Si 328$z\"Reproduction de\" , 456 ne doit pas être présente (FAIL)", () => {
+    const notice = "044"
+    const index = 1064
+    const sudoc = getNotice(notice);
+    const datafields = sudoc.record.datafield;
+    const controlfields = sudoc.record.controlfield;
+    let resultJson = {
+        PPN: 0,
+        errors: [],
+    };
+    addRuleToTest(index);
+    ConditionStructurelle.testConditionStrucutrelRules(ruleTest,controlfields,datafields , resultJson);
+    expect(resultJson.errors).not.toStrictEqual([]);
+});
+
+// ===============================================================
+
+test("Si 101$d, 330 doit être présente", () => {
+    const notice = "043"
+    const index = 1064
+    const sudoc = getNotice(notice);
+    const datafields = sudoc.record.datafield;
+    const controlfields = sudoc.record.controlfield;
+    let resultJson = {
+        PPN: 0,
+        errors: [],
+    };
+    addRuleToTest(index);
+    ConditionStructurelle.testConditionStrucutrelRules(ruleTest,controlfields,datafields , resultJson);
+    expect(resultJson.errors).toStrictEqual([]);
+});
+
+
+test("Si 101$d, 330 doit être présente (FAIL)", () => {
+    const notice = "044"
+    const index = 1064
+    const sudoc = getNotice(notice);
+    const datafields = sudoc.record.datafield;
+    const controlfields = sudoc.record.controlfield;
+    let resultJson = {
+        PPN: 0,
+        errors: [],
+    };
+    addRuleToTest(index);
+    ConditionStructurelle.testConditionStrucutrelRules(ruleTest,controlfields,datafields , resultJson);
+    expect(resultJson.errors).not.toStrictEqual([]);
+});
+
+// ===============================================================
+
+test("Si 101$d, 330 doit être présente", () => {
+    const notice = "017"
+    const index = 1040
+    const sudoc = getNotice(notice);
+    const datafields = sudoc.record.datafield;
+    const controlfields = sudoc.record.controlfield;
+    let resultJson = {
+        PPN: 0,
+        errors: [],
+    };
+    addRuleToTest(index);
+    ConditionStructurelle.testConditionStrucutrelRules(ruleTest,controlfields,datafields , resultJson);
+    expect(resultJson.errors).toStrictEqual([]);
+});
+
+
+test("Si 101$d, 330 doit être présente (FAIL)", () => {
+    const notice = "018"
+    const index = 1040
+    const sudoc = getNotice(notice);
+    const datafields = sudoc.record.datafield;
+    const controlfields = sudoc.record.controlfield;
+    let resultJson = {
+        PPN: 0,
+        errors: [],
+    };
+    addRuleToTest(index);
+    ConditionStructurelle.testConditionStrucutrelRules(ruleTest,controlfields,datafields , resultJson);
+    expect(resultJson.errors).not.toStrictEqual([]);
+});
+
+// ==============ORANGE=================================================
+
+test("Si 105 $a Pos. 4-7= \"v\", 214 ind2=\"0\" ou ind2=\"2\"", () => {
+    const notice = "043"
+    const index = 1084
+    const sudoc = getNotice(notice);
+    const datafields = sudoc.record.datafield;
+    const controlfields = sudoc.record.controlfield;
+    let resultJson = {
+        PPN: 0,
+        errors: [],
+    };
+    addRuleToTest(index);
+    ConditionStructurelle.testConditionStrucutrelRules(ruleTest,controlfields,datafields , resultJson);
+    expect(resultJson.errors).toStrictEqual([]);
+});
+
+
+test("Si 105 $a Pos. 4-7= \"v\", 214 ind2=\"0\" ou ind2=\"2\" (FAIL)", () => {
+    const notice = "044"
+    const index = 1084
+    const sudoc = getNotice(notice);
+    const datafields = sudoc.record.datafield;
+    const controlfields = sudoc.record.controlfield;
+    let resultJson = {
+        PPN: 0,
+        errors: [],
+    };
+    addRuleToTest(index);
+    ConditionStructurelle.testConditionStrucutrelRules(ruleTest,controlfields,datafields , resultJson);
+    expect(resultJson.errors).not.toStrictEqual([]);
+});
+
+// ===============================================================
+
+test("Si 105 $a Pos. 4-7= m, 214 ind2=\"1\"", () => {
+    const notice = "021"
+    const index = 1085
+    const sudoc = getNotice(notice);
+    const datafields = sudoc.record.datafield;
+    const controlfields = sudoc.record.controlfield;
+    let resultJson = {
+        PPN: 0,
+        errors: [],
+    };
+    addRuleToTest(index);
+    ConditionStructurelle.testConditionStrucutrelRules(ruleTest,controlfields,datafields , resultJson);
+    expect(resultJson.errors).toStrictEqual([]);
+});
+
+
+test("Si 105 $a Pos. 4-7= m, 214 ind2=\"1\" (FAIL)", () => {
+    const notice = "022"
+    const index = 1085
+    const sudoc = getNotice(notice);
+    const datafields = sudoc.record.datafield;
+    const controlfields = sudoc.record.controlfield;
+    let resultJson = {
+        PPN: 0,
+        errors: [],
+    };
+    addRuleToTest(index);
+    ConditionStructurelle.testConditionStrucutrelRules(ruleTest,controlfields,datafields , resultJson);
+    expect(resultJson.errors).not.toStrictEqual([]);
+});
+
+// ===============================================================

@@ -3,18 +3,24 @@ const Parcours = require("../utile/Parcours");
 var Condition = function () {
 
     function checkCondition(controlefields, datafields, condition) {
-        var field = Parcours.findDataField(datafields, condition.number);
+        var field = null;
+
+        if(condition.ind1 ||condition.ind2)
+            field = Parcours.findDataFieldById(datafields, condition.number, condition.ind1, condition.ind2);
+        else
+            field = Parcours.findDataField(datafields, condition.number);
+
         if (field == null)
             field = Parcours.findDataField(controlefields, condition.number);
-        if (field == null
-            || ((condition.ind1 && condition.ind1.toString() !== field._attributes.ind1.toString().trim()))
-            || ((condition.ind2 && condition.ind2.toString() !== field._attributes.ind2.toString().trim()))) {
+
+
+        if (field == null){
               return false;
         }
-
         if (condition.operator === "presente") {
-            if (condition.code.toString() !== "")
+            if (condition.code.toString() !== "") {
                 return Parcours.getSubfieldValue(field, condition.code) != null;
+            }
         } else if (condition.operator === "not_presente") {
             if (condition.code.toString() !== "")
                 return !(Parcours.getSubfieldValue(field, condition.code) != null);
@@ -28,8 +34,9 @@ var Condition = function () {
                     subfieldValue = field._text;
                 }
                 var isMatched = false;
+                console.log(subfieldValue)
                 condition.string.forEach((item) => {
-                    if (condition.operator === "contains_text" && subfieldValue.substring(condition.pos[0], condition.pos[1]).includes(item.toString())) {
+                    if (condition.operator === "contains_text" && Parcours.slice(condition.pos[0], condition.pos[1], subfieldValue).includes(item.toString())) {
                         isMatched = true;
                     } else if (condition.operator === "startwith_text" && subfieldValue.startsWith(item.toString())) {
                         isMatched = true;
@@ -48,7 +55,7 @@ var Condition = function () {
                 return field._attributes.ind2.toString() === condition.ind2.toString();
         }*/
 
-        return false;
+        return true;
 
     }
     return {

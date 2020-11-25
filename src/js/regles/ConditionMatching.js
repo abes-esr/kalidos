@@ -24,6 +24,7 @@ var ConditionStructurel = function() {
                 });
 
                 if (checkedConds) {
+                    console.log("condition verifie");
                     let res = {
                         errors: [],
                     };
