@@ -400,3 +400,68 @@ test("Si 605 $2rameau doit être présent (FAIL)", () => {
 // ===============================================================
 
 
+test("Si 856$5=692669902, alors doit être présente 310 ##$aL'accès à cette ressource est réservé aux membres de Lyon 1 après authentification", () => {
+    const notice = "017"
+    const index = 1022
+    const sudoc = getNotice(notice);
+    const datafields = sudoc.record.datafield;
+    const controlfields = sudoc.record.controlfield;
+    let resultJson = {
+        PPN: 0,
+        errors: [],
+    };
+    addRuleToTest(index);
+    ConditionMatching.testConditionMatchingRules(ruleTest,controlfields,datafields , resultJson);
+    expect(resultJson.errors).toStrictEqual([]);
+});
+
+
+test("Si 856$5=692669902, alors doit être présente 310 ##$aL'accès à cette ressource est réservé aux membres de Lyon 1 après authentification (FAIL)", () => {
+    const notice = "018"
+    const index = 1022
+    const sudoc = getNotice(notice);
+    const datafields = sudoc.record.datafield;
+    const controlfields = sudoc.record.controlfield;
+    let resultJson = {
+        PPN: 0,
+        errors: [],
+    };
+    addRuleToTest(index);
+    ConditionMatching.testConditionMatchingRules(ruleTest,controlfields,datafields , resultJson);
+    expect(resultJson.errors).not.toStrictEqual([]);
+});
+
+// =======RED========================================================
+
+test("Si 305$a commence par \"Document numérisé dans le cadre du projet de numérisation\", 214 $aLyon et $cBibliothèque Lyon 1", () => {
+    const notice = "045"
+    const index = 1010
+    const sudoc = getNotice(notice);
+    const datafields = sudoc.record.datafield;
+    const controlfields = sudoc.record.controlfield;
+    let resultJson = {
+        PPN: 0,
+        errors: [],
+    };
+    addRuleToTest(index);
+    ConditionMatching.testConditionMatchingRules(ruleTest,controlfields,datafields , resultJson);
+    expect(resultJson.errors).toStrictEqual([]);
+});
+
+
+test("Si 305$a commence par \"Document numérisé dans le cadre du projet de numérisation\", 214 $aLyon et $cBibliothèque Lyon 1 (FAIL)", () => {
+    const notice = "046"
+    const index = 1010
+    const sudoc = getNotice(notice);
+    const datafields = sudoc.record.datafield;
+    const controlfields = sudoc.record.controlfield;
+    let resultJson = {
+        PPN: 0,
+        errors: [],
+    };
+    addRuleToTest(index);
+    ConditionMatching.testConditionMatchingRules(ruleTest,controlfields,datafields , resultJson);
+    expect(resultJson.errors).not.toStrictEqual([]);
+});
+
+// ===============================================================

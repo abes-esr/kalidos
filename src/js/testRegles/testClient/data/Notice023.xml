@@ -1,4 +1,4 @@
-record>
+<record>
 <leader> cam0 22 450 </leader>
 <controlfield tag="001">198404050</controlfield>
 <controlfield tag="002">38</controlfield>
@@ -130,7 +130,7 @@ Locupletissimi Rerum Naturalium Thesauri Accurata Descriptio, Et Iconibus Artifi
 Locupletissimi Rerum Naturalium Thesauri Accurata Descriptio, Et Iconibus Artificiosissimis Expressio, Per Universam Physices Historiam. Opus, Cui, In Hoc Rerum Genere, Nullum Par Exstitit. Ex Toto Terrarum Orbe Collegit, Digessit, Descripsit, Et Depingendum Curavit Albertus Seba, Etzela Oostfrisius, ...
 </subfield>
 <subfield code="c">
-Amstelaedami, Apud Janssonio-Waesbergios, & J. Wetstenium, & Gul. Smith. MDCCXXXIV- [MDCCLXV].
+Amstelaedami, Apud Janssonio-Waesbergios, J. Wetstenium, Gul. Smith. MDCCXXXIV- [MDCCLXV].
 </subfield>
 <subfield code="d">[1734-1765]</subfield>
 <subfield code="p">

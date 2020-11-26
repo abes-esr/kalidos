@@ -1045,7 +1045,7 @@
               "number": "008",
               "code": "",
               "message": "Si 008 commence par Oa et 451 présente, alors vérifier que notice 451$0 contient une 008 qui commence par Oa",
-              "regex": "^(0A).*",
+              "regex": "^(Oa).*",
               "index": 1016
           },
           {
@@ -1120,7 +1120,7 @@
               "number": "008",
               "code": "",
               "message": "Si 008 commence par Aa et 452 présente, alors vérifier que notice 452$0 contient une 008 qui commence par Oa",
-              "regex": "^(0A).*",
+              "regex": "^(Oa).*",
               "index": 1019
           },
           {
@@ -1739,7 +1739,7 @@
                       "operator": "startwith_text",
                       "number" : "008",
                       "code" : "",
-                      "string": ["0a"]
+                      "string": ["Oa"]
 
                   }
               ],
@@ -1761,7 +1761,7 @@
                       "operator": "startwith_text",
                       "number" : "008",
                       "code" : "",
-                      "string": ["0a"]
+                      "string": ["Oa"]
 
                   }
               ],
@@ -1783,7 +1783,7 @@
                       "operator": "startwith_text",
                       "number" : "008",
                       "code" : "",
-                      "string": ["0a"]
+                      "string": ["Oa"]
 
                   }
               ],
@@ -1805,7 +1805,7 @@
                       "operator": "startwith_text",
                       "number" : "008",
                       "code" : "",
-                      "string": ["0a"]
+                      "string": ["Oa"]
 
                   }
               ],
@@ -1827,7 +1827,7 @@
                       "operator": "startwith_text",
                       "number" : "325",
                       "code" : "a",
-                      "string": ["Document numérisé dans le cadre d'un projet de numérisation du SCD de Lyon 1"]
+                      "string": ["Document numérisé dans le cadre d'un projet de numérisation du SCD de Lyon 1 :"]
 
                   }
               ],
@@ -1841,7 +1841,7 @@
               "type": "allRequired",
               "index": 1045,
               "number": "325",
-              "message": "Si 325$a commence par \"Document numérisé dans le cadre d'un projet de numérisation du SCD de Lyon 1\", 456 doit être présente"
+              "message": "Si 325$a commence par \"Document numérisé dans le cadre d'un projet de numérisation du SCD de Lyon 1 :\", 456 doit être présente"
           },
           {
               "condition" : [
@@ -2019,10 +2019,6 @@
                       "code" : ""
                   }
               ],
-              "reciproque" : {
-                  "number": "451",
-                  "code": "0"
-              },
               "value": [
                   {
                       "number" : "451",
@@ -2032,17 +2028,12 @@
                           "number": "451",
                           "code": "0"
                       }
-                  },
-                  {
-                      "number" : "328",
-                      "code" : "z",
-                      "present" : true
                   }
               ],
               "type": "allRequired",
               "index": 1053,
               "number": "451",
-              "message": "Si 451, alors vérifier que la notice 451$0 contient une 451 réciproque et une 328$z"
+              "message": "Si 451, alors vérifier que la notice 451$0 contient une 451 réciproque"
           },
           {
               "condition" : [

@@ -34,15 +34,14 @@ var Condition = function () {
                     subfieldValue = field._text;
                 }
                 var isMatched = false;
-                console.log(subfieldValue)
                 condition.string.forEach((item) => {
                     if (condition.operator === "contains_text" && Parcours.slice(condition.pos[0], condition.pos[1], subfieldValue).includes(item.toString())) {
                         isMatched = true;
-                    } else if (condition.operator === "startwith_text" && subfieldValue.startsWith(item.toString())) {
+                    } else if (condition.operator === "startwith_text" && subfieldValue.trim().startsWith(item.toString())) {
                         isMatched = true;
-                    } else if (condition.operator === "equals_text" && subfieldValue === item.toString()) {
+                    } else if (condition.operator === "equals_text" && subfieldValue.trim() === item.toString()) {
                         isMatched = true;
-                    } else if (condition.operator === "not_equals_text" && subfieldValue !== item.toString()) {
+                    } else if (condition.operator === "not_equals_text" && subfieldValue.trim() !== item.toString()) {
                         isMatched = true;
                     }
                 })
