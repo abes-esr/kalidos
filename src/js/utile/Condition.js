@@ -17,6 +17,7 @@ var Condition = function () {
         if (field == null){
               return false;
         }
+
         if (condition.operator === "presente") {
             if (condition.code.toString() !== "") {
                 return Parcours.getSubfieldValue(field, condition.code) != null;

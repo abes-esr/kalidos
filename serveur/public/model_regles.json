@@ -696,11 +696,16 @@
                       "string": ["y"]
                   }
               ],
-              "number": 215,
-              "code": "c",
-              "message": "Si  105 $a Pos. 0-3 différent de la valeur \"y\" alors 215$c ne doit pas être vide",
-              "regex": "^.+",
-              "index": 1000
+              "index": 1000,
+              "type" : "allRequired",
+              "values" : [
+                  {
+                      "number": 215,
+                      "code": "c",
+                      "message": "Si  105 $a Pos. 0-3 différent de la valeur \"y\" alors 215$c ne doit pas être vide",
+                      "regex": "^.+"
+                  }
+              ]
           },
           {
               "condition" :  [
@@ -712,43 +717,22 @@
                       "string": ["1"]
                   }
               ],
-              "number": 608,
-              "code": "3",
-              "message": "Si 105 $a Pos. 8 = 1 alors il faut aussi une 608 $302886431XActes de congrès",
-              "regex": "^02886431X$",
-              "index": 1001
-          },
-          {
-              "condition" :  [
+              "index": 1001,
+              "type" : "allRequired",
+              "values" : [
                   {
-                      "operator": "contains_text",
-                      "number" : "105",
-                      "code" : "a",
-                      "pos" : [8 , 9],
-                      "string": ["1"]
-                  }
-              ],
-              "number": 608,
-              "code": "a",
-              "message": "Si 105 $a Pos. 8 = 1 alors il faut aussi une 608 $302886431XActes de congrès",
-              "regex": "^Actes de congrès$",
-              "index": 1001
-          },
-          {
-              "condition" :  [
+                      "number": 608,
+                      "code": "3",
+                      "message": "Si 105 $a Pos. 8 = 1 alors il faut aussi une 608 $302886431XActes de congrès",
+                      "regex": "^02886431X$"
+                  },
                   {
-                      "operator": "contains_text",
-                      "number" : "105",
-                      "code" : "a",
-                      "pos" : [8 , 9],
-                      "string": ["0"]
+                      "number": 608,
+                      "code": "a",
+                      "message": "Si 105 $a Pos. 8 = 1 alors il faut aussi une 608 $302886431XActes de congrès",
+                      "regex": "^Actes de congrès$"
                   }
-              ],
-              "number": 608,
-              "code": "3",
-              "message": "Si 105 $a Pos. 8 = 0 alors il ne doit pas y avoir 608 $302886431X ou $aActes de congrès",
-              "regex": "^(?!02886431X$).*$",
-              "index": 1002
+              ]
           },
           {
               "condition" :  [
@@ -760,12 +744,24 @@
                       "string": ["0"]
                   }
               ],
-              "number": 608,
-              "code": "a",
-              "message": "Si 105 $a Pos. 8 = 0 alors il ne doit pas y avoir 608 $302886431X ou $aActes de congrès",
-              "regex": "^(?!Actes de congrès$).*$",
-              "index": 1002
+              "index": 1002,
+              "type" : "oneRequired",
+              "values" : [
+                  {
+                      "number": 608,
+                      "code": "3",
+                      "message": "Si 105 $a Pos. 8 = 0 alors il ne doit pas y avoir 608 $302886431X ou $aActes de congrès",
+                      "regex": "^(?!02886431X$).*$"
+                  },
+                  {
+                      "number": 608,
+                      "code": "a",
+                      "message": "Si 105 $a Pos. 8 = 0 alors il ne doit pas y avoir 608 $302886431X ou $aActes de congrès",
+                      "regex": "^(?!Actes de congrès$).*$"
+                  }
+              ]
           },
+
           {
               "condition" :  [
                   {
@@ -776,11 +772,16 @@
                       "string": ["1"]
                   }
               ],
-              "number": 320,
-              "code": "a",
-              "message": "Si 105 $a Pos. 10 =1 alors il faut une 320 avec la mention \"Index\"",
-              "regex": "^.*(Index).*",
-              "index": 1003
+              "index": 1003,
+              "type" : "allRequired",
+              "values" : [
+                  {
+                      "number": 320,
+                      "code": "a",
+                      "message": "Si 105 $a Pos. 10 =1 alors il faut une 320 avec la mention \"Index\"",
+                      "regex": "^.*(Index).*"
+                  }
+              ]
           },
           {
               "condition" :  [
@@ -792,11 +793,16 @@
                       "string": ["0"]
                   }
               ],
-              "number": 320,
-              "code": "a",
-              "message": "Si 105 $a Pos. 10 =0 alors il ne doit pas y avoir une 320 avec la mention \"Index\"",
-              "regex": "^((?!Index).)*$",
-              "index": 1004
+              "index": 1004,
+              "type" : "allRequired",
+              "values" : [
+                  {
+                      "number": 320,
+                      "code": "a",
+                      "message": "Si 105 $a Pos. 10 =0 alors il ne doit pas y avoir une 320 avec la mention \"Index\"",
+                      "regex": "^((?!Index).)*$"
+                  }
+              ]
           },
           {
               "condition" :  [
@@ -808,27 +814,22 @@
                       "string": ["m", "7"]
                   }
               ],
-              "number": 608,
-              "code": "3",
-              "message": "Si 105 $a Pos. 4-7= m ou 7 il faut une 608 $3027253139 et $a Thèses et écrits académiques",
-              "regex": "^027253139$",
-              "index": 1005
-          },
-          {
-              "condition" :  [
+              "index": 1005,
+              "type" : "allRequired",
+              "values" : [
                   {
-                      "operator": "contains_text",
-                      "number" : "105",
-                      "code" : "a",
-                      "pos" : [4 , 7],
-                      "string": ["m", "7"]
+                      "number": 608,
+                      "code": "a",
+                      "message": "Si 105 $a Pos. 4-7= m ou 7 il faut une 608 $3027253139 et $a Thèses et écrits académiques",
+                      "regex": "^Thèses et écrits académiques$"
+                  },
+                  {
+                      "number": 608,
+                      "code": "3",
+                      "message": "Si 105 $a Pos. 4-7= m ou 7 il faut une 608 $3027253139 et $a Thèses et écrits académiques",
+                      "regex": "^027253139$"
                   }
-              ],
-              "number": 608,
-              "code": "a",
-              "message": "Si 105 $a Pos. 4-7= m ou 7 il faut une 608 $3027253139 et $a Thèses et écrits académiques",
-              "regex": "^Thèses et écrits académiques$",
-              "index": 1005
+              ]
           },
           {
               "condition" :  [
@@ -840,11 +841,16 @@
                       "ind2" : "4"
                   }
               ],
-              "number": 214,
-              "code": "d",
-              "message": "Si 214 #4$d, la zone doit commencer par \"C espace\"",
-              "regex": "^(C ).*",
-              "index": 1006
+              "index": 1006,
+              "type" : "allRequired",
+              "values" : [
+                  {
+                      "number": 214,
+                      "code": "d",
+                      "message": "Si 214 #4$d, la zone doit commencer par \"C espace\"",
+                      "regex": "^(C ).*"
+                  }
+              ]
           },
           {
               "condition" :  [
@@ -857,11 +863,16 @@
                       "ind2" : "0"
                   }
               ],
-              "number": 214,
-              "code": "d",
-              "message": "Si 214 #0 et $d, doit commencer par \"DL espace\" ou \"[\" ou un chiffre",
-              "regex": "^(C |DL |\\[|[0-9]).*",
-              "index": 1007
+              "index": 1007,
+              "type" : "allRequired",
+              "values" : [
+                  {
+                      "number": 214,
+                      "code": "d",
+                      "message": "Si 214 #0 et $d, doit commencer par \"DL espace\" ou \"[\" ou un chiffre",
+                      "regex": "^(C |DL |\\[|[0-9]).*"
+                  }
+              ]
           },
           {
               "condition" :  [
@@ -873,11 +884,16 @@
                       "ind2" : "2"
                   }
               ],
-              "number": 214,
-              "code": "a",
-              "message": "Si 214 ind2=2, alors $aLyon",
-              "regex": "^Lyon$",
-              "index": 1008
+              "index": 1008,
+              "type" : "allRequired",
+              "values" : [
+                  {
+                      "number": 214,
+                      "code": "a",
+                      "message": "Si 214 ind2=2, alors $aLyon",
+                      "regex": "^Lyon$"
+                  }
+              ]
           },
           {
               "condition" :  [
@@ -889,11 +905,16 @@
                       "ind2" : "2"
                   }
               ],
-              "number": 214,
-              "code": "c",
-              "message": "Si 214 ind2=2, alors $cBibliothèque Lyon 1",
-              "regex": "^Bibliothèque Lyon 1$",
-              "index": 1009
+              "index": 1009,
+              "type" : "allRequired",
+              "values" : [
+                  {
+                      "number": 214,
+                      "code": "c",
+                      "message": "Si 214 ind2=2, alors $cBibliothèque Lyon 1",
+                      "regex": "^Bibliothèque Lyon 1$"
+                  }
+              ]
           },
           {
               "condition" :  [
@@ -905,27 +926,23 @@
 
                   }
               ],
-              "number": 214,
-              "code": "a",
-              "message": "Si 305$a commence par \"Document numérisé dans le cadre du projet de numérisation\", 214 $aLyon et $cBibliothèque Lyon 1",
-              "regex": "^Lyon$",
-              "index": 1010
-          },
-          {
-              "condition" :  [
+              "index": 1010,
+              "type" : "allRequired",
+              "values" : [
                   {
-                      "operator": "startwith_text",
-                      "number" : "305",
-                      "code" : "a",
-                      "string": ["Document numérisé dans le cadre du projet de numérisation"]
+                      "number": 214,
+                      "code": "a",
+                      "message": "Si 305$a commence par \"Document numérisé dans le cadre du projet de numérisation\", 214 $aLyon et $cBibliothèque Lyon 1",
+                      "regex": "^Lyon$"
+                  },
+                  {
+                      "number": 214,
+                      "code": "c",
+                      "message": "Si 305$a commence par \"Document numérisé dans le cadre du projet de numérisation\", 214 $aLyon et $cBibliothèque Lyon 1",
+                      "regex": "^Bibliothèque Lyon 1$"
 
                   }
-              ],
-              "number": 214,
-              "code": "a",
-              "message": "Si 305$a commence par \"Document numérisé dans le cadre du projet de numérisation\", 214 $aLyon et $cBibliothèque Lyon 1",
-              "regex": "^Bibliothèque Lyon 1$",
-              "index": 1010
+              ]
           },
           {
               "condition" :  [
@@ -937,11 +954,16 @@
 
                   }
               ],
-              "number": 701,
-              "code": "4",
-              "message": "Si 328$zReproduction de, alors il faut une 701$4727",
-              "regex": "^727$",
-              "index": 1011
+              "index": 1011,
+              "type" : "allRequired",
+              "values" : [
+                  {
+                      "number": 701,
+                      "code": "4",
+                      "message": "Si 328$zReproduction de, alors il faut une 701$4727",
+                      "regex": "^727$"
+                  }
+              ]
           },
           {
               "condition" :  [
@@ -953,11 +975,16 @@
 
                   }
               ],
-              "number": 701,
-              "code": "4",
-              "message": "Si 328$z n'est pas \"Reproduction de\", alors 701$4727 ne doit pas être présente",
-              "regex": "^(?:(?!727).)*",
-              "index": 1012
+              "index": 1012,
+              "type" : "allRequired",
+              "values" : [
+                  {
+                      "number": 701,
+                      "code": "4",
+                      "message": "Si 328$z n'est pas \"Reproduction de\", alors 701$4727 ne doit pas être présente",
+                      "regex": "^(?:(?!727).)*"
+                  }
+              ]
           },
           {
               "condition" :  [
@@ -969,11 +996,16 @@
 
                   }
               ],
-              "number": 711,
-              "code": "4",
-              "message": "Si 328$zReproduction de, alors il faut une 711$4295",
-              "regex": "^295$",
-              "index": 1013
+              "index": 1013,
+              "type" : "allRequired",
+              "values" : [
+                  {
+                      "number": 711,
+                      "code": "4",
+                      "message": "Si 328$zReproduction de, alors il faut une 711$4295",
+                      "regex": "^295$"
+                  }
+              ]
           },
           {
               "condition" :  [
@@ -985,11 +1017,16 @@
 
                   }
               ],
-              "number": 711,
-              "code": "4",
-              "message": "Si 328$z n'est pas \"Reproduction de\", alors 711$4295 ne doit pas être présente",
-              "regex": "^(?:(?!295).)*",
-              "index": 1014
+              "index": 1014,
+              "type" : "allRequired",
+              "values" : [
+                  {
+                      "number": 711,
+                      "code": "4",
+                      "message": "Si 328$z n'est pas \"Reproduction de\", alors 711$4295 ne doit pas être présente",
+                      "regex": "^(?:(?!295).)*"
+                  }
+              ]
           },
           {
               "condition" :  [
@@ -1001,27 +1038,23 @@
 
                   }
               ],
-              "number": 608,
-              "code": "3",
-              "message": "Si 328$zReproduction de, alors il faut une 608 $3027253139 $aThèses et écrits académiques",
-              "regex": "^027253139$",
-              "index": 1015
-          },
-          {
-              "condition" :  [
+              "index": 1015,
+              "type" : "allRequired",
+              "values" : [
                   {
-                      "operator": "equals_text",
-                      "number" : "328",
-                      "code" : "z",
-                      "string": ["Reproduction de"]
+                      "number": 608,
+                      "code": "3",
+                      "message": "Si 328$zReproduction de, alors il faut une 608 $3027253139 $aThèses et écrits académiques",
+                      "regex": "^027253139$"
+                  },
+                  {
+                      "number": 608,
+                      "code": "a",
+                      "message": "Si 328$zReproduction de, alors il faut une 608 $3027253139 $aThèses et écrits académiques",
+                      "regex": "^Thèses et écrits académiques$"
 
                   }
-              ],
-              "number": 608,
-              "code": "a",
-              "message": "Si 328$zReproduction de, alors il faut une 608 $3027253139 $aThèses et écrits académiques",
-              "regex": "^Thèses et écrits académiques$",
-              "index": 1015
+              ]
           },
           {
               "condition" :  [
@@ -1042,11 +1075,16 @@
                   "number" : 451,
                   "code": "0"
               },
-              "number": "008",
-              "code": "",
-              "message": "Si 008 commence par Oa et 451 présente, alors vérifier que notice 451$0 contient une 008 qui commence par Oa",
-              "regex": "^(Oa).*",
-              "index": 1016
+              "index": 1016,
+              "type" : "allRequired",
+              "values" : [
+                  {
+                      "number": "008",
+                      "code": "",
+                      "message": "Si 008 commence par Oa et 451 présente, alors vérifier que notice 451$0 contient une 008 qui commence par Oa",
+                      "regex": "^(Oa).*"
+                  }
+              ]
           },
           {
               "condition" :  [
@@ -1067,11 +1105,16 @@
                   "number" : 451,
                   "code": "0"
               },
-              "number": "008",
-              "code": "",
-              "message": "Si 008 commence par Aa et 451 présente, alors vérifier que notice 451$0 contient une 008 qui commence par Aa",
-              "regex": "^(Aa).*",
-              "index": 1017
+              "index": 1017,
+              "type" : "allRequired",
+              "values" : [
+                  {
+                      "number": "008",
+                      "code": "",
+                      "message": "Si 008 commence par Aa et 451 présente, alors vérifier que notice 451$0 contient une 008 qui commence par Aa",
+                      "regex": "^(Aa).*"
+                  }
+              ]
           },
           {
               "condition" :  [
@@ -1092,11 +1135,16 @@
                   "number" : 452,
                   "code": "0"
               },
-              "number": "008",
-              "code": "",
-              "message": "Si 008 commence par Oa et 452 présente, alors vérifier que notice 452$0 contient une 008 qui commence par Aa",
-              "regex": "^(Aa).*",
-              "index": 1018
+              "index": 1018,
+              "type" : "allRequired",
+              "values" : [
+                  {
+                      "number": "008",
+                      "code": "",
+                      "message": "Si 008 commence par Oa et 452 présente, alors vérifier que notice 452$0 contient une 008 qui commence par Aa",
+                      "regex": "^(Aa).*"
+                  }
+              ]
           },
           {
               "condition" :  [
@@ -1117,11 +1165,16 @@
                   "number" : 452,
                   "code": "0"
               },
-              "number": "008",
-              "code": "",
-              "message": "Si 008 commence par Aa et 452 présente, alors vérifier que notice 452$0 contient une 008 qui commence par Oa",
-              "regex": "^(Oa).*",
-              "index": 1019
+              "index": 1019,
+              "type" : "allRequired",
+              "values" : [
+                  {
+                      "number": "008",
+                      "code": "",
+                      "message": "Si 008 commence par Aa et 452 présente, alors vérifier que notice 452$0 contient une 008 qui commence par Oa",
+                      "regex": "^(Oa).*"
+                  }
+              ]
           },
           {
               "condition" :  [
@@ -1135,11 +1188,16 @@
                   "number" : 455,
                   "code": "0"
               },
-              "number": "105",
-              "code": "a",
-              "message": "Si 455, alors vérifier que la notice en 455$0 contient 105$a Pos. 4-7= m",
-              "regex": "^(.{4}m|.{5}m|.{6}m).*$",
-              "index": 1020
+              "index": 1020,
+              "type" : "allRequired",
+              "values" : [
+                  {
+                      "number": "105",
+                      "code": "a",
+                      "message": "Si 455, alors vérifier que la notice en 455$0 contient 105$a Pos. 4-7= m",
+                      "regex": "^(.{4}m|.{5}m|.{6}m).*$"
+                  }
+              ]
           },
           {
               "condition" :  [
@@ -1156,11 +1214,16 @@
 
                   }
               ],
-              "number": "856",
-              "code": "z",
-              "message": "856$zAccès au texte intégral sauf si 856$5=692669902, alors $zAccès réservé aux membres de Lyon 1 après authentification",
-              "regex": "^Accès réservé aux membres de Lyon 1 après authentification$",
-              "index": 1021
+              "index": 1021,
+              "type" : "allRequired",
+              "values" : [
+                  {
+                      "number": "856",
+                      "code": "z",
+                      "message": "856$zAccès au texte intégral sauf si 856$5=692669902, alors $zAccès réservé aux membres de Lyon 1 après authentification",
+                      "regex": "^Accès réservé aux membres de Lyon 1 après authentification$"
+                  }
+              ]
           },
           {
               "condition" :  [
@@ -1177,11 +1240,16 @@
 
                   }
               ],
-              "number": "856",
-              "code": "z",
-              "message": "856$zAccès au texte intégral sauf si 856$5=692669902, alors $zAccès réservé aux membres de Lyon 1 après authentification",
-              "regex": "^Accès au texte intégral$",
-              "index": 1021
+              "index": 1021,
+              "type" : "allRequired",
+              "values" : [
+                  {
+                      "number": "856",
+                      "code": "z",
+                      "message": "856$zAccès au texte intégral sauf si 856$5=692669902, alors $zAccès réservé aux membres de Lyon 1 après authentification",
+                      "regex": "^Accès au texte intégral$"
+                  }
+              ]
           },
           {
               "condition" :  [
@@ -1198,13 +1266,18 @@
 
                   }
               ],
-              "number": "310",
-              "ind1" : "",
-              "ind2" : "",
-              "code": "a",
-              "message": "Si 856$5=692669902, alors doit être présente 310 ##$aL'accès à cette ressource est réservé aux membres de Lyon 1 après authentification",
-              "regex": "^L'accès à cette ressource est réservé aux membres de Lyon 1 après authentification$",
-              "index": 1022
+              "index": 1022,
+              "type" : "allRequired",
+              "values" : [
+                  {
+                      "number": "310",
+                      "ind1": "",
+                      "ind2": "",
+                      "code": "a",
+                      "message": "Si 856$5=692669902, alors doit être présente 310 ##$aL'accès à cette ressource est réservé aux membres de Lyon 1 après authentification",
+                      "regex": "^L'accès à cette ressource est réservé aux membres de Lyon 1 après authentification$"
+                  }
+              ]
           },
           {
               "condition" :  [
@@ -1218,11 +1291,16 @@
                   "number" : 456,
                   "code": "0"
               },
-              "number": "105",
-              "code": "a",
-              "message": "Si 456, alors vérifier que la notice en 456$0 contient 105$a Pos. 4-7= v",
-              "regex": "^(.{4}v|.{5}v|.{6}v).*$",
-              "index": 1023
+              "index": 1023,
+              "type" : "allRequired",
+              "values" : [
+                  {
+                      "number": "105",
+                      "code": "a",
+                      "message": "Si 456, alors vérifier que la notice en 456$0 contient 105$a Pos. 4-7= v",
+                      "regex": "^(.{4}v|.{5}v|.{6}v).*$"
+                  }
+              ]
           },
           {
               "condition" :  [
@@ -1234,27 +1312,23 @@
 
                   }
               ],
-              "number": 608,
-              "code": "3",
-              "message": "Si 328$z n'est pas \"Reproduction de\", alors 608 $3027253139Thèses et écrits académiques ne doit pas être présente",
-              "regex": "^(?:(?!027253139).)*",
-              "index": 1024
-          },
-          {
-              "condition" :  [
+              "index": 1024,
+              "type" : "allRequired",
+              "values" : [
                   {
-                      "operator": "not_equals_text",
-                      "number" : "328",
-                      "code" : "z",
-                      "string": ["Reproduction de"]
+                      "number": 608,
+                      "code": "3",
+                      "message": "Si 328$z n'est pas \"Reproduction de\", alors 608 $3027253139Thèses et écrits académiques ne doit pas être présente",
+                      "regex": "^(?:(?!027253139).)*"
+                  },
+                  {
+                      "number": 608,
+                      "code": "a",
+                      "message": "Si 328$z n'est pas \"Reproduction de\", alors 608 $3027253139Thèses et écrits académiques ne doit pas être présente",
+                      "regex": "^(?:(?!Thèses et écrits académiques).)*"
 
                   }
-              ],
-              "number": 608,
-              "code": "a",
-              "message": "Si 328$z n'est pas \"Reproduction de\", alors 608 $3027253139Thèses et écrits académiques ne doit pas être présente",
-              "regex": "^(?:(?!Thèses et écrits académiques).)*",
-              "index": 1024
+              ]
           },
           {
               "condition" :  [
@@ -1264,11 +1338,16 @@
                       "code" : ""
                   }
               ],
-              "number": 600,
-              "code": "2",
-              "message": "Si 600 $2rameau doit être présent",
-              "regex": "^rameau$",
-              "index": 1078
+              "index": 1078,
+              "type" : "allRequired",
+              "values" : [
+                  {
+                      "number": 600,
+                      "code": "2",
+                      "message": "Si 600 $2rameau doit être présent",
+                      "regex": "^rameau$"
+                  }
+              ]
           },
           {
               "condition" :  [
@@ -1278,11 +1357,16 @@
                       "code" : ""
                   }
               ],
-              "number": 601,
-              "code": "2",
-              "message": "Si 601 $2rameau doit être présent",
-              "regex": "^rameau$",
-              "index": 1079
+              "index": 1079,
+              "type" : "allRequired",
+              "values" : [
+                  {
+                      "number": 601,
+                      "code": "2",
+                      "message": "Si 601 $2rameau doit être présent",
+                      "regex": "^rameau$"
+                  }
+              ]
           },
           {
               "condition" :  [
@@ -1292,11 +1376,16 @@
                       "code" : ""
                   }
               ],
-              "number": 602,
-              "code": "2",
-              "message": "Si 602 $2rameau doit être présent",
-              "regex": "^rameau$",
-              "index": 1080
+              "index": 1080,
+              "type" : "allRequired",
+              "values" : [
+                  {
+                      "number": 602,
+                      "code": "2",
+                      "message": "Si 602 $2rameau doit être présent",
+                      "regex": "^rameau$"
+                  }
+              ]
           },
           {
               "condition" :  [
@@ -1306,11 +1395,16 @@
                       "code" : ""
                   }
               ],
-              "number": 604,
-              "code": "2",
-              "message": "Si 604 $2rameau doit être présent",
-              "regex": "^rameau$",
-              "index": 1081
+              "index": 1081,
+              "type" : "allRequired",
+              "values" : [
+                  {
+                      "number": 604,
+                      "code": "2",
+                      "message": "Si 604 $2rameau doit être présent",
+                      "regex": "^rameau$"
+                  }
+              ]
           },
           {
               "condition" :  [
@@ -1320,11 +1414,16 @@
                       "code" : ""
                   }
               ],
-              "number": 605,
-              "code": "2",
-              "message": "Si 605 $2rameau doit être présent",
-              "regex": "^rameau$",
-              "index": 1082
+              "index": 1082,
+              "type" : "allRequired",
+              "values" : [
+                  {
+                      "number": 605,
+                      "code": "2",
+                      "message": "Si 605 $2rameau doit être présent",
+                      "regex": "^rameau$"
+                  }
+              ]
           },
           {
               "condition" :  [
@@ -1334,11 +1433,16 @@
                       "code" : ""
                   }
               ],
-              "number": 607,
-              "code": "2",
-              "message": "Si 607 $2rameau doit être présent",
-              "regex": "^rameau$",
-              "index": 1083
+              "index": 1083,
+              "type" : "allRequired",
+              "values" : [
+                  {
+                      "number": 607,
+                      "code": "2",
+                      "message": "Si 607 $2rameau doit être présent",
+                      "regex": "^rameau$"
+                  }
+              ]
           }
       ],
       "ConditionStructurel": [

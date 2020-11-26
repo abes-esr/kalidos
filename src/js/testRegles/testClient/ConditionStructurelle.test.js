@@ -1181,3 +1181,68 @@ test("Si 305$a commence par \"Document numérisé dans le cadre du projet de num
 
 // ===============================================================
 
+test("Si 328$zReproduction de, alors il faut une 029", () => {
+    const notice = "049"
+    const index = 1060
+    const sudoc = getNotice(notice);
+    const datafields = sudoc.record.datafield;
+    const controlfields = sudoc.record.controlfield;
+    let resultJson = {
+        PPN: 0,
+        errors: [],
+    };
+    addRuleToTest(index);
+    ConditionStructurelle.testConditionStrucutrelRules(ruleTest,controlfields,datafields , resultJson);
+    expect(resultJson.errors).toStrictEqual([]);
+});
+
+
+test("Si 328$zReproduction de, alors il faut une 029 (FAIL)", () => {
+    const notice = "050"
+    const index = 1060
+    const sudoc = getNotice(notice);
+    const datafields = sudoc.record.datafield;
+    const controlfields = sudoc.record.controlfield;
+    let resultJson = {
+        PPN: 0,
+        errors: [],
+    };
+    addRuleToTest(index);
+    ConditionStructurelle.testConditionStrucutrelRules(ruleTest,controlfields,datafields , resultJson);
+    expect(resultJson.errors).not.toStrictEqual([]);
+});
+
+// ===============================================================
+
+test("Si 328$z n'est pas \"Reproduction de\", alors 029 ne doit pas être présente", () => {
+    const notice = "033"
+    const index = 2000
+    const sudoc = getNotice(notice);
+    const datafields = sudoc.record.datafield;
+    const controlfields = sudoc.record.controlfield;
+    let resultJson = {
+        PPN: 0,
+        errors: [],
+    };
+    addRuleToTest(index);
+    ConditionStructurelle.testConditionStrucutrelRules(ruleTest,controlfields,datafields , resultJson);
+    expect(resultJson.errors).toStrictEqual([]);
+});
+
+
+test("Si 328$z n'est pas \"Reproduction de\", alors 029 ne doit pas être présente (FAIL)", () => {
+    const notice = "034"
+    const index = 2000
+    const sudoc = getNotice(notice);
+    const datafields = sudoc.record.datafield;
+    const controlfields = sudoc.record.controlfield;
+    let resultJson = {
+        PPN: 0,
+        errors: [],
+    };
+    addRuleToTest(index);
+    ConditionStructurelle.testConditionStrucutrelRules(ruleTest,controlfields,datafields , resultJson);
+    expect(resultJson.errors).not.toStrictEqual([]);
+});
+
+// ===============================================================
