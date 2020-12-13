@@ -16,7 +16,7 @@ var ConditionStructurel = function() {
                     });
 
                     if (checkedConds) {
-                        console.log("codition verifie");
+                        console.log("condition verifie");
                         if(!Dependance.applyRuleOnFields(Parcours.findDataField(datafields, regle.field1.number), Parcours.findDataField(datafields, regle.field2.number), regle)) {
                             resultJson.errors.push({
                                 message: regle.message,

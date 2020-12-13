@@ -24,7 +24,7 @@ var ConditionStructurel = function () {
                 });
                 //si les conditions sont vrai
                 if(checkedConds){
-                    console.log("condition verifié");
+                    // console.log("condition verifié");
                     //si les verification sont sur la notice reciproque
                     if(regle.reciproque){
                         var field = Parcours.findDataField(datafields, regle.reciproque.number);
