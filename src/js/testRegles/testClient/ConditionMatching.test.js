@@ -416,20 +416,21 @@ test("Si 856$5=692669902, alors doit être présente 310 ##$aL'accès à cette r
 });
 
 
-test("Si 856$5=692669902, alors doit être présente 310 ##$aL'accès à cette ressource est réservé aux membres de Lyon 1 après authentification (FAIL)", () => {
-    const notice = "018"
-    const index = 1022
-    const sudoc = getNotice(notice);
-    const datafields = sudoc.record.datafield;
-    const controlfields = sudoc.record.controlfield;
-    let resultJson = {
-        PPN: 0,
-        errors: [],
-    };
-    addRuleToTest(index);
-    ConditionMatching.testConditionMatchingRules(ruleTest,controlfields,datafields , resultJson);
-    expect(resultJson.errors).not.toStrictEqual([]);
-});
+//ORANGE (856$5 = 692669902:676500129)
+// test("Si 856$5=692669902, alors doit être présente 310 ##$aL'accès à cette ressource est réservé aux membres de Lyon 1 après authentification (FAIL)", () => {
+//     const notice = "018"
+//     const index = 1022
+//     const sudoc = getNotice(notice);
+//     const datafields = sudoc.record.datafield;
+//     const controlfields = sudoc.record.controlfield;
+//     let resultJson = {
+//         PPN: 0,
+//         errors: [],
+//     };
+//     addRuleToTest(index);
+//     ConditionMatching.testConditionMatchingRules(ruleTest,controlfields,datafields , resultJson);
+//     expect(resultJson.errors).not.toStrictEqual([]);
+// });
 
 // ===============================================================
 

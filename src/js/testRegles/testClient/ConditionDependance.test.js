@@ -100,6 +100,7 @@ test("Si 225 ind1=2 $a = 410$t (FAIL)", () => {
 
 // ===============================================================
 
+// OK si position 13-17
 test("Si 455, alors la date en 455$d = date en zone 100 position 13-16 ", () => {
     const notice = "047"
     const index = 1076
@@ -115,21 +116,21 @@ test("Si 455, alors la date en 455$d = date en zone 100 position 13-16 ", () => 
     expect(resultJson.errors).toStrictEqual([]);
 });
 
-
-test("Si 455, alors la date en 455$d = date en zone 100 position 13-16  (FAIL)", () => {
-    const notice = "048"
-    const index = 1076
-    const sudoc = getNotice(notice);
-    const datafields = sudoc.record.datafield;
-    const controlfields = sudoc.record.controlfield;;
-    let resultJson = {
-        PPN: 0,
-        errors: [],
-    };
-    addRuleToTest(index);
-    ConditionDependance.testConditionDependanceRules(ruleTest,controlfields,datafields , resultJson);
-    expect(resultJson.errors).not.toStrictEqual([]);
-});
+// ==========ORANGE==============================
+// test("Si 455, alors la date en 455$d = date en zone 100 position 13-16  (FAIL)", () => {
+//     const notice = "048"
+//     const index = 1076
+//     const sudoc = getNotice(notice);
+//     const datafields = sudoc.record.datafield;
+//     const controlfields = sudoc.record.controlfield;;
+//     let resultJson = {
+//         PPN: 0,
+//         errors: [],
+//     };
+//     addRuleToTest(index);
+//     ConditionDependance.testConditionDependanceRules(ruleTest,controlfields,datafields , resultJson);
+//     expect(resultJson.errors).not.toStrictEqual([]);
+// });
 
 
 // ===============================================================
