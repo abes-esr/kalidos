@@ -57,18 +57,18 @@ var ConditionStructurel = function () {
 
     function checkValues(regle, controlfields, datafields) {
         if (regle.type.toString() === "allRequired") {
-            for(let i in regle.value) {
+            for (let i in regle.value) {
                 const result = verifyOne(datafields, regle.value[i], controlfields, checkReciproque);
-                if(!result) {
-                    return false; 
+                if (!result) {
+                    return false;
                 }
             }
             return true;
         } else if (regle.type.toString() === "oneRequired") {
-            for(let i in regle.value) {
+            for (let i in regle.value) {
                 const result = verifyOne(datafields, regle.value[i], controlfields, checkReciproque);
-                if(result) {
-                    return true; 
+                if (result) {
+                    return true;
                 }
             }
             return false;
@@ -104,17 +104,17 @@ module.exports = ConditionStructurel;
 
 function verifyOne(datafields, value, controlfields, checkReciproque) {
     const listDatafield = getListDatafield(datafields, value);
-    let result = verifyPresence(value, listDatafield); 
-    result = result || verifyIndex(value, listDatafield); 
+    let result = verifyPresence(value, listDatafield);
+    result = result || verifyIndex(value, listDatafield);
     result = result || verifyReciproque(value, controlfields, checkReciproque, datafields);
     return result;
 }
 
 function verifyPresenceSubfield(value, listDatafield) {
-        const subfield = Parcours.getSubfieldValue(listDatafield[0], value.code);
-        if ((subfield != null) === value.present) {
-            return true;
-        }
+    const subfield = Parcours.getSubfieldValue(listDatafield[0], value.code);
+    if ((subfield != null) === value.present) {
+        return true;
+    }
     return false;
 }
 
@@ -127,8 +127,8 @@ function verifyPresenceField(value, listDatafield) {
 function verifyPresence(value, listDatafield) {
     if (value.code.toString() !== "") {
         return verifyPresenceSubfield(value, listDatafield);
-    } else {
-        return verifyPresenceField(value,listDatafield);
+    } else if (value.ind1 === undefined || value.ind2 === undefined) {
+        return verifyPresenceField(value, listDatafield);
     }
 }
 
@@ -136,7 +136,7 @@ function verifyIndex(value, listDatafield) {
     if ((listDatafield.length !== 0) && value.present) {
         const ind1IsOk = value.ind1 === listDatafield[0]._attributes.ind1.toString().trim();
         const ind2IsOk = value.ind2 === listDatafield[0]._attributes.ind2.toString().trim();
-        if (value.ind1 && !(ind1IsOk && ind2IsOk)) {
+        if (ind1IsOk && ind2IsOk) {
             return true;
         }
     }
