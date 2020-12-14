@@ -16,6 +16,12 @@ var ConditionStructurel = function () {
                 dataField = Parcours.findDataField(controlfields, regle.number);
             }
             if (dataField == null) {
+               for(let i in regle.value) {
+                   if(regle.value[i].number === regle.number && regle.value[i].present === false ) {
+                       return;
+                   }
+               }
+               addError(resultJson, regle);
                 return null;
             }
 
@@ -42,10 +48,7 @@ var ConditionStructurel = function () {
                 }
 
                 if (!checkValues(regle, checkControlFields, checkDataFields)) {
-                    resultJson.errors.push({
-                        message: regle.message,
-                        number: regle.number,
-                    });
+                    addError(resultJson, regle);
                 }
             }
 
@@ -127,6 +130,13 @@ var ConditionStructurel = function () {
 }();
 
 module.exports = ConditionStructurel;
+
+function addError(resultJson, regle) {
+    resultJson.errors.push({
+        message: regle.message,
+        number: regle.number,
+    });
+}
 
 function getListDatafield(datafields, value) {
     let dataField = Parcours.findDataFields(datafields, value.number);
