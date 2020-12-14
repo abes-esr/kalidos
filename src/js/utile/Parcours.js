@@ -43,6 +43,17 @@ var Parcours = function () {
         return retour;
     }
 
+    const filterDatafield = function(datafields,variable, value) {
+        let retour = [];
+        for(let i in datafields) {
+            let tutu = datafields[i]._attributes[variable];
+            if(datafields[i]._attributes[variable] === value) {
+                retour.push(datafields[i])
+            }
+        }
+        return retour;
+    }
+
 
     /**
      * retourne la valeur d'un champ d'une notice
@@ -143,7 +154,8 @@ var Parcours = function () {
         getIdentifiantValue : getIdentifiantValue,
         findDataFields : findDataFields,
         slice : slice,
-        findDataFieldById : findDataFieldById
+        findDataFieldById : findDataFieldById,
+        filterDatafield : filterDatafield
     }
 }();
 

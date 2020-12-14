@@ -5,133 +5,164 @@ const convert = require("xml-js");
 
 
 var ConditionStructurel = function () {
-
-    var testConditionStrucutrelRules = function (rules, controlfields, datafields, resultJson) {
+    var getDocument = undefined;
+    var testConditionStrucutrelRules = function (rules, controlfields, datafields, resultJson , getfunctionDocument) {
+        getDocument = getfunctionDocument
         rules.Generale.ConditionStructurel.forEach(function (regle) {
             //recuperation du field a testé
-            var field1 = Parcours.findDataField(datafields, regle.number);
+            let dataField = Parcours.findDataField(datafields, regle.number);
             //si c'est pas un datafield en cherche dans controllefield
-            if (field1 == null){
-                field1 = Parcours.findDataField(controlfields, regle.number);
+            if (dataField == null) {
+                dataField = Parcours.findDataField(controlfields, regle.number);
             }
-            //si on le field on check les conditions
-            if (field1 != null){
-                var checkedConds = true;
-                regle.condition.forEach(function (condition) {
-                    if(!Condition.checkCondition(controlfields ,datafields , condition)) {
-                        checkedConds = false;
-                    }
-                });
-                //si les conditions sont vrai
-                if(checkedConds){
-                    // console.log("condition verifié");
-                    //si les verification sont sur la notice reciproque
-                    if(regle.reciproque){
-                        var field = Parcours.findDataField(datafields, regle.reciproque.number);
-                        var ppnDest = Parcours.getSubfieldValue(field , regle.reciproque.code);
-                        axios.get("https://www.sudoc.fr/"+ppnDest+".xml")
-                            .then(function (response) {
-                                const data = JSON.parse(
-                                    convert.xml2json(response.data, { compact: true, spaces: 2 })
-                                );
-                                if (!checkValues(regle, data.record.controlfield ,data.record.datafield)) {
-                                    resultJson.errors.push({
-                                        message: regle.message,
-                                        number: regle.number,
-                                    });
-                                }
+            if (dataField == null) {
+                return null;
+            }
 
-                            })
-                            .catch(function (error) {
-                                console.log("error matching reciproque");
-                            })
-                    }else{
-                        //notice courante
-                        if (!checkValues(regle, controlfields , datafields )){
-                            resultJson.errors.push({
-                                message: regle.message,
-                                number: regle.number,
-                            });
-                        }
-                    }
+            //si on le field on check les conditions
+            let checkedConds = true;
+            regle.condition.forEach(function (condition) {
+                if (!Condition.checkCondition(controlfields, datafields, condition)) {
+                    checkedConds = false;
+                }
+            });
+            //si les conditions sont vrai
+            if (checkedConds) {
+                //notice courante
+                let checkControlFields = controlfields;
+                let checkDataFields = datafields;
+                console.log("condition verifié");
+                if (regle.reciproque) {
+                    //si les verification sont sur la notice reciproque
+                    const data = getDocument(datafields, regle.reciproque.number, regle.reciproque.code);
+                    console.log(data);
+                    checkControlFields = data.record.controlfield;
+                    checkDataFields = data.record.datafield;
+
+                }
+
+                if (!checkValues(regle, checkControlFields, checkDataFields)) {
+                    resultJson.errors.push({
+                        message: regle.message,
+                        number: regle.number,
+                    });
                 }
             }
 
         });
     }
 
-    function checkValues(regle, controlfields , datafields){
+    function checkValues(regle, controlfields, datafields) {
 
-        var checkValues;
-        if(regle.type.toString() === "allRequired"){
-            checkValues = true;
-            regle.value.forEach(function (v){
-                if(v.code.toString() === "" && (Parcours.findDataField(datafields , v.number ) == null) === v.present){
-                    checkValues = false;
-                }else if(v.code.toString() !== ""){
-                    const field = Parcours.findDataField(datafields, v.number);
-                    const subfield = Parcours.getSubfieldValue(field , v.code);
-                    if((subfield != null)  != v.present)
-                        checkValues = false;
-                    else if(v.reciproque){
-                        checkReciproque(checkValues , Parcours.findDataField(controlfields, "001"), datafields, v.reciproque.number, v.reciproque.code, v.reciproque);
+        let isCheckValues;
+        if (regle.type.toString() === "allRequired") {
+            isCheckValues = true;
+            regle.value.forEach(function (value) {
+                let dataField = Parcours.findDataFields(datafields, value.number);
+                if(value.ind1 != "") {
+                    dataField = Parcours.filterDatafield(dataField,"ind1", value.ind1);
+
+                }if(value.ind2 != "") { 
+                    dataField = Parcours.filterDatafield(dataField,"ind2", value.ind2);
+                }
+                if (value.code.toString() !== "") {
+
+                    const subfield = Parcours.getSubfieldValue(dataField[0], value.code);
+                    if ((subfield != null) != value.present) {
+                        isCheckValues = false;
+                    }
+                    else if (value.reciproque) {
+                        const dataField001 = Parcours.findDataField(controlfields, "001");
+                        isCheckValues = checkReciproque(dataField001, datafields, value.reciproque.number, value.reciproque.code);
                     }
                 }
-
+                else if ((dataField.length === 0) === value.present) {
+                    isCheckValues = false;
+                }
 
             });
+        } else if (regle.type.toString() === "oneRequired") {
+            isCheckValues = false;
+            regle.value.forEach(function (value) {
+                const dataField = Parcours.findDataField(datafields, value.number);
+                if (value.code.toString() !== "") {
+                    const subfield = Parcours.getSubfieldValue(dataField, value.code);
+                    if ((subfield != null) === value.present) {
+                        isCheckValues = true;
+                    }
 
-        }else if(regle.type.toString() === "oneRequired"){
-            checkValues = false;
-            regle.value.forEach(function (v){
-                var field = Parcours.findDataField(datafields , v.number);
-                if(v.code.toString() === "" && (Parcours.findDataField(datafields , v.number) != null) === v.present
-                &&  ((v.ind1 && v.ind1 === field._attributes.ind1.toString().trim() && v.ind2 === field._attributes.ind2.toString().trim()) || !v.ind1)){
-                    checkValues = true;
-                }else if(v.code.toString() !== ""){
-                    const f = Parcours.findDataField(datafields, v.number);
-                    if((Parcours.getSubfieldValue(f , v.code) != null) === v.present )
-                        checkValues = true;
-                }else if(v.reciproque){
-                    checkReciproque(checkValues , Parcours.findDataField(controlfields, "001"), datafields, v.reciproque.number, v.reciproque.code, v.reciproque);
+                } else if ((dataField != null) === value.present) {
+                    const ind1IsOk = value.ind1 === dataField._attributes.ind1.toString().trim();
+                    const ind2IsOk = value.ind2 === dataField._attributes.ind2.toString().trim();
+                    if (!value.ind1 || (ind1IsOk && ind2IsOk)) {
+                        isCheckValues = true;
+                    }
+
+                } else if (value.reciproque) {
+                    const dataField001 = Parcours.findDataField(controlfields, "001");
+                    isCheckValues = checkReciproque(dataField001, datafields, value.reciproque.number, value.reciproque.code);
                 }
 
             });
 
         }
 
-        return checkValues;
+        return isCheckValues;
 
     }
 
-    function  checkReciproque(isReciproque ,ppnSource, datafields,  number, code){
-        var field = Parcours.findDataField(datafields, number);
-        var ppnDest = Parcours.getSubfieldValue(field , code);
-        if (ppnDest === null){
-            isReciproque = false;
-            return ;
+
+    function checkReciproque(ppnSource, datafields, number, code) {
+
+        let data = getDocument(datafields, number, code);
+        if (data == null) {
+            return false;
         }
 
-        axios.get("https://www.sudoc.fr/"+ppnDest+".xml")
-            .then(function (response) {
-                const data = JSON.parse(
-                    convert.xml2json(response.data, { compact: true, spaces: 2 })
-                );
-
-                var field = Parcours.findDataField(data.record.datafield, number);
-                if(field == null)
-                    isReciproque = false;
-                isReciproque = Parcours.getSubfieldValue(field , code) === ppnSource;
-            })
-            .catch(function (error) {
-                isReciproque = false;
-            })
-
+        let tempDataField = Parcours.findDataField(data.record.datafield, number);
+        if (tempDataField == null) {
+            return false;
+        }
+        return Parcours.getSubfieldValue(tempDataField, code) === ppnSource;
     }
 
     return {
-        testConditionStrucutrelRules : testConditionStrucutrelRules
+        testConditionStrucutrelRules: testConditionStrucutrelRules,
+        getDataOnSudoc: getDataOnSudoc,
+        mockGetDataOnSudoc: mockGetDataOnSudoc
     }
 }();
 
 module.exports = ConditionStructurel;
+
+function getDataOnSudoc(datafields, number, code) {
+    const dataField = Parcours.findDataField(datafields, number);
+    const ppnDest = Parcours.getSubfieldValue(dataField, code);
+
+    if (ppnDest !== null) {
+        axios.get("https://www.sudoc.fr/" + ppnDest + ".xml")
+            .then(function (response) {
+                const data = JSON.parse(
+                    convert.xml2json(response.data, { compact: true, spaces: 2 })
+                );
+                return data;
+
+            })
+            .catch(function (error) {
+                console.log("error matching reciproque");
+            });
+    }
+    return null;
+}
+
+function mockGetDataOnSudoc(number) {
+    return function(datafields, number, code) {
+        return getNotice(number)
+    }
+}
+
+
+function getNotice(number) {
+    const xmlPPN = fs.readFileSync(path.join(__dirname, 'testRegles/testClient/data/Notice' + number + '.xml'), 'utf8');
+    return JSON.parse(convert.xml2json(xmlPPN, { compact: true, spaces: 2 }));
+}

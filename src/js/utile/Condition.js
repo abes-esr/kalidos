@@ -58,6 +58,7 @@ module.exports = Condition;
 
 function testTagCondition(condition, subfieldValue, item) {
     if (condition.operator === "contains_text" ) {
+        const toto = Parcours.slice(condition.pos[0], condition.pos[1], subfieldValue);
         return Parcours.slice(condition.pos[0], condition.pos[1], subfieldValue).includes(item.toString())
     } else if (condition.operator === "startwith_text") {
         return subfieldValue.trim().startsWith(item.toString())
