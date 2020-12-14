@@ -6,7 +6,7 @@ const convert = require("xml-js");
 
 var ConditionStructurel = function () {
     var getDocument = undefined;
-    var testConditionStrucutrelRules = function (rules, controlfields, datafields, resultJson , getfunctionDocument) {
+    var testConditionStrucutrelRules = function (rules, controlfields, datafields, resultJson, getfunctionDocument) {
         getDocument = getfunctionDocument
         rules.Generale.ConditionStructurel.forEach(function (regle) {
             //recuperation du field a testé
@@ -16,12 +16,12 @@ var ConditionStructurel = function () {
                 dataField = Parcours.findDataField(controlfields, regle.number);
             }
             if (dataField == null) {
-               for(let i in regle.value) {
-                   if(regle.value[i].number === regle.number && regle.value[i].present === false ) {
-                       return;
-                   }
-               }
-               addError(resultJson, regle);
+                for (let i in regle.value) {
+                    if (regle.value[i].number === regle.number && regle.value[i].present === false) {
+                        return;
+                    }
+                }
+                addError(resultJson, regle);
                 return null;
             }
 
@@ -56,55 +56,26 @@ var ConditionStructurel = function () {
     }
 
     function checkValues(regle, controlfields, datafields) {
-
-        let isCheckValues;
         if (regle.type.toString() === "allRequired") {
-            isCheckValues = true;
-            regle.value.forEach(function (value) {
-                const listDatafield = getListDatafield(datafields, value);
-                if (value.code.toString() !== "") {
-                    const subfield = Parcours.getSubfieldValue(listDatafield[0], value.code);
-                    if ((subfield != null) != value.present) {
-                        isCheckValues = false;
-                    }
-                    else if (value.reciproque) {
-                        const dataField001 = Parcours.findDataField(controlfields, "001");
-                        isCheckValues = checkReciproque(dataField001, datafields, value.reciproque.number, value.reciproque.code);
-                    }
+            for(let i in regle.value) {
+                const result = verifyOne(datafields, regle.value[i], controlfields, checkReciproque);
+                if(!result) {
+                    return false; 
                 }
-                else if ((listDatafield.length === 0) === value.present) {
-                    isCheckValues = false;
-                }
-
-            });
+            }
+            return true;
         } else if (regle.type.toString() === "oneRequired") {
-            isCheckValues = false;
-            regle.value.forEach(function (value) {
-                const listDatafield = getListDatafield(datafields, value);
-                if (value.code.toString() !== "") {
-                    const subfield = Parcours.getSubfieldValue(listDatafield[0], value.code);
-                    if ((subfield != null) === value.present) {
-                        isCheckValues = true;
-                    }
-
-                } else if ((listDatafield.length !== 0) === value.present) {
-                    const ind1IsOk = value.ind1 === listDatafield[0]._attributes.ind1.toString().trim();
-                    const ind2IsOk = value.ind2 === listDatafield[0]._attributes.ind2.toString().trim();
-                    if (!value.ind1 || (ind1IsOk && ind2IsOk)) {
-                        isCheckValues = true;
-                    }
-
-                } else if (value.reciproque) {
-                    const dataField001 = Parcours.findDataField(controlfields, "001");
-                    isCheckValues = checkReciproque(dataField001, datafields, value.reciproque.number, value.reciproque.code);
+            for(let i in regle.value) {
+                const result = verifyOne(datafields, regle.value[i], controlfields, checkReciproque);
+                if(result) {
+                    return true; 
                 }
-
-            });
+            }
+            return false;
 
         }
 
         return isCheckValues;
-
     }
 
 
@@ -130,6 +101,55 @@ var ConditionStructurel = function () {
 }();
 
 module.exports = ConditionStructurel;
+
+function verifyOne(datafields, value, controlfields, checkReciproque) {
+    const listDatafield = getListDatafield(datafields, value);
+    let result = verifyPresence(value, listDatafield); 
+    result = result || verifyIndex(value, listDatafield); 
+    result = result || verifyReciproque(value, controlfields, checkReciproque, datafields);
+    return result;
+}
+
+function verifyPresenceSubfield(value, listDatafield) {
+        const subfield = Parcours.getSubfieldValue(listDatafield[0], value.code);
+        if ((subfield != null) === value.present) {
+            return true;
+        }
+    return false;
+}
+
+function verifyPresenceField(value, listDatafield) {
+    const dataNotMustBePresent = !value.present && listDatafield.length === 0;
+    const dataMustPresent = value.present && listDatafield.length > 0;
+    return dataNotMustBePresent || dataMustPresent;
+}
+
+function verifyPresence(value, listDatafield) {
+    if (value.code.toString() !== "") {
+        return verifyPresenceSubfield(value, listDatafield);
+    } else {
+        return verifyPresenceField(value,listDatafield);
+    }
+}
+
+function verifyIndex(value, listDatafield) {
+    if ((listDatafield.length !== 0) && value.present) {
+        const ind1IsOk = value.ind1 === listDatafield[0]._attributes.ind1.toString().trim();
+        const ind2IsOk = value.ind2 === listDatafield[0]._attributes.ind2.toString().trim();
+        if (value.ind1 && !(ind1IsOk && ind2IsOk)) {
+            return true;
+        }
+    }
+    return false;
+}
+
+function verifyReciproque(value, controlfields, checkReciproque, datafields) {
+    if (value.reciproque) {
+        const dataField001 = Parcours.findDataField(controlfields, "001");
+        return checkReciproque(dataField001, datafields, value.reciproque.number, value.reciproque.code);
+    }
+    return false;
+}
 
 function addError(resultJson, regle) {
     resultJson.errors.push({
@@ -170,7 +190,7 @@ function getDataOnSudoc(datafields, number, code) {
 }
 
 function mockGetDataOnSudoc(number) {
-    return function(datafields, number2, code) {
+    return function (datafields, number2, code) {
         return getNotice(number)
     }
 }
