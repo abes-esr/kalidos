@@ -36,7 +36,7 @@ test("Si 225 ind1=0 $a est différent du 410$t", () => {
     const index = 2000
     const sudoc = getNotice(notice);
     const datafields = sudoc.record.datafield;
-    const controlfields = sudoc.record.controlfield;;
+    const controlfields = sudoc.record.controlfield;
     let resultJson = {
         PPN: 0,
         errors: [],
@@ -52,7 +52,7 @@ test("Si 225 ind1=0 $a est différent du 410$t (FAIL)", () => {
     const index = 2000
     const sudoc = getNotice(notice);
     const datafields = sudoc.record.datafield;
-    const controlfields = sudoc.record.controlfield;;
+    const controlfields = sudoc.record.controlfield;
     let resultJson = {
         PPN: 0,
         errors: [],
@@ -71,7 +71,7 @@ test("Si 225 ind1=2 $a = 410$t", () => {
     const index = 1075
     const sudoc = getNotice(notice);
     const datafields = sudoc.record.datafield;
-    const controlfields = sudoc.record.controlfield;;
+    const controlfields = sudoc.record.controlfield;
     let resultJson = {
         PPN: 0,
         errors: [],
@@ -87,7 +87,7 @@ test("Si 225 ind1=2 $a = 410$t (FAIL)", () => {
     const index = 1075
     const sudoc = getNotice(notice);
     const datafields = sudoc.record.datafield;
-    const controlfields = sudoc.record.controlfield;;
+    const controlfields = sudoc.record.controlfield;
     let resultJson = {
         PPN: 0,
         errors: [],
@@ -106,7 +106,7 @@ test("Si 455, alors la date en 455$d = date en zone 100 position 13-16 ", () => 
     const index = 1076
     const sudoc = getNotice(notice);
     const datafields = sudoc.record.datafield;
-    const controlfields = sudoc.record.controlfield;;
+    const controlfields = sudoc.record.controlfield;
     let resultJson = {
         PPN: 0,
         errors: [],
@@ -122,7 +122,7 @@ test("Si 455, alors la date en 455$d = date en zone 100 position 13-16 ", () => 
 //     const index = 1076
 //     const sudoc = getNotice(notice);
 //     const datafields = sudoc.record.datafield;
-//     const controlfields = sudoc.record.controlfield;;
+//     const controlfields = sudoc.record.controlfield;
 //     let resultJson = {
 //         PPN: 0,
 //         errors: [],

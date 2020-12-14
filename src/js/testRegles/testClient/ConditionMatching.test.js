@@ -37,7 +37,7 @@ test("Si  105 $a Pos. 0-3 différent de la valeur \"y\" alors 215$c ne doit pas 
     const index = 1000
     const sudoc = getNotice(notice);
     const datafields = sudoc.record.datafield;
-    const controlfields = sudoc.record.controlfield;;
+    const controlfields = sudoc.record.controlfield;
     let resultJson = {
         PPN: 0,
         errors: [],
@@ -53,7 +53,7 @@ test("Si  105 $a Pos. 0-3 différent de la valeur \"y\" alors 215$c ne doit pas 
     const index = 1000
     const sudoc = getNotice(notice);
     const datafields = sudoc.record.datafield;
-    const controlfields = sudoc.record.controlfield;;
+    const controlfields = sudoc.record.controlfield;
     let resultJson = {
         PPN: 0,
         errors: [],
@@ -70,7 +70,7 @@ test("Si 105 $a Pos. 8 = 1 alors il faut aussi une 608 $302886431X $aActes de co
     const index = 1001
     const sudoc = getNotice(notice);
     const datafields = sudoc.record.datafield;
-    const controlfields = sudoc.record.controlfield;;
+    const controlfields = sudoc.record.controlfield;
     let resultJson = {
         PPN: 0,
         errors: [],
@@ -86,7 +86,7 @@ test("Si 105 $a Pos. 8 = 1 alors il faut aussi une 608 $302886431X $aActes de co
     const index = 1001
     const sudoc = getNotice(notice);
     const datafields = sudoc.record.datafield;
-    const controlfields = sudoc.record.controlfield;;
+    const controlfields = sudoc.record.controlfield;
     let resultJson = {
         PPN: 0,
         errors: [],
@@ -103,7 +103,7 @@ test("Si 105 $a Pos. 8 = 0 alors il ne doit pas y avoir 608 $302886431X ou $aAct
     const index = 1002
     const sudoc = getNotice(notice);
     const datafields = sudoc.record.datafield;
-    const controlfields = sudoc.record.controlfield;;
+    const controlfields = sudoc.record.controlfield;
     let resultJson = {
         PPN: 0,
         errors: [],
@@ -119,7 +119,7 @@ test("Si 105 $a Pos. 8 = 0 alors il ne doit pas y avoir 608 $302886431X ou $aAct
     const index = 1002
     const sudoc = getNotice(notice);
     const datafields = sudoc.record.datafield;
-    const controlfields = sudoc.record.controlfield;;
+    const controlfields = sudoc.record.controlfield;
     let resultJson = {
         PPN: 0,
         errors: [],
@@ -136,7 +136,7 @@ test("Si 105 $a Pos. 10 =1 alors il faut une 320 avec la mention \"Index\"", () 
     const index = 1003
     const sudoc = getNotice(notice);
     const datafields = sudoc.record.datafield;
-    const controlfields = sudoc.record.controlfield;;
+    const controlfields = sudoc.record.controlfield;
     let resultJson = {
         PPN: 0,
         errors: [],
@@ -152,7 +152,7 @@ test("Si 105 $a Pos. 10 =1 alors il faut une 320 avec la mention \"Index\" (FAIL
     const index = 1003
     const sudoc = getNotice(notice);
     const datafields = sudoc.record.datafield;
-    const controlfields = sudoc.record.controlfield;;
+    const controlfields = sudoc.record.controlfield;
     let resultJson = {
         PPN: 0,
         errors: [],
@@ -170,7 +170,7 @@ test("Si 214 #4$d, la zone doit commencer par \"C espace\"", () => {
     const index = 1006
     const sudoc = getNotice(notice);
     const datafields = sudoc.record.datafield;
-    const controlfields = sudoc.record.controlfield;;
+    const controlfields = sudoc.record.controlfield;
     let resultJson = {
         PPN: 0,
         errors: [],
@@ -186,7 +186,7 @@ test("Si 214 #4$d, la zone doit commencer par \"C espace\" (FAIL)", () => {
     const index = 1006
     const sudoc = getNotice(notice);
     const datafields = sudoc.record.datafield;
-    const controlfields = sudoc.record.controlfield;;
+    const controlfields = sudoc.record.controlfield;
     let resultJson = {
         PPN: 0,
         errors: [],
@@ -204,7 +204,7 @@ test("Si 214 #0 et $d, doit commencer par \"DL espace\" ou \"[\" ou un chiffre",
     const index = 1007
     const sudoc = getNotice(notice);
     const datafields = sudoc.record.datafield;
-    const controlfields = sudoc.record.controlfield;;
+    const controlfields = sudoc.record.controlfield;
     let resultJson = {
         PPN: 0,
         errors: [],

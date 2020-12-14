@@ -130,6 +130,7 @@ function verifyPresence(value, listDatafield) {
     } else if (value.ind1 === undefined || value.ind2 === undefined) {
         return verifyPresenceField(value, listDatafield);
     }
+    return false;
 }
 
 function verifyIndex(value, listDatafield) {

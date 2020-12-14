@@ -3,7 +3,7 @@ const path = require('path');
 const fs = require('fs');
 const ConditionStructurelle = require('../../regles/ConditionStructurelle');
 import rules from '../../../../serveur/public/model_regles.json';
-import { testConditionStrucutrelRules } from '../../regles/ConditionStructurelle';
+// import { testConditionStrucutrelRules } from '../../regles/ConditionStructurelle';
 
 let CATEGORIE;
 let ruleTest;
@@ -38,7 +38,7 @@ test("Si 101 ind1=1 il faut au moins un $a et $c", () => {
     const index = 1025
     const sudoc = getNotice(notice);
     const datafields = sudoc.record.datafield;
-    const controlfields = sudoc.record.controlfield;;
+    const controlfields = sudoc.record.controlfield;
     let resultJson = {
         PPN: 0,
         errors: [],
@@ -55,7 +55,7 @@ test("Si 101 ind1=1 il faut au moins un $a et $c (FAIL)", () => {
     const index = 1025
     const sudoc = getNotice(notice);
     const datafields = sudoc.record.datafield;
-    const controlfields = sudoc.record.controlfield;;
+    const controlfields = sudoc.record.controlfield;
     let resultJson = {
         PPN: 0,
         errors: [],
@@ -74,7 +74,7 @@ test("Si 101 ind1=0 il ne faut pas $c", () => {
     const index = 1026
     const sudoc = getNotice(notice);
     const datafields = sudoc.record.datafield;
-    const controlfields = sudoc.record.controlfield;;
+    const controlfields = sudoc.record.controlfield;
     let resultJson = {
         PPN: 0,
         errors: [],
@@ -91,7 +91,7 @@ test("Si 101 ind1=0 il ne faut pas $c (FAIL)", () => {
     const index = 1026
     const sudoc = getNotice(notice);
     const datafields = sudoc.record.datafield;
-    const controlfields = sudoc.record.controlfield;;
+    const controlfields = sudoc.record.controlfield;
     let resultJson = {
         PPN: 0,
         errors: [],
@@ -110,7 +110,7 @@ test("Si 101 ind1=2 il faut au moins une $a, $b et $c", () => {
     const index = 1027
     const sudoc = getNotice(notice);
     const datafields = sudoc.record.datafield;
-    const controlfields = sudoc.record.controlfield;;
+    const controlfields = sudoc.record.controlfield;
     let resultJson = {
         PPN: 0,
         errors: [],
@@ -127,7 +127,7 @@ test("Si 101 ind1=2 il faut au moins une $a, $b et $c (FAIL)", () => {
     const index = 1027
     const sudoc = getNotice(notice);
     const datafields = sudoc.record.datafield;
-    const controlfields = sudoc.record.controlfield;;
+    const controlfields = sudoc.record.controlfield;
     let resultJson = {
         PPN: 0,
         errors: [],
@@ -146,7 +146,7 @@ test("Si 101 ind1=1 il faut une 454", () => {
     const index = 1028
     const sudoc = getNotice(notice);
     const datafields = sudoc.record.datafield;
-    const controlfields = sudoc.record.controlfield;;
+    const controlfields = sudoc.record.controlfield;
     let resultJson = {
         PPN: 0,
         errors: [],
@@ -163,7 +163,7 @@ test("Si 101 ind1=1 il faut une 454 (FAIL)", () => {
     const index = 1028
     const sudoc = getNotice(notice);
     const datafields = sudoc.record.datafield;
-    const controlfields = sudoc.record.controlfield;;
+    const controlfields = sudoc.record.controlfield;
     let resultJson = {
         PPN: 0,
         errors: [],
@@ -182,7 +182,7 @@ test("Si 101 ind1=2 il faut une 454", () => {
     const index = 1029
     const sudoc = getNotice(notice);
     const datafields = sudoc.record.datafield;
-    const controlfields = sudoc.record.controlfield;;
+    const controlfields = sudoc.record.controlfield;
     let resultJson = {
         PPN: 0,
         errors: [],
@@ -199,7 +199,7 @@ test("Si 101 ind1=2 il faut une 454 (FAIL)", () => {
     const index = 1029
     const sudoc = getNotice(notice);
     const datafields = sudoc.record.datafield;
-    const controlfields = sudoc.record.controlfield;;
+    const controlfields = sudoc.record.controlfield;
     let resultJson = {
         PPN: 0,
         errors: [],
@@ -218,7 +218,7 @@ test("Si  105 $a Pos. 0-3 = 'y' alors 215$c ne doit pas être présent", () => {
     const index = 1031
     const sudoc = getNotice(notice);
     const datafields = sudoc.record.datafield;
-    const controlfields = sudoc.record.controlfield;;
+    const controlfields = sudoc.record.controlfield;
     let resultJson = {
         PPN: 0,
         errors: [],
@@ -235,7 +235,7 @@ test("Si  105 $a Pos. 0-3 = 'y' alors 215$c ne doit pas être présent (FAIL)", 
     const index = 1031
     const sudoc = getNotice(notice);
     const datafields = sudoc.record.datafield;
-    const controlfields = sudoc.record.controlfield;;
+    const controlfields = sudoc.record.controlfield;
     let resultJson = {
         PPN: 0,
         errors: [],
@@ -254,7 +254,7 @@ test("Si 105 $a Pos. 4-7 =a alors il faut une 320", () => {
     const index = 1032
     const sudoc = getNotice(notice);
     const datafields = sudoc.record.datafield;
-    const controlfields = sudoc.record.controlfield;;
+    const controlfields = sudoc.record.controlfield;
     let resultJson = {
         PPN: 0,
         errors: [],
@@ -271,7 +271,7 @@ test("Si 105 $a Pos. 4-7 =a alors il faut une 320 (FAIL)", () => {
     const index = 1032
     const sudoc = getNotice(notice);
     const datafields = sudoc.record.datafield;
-    const controlfields = sudoc.record.controlfield;;
+    const controlfields = sudoc.record.controlfield;
     let resultJson = {
         PPN: 0,
         errors: [],
