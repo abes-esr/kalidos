@@ -1752,7 +1752,7 @@ test('701$b ne doit pas contenir Prénom', () => {
         PPN: 0,
         errors: [],
     };
-    const index = 8;
+    const index = 15;
     addRuleToTest(index);
     Matching.testMatchRegexRules(CATEGORIE, ruleTest, controlfield, datafields, resultJson)
 
@@ -1767,7 +1767,7 @@ test('701$b ne doit pas contenir Prénom (FAIL)', () => {
         PPN: 0,
         errors: [],
     };
-    const index = 8;
+    const index = 15;
     addRuleToTest(index);
     Matching.testMatchRegexRules(CATEGORIE, ruleTest, controlfield, datafields, resultJson)
 
