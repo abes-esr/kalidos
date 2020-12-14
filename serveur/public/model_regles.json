@@ -691,6 +691,58 @@
             {
                 "condition": [
                     {
+                        "operator": "presente",
+                        "number": "711",
+                        "code": "3"
+                    },
+                    {
+                        "operator": "presente",
+                        "number": "711",
+                        "code": "4"
+                    }
+                ],
+                "index": 3002,
+                "type": "allRequired",
+                "values": [
+                    {
+                        "number": 711,
+                        "code": "3",
+                        "message": "Zone 711 : université de soutenance doit être présente (711$3026402823$4295)",
+                        "regex": "^026402823$",
+                        "subFieldRequired": true
+                    },
+                    {
+                        "number": 711,
+                        "code": "4",
+                        "message": "Zone 711 : université de soutenance doit être présente (711$3026402823$4295)",
+                        "regex": "^295$",
+                        "subFieldRequired": true
+                    }
+                ]
+            },
+            {
+                "condition": [
+                    {
+                        "operator": "presente",
+                        "number": "608",
+                        "code": "3"
+                    }
+                ],
+                "index": 3000,
+                "type": "allRequired",
+                "values": [
+                    {
+                        "number": 608,
+                        "code": "3",
+                        "message": "Zone 608 : indexation Forme-Genre obligatoire (PPN 027253139)",
+                        "regex": "^027253139$",
+                        "subFieldRequired": true
+                    }
+                ]
+            },
+            {
+                "condition": [
+                    {
                         "operator": "not_contains_text",
                         "number": "105",
                         "code": "a",
@@ -1528,6 +1580,58 @@
             }
         ],
         "ConditionStructurel": [
+            {
+                "condition": [
+                    {
+                        "operator": "startwith_text",
+                        "number": "008",
+                        "code": "",
+                        "ind1": "",
+                        "ind2": "",
+                        "string":["Oa"]
+                    },
+                    {
+                        "operator": "not_presente",
+                        "number": "215",
+                        "code": ""
+                    }
+                ],
+                "value": [
+                    {
+                        "number": "856",
+                        "code": "",
+                        "present": true
+                    }
+                ],
+                "type": "allRequired",
+                "index": 3003,
+                "number": "856",
+                "message": "Zone 856 : une ressource électronique doit contenir l'accès"
+            },
+            {
+                "condition": [
+                    {
+                        "operator": "contains_text",
+                        "number": "105",
+                        "code": "a",
+                        "ind1": "",
+                        "ind2": "",                        
+                        "pos":[4,7],
+                        "string":["m"]
+                    }
+                ],
+                "value": [
+                    {
+                        "number": "328",
+                        "code": "z",
+                        "present": false
+                    }
+                ],
+                "type": "allRequired",
+                "index": 3001,
+                "number": "328",
+                "message": "Zone 328$z incohérente avec le statut de la thèse"
+            },
             {
                 "condition": [
                     {

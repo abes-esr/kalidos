@@ -1321,3 +1321,74 @@ test("Si 328$z n'est pas \"Reproduction de\", alors 029 ne doit pas être prése
 });
 
 // ===============================================================
+
+test("Si 105 $a Pos. 4-7= m, 328$z ne doit pas être présente", () => {
+    const notice = "015"
+    const index = 3001
+    const sudoc = getNotice(notice);
+    const datafields = sudoc.record.datafield;
+    const controlfields = sudoc.record.controlfield;
+    let resultJson = {
+        PPN: 0,
+        errors: [],
+    };
+    addRuleToTest(index);
+    const mockFunction = ConditionStructurelle.mockGetDataOnSudoc("");
+    ConditionStructurelle.testConditionStrucutrelRules(ruleTest,controlfields,datafields , resultJson, mockFunction);
+    expect(resultJson.errors).toStrictEqual([]);
+});
+
+
+test("Si 105 $a Pos. 4-7= m, 328$z ne doit pas être présente (FAIL)", () => {
+    const notice = "016"
+    const index = 3001
+    const sudoc = getNotice(notice);
+    const datafields = sudoc.record.datafield;
+    const controlfields = sudoc.record.controlfield;
+    let resultJson = {
+        PPN: 0,
+        errors: [],
+    };
+    addRuleToTest(index);
+    const mockFunction = ConditionStructurelle.mockGetDataOnSudoc("");
+    ConditionStructurelle.testConditionStrucutrelRules(ruleTest,controlfields,datafields , resultJson, mockFunction);
+    expect(resultJson.errors).not.toStrictEqual([]);
+});
+
+// ===============================================================
+
+
+
+test("Si 008 commence par Oa et ne contient pas une 215, une 856 doit être présente", () => {
+    const notice = "017"
+    const index = 3003
+    const sudoc = getNotice(notice);
+    const datafields = sudoc.record.datafield;
+    const controlfields = sudoc.record.controlfield;
+    let resultJson = {
+        PPN: 0,
+        errors: [],
+    };
+    addRuleToTest(index);
+    const mockFunction = ConditionStructurelle.mockGetDataOnSudoc("");
+    ConditionStructurelle.testConditionStrucutrelRules(ruleTest,controlfields,datafields , resultJson, mockFunction);
+    expect(resultJson.errors).toStrictEqual([]);
+});
+
+
+test("Si 008 commence par Oa et ne contient pas une 215, une 856 doit être présente (FAIL)", () => {
+    const notice = "018"
+    const index = 3003
+    const sudoc = getNotice(notice);
+    const datafields = sudoc.record.datafield;
+    const controlfields = sudoc.record.controlfield;
+    let resultJson = {
+        PPN: 0,
+        errors: [],
+    };
+    addRuleToTest(index);
+    const mockFunction = ConditionStructurelle.mockGetDataOnSudoc("");
+    ConditionStructurelle.testConditionStrucutrelRules(ruleTest,controlfields,datafields , resultJson, mockFunction);
+    expect(resultJson.errors).not.toStrictEqual([]);
+});
+

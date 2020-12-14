@@ -37,8 +37,8 @@ var Condition = function () {
                         subfieldValue = fields[i]._text;
                     }
                     let isMatched = false;
-                    for (let i in condition.string) {
-                        isMatched = testTagCondition(condition, subfieldValue, condition.string[i]);
+                    for (let j in condition.string) {
+                        isMatched = testTagCondition(condition, subfieldValue, condition.string[j]);
                         if (isMatched) {
                             break;
                         }

@@ -698,3 +698,69 @@ test("Si 214 ind2=2, alors $cBibliothèque Lyon 1 (FAIL)", () => {
 });
 
 // ===============================================================
+
+
+test("608$3027253139 doit être présente", () => {
+    const notice = "015"
+    const index = 3000
+    const sudoc = getNotice(notice);
+    const datafields = sudoc.record.datafield;
+    const controlfields = sudoc.record.controlfield;
+    let resultJson = {
+        PPN: 0,
+        errors: [],
+    };
+    addRuleToTest(index);
+    ConditionMatching.testConditionMatchingRules(ruleTest,controlfields,datafields , resultJson);
+    expect(resultJson.errors).toStrictEqual([]);
+});
+
+
+// Orange (pas de 608)
+// test("608$3027253139 doit être présente(FAIL)", () => {
+//     const notice = "016"
+//     const index = 3000
+//     const sudoc = getNotice(notice);
+//     const datafields = sudoc.record.datafield;
+//     const controlfields = sudoc.record.controlfield;
+//     let resultJson = {
+//         PPN: 0,
+//         errors: [],
+//     };
+//     addRuleToTest(index);
+//     ConditionMatching.testConditionMatchingRules(ruleTest,controlfields,datafields , resultJson);
+//     expect(resultJson.errors).not.toStrictEqual([]);
+// });
+
+// ===============================================================
+
+test("Au moins une 711$3 = 26402823 $4=295 doit être présente", () => {
+    const notice = "015"
+    const index = 3002
+    const sudoc = getNotice(notice);
+    const datafields = sudoc.record.datafield;
+    const controlfields = sudoc.record.controlfield;
+    let resultJson = {
+        PPN: 0,
+        errors: [],
+    };
+    addRuleToTest(index);
+    ConditionMatching.testConditionMatchingRules(ruleTest,controlfields,datafields , resultJson);
+    expect(resultJson.errors).toStrictEqual([]);
+});
+
+// ORANGE (pas de 711 a separer en 2 regles)
+// test("Au moins une 711$3 = 26402823 $4=295 doit être présente (FAIL)", () => {
+//     const notice = "016"
+//     const index = 3002
+//     const sudoc = getNotice(notice);
+//     const datafields = sudoc.record.datafield;
+//     const controlfields = sudoc.record.controlfield;
+//     let resultJson = {
+//         PPN: 0,
+//         errors: [],
+//     };
+//     addRuleToTest(index);
+//     ConditionMatching.testConditionMatchingRules(ruleTest,controlfields,datafields , resultJson);
+//     expect(resultJson.errors).not.toStrictEqual([]);
+// });
