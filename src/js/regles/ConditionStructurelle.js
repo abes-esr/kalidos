@@ -31,7 +31,7 @@ var ConditionStructurel = function () {
                 //notice courante
                 let checkControlFields = controlfields;
                 let checkDataFields = datafields;
-                console.log("condition verifié");
+                // console.log("condition verifié");
                 if (regle.reciproque) {
                     //si les verification sont sur la notice reciproque
                     const data = getDocument(datafields, regle.reciproque.number, regle.reciproque.code);
@@ -58,16 +58,9 @@ var ConditionStructurel = function () {
         if (regle.type.toString() === "allRequired") {
             isCheckValues = true;
             regle.value.forEach(function (value) {
-                let dataField = Parcours.findDataFields(datafields, value.number);
-                if(value.ind1 != "") {
-                    dataField = Parcours.filterDatafield(dataField,"ind1", value.ind1);
-
-                }if(value.ind2 != "") { 
-                    dataField = Parcours.filterDatafield(dataField,"ind2", value.ind2);
-                }
+                const listDatafield = getListDatafield(datafields, value);
                 if (value.code.toString() !== "") {
-
-                    const subfield = Parcours.getSubfieldValue(dataField[0], value.code);
+                    const subfield = Parcours.getSubfieldValue(listDatafield[0], value.code);
                     if ((subfield != null) != value.present) {
                         isCheckValues = false;
                     }
@@ -76,7 +69,7 @@ var ConditionStructurel = function () {
                         isCheckValues = checkReciproque(dataField001, datafields, value.reciproque.number, value.reciproque.code);
                     }
                 }
-                else if ((dataField.length === 0) === value.present) {
+                else if ((listDatafield.length === 0) === value.present) {
                     isCheckValues = false;
                 }
 
@@ -84,16 +77,16 @@ var ConditionStructurel = function () {
         } else if (regle.type.toString() === "oneRequired") {
             isCheckValues = false;
             regle.value.forEach(function (value) {
-                const dataField = Parcours.findDataField(datafields, value.number);
+                const listDatafield = getListDatafield(datafields, value);
                 if (value.code.toString() !== "") {
-                    const subfield = Parcours.getSubfieldValue(dataField, value.code);
+                    const subfield = Parcours.getSubfieldValue(listDatafield[0], value.code);
                     if ((subfield != null) === value.present) {
                         isCheckValues = true;
                     }
 
-                } else if ((dataField != null) === value.present) {
-                    const ind1IsOk = value.ind1 === dataField._attributes.ind1.toString().trim();
-                    const ind2IsOk = value.ind2 === dataField._attributes.ind2.toString().trim();
+                } else if ((listDatafield.length !== 0) === value.present) {
+                    const ind1IsOk = value.ind1 === listDatafield[0]._attributes.ind1.toString().trim();
+                    const ind2IsOk = value.ind2 === listDatafield[0]._attributes.ind2.toString().trim();
                     if (!value.ind1 || (ind1IsOk && ind2IsOk)) {
                         isCheckValues = true;
                     }
@@ -135,6 +128,17 @@ var ConditionStructurel = function () {
 
 module.exports = ConditionStructurel;
 
+function getListDatafield(datafields, value) {
+    let dataField = Parcours.findDataFields(datafields, value.number);
+    if (value.ind1 !== undefined && value.ind1 !== "") {
+        dataField = Parcours.filterDatafield(dataField, "ind1", value.ind1);
+    }
+    if (value.ind2 !== undefined && value.ind2 !== "") {
+        dataField = Parcours.filterDatafield(dataField, "ind2", value.ind2);
+    }
+    return dataField;
+}
+
 function getDataOnSudoc(datafields, number, code) {
     const dataField = Parcours.findDataField(datafields, number);
     const ppnDest = Parcours.getSubfieldValue(dataField, code);
@@ -156,7 +160,7 @@ function getDataOnSudoc(datafields, number, code) {
 }
 
 function mockGetDataOnSudoc(number) {
-    return function(datafields, number, code) {
+    return function(datafields, number2, code) {
         return getNotice(number)
     }
 }

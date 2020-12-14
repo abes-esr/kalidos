@@ -2879,14 +2879,14 @@
                         "code": "",
                         "ind1": "",
                         "ind2": "0",
-                        "present": false
+                        "present": true
                     },
                     {
                         "number": "214",
                         "code": "",
                         "ind1": "",
                         "ind2": "2",
-                        "present": false
+                        "present": true
                     }
                 ],
                 "type": "oneRequired",
