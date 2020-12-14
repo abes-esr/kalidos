@@ -5,16 +5,19 @@ var Condition = function () {
     function checkCondition(controlefields, datafields, condition) {
         var field = null;
 
-        if(condition.ind1 ||condition.ind2)
+        if(condition.ind1 ||condition.ind2) {
             field = Parcours.findDataFieldById(datafields, condition.number, condition.ind1, condition.ind2);
-        else
+        }
+        else {
             field = Parcours.findDataField(datafields, condition.number);
+        }
 
-        if (field == null)
+        if (field == null) {
             field = Parcours.findDataField(controlefields, condition.number);
+        }
 
 
-        if (field == null){
+        if (field == null) {
               return false;
         }
 
@@ -23,40 +26,28 @@ var Condition = function () {
                 return Parcours.getSubfieldValue(field, condition.code) != null;
             }
         } else if (condition.operator === "not_presente") {
-            if (condition.code.toString() !== "")
+            if (condition.code.toString() !== "") {
                 return !(Parcours.getSubfieldValue(field, condition.code) != null);
-        } else if (condition.operator === "contains_text" || condition.operator === "startwith_text" ||
-            condition.operator === "equals_text" || condition.operator === "not_equals_text") {
+            }
+        } else if (otherOperator(condition)) {
             if (condition.string.toString() !== "") {
-                var subfieldValue;
+                let subfieldValue;
                 if (condition.code.toString() !== "") {
                     subfieldValue = Parcours.getSubfieldValue(field, condition.code);
                 } else {
                     subfieldValue = field._text;
                 }
-                var isMatched = false;
-                condition.string.forEach((item) => {
-                    if (condition.operator === "contains_text" && Parcours.slice(condition.pos[0], condition.pos[1], subfieldValue).includes(item.toString())) {
-                        isMatched = true;
-                    } else if (condition.operator === "startwith_text" && subfieldValue.trim().startsWith(item.toString())) {
-                        isMatched = true;
-                    } else if (condition.operator === "equals_text" && subfieldValue.trim() === item.toString()) {
-                        isMatched = true;
-                    } else if (condition.operator === "not_equals_text" && subfieldValue.trim() !== item.toString()) {
-                        isMatched = true;
+                let isMatched = false;
+                for(let i in condition.string) {
+                    isMatched = testTagCondition(condition, subfieldValue, condition.string[i]);
+                    if(isMatched) {
+                        break
                     }
-                })
+                }
                 return isMatched;
             }
-        } /*else if (condition.operator.toString() === "equals") {
-            if (condition.ind1.toString() !== "")
-                return field._attributes.ind1.toString() === condition.ind1.toString();
-            else if (condition.ind2.toString() !== "")
-                return field._attributes.ind2.toString() === condition.ind2.toString();
-        }*/
-
+        } 
         return true;
-
     }
     return {
         checkCondition: checkCondition
@@ -64,3 +55,21 @@ var Condition = function () {
 }();
 
 module.exports = Condition;
+
+function testTagCondition(condition, subfieldValue, item) {
+    if (condition.operator === "contains_text" ) {
+        return Parcours.slice(condition.pos[0], condition.pos[1], subfieldValue).includes(item.toString())
+    } else if (condition.operator === "startwith_text") {
+        return subfieldValue.trim().startsWith(item.toString())
+    } else if (condition.operator === "equals_text") {
+        return subfieldValue.trim() === item.toString()
+    } else if (condition.operator === "not_equals_text") {
+        return subfieldValue.trim() !== item.toString()
+    }
+    return false
+}
+
+function otherOperator(condition) {
+    return condition.operator === "contains_text" || condition.operator === "startwith_text" ||
+        condition.operator === "equals_text" || condition.operator === "not_equals_text";
+}
