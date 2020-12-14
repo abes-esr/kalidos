@@ -3,50 +3,50 @@ const Parcours = require("../utile/Parcours");
 var Condition = function () {
 
     function checkCondition(controlefields, datafields, condition) {
-        var field = null;
-
-        if(condition.ind1 ||condition.ind2) {
-            field = Parcours.findDataFieldById(datafields, condition.number, condition.ind1, condition.ind2);
+        var fields = [];
+        if (condition.ind1 || condition.ind2) {
+            fields = Parcours.findDataFieldsById(datafields, condition.number, condition.ind1, condition.ind2);
         }
         else {
-            field = Parcours.findDataField(datafields, condition.number);
+            fields = Parcours.findDataFields(datafields, condition.number);
         }
 
-        if (field == null) {
-            field = Parcours.findDataField(controlefields, condition.number);
+        if (fields.length == 0) {
+            fields = Parcours.findDataFields(controlefields, condition.number);
         }
 
-
-        if (field == null) {
-              return false;
+        if (fields.length == 0) {
+            return false;
         }
-
-        if (condition.operator === "presente") {
-            if (condition.code.toString() !== "") {
-                return Parcours.getSubfieldValue(field, condition.code) != null;
-            }
-        } else if (condition.operator === "not_presente") {
-            if (condition.code.toString() !== "") {
-                return !(Parcours.getSubfieldValue(field, condition.code) != null);
-            }
-        } else if (otherOperator(condition)) {
-            if (condition.string.toString() !== "") {
-                let subfieldValue;
+        
+        for (let i in fields) {
+            if (condition.operator === "presente") {
                 if (condition.code.toString() !== "") {
-                    subfieldValue = Parcours.getSubfieldValue(field, condition.code);
-                } else {
-                    subfieldValue = field._text;
+                    return Parcours.getSubfieldValue(fields[i], condition.code) != null;
                 }
-                let isMatched = false;
-                for(let i in condition.string) {
-                    isMatched = testTagCondition(condition, subfieldValue, condition.string[i]);
-                    if(isMatched) {
-                        break
+            } else if (condition.operator === "not_presente") {
+                if (condition.code.toString() !== "") {
+                    return !(Parcours.getSubfieldValue(fields[i], condition.code) != null);
+                }
+            } else if (otherOperator(condition)) {
+                if (condition.string.toString() !== "") {
+                    let subfieldValue;
+                    if (condition.code.toString() !== "") {
+                        subfieldValue = Parcours.getSubfieldValue(fields[i], condition.code);
+                    } else {
+                        subfieldValue = fields[i]._text;
                     }
+                    let isMatched = false;
+                    for (let i in condition.string) {
+                        isMatched = testTagCondition(condition, subfieldValue, condition.string[i]);
+                        if (isMatched) {
+                            break;
+                        }
+                    }
+                    return isMatched;
                 }
-                return isMatched;
             }
-        } 
+        }
         return true;
     }
     return {
@@ -57,8 +57,7 @@ var Condition = function () {
 module.exports = Condition;
 
 function testTagCondition(condition, subfieldValue, item) {
-    if (condition.operator === "contains_text" ) {
-        const toto = Parcours.slice(condition.pos[0], condition.pos[1], subfieldValue);
+    if (condition.operator === "contains_text") {
         return Parcours.slice(condition.pos[0], condition.pos[1], subfieldValue).includes(item.toString())
     } else if (condition.operator === "startwith_text") {
         return subfieldValue.trim().startsWith(item.toString())

@@ -29,6 +29,18 @@ var Parcours = function () {
         return retour;
     }
 
+    const findDataFieldsById = function (datafields, number , ind1 , ind2) {
+        let retour = []
+        let count = 0;
+        datafields.forEach(function (field) {
+            if (field._attributes.tag == number && field._attributes.ind1.toString().trim() === ind1
+                && field._attributes.ind2.toString().trim() === ind2) {
+                retour.push(field)
+            }
+        });
+        return retour;
+    }
+
 
     const findDataFields = function (datafields, number) {
         let retour = []
@@ -155,7 +167,8 @@ var Parcours = function () {
         findDataFields : findDataFields,
         slice : slice,
         findDataFieldById : findDataFieldById,
-        filterDatafield : filterDatafield
+        filterDatafield : filterDatafield, 
+        findDataFieldsById : findDataFieldsById
     }
 }();
 
