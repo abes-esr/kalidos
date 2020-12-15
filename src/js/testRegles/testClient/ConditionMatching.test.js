@@ -43,7 +43,7 @@ test("Si  105 $a Pos. 0-3 différent de la valeur \"y\" alors 215$c ne doit pas 
         errors: [],
     };
     addRuleToTest(index);
-    ConditionMatching.testConditionMatchingRules(ruleTest,controlfields,datafields , resultJson);
+    ConditionMatching.testConditionMatchingRules(ruleTest, controlfields, datafields, resultJson);
     expect(resultJson.errors).toStrictEqual([]);
 });
 
@@ -59,7 +59,7 @@ test("Si  105 $a Pos. 0-3 différent de la valeur \"y\" alors 215$c ne doit pas 
         errors: [],
     };
     addRuleToTest(index);
-    ConditionMatching.testConditionMatchingRules(ruleTest,controlfields,datafields , resultJson);
+    ConditionMatching.testConditionMatchingRules(ruleTest, controlfields, datafields, resultJson);
     expect(resultJson.errors).not.toStrictEqual([]);
 });
 
@@ -76,7 +76,7 @@ test("Si 105 $a Pos. 8 = 1 alors il faut aussi une 608 $302886431X $aActes de co
         errors: [],
     };
     addRuleToTest(index);
-    ConditionMatching.testConditionMatchingRules(ruleTest,controlfields,datafields , resultJson);
+    ConditionMatching.testConditionMatchingRules(ruleTest, controlfields, datafields, resultJson);
     expect(resultJson.errors).toStrictEqual([]);
 });
 
@@ -92,7 +92,7 @@ test("Si 105 $a Pos. 8 = 1 alors il faut aussi une 608 $302886431X $aActes de co
         errors: [],
     };
     addRuleToTest(index);
-    ConditionMatching.testConditionMatchingRules(ruleTest,controlfields,datafields , resultJson);
+    ConditionMatching.testConditionMatchingRules(ruleTest, controlfields, datafields, resultJson);
     expect(resultJson.errors).not.toStrictEqual([]);
 });
 
@@ -109,7 +109,7 @@ test("Si 105 $a Pos. 8 = 0 alors il ne doit pas y avoir 608 $302886431X ou $aAct
         errors: [],
     };
     addRuleToTest(index);
-    ConditionMatching.testConditionMatchingRules(ruleTest,controlfields,datafields , resultJson);
+    ConditionMatching.testConditionMatchingRules(ruleTest, controlfields, datafields, resultJson);
     expect(resultJson.errors).toStrictEqual([]);
 });
 
@@ -125,7 +125,7 @@ test("Si 105 $a Pos. 8 = 0 alors il ne doit pas y avoir 608 $302886431X ou $aAct
         errors: [],
     };
     addRuleToTest(index);
-    ConditionMatching.testConditionMatchingRules(ruleTest,controlfields,datafields , resultJson);
+    ConditionMatching.testConditionMatchingRules(ruleTest, controlfields, datafields, resultJson);
     expect(resultJson.errors).not.toStrictEqual([]);
 });
 
@@ -142,7 +142,7 @@ test("Si 105 $a Pos. 10 =1 alors il faut une 320 avec la mention \"Index\"", () 
         errors: [],
     };
     addRuleToTest(index);
-    ConditionMatching.testConditionMatchingRules(ruleTest,controlfields,datafields , resultJson);
+    ConditionMatching.testConditionMatchingRules(ruleTest, controlfields, datafields, resultJson);
     expect(resultJson.errors).toStrictEqual([]);
 });
 
@@ -158,7 +158,7 @@ test("Si 105 $a Pos. 10 =1 alors il faut une 320 avec la mention \"Index\" (FAIL
         errors: [],
     };
     addRuleToTest(index);
-    ConditionMatching.testConditionMatchingRules(ruleTest,controlfields,datafields , resultJson);
+    ConditionMatching.testConditionMatchingRules(ruleTest, controlfields, datafields, resultJson);
     expect(resultJson.errors).not.toStrictEqual([]);
 });
 
@@ -176,7 +176,7 @@ test("Si 214 #4$d, la zone doit commencer par \"C espace\"", () => {
         errors: [],
     };
     addRuleToTest(index);
-    ConditionMatching.testConditionMatchingRules(ruleTest,controlfields,datafields , resultJson);
+    ConditionMatching.testConditionMatchingRules(ruleTest, controlfields, datafields, resultJson);
     expect(resultJson.errors).toStrictEqual([]);
 });
 
@@ -192,7 +192,7 @@ test("Si 214 #4$d, la zone doit commencer par \"C espace\" (FAIL)", () => {
         errors: [],
     };
     addRuleToTest(index);
-    ConditionMatching.testConditionMatchingRules(ruleTest,controlfields,datafields , resultJson);
+    ConditionMatching.testConditionMatchingRules(ruleTest, controlfields, datafields, resultJson);
     expect(resultJson.errors).not.toStrictEqual([]);
 });
 
@@ -210,7 +210,7 @@ test("Si 214 #0 et $d, doit commencer par \"DL espace\" ou \"[\" ou un chiffre",
         errors: [],
     };
     addRuleToTest(index);
-    ConditionMatching.testConditionMatchingRules(ruleTest,controlfields,datafields , resultJson);
+    ConditionMatching.testConditionMatchingRules(ruleTest, controlfields, datafields, resultJson);
     expect(resultJson.errors).toStrictEqual([]);
 });
 
@@ -226,7 +226,7 @@ test("Si 214 #0 et $d, doit commencer par \"DL espace\" ou \"[\" ou un chiffre (
         errors: [],
     };
     addRuleToTest(index);
-    ConditionMatching.testConditionMatchingRules(ruleTest,controlfields,datafields , resultJson);
+    ConditionMatching.testConditionMatchingRules(ruleTest, controlfields, datafields, resultJson);
     expect(resultJson.errors).not.toStrictEqual([]);
 });
 
@@ -244,7 +244,7 @@ test("Si 600 $2rameau doit être présent", () => {
         errors: [],
     };
     addRuleToTest(index);
-    ConditionMatching.testConditionMatchingRules(ruleTest,controlfields,datafields , resultJson);
+    ConditionMatching.testConditionMatchingRules(ruleTest, controlfields, datafields, resultJson);
     expect(resultJson.errors).toStrictEqual([]);
 });
 
@@ -260,7 +260,7 @@ test("Si 600 $2rameau doit être présent (FAIL)", () => {
         errors: [],
     };
     addRuleToTest(index);
-    ConditionMatching.testConditionMatchingRules(ruleTest,controlfields,datafields , resultJson);
+    ConditionMatching.testConditionMatchingRules(ruleTest, controlfields, datafields, resultJson);
     expect(resultJson.errors).not.toStrictEqual([]);
 });
 
@@ -277,7 +277,7 @@ test("Si 601 $2rameau doit être présent", () => {
         errors: [],
     };
     addRuleToTest(index);
-    ConditionMatching.testConditionMatchingRules(ruleTest,controlfields,datafields , resultJson);
+    ConditionMatching.testConditionMatchingRules(ruleTest, controlfields, datafields, resultJson);
     expect(resultJson.errors).toStrictEqual([]);
 });
 
@@ -293,7 +293,7 @@ test("Si 601 $2rameau doit être présent (FAIL)", () => {
         errors: [],
     };
     addRuleToTest(index);
-    ConditionMatching.testConditionMatchingRules(ruleTest,controlfields,datafields , resultJson);
+    ConditionMatching.testConditionMatchingRules(ruleTest, controlfields, datafields, resultJson);
     expect(resultJson.errors).not.toStrictEqual([]);
 });
 
@@ -310,7 +310,7 @@ test("Si 602 $2rameau doit être présent", () => {
         errors: [],
     };
     addRuleToTest(index);
-    ConditionMatching.testConditionMatchingRules(ruleTest,controlfields,datafields , resultJson);
+    ConditionMatching.testConditionMatchingRules(ruleTest, controlfields, datafields, resultJson);
     expect(resultJson.errors).toStrictEqual([]);
 });
 
@@ -326,7 +326,7 @@ test("Si 602 $2rameau doit être présent (FAIL)", () => {
         errors: [],
     };
     addRuleToTest(index);
-    ConditionMatching.testConditionMatchingRules(ruleTest,controlfields,datafields , resultJson);
+    ConditionMatching.testConditionMatchingRules(ruleTest, controlfields, datafields, resultJson);
     expect(resultJson.errors).not.toStrictEqual([]);
 });
 
@@ -344,7 +344,7 @@ test("Si 604 $2rameau doit être présent", () => {
         errors: [],
     };
     addRuleToTest(index);
-    ConditionMatching.testConditionMatchingRules(ruleTest,controlfields,datafields , resultJson);
+    ConditionMatching.testConditionMatchingRules(ruleTest, controlfields, datafields, resultJson);
     expect(resultJson.errors).toStrictEqual([]);
 });
 
@@ -360,7 +360,7 @@ test("Si 604 $2rameau doit être présent (FAIL)", () => {
         errors: [],
     };
     addRuleToTest(index);
-    ConditionMatching.testConditionMatchingRules(ruleTest,controlfields,datafields , resultJson);
+    ConditionMatching.testConditionMatchingRules(ruleTest, controlfields, datafields, resultJson);
     expect(resultJson.errors).not.toStrictEqual([]);
 });
 
@@ -377,7 +377,7 @@ test("Si 605 $2rameau doit être présent", () => {
         errors: [],
     };
     addRuleToTest(index);
-    ConditionMatching.testConditionMatchingRules(ruleTest,controlfields,datafields , resultJson);
+    ConditionMatching.testConditionMatchingRules(ruleTest, controlfields, datafields, resultJson);
     expect(resultJson.errors).toStrictEqual([]);
 });
 
@@ -393,7 +393,7 @@ test("Si 605 $2rameau doit être présent (FAIL)", () => {
         errors: [],
     };
     addRuleToTest(index);
-    ConditionMatching.testConditionMatchingRules(ruleTest,controlfields,datafields , resultJson);
+    ConditionMatching.testConditionMatchingRules(ruleTest, controlfields, datafields, resultJson);
     expect(resultJson.errors).not.toStrictEqual([]);
 });
 
@@ -411,7 +411,7 @@ test("Si 856$5=692669902, alors doit être présente 310 ##$aL'accès à cette r
         errors: [],
     };
     addRuleToTest(index);
-    ConditionMatching.testConditionMatchingRules(ruleTest,controlfields,datafields , resultJson);
+    ConditionMatching.testConditionMatchingRules(ruleTest, controlfields, datafields, resultJson);
     expect(resultJson.errors).toStrictEqual([]);
 });
 
@@ -445,7 +445,7 @@ test("Si 305$a commence par \"Document numérisé dans le cadre du projet de num
         errors: [],
     };
     addRuleToTest(index);
-    ConditionMatching.testConditionMatchingRules(ruleTest,controlfields,datafields , resultJson);
+    ConditionMatching.testConditionMatchingRules(ruleTest, controlfields, datafields, resultJson);
     expect(resultJson.errors).toStrictEqual([]);
 });
 
@@ -461,7 +461,7 @@ test("Si 305$a commence par \"Document numérisé dans le cadre du projet de num
         errors: [],
     };
     addRuleToTest(index);
-    ConditionMatching.testConditionMatchingRules(ruleTest,controlfields,datafields , resultJson);
+    ConditionMatching.testConditionMatchingRules(ruleTest, controlfields, datafields, resultJson);
     expect(resultJson.errors).not.toStrictEqual([]);
 });
 
@@ -478,7 +478,7 @@ test("Si 328$zReproduction de, alors il faut une 701$4727", () => {
         errors: [],
     };
     addRuleToTest(index);
-    ConditionMatching.testConditionMatchingRules(ruleTest,controlfields,datafields , resultJson);
+    ConditionMatching.testConditionMatchingRules(ruleTest, controlfields, datafields, resultJson);
     expect(resultJson.errors).toStrictEqual([]);
 });
 
@@ -494,7 +494,7 @@ test("Si 328$zReproduction de, alors il faut une 701$4727 (FAIL)", () => {
         errors: [],
     };
     addRuleToTest(index);
-    ConditionMatching.testConditionMatchingRules(ruleTest,controlfields,datafields , resultJson);
+    ConditionMatching.testConditionMatchingRules(ruleTest, controlfields, datafields, resultJson);
     expect(resultJson.errors).not.toStrictEqual([]);
 });
 
@@ -511,7 +511,7 @@ test("Si 328$z n'est pas \"Reproduction de\", alors 701$4727 ne doit pas être p
         errors: [],
     };
     addRuleToTest(index);
-    ConditionMatching.testConditionMatchingRules(ruleTest,controlfields,datafields , resultJson);
+    ConditionMatching.testConditionMatchingRules(ruleTest, controlfields, datafields, resultJson);
     expect(resultJson.errors).toStrictEqual([]);
 });
 
@@ -527,7 +527,7 @@ test("Si 328$z n'est pas \"Reproduction de\", alors 701$4727 ne doit pas être p
         errors: [],
     };
     addRuleToTest(index);
-    ConditionMatching.testConditionMatchingRules(ruleTest,controlfields,datafields , resultJson);
+    ConditionMatching.testConditionMatchingRules(ruleTest, controlfields, datafields, resultJson);
     expect(resultJson.errors).not.toStrictEqual([]);
 });
 
@@ -545,7 +545,7 @@ test("Si 328$zReproduction de, alors il faut une 711$4295", () => {
         errors: [],
     };
     addRuleToTest(index);
-    ConditionMatching.testConditionMatchingRules(ruleTest,controlfields,datafields , resultJson);
+    ConditionMatching.testConditionMatchingRules(ruleTest, controlfields, datafields, resultJson);
     expect(resultJson.errors).toStrictEqual([]);
 });
 
@@ -561,7 +561,7 @@ test("Si 328$zReproduction de, alors il faut une 711$4295 (FAIL)", () => {
         errors: [],
     };
     addRuleToTest(index);
-    ConditionMatching.testConditionMatchingRules(ruleTest,controlfields,datafields , resultJson);
+    ConditionMatching.testConditionMatchingRules(ruleTest, controlfields, datafields, resultJson);
     expect(resultJson.errors).not.toStrictEqual([]);
 });
 
@@ -578,7 +578,7 @@ test("Si 328$z n'est pas \"Reproduction de\", alors 711$4295 ne doit pas être p
         errors: [],
     };
     addRuleToTest(index);
-    ConditionMatching.testConditionMatchingRules(ruleTest,controlfields,datafields , resultJson);
+    ConditionMatching.testConditionMatchingRules(ruleTest, controlfields, datafields, resultJson);
     expect(resultJson.errors).toStrictEqual([]);
 });
 
@@ -594,7 +594,7 @@ test("Si 328$z n'est pas \"Reproduction de\", alors 711$4295 ne doit pas être p
         errors: [],
     };
     addRuleToTest(index);
-    ConditionMatching.testConditionMatchingRules(ruleTest,controlfields,datafields , resultJson);
+    ConditionMatching.testConditionMatchingRules(ruleTest, controlfields, datafields, resultJson);
     expect(resultJson.errors).not.toStrictEqual([]);
 });
 
@@ -611,7 +611,7 @@ test("Si 328$zReproduction de, alors il faut une 608 $3027253139 $aThèses et é
         errors: [],
     };
     addRuleToTest(index);
-    ConditionMatching.testConditionMatchingRules(ruleTest,controlfields,datafields , resultJson);
+    ConditionMatching.testConditionMatchingRules(ruleTest, controlfields, datafields, resultJson);
     expect(resultJson.errors).toStrictEqual([]);
 });
 
@@ -627,7 +627,7 @@ test("Si 328$zReproduction de, alors il faut une 608 $3027253139 $aThèses et é
         errors: [],
     };
     addRuleToTest(index);
-    ConditionMatching.testConditionMatchingRules(ruleTest,controlfields,datafields , resultJson);
+    ConditionMatching.testConditionMatchingRules(ruleTest, controlfields, datafields, resultJson);
     expect(resultJson.errors).not.toStrictEqual([]);
 });
 
@@ -644,7 +644,7 @@ test("Si 328$z n'est pas \"Reproduction de\", alors 608 $3027253139Thèses et é
         errors: [],
     };
     addRuleToTest(index);
-    ConditionMatching.testConditionMatchingRules(ruleTest,controlfields,datafields , resultJson);
+    ConditionMatching.testConditionMatchingRules(ruleTest, controlfields, datafields, resultJson);
     expect(resultJson.errors).toStrictEqual([]);
 });
 
@@ -660,7 +660,7 @@ test("Si 328$z n'est pas \"Reproduction de\", alors 608 $3027253139Thèses et é
         errors: [],
     };
     addRuleToTest(index);
-    ConditionMatching.testConditionMatchingRules(ruleTest,controlfields,datafields , resultJson);
+    ConditionMatching.testConditionMatchingRules(ruleTest, controlfields, datafields, resultJson);
     expect(resultJson.errors).not.toStrictEqual([]);
 });
 
@@ -677,7 +677,7 @@ test("Si 214 ind2=2, alors $cBibliothèque Lyon 1", () => {
         errors: [],
     };
     addRuleToTest(index);
-    ConditionMatching.testConditionMatchingRules(ruleTest,controlfields,datafields , resultJson);
+    ConditionMatching.testConditionMatchingRules(ruleTest, controlfields, datafields, resultJson);
     expect(resultJson.errors).toStrictEqual([]);
 });
 
@@ -693,7 +693,7 @@ test("Si 214 ind2=2, alors $cBibliothèque Lyon 1 (FAIL)", () => {
         errors: [],
     };
     addRuleToTest(index);
-    ConditionMatching.testConditionMatchingRules(ruleTest,controlfields,datafields , resultJson);
+    ConditionMatching.testConditionMatchingRules(ruleTest, controlfields, datafields, resultJson);
     expect(resultJson.errors).not.toStrictEqual([]);
 });
 
@@ -711,7 +711,7 @@ test("608$3027253139 doit être présente", () => {
         errors: [],
     };
     addRuleToTest(index);
-    ConditionMatching.testConditionMatchingRules(ruleTest,controlfields,datafields , resultJson);
+    ConditionMatching.testConditionMatchingRules(ruleTest, controlfields, datafields, resultJson);
     expect(resultJson.errors).toStrictEqual([]);
 });
 
@@ -745,7 +745,7 @@ test("Au moins une 711$3 = 26402823 $4=295 doit être présente", () => {
         errors: [],
     };
     addRuleToTest(index);
-    ConditionMatching.testConditionMatchingRules(ruleTest,controlfields,datafields , resultJson);
+    ConditionMatching.testConditionMatchingRules(ruleTest, controlfields, datafields, resultJson);
     expect(resultJson.errors).toStrictEqual([]);
 });
 
@@ -779,7 +779,7 @@ test("Si 105 $a Pos. 4-7= m ou 7 il faut une 608 $3027253139 et $a Thèses et é
         errors: [],
     };
     addRuleToTest(index);
-    ConditionMatching.testConditionMatchingRules(ruleTest,controlfields,datafields , resultJson);
+    ConditionMatching.testConditionMatchingRules(ruleTest, controlfields, datafields, resultJson);
     expect(resultJson.errors).toStrictEqual([]);
 });
 
@@ -794,12 +794,16 @@ test("Si 105 $a Pos. 4-7= m ou 7 il faut une 608 $3027253139 et $a Thèses et é
         errors: [],
     };
     addRuleToTest(index);
-    ConditionMatching.testConditionMatchingRules(ruleTest,controlfields,datafields , resultJson);
+    ConditionMatching.testConditionMatchingRules(ruleTest, controlfields, datafields, resultJson);
     expect(resultJson.errors).not.toStrictEqual([]);
 });
 
 
 // ===============================================================
+
+// ===============================================================
+
+
 
 test("856$zAccès au texte intégral sauf si 856$5=692669902, alors $zAccès réservé aux membres de Lyon 1 après authentification (1)", () => {
     const notice = "017"
@@ -812,7 +816,7 @@ test("856$zAccès au texte intégral sauf si 856$5=692669902, alors $zAccès ré
         errors: [],
     };
     addRuleToTest(index);
-    ConditionMatching.testConditionMatchingRules(ruleTest,controlfields,datafields , resultJson);
+    ConditionMatching.testConditionMatchingRules(ruleTest, controlfields, datafields, resultJson);
     expect(resultJson.errors).toStrictEqual([]);
 });
 
@@ -835,9 +839,9 @@ test("856$zAccès au texte intégral sauf si 856$5=692669902, alors $zAccès ré
 
 // ===============================================================
 
-test("856$zAccès au texte intégral sauf si 856$5=692669902, alors $zAccès réservé aux membres de Lyon 1 après authentification (2)", () => {
-    const notice = "017"
-    const index = 3006
+test("Si 105 $a Pos. 10 =0 alors il ne doit pas y avoir une 320$a = Index", () => {
+    const notice = "007"
+    const index = 3007
     const sudoc = getNotice(notice);
     const datafields = sudoc.record.datafield;
     const controlfields = sudoc.record.controlfield;
@@ -846,9 +850,75 @@ test("856$zAccès au texte intégral sauf si 856$5=692669902, alors $zAccès ré
         errors: [],
     };
     addRuleToTest(index);
-    ConditionMatching.testConditionMatchingRules(ruleTest,controlfields,datafields , resultJson);
+    ConditionMatching.testConditionMatchingRules(ruleTest, controlfields, datafields, resultJson);
     expect(resultJson.errors).toStrictEqual([]);
 });
+
+
+test("Si 105 $a Pos. 10 =0 alors il ne doit pas y avoir une 320$a = Index (FAIL)", () => {
+    const notice = "008"
+    const index = 3007
+    const sudoc = getNotice(notice);
+    const datafields = sudoc.record.datafield;
+    const controlfields = sudoc.record.controlfield;
+    let resultJson = {
+        PPN: 0,
+        errors: [],
+    };
+    addRuleToTest(index);
+    ConditionMatching.testConditionMatchingRules(ruleTest, controlfields, datafields, resultJson);
+    expect(resultJson.errors).not.toStrictEqual([]);
+});
+
+
+// ===============================================================
+test("606 et $3, doit contenir $2rameau ou $2fmesh", () => {
+    const notice = "009"
+    const index = 3008
+    const sudoc = getNotice(notice);
+    const datafields = sudoc.record.datafield;
+    const controlfields = sudoc.record.controlfield;
+    let resultJson = {
+        PPN: 0,
+        errors: [],
+    };
+    addRuleToTest(index);
+    ConditionMatching.testConditionMatchingRules(ruleTest, controlfields, datafields, resultJson);
+    expect(resultJson.errors).toStrictEqual([]);
+});
+
+test("606 et $3, doit contenir $2rameau ou $2fmesh (FAIL)", () => {
+    const notice = "010"
+    const index = 3008
+    const sudoc = getNotice(notice);
+    const datafields = sudoc.record.datafield;
+    const controlfields = sudoc.record.controlfield;
+    let resultJson = {
+        PPN: 0,
+        errors: [],
+    };
+    addRuleToTest(index);
+    ConditionMatching.testConditionMatchingRules(ruleTest, controlfields, datafields, resultJson);
+    expect(resultJson.errors).not.toStrictEqual([]);
+});
+
+// ===============================================================
+
+// Maxence devra recheck
+// test("856$zAccès au texte intégral sauf si 856$5=692669902, alors $zAccès réservé aux membres de Lyon 1 après authentification (2)", () => {
+//     const notice = "017"
+//     const index = 3006
+//     const sudoc = getNotice(notice);
+//     const datafields = sudoc.record.datafield;
+//     const controlfields = sudoc.record.controlfield;
+//     let resultJson = {
+//         PPN: 0,
+//         errors: [],
+//     };
+//     addRuleToTest(index);
+//     ConditionMatching.testConditionMatchingRules(ruleTest, controlfields, datafields, resultJson);
+//     expect(resultJson.errors).not.toStrictEqual([]);
+// });
 
 //Orange
 // test("856$zAccès au texte intégral sauf si 856$5=692669902, alors $zAccès réservé aux membres de Lyon 1 après authentification (2) (FAIL)", () => {
