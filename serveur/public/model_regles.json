@@ -691,6 +691,60 @@
             {
                 "condition": [
                     {
+                        "operator": "contains_text",
+                        "number": "105",
+                        "code": "a",
+                        "pos": [4,7],
+                        "string":["v"]
+                    },
+                    {
+                        "operator": "presente",
+                        "number": "214",
+                        "code": "a",
+                        "ind1":"",
+                        "ind2":"2"
+                        
+                    }
+                ],
+                "index": 3011,
+                "type": "allRequired",
+                "values": [
+                    {
+                        "number": "214",
+                        "code": "a",
+                        "message": "Zone 214$a incohérente avec le statut de la thèse (reproduction)",
+                        "regex": "^Lyon$",
+                        "subFieldRequired": true
+                    }
+                ]
+            },
+            {
+                "condition": [
+                    {
+                        "operator": "presente",
+                        "number": "608",
+                        "code": "3"
+                    }
+                ],
+                "index": 3009,
+                "type": "allRequired",
+                "verifyZone" : {
+                    "number" : "608",
+                    "code" : "3"
+                },
+                "values": [
+                    {
+                        "number": "608",
+                        "code": "2",
+                        "message": "Zone 6XX $2 mal orthographié ou absent",
+                        "regex": "(rameau)|(fmesh)",
+                        "subFieldRequired": true
+                    }
+                ]
+            },
+            {
+                "condition": [
+                    {
                         "operator": "presente",
                         "number": "606",
                         "code": "3"
@@ -698,9 +752,13 @@
                 ],
                 "index": 3008,
                 "type": "allRequired",
+                "verifyZone" : {
+                    "number" : "606",
+                    "code" : "3"
+                },
                 "values": [
                     {
-                        "number": 606,
+                        "number": "606",
                         "code": "2",
                         "message": "Zone 6XX $2 mal orthographié ou absent",
                         "regex": "(rameau)|(fmesh)",
@@ -1704,6 +1762,110 @@
             }
         ],
         "ConditionStructurel": [
+            {
+                "condition": [
+                    {
+                        "operator": "contains_text",
+                        "number": "105",
+                        "code": "a",
+                        "ind1": "",
+                        "ind2": "",
+                        "pos":[4,7],
+                        "string": [
+                            "v","7"
+                        ]
+                    }
+                ],
+                "value": [
+                    {
+                        "number": "017",
+                        "code": "",
+                        "present": true
+                    }
+                ],
+                "type": "allRequired",
+                "index": 3014,
+                "number": "105",
+                "message": "Zone 328 obligatoire pour une thèse ou mémoire (soutenance)"
+            },
+            {
+                "condition": [
+                    {
+                        "operator": "contains_text",
+                        "number": "105",
+                        "code": "a",
+                        "ind1": "",
+                        "ind2": "",
+                        "pos":[4,7],
+                        "string": [
+                            "m","7"
+                        ]
+                    }
+                ],
+                "value": [
+                    {
+                        "number": "328",
+                        "code": "",
+                        "present": true
+                    }
+                ],
+                "type": "allRequired",
+                "index": 3013,
+                "number": "105",
+                "message": "Zone 328 obligatoire pour une thèse ou mémoire (soutenance)"
+            },
+            {
+                "condition": [
+                    {
+                        "operator": "contains_text",
+                        "number": "105",
+                        "code": "a",
+                        "ind1": "",
+                        "ind2": "",
+                        "pos":[4,7],
+                        "string": [
+                            "m"
+                        ]
+                    }
+                ],
+                "value": [
+                    {
+                        "number": "029",
+                        "code": "",
+                        "present": true
+                    }
+                ],
+                "type": "allRequired",
+                "index": 3012,
+                "number": "105",
+                "message": "Zone 029 obligatoire pour une thèse (soutenance)"
+            },
+            {
+                "condition": [
+                    {
+                        "operator": "contains_text",
+                        "number": "105",
+                        "code": "a",
+                        "ind1": "",
+                        "ind2": "",
+                        "pos":[4,7],
+                        "string": [
+                            "v"
+                        ]
+                    }
+                ],
+                "value": [
+                    {
+                        "number": "456",
+                        "code": "",
+                        "present": false
+                    }
+                ],
+                "type": "allRequired",
+                "index": 3010,
+                "number": "856",
+                "message": "Zone 456 incompatible avec le type de thèse (reproduction)"
+            },
             {
                 "condition": [
                     {

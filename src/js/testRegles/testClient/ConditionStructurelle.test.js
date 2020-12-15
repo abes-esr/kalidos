@@ -1428,3 +1428,191 @@ test("214 #0 ou 214#1 obligatoire, sauf si 105$b=v (FAIL)", () => {
     ConditionStructurelle.testConditionStrucutrelRules(ruleTest,controlfields,datafields , resultJson, mockFunction);
     expect(resultJson.errors).not.toStrictEqual([]);
 });
+
+
+// ===============================================================
+
+
+
+test("Si 105 $a Pos. 4-7= v, 456 ne doit pas être présente", () => {
+    const notice = "029"
+    const index = 3010
+    const sudoc = getNotice(notice);
+    const datafields = sudoc.record.datafield;
+    const controlfields = sudoc.record.controlfield;
+    let resultJson = {
+        PPN: 0,
+        errors: [],
+    };
+    addRuleToTest(index);
+    const mockFunction = ConditionStructurelle.mockGetDataOnSudoc("");
+    ConditionStructurelle.testConditionStrucutrelRules(ruleTest,controlfields,datafields , resultJson, mockFunction);
+    expect(resultJson.errors).toStrictEqual([]);
+});
+
+
+test("Si 105 $a Pos. 4-7= v, 456 ne doit pas être présente (FAIL)", () => {
+    const notice = "030"
+    const index = 3010
+    const sudoc = getNotice(notice);
+    const datafields = sudoc.record.datafield;
+    const controlfields = sudoc.record.controlfield;
+    let resultJson = {
+        PPN: 0,
+        errors: [],
+    };
+    addRuleToTest(index);
+    const mockFunction = ConditionStructurelle.mockGetDataOnSudoc("");
+    ConditionStructurelle.testConditionStrucutrelRules(ruleTest,controlfields,datafields , resultJson, mockFunction);
+    expect(resultJson.errors).not.toStrictEqual([]);
+});
+
+// ===============================================================
+
+
+
+test("Si 105 $a Pos. 4-7= m, alors il faut une 029", () => {
+    const notice = "021"
+    const index = 3012
+    const sudoc = getNotice(notice);
+    const datafields = sudoc.record.datafield;
+    const controlfields = sudoc.record.controlfield;
+    let resultJson = {
+        PPN: 0,
+        errors: [],
+    };
+    addRuleToTest(index);
+    const mockFunction = ConditionStructurelle.mockGetDataOnSudoc("");
+    ConditionStructurelle.testConditionStrucutrelRules(ruleTest,controlfields,datafields , resultJson, mockFunction);
+    expect(resultJson.errors).toStrictEqual([]);
+});
+
+
+test("Si 105 $a Pos. 4-7= m, alors il faut une 029 (FAIL)", () => {
+    const notice = "022"
+    const index = 3012
+    const sudoc = getNotice(notice);
+    const datafields = sudoc.record.datafield;
+    const controlfields = sudoc.record.controlfield;
+    let resultJson = {
+        PPN: 0,
+        errors: [],
+    };
+    addRuleToTest(index);
+    const mockFunction = ConditionStructurelle.mockGetDataOnSudoc("");
+    ConditionStructurelle.testConditionStrucutrelRules(ruleTest,controlfields,datafields , resultJson, mockFunction);
+    expect(resultJson.errors).not.toStrictEqual([]);
+});
+
+
+
+// ===============================================================
+
+
+
+test("Si 105 $a Pos. 4-7= m, alors il faut une 029", () => {
+    const notice = "021"
+    const index = 3012
+    const sudoc = getNotice(notice);
+    const datafields = sudoc.record.datafield;
+    const controlfields = sudoc.record.controlfield;
+    let resultJson = {
+        PPN: 0,
+        errors: [],
+    };
+    addRuleToTest(index);
+    const mockFunction = ConditionStructurelle.mockGetDataOnSudoc("");
+    ConditionStructurelle.testConditionStrucutrelRules(ruleTest,controlfields,datafields , resultJson, mockFunction);
+    expect(resultJson.errors).toStrictEqual([]);
+});
+
+
+test("Si 105 $a Pos. 4-7= m, alors il faut une 029 (FAIL)", () => {
+    const notice = "022"
+    const index = 3012
+    const sudoc = getNotice(notice);
+    const datafields = sudoc.record.datafield;
+    const controlfields = sudoc.record.controlfield;
+    let resultJson = {
+        PPN: 0,
+        errors: [],
+    };
+    addRuleToTest(index);
+    const mockFunction = ConditionStructurelle.mockGetDataOnSudoc("");
+    ConditionStructurelle.testConditionStrucutrelRules(ruleTest,controlfields,datafields , resultJson, mockFunction);
+    expect(resultJson.errors).not.toStrictEqual([]);
+});
+
+// ===============================================================
+
+
+
+test("Si 105 $a Pos. 4-7= m ou 7, alors il faut une 328", () => {
+    const notice = "021"
+    const index = 3013
+    const sudoc = getNotice(notice);
+    const datafields = sudoc.record.datafield;
+    const controlfields = sudoc.record.controlfield;
+    let resultJson = {
+        PPN: 0,
+        errors: [],
+    };
+    addRuleToTest(index);
+    const mockFunction = ConditionStructurelle.mockGetDataOnSudoc("");
+    ConditionStructurelle.testConditionStrucutrelRules(ruleTest,controlfields,datafields , resultJson, mockFunction);
+    expect(resultJson.errors).toStrictEqual([]);
+});
+
+
+test("Si 105 $a Pos. 4-7= m ou 7, alors il faut une 328 (FAIL)", () => {
+    const notice = "022"
+    const index = 3013
+    const sudoc = getNotice(notice);
+    const datafields = sudoc.record.datafield;
+    const controlfields = sudoc.record.controlfield;
+    let resultJson = {
+        PPN: 0,
+        errors: [],
+    };
+    addRuleToTest(index);
+    const mockFunction = ConditionStructurelle.mockGetDataOnSudoc("");
+    ConditionStructurelle.testConditionStrucutrelRules(ruleTest,controlfields,datafields , resultJson, mockFunction);
+    expect(resultJson.errors).not.toStrictEqual([]);
+});
+
+// ===============================================================
+
+
+
+test("Si 105 $a Pos. 4-7= v ou 7, alors il faut une 017", () => {
+    const notice = "027"
+    const index = 3014
+    const sudoc = getNotice(notice);
+    const datafields = sudoc.record.datafield;
+    const controlfields = sudoc.record.controlfield;
+    let resultJson = {
+        PPN: 0,
+        errors: [],
+    };
+    addRuleToTest(index);
+    const mockFunction = ConditionStructurelle.mockGetDataOnSudoc("");
+    ConditionStructurelle.testConditionStrucutrelRules(ruleTest,controlfields,datafields , resultJson, mockFunction);
+    expect(resultJson.errors).toStrictEqual([]);
+});
+
+
+test("Si 105 $a Pos. 4-7= v ou 7, alors il faut une 017 (FAIL)", () => {
+    const notice = "028"
+    const index = 3014
+    const sudoc = getNotice(notice);
+    const datafields = sudoc.record.datafield;
+    const controlfields = sudoc.record.controlfield;
+    let resultJson = {
+        PPN: 0,
+        errors: [],
+    };
+    addRuleToTest(index);
+    const mockFunction = ConditionStructurelle.mockGetDataOnSudoc("");
+    ConditionStructurelle.testConditionStrucutrelRules(ruleTest,controlfields,datafields , resultJson, mockFunction);
+    expect(resultJson.errors).not.toStrictEqual([]);
+});

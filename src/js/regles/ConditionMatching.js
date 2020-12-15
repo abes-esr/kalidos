@@ -53,7 +53,7 @@ var ConditionMatching = function () {
         } else if (regle.type === "oneRequired") {
             isOk = verifyOneRequired(regle, datafields, controlfields);
         }
-        if(!isOk) {
+        if (!isOk) {
             resultJson.errors.push({
                 message: regle.values[0].message,
                 number: regle.values[0].number,
@@ -99,23 +99,27 @@ function verifyAllRequired(regle, datafields, controlfields) {
 function verifyOneRule(regle, index, datafields, controlfields) {
     const value = regle.values[index];
     let res = { errors: [] };
-    Matching.testMatchRegexNumber(value, datafields, controlfields, res);
+    let fields = datafields;
+    if(regle.verifyZone != undefined) {
+        fields = Parcours.getAllDatafieldVerifyZone(datafields,regle.verifyZone.number,regle.verifyZone.code);
+    }
+    Matching.testMatchRegexNumber(value, fields, controlfields, res);
     return res.errors.length === 0;
 }
 
-function isDatafieldExist(datafields, regle,index) {
+function isDatafieldExist(datafields, regle, index) {
     const number = regle.values[index].number;
     const code = regle.values[index].code;
     const ind1 = regle.values[index].ind1;
     const ind2 = regle.values[index].ind2;
     let datafield
-    if(ind1 === undefined || ind2 === undefined) {
-        datafield = Parcours.findDataField(datafields,number);
+    if (ind1 === undefined || ind2 === undefined) {
+        datafield = Parcours.findDataField(datafields, number);
     } else {
-        datafield = Parcours.findDataFieldById(datafields,number,ind1,ind2);
+        datafield = Parcours.findDataFieldById(datafields, number, ind1, ind2);
     }
-    if(datafield != null) {
-        const subfield = Parcours.getSubfieldValue(datafield,code);
+    if (datafield != null) {
+        const subfield = Parcours.getSubfieldValue(datafield, code);
         return subfield != null;
     }
     return false;

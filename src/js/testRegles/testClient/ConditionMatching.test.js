@@ -902,36 +902,69 @@ test("606 et $3, doit contenir $2rameau ou $2fmesh (FAIL)", () => {
     expect(resultJson.errors).not.toStrictEqual([]);
 });
 
+
+// ===============================================================
+test("608 et $3 doit contenir $2rameau ou $2fmesh", () => {
+    const notice = "009"
+    const index = 3009
+    const sudoc = getNotice(notice);
+    const datafields = sudoc.record.datafield;
+    const controlfields = sudoc.record.controlfield;
+    let resultJson = {
+        PPN: 0,
+        errors: [],
+    };
+    addRuleToTest(index);
+    ConditionMatching.testConditionMatchingRules(ruleTest, controlfields, datafields, resultJson);
+    expect(resultJson.errors).toStrictEqual([]);
+});
+
+test("608 et $3 doit contenir $2rameau ou $2fmesh (FAIL)", () => {
+    const notice = "002"
+    const index = 3009
+    const sudoc = getNotice(notice);
+    const datafields = sudoc.record.datafield;
+    const controlfields = sudoc.record.controlfield;
+    let resultJson = {
+        PPN: 0,
+        errors: [],
+    };
+    addRuleToTest(index);
+    ConditionMatching.testConditionMatchingRules(ruleTest, controlfields, datafields, resultJson);
+    expect(resultJson.errors).not.toStrictEqual([]);
+});
+
 // ===============================================================
 
-// Maxence devra recheck
-// test("856$zAccès au texte intégral sauf si 856$5=692669902, alors $zAccès réservé aux membres de Lyon 1 après authentification (2)", () => {
-//     const notice = "017"
-//     const index = 3006
-//     const sudoc = getNotice(notice);
-//     const datafields = sudoc.record.datafield;
-//     const controlfields = sudoc.record.controlfield;
-//     let resultJson = {
-//         PPN: 0,
-//         errors: [],
-//     };
-//     addRuleToTest(index);
-//     ConditionMatching.testConditionMatchingRules(ruleTest, controlfields, datafields, resultJson);
-//     expect(resultJson.errors).not.toStrictEqual([]);
-// });
+test("Si 105 $a Pos. 4-7= v et Si 214 ind2=2, alors $aLyon", () => {
+    const notice = "029"
+    const index = 3011
+    const sudoc = getNotice(notice);
+    const datafields = sudoc.record.datafield;
+    const controlfields = sudoc.record.controlfield;
+    let resultJson = {
+        PPN: 0,
+        errors: [],
+    };
+    addRuleToTest(index);
+    ConditionMatching.testConditionMatchingRules(ruleTest, controlfields, datafields, resultJson);
+    expect(resultJson.errors).toStrictEqual([]);
+});
 
-//Orange
-// test("856$zAccès au texte intégral sauf si 856$5=692669902, alors $zAccès réservé aux membres de Lyon 1 après authentification (2) (FAIL)", () => {
-//     const notice = "018"
-//     const index = 3006
-//     const sudoc = getNotice(notice);
-//     const datafields = sudoc.record.datafield;
-//     const controlfields = sudoc.record.controlfield;
-//     let resultJson = {
-//         PPN: 0,
-//         errors: [],
-//     };
-//     addRuleToTest(index);
-//     ConditionMatching.testConditionMatchingRules(ruleTest,controlfields,datafields , resultJson);
-//     expect(resultJson.errors).not.toStrictEqual([]);
-// });
+test("Si 105 $a Pos. 4-7= v et Si 214 ind2=2, alors $aLyon (FAIL)", () => {
+    const notice = "030"
+    const index = 3011
+    const sudoc = getNotice(notice);
+    const datafields = sudoc.record.datafield;
+    const controlfields = sudoc.record.controlfield;
+    let resultJson = {
+        PPN: 0,
+        errors: [],
+    };
+    addRuleToTest(index);
+    ConditionMatching.testConditionMatchingRules(ruleTest, controlfields, datafields, resultJson);
+    expect(resultJson.errors).not.toStrictEqual([]);
+});
+
+// ===============================================================
+

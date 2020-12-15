@@ -66,6 +66,22 @@ var Parcours = function () {
         return retour;
     }
 
+    const getAllDatafieldVerifyZone = function(datafields , number , code) {
+        let retour  = [];
+        const fields = findDataFields(datafields, number);
+        for(let i in fields) {
+            for(let j in fields[i].subfield) {
+                if(fields[i].subfield[j]._attributes.code === code) {
+                    retour.push(fields[i]);
+                    break;
+                }
+            }
+            
+        }
+        return retour;
+
+    }
+
 
     /**
      * retourne la valeur d'un champ d'une notice
@@ -168,7 +184,8 @@ var Parcours = function () {
         slice : slice,
         findDataFieldById : findDataFieldById,
         filterDatafield : filterDatafield, 
-        findDataFieldsById : findDataFieldsById
+        findDataFieldsById : findDataFieldsById,
+        getAllDatafieldVerifyZone : getAllDatafieldVerifyZone
     }
 }();
 
