@@ -689,6 +689,39 @@
         ],
         "ConditionMatching": [
             {
+                "condition": [ {
+                    "operator": "contains_text",
+                            "number": "105",
+                            "code": "a",
+                            "pos": [
+                                4,
+                                7
+                            ],
+                            "string": [
+                                "m"
+                            ]
+                        }
+                ],
+                "index": 3004,
+                "type": "allRequired",
+                "values": [
+                    {
+                        "number": 608,
+                        "code": "3",
+                        "message": "Zone 608 : indexation Forme-Genre obligatoire",
+                        "regex": "^027253139$",
+                        "subFieldRequired": true
+                    },
+                    {
+                        "number": 608,
+                        "code": "a",
+                        "message": "Zone 608 : indexation Forme-Genre obligatoire",
+                        "regex": "^Thèses et écrits académiques$",
+                        "subFieldRequired": true
+                    }
+                ]
+            },
+            {
                 "condition": [
                     {
                         "operator": "presente",
@@ -2875,11 +2908,6 @@
             },
             {
                 "condition": [
-                    {
-                        "operator": "presente",
-                        "number": "105",
-                        "code": "b"
-                    },
                     {
                         "operator": "not_equals_text",
                         "number": "105",

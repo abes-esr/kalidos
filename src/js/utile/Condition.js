@@ -19,17 +19,17 @@ var Condition = function () {
             return condition.operator === "not_presente";
         }
 
-        
+
         for (let i in fields) {
-            
+
             if (condition.operator === "presente") {
                 if (condition.code.toString() !== "") {
                     return Parcours.getSubfieldValue(fields[i], condition.code) != null;
                 }
             } else if (condition.operator === "not_presente") {
                 if (condition.code.toString() !== "") {
-                    return !(Parcours.getSubfieldValue(fields[i], condition.code) != null);
-                } 
+                    return Parcours.getSubfieldValue(fields[i], condition.code) == null;
+                }
             } else if (otherOperator(condition)) {
                 if (condition.string.toString() !== "") {
                     let subfieldValue;
@@ -59,14 +59,15 @@ var Condition = function () {
 module.exports = Condition;
 
 function testTagCondition(condition, subfieldValue, item) {
+    const subfieldPresent = subfieldValue != null;
     if (condition.operator === "contains_text") {
-        return Parcours.slice(condition.pos[0], condition.pos[1], subfieldValue).includes(item.toString())
+        return subfieldPresent && Parcours.slice(condition.pos[0], condition.pos[1], subfieldValue).includes(item.toString())
     } else if (condition.operator === "startwith_text") {
-        return subfieldValue.trim().startsWith(item.toString())
+        return subfieldPresent && subfieldValue.trim().startsWith(item.toString())
     } else if (condition.operator === "equals_text") {
-        return subfieldValue.trim() === item.toString()
+        return subfieldPresent && subfieldValue.trim() === item.toString()
     } else if (condition.operator === "not_equals_text") {
-        return subfieldValue.trim() !== item.toString()
+        return !subfieldPresent || subfieldValue.trim() !== item.toString()
     }
     return false
 }

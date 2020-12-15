@@ -1392,3 +1392,40 @@ test("Si 008 commence par Oa et ne contient pas une 215, une 856 doit être pré
     expect(resultJson.errors).not.toStrictEqual([]);
 });
 
+// ===============================================================
+
+
+
+test("214 #0 ou 214#1 obligatoire, sauf si 105$b=v", () => {
+    const notice = "020"
+    const index = 1073
+    const sudoc = getNotice(notice);
+    const datafields = sudoc.record.datafield;
+    const controlfields = sudoc.record.controlfield;
+    let resultJson = {
+        PPN: 0,
+        errors: [],
+    };
+    addRuleToTest(index);
+    const mockFunction = ConditionStructurelle.mockGetDataOnSudoc("");
+    ConditionStructurelle.testConditionStrucutrelRules(ruleTest,controlfields,datafields , resultJson, mockFunction);
+    expect(resultJson.errors).toStrictEqual([]);
+});
+
+
+test("214 #0 ou 214#1 obligatoire, sauf si 105$b=v (FAIL)", () => {
+    const notice = "019"
+    const index = 1073
+    const sudoc = getNotice(notice);
+    const datafields = sudoc.record.datafield;
+    const controlfields = sudoc.record.controlfield;
+    let resultJson = {
+        PPN: 0,
+        errors: [],
+    };
+    addRuleToTest(index);
+    const mockFunction = ConditionStructurelle.mockGetDataOnSudoc("");
+    ConditionStructurelle.testConditionStrucutrelRules(ruleTest,controlfields,datafields , resultJson, mockFunction);
+    expect(resultJson.errors).not.toStrictEqual([]);
+});
+
