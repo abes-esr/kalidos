@@ -5,7 +5,7 @@ const convert = require("xml-js");
 const Matching = require("../regles/Matching");
 
 
-var ConditionStructurel = function () {
+var ConditionMatching = function () {
 
     var testConditionMatchingRules = function (rules, controlfields, datafields, resultJson) {
         rules.Generale.ConditionMatching.forEach(function (regle) {
@@ -68,7 +68,7 @@ var ConditionStructurel = function () {
     }
 }();
 
-module.exports = ConditionStructurel;
+module.exports = ConditionMatching;
 
 function verifyOneRequired(regle, datafields, controlfields) {
     for (let index in regle.values) {

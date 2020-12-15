@@ -61,18 +61,20 @@ module.exports = Condition;
 function testTagCondition(condition, subfieldValue, item) {
     const subfieldPresent = subfieldValue != null;
     if (condition.operator === "contains_text") {
-        return subfieldPresent && Parcours.slice(condition.pos[0], condition.pos[1], subfieldValue).includes(item.toString())
+        return subfieldPresent && Parcours.slice(condition.pos[0], condition.pos[1], subfieldValue).includes(item.toString());
     } else if (condition.operator === "startwith_text") {
-        return subfieldPresent && subfieldValue.trim().startsWith(item.toString())
+        return subfieldPresent && subfieldValue.trim().startsWith(item.toString());
     } else if (condition.operator === "equals_text") {
-        return subfieldPresent && subfieldValue.trim() === item.toString()
+        return subfieldPresent && subfieldValue.trim() === item.toString();
     } else if (condition.operator === "not_equals_text") {
-        return !subfieldPresent || subfieldValue.trim() !== item.toString()
+        return !subfieldPresent || subfieldValue.trim() !== item.toString();
+    }else if (condition.operator === "not_startwith_text") {
+        return !subfieldPresent || !subfieldValue.trim().startsWith(item.toString());
     }
     return false
 }
 
 function otherOperator(condition) {
     return condition.operator === "contains_text" || condition.operator === "startwith_text" ||
-        condition.operator === "equals_text" || condition.operator === "not_equals_text";
+        condition.operator === "equals_text" || condition.operator === "not_equals_text" || condition.operator === "not_startwith_text";
 }

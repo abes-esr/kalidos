@@ -690,6 +690,50 @@
         "ConditionMatching": [
             {
                 "condition": [ {
+                    "operator": "startwith_text",
+                    "number": "856",
+                    "code": "5",
+                    "string": [
+                        "692669902"
+                    ]
+                        }
+                ],
+                "index": 3006,
+                "type": "allRequired",
+                "values": [
+                    {
+                        "number": 856,
+                        "code": "z",
+                        "message": "Zone 856 : le texte ne correspond pas au type d'accès (internet-intranet)",
+                        "regex": "^(Accès réservé aux membres de Lyon 1 après authentification).*$",
+                        "subFieldRequired": true
+                    }
+                ]
+            },
+            {
+                "condition": [ {
+                    "operator": "not_startwith_text",
+                    "number": "856",
+                    "code": "5",
+                    "string": [
+                        "692669902"
+                    ]
+                        }
+                ],
+                "index": 3005,
+                "type": "allRequired",
+                "values": [
+                    {
+                        "number": 856,
+                        "code": "z",
+                        "message": "Zone 856 : le texte ne correspond pas au type d'accès (internet-intranet)",
+                        "regex": "^Accès au texte intégral$",
+                        "subFieldRequired": true
+                    }
+                ]
+            },
+            {
+                "condition": [ {
                     "operator": "contains_text",
                             "number": "105",
                             "code": "a",

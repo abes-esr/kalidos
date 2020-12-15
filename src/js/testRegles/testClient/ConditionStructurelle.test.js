@@ -1428,4 +1428,3 @@ test("214 #0 ou 214#1 obligatoire, sauf si 105$b=v (FAIL)", () => {
     ConditionStructurelle.testConditionStrucutrelRules(ruleTest,controlfields,datafields , resultJson, mockFunction);
     expect(resultJson.errors).not.toStrictEqual([]);
 });
-
