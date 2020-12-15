@@ -797,3 +797,67 @@ test("Si 105 $a Pos. 4-7= m ou 7 il faut une 608 $3027253139 et $a Thèses et é
     ConditionMatching.testConditionMatchingRules(ruleTest,controlfields,datafields , resultJson);
     expect(resultJson.errors).not.toStrictEqual([]);
 });
+
+// ===============================================================
+
+test("Si 105 $a Pos. 10 =0 alors il ne doit pas y avoir une 320$a = Index", () => {
+    const notice = "007"
+    const index = 3007
+    const sudoc = getNotice(notice);
+    const datafields = sudoc.record.datafield;
+    const controlfields = sudoc.record.controlfield;
+    let resultJson = {
+        PPN: 0,
+        errors: [],
+    };
+    addRuleToTest(index);
+    ConditionMatching.testConditionMatchingRules(ruleTest,controlfields,datafields , resultJson);
+    expect(resultJson.errors).toStrictEqual([]);
+});
+
+test("Si 105 $a Pos. 10 =0 alors il ne doit pas y avoir une 320$a = Index (FAIL)", () => {
+    const notice = "008"
+    const index = 3007
+    const sudoc = getNotice(notice);
+    const datafields = sudoc.record.datafield;
+    const controlfields = sudoc.record.controlfield;
+    let resultJson = {
+        PPN: 0,
+        errors: [],
+    };
+    addRuleToTest(index);
+    ConditionMatching.testConditionMatchingRules(ruleTest,controlfields,datafields , resultJson);
+    expect(resultJson.errors).not.toStrictEqual([]);
+});
+
+
+// ===============================================================
+test("606 et $3, doit contenir $2rameau ou $2fmesh", () => {
+    const notice = "009"
+    const index = 3008
+    const sudoc = getNotice(notice);
+    const datafields = sudoc.record.datafield;
+    const controlfields = sudoc.record.controlfield;
+    let resultJson = {
+        PPN: 0,
+        errors: [],
+    };
+    addRuleToTest(index);
+    ConditionMatching.testConditionMatchingRules(ruleTest,controlfields,datafields , resultJson);
+    expect(resultJson.errors).toStrictEqual([]);
+});
+
+test("606 et $3, doit contenir $2rameau ou $2fmesh (FAIL)", () => {
+    const notice = "010"
+    const index = 3008
+    const sudoc = getNotice(notice);
+    const datafields = sudoc.record.datafield;
+    const controlfields = sudoc.record.controlfield;
+    let resultJson = {
+        PPN: 0,
+        errors: [],
+    };
+    addRuleToTest(index);
+    ConditionMatching.testConditionMatchingRules(ruleTest,controlfields,datafields , resultJson);
+    expect(resultJson.errors).not.toStrictEqual([]);
+});

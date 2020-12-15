@@ -689,18 +689,66 @@
         ],
         "ConditionMatching": [
             {
-                "condition": [ {
-                    "operator": "contains_text",
-                            "number": "105",
-                            "code": "a",
-                            "pos": [
-                                4,
-                                7
-                            ],
-                            "string": [
-                                "m"
-                            ]
-                        }
+                "condition": [
+                    {
+                        "operator": "presente",
+                        "number": "606",
+                        "code": "3"
+                    }
+                ],
+                "index": 3008,
+                "type": "allRequired",
+                "values": [
+                    {
+                        "number": 606,
+                        "code": "2",
+                        "message": "Zone 6XX $2 mal orthographié ou absent",
+                        "regex": "(rameau)|(fmesh)",
+                        "subFieldRequired": true
+                    }
+                ]
+            },
+            {
+                "condition": [
+                    {
+                        "operator": "contains_text",
+                        "number": "105",
+                        "code": "a",
+                        "pos": [
+                            10,
+                            11
+                        ],
+                        "string": [
+                            "0"
+                        ]
+                    }
+                ],
+                "index": 3007,
+                "type": "allRequired",
+                "values": [
+                    {
+                        "number": 320,
+                        "code": "a",
+                        "message": "Mention d'index incohérente : vérifier zones 105 et 320",
+                        "regex": "(?:(?!Index).)+",
+                        "subFieldRequired": true
+                    }
+                ]
+            },
+            {
+                "condition": [
+                    {
+                        "operator": "contains_text",
+                        "number": "105",
+                        "code": "a",
+                        "pos": [
+                            4,
+                            7
+                        ],
+                        "string": [
+                            "m"
+                        ]
+                    }
                 ],
                 "index": 3004,
                 "type": "allRequired",
@@ -1621,7 +1669,9 @@
                         "code": "",
                         "ind1": "",
                         "ind2": "",
-                        "string":["Oa"]
+                        "string": [
+                            "Oa"
+                        ]
                     },
                     {
                         "operator": "not_presente",
@@ -1648,9 +1698,14 @@
                         "number": "105",
                         "code": "a",
                         "ind1": "",
-                        "ind2": "",                        
-                        "pos":[4,7],
-                        "string":["m"]
+                        "ind2": "",
+                        "pos": [
+                            4,
+                            7
+                        ],
+                        "string": [
+                            "m"
+                        ]
                     }
                 ],
                 "value": [
