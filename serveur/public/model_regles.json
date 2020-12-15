@@ -1442,7 +1442,8 @@
                         "regex": "^(Aa).*",
                         "subFieldRequired": true
                     }
-                ]
+                ],
+                "message": "Si 008 commence par Oa et 452 présente, alors vérifier que notice 452$0 contient une 008 qui commence par Aa"
             },
             {
                 "condition": [

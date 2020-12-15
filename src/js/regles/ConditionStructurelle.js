@@ -2,11 +2,14 @@ const Parcours = require("../utile/Parcours");
 const Condition = require("../utile/Condition");
 const axios = require('axios');
 const convert = require("xml-js");
+const path = require('path');
+const fs = require('fs');
 
 
-var ConditionStructurel = function () {
-    var getDocument = undefined;
-    var testConditionStrucutrelRules = function (rules, controlfields, datafields, resultJson, getfunctionDocument) {
+const ConditionStructurel = function () {
+    let getDocument = undefined;
+    let ppnInitiale = undefined;
+    const testConditionStrucutrelRules = function (rules, controlfields, datafields, resultJson, getfunctionDocument) {
         getDocument = getfunctionDocument
         rules.Generale.ConditionStructurel.forEach(function (regle) {
             //recuperation du field a testé
@@ -35,13 +38,18 @@ var ConditionStructurel = function () {
             //si les conditions sont vrai
             if (checkedConds) {
                 //notice courante
+
                 let checkControlFields = controlfields;
                 let checkDataFields = datafields;
-                // console.log("condition verifié");
                 if (regle.reciproque) {
+                    ppnInitiale = Parcours.findDataField(controlfields, "001")._text;
+
                     //si les verification sont sur la notice reciproque
                     const data = getDocument(datafields, regle.reciproque.number, regle.reciproque.code);
-                    console.log(data);
+                    if(data === null) {
+                        addError(resultJson, regle);
+                        return;
+                    }
                     checkControlFields = data.record.controlfield;
                     checkDataFields = data.record.datafield;
 
@@ -79,18 +87,19 @@ var ConditionStructurel = function () {
     }
 
 
-    function checkReciproque(ppnSource, datafields, number, code) {
+    function checkReciproque(datafields, number, code) {
 
-        let data = getDocument(datafields, number, code);
-        if (data == null) {
-            return false;
-        }
+        // let data = getDocument(datafields, number, code);
+        // if (data == null) {
+        //     return false;
+        // }
 
-        let tempDataField = Parcours.findDataField(data.record.datafield, number);
+        let tempDataField = Parcours.findDataField(datafields, number);
         if (tempDataField == null) {
             return false;
         }
-        return Parcours.getSubfieldValue(tempDataField, code) === ppnSource;
+        const subfieldValue = Parcours.getSubfieldValue(tempDataField, code);
+        return subfieldValue === ppnInitiale;
     }
 
     return {
@@ -125,10 +134,12 @@ function verifyPresenceField(value, listDatafield) {
 }
 
 function verifyPresence(value, listDatafield) {
-    if (value.code.toString() !== "") {
-        return verifyPresenceSubfield(value, listDatafield);
-    } else if (value.ind1 === undefined || value.ind2 === undefined) {
-        return verifyPresenceField(value, listDatafield);
+    if (value.reciproque === undefined) {
+        if (value.code.toString() !== "") {
+            return verifyPresenceSubfield(value, listDatafield);
+        } else if (value.ind1 === undefined || value.ind2 === undefined) {
+            return verifyPresenceField(value, listDatafield);
+        }
     }
     return false;
 }
@@ -146,8 +157,8 @@ function verifyIndex(value, listDatafield) {
 
 function verifyReciproque(value, controlfields, checkReciproque, datafields) {
     if (value.reciproque) {
-        const dataField001 = Parcours.findDataField(controlfields, "001");
-        return checkReciproque(dataField001, datafields, value.reciproque.number, value.reciproque.code);
+        // const dataField001 = Parcours.findDataField(controlfields, "001");
+        return checkReciproque(datafields, value.reciproque.number, value.reciproque.code);
     }
     return false;
 }
@@ -198,6 +209,6 @@ function mockGetDataOnSudoc(number) {
 
 
 function getNotice(number) {
-    const xmlPPN = fs.readFileSync(path.join(__dirname, 'testRegles/testClient/data/Notice' + number + '.xml'), 'utf8');
+    const xmlPPN = fs.readFileSync(path.join(__dirname, '../testRegles/testClient/data/' + number + '.xml'), 'utf8');
     return JSON.parse(convert.xml2json(xmlPPN, { compact: true, spaces: 2 }));
 }

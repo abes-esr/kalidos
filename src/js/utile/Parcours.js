@@ -31,7 +31,7 @@ var Parcours = function () {
 
     const findDataFieldsById = function (datafields, number , ind1 , ind2) {
         let retour = []
-        let count = 0;
+        // let count = 0;
         datafields.forEach(function (field) {
             if (field._attributes.tag == number && field._attributes.ind1.toString().trim() === ind1
                 && field._attributes.ind2.toString().trim() === ind2) {
@@ -58,7 +58,7 @@ var Parcours = function () {
     const filterDatafield = function(datafields,variable, value) {
         let retour = [];
         for(let i in datafields) {
-            let tutu = datafields[i]._attributes[variable];
+            // let tutu = datafields[i]._attributes[variable];
             if(datafields[i]._attributes[variable] === value) {
                 retour.push(datafields[i])
             }
