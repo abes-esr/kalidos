@@ -9,6 +9,7 @@ const IdRef = require("../regles/IdRef");
 const ConditionStructurel = require("../regles/ConditionStructurelle");
 const ConditionMatching = require("../regles/ConditionMatching");
 const ConditionDependance = require("../regles/ConditionDependance");
+const Ordonnancement = require('../../regles/Ordonnancement');
 
 const PPN_EN_DUR = '169450546'
 const CATEGORIE = "Generale";
@@ -166,13 +167,17 @@ function verifMain(rules, sudoc) {
         errors: [],
     };
 
+    const getNoticeStructurelle = ConditionStructurel.getDataOnSudoc;
+    const getNoticeSMatching = ConditionMatching.getDataOnSudoc;
+
     Matching.testMatchRegexRules(CATEGORIE,rules,controlfields,datafields , resultJson)
     Structurel.testMatchStructurelRules(CATEGORIE,rules,controlfields,datafields , resultJson)
     Dependance.testMatchDependanceRules(CATEGORIE,rules,controlfields,datafields , resultJson)
     IdRef.testIdRefRules(CATEGORIE,rules,controlfields,datafields , resultJson)
-    ConditionStructurel.testConditionStrucutrelRules(rules,controlfields,datafields , resultJson)
-    ConditionMatching.testConditionMatchingRules(rules,controlfields,datafields , resultJson)
+    ConditionStructurel.testConditionStrucutrelRules(rules,controlfields,datafields , resultJson , getNoticeStructurelle)
+    ConditionMatching.testConditionMatchingRules(rules,controlfields,datafields , resultJson , getNoticeSMatching)
     ConditionDependance.testConditionDependanceRules(rules,controlfields,datafields , resultJson)
+    Ordonnancement.testOrdonnancementRules(CATEGORIE, rules, controlfields, datafields, resultJson)
 
 
     store.dispatch(addErrorPPN(resultJson));

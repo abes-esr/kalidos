@@ -694,16 +694,20 @@
                         "operator": "contains_text",
                         "number": "105",
                         "code": "a",
-                        "pos": [4,7],
-                        "string":["v"]
+                        "pos": [
+                            4,
+                            7
+                        ],
+                        "string": [
+                            "v"
+                        ]
                     },
                     {
                         "operator": "presente",
                         "number": "214",
                         "code": "a",
-                        "ind1":"",
-                        "ind2":"2"
-                        
+                        "ind1": "",
+                        "ind2": "2"
                     }
                 ],
                 "index": 3011,
@@ -728,9 +732,9 @@
                 ],
                 "index": 3009,
                 "type": "allRequired",
-                "verifyZone" : {
-                    "number" : "608",
-                    "code" : "3"
+                "verifyZone": {
+                    "number": "608",
+                    "code": "3"
                 },
                 "values": [
                     {
@@ -752,9 +756,9 @@
                 ],
                 "index": 3008,
                 "type": "allRequired",
-                "verifyZone" : {
-                    "number" : "606",
-                    "code" : "3"
+                "verifyZone": {
+                    "number": "606",
+                    "code": "3"
                 },
                 "values": [
                     {
@@ -794,14 +798,15 @@
                 ]
             },
             {
-                "condition": [ {
-                    "operator": "startwith_text",
-                    "number": "856",
-                    "code": "5",
-                    "string": [
-                        "692669902"
-                    ]
-                        }
+                "condition": [
+                    {
+                        "operator": "startwith_text",
+                        "number": "856",
+                        "code": "5",
+                        "string": [
+                            "692669902"
+                        ]
+                    }
                 ],
                 "index": 3006,
                 "type": "allRequired",
@@ -816,14 +821,15 @@
                 ]
             },
             {
-                "condition": [ {
-                    "operator": "not_startwith_text",
-                    "number": "856",
-                    "code": "5",
-                    "string": [
-                        "692669902"
-                    ]
-                        }
+                "condition": [
+                    {
+                        "operator": "not_startwith_text",
+                        "number": "856",
+                        "code": "5",
+                        "string": [
+                            "692669902"
+                        ]
+                    }
                 ],
                 "index": 3005,
                 "type": "allRequired",
@@ -838,18 +844,19 @@
                 ]
             },
             {
-                "condition": [ {
-                    "operator": "contains_text",
-                            "number": "105",
-                            "code": "a",
-                            "pos": [
-                                4,
-                                7
-                            ],
-                            "string": [
-                                "m"
-                            ]
-                        }
+                "condition": [
+                    {
+                        "operator": "contains_text",
+                        "number": "105",
+                        "code": "a",
+                        "pos": [
+                            4,
+                            7
+                        ],
+                        "string": [
+                            "m"
+                        ]
+                    }
                 ],
                 "index": 3004,
                 "type": "allRequired",
@@ -1771,9 +1778,13 @@
                         "code": "a",
                         "ind1": "",
                         "ind2": "",
-                        "pos":[4,7],
+                        "pos": [
+                            4,
+                            7
+                        ],
                         "string": [
-                            "v","7"
+                            "v",
+                            "7"
                         ]
                     }
                 ],
@@ -1797,9 +1808,13 @@
                         "code": "a",
                         "ind1": "",
                         "ind2": "",
-                        "pos":[4,7],
+                        "pos": [
+                            4,
+                            7
+                        ],
                         "string": [
-                            "m","7"
+                            "m",
+                            "7"
                         ]
                     }
                 ],
@@ -1823,7 +1838,10 @@
                         "code": "a",
                         "ind1": "",
                         "ind2": "",
-                        "pos":[4,7],
+                        "pos": [
+                            4,
+                            7
+                        ],
                         "string": [
                             "m"
                         ]
@@ -1849,7 +1867,10 @@
                         "code": "a",
                         "ind1": "",
                         "ind2": "",
-                        "pos":[4,7],
+                        "pos": [
+                            4,
+                            7
+                        ],
                         "string": [
                             "v"
                         ]
@@ -4052,6 +4073,23 @@
                 },
                 "message": "Incohérence indexation : vérifier que la zone 6XX est liée à une autorité RAMEAU"
             }
+        ],
+        "ordonnancement": [
+            {
+                "index" : 5006,
+                "number" : "214",
+                "orderBy" : "ind2",
+                "message" : "Zones 214 : garder l'ordre des indicateurs"
+            }
+        ],
+        "compte": [
+            {
+                "index" : 5007,
+                "number" : "101",
+                "code" : "d",
+                "contrainte" : "330",
+                "message" : "Mention de résumé incohérente : vérifier zones 101 et le nombre de zones 330"
+            }
         ]
     },
     "Mémoire": {
@@ -4069,6 +4107,12 @@
         ],
         "idRef": [
             {}
+        ],
+        "ordonnancement": [
+            {}
+        ],
+        "compte": [
+            {}
         ]
     },
     "Electronique": {
@@ -4085,6 +4129,12 @@
             {}
         ],
         "idRef": [
+            {}
+        ],
+        "ordonnancement": [
+            {}
+        ],
+        "compte": [
             {}
         ]
     }

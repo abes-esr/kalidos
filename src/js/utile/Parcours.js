@@ -101,7 +101,27 @@ var Parcours = function () {
 
             }
         } 
+       
         return null
+    }
+
+
+    const getListSubfieldValue = function(fields,code) {
+        let retour = [];
+        for (let i in fields ) {
+            if (fields[i] != null && fields[i].subfield instanceof Array) {
+                for (let j in fields[i].subfield) {
+                    if(fields[i].subfield[j]._attributes.code === code) {
+                        retour.push(fields[i].subfield[j]);
+                    }
+                }
+            }else if (fields[i] != null) {
+                if (fields[i].subfield._attributes.code === code) {
+                    retour.push(fields[i].subfield);
+                }
+            } 
+        }
+        return retour;
     }
 
 
@@ -185,7 +205,8 @@ var Parcours = function () {
         findDataFieldById : findDataFieldById,
         filterDatafield : filterDatafield, 
         findDataFieldsById : findDataFieldsById,
-        getAllDatafieldVerifyZone : getAllDatafieldVerifyZone
+        getAllDatafieldVerifyZone : getAllDatafieldVerifyZone,
+        getListSubfieldValue : getListSubfieldValue
     }
 }();
 
