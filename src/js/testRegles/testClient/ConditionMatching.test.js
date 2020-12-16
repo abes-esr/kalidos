@@ -1055,3 +1055,181 @@ test("Si 008 commence par Oa et 451 présente, alors vérifier que notice 451$0 
     ConditionMatching.testConditionMatchingRules(ruleTest, controlfields, datafields, resultJson, mockFunction);
     expect(resultJson.errors).not.toStrictEqual([]);
 });
+
+
+// ===============================================================
+
+test("Si 008 commence par Aa et 451 présente, alors vérifier que notice 451$0 contient une 008 qui commence par Aa", () => {
+    const notice = "053"
+    const index = 1017
+    const sudoc = getNotice(notice);
+    const datafields = sudoc.record.datafield;
+    const controlfields = sudoc.record.controlfield;
+    let resultJson = {
+        PPN: 0,
+        errors: [],
+    };
+    addRuleToTest(index);
+    const mockFunction = ConditionMatching.mockGetDataOnSudoc("Notice054");
+    ConditionMatching.testConditionMatchingRules(ruleTest, controlfields, datafields, resultJson, mockFunction);
+    expect(resultJson.errors).toStrictEqual([]);
+});
+
+test("Si 008 commence par Aa et 451 présente, alors vérifier que notice 451$0 contient une 008 qui commence par Aa (FAIL)", () => {
+    const notice = "055"
+    const index = 1017
+    const sudoc = getNotice(notice);
+    const datafields = sudoc.record.datafield;
+    const controlfields = sudoc.record.controlfield;
+    let resultJson = {
+        PPN: 0,
+        errors: [],
+    };
+    addRuleToTest(index);
+    const mockFunction = ConditionMatching.mockGetDataOnSudoc("Notice056");
+    ConditionMatching.testConditionMatchingRules(ruleTest, controlfields, datafields, resultJson, mockFunction);
+    expect(resultJson.errors).not.toStrictEqual([]);
+});
+
+
+// ===============================================================
+
+test("Si 008 commence par Oa et 452 présente, alors vérifier que notice 452$0 contient une 008 qui commence par Aa", () => {
+    const notice = "065"
+    const index = 1018
+    const sudoc = getNotice(notice);
+    const datafields = sudoc.record.datafield;
+    const controlfields = sudoc.record.controlfield;
+    let resultJson = {
+        PPN: 0,
+        errors: [],
+    };
+    addRuleToTest(index);
+    const mockFunction = ConditionMatching.mockGetDataOnSudoc("Notice066");
+    ConditionMatching.testConditionMatchingRules(ruleTest, controlfields, datafields, resultJson, mockFunction);
+    expect(resultJson.errors).toStrictEqual([]);
+});
+
+test("Si 008 commence par Oa et 452 présente, alors vérifier que notice 452$0 contient une 008 qui commence par Aa (FAIL)", () => {
+    const notice = "067"
+    const index = 1018
+    const sudoc = getNotice(notice);
+    const datafields = sudoc.record.datafield;
+    const controlfields = sudoc.record.controlfield;
+    let resultJson = {
+        PPN: 0,
+        errors: [],
+    };
+    addRuleToTest(index);
+    const mockFunction = ConditionMatching.mockGetDataOnSudoc("Notice068");
+    ConditionMatching.testConditionMatchingRules(ruleTest, controlfields, datafields, resultJson, mockFunction);
+    expect(resultJson.errors).not.toStrictEqual([]);
+});
+
+
+
+// ===============================================================
+
+test("Si 008 commence par Aa et 452 présente, alors vérifier que notice 452$0 contient une 008 qui commence par Oa", () => {
+    const notice = "061"
+    const index = 1019
+    const sudoc = getNotice(notice);
+    const datafields = sudoc.record.datafield;
+    const controlfields = sudoc.record.controlfield;
+    let resultJson = {
+        PPN: 0,
+        errors: [],
+    };
+    addRuleToTest(index);
+    const mockFunction = ConditionMatching.mockGetDataOnSudoc("Notice062");
+    ConditionMatching.testConditionMatchingRules(ruleTest, controlfields, datafields, resultJson, mockFunction);
+    expect(resultJson.errors).toStrictEqual([]);
+});
+
+test("Si 008 commence par Aa et 452 présente, alors vérifier que notice 452$0 contient une 008 qui commence par Oa (FAIL)", () => {
+    const notice = "063"
+    const index = 1019
+    const sudoc = getNotice(notice);
+    const datafields = sudoc.record.datafield;
+    const controlfields = sudoc.record.controlfield;
+    let resultJson = {
+        PPN: 0,
+        errors: [],
+    };
+    addRuleToTest(index);
+    const mockFunction = ConditionMatching.mockGetDataOnSudoc("Notice064");
+    ConditionMatching.testConditionMatchingRules(ruleTest, controlfields, datafields, resultJson, mockFunction);
+    expect(resultJson.errors).not.toStrictEqual([]);
+});
+
+
+
+// ===============================================================
+
+test("Si 455, alors vérifier que la notice en 455$0 contient 105$a Pos. 4-7= m", () => {
+    const notice = "077"
+    const index = 1020
+    const sudoc = getNotice(notice);
+    const datafields = sudoc.record.datafield;
+    const controlfields = sudoc.record.controlfield;
+    let resultJson = {
+        PPN: 0,
+        errors: [],
+    };
+    addRuleToTest(index);
+    const mockFunction = ConditionMatching.mockGetDataOnSudoc("Notice078");
+    ConditionMatching.testConditionMatchingRules(ruleTest, controlfields, datafields, resultJson, mockFunction);
+    expect(resultJson.errors).toStrictEqual([]);
+});
+
+test("Si 455, alors vérifier que la notice en 455$0 contient 105$a Pos. 4-7= m (FAIL)", () => {
+    const notice = "079"
+    const index = 1020
+    const sudoc = getNotice(notice);
+    const datafields = sudoc.record.datafield;
+    const controlfields = sudoc.record.controlfield;
+    let resultJson = {
+        PPN: 0,
+        errors: [],
+    };
+    addRuleToTest(index);
+    const mockFunction = ConditionMatching.mockGetDataOnSudoc("Notice080");
+    ConditionMatching.testConditionMatchingRules(ruleTest, controlfields, datafields, resultJson, mockFunction);
+    expect(resultJson.errors).not.toStrictEqual([]);
+});
+
+// ===============================================================
+
+test("Si 456, alors vérifier que la notice en 456$0 contient 105$a Pos. 4-7= v", () => {
+    const notice = "069"
+    const index = 1023
+    const sudoc = getNotice(notice);
+    const datafields = sudoc.record.datafield;
+    const controlfields = sudoc.record.controlfield;
+    let resultJson = {
+        PPN: 0,
+        errors: [],
+    };
+    addRuleToTest(index);
+    const mockFunction = ConditionMatching.mockGetDataOnSudoc("Notice070");
+    ConditionMatching.testConditionMatchingRules(ruleTest, controlfields, datafields, resultJson, mockFunction);
+    expect(resultJson.errors).toStrictEqual([]);
+});
+
+test("Si 456, alors vérifier que la notice en 456$0 contient 105$a Pos. 4-7= v (FAIL)", () => {
+    const notice = "071"
+    const index = 1023
+    const sudoc = getNotice(notice);
+    const datafields = sudoc.record.datafield;
+    const controlfields = sudoc.record.controlfield;
+    let resultJson = {
+        PPN: 0,
+        errors: [],
+    };
+    addRuleToTest(index);
+    const mockFunction = ConditionMatching.mockGetDataOnSudoc("Notice072");
+    ConditionMatching.testConditionMatchingRules(ruleTest, controlfields, datafields, resultJson, mockFunction);
+    expect(resultJson.errors).not.toStrictEqual([]);
+});
+
+

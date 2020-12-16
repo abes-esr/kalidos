@@ -29,7 +29,7 @@
 <subfield code="a">FR</subfield>
 </datafield>
 <datafield tag="105" ind1=" " ind2=" ">
-<subfield code="a">y v 000yy</subfield>
+<subfield code="a">y vv 000yy</subfield>
 </datafield>
 <datafield tag="106" ind1=" " ind2=" ">
 <subfield code="a">r</subfield>
@@ -83,7 +83,7 @@ Contribution à l'étude de l'immunité chez les végétaux
 <subfield code="b">Texte imprimé</subfield>
 <subfield code="f">Pierre Nobécourt,...</subfield>
 <subfield code="c">Lyon</subfield>
-<subfield code="n">impr. BOSC frères & RIOU</subfield>
+<subfield code="n">impr. BOSC frères  RIOU</subfield>
 <subfield code="d">1927</subfield>
 <subfield code="p">1 vol. (175 p.)</subfield>
 </datafield>

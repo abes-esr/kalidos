@@ -1486,7 +1486,7 @@
                     }
                 ],
                 "reciproque": {
-                    "number": 455,
+                    "number": "455",
                     "code": "0"
                 },
                 "index": 1020,
@@ -1496,7 +1496,7 @@
                         "number": "105",
                         "code": "a",
                         "message": "Si 455, alors vérifier que la notice en 455$0 contient 105$a Pos. 4-7= m",
-                        "regex": "^(.{4}m|.{5}m|.{6}m).*$",
+                        "regex": "^(.{3}m|.{4}m|.{5}m|.{6}m).*$",
                         "subFieldRequired": true
                     }
                 ]
@@ -1606,7 +1606,7 @@
                         "number": "105",
                         "code": "a",
                         "message": "Si 456, alors vérifier que la notice en 456$0 contient 105$a Pos. 4-7= v",
-                        "regex": "^(.{4}v|.{5}v|.{6}v).*$",
+                        "regex": "^(.{3}v|.{4}v|.{5}v|.{6}v).*$",
                         "subFieldRequired": true
                     }
                 ]
@@ -2720,6 +2720,10 @@
                         }
                     }
                 ],
+                "reciproque": {
+                    "number": "488",
+                    "code": "0"
+                },
                 "type": "allRequired",
                 "index": 1055,
                 "number": "488",
@@ -2744,6 +2748,10 @@
                         }
                     }
                 ],
+                "reciproque": {
+                    "number": "455",
+                    "code": "0"
+                },
                 "type": "allRequired",
                 "index": 1056,
                 "number": "455",
@@ -2768,6 +2776,10 @@
                         }
                     }
                 ],
+                "reciproque": {
+                    "number": "456",
+                    "code": "0"
+                },
                 "type": "allRequired",
                 "index": 1057,
                 "number": "456",

@@ -75,9 +75,9 @@ let ConditionMatching = function () {
 
     function checkValues(regle, datafields, controlfields) {
         let isOk = true;
-        if(regle.reciproque !== undefined) {
-            isOk = isOk && checkReciproque(datafields, regle.reciproque.number, regle.reciproque.code);
-        }
+        // if(regle.reciproque !== undefined) {
+        //     isOk = isOk && checkReciproque(datafields, regle.reciproque.number, regle.reciproque.code);
+        // }
         if (regle.type === "allRequired") {
             isOk = isOk && verifyAllRequired(regle, datafields, controlfields);
         } else if (regle.type === "oneRequired") {
