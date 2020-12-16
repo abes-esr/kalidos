@@ -10,6 +10,7 @@ const ConditionStructurel = require("../regles/ConditionStructurelle");
 const ConditionMatching = require("../regles/ConditionMatching");
 const ConditionDependance = require("../regles/ConditionDependance");
 const Ordonnancement = require('../../regles/Ordonnancement');
+const Compte = require('../../regles/Compte');
 
 const PPN_EN_DUR = '169450546'
 const CATEGORIE = "Generale";
@@ -178,6 +179,7 @@ function verifMain(rules, sudoc) {
     ConditionMatching.testConditionMatchingRules(rules,controlfields,datafields , resultJson , getNoticeSMatching)
     ConditionDependance.testConditionDependanceRules(rules,controlfields,datafields , resultJson)
     Ordonnancement.testOrdonnancementRules(CATEGORIE, rules, controlfields, datafields, resultJson)
+    Compte.testCompteRules(CATEGORIE, rules, controlfields, datafields, resultJson)
 
 
     store.dispatch(addErrorPPN(resultJson));

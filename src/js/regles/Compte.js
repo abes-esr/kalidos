@@ -2,7 +2,7 @@ const Parcours = require("../utile/Parcours");
 
 var Compte = function () {
     var testCompteRules = function (categorie, rules, controlfields, datafields, resultJson) {
-        rules[categorie].ordonnancement.forEach(function (regle) {
+        rules[categorie].compte.forEach(function (regle) {
             const fields = Parcours.findDataFields(datafields, regle.number);
             const subfields = Parcours.getListSubfieldValue(fields,regle.code);
             if(subfields.length < 2) {
