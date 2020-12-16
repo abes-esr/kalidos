@@ -1,7 +1,7 @@
 const convert = require("xml-js");
 const path = require('path');
 const fs = require('fs');
-const Compte = require('../../regles/Compte');
+const Precedence = require('../../regles/Precedence');
 import rules from '../../../../serveur/public/model_regles.json';
 
 let CATEGORIE;
@@ -10,7 +10,7 @@ let ruleTest;
 beforeEach(() => {
     ruleTest = {
         "Generale": {
-            "compte": []
+            "precedence": []
         }
     }
 });
@@ -28,14 +28,13 @@ function getNotice(number) {
 }
 
 function addRuleToTest(index) {
-    ruleTest[CATEGORIE].compte.push(rules[CATEGORIE].compte.find(x => x.index === index))
+    ruleTest[CATEGORIE].precedence.push(rules[CATEGORIE].precedence.find(x => x.index === index))
 }
 
 
-
-test("Si plusieurs 101$d, il doit y avoir autant de 330", () => {
-    const notice = "019"
-    const index = 5007
+test("608 $a et $2rameau, $a doit être précédé d’un $3", () => {
+    const notice = "003"
+    const index = 5008
     const sudoc = getNotice(notice);
     const datafields = sudoc.record.datafield;
     const controlfields = sudoc.record.controlfield;
@@ -44,13 +43,13 @@ test("Si plusieurs 101$d, il doit y avoir autant de 330", () => {
         errors: [],
     };
     addRuleToTest(index);
-    Compte.testCompteRules(CATEGORIE, ruleTest, controlfields, datafields, resultJson)
+    Precedence.testPrecedenceRules(CATEGORIE, ruleTest, controlfields, datafields, resultJson)
     expect(resultJson.errors).toStrictEqual([]);
 });
 
-test("Si plusieurs 101$d, il doit y avoir autant de 330(FAIL)", () => {
-    const notice = "020"
-    const index = 5007
+test("608 $a et $2rameau, $a doit être précédé d’un $3 (FAIL)", () => {
+    const notice = "004"
+    const index = 5009
     const sudoc = getNotice(notice);
     const datafields = sudoc.record.datafield;
     const controlfields = sudoc.record.controlfield;
@@ -59,6 +58,6 @@ test("Si plusieurs 101$d, il doit y avoir autant de 330(FAIL)", () => {
         errors: [],
     };
     addRuleToTest(index);
-    Compte.testCompteRules(CATEGORIE, ruleTest, controlfields, datafields, resultJson)
+    Precedence.testPrecedenceRules(CATEGORIE, ruleTest, controlfields, datafields, resultJson)
     expect(resultJson.errors).not.toStrictEqual([]);
 });

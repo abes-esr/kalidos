@@ -4076,19 +4076,213 @@
         ],
         "ordonnancement": [
             {
-                "index" : 5006,
-                "number" : "214",
-                "orderBy" : "ind2",
-                "message" : "Zones 214 : garder l'ordre des indicateurs"
+                "index": 5006,
+                "number": "214",
+                "orderBy": "ind2",
+                "message": "Zones 214 : garder l'ordre des indicateurs"
             }
         ],
         "compte": [
             {
-                "index" : 5007,
-                "number" : "101",
-                "code" : "d",
-                "contrainte" : "330",
-                "message" : "Mention de résumé incohérente : vérifier zones 101 et le nombre de zones 330"
+                "index": 5007,
+                "number": "101",
+                "code": "d",
+                "contrainte": "330",
+                "message": "Mention de résumé incohérente : vérifier zones 101 et le nombre de zones 330"
+            }
+        ],
+        "precedence": [
+            {
+                "index": 5008,
+                "number": "608",
+                "condition": [
+                    {
+                        "operator": "presente",
+                        "number": "608",
+                        "code": "a"
+                    },
+                    {
+                        "operator": "startwith_text",
+                        "number": "608",
+                        "code": "2",
+                        "string": [
+                            "rameau"
+                        ]
+                    }
+                ],
+                "precede": {
+                    "depart": "a",
+                    "precedant": "3"
+                },
+                "message": "Zones 6XX doivent être liées à une notice d'autorité RAMEAU"
+            },
+            {
+                "index": 5009,
+                "number": "607",
+                "condition": [
+                    {
+                        "operator": "presente",
+                        "number": "607",
+                        "code": "a"
+                    },
+                    {
+                        "operator": "startwith_text",
+                        "number": "607",
+                        "code": "2",
+                        "string": [
+                            "rameau"
+                        ]
+                    }
+                ],
+                "precede": {
+                    "depart": "a",
+                    "precedant": "3"
+                },
+                "message": "Zones 6XX doivent être liées à une notice d'autorité RAMEAU"
+            } ,
+            {
+                "index": 5010,
+                "number": "606",
+                "condition": [
+                    {
+                        "operator": "presente",
+                        "number": "606",
+                        "code": "a"
+                    },
+                    {
+                        "operator": "startwith_text",
+                        "number": "606",
+                        "code": "2",
+                        "string": [
+                            "rameau"
+                        ]
+                    }
+                ],
+                "precede": {
+                    "depart": "a",
+                    "precedant": "3"
+                },
+                "message": "Zones 6XX doivent être liées à une notice d'autorité RAMEAU"
+            },
+            {
+                "index": 5011,
+                "number": "605",
+                "condition": [
+                    {
+                        "operator": "presente",
+                        "number": "605",
+                        "code": "a"
+                    },
+                    {
+                        "operator": "startwith_text",
+                        "number": "605",
+                        "code": "2",
+                        "string": [
+                            "rameau"
+                        ]
+                    }
+                ],
+                "precede": {
+                    "depart": "a",
+                    "precedant": "3"
+                },
+                "message": "Zones 6XX doivent être liées à une notice d'autorité RAMEAU"
+            },
+            {
+                "index": 5012,
+                "number": "604",
+                "condition": [
+                    {
+                        "operator": "presente",
+                        "number": "604",
+                        "code": "a"
+                    },
+                    {
+                        "operator": "startwith_text",
+                        "number": "604",
+                        "code": "2",
+                        "string": [
+                            "rameau"
+                        ]
+                    }
+                ],
+                "precede": {
+                    "depart": "a",
+                    "precedant": "3"
+                },
+                "message": "Zones 6XX doivent être liées à une notice d'autorité RAMEAU"
+            },
+            {
+                "index": 5013,
+                "number": "602",
+                "condition": [
+                    {
+                        "operator": "presente",
+                        "number": "602",
+                        "code": "a"
+                    },
+                    {
+                        "operator": "startwith_text",
+                        "number": "602",
+                        "code": "2",
+                        "string": [
+                            "rameau"
+                        ]
+                    }
+                ],
+                "precede": {
+                    "depart": "a",
+                    "precedant": "3"
+                },
+                "message": "Zones 6XX doivent être liées à une notice d'autorité RAMEAU"
+            },
+            {
+                "index": 5014,
+                "number": "601",
+                "condition": [
+                    {
+                        "operator": "presente",
+                        "number": "601",
+                        "code": "a"
+                    },
+                    {
+                        "operator": "startwith_text",
+                        "number": "601",
+                        "code": "2",
+                        "string": [
+                            "rameau"
+                        ]
+                    }
+                ],
+                "precede": {
+                    "depart": "a",
+                    "precedant": "3"
+                },
+                "message": "Zones 6XX doivent être liées à une notice d'autorité RAMEAU"
+            },
+            {
+                "index": 5015,
+                "number": "600",
+                "condition": [
+                    {
+                        "operator": "presente",
+                        "number": "600",
+                        "code": "a"
+                    },
+                    {
+                        "operator": "startwith_text",
+                        "number": "600",
+                        "code": "2",
+                        "string": [
+                            "rameau"
+                        ]
+                    }
+                ],
+                "precede": {
+                    "depart": "a",
+                    "precedant": "3"
+                },
+                "message": "Zones 6XX doivent être liées à une notice d'autorité RAMEAU"
             }
         ]
     },
@@ -4113,6 +4307,9 @@
         ],
         "compte": [
             {}
+        ],
+        "precedence": [
+            {}
         ]
     },
     "Electronique": {
@@ -4135,6 +4332,9 @@
             {}
         ],
         "compte": [
+            {}
+        ],
+        "precedence": [
             {}
         ]
     }

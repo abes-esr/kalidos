@@ -125,6 +125,8 @@ var Parcours = function () {
     }
 
 
+
+
     const getIdentifiantValue = function(field,codeCondition,codeIdentifiant) {
         let retour = null;
         if (field != null && field.subfield instanceof Array) {

@@ -1894,3 +1894,72 @@ test("Si 456, alors vérifier que la notice en 456$0  contient  328$z (FAIL)", (
     ConditionStructurelle.testConditionStrucutrelRules(ruleTest, controlfields, datafields, resultJson, mockFunction);
     expect(resultJson.errors).not.toStrictEqual([]);
 });
+
+
+// ===============================================================
+
+test("Si 451 et 328$z, alors vérifier que la notice 451$0 ne contient pas 328$z", () => {
+    const notice = "083"
+    const index = 1069
+    const sudoc = getNotice(notice);
+    const datafields = sudoc.record.datafield;
+    const controlfields = sudoc.record.controlfield;
+    let resultJson = {
+        PPN: 0,
+        errors: [],
+    };
+    addRuleToTest(index);
+    const mockFunction = ConditionStructurelle.mockGetDataOnSudoc("Notice084");
+    ConditionStructurelle.testConditionStrucutrelRules(ruleTest, controlfields, datafields, resultJson, mockFunction);
+    expect(resultJson.errors).toStrictEqual([]);
+});
+
+test("Si 451 et 328$z, alors vérifier que la notice 451$0 ne contient pas 328$z (FAIL)", () => {
+    const notice = "085"
+    const index = 1069
+    const sudoc = getNotice(notice);
+    const datafields = sudoc.record.datafield;
+    const controlfields = sudoc.record.controlfield;
+    let resultJson = {
+        PPN: 0,
+        errors: [],
+    };
+    addRuleToTest(index);
+    const mockFunction = ConditionStructurelle.mockGetDataOnSudoc("Notice086");
+    ConditionStructurelle.testConditionStrucutrelRules(ruleTest, controlfields, datafields, resultJson, mockFunction);
+    expect(resultJson.errors).not.toStrictEqual([]);
+});
+
+
+// ===============================================================
+test("Si 451 et absence de 328$z, alors vérifier que la notice 451$0 contient 328$z", () => {
+    const notice = "053"
+    const index = 1070
+    const sudoc = getNotice(notice);
+    const datafields = sudoc.record.datafield;
+    const controlfields = sudoc.record.controlfield;
+    let resultJson = {
+        PPN: 0,
+        errors: [],
+    };
+    addRuleToTest(index);
+    const mockFunction = ConditionStructurelle.mockGetDataOnSudoc("Notice054");
+    ConditionStructurelle.testConditionStrucutrelRules(ruleTest, controlfields, datafields, resultJson, mockFunction);
+    expect(resultJson.errors).toStrictEqual([]);
+});
+
+test("Si 451 et absence de 328$z, alors vérifier que la notice 451$0 contient 328$z (FAIL)", () => {
+    const notice = "081"
+    const index = 1070
+    const sudoc = getNotice(notice);
+    const datafields = sudoc.record.datafield;
+    const controlfields = sudoc.record.controlfield;
+    let resultJson = {
+        PPN: 0,
+        errors: [],
+    };
+    addRuleToTest(index);
+    const mockFunction = ConditionStructurelle.mockGetDataOnSudoc("Notice082");
+    ConditionStructurelle.testConditionStrucutrelRules(ruleTest, controlfields, datafields, resultJson, mockFunction);
+    expect(resultJson.errors).not.toStrictEqual([]);
+});

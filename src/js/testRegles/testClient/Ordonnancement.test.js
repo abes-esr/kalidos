@@ -44,7 +44,7 @@ test("Si plusieurs zones 214, doivent respecter l'ordre des chiffres de l'ind2",
         errors: [],
     };
     addRuleToTest(index);
-    Ordonnancement.testOrdonnancementRules(CATEGORIE, rules, controlfields, datafields, resultJson)
+    Ordonnancement.testOrdonnancementRules(CATEGORIE, ruleTest, controlfields, datafields, resultJson)
     expect(resultJson.errors).toStrictEqual([]);
 });
 
@@ -59,6 +59,6 @@ test("Si plusieurs zones 214, doivent respecter l'ordre des chiffres de l'ind2 (
         errors: [],
     };
     addRuleToTest(index);
-    Ordonnancement.testOrdonnancementRules(CATEGORIE, rules, controlfields, datafields, resultJson)
+    Ordonnancement.testOrdonnancementRules(CATEGORIE, ruleTest, controlfields, datafields, resultJson)
     expect(resultJson.errors).not.toStrictEqual([]);
 });
