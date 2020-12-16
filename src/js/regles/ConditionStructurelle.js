@@ -2,8 +2,6 @@ const Parcours = require("../utile/Parcours");
 const Condition = require("../utile/Condition");
 const axios = require('axios');
 const convert = require("xml-js");
-const path = require('path');
-const fs = require('fs');
 
 
 const ConditionStructurel = function () {
@@ -104,8 +102,7 @@ const ConditionStructurel = function () {
 
     return {
         testConditionStrucutrelRules: testConditionStrucutrelRules,
-        getDataOnSudoc: getDataOnSudoc,
-        mockGetDataOnSudoc: mockGetDataOnSudoc
+        getDataOnSudoc: getDataOnSudoc
     }
 }();
 
@@ -201,14 +198,4 @@ function getDataOnSudoc(datafields, number, code) {
     return null;
 }
 
-function mockGetDataOnSudoc(number) {
-    return function (datafields, number2, code) {
-        return getNotice(number)
-    }
-}
 
-
-function getNotice(number) {
-    const xmlPPN = fs.readFileSync(path.join(__dirname, '../testRegles/testClient/data/' + number + '.xml'), 'utf8');
-    return JSON.parse(convert.xml2json(xmlPPN, { compact: true, spaces: 2 }));
-}

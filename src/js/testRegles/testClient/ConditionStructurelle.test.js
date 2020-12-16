@@ -24,9 +24,16 @@ beforeAll(() => {
 afterAll(() => {
 });
 
+function mockGetDataOnSudoc(number) {
+    return function (datafields, number2, code) {
+        return getNotice(number)
+    }
+}
+
 function addRuleToTest(index) {
     ruleTest[CATEGORIE].ConditionStructurel.push(rules[CATEGORIE].ConditionStructurel.find(x => x.index === index))
 }
+
 
 function getNotice(number) {
     const xmlPPN = fs.readFileSync(path.join(__dirname, 'data/Notice' + number + '.xml'), 'utf8');
@@ -44,7 +51,7 @@ test("Si 101 ind1=1 il faut au moins un $a et $c", () => {
         errors: [],
     };
     addRuleToTest(index);
-    const mockFunction = ConditionStructurelle.mockGetDataOnSudoc("");
+    const mockFunction =mockGetDataOnSudoc("");
     ConditionStructurelle.testConditionStrucutrelRules(ruleTest, controlfields, datafields, resultJson, mockFunction);
     expect(resultJson.errors).toStrictEqual([]);
 });
@@ -61,7 +68,7 @@ test("Si 101 ind1=1 il faut au moins un $a et $c (FAIL)", () => {
         errors: [],
     };
     addRuleToTest(index);
-    const mockFunction = ConditionStructurelle.mockGetDataOnSudoc("");
+    const mockFunction =mockGetDataOnSudoc("");
     ConditionStructurelle.testConditionStrucutrelRules(ruleTest, controlfields, datafields, resultJson, mockFunction);
     expect(resultJson.errors).not.toStrictEqual([]);
 });
@@ -80,7 +87,7 @@ test("Si 101 ind1=0 il ne faut pas $c", () => {
         errors: [],
     };
     addRuleToTest(index);
-    const mockFunction = ConditionStructurelle.mockGetDataOnSudoc("");
+    const mockFunction = mockGetDataOnSudoc("");
     ConditionStructurelle.testConditionStrucutrelRules(ruleTest, controlfields, datafields, resultJson, mockFunction);
     expect(resultJson.errors).toStrictEqual([]);
 });
@@ -97,7 +104,7 @@ test("Si 101 ind1=0 il ne faut pas $c (FAIL)", () => {
         errors: [],
     };
     addRuleToTest(index);
-    const mockFunction = ConditionStructurelle.mockGetDataOnSudoc("");
+    const mockFunction =mockGetDataOnSudoc("");
     ConditionStructurelle.testConditionStrucutrelRules(ruleTest, controlfields, datafields, resultJson, mockFunction);
     expect(resultJson.errors).not.toStrictEqual([]);
 });
@@ -116,7 +123,7 @@ test("Si 101 ind1=2 il faut au moins une $a, $b et $c", () => {
         errors: [],
     };
     addRuleToTest(index);
-    const mockFunction = ConditionStructurelle.mockGetDataOnSudoc("");
+    const mockFunction =mockGetDataOnSudoc("");
     ConditionStructurelle.testConditionStrucutrelRules(ruleTest, controlfields, datafields, resultJson, mockFunction);
     expect(resultJson.errors).toStrictEqual([]);
 });
@@ -133,7 +140,7 @@ test("Si 101 ind1=2 il faut au moins une $a, $b et $c (FAIL)", () => {
         errors: [],
     };
     addRuleToTest(index);
-    const mockFunction = ConditionStructurelle.mockGetDataOnSudoc("");
+    const mockFunction =mockGetDataOnSudoc("");
     ConditionStructurelle.testConditionStrucutrelRules(ruleTest, controlfields, datafields, resultJson, mockFunction);
     expect(resultJson.errors).not.toStrictEqual([]);
 });
@@ -152,7 +159,7 @@ test("Si 101 ind1=1 il faut une 454", () => {
         errors: [],
     };
     addRuleToTest(index);
-    const mockFunction = ConditionStructurelle.mockGetDataOnSudoc("");
+    const mockFunction =mockGetDataOnSudoc("");
     ConditionStructurelle.testConditionStrucutrelRules(ruleTest, controlfields, datafields, resultJson, mockFunction);
     expect(resultJson.errors).toStrictEqual([]);
 });
@@ -169,7 +176,7 @@ test("Si 101 ind1=1 il faut une 454 (FAIL)", () => {
         errors: [],
     };
     addRuleToTest(index);
-    const mockFunction = ConditionStructurelle.mockGetDataOnSudoc("");
+    const mockFunction =mockGetDataOnSudoc("");
     ConditionStructurelle.testConditionStrucutrelRules(ruleTest, controlfields, datafields, resultJson, mockFunction);
     expect(resultJson.errors).not.toStrictEqual([]);
 });
@@ -188,7 +195,7 @@ test("Si 101 ind1=2 il faut une 454", () => {
         errors: [],
     };
     addRuleToTest(index);
-    const mockFunction = ConditionStructurelle.mockGetDataOnSudoc("");
+    const mockFunction =mockGetDataOnSudoc("");
     ConditionStructurelle.testConditionStrucutrelRules(ruleTest, controlfields, datafields, resultJson, mockFunction);
     expect(resultJson.errors).toStrictEqual([]);
 });
@@ -205,7 +212,7 @@ test("Si 101 ind1=2 il faut une 454 (FAIL)", () => {
         errors: [],
     };
     addRuleToTest(index);
-    const mockFunction = ConditionStructurelle.mockGetDataOnSudoc("");
+    const mockFunction =mockGetDataOnSudoc("");
     ConditionStructurelle.testConditionStrucutrelRules(ruleTest, controlfields, datafields, resultJson, mockFunction);
     expect(resultJson.errors).not.toStrictEqual([]);
 });
@@ -224,7 +231,7 @@ test("Si  105 $a Pos. 0-3 = 'y' alors 215$c ne doit pas être présent", () => {
         errors: [],
     };
     addRuleToTest(index);
-    const mockFunction = ConditionStructurelle.mockGetDataOnSudoc("");
+    const mockFunction =mockGetDataOnSudoc("");
     ConditionStructurelle.testConditionStrucutrelRules(ruleTest, controlfields, datafields, resultJson, mockFunction);
     expect(resultJson.errors).toStrictEqual([]);
 });
@@ -241,7 +248,7 @@ test("Si  105 $a Pos. 0-3 = 'y' alors 215$c ne doit pas être présent (FAIL)", 
         errors: [],
     };
     addRuleToTest(index);
-    const mockFunction = ConditionStructurelle.mockGetDataOnSudoc("");
+    const mockFunction =mockGetDataOnSudoc("");
     ConditionStructurelle.testConditionStrucutrelRules(ruleTest, controlfields, datafields, resultJson, mockFunction);
     expect(resultJson.errors).not.toStrictEqual([]);
 });
@@ -260,7 +267,7 @@ test("Si 105 $a Pos. 4-7 =a alors il faut une 320", () => {
         errors: [],
     };
     addRuleToTest(index);
-    const mockFunction = ConditionStructurelle.mockGetDataOnSudoc("");
+    const mockFunction =mockGetDataOnSudoc("");
     ConditionStructurelle.testConditionStrucutrelRules(ruleTest, controlfields, datafields, resultJson, mockFunction);
     expect(resultJson.errors).toStrictEqual([]);
 });
@@ -277,7 +284,7 @@ test("Si 105 $a Pos. 4-7 =a alors il faut une 320 (FAIL)", () => {
         errors: [],
     };
     addRuleToTest(index);
-    const mockFunction = ConditionStructurelle.mockGetDataOnSudoc("");
+    const mockFunction =mockGetDataOnSudoc("");
     ConditionStructurelle.testConditionStrucutrelRules(ruleTest, controlfields, datafields, resultJson, mockFunction);
     expect(resultJson.errors).not.toStrictEqual([]);
 });
@@ -296,7 +303,7 @@ test("Si 105 $a Pos. 4-7= t, m, l, q, j, f, e, b ou 7 il faut la présence d'une
         errors: [],
     };
     addRuleToTest(index);
-    const mockFunction = ConditionStructurelle.mockGetDataOnSudoc("");
+    const mockFunction =mockGetDataOnSudoc("");
     ConditionStructurelle.testConditionStrucutrelRules(ruleTest, controlfields, datafields, resultJson, mockFunction);
     expect(resultJson.errors).toStrictEqual([]);
 });
@@ -313,7 +320,7 @@ test("Si 105 $a Pos. 4-7= t, m, l, q, j, f, e, b ou 7 il faut la présence d'une
         errors: [],
     };
     addRuleToTest(index);
-    const mockFunction = ConditionStructurelle.mockGetDataOnSudoc("");
+    const mockFunction =mockGetDataOnSudoc("");
     ConditionStructurelle.testConditionStrucutrelRules(ruleTest, controlfields, datafields, resultJson, mockFunction);
     expect(resultJson.errors).not.toStrictEqual([]);
 });
@@ -332,7 +339,7 @@ test("Si 008 commence par Aa, présence obligatoire d'une zone 106", () => {
         errors: [],
     };
     addRuleToTest(index);
-    const mockFunction = ConditionStructurelle.mockGetDataOnSudoc("");
+    const mockFunction =mockGetDataOnSudoc("");
     ConditionStructurelle.testConditionStrucutrelRules(ruleTest, controlfields, datafields, resultJson, mockFunction);
     expect(resultJson.errors).toStrictEqual([]);
 });
@@ -349,7 +356,7 @@ test("Si 008 commence par Aa, présence obligatoire d'une zone 106 (FAIL)", () =
         errors: [],
     };
     addRuleToTest(index);
-    const mockFunction = ConditionStructurelle.mockGetDataOnSudoc("");
+    const mockFunction =mockGetDataOnSudoc("");
     ConditionStructurelle.testConditionStrucutrelRules(ruleTest, controlfields, datafields, resultJson, mockFunction);
     expect(resultJson.errors).not.toStrictEqual([]);
 });
@@ -368,7 +375,7 @@ test("Si 214 #1 $d obligatoire", () => {
         errors: [],
     };
     addRuleToTest(index);
-    const mockFunction = ConditionStructurelle.mockGetDataOnSudoc("");
+    const mockFunction =mockGetDataOnSudoc("");
     ConditionStructurelle.testConditionStrucutrelRules(ruleTest, controlfields, datafields, resultJson, mockFunction);
     expect(resultJson.errors).toStrictEqual([]);
 });
@@ -385,7 +392,7 @@ test("Si 214 #1 $d obligatoire (FAIL)", () => {
         errors: [],
     };
     addRuleToTest(index);
-    const mockFunction = ConditionStructurelle.mockGetDataOnSudoc("");
+    const mockFunction =mockGetDataOnSudoc("");
     ConditionStructurelle.testConditionStrucutrelRules(ruleTest, controlfields, datafields, resultJson, mockFunction);
     expect(resultJson.errors).not.toStrictEqual([]);
 });
@@ -404,7 +411,7 @@ test("Si 008 commence par Aa, 215 $a et $d obligatoires", () => {
         errors: [],
     };
     addRuleToTest(index);
-    const mockFunction = ConditionStructurelle.mockGetDataOnSudoc("");
+    const mockFunction =mockGetDataOnSudoc("");
     ConditionStructurelle.testConditionStrucutrelRules(ruleTest, controlfields, datafields, resultJson, mockFunction);
     expect(resultJson.errors).toStrictEqual([]);
 });
@@ -421,7 +428,7 @@ test("Si 008 commence par Aa, 215 $a et $d obligatoires (FAIL)", () => {
         errors: [],
     };
     addRuleToTest(index);
-    const mockFunction = ConditionStructurelle.mockGetDataOnSudoc("");
+    const mockFunction =mockGetDataOnSudoc("");
     ConditionStructurelle.testConditionStrucutrelRules(ruleTest, controlfields, datafields, resultJson, mockFunction);
     expect(resultJson.errors).not.toStrictEqual([]);
 });
@@ -437,7 +444,7 @@ test("Si 008 commence par Aa, 215 $a et $d obligatoires (FAIL)", () => {
         errors: [],
     };
     addRuleToTest(index);
-    const mockFunction = ConditionStructurelle.mockGetDataOnSudoc("");
+    const mockFunction =mockGetDataOnSudoc("");
     ConditionStructurelle.testConditionStrucutrelRules(ruleTest, controlfields, datafields, resultJson, mockFunction);
     expect(resultJson.errors).not.toStrictEqual([]);
 });
@@ -455,7 +462,7 @@ test("Si 225 ind1=0 il faut au moins une 410", () => {
         errors: [],
     };
     addRuleToTest(index);
-    const mockFunction = ConditionStructurelle.mockGetDataOnSudoc("");
+    const mockFunction =mockGetDataOnSudoc("");
     ConditionStructurelle.testConditionStrucutrelRules(ruleTest, controlfields, datafields, resultJson, mockFunction);
     expect(resultJson.errors).toStrictEqual([]);
 });
@@ -472,7 +479,7 @@ test("Si 225 ind1=0 il faut au moins une 410 (FAIL)", () => {
         errors: [],
     };
     addRuleToTest(index);
-    const mockFunction = ConditionStructurelle.mockGetDataOnSudoc("");
+    const mockFunction =mockGetDataOnSudoc("");
     ConditionStructurelle.testConditionStrucutrelRules(ruleTest, controlfields, datafields, resultJson, mockFunction);
     expect(resultJson.errors).not.toStrictEqual([]);
 });
@@ -490,7 +497,7 @@ test("Si 225 ind1=0 $a alors 410$0 doit être présent", () => {
         errors: [],
     };
     addRuleToTest(index);
-    const mockFunction = ConditionStructurelle.mockGetDataOnSudoc("");
+    const mockFunction =mockGetDataOnSudoc("");
     ConditionStructurelle.testConditionStrucutrelRules(ruleTest, controlfields, datafields, resultJson, mockFunction);
     expect(resultJson.errors).toStrictEqual([]);
 });
@@ -506,7 +513,7 @@ test("Si 225 ind1=0 $a alors 410$0 doit être présent", () => {
         errors: [],
     };
     addRuleToTest(index);
-    const mockFunction = ConditionStructurelle.mockGetDataOnSudoc("");
+    const mockFunction =mockGetDataOnSudoc("");
     ConditionStructurelle.testConditionStrucutrelRules(ruleTest, controlfields, datafields, resultJson, mockFunction);
     expect(resultJson.errors).toStrictEqual([]);
 });
@@ -523,7 +530,7 @@ test("Si 225 ind1=0 $a alors 410$0 doit être présent (FAIL)", () => {
         errors: [],
     };
     addRuleToTest(index);
-    const mockFunction = ConditionStructurelle.mockGetDataOnSudoc("");
+    const mockFunction =mockGetDataOnSudoc("");
     ConditionStructurelle.testConditionStrucutrelRules(ruleTest, controlfields, datafields, resultJson, mockFunction);
     expect(resultJson.errors).not.toStrictEqual([]);
 });
@@ -539,7 +546,7 @@ test("Si 225 ind1=0 $a alors 410$0 doit être présent (FAIL)", () => {
         errors: [],
     };
     addRuleToTest(index);
-    const mockFunction = ConditionStructurelle.mockGetDataOnSudoc("");
+    const mockFunction =mockGetDataOnSudoc("");
     ConditionStructurelle.testConditionStrucutrelRules(ruleTest, controlfields, datafields, resultJson, mockFunction);
     expect(resultJson.errors).not.toStrictEqual([]);
 });
@@ -558,7 +565,7 @@ test("Si 225 ind1=2 $a alors 410$0 doit être présent", () => {
         errors: [],
     };
     addRuleToTest(index);
-    const mockFunction = ConditionStructurelle.mockGetDataOnSudoc("");
+    const mockFunction =mockGetDataOnSudoc("");
     ConditionStructurelle.testConditionStrucutrelRules(ruleTest, controlfields, datafields, resultJson, mockFunction);
     expect(resultJson.errors).toStrictEqual([]);
 });
@@ -574,7 +581,7 @@ test("Si 225 ind1=2 $a alors 410$0 doit être présent", () => {
         errors: [],
     };
     addRuleToTest(index);
-    const mockFunction = ConditionStructurelle.mockGetDataOnSudoc("");
+    const mockFunction =mockGetDataOnSudoc("");
     ConditionStructurelle.testConditionStrucutrelRules(ruleTest, controlfields, datafields, resultJson, mockFunction);
     expect(resultJson.errors).toStrictEqual([]);
 });
@@ -591,7 +598,7 @@ test("Si 225 ind1=2 $a alors 410$0 doit être présent (FAIL)", () => {
         errors: [],
     };
     addRuleToTest(index);
-    const mockFunction = ConditionStructurelle.mockGetDataOnSudoc("");
+    const mockFunction =mockGetDataOnSudoc("");
     ConditionStructurelle.testConditionStrucutrelRules(ruleTest, controlfields, datafields, resultJson, mockFunction);
     expect(resultJson.errors).not.toStrictEqual([]);
 });
@@ -607,7 +614,7 @@ test("Si 225 ind1=2 $a alors 410$0 doit être présent (FAIL)", () => {
         errors: [],
     };
     addRuleToTest(index);
-    const mockFunction = ConditionStructurelle.mockGetDataOnSudoc("");
+    const mockFunction =mockGetDataOnSudoc("");
     ConditionStructurelle.testConditionStrucutrelRules(ruleTest, controlfields, datafields, resultJson, mockFunction);
     expect(resultJson.errors).not.toStrictEqual([]);
 });
@@ -626,7 +633,7 @@ test("Si 225 ind1=1 $a alors 461 doit être présent", () => {
         errors: [],
     };
     addRuleToTest(index);
-    const mockFunction = ConditionStructurelle.mockGetDataOnSudoc("");
+    const mockFunction =mockGetDataOnSudoc("");
     ConditionStructurelle.testConditionStrucutrelRules(ruleTest, controlfields, datafields, resultJson, mockFunction);
     expect(resultJson.errors).toStrictEqual([]);
 });
@@ -643,7 +650,7 @@ test("Si 225 ind1=1 $a alors 461 doit être présent (FAIL)", () => {
         errors: [],
     };
     addRuleToTest(index);
-    const mockFunction = ConditionStructurelle.mockGetDataOnSudoc("");
+    const mockFunction =mockGetDataOnSudoc("");
     ConditionStructurelle.testConditionStrucutrelRules(ruleTest, controlfields, datafields, resultJson, mockFunction);
     expect(resultJson.errors).not.toStrictEqual([]);
 });
@@ -661,7 +668,7 @@ test("Si 225 ind1=2 il faut au moins une 410", () => {
         errors: [],
     };
     addRuleToTest(index);
-    const mockFunction = ConditionStructurelle.mockGetDataOnSudoc("");
+    const mockFunction =mockGetDataOnSudoc("");
     ConditionStructurelle.testConditionStrucutrelRules(ruleTest, controlfields, datafields, resultJson, mockFunction);
     expect(resultJson.errors).toStrictEqual([]);
 });
@@ -678,7 +685,7 @@ test("Si 225 ind1=2 il faut au moins une 410 (FAIL)", () => {
         errors: [],
     };
     addRuleToTest(index);
-    const mockFunction = ConditionStructurelle.mockGetDataOnSudoc("");
+    const mockFunction =mockGetDataOnSudoc("");
     ConditionStructurelle.testConditionStrucutrelRules(ruleTest, controlfields, datafields, resultJson, mockFunction);
     expect(resultJson.errors).not.toStrictEqual([]);
 });
@@ -696,7 +703,7 @@ test("Si 008 commence par Aa et présence d'une 461, alors il doit y avoir une 3
         errors: [],
     };
     addRuleToTest(index);
-    const mockFunction = ConditionStructurelle.mockGetDataOnSudoc("");
+    const mockFunction =mockGetDataOnSudoc("");
     ConditionStructurelle.testConditionStrucutrelRules(ruleTest, controlfields, datafields, resultJson, mockFunction);
     expect(resultJson.errors).toStrictEqual([]);
 });
@@ -714,7 +721,7 @@ test("Si 008 commence par Aa et présence d'une 461, alors il doit y avoir une 3
 //         errors: [],
 //     };
 //     addRuleToTest(index);
-//     const mockFunction = ConditionStructurelle.mockGetDataOnSudoc("");
+//     const mockFunction =mockGetDataOnSudoc("");
 //     ConditionStructurelle.testConditionStrucutrelRules(ruleTest,controlfields,datafields , resultJson, mockFunction);
 //     expect(resultJson.errors).not.toStrictEqual([]);
 // });
@@ -733,7 +740,7 @@ test("Si 328$z\"Reproduction de\", 455 doit être présente", () => {
         errors: [],
     };
     addRuleToTest(index);
-    const mockFunction = ConditionStructurelle.mockGetDataOnSudoc("");
+    const mockFunction =mockGetDataOnSudoc("");
     ConditionStructurelle.testConditionStrucutrelRules(ruleTest, controlfields, datafields, resultJson, mockFunction);
     expect(resultJson.errors).toStrictEqual([]);
 });
@@ -750,7 +757,7 @@ test("Si 328$z\"Reproduction de\", 455 doit être présente (FAIL)", () => {
         errors: [],
     };
     addRuleToTest(index);
-    const mockFunction = ConditionStructurelle.mockGetDataOnSudoc("");
+    const mockFunction =mockGetDataOnSudoc("");
     ConditionStructurelle.testConditionStrucutrelRules(ruleTest, controlfields, datafields, resultJson, mockFunction);
     expect(resultJson.errors).not.toStrictEqual([]);
 });
@@ -770,7 +777,7 @@ test("Si 328$z\"Reproduction de\" , 456 ne doit pas être présente", () => {
         errors: [],
     };
     addRuleToTest(index);
-    const mockFunction = ConditionStructurelle.mockGetDataOnSudoc("");
+    const mockFunction =mockGetDataOnSudoc("");
     ConditionStructurelle.testConditionStrucutrelRules(ruleTest, controlfields, datafields, resultJson, mockFunction);
     expect(resultJson.errors).toStrictEqual([]);
 });
@@ -787,7 +794,7 @@ test("Si 328$z\"Reproduction de\" , 456 ne doit pas être présente (FAIL)", () 
         errors: [],
     };
     addRuleToTest(index);
-    const mockFunction = ConditionStructurelle.mockGetDataOnSudoc("");
+    const mockFunction =mockGetDataOnSudoc("");
     ConditionStructurelle.testConditionStrucutrelRules(ruleTest, controlfields, datafields, resultJson, mockFunction);
     expect(resultJson.errors).not.toStrictEqual([]);
 });
@@ -805,7 +812,7 @@ test("Si 101$d, 330 doit être présente", () => {
         errors: [],
     };
     addRuleToTest(index);
-    const mockFunction = ConditionStructurelle.mockGetDataOnSudoc("");
+    const mockFunction =mockGetDataOnSudoc("");
     ConditionStructurelle.testConditionStrucutrelRules(ruleTest, controlfields, datafields, resultJson, mockFunction);
     expect(resultJson.errors).toStrictEqual([]);
 });
@@ -822,7 +829,7 @@ test("Si 101$d, 330 doit être présente (FAIL)", () => {
         errors: [],
     };
     addRuleToTest(index);
-    const mockFunction = ConditionStructurelle.mockGetDataOnSudoc("");
+    const mockFunction =mockGetDataOnSudoc("");
     ConditionStructurelle.testConditionStrucutrelRules(ruleTest, controlfields, datafields, resultJson, mockFunction);
     expect(resultJson.errors).not.toStrictEqual([]);
 });
@@ -840,7 +847,7 @@ test("Si 101$d, 330 doit être présente", () => {
         errors: [],
     };
     addRuleToTest(index);
-    const mockFunction = ConditionStructurelle.mockGetDataOnSudoc("");
+    const mockFunction =mockGetDataOnSudoc("");
     ConditionStructurelle.testConditionStrucutrelRules(ruleTest, controlfields, datafields, resultJson, mockFunction);
     expect(resultJson.errors).toStrictEqual([]);
 });
@@ -857,7 +864,7 @@ test("Si 101$d, 330 doit être présente (FAIL)", () => {
         errors: [],
     };
     addRuleToTest(index);
-    const mockFunction = ConditionStructurelle.mockGetDataOnSudoc("");
+    const mockFunction =mockGetDataOnSudoc("");
     ConditionStructurelle.testConditionStrucutrelRules(ruleTest, controlfields, datafields, resultJson, mockFunction);
     expect(resultJson.errors).not.toStrictEqual([]);
 });
@@ -875,7 +882,7 @@ test("Si 105 $a Pos. 4-7= \"v\", 214 ind2=\"0\" ou ind2=\"2\"", () => {
         errors: [],
     };
     addRuleToTest(index);
-    const mockFunction = ConditionStructurelle.mockGetDataOnSudoc("");
+    const mockFunction =mockGetDataOnSudoc("");
     ConditionStructurelle.testConditionStrucutrelRules(ruleTest, controlfields, datafields, resultJson, mockFunction);
     expect(resultJson.errors).toStrictEqual([]);
 });
@@ -892,7 +899,7 @@ test("Si 105 $a Pos. 4-7= \"v\", 214 ind2=\"0\" ou ind2=\"2\" (FAIL)", () => {
         errors: [],
     };
     addRuleToTest(index);
-    const mockFunction = ConditionStructurelle.mockGetDataOnSudoc("");
+    const mockFunction =mockGetDataOnSudoc("");
     ConditionStructurelle.testConditionStrucutrelRules(ruleTest, controlfields, datafields, resultJson, mockFunction);
     expect(resultJson.errors).not.toStrictEqual([]);
 });
@@ -910,7 +917,7 @@ test("Si 105 $a Pos. 4-7= m, 214 ind2=\"1\"", () => {
         errors: [],
     };
     addRuleToTest(index);
-    const mockFunction = ConditionStructurelle.mockGetDataOnSudoc("");
+    const mockFunction =mockGetDataOnSudoc("");
     ConditionStructurelle.testConditionStrucutrelRules(ruleTest, controlfields, datafields, resultJson, mockFunction);
     expect(resultJson.errors).toStrictEqual([]);
 });
@@ -927,7 +934,7 @@ test("Si 105 $a Pos. 4-7= m, 214 ind2=\"1\" (FAIL)", () => {
         errors: [],
     };
     addRuleToTest(index);
-    const mockFunction = ConditionStructurelle.mockGetDataOnSudoc("");
+    const mockFunction =mockGetDataOnSudoc("");
     ConditionStructurelle.testConditionStrucutrelRules(ruleTest, controlfields, datafields, resultJson, mockFunction);
     expect(resultJson.errors).not.toStrictEqual([]);
 });
@@ -945,7 +952,7 @@ test("Si 856$5=692669902, une 310 doit être présente", () => {
         errors: [],
     };
     addRuleToTest(index);
-    const mockFunction = ConditionStructurelle.mockGetDataOnSudoc("");
+    const mockFunction =mockGetDataOnSudoc("");
     ConditionStructurelle.testConditionStrucutrelRules(ruleTest, controlfields, datafields, resultJson, mockFunction);
     expect(resultJson.errors).toStrictEqual([]);
 });
@@ -962,7 +969,7 @@ test("Si 856$5=692669902, une 310 doit être présente", () => {
 //         errors: [],
 //     };
 //     addRuleToTest(index);
-//     const mockFunction = ConditionStructurelle.mockGetDataOnSudoc("");
+//     const mockFunction =mockGetDataOnSudoc("");
 //     ConditionStructurelle.testConditionStrucutrelRules(ruleTest,controlfields,datafields , resultJson, mockFunction);
 //     expect(resultJson.errors).not.toStrictEqual([]);
 // });
@@ -980,7 +987,7 @@ test("Si 008 commence par Oa,  304 doit être présente", () => {
         errors: [],
     };
     addRuleToTest(index);
-    const mockFunction = ConditionStructurelle.mockGetDataOnSudoc("");
+    const mockFunction =mockGetDataOnSudoc("");
     ConditionStructurelle.testConditionStrucutrelRules(ruleTest, controlfields, datafields, resultJson, mockFunction);
     expect(resultJson.errors).toStrictEqual([]);
 });
@@ -997,7 +1004,7 @@ test("Si 008 commence par Oa,  304 doit être présente (FAIL)", () => {
         errors: [],
     };
     addRuleToTest(index);
-    const mockFunction = ConditionStructurelle.mockGetDataOnSudoc("");
+    const mockFunction =mockGetDataOnSudoc("");
     ConditionStructurelle.testConditionStrucutrelRules(ruleTest, controlfields, datafields, resultJson, mockFunction);
     expect(resultJson.errors).not.toStrictEqual([]);
 });
@@ -1015,7 +1022,7 @@ test("Si 008 commence par Oa, 307 doit être présente", () => {
         errors: [],
     };
     addRuleToTest(index);
-    const mockFunction = ConditionStructurelle.mockGetDataOnSudoc("");
+    const mockFunction =mockGetDataOnSudoc("");
     ConditionStructurelle.testConditionStrucutrelRules(ruleTest, controlfields, datafields, resultJson, mockFunction);
     expect(resultJson.errors).toStrictEqual([]);
 });
@@ -1032,7 +1039,7 @@ test("Si 008 commence par Oa, 307 doit être présente (FAIL)", () => {
         errors: [],
     };
     addRuleToTest(index);
-    const mockFunction = ConditionStructurelle.mockGetDataOnSudoc("");
+    const mockFunction =mockGetDataOnSudoc("");
     ConditionStructurelle.testConditionStrucutrelRules(ruleTest, controlfields, datafields, resultJson, mockFunction);
     expect(resultJson.errors).not.toStrictEqual([]);
 });
@@ -1051,7 +1058,7 @@ test("Si 008 commence par Oa, 337 doit être présente", () => {
         errors: [],
     };
     addRuleToTest(index);
-    const mockFunction = ConditionStructurelle.mockGetDataOnSudoc("");
+    const mockFunction =mockGetDataOnSudoc("");
     ConditionStructurelle.testConditionStrucutrelRules(ruleTest, controlfields, datafields, resultJson, mockFunction);
     expect(resultJson.errors).toStrictEqual([]);
 });
@@ -1068,7 +1075,7 @@ test("Si 008 commence par Oa, 337 doit être présente (FAIL)", () => {
         errors: [],
     };
     addRuleToTest(index);
-    const mockFunction = ConditionStructurelle.mockGetDataOnSudoc("");
+    const mockFunction =mockGetDataOnSudoc("");
     ConditionStructurelle.testConditionStrucutrelRules(ruleTest, controlfields, datafields, resultJson, mockFunction);
     expect(resultJson.errors).not.toStrictEqual([]);
 });
@@ -1087,7 +1094,7 @@ test("Si 008 commence par Oa, 230 doit être présente", () => {
         errors: [],
     };
     addRuleToTest(index);
-    const mockFunction = ConditionStructurelle.mockGetDataOnSudoc("");
+    const mockFunction =mockGetDataOnSudoc("");
     ConditionStructurelle.testConditionStrucutrelRules(ruleTest, controlfields, datafields, resultJson, mockFunction);
     expect(resultJson.errors).toStrictEqual([]);
 });
@@ -1104,7 +1111,7 @@ test("Si 008 commence par Oa, 230 doit être présente (FAIL)", () => {
         errors: [],
     };
     addRuleToTest(index);
-    const mockFunction = ConditionStructurelle.mockGetDataOnSudoc("");
+    const mockFunction =mockGetDataOnSudoc("");
     ConditionStructurelle.testConditionStrucutrelRules(ruleTest, controlfields, datafields, resultJson, mockFunction);
     expect(resultJson.errors).not.toStrictEqual([]);
 });
@@ -1123,7 +1130,7 @@ test("Si 325$a commence par \"Document numérisé dans le cadre d'un projet de n
         errors: [],
     };
     addRuleToTest(index);
-    const mockFunction = ConditionStructurelle.mockGetDataOnSudoc("");
+    const mockFunction =mockGetDataOnSudoc("");
     ConditionStructurelle.testConditionStrucutrelRules(ruleTest, controlfields, datafields, resultJson, mockFunction);
     expect(resultJson.errors).toStrictEqual([]);
 });
@@ -1140,7 +1147,7 @@ test("Si 325$a commence par \"Document numérisé dans le cadre d'un projet de n
         errors: [],
     };
     addRuleToTest(index);
-    const mockFunction = ConditionStructurelle.mockGetDataOnSudoc("");
+    const mockFunction =mockGetDataOnSudoc("");
     ConditionStructurelle.testConditionStrucutrelRules(ruleTest, controlfields, datafields, resultJson, mockFunction);
     expect(resultJson.errors).not.toStrictEqual([]);
 });
@@ -1158,7 +1165,7 @@ test("Si 305$a commence par \"Document numérisé dans le cadre du projet de num
         errors: [],
     };
     addRuleToTest(index);
-    const mockFunction = ConditionStructurelle.mockGetDataOnSudoc("");
+    const mockFunction =mockGetDataOnSudoc("");
     ConditionStructurelle.testConditionStrucutrelRules(ruleTest, controlfields, datafields, resultJson, mockFunction);
     expect(resultJson.errors).toStrictEqual([]);
 });
@@ -1175,7 +1182,7 @@ test("Si 305$a commence par \"Document numérisé dans le cadre du projet de num
         errors: [],
     };
     addRuleToTest(index);
-    const mockFunction = ConditionStructurelle.mockGetDataOnSudoc("");
+    const mockFunction =mockGetDataOnSudoc("");
     ConditionStructurelle.testConditionStrucutrelRules(ruleTest, controlfields, datafields, resultJson, mockFunction);
     expect(resultJson.errors).not.toStrictEqual([]);
 });
@@ -1193,7 +1200,7 @@ test("Si 305$a commence par \"Document numérisé dans le cadre du projet de num
         errors: [],
     };
     addRuleToTest(index);
-    const mockFunction = ConditionStructurelle.mockGetDataOnSudoc("");
+    const mockFunction =mockGetDataOnSudoc("");
     ConditionStructurelle.testConditionStrucutrelRules(ruleTest, controlfields, datafields, resultJson, mockFunction);
     expect(resultJson.errors).toStrictEqual([]);
 });
@@ -1210,7 +1217,7 @@ test("Si 305$a commence par \"Document numérisé dans le cadre du projet de num
         errors: [],
     };
     addRuleToTest(index);
-    const mockFunction = ConditionStructurelle.mockGetDataOnSudoc("");
+    const mockFunction =mockGetDataOnSudoc("");
     ConditionStructurelle.testConditionStrucutrelRules(ruleTest, controlfields, datafields, resultJson, mockFunction);
     expect(resultJson.errors).not.toStrictEqual([]);
 });
@@ -1228,7 +1235,7 @@ test("Si 305$a commence par \"Document numérisé dans le cadre du projet de num
         errors: [],
     };
     addRuleToTest(index);
-    const mockFunction = ConditionStructurelle.mockGetDataOnSudoc("");
+    const mockFunction =mockGetDataOnSudoc("");
     ConditionStructurelle.testConditionStrucutrelRules(ruleTest, controlfields, datafields, resultJson, mockFunction);
     expect(resultJson.errors).toStrictEqual([]);
 });
@@ -1245,7 +1252,7 @@ test("Si 305$a commence par \"Document numérisé dans le cadre du projet de num
         errors: [],
     };
     addRuleToTest(index);
-    const mockFunction = ConditionStructurelle.mockGetDataOnSudoc("");
+    const mockFunction =mockGetDataOnSudoc("");
     ConditionStructurelle.testConditionStrucutrelRules(ruleTest, controlfields, datafields, resultJson, mockFunction);
     expect(resultJson.errors).not.toStrictEqual([]);
 });
@@ -1263,7 +1270,7 @@ test("Si 328$zReproduction de, alors il faut une 029", () => {
         errors: [],
     };
     addRuleToTest(index);
-    const mockFunction = ConditionStructurelle.mockGetDataOnSudoc("");
+    const mockFunction =mockGetDataOnSudoc("");
     ConditionStructurelle.testConditionStrucutrelRules(ruleTest, controlfields, datafields, resultJson, mockFunction);
     expect(resultJson.errors).toStrictEqual([]);
 });
@@ -1280,7 +1287,7 @@ test("Si 328$zReproduction de, alors il faut une 029 (FAIL)", () => {
         errors: [],
     };
     addRuleToTest(index);
-    const mockFunction = ConditionStructurelle.mockGetDataOnSudoc("");
+    const mockFunction =mockGetDataOnSudoc("");
     ConditionStructurelle.testConditionStrucutrelRules(ruleTest, controlfields, datafields, resultJson, mockFunction);
     expect(resultJson.errors).not.toStrictEqual([]);
 });
@@ -1298,7 +1305,7 @@ test("Si 328$z n'est pas \"Reproduction de\", alors 029 ne doit pas être prése
         errors: [],
     };
     addRuleToTest(index);
-    const mockFunction = ConditionStructurelle.mockGetDataOnSudoc("");
+    const mockFunction =mockGetDataOnSudoc("");
     ConditionStructurelle.testConditionStrucutrelRules(ruleTest, controlfields, datafields, resultJson, mockFunction);
     expect(resultJson.errors).toStrictEqual([]);
 });
@@ -1315,7 +1322,7 @@ test("Si 328$z n'est pas \"Reproduction de\", alors 029 ne doit pas être prése
         errors: [],
     };
     addRuleToTest(index);
-    const mockFunction = ConditionStructurelle.mockGetDataOnSudoc("");
+    const mockFunction =mockGetDataOnSudoc("");
     ConditionStructurelle.testConditionStrucutrelRules(ruleTest, controlfields, datafields, resultJson, mockFunction);
     expect(resultJson.errors).not.toStrictEqual([]);
 });
@@ -1333,7 +1340,7 @@ test("Si 105 $a Pos. 4-7= m, 328$z ne doit pas être présente", () => {
         errors: [],
     };
     addRuleToTest(index);
-    const mockFunction = ConditionStructurelle.mockGetDataOnSudoc("");
+    const mockFunction =mockGetDataOnSudoc("");
     ConditionStructurelle.testConditionStrucutrelRules(ruleTest, controlfields, datafields, resultJson, mockFunction);
     expect(resultJson.errors).toStrictEqual([]);
 });
@@ -1350,7 +1357,7 @@ test("Si 105 $a Pos. 4-7= m, 328$z ne doit pas être présente (FAIL)", () => {
         errors: [],
     };
     addRuleToTest(index);
-    const mockFunction = ConditionStructurelle.mockGetDataOnSudoc("");
+    const mockFunction =mockGetDataOnSudoc("");
     ConditionStructurelle.testConditionStrucutrelRules(ruleTest, controlfields, datafields, resultJson, mockFunction);
     expect(resultJson.errors).not.toStrictEqual([]);
 });
@@ -1370,7 +1377,7 @@ test("Si 008 commence par Oa et ne contient pas une 215, une 856 doit être pré
         errors: [],
     };
     addRuleToTest(index);
-    const mockFunction = ConditionStructurelle.mockGetDataOnSudoc("");
+    const mockFunction =mockGetDataOnSudoc("");
     ConditionStructurelle.testConditionStrucutrelRules(ruleTest, controlfields, datafields, resultJson, mockFunction);
     expect(resultJson.errors).toStrictEqual([]);
 });
@@ -1387,7 +1394,7 @@ test("Si 008 commence par Oa et ne contient pas une 215, une 856 doit être pré
         errors: [],
     };
     addRuleToTest(index);
-    const mockFunction = ConditionStructurelle.mockGetDataOnSudoc("");
+    const mockFunction =mockGetDataOnSudoc("");
     ConditionStructurelle.testConditionStrucutrelRules(ruleTest, controlfields, datafields, resultJson, mockFunction);
     expect(resultJson.errors).not.toStrictEqual([]);
 });
@@ -1407,7 +1414,7 @@ test("214 #0 ou 214#1 obligatoire, sauf si 105$b=v", () => {
         errors: [],
     };
     addRuleToTest(index);
-    const mockFunction = ConditionStructurelle.mockGetDataOnSudoc("");
+    const mockFunction =mockGetDataOnSudoc("");
     ConditionStructurelle.testConditionStrucutrelRules(ruleTest, controlfields, datafields, resultJson, mockFunction);
     expect(resultJson.errors).toStrictEqual([]);
 });
@@ -1424,7 +1431,7 @@ test("214 #0 ou 214#1 obligatoire, sauf si 105$b=v (FAIL)", () => {
         errors: [],
     };
     addRuleToTest(index);
-    const mockFunction = ConditionStructurelle.mockGetDataOnSudoc("");
+    const mockFunction =mockGetDataOnSudoc("");
     ConditionStructurelle.testConditionStrucutrelRules(ruleTest, controlfields, datafields, resultJson, mockFunction);
     expect(resultJson.errors).not.toStrictEqual([]);
 });
@@ -1445,7 +1452,7 @@ test("Si 105 $a Pos. 4-7= v, 456 ne doit pas être présente", () => {
         errors: [],
     };
     addRuleToTest(index);
-    const mockFunction = ConditionStructurelle.mockGetDataOnSudoc("");
+    const mockFunction =mockGetDataOnSudoc("");
     ConditionStructurelle.testConditionStrucutrelRules(ruleTest, controlfields, datafields, resultJson, mockFunction);
     expect(resultJson.errors).toStrictEqual([]);
 });
@@ -1462,7 +1469,7 @@ test("Si 105 $a Pos. 4-7= v, 456 ne doit pas être présente (FAIL)", () => {
         errors: [],
     };
     addRuleToTest(index);
-    const mockFunction = ConditionStructurelle.mockGetDataOnSudoc("");
+    const mockFunction =mockGetDataOnSudoc("");
     ConditionStructurelle.testConditionStrucutrelRules(ruleTest, controlfields, datafields, resultJson, mockFunction);
     expect(resultJson.errors).not.toStrictEqual([]);
 });
@@ -1482,7 +1489,7 @@ test("Si 105 $a Pos. 4-7= m, alors il faut une 029", () => {
         errors: [],
     };
     addRuleToTest(index);
-    const mockFunction = ConditionStructurelle.mockGetDataOnSudoc("");
+    const mockFunction =mockGetDataOnSudoc("");
     ConditionStructurelle.testConditionStrucutrelRules(ruleTest, controlfields, datafields, resultJson, mockFunction);
     expect(resultJson.errors).toStrictEqual([]);
 });
@@ -1499,7 +1506,7 @@ test("Si 105 $a Pos. 4-7= m, alors il faut une 029 (FAIL)", () => {
         errors: [],
     };
     addRuleToTest(index);
-    const mockFunction = ConditionStructurelle.mockGetDataOnSudoc("");
+    const mockFunction =mockGetDataOnSudoc("");
     ConditionStructurelle.testConditionStrucutrelRules(ruleTest, controlfields, datafields, resultJson, mockFunction);
     expect(resultJson.errors).not.toStrictEqual([]);
 });
@@ -1521,7 +1528,7 @@ test("Si 105 $a Pos. 4-7= m, alors il faut une 029", () => {
         errors: [],
     };
     addRuleToTest(index);
-    const mockFunction = ConditionStructurelle.mockGetDataOnSudoc("");
+    const mockFunction =mockGetDataOnSudoc("");
     ConditionStructurelle.testConditionStrucutrelRules(ruleTest, controlfields, datafields, resultJson, mockFunction);
     expect(resultJson.errors).toStrictEqual([]);
 });
@@ -1538,7 +1545,7 @@ test("Si 105 $a Pos. 4-7= m, alors il faut une 029 (FAIL)", () => {
         errors: [],
     };
     addRuleToTest(index);
-    const mockFunction = ConditionStructurelle.mockGetDataOnSudoc("");
+    const mockFunction =mockGetDataOnSudoc("");
     ConditionStructurelle.testConditionStrucutrelRules(ruleTest, controlfields, datafields, resultJson, mockFunction);
     expect(resultJson.errors).not.toStrictEqual([]);
 });
@@ -1558,7 +1565,7 @@ test("Si 105 $a Pos. 4-7= m ou 7, alors il faut une 328", () => {
         errors: [],
     };
     addRuleToTest(index);
-    const mockFunction = ConditionStructurelle.mockGetDataOnSudoc("");
+    const mockFunction =mockGetDataOnSudoc("");
     ConditionStructurelle.testConditionStrucutrelRules(ruleTest, controlfields, datafields, resultJson, mockFunction);
     expect(resultJson.errors).toStrictEqual([]);
 });
@@ -1575,7 +1582,7 @@ test("Si 105 $a Pos. 4-7= m ou 7, alors il faut une 328 (FAIL)", () => {
         errors: [],
     };
     addRuleToTest(index);
-    const mockFunction = ConditionStructurelle.mockGetDataOnSudoc("");
+    const mockFunction =mockGetDataOnSudoc("");
     ConditionStructurelle.testConditionStrucutrelRules(ruleTest, controlfields, datafields, resultJson, mockFunction);
     expect(resultJson.errors).not.toStrictEqual([]);
 });
@@ -1593,7 +1600,7 @@ test("Si 105 $a Pos. 4-7= v ou 7, alors il faut une 017", () => {
         errors: [],
     };
     addRuleToTest(index);
-    const mockFunction = ConditionStructurelle.mockGetDataOnSudoc("");
+    const mockFunction =mockGetDataOnSudoc("");
     ConditionStructurelle.testConditionStrucutrelRules(ruleTest, controlfields, datafields, resultJson, mockFunction);
     expect(resultJson.errors).toStrictEqual([]);
 });
@@ -1610,7 +1617,7 @@ test("Si 105 $a Pos. 4-7= v ou 7, alors il faut une 017 (FAIL)", () => {
         errors: [],
     };
     addRuleToTest(index);
-    const mockFunction = ConditionStructurelle.mockGetDataOnSudoc("");
+    const mockFunction =mockGetDataOnSudoc("");
     ConditionStructurelle.testConditionStrucutrelRules(ruleTest, controlfields, datafields, resultJson, mockFunction);
     expect(resultJson.errors).not.toStrictEqual([]);
 });
@@ -1629,7 +1636,7 @@ test("Si 452, alors vérifier que la notice 452$0 contient une 452 réciproque e
         errors: [],
     };
     addRuleToTest(index);
-    const mockFunction = ConditionStructurelle.mockGetDataOnSudoc("Notice062");
+    const mockFunction = mockGetDataOnSudoc("062");
     ConditionStructurelle.testConditionStrucutrelRules(ruleTest, controlfields, datafields, resultJson, mockFunction);
     expect(resultJson.errors).toStrictEqual([]);
 });
@@ -1646,7 +1653,7 @@ test("Si 452, alors vérifier que la notice 452$0 contient une 452 réciproque e
         errors: [],
     };
     addRuleToTest(index);
-    const mockFunction = ConditionStructurelle.mockGetDataOnSudoc("Notice064");
+    const mockFunction = mockGetDataOnSudoc("064");
     ConditionStructurelle.testConditionStrucutrelRules(ruleTest, controlfields, datafields, resultJson, mockFunction);
     expect(resultJson.errors).not.toStrictEqual([]);
 });
@@ -1664,7 +1671,7 @@ test("Si 451, alors vérifier que la notice 451$0 contient une 451 réciproque",
         errors: [],
     };
     addRuleToTest(index);
-    const mockFunction = ConditionStructurelle.mockGetDataOnSudoc("Notice054");
+    const mockFunction = mockGetDataOnSudoc("054");
     ConditionStructurelle.testConditionStrucutrelRules(ruleTest, controlfields, datafields, resultJson, mockFunction);
     expect(resultJson.errors).toStrictEqual([]);
 });
@@ -1681,7 +1688,7 @@ test("Si 451, alors vérifier que la notice 451$0 contient une 451 réciproque (
         errors: [],
     };
     addRuleToTest(index);
-    const mockFunction = ConditionStructurelle.mockGetDataOnSudoc("Notice053");
+    const mockFunction = mockGetDataOnSudoc("053");
     ConditionStructurelle.testConditionStrucutrelRules(ruleTest, controlfields, datafields, resultJson, mockFunction);
     expect(resultJson.errors).not.toStrictEqual([]);
 });
@@ -1699,7 +1706,7 @@ test("Si 488, alors vérifier les liens réciproques de la notice en 488$0", () 
         errors: [],
     };
     addRuleToTest(index);
-    const mockFunction = ConditionStructurelle.mockGetDataOnSudoc("Notice054");
+    const mockFunction = mockGetDataOnSudoc("054");
     ConditionStructurelle.testConditionStrucutrelRules(ruleTest, controlfields, datafields, resultJson, mockFunction);
     expect(resultJson.errors).toStrictEqual([]);
 });
@@ -1715,7 +1722,7 @@ test("Si 488, alors vérifier les liens réciproques de la notice en 488$0 (FAIL
         errors: [],
     };
     addRuleToTest(index);
-    const mockFunction = ConditionStructurelle.mockGetDataOnSudoc("Notice056");
+    const mockFunction = mockGetDataOnSudoc("056");
     ConditionStructurelle.testConditionStrucutrelRules(ruleTest, controlfields, datafields, resultJson, mockFunction);
     expect(resultJson.errors).not.toStrictEqual([]);
 });
@@ -1734,7 +1741,7 @@ test("Si 455, alors vérifier que la notice en 455$0 contient une 456 avec liens
         errors: [],
     };
     addRuleToTest(index);
-    const mockFunction = ConditionStructurelle.mockGetDataOnSudoc("Notice078");
+    const mockFunction = mockGetDataOnSudoc("078");
     ConditionStructurelle.testConditionStrucutrelRules(ruleTest, controlfields, datafields, resultJson, mockFunction);
     expect(resultJson.errors).toStrictEqual([]);
 });
@@ -1750,7 +1757,7 @@ test("Si 455, alors vérifier que la notice en 455$0 contient une 456 avec liens
         errors: [],
     };
     addRuleToTest(index);
-    const mockFunction = ConditionStructurelle.mockGetDataOnSudoc("Notice080");
+    const mockFunction = mockGetDataOnSudoc("080");
     ConditionStructurelle.testConditionStrucutrelRules(ruleTest, controlfields, datafields, resultJson, mockFunction);
     expect(resultJson.errors).not.toStrictEqual([]);
 });
@@ -1769,7 +1776,7 @@ test("Si 455, alors vérifier que la notice en 455$0 ne contient pas 328$z", () 
         errors: [],
     };
     addRuleToTest(index);
-    const mockFunction = ConditionStructurelle.mockGetDataOnSudoc("Notice078");
+    const mockFunction = mockGetDataOnSudoc("078");
     ConditionStructurelle.testConditionStrucutrelRules(ruleTest, controlfields, datafields, resultJson, mockFunction);
     expect(resultJson.errors).toStrictEqual([]);
 });
@@ -1785,7 +1792,7 @@ test("Si 455, alors vérifier que la notice en 455$0 ne contient pas 328$z (FAIL
         errors: [],
     };
     addRuleToTest(index);
-    const mockFunction = ConditionStructurelle.mockGetDataOnSudoc("Notice080");
+    const mockFunction = mockGetDataOnSudoc("080");
     ConditionStructurelle.testConditionStrucutrelRules(ruleTest, controlfields, datafields, resultJson, mockFunction);
     expect(resultJson.errors).not.toStrictEqual([]);
 });
@@ -1803,7 +1810,7 @@ test("Si 456, alors vérifier que la notice en 456$0 contient une 455 avec liens
         errors: [],
     };
     addRuleToTest(index);
-    const mockFunction = ConditionStructurelle.mockGetDataOnSudoc("Notice070");
+    const mockFunction = mockGetDataOnSudoc("070");
     ConditionStructurelle.testConditionStrucutrelRules(ruleTest, controlfields, datafields, resultJson, mockFunction);
     expect(resultJson.errors).toStrictEqual([]);
 });
@@ -1819,7 +1826,7 @@ test("Si 456, alors vérifier que la notice en 456$0 contient une 455 avec liens
         errors: [],
     };
     addRuleToTest(index);
-    const mockFunction = ConditionStructurelle.mockGetDataOnSudoc("Notice072");
+    const mockFunction = mockGetDataOnSudoc("072");
     ConditionStructurelle.testConditionStrucutrelRules(ruleTest, controlfields, datafields, resultJson, mockFunction);
     expect(resultJson.errors).not.toStrictEqual([]);
 });
@@ -1838,7 +1845,7 @@ test("Si 105 $a Pos. 4-7= v, alors il faut une 328$z", () => {
         errors: [],
     };
     addRuleToTest(index);
-    const mockFunction = ConditionStructurelle.mockGetDataOnSudoc("");
+    const mockFunction =mockGetDataOnSudoc("");
     ConditionStructurelle.testConditionStrucutrelRules(ruleTest, controlfields, datafields, resultJson, mockFunction);
     expect(resultJson.errors).toStrictEqual([]);
 });
@@ -1854,7 +1861,7 @@ test("Si 105 $a Pos. 4-7= v, alors il faut une 328$z (FAIL)", () => {
         errors: [],
     };
     addRuleToTest(index);
-    const mockFunction = ConditionStructurelle.mockGetDataOnSudoc("");
+    const mockFunction =mockGetDataOnSudoc("");
     ConditionStructurelle.testConditionStrucutrelRules(ruleTest, controlfields, datafields, resultJson, mockFunction);
     expect(resultJson.errors).not.toStrictEqual([]);
 });
@@ -1874,7 +1881,7 @@ test("Si 456, alors vérifier que la notice en 456$0  contient  328$z", () => {
         errors: [],
     };
     addRuleToTest(index);
-    const mockFunction = ConditionStructurelle.mockGetDataOnSudoc("Notice070");
+    const mockFunction = mockGetDataOnSudoc("070");
     ConditionStructurelle.testConditionStrucutrelRules(ruleTest, controlfields, datafields, resultJson, mockFunction);
     expect(resultJson.errors).toStrictEqual([]);
 });
@@ -1890,7 +1897,7 @@ test("Si 456, alors vérifier que la notice en 456$0  contient  328$z (FAIL)", (
         errors: [],
     };
     addRuleToTest(index);
-    const mockFunction = ConditionStructurelle.mockGetDataOnSudoc("Notice072");
+    const mockFunction = mockGetDataOnSudoc("072");
     ConditionStructurelle.testConditionStrucutrelRules(ruleTest, controlfields, datafields, resultJson, mockFunction);
     expect(resultJson.errors).not.toStrictEqual([]);
 });
@@ -1909,7 +1916,7 @@ test("Si 451 et 328$z, alors vérifier que la notice 451$0 ne contient pas 328$z
         errors: [],
     };
     addRuleToTest(index);
-    const mockFunction = ConditionStructurelle.mockGetDataOnSudoc("Notice084");
+    const mockFunction = mockGetDataOnSudoc("084");
     ConditionStructurelle.testConditionStrucutrelRules(ruleTest, controlfields, datafields, resultJson, mockFunction);
     expect(resultJson.errors).toStrictEqual([]);
 });
@@ -1925,7 +1932,7 @@ test("Si 451 et 328$z, alors vérifier que la notice 451$0 ne contient pas 328$z
         errors: [],
     };
     addRuleToTest(index);
-    const mockFunction = ConditionStructurelle.mockGetDataOnSudoc("Notice086");
+    const mockFunction = mockGetDataOnSudoc("086");
     ConditionStructurelle.testConditionStrucutrelRules(ruleTest, controlfields, datafields, resultJson, mockFunction);
     expect(resultJson.errors).not.toStrictEqual([]);
 });
@@ -1943,7 +1950,7 @@ test("Si 451 et absence de 328$z, alors vérifier que la notice 451$0 contient 3
         errors: [],
     };
     addRuleToTest(index);
-    const mockFunction = ConditionStructurelle.mockGetDataOnSudoc("Notice054");
+    const mockFunction = mockGetDataOnSudoc("054");
     ConditionStructurelle.testConditionStrucutrelRules(ruleTest, controlfields, datafields, resultJson, mockFunction);
     expect(resultJson.errors).toStrictEqual([]);
 });
@@ -1959,7 +1966,7 @@ test("Si 451 et absence de 328$z, alors vérifier que la notice 451$0 contient 3
         errors: [],
     };
     addRuleToTest(index);
-    const mockFunction = ConditionStructurelle.mockGetDataOnSudoc("Notice082");
+    const mockFunction = mockGetDataOnSudoc("082");
     ConditionStructurelle.testConditionStrucutrelRules(ruleTest, controlfields, datafields, resultJson, mockFunction);
     expect(resultJson.errors).not.toStrictEqual([]);
 });

@@ -9,8 +9,8 @@ const IdRef = require("../regles/IdRef");
 const ConditionStructurel = require("../regles/ConditionStructurelle");
 const ConditionMatching = require("../regles/ConditionMatching");
 const ConditionDependance = require("../regles/ConditionDependance");
-const Ordonnancement = require('../../regles/Ordonnancement');
-const Compte = require('../../regles/Compte');
+const Ordonnancement = require('../regles/Ordonnancement');
+const Compte = require('../regles/Compte');
 
 const PPN_EN_DUR = '169450546'
 const CATEGORIE = "Generale";

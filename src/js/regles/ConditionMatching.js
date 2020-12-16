@@ -3,8 +3,7 @@ const Condition = require("../utile/Condition");
 const Matching = require("../regles/Matching");
 const axios = require('axios');
 const convert = require("xml-js");
-const path = require('path');
-const fs = require('fs');
+
 
 
 let ConditionMatching = function () {
@@ -179,7 +178,6 @@ function isDatafieldExist(datafields, controlfields, regle, index) {
 
     return {
         testConditionMatchingRules: testConditionMatchingRules,
-        mockGetDataOnSudoc: mockGetDataOnSudoc,
         getDataOnSudoc: getDataOnSudoc
     }
 }();
