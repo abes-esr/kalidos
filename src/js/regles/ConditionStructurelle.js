@@ -10,21 +10,6 @@ const ConditionStructurel = function () {
     const testConditionStrucutrelRules = function (rules, controlfields, datafields, resultJson, getfunctionDocument) {
         getDocument = getfunctionDocument
         rules.Generale.ConditionStructurel.forEach(function (regle) {
-            //recuperation du field a testé
-            let dataField = Parcours.findDataField(datafields, regle.number);
-            //si c'est pas un datafield en cherche dans controllefield
-            if (dataField == null) {
-                dataField = Parcours.findDataField(controlfields, regle.number);
-            }
-            if (dataField == null) {
-                for (let i in regle.value) {
-                    if (regle.value[i].number === regle.number && regle.value[i].present === false) {
-                        return;
-                    }
-                }
-                addError(resultJson, regle);
-                return null;
-            }
 
             //si on le field on check les conditions
             let checkedConds = true;
@@ -32,10 +17,26 @@ const ConditionStructurel = function () {
                 if (!Condition.checkCondition(controlfields, datafields, condition)) {
                     checkedConds = false;
                 }
+
             });
+            //recuperation du field a testé
             //si les conditions sont vrai
             if (checkedConds) {
                 //notice courante
+                let dataField = Parcours.findDataField(datafields, regle.number);
+                //si c'est pas un datafield en cherche dans controllefield
+                if (dataField == null) {
+                    dataField = Parcours.findDataField(controlfields, regle.number);
+                }
+                if (dataField == null) {
+                    for (let i in regle.value) {
+                        if (regle.value[i].number === regle.number && regle.value[i].present === false) {
+                            return;
+                        }
+                    }
+                    addError(resultJson, regle);
+                    return null;
+                }
 
                 let checkControlFields = controlfields;
                 let checkDataFields = datafields;
@@ -44,7 +45,7 @@ const ConditionStructurel = function () {
 
                     //si les verification sont sur la notice reciproque
                     const data = getDocument(datafields, regle.reciproque.number, regle.reciproque.code);
-                    if(data === null) {
+                    if (data === null) {
                         addError(resultJson, regle);
                         return;
                     }
