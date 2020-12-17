@@ -7,9 +7,10 @@ const convert = require("xml-js");
 const ConditionStructurel = function () {
     let getDocument = undefined;
     let ppnInitiale = undefined;
-    const testConditionStrucutrelRules = function (rules, controlfields, datafields, resultJson, getfunctionDocument) {
+    const testConditionStrucutrelRules = async function (rules, controlfields, datafields, resultJson, getfunctionDocument) {
         getDocument = getfunctionDocument
-        rules.Generale.ConditionStructurel.forEach(function (regle) {
+        for(let iRegle in rules.Generale.ConditionStructurel) {
+            const regle = rules.Generale.ConditionStructurel[iRegle];
 
             //si on le field on check les conditions
             let checkedConds = true;
@@ -44,7 +45,7 @@ const ConditionStructurel = function () {
                     ppnInitiale = Parcours.findDataField(controlfields, "001")._text;
 
                     //si les verification sont sur la notice reciproque
-                    const data = getDocument(datafields, regle.reciproque.number, regle.reciproque.code);
+                    const data = await getDocument(datafields, regle.reciproque.number, regle.reciproque.code);
                     if (data === null) {
                         addError(resultJson, regle);
                         return;
@@ -58,8 +59,7 @@ const ConditionStructurel = function () {
                     addError(resultJson, regle);
                 }
             }
-
-        });
+        }
     }
 
     function checkValues(regle, controlfields, datafields) {
@@ -107,7 +107,8 @@ const ConditionStructurel = function () {
     }
 }();
 
-module.exports = ConditionStructurel;
+// module.exports = ConditionStructurel;
+export default ConditionStructurel;
 
 function verifyOne(datafields, value, controlfields, checkReciproque) {
     const listDatafield = getListDatafield(datafields, value);

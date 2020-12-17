@@ -9,9 +9,11 @@ const convert = require("xml-js");
 let ConditionMatching = function () {
     let getDocument = undefined;
     let ppnInitiale = undefined;
-    let testConditionMatchingRules = function (rules, controlfields, datafields, resultJson, getfunctionDocument) {
+    let testConditionMatchingRules = async function (rules, controlfields, datafields, resultJson, getfunctionDocument) {
         getDocument = getfunctionDocument;
-        rules.Generale.ConditionMatching.forEach(function (regle) {
+        for (let iRegle in rules.Generale.ConditionMatching) 
+        {
+            const regle = rules.Generale.ConditionMatching[iRegle];
             //recuperation du datafield
             let checkedConds = true;
             regle.condition.forEach(function (condition) {
@@ -27,7 +29,7 @@ let ConditionMatching = function () {
 
                 if (regle.reciproque) {
                     ppnInitiale = Parcours.findDataField(controlfields, "001")._text;
-                    const data = getDocument(datafields, regle, resultJson);
+                    const data = await getDocument(datafields, regle, resultJson);
                     if (data === null) {
                         addError(resultJson, regle);
                         return;
@@ -40,8 +42,7 @@ let ConditionMatching = function () {
                     addError(resultJson, regle);
                 }
             }
-
-        });
+        }
     }
 
     function getDataOnSudoc(datafields, regle, resultJson) {
@@ -182,4 +183,5 @@ function isDatafieldExist(datafields, controlfields, regle, index) {
     }
 }();
 
-module.exports = ConditionMatching;
+// module.exports = ConditionMatching;
+export default ConditionMatching;

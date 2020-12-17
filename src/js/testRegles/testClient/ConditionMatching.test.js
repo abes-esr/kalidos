@@ -1030,7 +1030,7 @@ test("Si 105 $a Pos. 4-7= v et Si 214 ind2=2, alors $aLyon (FAIL)", () => {
 
 // ===============================================================
 
-test("Si 008 commence par Oa et 451 présente, alors vérifier que notice 451$0 contient une 008 qui commence par Oa", () => {
+test("Si 008 commence par Oa et 451 présente, alors vérifier que notice 451$0 contient une 008 qui commence par Oa", async () => {
     const notice = "056"
     const index = 1016
     const sudoc = getNotice(notice);
@@ -1042,11 +1042,11 @@ test("Si 008 commence par Oa et 451 présente, alors vérifier que notice 451$0 
     };
     addRuleToTest(index);
     const mockFunction = mockGetDataOnSudoc("057");
-    ConditionMatching.testConditionMatchingRules(ruleTest, controlfields, datafields, resultJson, mockFunction);
+    await ConditionMatching.testConditionMatchingRules(ruleTest, controlfields, datafields, resultJson, mockFunction);
     expect(resultJson.errors).toStrictEqual([]);
 });
 
-test("Si 008 commence par Oa et 451 présente, alors vérifier que notice 451$0 contient une 008 qui commence par Oa (FAIL)", () => {
+test("Si 008 commence par Oa et 451 présente, alors vérifier que notice 451$0 contient une 008 qui commence par Oa (FAIL)", async () => {
     const notice = "058"
     const index = 1016
     const sudoc = getNotice(notice);
@@ -1058,14 +1058,14 @@ test("Si 008 commence par Oa et 451 présente, alors vérifier que notice 451$0 
     };
     addRuleToTest(index);
     const mockFunction = mockGetDataOnSudoc("059");
-    ConditionMatching.testConditionMatchingRules(ruleTest, controlfields, datafields, resultJson, mockFunction);
+    await ConditionMatching.testConditionMatchingRules(ruleTest, controlfields, datafields, resultJson, mockFunction);
     expect(resultJson.errors).not.toStrictEqual([]);
 });
 
 
 // ===============================================================
 
-test("Si 008 commence par Aa et 451 présente, alors vérifier que notice 451$0 contient une 008 qui commence par Aa", () => {
+test("Si 008 commence par Aa et 451 présente, alors vérifier que notice 451$0 contient une 008 qui commence par Aa",async () => {
     const notice = "053"
     const index = 1017
     const sudoc = getNotice(notice);
@@ -1077,11 +1077,11 @@ test("Si 008 commence par Aa et 451 présente, alors vérifier que notice 451$0 
     };
     addRuleToTest(index);
     const mockFunction = mockGetDataOnSudoc("054");
-    ConditionMatching.testConditionMatchingRules(ruleTest, controlfields, datafields, resultJson, mockFunction);
+    await ConditionMatching.testConditionMatchingRules(ruleTest, controlfields, datafields, resultJson, mockFunction);
     expect(resultJson.errors).toStrictEqual([]);
 });
 
-test("Si 008 commence par Aa et 451 présente, alors vérifier que notice 451$0 contient une 008 qui commence par Aa (FAIL)", () => {
+test("Si 008 commence par Aa et 451 présente, alors vérifier que notice 451$0 contient une 008 qui commence par Aa (FAIL)",async () => {
     const notice = "055"
     const index = 1017
     const sudoc = getNotice(notice);
@@ -1093,14 +1093,14 @@ test("Si 008 commence par Aa et 451 présente, alors vérifier que notice 451$0 
     };
     addRuleToTest(index);
     const mockFunction = mockGetDataOnSudoc("056");
-    ConditionMatching.testConditionMatchingRules(ruleTest, controlfields, datafields, resultJson, mockFunction);
+    await ConditionMatching.testConditionMatchingRules(ruleTest, controlfields, datafields, resultJson, mockFunction);
     expect(resultJson.errors).not.toStrictEqual([]);
 });
 
 
 // ===============================================================
 
-test("Si 008 commence par Oa et 452 présente, alors vérifier que notice 452$0 contient une 008 qui commence par Aa", () => {
+test("Si 008 commence par Oa et 452 présente, alors vérifier que notice 452$0 contient une 008 qui commence par Aa",async () => {
     const notice = "065"
     const index = 1018
     const sudoc = getNotice(notice);
@@ -1112,11 +1112,11 @@ test("Si 008 commence par Oa et 452 présente, alors vérifier que notice 452$0 
     };
     addRuleToTest(index);
     const mockFunction = mockGetDataOnSudoc("066");
-    ConditionMatching.testConditionMatchingRules(ruleTest, controlfields, datafields, resultJson, mockFunction);
+    await ConditionMatching.testConditionMatchingRules(ruleTest, controlfields, datafields, resultJson, mockFunction);
     expect(resultJson.errors).toStrictEqual([]);
 });
 
-test("Si 008 commence par Oa et 452 présente, alors vérifier que notice 452$0 contient une 008 qui commence par Aa (FAIL)", () => {
+test("Si 008 commence par Oa et 452 présente, alors vérifier que notice 452$0 contient une 008 qui commence par Aa (FAIL)",async () => {
     const notice = "067"
     const index = 1018
     const sudoc = getNotice(notice);
@@ -1128,7 +1128,7 @@ test("Si 008 commence par Oa et 452 présente, alors vérifier que notice 452$0 
     };
     addRuleToTest(index);
     const mockFunction = mockGetDataOnSudoc("068");
-    ConditionMatching.testConditionMatchingRules(ruleTest, controlfields, datafields, resultJson, mockFunction);
+    await ConditionMatching.testConditionMatchingRules(ruleTest, controlfields, datafields, resultJson, mockFunction);
     expect(resultJson.errors).not.toStrictEqual([]);
 });
 
@@ -1136,7 +1136,7 @@ test("Si 008 commence par Oa et 452 présente, alors vérifier que notice 452$0 
 
 // ===============================================================
 
-test("Si 008 commence par Aa et 452 présente, alors vérifier que notice 452$0 contient une 008 qui commence par Oa", () => {
+test("Si 008 commence par Aa et 452 présente, alors vérifier que notice 452$0 contient une 008 qui commence par Oa",async () => {
     const notice = "061"
     const index = 1019
     const sudoc = getNotice(notice);
@@ -1148,11 +1148,11 @@ test("Si 008 commence par Aa et 452 présente, alors vérifier que notice 452$0 
     };
     addRuleToTest(index);
     const mockFunction = mockGetDataOnSudoc("062");
-    ConditionMatching.testConditionMatchingRules(ruleTest, controlfields, datafields, resultJson, mockFunction);
+    await ConditionMatching.testConditionMatchingRules(ruleTest, controlfields, datafields, resultJson, mockFunction);
     expect(resultJson.errors).toStrictEqual([]);
 });
 
-test("Si 008 commence par Aa et 452 présente, alors vérifier que notice 452$0 contient une 008 qui commence par Oa (FAIL)", () => {
+test("Si 008 commence par Aa et 452 présente, alors vérifier que notice 452$0 contient une 008 qui commence par Oa (FAIL)", async () => {
     const notice = "063"
     const index = 1019
     const sudoc = getNotice(notice);
@@ -1164,7 +1164,7 @@ test("Si 008 commence par Aa et 452 présente, alors vérifier que notice 452$0 
     };
     addRuleToTest(index);
     const mockFunction = mockGetDataOnSudoc("064");
-    ConditionMatching.testConditionMatchingRules(ruleTest, controlfields, datafields, resultJson, mockFunction);
+    await ConditionMatching.testConditionMatchingRules(ruleTest, controlfields, datafields, resultJson, mockFunction);
     expect(resultJson.errors).not.toStrictEqual([]);
 });
 
@@ -1172,7 +1172,7 @@ test("Si 008 commence par Aa et 452 présente, alors vérifier que notice 452$0 
 
 // ===============================================================
 
-test("Si 455, alors vérifier que la notice en 455$0 contient 105$a Pos. 4-7= m", () => {
+test("Si 455, alors vérifier que la notice en 455$0 contient 105$a Pos. 4-7= m",async () => {
     const notice = "077"
     const index = 1020
     const sudoc = getNotice(notice);
@@ -1184,11 +1184,11 @@ test("Si 455, alors vérifier que la notice en 455$0 contient 105$a Pos. 4-7= m"
     };
     addRuleToTest(index);
     const mockFunction = mockGetDataOnSudoc("078");
-    ConditionMatching.testConditionMatchingRules(ruleTest, controlfields, datafields, resultJson, mockFunction);
+    await ConditionMatching.testConditionMatchingRules(ruleTest, controlfields, datafields, resultJson, mockFunction);
     expect(resultJson.errors).toStrictEqual([]);
 });
 
-test("Si 455, alors vérifier que la notice en 455$0 contient 105$a Pos. 4-7= m (FAIL)", () => {
+test("Si 455, alors vérifier que la notice en 455$0 contient 105$a Pos. 4-7= m (FAIL)",async () => {
     const notice = "079"
     const index = 1020
     const sudoc = getNotice(notice);
@@ -1200,13 +1200,13 @@ test("Si 455, alors vérifier que la notice en 455$0 contient 105$a Pos. 4-7= m 
     };
     addRuleToTest(index);
     const mockFunction = mockGetDataOnSudoc("080");
-    ConditionMatching.testConditionMatchingRules(ruleTest, controlfields, datafields, resultJson, mockFunction);
+    await ConditionMatching.testConditionMatchingRules(ruleTest, controlfields, datafields, resultJson, mockFunction);
     expect(resultJson.errors).not.toStrictEqual([]);
 });
 
 // ===============================================================
 
-test("Si 456, alors vérifier que la notice en 456$0 contient 105$a Pos. 4-7= v", () => {
+test("Si 456, alors vérifier que la notice en 456$0 contient 105$a Pos. 4-7= v", async () => {
     const notice = "069"
     const index = 1023
     const sudoc = getNotice(notice);
@@ -1218,11 +1218,11 @@ test("Si 456, alors vérifier que la notice en 456$0 contient 105$a Pos. 4-7= v"
     };
     addRuleToTest(index);
     const mockFunction = mockGetDataOnSudoc("070");
-    ConditionMatching.testConditionMatchingRules(ruleTest, controlfields, datafields, resultJson, mockFunction);
+    await ConditionMatching.testConditionMatchingRules(ruleTest, controlfields, datafields, resultJson, mockFunction);
     expect(resultJson.errors).toStrictEqual([]);
 });
 
-test("Si 456, alors vérifier que la notice en 456$0 contient 105$a Pos. 4-7= v (FAIL)", () => {
+test("Si 456, alors vérifier que la notice en 456$0 contient 105$a Pos. 4-7= v (FAIL)", async () => {
     const notice = "071"
     const index = 1023
     const sudoc = getNotice(notice);
@@ -1234,7 +1234,7 @@ test("Si 456, alors vérifier que la notice en 456$0 contient 105$a Pos. 4-7= v 
     };
     addRuleToTest(index);
     const mockFunction = mockGetDataOnSudoc("072");
-    ConditionMatching.testConditionMatchingRules(ruleTest, controlfields, datafields, resultJson, mockFunction);
+    await ConditionMatching.testConditionMatchingRules(ruleTest, controlfields, datafields, resultJson, mockFunction);
     expect(resultJson.errors).not.toStrictEqual([]);
 });
 

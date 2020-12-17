@@ -34,7 +34,7 @@ var Dependance = function () {
                     return testString1 === testString2;
                 }
                 else if (regle.operator === "not_equals") {
-                    console.log("yes");
+                    // console.log("yes");
                     //console.log(testString1, " === ", testString2, "->", testString1 === testString2)
                     return testString1 !== testString2;
                 }

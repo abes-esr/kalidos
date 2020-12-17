@@ -1,7 +1,6 @@
 {
     "Generale": {
-        "matching": [
-            {
+        "matching": [{
                 "index": 1,
                 "number": 201,
                 "code": "c",
@@ -178,27 +177,6 @@
                 "index": 26
             },
             {
-                "index": 37,
-                "number": [
-                    "700",
-                    "701",
-                    "702",
-                    "710",
-                    "711",
-                    "712",
-                    "720",
-                    "721",
-                    "722"
-                ],
-                "code": "4",
-                "value": [
-                    "^205$",
-                    "^727$"
-                ],
-                "match": "all",
-                "message": "7XX $4 ne doit pas être 205 ou 727 (FAIL TEST)"
-            },
-            {
                 "index": 38,
                 "number": [
                     "700",
@@ -278,43 +256,6 @@
                 ],
                 "match": "one",
                 "message": "7X2 $4=020, 050, 060, 075, 080, 140, 150, 160, 310, 320, 390, 450, 490, 500, 540, 580, 610, 620, 640, 650, 680, 700, 720, 740, 750, 753"
-            },
-            {
-                "index": 40,
-                "number": [
-                    "915",
-                    "930",
-                    "940"
-                ],
-                "code": "5",
-                "value": [
-                    "020",
-                    "050"
-                ],
-                "match": "one",
-                "message": "9XX $5= 020, 050 (FAIL TEST)"
-            },
-            {
-                "index": 41,
-                "number": 941,
-                "code": "5",
-                "value": [
-                    "020",
-                    "050"
-                ],
-                "match": "one",
-                "message": "941 $5= 020, 050 (FAIL TEST)"
-            },
-            {
-                "index": 42,
-                "number": 941,
-                "code": "a",
-                "value": [
-                    "^((?!020).)*$",
-                    "^((?!20130524).)*$"
-                ],
-                "match": "all",
-                "message": "941 $a != 020, 20130524 (FAIL TEST)"
             },
             {
                 "number": "100",
@@ -607,8 +548,7 @@
                 "regex": "^(?!Reproduction numérique de l'édition de LIEU : EDITEUR, DATE).*$"
             }
         ],
-        "dependances": [
-            {
+        "dependances": [{
                 "index": 2,
                 "field1": {
                     "number": "100",
@@ -650,24 +590,6 @@
                 "numRuleExcell": 101
             },
             {
-                "index": 499,
-                "field1": {
-                    "number": "210",
-                    "code": "d",
-                    "pos": []
-                },
-                "field2": {
-                    "number": "328",
-                    "code": "d",
-                    "pos": [
-                        0,
-                        2
-                    ]
-                },
-                "operator": "equals",
-                "message": "210$d = 328$d pos1-2 (FAIL TEST)"
-            },
-            {
                 "index": 72,
                 "numRuleExcell": 3,
                 "field1": {
@@ -687,10 +609,8 @@
                 "message": "100$a Pos. 9-12 = 214$d"
             }
         ],
-        "ConditionMatching": [
-            {
-                "condition": [
-                    {
+        "ConditionMatching": [{
+                "condition": [{
                         "operator": "contains_text",
                         "number": "105",
                         "code": "a",
@@ -712,156 +632,131 @@
                 ],
                 "index": 3011,
                 "type": "allRequired",
-                "values": [
-                    {
-                        "number": "214",
-                        "code": "a",
-                        "message": "Zone 214$a incohérente avec le statut de la thèse (reproduction)",
-                        "regex": "^Lyon$",
-                        "subFieldRequired": true
-                    }
-                ]
+                "values": [{
+                    "number": "214",
+                    "code": "a",
+                    "message": "Zone 214$a incohérente avec le statut de la thèse (reproduction)",
+                    "regex": "^Lyon$",
+                    "subFieldRequired": true
+                }]
             },
             {
-                "condition": [
-                    {
-                        "operator": "presente",
-                        "number": "608",
-                        "code": "3"
-                    }
-                ],
+                "condition": [{
+                    "operator": "presente",
+                    "number": "608",
+                    "code": "3"
+                }],
                 "index": 3009,
                 "type": "allRequired",
                 "verifyZone": {
                     "number": "608",
                     "code": "3"
                 },
-                "values": [
-                    {
-                        "number": "608",
-                        "code": "2",
-                        "message": "Zone 6XX $2 mal orthographié ou absent",
-                        "regex": "(rameau)|(fmesh)",
-                        "subFieldRequired": true
-                    }
-                ]
+                "values": [{
+                    "number": "608",
+                    "code": "2",
+                    "message": "Zone 6XX $2 mal orthographié ou absent",
+                    "regex": "(rameau)|(fmesh)",
+                    "subFieldRequired": true
+                }]
             },
             {
-                "condition": [
-                    {
-                        "operator": "presente",
-                        "number": "606",
-                        "code": "3"
-                    }
-                ],
+                "condition": [{
+                    "operator": "presente",
+                    "number": "606",
+                    "code": "3"
+                }],
                 "index": 3008,
                 "type": "allRequired",
                 "verifyZone": {
                     "number": "606",
                     "code": "3"
                 },
-                "values": [
-                    {
-                        "number": "606",
-                        "code": "2",
-                        "message": "Zone 6XX $2 mal orthographié ou absent",
-                        "regex": "(rameau)|(fmesh)",
-                        "subFieldRequired": true
-                    }
-                ]
+                "values": [{
+                    "number": "606",
+                    "code": "2",
+                    "message": "Zone 6XX $2 mal orthographié ou absent",
+                    "regex": "(rameau)|(fmesh)",
+                    "subFieldRequired": true
+                }]
             },
             {
-                "condition": [
-                    {
-                        "operator": "contains_text",
-                        "number": "105",
-                        "code": "a",
-                        "pos": [
-                            10,
-                            11
-                        ],
-                        "string": [
-                            "0"
-                        ]
-                    }
-                ],
+                "condition": [{
+                    "operator": "contains_text",
+                    "number": "105",
+                    "code": "a",
+                    "pos": [
+                        10,
+                        11
+                    ],
+                    "string": [
+                        "0"
+                    ]
+                }],
                 "index": 3007,
                 "type": "allRequired",
-                "values": [
-                    {
-                        "number": 320,
-                        "code": "a",
-                        "message": "Mention d'index incohérente : vérifier zones 105 et 320",
-                        "regex": "(?:(?!Index).)+",
-                        "subFieldRequired": true
-                    }
-                ]
+                "values": [{
+                    "number": 320,
+                    "code": "a",
+                    "message": "Mention d'index incohérente : vérifier zones 105 et 320",
+                    "regex": "(?:(?!Index).)+",
+                    "subFieldRequired": true
+                }]
             },
             {
-                "condition": [
-                    {
-                        "operator": "startwith_text",
-                        "number": "856",
-                        "code": "5",
-                        "string": [
-                            "692669902"
-                        ]
-                    }
-                ],
+                "condition": [{
+                    "operator": "startwith_text",
+                    "number": "856",
+                    "code": "5",
+                    "string": [
+                        "692669902"
+                    ]
+                }],
                 "index": 3006,
                 "type": "allRequired",
-                "values": [
-                    {
-                        "number": 856,
-                        "code": "z",
-                        "message": "Zone 856 : le texte ne correspond pas au type d'accès (internet-intranet)",
-                        "regex": "^(Accès réservé aux membres de Lyon 1 après authentification).*$",
-                        "subFieldRequired": true
-                    }
-                ]
+                "values": [{
+                    "number": 856,
+                    "code": "z",
+                    "message": "Zone 856 : le texte ne correspond pas au type d'accès (internet-intranet)",
+                    "regex": "^(Accès réservé aux membres de Lyon 1 après authentification).*$",
+                    "subFieldRequired": true
+                }]
             },
             {
-                "condition": [
-                    {
-                        "operator": "not_startwith_text",
-                        "number": "856",
-                        "code": "5",
-                        "string": [
-                            "692669902"
-                        ]
-                    }
-                ],
+                "condition": [{
+                    "operator": "not_startwith_text",
+                    "number": "856",
+                    "code": "5",
+                    "string": [
+                        "692669902"
+                    ]
+                }],
                 "index": 3005,
                 "type": "allRequired",
-                "values": [
-                    {
-                        "number": 856,
-                        "code": "z",
-                        "message": "Zone 856 : le texte ne correspond pas au type d'accès (internet-intranet)",
-                        "regex": "^Accès au texte intégral$",
-                        "subFieldRequired": true
-                    }
-                ]
+                "values": [{
+                    "number": 856,
+                    "code": "z",
+                    "message": "Zone 856 : le texte ne correspond pas au type d'accès (internet-intranet)",
+                    "regex": "^Accès au texte intégral$",
+                    "subFieldRequired": true
+                }]
             },
             {
-                "condition": [
-                    {
-                        "operator": "contains_text",
-                        "number": "105",
-                        "code": "a",
-                        "pos": [
-                            4,
-                            7
-                        ],
-                        "string": [
-                            "m"
-                        ]
-                    }
-                ],
+                "condition": [{
+                    "operator": "contains_text",
+                    "number": "105",
+                    "code": "a",
+                    "pos": [
+                        4,
+                        7
+                    ],
+                    "string": [
+                        "m"
+                    ]
+                }],
                 "index": 3004,
                 "type": "allRequired",
-                "values": [
-                    {
+                "values": [{
                         "number": 608,
                         "code": "3",
                         "message": "Zone 608 : indexation Forme-Genre obligatoire",
@@ -878,8 +773,7 @@
                 ]
             },
             {
-                "condition": [
-                    {
+                "condition": [{
                         "operator": "presente",
                         "number": "711",
                         "code": "3"
@@ -892,8 +786,7 @@
                 ],
                 "index": 3002,
                 "type": "allRequired",
-                "values": [
-                    {
+                "values": [{
                         "number": 711,
                         "code": "3",
                         "message": "Zone 711 : université de soutenance doit être présente (711$3026402823$4295)",
@@ -910,71 +803,60 @@
                 ]
             },
             {
-                "condition": [
-                    {
-                        "operator": "presente",
-                        "number": "608",
-                        "code": "3"
-                    }
-                ],
+                "condition": [{
+                    "operator": "presente",
+                    "number": "608",
+                    "code": "3"
+                }],
                 "index": 3000,
                 "type": "allRequired",
-                "values": [
-                    {
-                        "number": 608,
-                        "code": "3",
-                        "message": "Zone 608 : indexation Forme-Genre obligatoire (PPN 027253139)",
-                        "regex": "^027253139$",
-                        "subFieldRequired": true
-                    }
-                ]
+                "values": [{
+                    "number": 608,
+                    "code": "3",
+                    "message": "Zone 608 : indexation Forme-Genre obligatoire (PPN 027253139)",
+                    "regex": "^027253139$",
+                    "subFieldRequired": true
+                }]
             },
             {
-                "condition": [
-                    {
-                        "operator": "not_contains_text",
-                        "number": "105",
-                        "code": "a",
-                        "pos": [
-                            0,
-                            3
-                        ],
-                        "string": [
-                            "y"
-                        ]
-                    }
-                ],
+                "condition": [{
+                    "operator": "not_contains_text",
+                    "number": "105",
+                    "code": "a",
+                    "pos": [
+                        0,
+                        3
+                    ],
+                    "string": [
+                        "y"
+                    ]
+                }],
                 "index": 1000,
                 "type": "allRequired",
-                "values": [
-                    {
-                        "number": 215,
-                        "code": "c",
-                        "message": "Si  105 $a Pos. 0-3 différent de la valeur \"y\" alors 215$c ne doit pas être vide",
-                        "regex": "^.+",
-                        "subFieldRequired": true
-                    }
-                ]
+                "values": [{
+                    "number": 215,
+                    "code": "c",
+                    "message": "Si  105 $a Pos. 0-3 différent de la valeur \"y\" alors 215$c ne doit pas être vide",
+                    "regex": "^.+",
+                    "subFieldRequired": true
+                }]
             },
             {
-                "condition": [
-                    {
-                        "operator": "contains_text",
-                        "number": "105",
-                        "code": "a",
-                        "pos": [
-                            8,
-                            9
-                        ],
-                        "string": [
-                            "1"
-                        ]
-                    }
-                ],
+                "condition": [{
+                    "operator": "contains_text",
+                    "number": "105",
+                    "code": "a",
+                    "pos": [
+                        8,
+                        9
+                    ],
+                    "string": [
+                        "1"
+                    ]
+                }],
                 "index": 1001,
                 "type": "allRequired",
-                "values": [
-                    {
+                "values": [{
                         "number": 608,
                         "code": "3",
                         "message": "Si 105 $a Pos. 8 = 1 alors il faut aussi une 608 $302886431XActes de congrès",
@@ -991,24 +873,21 @@
                 ]
             },
             {
-                "condition": [
-                    {
-                        "operator": "contains_text",
-                        "number": "105",
-                        "code": "a",
-                        "pos": [
-                            8,
-                            9
-                        ],
-                        "string": [
-                            "0"
-                        ]
-                    }
-                ],
+                "condition": [{
+                    "operator": "contains_text",
+                    "number": "105",
+                    "code": "a",
+                    "pos": [
+                        8,
+                        9
+                    ],
+                    "string": [
+                        "0"
+                    ]
+                }],
                 "index": 1002,
                 "type": "oneRequired",
-                "values": [
-                    {
+                "values": [{
                         "number": 608,
                         "code": "3",
                         "message": "Si 105 $a Pos. 8 = 0 alors il ne doit pas y avoir 608 $302886431X ou $aActes de congrès",
@@ -1025,79 +904,68 @@
                 ]
             },
             {
-                "condition": [
-                    {
-                        "operator": "contains_text",
-                        "number": "105",
-                        "code": "a",
-                        "pos": [
-                            10,
-                            11
-                        ],
-                        "string": [
-                            "1"
-                        ]
-                    }
-                ],
+                "condition": [{
+                    "operator": "contains_text",
+                    "number": "105",
+                    "code": "a",
+                    "pos": [
+                        10,
+                        11
+                    ],
+                    "string": [
+                        "1"
+                    ]
+                }],
                 "index": 1003,
                 "type": "allRequired",
-                "values": [
-                    {
-                        "number": 320,
-                        "code": "a",
-                        "message": "Si 105 $a Pos. 10 =1 alors il faut une 320 avec la mention \"Index\"",
-                        "regex": "^.*(Index).*",
-                        "subFieldRequired": true
-                    }
-                ]
+                "values": [{
+                    "number": 320,
+                    "code": "a",
+                    "message": "Si 105 $a Pos. 10 =1 alors il faut une 320 avec la mention \"Index\"",
+                    "regex": "^.*(Index).*",
+                    "subFieldRequired": true
+                }]
             },
             {
-                "condition": [
-                    {
-                        "operator": "contains_text",
-                        "number": "105",
-                        "code": "a",
-                        "pos": [
-                            10,
-                            11
-                        ],
-                        "string": [
-                            "0"
-                        ]
-                    }
-                ],
+                "condition": [{
+                    "operator": "contains_text",
+                    "number": "105",
+                    "code": "a",
+                    "pos": [
+                        10,
+                        11
+                    ],
+                    "string": [
+                        "0"
+                    ]
+                }],
                 "index": 1004,
                 "type": "allRequired",
-                "values": [
-                    {
-                        "number": 320,
-                        "code": "a",
-                        "message": "Si 105 $a Pos. 10 =0 alors il ne doit pas y avoir une 320 avec la mention \"Index\"",
-                        "regex": "^((?!Index).)*$",
-                        "subFieldRequired": true
-                    }
-                ]
+                "values": [{
+                    "number": 320,
+                    "code": "a",
+                    "message": "Si 105 $a Pos. 10 =0 alors il ne doit pas y avoir une 320 avec la mention \"Index\"",
+                    "regex": "^((?!Index).)*$",
+                    "subFieldRequired": true
+                }]
             },
             {
-                "condition": [
-                    {
-                        "operator": "contains_text",
-                        "number": "105",
-                        "code": "a",
-                        "pos": [
-                            4,
-                            7
-                        ],
-                        "string": [
-                            "m",
-                            "7"
-                        ]
-                    }
-                ],
+                "condition": [{
+                    "operator": "contains_text",
+                    "number": "105",
+                    "code": "a",
+                    "pos": [
+                        4,
+                        7
+                    ],
+                    "string": [
+                        "m",
+                        "7"
+                    ]
+                }],
                 "index": 1005,
                 "type": "allRequired",
-                "values": [
-                    {
+                "values": [{
                         "number": 608,
                         "code": "a",
                         "message": "Si 105 $a Pos. 4-7= m ou 7 il faut une 608 $3027253139 et $a Thèses et écrits académiques",
@@ -1114,110 +982,91 @@
                 ]
             },
             {
-                "condition": [
-                    {
-                        "operator": "presente",
-                        "number": "214",
-                        "code": "d",
-                        "ind1": "",
-                        "ind2": "4"
-                    }
-                ],
+                "condition": [{
+                    "operator": "presente",
+                    "number": "214",
+                    "code": "d",
+                    "ind1": "",
+                    "ind2": "4"
+                }],
                 "index": 1006,
                 "type": "allRequired",
-                "values": [
-                    {
-                        "number": 214,
-                        "code": "d",
-                        "message": "Si 214 #4$d, la zone doit commencer par \"C espace\"",
-                        "regex": "^(C ).*",
-                        "subFieldRequired": true
-                    }
-                ]
+                "values": [{
+                    "number": 214,
+                    "code": "d",
+                    "message": "Si 214 #4$d, la zone doit commencer par \"C espace\"",
+                    "regex": "^(C ).*",
+                    "subFieldRequired": true
+                }]
             },
             {
-                "condition": [
-                    {
-                        "operator": "presente",
-                        "number": "214",
-                        "code": "d",
-                        "ind1": "",
-                        "ind2": "0"
-                    }
-                ],
+                "condition": [{
+                    "operator": "presente",
+                    "number": "214",
+                    "code": "d",
+                    "ind1": "",
+                    "ind2": "0"
+                }],
                 "index": 1007,
                 "type": "allRequired",
-                "values": [
-                    {
-                        "number": 214,
-                        "code": "d",
-                        "message": "Si 214 #0 et $d, doit commencer par \"DL espace\" ou \"[\" ou un chiffre",
-                        "regex": "^(DL |\\[|[0-9]).*",
-                        "subFieldRequired": true,
-                        "ind1": "",
-                        "ind2": "0"
-                    }
-                ]
+                "values": [{
+                    "number": 214,
+                    "code": "d",
+                    "message": "Si 214 #0 et $d, doit commencer par \"DL espace\" ou \"[\" ou un chiffre",
+                    "regex": "^(DL |\\[|[0-9]).*",
+                    "subFieldRequired": true,
+                    "ind1": "",
+                    "ind2": "0"
+                }]
             },
             {
-                "condition": [
-                    {
-                        "operator": "presente",
-                        "number": "214",
-                        "code": "",
-                        "ind1": "",
-                        "ind2": "2"
-                    }
-                ],
+                "condition": [{
+                    "operator": "presente",
+                    "number": "214",
+                    "code": "",
+                    "ind1": "",
+                    "ind2": "2"
+                }],
                 "index": 1008,
                 "type": "allRequired",
-                "values": [
-                    {
-                        "number": 214,
-                        "code": "a",
-                        "message": "Si 214 ind2=2, alors $aLyon",
-                        "regex": "^Lyon$",
-                        "subFieldRequired": true
-                    }
-                ]
+                "values": [{
+                    "number": 214,
+                    "code": "a",
+                    "message": "Si 214 ind2=2, alors $aLyon",
+                    "regex": "^Lyon$",
+                    "subFieldRequired": true
+                }]
             },
             {
-                "condition": [
-                    {
-                        "operator": "presente",
-                        "number": "214",
-                        "code": "",
-                        "ind1": "",
-                        "ind2": "2"
-                    }
-                ],
+                "condition": [{
+                    "operator": "presente",
+                    "number": "214",
+                    "code": "",
+                    "ind1": "",
+                    "ind2": "2"
+                }],
                 "index": 1009,
                 "type": "allRequired",
-                "values": [
-                    {
-                        "number": 214,
-                        "code": "c",
-                        "message": "Si 214 ind2=2, alors $cBibliothèque Lyon 1",
-                        "regex": "^Bibliothèque Lyon 1$",
-                        "subFieldRequired": true
-                    }
-                ]
+                "values": [{
+                    "number": 214,
+                    "code": "c",
+                    "message": "Si 214 ind2=2, alors $cBibliothèque Lyon 1",
+                    "regex": "^Bibliothèque Lyon 1$",
+                    "subFieldRequired": true
+                }]
             },
             {
-                "condition": [
-                    {
-                        "operator": "startwith_text",
-                        "number": "305",
-                        "code": "a",
-                        "string": [
-                            "Document numérisé dans le cadre du projet de numérisation"
-                        ]
-                    }
-                ],
+                "condition": [{
+                    "operator": "startwith_text",
+                    "number": "305",
+                    "code": "a",
+                    "string": [
+                        "Document numérisé dans le cadre du projet de numérisation"
+                    ]
+                }],
                 "index": 1010,
                 "type": "allRequired",
-                "values": [
-                    {
+                "values": [{
                         "number": 214,
                         "code": "a",
                         "message": "Si 305$a commence par \"Document numérisé dans le cadre du projet de numérisation\", 214 $aLyon et $cBibliothèque Lyon 1",
@@ -1234,112 +1083,93 @@
                 ]
             },
             {
-                "condition": [
-                    {
-                        "operator": "equals_text",
-                        "number": "328",
-                        "code": "z",
-                        "string": [
-                            "Reproduction de"
-                        ]
-                    }
-                ],
+                "condition": [{
+                    "operator": "equals_text",
+                    "number": "328",
+                    "code": "z",
+                    "string": [
+                        "Reproduction de"
+                    ]
+                }],
                 "index": 1011,
                 "type": "allRequired",
-                "values": [
-                    {
-                        "number": 701,
-                        "code": "4",
-                        "message": "Si 328$zReproduction de, alors il faut une 701$4727",
-                        "regex": "^727$",
-                        "subFieldRequired": true
-                    }
-                ]
+                "values": [{
+                    "number": 701,
+                    "code": "4",
+                    "message": "Si 328$zReproduction de, alors il faut une 701$4727",
+                    "regex": "^727$",
+                    "subFieldRequired": true
+                }]
             },
             {
-                "condition": [
-                    {
-                        "operator": "not_equals_text",
-                        "number": "328",
-                        "code": "z",
-                        "string": [
-                            "Reproduction de"
-                        ]
-                    }
-                ],
+                "condition": [{
+                    "operator": "not_equals_text",
+                    "number": "328",
+                    "code": "z",
+                    "string": [
+                        "Reproduction de"
+                    ]
+                }],
                 "index": 1012,
                 "type": "allRequired",
-                "values": [
-                    {
-                        "number": 701,
-                        "code": "4",
-                        "message": "Si 328$z n'est pas \"Reproduction de\", alors 701$4727 ne doit pas être présente",
-                        "regex": "^(?:(?!727).)*",
-                        "subFieldRequired": false
-                    }
-                ]
+                "values": [{
+                    "number": 701,
+                    "code": "4",
+                    "message": "Si 328$z n'est pas \"Reproduction de\", alors 701$4727 ne doit pas être présente",
+                    "regex": "^(?:(?!727).)*",
+                    "subFieldRequired": false
+                }]
             },
             {
-                "condition": [
-                    {
-                        "operator": "equals_text",
-                        "number": "328",
-                        "code": "z",
-                        "string": [
-                            "Reproduction de"
-                        ]
-                    }
-                ],
+                "condition": [{
+                    "operator": "equals_text",
+                    "number": "328",
+                    "code": "z",
+                    "string": [
+                        "Reproduction de"
+                    ]
+                }],
                 "index": 1013,
                 "type": "allRequired",
-                "values": [
-                    {
-                        "number": 711,
-                        "code": "4",
-                        "message": "Si 328$zReproduction de, alors il faut une 711$4295",
-                        "regex": "^295$",
-                        "subFieldRequired": true
-                    }
-                ]
+                "values": [{
+                    "number": 711,
+                    "code": "4",
+                    "message": "Si 328$zReproduction de, alors il faut une 711$4295",
+                    "regex": "^295$",
+                    "subFieldRequired": true
+                }]
             },
             {
-                "condition": [
-                    {
-                        "operator": "not_equals_text",
-                        "number": "328",
-                        "code": "z",
-                        "string": [
-                            "Reproduction de"
-                        ]
-                    }
-                ],
+                "condition": [{
+                    "operator": "not_equals_text",
+                    "number": "328",
+                    "code": "z",
+                    "string": [
+                        "Reproduction de"
+                    ]
+                }],
                 "index": 1014,
                 "type": "allRequired",
-                "values": [
-                    {
-                        "number": 711,
-                        "code": "4",
-                        "message": "Si 328$z n'est pas \"Reproduction de\", alors 711$4295 ne doit pas être présente",
-                        "regex": "^(?:(?!295).)*",
-                        "subFieldRequired": false
-                    }
-                ]
+                "values": [{
+                    "number": 711,
+                    "code": "4",
+                    "message": "Si 328$z n'est pas \"Reproduction de\", alors 711$4295 ne doit pas être présente",
+                    "regex": "^(?:(?!295).)*",
+                    "subFieldRequired": false
+                }]
             },
             {
-                "condition": [
-                    {
-                        "operator": "equals_text",
-                        "number": "328",
-                        "code": "z",
-                        "string": [
-                            "Reproduction de"
-                        ]
-                    }
-                ],
+                "condition": [{
+                    "operator": "equals_text",
+                    "number": "328",
+                    "code": "z",
+                    "string": [
+                        "Reproduction de"
+                    ]
+                }],
                 "index": 1015,
                 "type": "allRequired",
-                "values": [
-                    {
+                "values": [{
                         "number": 608,
                         "code": "3",
                         "message": "Si 328$zReproduction de, alors il faut une 608 $3027253139 $aThèses et écrits académiques",
@@ -1356,8 +1186,7 @@
                 ]
             },
             {
-                "condition": [
-                    {
+                "condition": [{
                         "operator": "startwith_text",
                         "number": "008",
                         "code": "",
@@ -1377,19 +1206,16 @@
                 },
                 "index": 1016,
                 "type": "allRequired",
-                "values": [
-                    {
-                        "number": "008",
-                        "code": "",
-                        "message": "Si 008 commence par Oa et 451 présente, alors vérifier que notice 451$0 contient une 008 qui commence par Oa",
-                        "regex": "^(Oa).*",
-                        "subFieldRequired": true
-                    }
-                ]
+                "values": [{
+                    "number": "008",
+                    "code": "",
+                    "message": "Si 008 commence par Oa et 451 présente, alors vérifier que notice 451$0 contient une 008 qui commence par Oa",
+                    "regex": "^(Oa).*",
+                    "subFieldRequired": true
+                }]
             },
             {
-                "condition": [
-                    {
+                "condition": [{
                         "operator": "startwith_text",
                         "number": "008",
                         "code": "",
@@ -1409,19 +1235,16 @@
                 },
                 "index": 1017,
                 "type": "allRequired",
-                "values": [
-                    {
-                        "number": "008",
-                        "code": "",
-                        "message": "Si 008 commence par Aa et 451 présente, alors vérifier que notice 451$0 contient une 008 qui commence par Aa",
-                        "regex": "^(Aa).*",
-                        "subFieldRequired": true
-                    }
-                ]
+                "values": [{
+                    "number": "008",
+                    "code": "",
+                    "message": "Si 008 commence par Aa et 451 présente, alors vérifier que notice 451$0 contient une 008 qui commence par Aa",
+                    "regex": "^(Aa).*",
+                    "subFieldRequired": true
+                }]
             },
             {
-                "condition": [
-                    {
+                "condition": [{
                         "operator": "startwith_text",
                         "number": "008",
                         "code": "",
@@ -1441,20 +1264,17 @@
                 },
                 "index": 1018,
                 "type": "allRequired",
-                "values": [
-                    {
-                        "number": "008",
-                        "code": "",
-                        "message": "Si 008 commence par Oa et 452 présente, alors vérifier que notice 452$0 contient une 008 qui commence par Aa",
-                        "regex": "^(Aa).*",
-                        "subFieldRequired": true
-                    }
-                ],
+                "values": [{
+                    "number": "008",
+                    "code": "",
+                    "message": "Si 008 commence par Oa et 452 présente, alors vérifier que notice 452$0 contient une 008 qui commence par Aa",
+                    "regex": "^(Aa).*",
+                    "subFieldRequired": true
+                }],
                 "message": "Si 008 commence par Oa et 452 présente, alors vérifier que notice 452$0 contient une 008 qui commence par Aa"
             },
             {
-                "condition": [
-                    {
+                "condition": [{
                         "operator": "startwith_text",
                         "number": "008",
                         "code": "",
@@ -1474,43 +1294,36 @@
                 },
                 "index": 1019,
                 "type": "allRequired",
-                "values": [
-                    {
-                        "number": "008",
-                        "code": "",
-                        "message": "Si 008 commence par Aa et 452 présente, alors vérifier que notice 452$0 contient une 008 qui commence par Oa",
-                        "regex": "^(Oa).*",
-                        "subFieldRequired": true
-                    }
-                ]
+                "values": [{
+                    "number": "008",
+                    "code": "",
+                    "message": "Si 008 commence par Aa et 452 présente, alors vérifier que notice 452$0 contient une 008 qui commence par Oa",
+                    "regex": "^(Oa).*",
+                    "subFieldRequired": true
+                }]
             },
             {
-                "condition": [
-                    {
-                        "operator": "presente",
-                        "number": "455",
-                        "code": ""
-                    }
-                ],
+                "condition": [{
+                    "operator": "presente",
+                    "number": "455",
+                    "code": ""
+                }],
                 "reciproque": {
                     "number": "455",
                     "code": "0"
                 },
                 "index": 1020,
                 "type": "allRequired",
-                "values": [
-                    {
-                        "number": "105",
-                        "code": "a",
-                        "message": "Si 455, alors vérifier que la notice en 455$0 contient 105$a Pos. 4-7= m",
-                        "regex": "^(.{3}m|.{4}m|.{5}m|.{6}m).*$",
-                        "subFieldRequired": true
-                    }
-                ]
+                "values": [{
+                    "number": "105",
+                    "code": "a",
+                    "message": "Si 455, alors vérifier que la notice en 455$0 contient 105$a Pos. 4-7= m",
+                    "regex": "^(.{3}m|.{4}m|.{5}m|.{6}m).*$",
+                    "subFieldRequired": true
+                }]
             },
             {
-                "condition": [
-                    {
+                "condition": [{
                         "operator": "presente",
                         "number": "856",
                         "code": "5"
@@ -1526,19 +1339,16 @@
                 ],
                 "index": 1021,
                 "type": "allRequired",
-                "values": [
-                    {
-                        "number": "856",
-                        "code": "z",
-                        "message": "856$zAccès au texte intégral sauf si 856$5=692669902, alors $zAccès réservé aux membres de Lyon 1 après authentification",
-                        "regex": "^Accès réservé aux membres de Lyon 1 après authentification$",
-                        "subFieldRequired": true
-                    }
-                ]
+                "values": [{
+                    "number": "856",
+                    "code": "z",
+                    "message": "856$zAccès au texte intégral sauf si 856$5=692669902, alors $zAccès réservé aux membres de Lyon 1 après authentification",
+                    "regex": "^Accès réservé aux membres de Lyon 1 après authentification$",
+                    "subFieldRequired": true
+                }]
             },
             {
-                "condition": [
-                    {
+                "condition": [{
                         "operator": "presente",
                         "number": "856",
                         "code": "5"
@@ -1554,19 +1364,16 @@
                 ],
                 "index": 1021,
                 "type": "allRequired",
-                "values": [
-                    {
-                        "number": "856",
-                        "code": "z",
-                        "message": "856$zAccès au texte intégral sauf si 856$5=692669902, alors $zAccès réservé aux membres de Lyon 1 après authentification",
-                        "regex": "^Accès au texte intégral$",
-                        "subFieldRequired": true
-                    }
-                ]
+                "values": [{
+                    "number": "856",
+                    "code": "z",
+                    "message": "856$zAccès au texte intégral sauf si 856$5=692669902, alors $zAccès réservé aux membres de Lyon 1 après authentification",
+                    "regex": "^Accès au texte intégral$",
+                    "subFieldRequired": true
+                }]
             },
             {
-                "condition": [
-                    {
+                "condition": [{
                         "operator": "presente",
                         "number": "856",
                         "code": "5"
@@ -1582,57 +1389,48 @@
                 ],
                 "index": 1022,
                 "type": "allRequired",
-                "values": [
-                    {
-                        "number": "310",
-                        "ind1": "",
-                        "ind2": "",
-                        "code": "a",
-                        "message": "Si 856$5=692669902, alors doit être présente 310 ##$aL'accès à cette ressource est réservé aux membres de Lyon 1 après authentification",
-                        "regex": "^L'accès à cette ressource est réservé aux membres de Lyon 1 après authentification$",
-                        "subFieldRequired": true
-                    }
-                ]
+                "values": [{
+                    "number": "310",
+                    "ind1": "",
+                    "ind2": "",
+                    "code": "a",
+                    "message": "Si 856$5=692669902, alors doit être présente 310 ##$aL'accès à cette ressource est réservé aux membres de Lyon 1 après authentification",
+                    "regex": "^L'accès à cette ressource est réservé aux membres de Lyon 1 après authentification$",
+                    "subFieldRequired": true
+                }]
             },
             {
-                "condition": [
-                    {
-                        "operator": "presente",
-                        "number": "456",
-                        "code": ""
-                    }
-                ],
+                "condition": [{
+                    "operator": "presente",
+                    "number": "456",
+                    "code": ""
+                }],
                 "reciproque": {
                     "number": 456,
                     "code": "0"
                 },
                 "index": 1023,
                 "type": "allRequired",
-                "values": [
-                    {
-                        "number": "105",
-                        "code": "a",
-                        "message": "Si 456, alors vérifier que la notice en 456$0 contient 105$a Pos. 4-7= v",
-                        "regex": "^(.{3}v|.{4}v|.{5}v|.{6}v).*$",
-                        "subFieldRequired": true
-                    }
-                ]
+                "values": [{
+                    "number": "105",
+                    "code": "a",
+                    "message": "Si 456, alors vérifier que la notice en 456$0 contient 105$a Pos. 4-7= v",
+                    "regex": "^(.{3}v|.{4}v|.{5}v|.{6}v).*$",
+                    "subFieldRequired": true
+                }]
             },
             {
-                "condition": [
-                    {
-                        "operator": "not_equals_text",
-                        "number": "328",
-                        "code": "z",
-                        "string": [
-                            "Reproduction de"
-                        ]
-                    }
-                ],
+                "condition": [{
+                    "operator": "not_equals_text",
+                    "number": "328",
+                    "code": "z",
+                    "string": [
+                        "Reproduction de"
+                    ]
+                }],
                 "index": 1024,
                 "type": "allRequired",
-                "values": [
-                    {
+                "values": [{
                         "number": 608,
                         "code": "3",
                         "message": "Si 328$z n'est pas \"Reproduction de\", alors 608 $3027253139Thèses et écrits académiques ne doit pas être présente",
@@ -1649,248 +1447,206 @@
                 ]
             },
             {
-                "condition": [
-                    {
-                        "operator": "presente",
-                        "number": "600",
-                        "code": ""
-                    }
-                ],
+                "condition": [{
+                    "operator": "presente",
+                    "number": "600",
+                    "code": ""
+                }],
                 "index": 1078,
                 "type": "allRequired",
-                "values": [
-                    {
-                        "number": 600,
-                        "code": "2",
-                        "message": "Si 600 $2rameau doit être présent",
-                        "regex": "^rameau$",
-                        "subFieldRequired": true
-                    }
-                ]
+                "values": [{
+                    "number": 600,
+                    "code": "2",
+                    "message": "Si 600 $2rameau doit être présent",
+                    "regex": "^rameau$",
+                    "subFieldRequired": true
+                }]
             },
             {
-                "condition": [
-                    {
-                        "operator": "presente",
-                        "number": "601",
-                        "code": ""
-                    }
-                ],
+                "condition": [{
+                    "operator": "presente",
+                    "number": "601",
+                    "code": ""
+                }],
                 "index": 1079,
                 "type": "allRequired",
-                "values": [
-                    {
-                        "number": 601,
-                        "code": "2",
-                        "message": "Si 601 $2rameau doit être présent",
-                        "regex": "^rameau$",
-                        "subFieldRequired": true
-                    }
-                ]
+                "values": [{
+                    "number": 601,
+                    "code": "2",
+                    "message": "Si 601 $2rameau doit être présent",
+                    "regex": "^rameau$",
+                    "subFieldRequired": true
+                }]
             },
             {
-                "condition": [
-                    {
-                        "operator": "presente",
-                        "number": "602",
-                        "code": ""
-                    }
-                ],
+                "condition": [{
+                    "operator": "presente",
+                    "number": "602",
+                    "code": ""
+                }],
                 "index": 1080,
                 "type": "allRequired",
-                "values": [
-                    {
-                        "number": 602,
-                        "code": "2",
-                        "message": "Si 602 $2rameau doit être présent",
-                        "regex": "^rameau$",
-                        "subFieldRequired": true
-                    }
-                ]
+                "values": [{
+                    "number": 602,
+                    "code": "2",
+                    "message": "Si 602 $2rameau doit être présent",
+                    "regex": "^rameau$",
+                    "subFieldRequired": true
+                }]
             },
             {
-                "condition": [
-                    {
-                        "operator": "presente",
-                        "number": "604",
-                        "code": ""
-                    }
-                ],
+                "condition": [{
+                    "operator": "presente",
+                    "number": "604",
+                    "code": ""
+                }],
                 "index": 1081,
                 "type": "allRequired",
-                "values": [
-                    {
-                        "number": 604,
-                        "code": "2",
-                        "message": "Si 604 $2rameau doit être présent",
-                        "regex": "^rameau$",
-                        "subFieldRequired": true
-                    }
-                ]
+                "values": [{
+                    "number": 604,
+                    "code": "2",
+                    "message": "Si 604 $2rameau doit être présent",
+                    "regex": "^rameau$",
+                    "subFieldRequired": true
+                }]
             },
             {
-                "condition": [
-                    {
-                        "operator": "presente",
-                        "number": "605",
-                        "code": ""
-                    }
-                ],
+                "condition": [{
+                    "operator": "presente",
+                    "number": "605",
+                    "code": ""
+                }],
                 "index": 1082,
                 "type": "allRequired",
-                "values": [
-                    {
-                        "number": 605,
-                        "code": "2",
-                        "message": "Si 605 $2rameau doit être présent",
-                        "regex": "^rameau$",
-                        "subFieldRequired": true
-                    }
-                ]
+                "values": [{
+                    "number": 605,
+                    "code": "2",
+                    "message": "Si 605 $2rameau doit être présent",
+                    "regex": "^rameau$",
+                    "subFieldRequired": true
+                }]
             },
             {
-                "condition": [
-                    {
-                        "operator": "presente",
-                        "number": "607",
-                        "code": ""
-                    }
-                ],
+                "condition": [{
+                    "operator": "presente",
+                    "number": "607",
+                    "code": ""
+                }],
                 "index": 1083,
                 "type": "allRequired",
-                "values": [
-                    {
-                        "number": 607,
-                        "code": "2",
-                        "message": "Si 607 $2rameau doit être présent",
-                        "regex": "^rameau$",
-                        "subFieldRequired": true
-                    }
-                ]
+                "values": [{
+                    "number": 607,
+                    "code": "2",
+                    "message": "Si 607 $2rameau doit être présent",
+                    "regex": "^rameau$",
+                    "subFieldRequired": true
+                }]
             }
         ],
-        "ConditionStructurel": [
-            {
-                "condition": [
-                    {
-                        "operator": "contains_text",
-                        "number": "105",
-                        "code": "a",
-                        "ind1": "",
-                        "ind2": "",
-                        "pos": [
-                            4,
-                            7
-                        ],
-                        "string": [
-                            "v",
-                            "7"
-                        ]
-                    }
-                ],
-                "value": [
-                    {
-                        "number": "017",
-                        "code": "",
-                        "present": true
-                    }
-                ],
+        "ConditionStructurel": [{
+                "condition": [{
+                    "operator": "contains_text",
+                    "number": "105",
+                    "code": "a",
+                    "ind1": "",
+                    "ind2": "",
+                    "pos": [
+                        4,
+                        7
+                    ],
+                    "string": [
+                        "v",
+                        "7"
+                    ]
+                }],
+                "value": [{
+                    "number": "017",
+                    "code": "",
+                    "present": true
+                }],
                 "type": "allRequired",
                 "index": 3014,
                 "number": "105",
                 "message": "Zone 328 obligatoire pour une thèse ou mémoire (soutenance)"
             },
             {
-                "condition": [
-                    {
-                        "operator": "contains_text",
-                        "number": "105",
-                        "code": "a",
-                        "ind1": "",
-                        "ind2": "",
-                        "pos": [
-                            4,
-                            7
-                        ],
-                        "string": [
-                            "m",
-                            "7"
-                        ]
-                    }
-                ],
-                "value": [
-                    {
-                        "number": "328",
-                        "code": "",
-                        "present": true
-                    }
-                ],
+                "condition": [{
+                    "operator": "contains_text",
+                    "number": "105",
+                    "code": "a",
+                    "ind1": "",
+                    "ind2": "",
+                    "pos": [
+                        4,
+                        7
+                    ],
+                    "string": [
+                        "m",
+                        "7"
+                    ]
+                }],
+                "value": [{
+                    "number": "328",
+                    "code": "",
+                    "present": true
+                }],
                 "type": "allRequired",
                 "index": 3013,
                 "number": "105",
                 "message": "Zone 328 obligatoire pour une thèse ou mémoire (soutenance)"
             },
             {
-                "condition": [
-                    {
-                        "operator": "contains_text",
-                        "number": "105",
-                        "code": "a",
-                        "ind1": "",
-                        "ind2": "",
-                        "pos": [
-                            4,
-                            7
-                        ],
-                        "string": [
-                            "m"
-                        ]
-                    }
-                ],
-                "value": [
-                    {
-                        "number": "029",
-                        "code": "",
-                        "present": true
-                    }
-                ],
+                "condition": [{
+                    "operator": "contains_text",
+                    "number": "105",
+                    "code": "a",
+                    "ind1": "",
+                    "ind2": "",
+                    "pos": [
+                        4,
+                        7
+                    ],
+                    "string": [
+                        "m"
+                    ]
+                }],
+                "value": [{
+                    "number": "029",
+                    "code": "",
+                    "present": true
+                }],
                 "type": "allRequired",
                 "index": 3012,
                 "number": "105",
                 "message": "Zone 029 obligatoire pour une thèse (soutenance)"
             },
             {
-                "condition": [
-                    {
-                        "operator": "contains_text",
-                        "number": "105",
-                        "code": "a",
-                        "ind1": "",
-                        "ind2": "",
-                        "pos": [
-                            4,
-                            7
-                        ],
-                        "string": [
-                            "v"
-                        ]
-                    }
-                ],
-                "value": [
-                    {
-                        "number": "456",
-                        "code": "",
-                        "present": false
-                    }
-                ],
+                "condition": [{
+                    "operator": "contains_text",
+                    "number": "105",
+                    "code": "a",
+                    "ind1": "",
+                    "ind2": "",
+                    "pos": [
+                        4,
+                        7
+                    ],
+                    "string": [
+                        "v"
+                    ]
+                }],
+                "value": [{
+                    "number": "456",
+                    "code": "",
+                    "present": false
+                }],
                 "type": "allRequired",
                 "index": 3010,
                 "number": "856",
                 "message": "Zone 456 incompatible avec le type de thèse (reproduction)"
             },
             {
-                "condition": [
-                    {
+                "condition": [{
                         "operator": "startwith_text",
                         "number": "008",
                         "code": "",
@@ -1906,59 +1662,50 @@
                         "code": ""
                     }
                 ],
-                "value": [
-                    {
-                        "number": "856",
-                        "code": "",
-                        "present": true
-                    }
-                ],
+                "value": [{
+                    "number": "856",
+                    "code": "",
+                    "present": true
+                }],
                 "type": "allRequired",
                 "index": 3003,
                 "number": "856",
                 "message": "Zone 856 : une ressource électronique doit contenir l'accès"
             },
             {
-                "condition": [
-                    {
-                        "operator": "contains_text",
-                        "number": "105",
-                        "code": "a",
-                        "ind1": "",
-                        "ind2": "",
-                        "pos": [
-                            4,
-                            7
-                        ],
-                        "string": [
-                            "m"
-                        ]
-                    }
-                ],
-                "value": [
-                    {
-                        "number": "328",
-                        "code": "z",
-                        "present": false
-                    }
-                ],
+                "condition": [{
+                    "operator": "contains_text",
+                    "number": "105",
+                    "code": "a",
+                    "ind1": "",
+                    "ind2": "",
+                    "pos": [
+                        4,
+                        7
+                    ],
+                    "string": [
+                        "m"
+                    ]
+                }],
+                "value": [{
+                    "number": "328",
+                    "code": "z",
+                    "present": false
+                }],
                 "type": "allRequired",
                 "index": 3001,
                 "number": "328",
                 "message": "Zone 328$z incohérente avec le statut de la thèse"
             },
             {
-                "condition": [
-                    {
-                        "operator": "presente",
-                        "number": "101",
-                        "code": "",
-                        "ind1": "1",
-                        "ind2": ""
-                    }
-                ],
-                "value": [
-                    {
+                "condition": [{
+                    "operator": "presente",
+                    "number": "101",
+                    "code": "",
+                    "ind1": "1",
+                    "ind2": ""
+                }],
+                "value": [{
                         "number": "101",
                         "code": "a",
                         "present": true
@@ -1975,39 +1722,32 @@
                 "message": "Si 101 ind1=1 il faut au moins un $a et $c"
             },
             {
-                "condition": [
-                    {
-                        "operator": "presente",
-                        "number": "101",
-                        "code": "",
-                        "ind1": "0",
-                        "ind2": ""
-                    }
-                ],
-                "value": [
-                    {
-                        "number": "101",
-                        "code": "c",
-                        "present": false
-                    }
-                ],
+                "condition": [{
+                    "operator": "presente",
+                    "number": "101",
+                    "code": "",
+                    "ind1": "0",
+                    "ind2": ""
+                }],
+                "value": [{
+                    "number": "101",
+                    "code": "c",
+                    "present": false
+                }],
                 "type": "allRequired",
                 "index": 1026,
                 "number": "101",
                 "message": "Si 101 ind1=0 il ne faut pas $c"
             },
             {
-                "condition": [
-                    {
-                        "operator": "presente",
-                        "number": "101",
-                        "code": "",
-                        "ind1": "2",
-                        "ind2": ""
-                    }
-                ],
-                "value": [
-                    {
+                "condition": [{
+                    "operator": "presente",
+                    "number": "101",
+                    "code": "",
+                    "ind1": "2",
+                    "ind2": ""
+                }],
+                "value": [{
                         "number": "101",
                         "code": "a",
                         "present": true
@@ -2029,74 +1769,61 @@
                 "message": "Si 101 ind1=2 il faut au moins une $a, $b et $c"
             },
             {
-                "condition": [
-                    {
-                        "operator": "presente",
-                        "number": "101",
-                        "code": "",
-                        "ind1": "1",
-                        "ind2": ""
-                    }
-                ],
-                "value": [
-                    {
-                        "number": "454",
-                        "code": "",
-                        "present": true
-                    }
-                ],
+                "condition": [{
+                    "operator": "presente",
+                    "number": "101",
+                    "code": "",
+                    "ind1": "1",
+                    "ind2": ""
+                }],
+                "value": [{
+                    "number": "454",
+                    "code": "",
+                    "present": true
+                }],
                 "type": "allRequired",
                 "index": 1028,
                 "number": "101",
                 "message": "Si 101 ind1=1 il faut une 454"
             },
             {
-                "condition": [
-                    {
-                        "operator": "presente",
-                        "number": "101",
-                        "code": "",
-                        "ind1": "2",
-                        "ind2": ""
-                    }
-                ],
-                "value": [
-                    {
-                        "number": "454",
-                        "code": "",
-                        "present": true
-                    }
-                ],
+                "condition": [{
+                    "operator": "presente",
+                    "number": "101",
+                    "code": "",
+                    "ind1": "2",
+                    "ind2": ""
+                }],
+                "value": [{
+                    "number": "454",
+                    "code": "",
+                    "present": true
+                }],
                 "type": "allRequired",
                 "index": 1029,
                 "number": "101",
                 "message": "Si 101 ind1=2 il faut une 454"
             },
             {
-                "condition": [
-                    {
-                        "operator": "presente",
-                        "number": "225",
-                        "code": "a",
-                        "ind1": "0",
-                        "ind2": ""
-                    }
-                ],
-                "value": [
-                    {
-                        "number": "410",
-                        "code": "0",
-                        "present": true
-                    }
-                ],
+                "condition": [{
+                    "operator": "presente",
+                    "number": "225",
+                    "code": "a",
+                    "ind1": "0",
+                    "ind2": ""
+                }],
+                "value": [{
+                    "number": "410",
+                    "code": "0",
+                    "present": true
+                }],
                 "type": "allRequired",
                 "index": 1030,
                 "number": "225",
                 "message": "Si 225 ind1=0 $a alors 410$0 doit être présent"
             },
             {
-                "condition": [
-                    {
+                "condition": [{
                         "operator": "presente",
                         "number": "105",
                         "code": "a"
@@ -2114,21 +1841,18 @@
                         ]
                     }
                 ],
-                "value": [
-                    {
-                        "number": "215",
-                        "code": "c",
-                        "present": false
-                    }
-                ],
+                "value": [{
+                    "number": "215",
+                    "code": "c",
+                    "present": false
+                }],
                 "type": "allRequired",
                 "index": 1031,
                 "number": "105",
                 "message": "Si  105 $a Pos. 0-3 = 'y' alors 215$c ne doit pas être présent"
             },
             {
-                "condition": [
-                    {
+                "condition": [{
                         "operator": "presente",
                         "number": "105",
                         "code": "a"
@@ -2146,21 +1870,18 @@
                         ]
                     }
                 ],
-                "value": [
-                    {
-                        "number": "320",
-                        "code": "",
-                        "present": true
-                    }
-                ],
+                "value": [{
+                    "number": "320",
+                    "code": "",
+                    "present": true
+                }],
                 "type": "allRequired",
                 "index": 1032,
                 "number": "105",
                 "message": "Si 105 $a Pos. 4-7 =a alors il faut une 320"
             },
             {
-                "condition": [
-                    {
+                "condition": [{
                         "operator": "presente",
                         "number": "105",
                         "code": "a"
@@ -2186,54 +1907,45 @@
                         ]
                     }
                 ],
-                "value": [
-                    {
-                        "number": "608",
-                        "code": "",
-                        "present": true
-                    }
-                ],
+                "value": [{
+                    "number": "608",
+                    "code": "",
+                    "present": true
+                }],
                 "type": "allRequired",
                 "index": 1033,
                 "number": "105",
                 "message": "Si 105 $a Pos. 4-7= t, m, l, q, j, f, e, b ou 7 il faut la présence d'une 608"
             },
             {
-                "condition": [
-                    {
-                        "operator": "startwith_text",
-                        "number": "008",
-                        "code": "",
-                        "string": [
-                            "Aa"
-                        ]
-                    }
-                ],
-                "value": [
-                    {
-                        "number": "106",
-                        "code": "",
-                        "present": true
-                    }
-                ],
+                "condition": [{
+                    "operator": "startwith_text",
+                    "number": "008",
+                    "code": "",
+                    "string": [
+                        "Aa"
+                    ]
+                }],
+                "value": [{
+                    "number": "106",
+                    "code": "",
+                    "present": true
+                }],
                 "type": "allRequired",
                 "index": 1034,
                 "number": "008",
                 "message": "Si 008 commence par Aa, présence obligatoire d'une zone 106"
             },
             {
-                "condition": [
-                    {
-                        "operator": "startwith_text",
-                        "number": "008",
-                        "code": "",
-                        "string": [
-                            "Aa"
-                        ]
-                    }
-                ],
-                "value": [
-                    {
+                "condition": [{
+                    "operator": "startwith_text",
+                    "number": "008",
+                    "code": "",
+                    "string": [
+                        "Aa"
+                    ]
+                }],
+                "value": [{
                         "number": "215",
                         "code": "a",
                         "present": true
@@ -2250,387 +1962,322 @@
                 "message": "Si 008 commence par Aa, 215 $a et $d obligatoires"
             },
             {
-                "condition": [
-                    {
-                        "operator": "presente",
-                        "number": "225",
-                        "code": "",
-                        "ind1": "0",
-                        "ind2": ""
-                    }
-                ],
-                "value": [
-                    {
-                        "number": "410",
-                        "code": "",
-                        "present": true
-                    }
-                ],
+                "condition": [{
+                    "operator": "presente",
+                    "number": "225",
+                    "code": "",
+                    "ind1": "0",
+                    "ind2": ""
+                }],
+                "value": [{
+                    "number": "410",
+                    "code": "",
+                    "present": true
+                }],
                 "type": "allRequired",
                 "index": 1036,
                 "number": "225",
                 "message": "Si 225 ind1=0 il faut au moins une 410"
             },
             {
-                "condition": [
-                    {
-                        "operator": "presente",
-                        "number": "225",
-                        "code": "a",
-                        "ind1": "2",
-                        "ind2": ""
-                    }
-                ],
-                "value": [
-                    {
-                        "number": "410",
-                        "code": "0",
-                        "present": true
-                    }
-                ],
+                "condition": [{
+                    "operator": "presente",
+                    "number": "225",
+                    "code": "a",
+                    "ind1": "2",
+                    "ind2": ""
+                }],
+                "value": [{
+                    "number": "410",
+                    "code": "0",
+                    "present": true
+                }],
                 "type": "allRequired",
                 "index": 1037,
                 "number": "225",
                 "message": "Si 225 ind1=2 $a alors 410$0 doit être présent"
             },
             {
-                "condition": [
-                    {
-                        "operator": "presente",
-                        "number": "225",
-                        "code": "a",
-                        "ind1": "1",
-                        "ind2": ""
-                    }
-                ],
-                "value": [
-                    {
-                        "number": "461",
-                        "code": "",
-                        "present": true
-                    }
-                ],
+                "condition": [{
+                    "operator": "presente",
+                    "number": "225",
+                    "code": "a",
+                    "ind1": "1",
+                    "ind2": ""
+                }],
+                "value": [{
+                    "number": "461",
+                    "code": "",
+                    "present": true
+                }],
                 "type": "allRequired",
                 "index": 1038,
                 "number": "225",
                 "message": "Si 225 ind1=1 $a alors 461 doit être présent"
             },
             {
-                "condition": [
-                    {
-                        "operator": "presente",
-                        "number": "225",
-                        "code": "",
-                        "ind1": "2",
-                        "ind2": ""
-                    }
-                ],
-                "value": [
-                    {
-                        "number": "410",
-                        "code": "",
-                        "present": true
-                    }
-                ],
+                "condition": [{
+                    "operator": "presente",
+                    "number": "225",
+                    "code": "",
+                    "ind1": "2",
+                    "ind2": ""
+                }],
+                "value": [{
+                    "number": "410",
+                    "code": "",
+                    "present": true
+                }],
                 "type": "allRequired",
                 "index": 1039,
                 "number": "225",
                 "message": "Si 225 ind1=2 il faut au moins une 410"
             },
             {
-                "condition": [
-                    {
-                        "operator": "presente",
-                        "number": "101",
-                        "code": "d"
-                    }
-                ],
-                "value": [
-                    {
-                        "number": "330",
-                        "code": "",
-                        "present": true
-                    }
-                ],
+                "condition": [{
+                    "operator": "presente",
+                    "number": "101",
+                    "code": "d"
+                }],
+                "value": [{
+                    "number": "330",
+                    "code": "",
+                    "present": true
+                }],
                 "type": "allRequired",
                 "index": 1040,
                 "number": "101",
                 "message": "Si 101$d, 330 doit être présente"
             },
             {
-                "condition": [
-                    {
-                        "operator": "startwith_text",
-                        "number": "008",
-                        "code": "",
-                        "string": [
-                            "Oa"
-                        ]
-                    }
-                ],
-                "value": [
-                    {
-                        "number": "304",
-                        "code": "",
-                        "present": true
-                    }
-                ],
+                "condition": [{
+                    "operator": "startwith_text",
+                    "number": "008",
+                    "code": "",
+                    "string": [
+                        "Oa"
+                    ]
+                }],
+                "value": [{
+                    "number": "304",
+                    "code": "",
+                    "present": true
+                }],
                 "type": "allRequired",
                 "index": 1041,
                 "number": "008",
                 "message": "Si 008 commence par Oa,  304 doit être présente"
             },
             {
-                "condition": [
-                    {
-                        "operator": "startwith_text",
-                        "number": "008",
-                        "code": "",
-                        "string": [
-                            "Oa"
-                        ]
-                    }
-                ],
-                "value": [
-                    {
-                        "number": "307",
-                        "code": "",
-                        "present": true
-                    }
-                ],
+                "condition": [{
+                    "operator": "startwith_text",
+                    "number": "008",
+                    "code": "",
+                    "string": [
+                        "Oa"
+                    ]
+                }],
+                "value": [{
+                    "number": "307",
+                    "code": "",
+                    "present": true
+                }],
                 "type": "allRequired",
                 "index": 1042,
                 "number": "008",
                 "message": "Si 008 commence par Oa, 307 doit être présente"
             },
             {
-                "condition": [
-                    {
-                        "operator": "startwith_text",
-                        "number": "008",
-                        "code": "",
-                        "string": [
-                            "Oa"
-                        ]
-                    }
-                ],
-                "value": [
-                    {
-                        "number": "337",
-                        "code": "",
-                        "present": true
-                    }
-                ],
+                "condition": [{
+                    "operator": "startwith_text",
+                    "number": "008",
+                    "code": "",
+                    "string": [
+                        "Oa"
+                    ]
+                }],
+                "value": [{
+                    "number": "337",
+                    "code": "",
+                    "present": true
+                }],
                 "type": "allRequired",
                 "index": 1043,
                 "number": "008",
                 "message": "Si 008 commence par Oa, 337 doit être présente"
             },
             {
-                "condition": [
-                    {
-                        "operator": "startwith_text",
-                        "number": "008",
-                        "code": "",
-                        "string": [
-                            "Oa"
-                        ]
-                    }
-                ],
-                "value": [
-                    {
-                        "number": "230",
-                        "code": "",
-                        "present": true
-                    }
-                ],
+                "condition": [{
+                    "operator": "startwith_text",
+                    "number": "008",
+                    "code": "",
+                    "string": [
+                        "Oa"
+                    ]
+                }],
+                "value": [{
+                    "number": "230",
+                    "code": "",
+                    "present": true
+                }],
                 "type": "allRequired",
                 "index": 1044,
                 "number": "008",
                 "message": "Si 008 commence par Oa, 230 doit être présente"
             },
             {
-                "condition": [
-                    {
-                        "operator": "startwith_text",
-                        "number": "325",
-                        "code": "a",
-                        "string": [
-                            "Document numérisé dans le cadre d'un projet de numérisation du SCD de Lyon 1 :"
-                        ]
-                    }
-                ],
-                "value": [
-                    {
-                        "number": "456",
-                        "code": "",
-                        "present": true
-                    }
-                ],
+                "condition": [{
+                    "operator": "startwith_text",
+                    "number": "325",
+                    "code": "a",
+                    "string": [
+                        "Document numérisé dans le cadre d'un projet de numérisation du SCD de Lyon 1 :"
+                    ]
+                }],
+                "value": [{
+                    "number": "456",
+                    "code": "",
+                    "present": true
+                }],
                 "type": "allRequired",
                 "index": 1045,
                 "number": "325",
                 "message": "Si 325$a commence par \"Document numérisé dans le cadre d'un projet de numérisation du SCD de Lyon 1 :\", 456 doit être présente"
             },
             {
-                "condition": [
-                    {
-                        "operator": "startwith_text",
-                        "number": "305",
-                        "code": "a",
-                        "string": [
-                            "Document numérisé dans le cadre du projet de numérisation"
-                        ]
-                    }
-                ],
-                "value": [
-                    {
-                        "number": "324",
-                        "code": "",
-                        "present": true
-                    }
-                ],
+                "condition": [{
+                    "operator": "startwith_text",
+                    "number": "305",
+                    "code": "a",
+                    "string": [
+                        "Document numérisé dans le cadre du projet de numérisation"
+                    ]
+                }],
+                "value": [{
+                    "number": "324",
+                    "code": "",
+                    "present": true
+                }],
                 "type": "allRequired",
                 "index": 1046,
                 "number": "305",
                 "message": "Si 305$a commence par \"Document numérisé dans le cadre du projet de numérisation\", doit contenir une 324"
             },
             {
-                "condition": [
-                    {
-                        "operator": "startwith_text",
-                        "number": "305",
-                        "code": "a",
-                        "string": [
-                            "Document numérisé dans le cadre du projet de numérisation"
-                        ]
-                    }
-                ],
-                "value": [
-                    {
-                        "number": "455",
-                        "code": "",
-                        "present": true
-                    }
-                ],
+                "condition": [{
+                    "operator": "startwith_text",
+                    "number": "305",
+                    "code": "a",
+                    "string": [
+                        "Document numérisé dans le cadre du projet de numérisation"
+                    ]
+                }],
+                "value": [{
+                    "number": "455",
+                    "code": "",
+                    "present": true
+                }],
                 "type": "allRequired",
                 "index": 1047,
                 "number": "305",
                 "message": "Si 305$a commence par \"Document numérisé dans le cadre du projet de numérisation\", doit contenir une 455"
             },
             {
-                "condition": [
-                    {
-                        "operator": "contains_text",
-                        "number": "105",
-                        "code": "a",
-                        "pos": [
-                            4,
-                            7
-                        ],
-                        "string": [
-                            "m"
-                        ]
-                    }
-                ],
-                "value": [
-                    {
-                        "number": "029",
-                        "code": "",
-                        "present": true
-                    }
-                ],
+                "condition": [{
+                    "operator": "contains_text",
+                    "number": "105",
+                    "code": "a",
+                    "pos": [
+                        4,
+                        7
+                    ],
+                    "string": [
+                        "m"
+                    ]
+                }],
+                "value": [{
+                    "number": "029",
+                    "code": "",
+                    "present": true
+                }],
                 "type": "allRequired",
                 "index": 1048,
                 "number": "105",
                 "message": "Si 105 $a Pos. 4-7= \"m\", alors il faut une 029"
             },
             {
-                "condition": [
-                    {
-                        "operator": "contains_text",
-                        "number": "105",
-                        "code": "a",
-                        "pos": [
-                            4,
-                            7
-                        ],
-                        "string": [
-                            "m",
-                            "7"
-                        ]
-                    }
-                ],
-                "value": [
-                    {
-                        "number": "328",
-                        "code": "",
-                        "present": true
-                    }
-                ],
+                "condition": [{
+                    "operator": "contains_text",
+                    "number": "105",
+                    "code": "a",
+                    "pos": [
+                        4,
+                        7
+                    ],
+                    "string": [
+                        "m",
+                        "7"
+                    ]
+                }],
+                "value": [{
+                    "number": "328",
+                    "code": "",
+                    "present": true
+                }],
                 "type": "allRequired",
                 "index": 1049,
                 "number": "105",
                 "message": "Si 105 $a Pos. 4-7= \"m\" ou \"7\", alors il faut une 328"
             },
             {
-                "condition": [
-                    {
-                        "operator": "contains_text",
-                        "number": "105",
-                        "code": "a",
-                        "pos": [
-                            4,
-                            7
-                        ],
-                        "string": [
-                            "v",
-                            "7"
-                        ]
-                    }
-                ],
-                "value": [
-                    {
-                        "number": "017",
-                        "code": "",
-                        "present": true
-                    }
-                ],
+                "condition": [{
+                    "operator": "contains_text",
+                    "number": "105",
+                    "code": "a",
+                    "pos": [
+                        4,
+                        7
+                    ],
+                    "string": [
+                        "v",
+                        "7"
+                    ]
+                }],
+                "value": [{
+                    "number": "017",
+                    "code": "",
+                    "present": true
+                }],
                 "type": "allRequired",
                 "index": 1050,
                 "number": "105",
                 "message": "Si 105 $a Pos. 4-7= \"v\" ou \"7\", alors il faut une 017"
             },
             {
-                "condition": [
-                    {
-                        "operator": "contains_text",
-                        "number": "105",
-                        "code": "a",
-                        "pos": [
-                            4,
-                            7
-                        ],
-                        "string": [
-                            "v"
-                        ]
-                    }
-                ],
-                "value": [
-                    {
-                        "number": "328",
-                        "code": "z",
-                        "present": true
-                    }
-                ],
+                "condition": [{
+                    "operator": "contains_text",
+                    "number": "105",
+                    "code": "a",
+                    "pos": [
+                        4,
+                        7
+                    ],
+                    "string": [
+                        "v"
+                    ]
+                }],
+                "value": [{
+                    "number": "328",
+                    "code": "z",
+                    "present": true
+                }],
                 "type": "allRequired",
                 "index": 1051,
                 "number": "105",
                 "message": "Si 105 $a Pos. 4-7= \"v\", alors il faut une 328$z"
             },
             {
-                "condition": [
-                    {
+                "condition": [{
                         "operator": "startwith_text",
                         "number": "008",
                         "code": "",
@@ -2644,8 +2291,7 @@
                         "code": ""
                     }
                 ],
-                "value": [
-                    {
+                "value": [{
                         "number": "305",
                         "code": "",
                         "present": true
@@ -2662,47 +2308,40 @@
                 "message": "Si 008 commence par Aa et présence d'une 461, alors il doit y avoir une 305 ou 225"
             },
             {
-                "condition": [
-                    {
-                        "operator": "presente",
-                        "number": "451",
-                        "code": ""
-                    }
-                ],
+                "condition": [{
+                    "operator": "presente",
+                    "number": "451",
+                    "code": ""
+                }],
                 "reciproque": {
                     "number": "451",
                     "code": "0"
                 },
-                "value": [
-                    {
+                "value": [{
+                    "number": "451",
+                    "code": "0",
+                    "present": true,
+                    "reciproque": {
                         "number": "451",
-                        "code": "0",
-                        "present": true,
-                        "reciproque": {
-                            "number": "451",
-                            "code": "0"
-                        }
+                        "code": "0"
                     }
-                ],
+                }],
                 "type": "allRequired",
                 "index": 1053,
                 "number": "451",
                 "message": "Si 451, alors vérifier que la notice 451$0 contient une 451 réciproque"
             },
             {
-                "condition": [
-                    {
-                        "operator": "presente",
-                        "number": "452",
-                        "code": ""
-                    }
-                ],
+                "condition": [{
+                    "operator": "presente",
+                    "number": "452",
+                    "code": ""
+                }],
                 "reciproque": {
                     "number": "452",
                     "code": "0"
                 },
-                "value": [
-                    {
+                "value": [{
                         "number": "452",
                         "code": "0",
                         "present": true,
@@ -2723,24 +2362,20 @@
                 "message": "Si 452, alors vérifier que la notice 452$0 contient une 452 réciproque et une 328$z"
             },
             {
-                "condition": [
-                    {
-                        "operator": "presente",
+                "condition": [{
+                    "operator": "presente",
+                    "number": "488",
+                    "code": ""
+                }],
+                "value": [{
+                    "number": "488",
+                    "code": "0",
+                    "present": true,
+                    "reciproque": {
                         "number": "488",
-                        "code": ""
+                        "code": "0"
                     }
-                ],
-                "value": [
-                    {
-                        "number": "488",
-                        "code": "0",
-                        "present": true,
-                        "reciproque": {
-                            "number": "488",
-                            "code": "0"
-                        }
-                    }
-                ],
+                }],
                 "reciproque": {
                     "number": "488",
                     "code": "0"
@@ -2751,24 +2386,20 @@
                 "message": "Si 488, alors vérifier les liens réciproques de la notice en 488$0"
             },
             {
-                "condition": [
-                    {
-                        "operator": "presente",
-                        "number": "455",
-                        "code": ""
+                "condition": [{
+                    "operator": "presente",
+                    "number": "455",
+                    "code": ""
+                }],
+                "value": [{
+                    "number": "455",
+                    "code": "0",
+                    "present": true,
+                    "reciproque": {
+                        "number": "456",
+                        "code": "0"
                     }
-                ],
-                "value": [
-                    {
-                        "number": "455",
-                        "code": "0",
-                        "present": true,
-                        "reciproque": {
-                            "number": "456",
-                            "code": "0"
-                        }
-                    }
-                ],
+                }],
                 "reciproque": {
                     "number": "455",
                     "code": "0"
@@ -2779,24 +2410,20 @@
                 "message": "Si 455, alors vérifier que la notice en 455$0 contient une 456 avec liens réciproques"
             },
             {
-                "condition": [
-                    {
-                        "operator": "presente",
-                        "number": "456",
-                        "code": ""
+                "condition": [{
+                    "operator": "presente",
+                    "number": "456",
+                    "code": ""
+                }],
+                "value": [{
+                    "number": "456",
+                    "code": "0",
+                    "present": true,
+                    "reciproque": {
+                        "number": "455",
+                        "code": "0"
                     }
-                ],
-                "value": [
-                    {
-                        "number": "456",
-                        "code": "0",
-                        "present": true,
-                        "reciproque": {
-                            "number": "455",
-                            "code": "0"
-                        }
-                    }
-                ],
+                }],
                 "reciproque": {
                     "number": "456",
                     "code": "0"
@@ -2807,56 +2434,27 @@
                 "message": "Si 456, alors vérifier que la notice en 456$0 contient une 455 avec liens réciproques"
             },
             {
-                "condition": [
-                    {
-                        "operator": "presente",
+                "condition": [{
+                    "operator": "presente",
+                    "number": "456",
+                    "code": ""
+                }],
+                "value": [{
+                    "number": "456",
+                    "code": "0",
+                    "present": true,
+                    "reciproque": {
                         "number": "455",
-                        "code": ""
+                        "code": "0"
                     }
-                ],
-                "value": [
-                    {
-                        "number": "455",
-                        "code": "0",
-                        "present": true,
-                        "reciproque": {
-                            "number": "456",
-                            "code": "0"
-                        }
-                    }
-                ],
-                "type": "allRequired",
-                "index": 1058,
-                "number": "455",
-                "message": "Si 455, alors vérifier que la notice en 455$0 contient une 456 avec liens réciproques"
-            },
-            {
-                "condition": [
-                    {
-                        "operator": "presente",
-                        "number": "456",
-                        "code": ""
-                    }
-                ],
-                "value": [
-                    {
-                        "number": "456",
-                        "code": "0",
-                        "present": true,
-                        "reciproque": {
-                            "number": "455",
-                            "code": "0"
-                        }
-                    }
-                ],
+                }],
                 "type": "allRequired",
                 "index": 1059,
                 "number": "456",
                 "message": "Si 456, alors vérifier que la notice en 456$0 contient une 455 avec liens réciproques"
             },
             {
-                "condition": [
-                    {
+                "condition": [{
                         "operator": "presente",
                         "number": "328",
                         "code": "z"
@@ -2870,21 +2468,18 @@
                         ]
                     }
                 ],
-                "value": [
-                    {
-                        "number": "029",
-                        "code": "",
-                        "present": true
-                    }
-                ],
+                "value": [{
+                    "number": "029",
+                    "code": "",
+                    "present": true
+                }],
                 "type": "allRequired",
                 "index": 1060,
                 "number": "328",
                 "message": "Si 328$zReproduction de, alors il faut une 029"
             },
             {
-                "condition": [
-                    {
+                "condition": [{
                         "operator": "presente",
                         "number": "328",
                         "code": "z"
@@ -2898,21 +2493,18 @@
                         ]
                     }
                 ],
-                "value": [
-                    {
-                        "number": "029",
-                        "code": "",
-                        "present": false
-                    }
-                ],
+                "value": [{
+                    "number": "029",
+                    "code": "",
+                    "present": false
+                }],
                 "type": "allRequired",
                 "index": 1061,
                 "number": "328",
                 "message": "Si 328$z n'est pas \"Reproduction de\", alors 029 ne doit pas être présente"
             },
             {
-                "condition": [
-                    {
+                "condition": [{
                         "operator": "presente",
                         "number": "328",
                         "code": "z"
@@ -2926,21 +2518,18 @@
                         ]
                     }
                 ],
-                "value": [
-                    {
-                        "number": "455",
-                        "code": "",
-                        "present": true
-                    }
-                ],
+                "value": [{
+                    "number": "455",
+                    "code": "",
+                    "present": true
+                }],
                 "type": "allRequired",
                 "index": 1062,
                 "number": "328",
                 "message": "Si 328$zReproduction de, alors il faut une 455"
             },
             {
-                "condition": [
-                    {
+                "condition": [{
                         "operator": "presente",
                         "number": "328",
                         "code": "z"
@@ -2954,21 +2543,18 @@
                         ]
                     }
                 ],
-                "value": [
-                    {
-                        "number": "455",
-                        "code": "",
-                        "present": true
-                    }
-                ],
+                "value": [{
+                    "number": "455",
+                    "code": "",
+                    "present": true
+                }],
                 "type": "allRequired",
                 "index": 1063,
                 "number": "328",
                 "message": "Si 328$z\"Reproduction de\", 455 doit être présente"
             },
             {
-                "condition": [
-                    {
+                "condition": [{
                         "operator": "presente",
                         "number": "328",
                         "code": "z"
@@ -2982,21 +2568,18 @@
                         ]
                     }
                 ],
-                "value": [
-                    {
-                        "number": "456",
-                        "code": "",
-                        "present": false
-                    }
-                ],
+                "value": [{
+                    "number": "456",
+                    "code": "",
+                    "present": false
+                }],
                 "type": "allRequired",
                 "index": 1064,
                 "number": "328",
                 "message": "Si 328$z\"Reproduction de\" , 456 ne doit pas être présente"
             },
             {
-                "condition": [
-                    {
+                "condition": [{
                         "operator": "presente",
                         "number": "856",
                         "code": "5"
@@ -3010,21 +2593,18 @@
                         ]
                     }
                 ],
-                "value": [
-                    {
-                        "number": "310",
-                        "code": "",
-                        "present": true
-                    }
-                ],
+                "value": [{
+                    "number": "310",
+                    "code": "",
+                    "present": true
+                }],
                 "type": "allRequired",
                 "index": 1065,
                 "number": "856",
                 "message": "Si 856$5=692669902, une 310 doit être présente"
             },
             {
-                "condition": [
-                    {
+                "condition": [{
                         "operator": "startwith_text",
                         "number": "008",
                         "code": "",
@@ -3038,69 +2618,58 @@
                         "code": ""
                     }
                 ],
-                "value": [
-                    {
-                        "number": "856",
-                        "code": "",
-                        "present": true
-                    }
-                ],
+                "value": [{
+                    "number": "856",
+                    "code": "",
+                    "present": true
+                }],
                 "type": "allRequired",
                 "index": 1066,
                 "number": "008",
                 "message": "Si 008 commence par Oa et ne contient pas une 215, une 856 doit être présente"
             },
             {
-                "condition": [
-                    {
-                        "operator": "present",
-                        "number": "455",
-                        "code": ""
-                    }
-                ],
+                "condition": [{
+                    "operator": "present",
+                    "number": "455",
+                    "code": ""
+                }],
                 "reciproque": {
                     "number": "455",
                     "code": "0"
                 },
-                "value": [
-                    {
-                        "number": "328",
-                        "code": "z",
-                        "present": false
-                    }
-                ],
+                "value": [{
+                    "number": "328",
+                    "code": "z",
+                    "present": false
+                }],
                 "type": "allRequired",
                 "index": 1067,
                 "number": "455",
                 "message": "Si 455, alors vérifier que la notice en 455$0 ne contient pas 328$z"
             },
             {
-                "condition": [
-                    {
-                        "operator": "presente",
-                        "number": "456",
-                        "code": ""
-                    }
-                ],
+                "condition": [{
+                    "operator": "presente",
+                    "number": "456",
+                    "code": ""
+                }],
                 "reciproque": {
                     "number": "456",
                     "code": "0"
                 },
-                "value": [
-                    {
-                        "number": "328",
-                        "code": "z",
-                        "present": true
-                    }
-                ],
+                "value": [{
+                    "number": "328",
+                    "code": "z",
+                    "present": true
+                }],
                 "type": "allRequired",
                 "index": 1068,
                 "number": "456",
                 "message": "Si 456, alors vérifier que la notice en 465$0  contient  328$z"
             },
             {
-                "condition": [
-                    {
+                "condition": [{
                         "operator": "presente",
                         "number": "451",
                         "code": ""
@@ -3115,21 +2684,18 @@
                     "number": "451",
                     "code": "0"
                 },
-                "value": [
-                    {
-                        "number": "328",
-                        "code": "z",
-                        "present": false
-                    }
-                ],
+                "value": [{
+                    "number": "328",
+                    "code": "z",
+                    "present": false
+                }],
                 "type": "allRequired",
                 "index": 1069,
                 "number": "451",
                 "message": "Si 451 et 328$z, alors vérifier que la notice 451$0 ne contient pas 328$z"
             },
             {
-                "condition": [
-                    {
+                "condition": [{
                         "operator": "presente",
                         "number": "451",
                         "code": ""
@@ -3144,79 +2710,46 @@
                     "number": "451",
                     "code": "0"
                 },
-                "value": [
-                    {
-                        "number": "328",
-                        "code": "z",
-                        "present": true
-                    }
-                ],
+                "value": [{
+                    "number": "328",
+                    "code": "z",
+                    "present": true
+                }],
                 "type": "allRequired",
                 "index": 1070,
                 "number": "451",
                 "message": "Si 451 et absence de 328$z, alors vérifier que la notice 451$0 contient 328$z"
             },
             {
-                "condition": [
-                    {
-                        "operator": "presente",
-                        "number": "455",
-                        "code": ""
-                    }
-                ],
-                "value": [
-                    {
+                "condition": [{
+                    "operator": "presente",
+                    "number": "456",
+                    "code": ""
+                }],
+                "value": [{
+                    "number": "455",
+                    "code": "0",
+                    "present": true,
+                    "reciproque": {
                         "number": "456",
-                        "code": "0",
-                        "present": true,
-                        "reciproque": {
-                            "number": "455",
-                            "code": "0"
-                        }
+                        "code": "0"
                     }
-                ],
-                "type": "allRequired",
-                "index": 1071,
-                "number": "455",
-                "message": "Si 455, alors vérifier que la notice en 455$0 contient une 456 avec liens réciproques"
-            },
-            {
-                "condition": [
-                    {
-                        "operator": "presente",
-                        "number": "456",
-                        "code": ""
-                    }
-                ],
-                "value": [
-                    {
-                        "number": "455",
-                        "code": "0",
-                        "present": true,
-                        "reciproque": {
-                            "number": "456",
-                            "code": "0"
-                        }
-                    }
-                ],
+                }],
                 "type": "allRequired",
                 "index": 1072,
                 "number": "455",
                 "message": "Si 456, alors vérifier que la notice en 456$0 contient une 455 avec liens réciproques"
             },
             {
-                "condition": [
-                    {
-                        "operator": "not_equals_text",
-                        "number": "105",
-                        "code": "b",
-                        "string": [
-                            "v"
-                        ]
-                    }
-                ],
-                "value": [
-                    {
+                "condition": [{
+                    "operator": "not_equals_text",
+                    "number": "105",
+                    "code": "b",
+                    "string": [
+                        "v"
+                    ]
+                }],
+                "value": [{
                         "number": "214",
                         "code": "",
                         "ind1": "",
@@ -3237,55 +2770,46 @@
                 "message": "214\t214 #0 ou 214#1 obligatoire, sauf si 105$b=v"
             },
             {
-                "condition": [
-                    {
-                        "operator": "startwith_text",
-                        "number": "305",
-                        "code": "a",
-                        "string": [
-                            "Document numérisé dans le cadre du projet de numérisation"
-                        ]
-                    }
-                ],
-                "value": [
-                    {
-                        "number": "214",
-                        "code": "",
-                        "ind1": "",
-                        "ind2": "0",
-                        "present": true
-                    }
-                ],
+                "condition": [{
+                    "operator": "startwith_text",
+                    "number": "305",
+                    "code": "a",
+                    "string": [
+                        "Document numérisé dans le cadre du projet de numérisation"
+                    ]
+                }],
+                "value": [{
+                    "number": "214",
+                    "code": "",
+                    "ind1": "",
+                    "ind2": "0",
+                    "present": true
+                }],
                 "type": "allRequired",
                 "index": 1074,
                 "number": "305",
                 "message": "Si 305$a commence par \"Document numérisé dans le cadre du projet de numérisation\", 214 ind1=' ' et ind2=\"0\""
             },
             {
-                "condition": [
-                    {
-                        "operator": "presente",
-                        "number": "214",
-                        "code": "",
-                        "ind1": "",
-                        "ind2": "1"
-                    }
-                ],
-                "value": [
-                    {
-                        "number": "214",
-                        "code": "d",
-                        "present": true
-                    }
-                ],
+                "condition": [{
+                    "operator": "presente",
+                    "number": "214",
+                    "code": "",
+                    "ind1": "",
+                    "ind2": "1"
+                }],
+                "value": [{
+                    "number": "214",
+                    "code": "d",
+                    "present": true
+                }],
                 "type": "allRequired",
                 "index": 1077,
                 "number": "214",
                 "message": "Si 214 #1 $d obligatoire"
             },
             {
-                "condition": [
-                    {
+                "condition": [{
                         "operator": "presente",
                         "number": "105",
                         "code": "a"
@@ -3303,8 +2827,7 @@
                         ]
                     }
                 ],
-                "value": [
-                    {
+                "value": [{
                         "number": "214",
                         "code": "",
                         "ind1": "",
@@ -3325,8 +2848,7 @@
                 "message": "Si 105 $a Pos. 4-7= \"v\", 214 ind2=\"0\" ou ind2=\"2\""
             },
             {
-                "condition": [
-                    {
+                "condition": [{
                         "operator": "presente",
                         "number": "105",
                         "code": "a"
@@ -3344,32 +2866,27 @@
                         ]
                     }
                 ],
-                "value": [
-                    {
-                        "number": "214",
-                        "code": "",
-                        "ind1": "",
-                        "ind2": "1",
-                        "present": true
-                    }
-                ],
+                "value": [{
+                    "number": "214",
+                    "code": "",
+                    "ind1": "",
+                    "ind2": "1",
+                    "present": true
+                }],
                 "type": "allRequired",
                 "index": 1085,
                 "number": "105",
                 "message": "Si 105 $a Pos. 4-7= m, 214 ind2=\"1\""
             }
         ],
-        "ConditionDependance": [
-            {
-                "condition": [
-                    {
-                        "operator": "presente",
-                        "number": "225",
-                        "code": "",
-                        "ind1": "0",
-                        "ind2": ""
-                    }
-                ],
+        "ConditionDependance": [{
+                "condition": [{
+                    "operator": "presente",
+                    "number": "225",
+                    "code": "",
+                    "ind1": "0",
+                    "ind2": ""
+                }],
                 "index": 2000,
                 "field1": {
                     "number": "225",
@@ -3383,15 +2900,13 @@
                 "message": "Si 225 ind1=0 $a est différent du 410$t"
             },
             {
-                "condition": [
-                    {
-                        "operator": "presente",
-                        "number": "225",
-                        "code": "",
-                        "ind1": "2",
-                        "ind2": ""
-                    }
-                ],
+                "condition": [{
+                    "operator": "presente",
+                    "number": "225",
+                    "code": "",
+                    "ind1": "2",
+                    "ind2": ""
+                }],
                 "index": 1075,
                 "field1": {
                     "number": "225",
@@ -3405,13 +2920,11 @@
                 "message": "Si 225 ind1=2 $a = 410$t"
             },
             {
-                "condition": [
-                    {
-                        "operator": "presente",
-                        "number": "455",
-                        "code": ""
-                    }
-                ],
+                "condition": [{
+                    "operator": "presente",
+                    "number": "455",
+                    "code": ""
+                }],
                 "index": 1076,
                 "field1": {
                     "number": "455",
@@ -3429,8 +2942,7 @@
                 "message": "Si 455, alors la date en 455$d = date en zone 100 position 13-16"
             }
         ],
-        "Structurel": [
-            {
+        "Structurel": [{
                 "index": 28,
                 "number": [
                     "200"
@@ -3639,16 +3151,13 @@
                 "index": 51
             }
         ],
-        "idRef": [
-            {
+        "idRef": [{
                 "index": 52,
                 "numRuleExcell": 69,
-                "condition": [
-                    {
-                        "number": "701",
-                        "code": "a"
-                    }
-                ],
+                "condition": [{
+                    "number": "701",
+                    "code": "a"
+                }],
                 "identifiant": {
                     "number": "701",
                     "code": "3"
@@ -3662,12 +3171,10 @@
             {
                 "index": 53,
                 "numRuleExcell": 48,
-                "condition": [
-                    {
-                        "number": "600",
-                        "code": "a"
-                    }
-                ],
+                "condition": [{
+                    "number": "600",
+                    "code": "a"
+                }],
                 "identifiant": {
                     "number": "600",
                     "code": "3"
@@ -3681,12 +3188,10 @@
             {
                 "index": 54,
                 "numRuleExcell": 50,
-                "condition": [
-                    {
-                        "number": "601",
-                        "code": "a"
-                    }
-                ],
+                "condition": [{
+                    "number": "601",
+                    "code": "a"
+                }],
                 "identifiant": {
                     "number": "601",
                     "code": "3"
@@ -3700,12 +3205,10 @@
             {
                 "index": 55,
                 "numRuleExcell": 52,
-                "condition": [
-                    {
-                        "number": "602",
-                        "code": "a"
-                    }
-                ],
+                "condition": [{
+                    "number": "602",
+                    "code": "a"
+                }],
                 "identifiant": {
                     "number": "602",
                     "code": "3"
@@ -3719,12 +3222,10 @@
             {
                 "index": 56,
                 "numRuleExcell": 54,
-                "condition": [
-                    {
-                        "number": "604",
-                        "code": "a"
-                    }
-                ],
+                "condition": [{
+                    "number": "604",
+                    "code": "a"
+                }],
                 "identifiant": {
                     "number": "604",
                     "code": "3"
@@ -3738,12 +3239,10 @@
             {
                 "index": 57,
                 "numRuleExcell": 56,
-                "condition": [
-                    {
-                        "number": "605",
-                        "code": "a"
-                    }
-                ],
+                "condition": [{
+                    "number": "605",
+                    "code": "a"
+                }],
                 "identifiant": {
                     "number": "605",
                     "code": "3"
@@ -3757,8 +3256,7 @@
             {
                 "index": 58,
                 "numRuleExcell": 58,
-                "condition": [
-                    {
+                "condition": [{
                         "number": "606",
                         "code": "a"
                     },
@@ -3781,8 +3279,7 @@
             {
                 "index": 59,
                 "numRuleExcell": 60,
-                "condition": [
-                    {
+                "condition": [{
                         "number": "606",
                         "code": "a"
                     },
@@ -3805,12 +3302,10 @@
             {
                 "index": 60,
                 "numRuleExcell": 61,
-                "condition": [
-                    {
-                        "number": "607",
-                        "code": "a"
-                    }
-                ],
+                "condition": [{
+                    "number": "607",
+                    "code": "a"
+                }],
                 "identifiant": {
                     "number": "607",
                     "code": "3"
@@ -3824,12 +3319,10 @@
             {
                 "index": 61,
                 "numRuleExcell": 62,
-                "condition": [
-                    {
-                        "number": "608",
-                        "code": "a"
-                    }
-                ],
+                "condition": [{
+                    "number": "608",
+                    "code": "a"
+                }],
                 "identifiant": {
                     "number": "608",
                     "code": "3"
@@ -3843,12 +3336,10 @@
             {
                 "index": 62,
                 "numRuleExcell": 65,
-                "condition": [
-                    {
-                        "number": "616",
-                        "code": "a"
-                    }
-                ],
+                "condition": [{
+                    "number": "616",
+                    "code": "a"
+                }],
                 "identifiant": {
                     "number": "616",
                     "code": "3"
@@ -3862,12 +3353,10 @@
             {
                 "index": 63,
                 "numRuleExcell": 67,
-                "condition": [
-                    {
-                        "number": "700",
-                        "code": "a"
-                    }
-                ],
+                "condition": [{
+                    "number": "700",
+                    "code": "a"
+                }],
                 "identifiant": {
                     "number": "700",
                     "code": "3"
@@ -3881,11 +3370,9 @@
             {
                 "index": 64,
                 "numRuleExcell": 70,
-                "condition": [
-                    {
-                        "number": "702"
-                    }
-                ],
+                "condition": [{
+                    "number": "702"
+                }],
                 "identifiant": {
                     "number": "702",
                     "code": "3"
@@ -3899,11 +3386,9 @@
             {
                 "index": 65,
                 "numRuleExcell": 71,
-                "condition": [
-                    {
-                        "number": "710"
-                    }
-                ],
+                "condition": [{
+                    "number": "710"
+                }],
                 "identifiant": {
                     "number": "710",
                     "code": "3"
@@ -3917,11 +3402,9 @@
             {
                 "index": 66,
                 "numRuleExcell": 72,
-                "condition": [
-                    {
-                        "number": "711"
-                    }
-                ],
+                "condition": [{
+                    "number": "711"
+                }],
                 "identifiant": {
                     "number": "711",
                     "code": "3"
@@ -3935,11 +3418,9 @@
             {
                 "index": 67,
                 "numRuleExcell": 72,
-                "condition": [
-                    {
-                        "number": "712"
-                    }
-                ],
+                "condition": [{
+                    "number": "712"
+                }],
                 "identifiant": {
                     "number": "712",
                     "code": "3"
@@ -3953,11 +3434,9 @@
             {
                 "index": 68,
                 "numRuleExcell": 74,
-                "condition": [
-                    {
-                        "number": "720"
-                    }
-                ],
+                "condition": [{
+                    "number": "720"
+                }],
                 "identifiant": {
                     "number": "720",
                     "code": "3"
@@ -3971,11 +3450,9 @@
             {
                 "index": 69,
                 "numRuleExcell": 75,
-                "condition": [
-                    {
-                        "number": "721"
-                    }
-                ],
+                "condition": [{
+                    "number": "721"
+                }],
                 "identifiant": {
                     "number": "721",
                     "code": "3"
@@ -3989,11 +3466,9 @@
             {
                 "index": 70,
                 "numRuleExcell": 76,
-                "condition": [
-                    {
-                        "number": "722"
-                    }
-                ],
+                "condition": [{
+                    "number": "722"
+                }],
                 "identifiant": {
                     "number": "722",
                     "code": "3"
@@ -4006,8 +3481,7 @@
             },
             {
                 "index": 74,
-                "condition": [
-                    {
+                "condition": [{
                         "number": "600",
                         "code": "x"
                     },
@@ -4029,8 +3503,7 @@
             },
             {
                 "index": 75,
-                "condition": [
-                    {
+                "condition": [{
                         "number": "606",
                         "code": "y"
                     },
@@ -4052,8 +3525,7 @@
             },
             {
                 "index": 76,
-                "condition": [
-                    {
+                "condition": [{
                         "number": "606",
                         "code": "z"
                     },
@@ -4074,29 +3546,23 @@
                 "message": "Incohérence indexation : vérifier que la zone 6XX est liée à une autorité RAMEAU"
             }
         ],
-        "ordonnancement": [
-            {
-                "index": 5006,
-                "number": "214",
-                "orderBy": "ind2",
-                "message": "Zones 214 : garder l'ordre des indicateurs"
-            }
-        ],
-        "compte": [
-            {
-                "index": 5007,
-                "number": "101",
-                "code": "d",
-                "contrainte": "330",
-                "message": "Mention de résumé incohérente : vérifier zones 101 et le nombre de zones 330"
-            }
-        ],
-        "precedence": [
-            {
+        "ordonnancement": [{
+            "index": 5006,
+            "number": "214",
+            "orderBy": "ind2",
+            "message": "Zones 214 : garder l'ordre des indicateurs"
+        }],
+        "compte": [{
+            "index": 5007,
+            "number": "101",
+            "code": "d",
+            "contrainte": "330",
+            "message": "Mention de résumé incohérente : vérifier zones 101 et le nombre de zones 330"
+        }],
+        "precedence": [{
                 "index": 5008,
                 "number": "608",
-                "condition": [
-                    {
+                "condition": [{
                         "operator": "presente",
                         "number": "608",
                         "code": "a"
@@ -4119,8 +3585,7 @@
             {
                 "index": 5009,
                 "number": "607",
-                "condition": [
-                    {
+                "condition": [{
                         "operator": "presente",
                         "number": "607",
                         "code": "a"
@@ -4139,12 +3604,11 @@
                     "precedant": "3"
                 },
                 "message": "Zones 6XX doivent être liées à une notice d'autorité RAMEAU"
-            } ,
+            },
             {
                 "index": 5010,
                 "number": "606",
-                "condition": [
-                    {
+                "condition": [{
                         "operator": "presente",
                         "number": "606",
                         "code": "a"
@@ -4167,8 +3631,7 @@
             {
                 "index": 5011,
                 "number": "605",
-                "condition": [
-                    {
+                "condition": [{
                         "operator": "presente",
                         "number": "605",
                         "code": "a"
@@ -4191,8 +3654,7 @@
             {
                 "index": 5012,
                 "number": "604",
-                "condition": [
-                    {
+                "condition": [{
                         "operator": "presente",
                         "number": "604",
                         "code": "a"
@@ -4215,8 +3677,7 @@
             {
                 "index": 5013,
                 "number": "602",
-                "condition": [
-                    {
+                "condition": [{
                         "operator": "presente",
                         "number": "602",
                         "code": "a"
@@ -4239,8 +3700,7 @@
             {
                 "index": 5014,
                 "number": "601",
-                "condition": [
-                    {
+                "condition": [{
                         "operator": "presente",
                         "number": "601",
                         "code": "a"
@@ -4263,8 +3723,7 @@
             {
                 "index": 5015,
                 "number": "600",
-                "condition": [
-                    {
+                "condition": [{
                         "operator": "presente",
                         "number": "600",
                         "code": "a"
@@ -4283,59 +3742,1313 @@
                     "precedant": "3"
                 },
                 "message": "Zones 6XX doivent être liées à une notice d'autorité RAMEAU"
+            }, {
+                "index": 5016,
+                "number": "608",
+                "condition": [{
+                        "operator": "presente",
+                        "number": "608",
+                        "code": "x"
+                    },
+                    {
+                        "operator": "startwith_text",
+                        "number": "608",
+                        "code": "2",
+                        "string": [
+                            "rameau"
+                        ]
+                    }
+                ],
+                "precede": {
+                    "depart": "x",
+                    "precedant": "3"
+                },
+                "message": "Zones 6XX doivent être liées à une notice d'autorité RAMEAU"
+            },
+            {
+                "index": 5017,
+                "number": "607",
+                "condition": [{
+                        "operator": "presente",
+                        "number": "607",
+                        "code": "x"
+                    },
+                    {
+                        "operator": "startwith_text",
+                        "number": "607",
+                        "code": "2",
+                        "string": [
+                            "rameau"
+                        ]
+                    }
+                ],
+                "precede": {
+                    "depart": "x",
+                    "precedant": "3"
+                },
+                "message": "Zones 6XX doivent être liées à une notice d'autorité RAMEAU"
+            },
+            {
+                "index": 5018,
+                "number": "606",
+                "condition": [{
+                        "operator": "presente",
+                        "number": "606",
+                        "code": "x"
+                    },
+                    {
+                        "operator": "startwith_text",
+                        "number": "606",
+                        "code": "2",
+                        "string": [
+                            "rameau"
+                        ]
+                    }
+                ],
+                "precede": {
+                    "depart": "x",
+                    "precedant": "3"
+                },
+                "message": "Zones 6XX doivent être liées à une notice d'autorité RAMEAU"
+            },
+            {
+                "index": 5019,
+                "number": "605",
+                "condition": [{
+                        "operator": "presente",
+                        "number": "605",
+                        "code": "x"
+                    },
+                    {
+                        "operator": "startwith_text",
+                        "number": "605",
+                        "code": "2",
+                        "string": [
+                            "rameau"
+                        ]
+                    }
+                ],
+                "precede": {
+                    "depart": "x",
+                    "precedant": "3"
+                },
+                "message": "Zones 6XX doivent être liées à une notice d'autorité RAMEAU"
+            },
+            {
+                "index": 5020,
+                "number": "604",
+                "condition": [{
+                        "operator": "presente",
+                        "number": "604",
+                        "code": "x"
+                    },
+                    {
+                        "operator": "startwith_text",
+                        "number": "604",
+                        "code": "2",
+                        "string": [
+                            "rameau"
+                        ]
+                    }
+                ],
+                "precede": {
+                    "depart": "x",
+                    "precedant": "3"
+                },
+                "message": "Zones 6XX doivent être liées à une notice d'autorité RAMEAU"
+            },
+            {
+                "index": 5021,
+                "number": "602",
+                "condition": [{
+                        "operator": "presente",
+                        "number": "602",
+                        "code": "x"
+                    },
+                    {
+                        "operator": "startwith_text",
+                        "number": "602",
+                        "code": "2",
+                        "string": [
+                            "rameau"
+                        ]
+                    }
+                ],
+                "precede": {
+                    "depart": "x",
+                    "precedant": "3"
+                },
+                "message": "Zones 6XX doivent être liées à une notice d'autorité RAMEAU"
+            },
+            {
+                "index": 5022,
+                "number": "601",
+                "condition": [{
+                        "operator": "presente",
+                        "number": "601",
+                        "code": "x"
+                    },
+                    {
+                        "operator": "startwith_text",
+                        "number": "601",
+                        "code": "2",
+                        "string": [
+                            "rameau"
+                        ]
+                    }
+                ],
+                "precede": {
+                    "depart": "x",
+                    "precedant": "3"
+                },
+                "message": "Zones 6XX doivent être liées à une notice d'autorité RAMEAU"
+            },
+            {
+                "index": 5023,
+                "number": "600",
+                "condition": [{
+                        "operator": "presente",
+                        "number": "600",
+                        "code": "x"
+                    },
+                    {
+                        "operator": "startwith_text",
+                        "number": "600",
+                        "code": "2",
+                        "string": [
+                            "rameau"
+                        ]
+                    }
+                ],
+                "precede": {
+                    "depart": "x",
+                    "precedant": "3"
+                },
+                "message": "Zones 6XX doivent être liées à une notice d'autorité RAMEAU"
+            },
+            {
+                "index": 5024,
+                "number": "608",
+                "condition": [{
+                        "operator": "presente",
+                        "number": "608",
+                        "code": "y"
+                    },
+                    {
+                        "operator": "startwith_text",
+                        "number": "608",
+                        "code": "2",
+                        "string": [
+                            "rameau"
+                        ]
+                    }
+                ],
+                "precede": {
+                    "depart": "y",
+                    "precedant": "3"
+                },
+                "message": "Zones 6XX doivent être liées à une notice d'autorité RAMEAU"
+            },
+            {
+                "index": 5025,
+                "number": "607",
+                "condition": [{
+                        "operator": "presente",
+                        "number": "607",
+                        "code": "y"
+                    },
+                    {
+                        "operator": "startwith_text",
+                        "number": "607",
+                        "code": "2",
+                        "string": [
+                            "rameau"
+                        ]
+                    }
+                ],
+                "precede": {
+                    "depart": "y",
+                    "precedant": "3"
+                },
+                "message": "Zones 6XX doivent être liées à une notice d'autorité RAMEAU"
+            },
+            {
+                "index": 5026,
+                "number": "606",
+                "condition": [{
+                        "operator": "presente",
+                        "number": "606",
+                        "code": "y"
+                    },
+                    {
+                        "operator": "startwith_text",
+                        "number": "606",
+                        "code": "2",
+                        "string": [
+                            "rameau"
+                        ]
+                    }
+                ],
+                "precede": {
+                    "depart": "y",
+                    "precedant": "3"
+                },
+                "message": "Zones 6XX doivent être liées à une notice d'autorité RAMEAU"
+            },
+            {
+                "index": 5027,
+                "number": "605",
+                "condition": [{
+                        "operator": "presente",
+                        "number": "605",
+                        "code": "y"
+                    },
+                    {
+                        "operator": "startwith_text",
+                        "number": "605",
+                        "code": "2",
+                        "string": [
+                            "rameau"
+                        ]
+                    }
+                ],
+                "precede": {
+                    "depart": "y",
+                    "precedant": "3"
+                },
+                "message": "Zones 6XX doivent être liées à une notice d'autorité RAMEAU"
+            },
+            {
+                "index": 5028,
+                "number": "604",
+                "condition": [{
+                        "operator": "presente",
+                        "number": "604",
+                        "code": "y"
+                    },
+                    {
+                        "operator": "startwith_text",
+                        "number": "604",
+                        "code": "2",
+                        "string": [
+                            "rameau"
+                        ]
+                    }
+                ],
+                "precede": {
+                    "depart": "y",
+                    "precedant": "3"
+                },
+                "message": "Zones 6XX doivent être liées à une notice d'autorité RAMEAU"
+            },
+            {
+                "index": 5029,
+                "number": "602",
+                "condition": [{
+                        "operator": "presente",
+                        "number": "602",
+                        "code": "y"
+                    },
+                    {
+                        "operator": "startwith_text",
+                        "number": "602",
+                        "code": "2",
+                        "string": [
+                            "rameau"
+                        ]
+                    }
+                ],
+                "precede": {
+                    "depart": "y",
+                    "precedant": "3"
+                },
+                "message": "Zones 6XX doivent être liées à une notice d'autorité RAMEAU"
+            },
+            {
+                "index": 5030,
+                "number": "601",
+                "condition": [{
+                        "operator": "presente",
+                        "number": "601",
+                        "code": "y"
+                    },
+                    {
+                        "operator": "startwith_text",
+                        "number": "601",
+                        "code": "2",
+                        "string": [
+                            "rameau"
+                        ]
+                    }
+                ],
+                "precede": {
+                    "depart": "y",
+                    "precedant": "3"
+                },
+                "message": "Zones 6XX doivent être liées à une notice d'autorité RAMEAU"
+            },
+            {
+                "index": 5031,
+                "number": "600",
+                "condition": [{
+                        "operator": "presente",
+                        "number": "600",
+                        "code": "y"
+                    },
+                    {
+                        "operator": "startwith_text",
+                        "number": "600",
+                        "code": "2",
+                        "string": [
+                            "rameau"
+                        ]
+                    }
+                ],
+                "precede": {
+                    "depart": "y",
+                    "precedant": "3"
+                },
+                "message": "Zones 6XX doivent être liées à une notice d'autorité RAMEAU"
+            },
+            {
+                "index": 5031,
+                "number": "608",
+                "condition": [{
+                        "operator": "presente",
+                        "number": "608",
+                        "code": "z"
+                    },
+                    {
+                        "operator": "startwith_text",
+                        "number": "608",
+                        "code": "2",
+                        "string": [
+                            "rameau"
+                        ]
+                    }
+                ],
+                "precede": {
+                    "depart": "z",
+                    "precedant": "3"
+                },
+                "message": "Zones 6XX doivent être liées à une notice d'autorité RAMEAU"
+            },
+            {
+                "index": 5032,
+                "number": "608",
+                "condition": [{
+                        "operator": "presente",
+                        "number": "608",
+                        "code": "z"
+                    },
+                    {
+                        "operator": "startwith_text",
+                        "number": "608",
+                        "code": "2",
+                        "string": [
+                            "rameau"
+                        ]
+                    }
+                ],
+                "precede": {
+                    "depart": "z",
+                    "precedant": "3"
+                },
+                "message": "Zones 6XX doivent être liées à une notice d'autorité RAMEAU"
+            },
+            {
+                "index": 5033,
+                "number": "608",
+                "condition": [{
+                        "operator": "presente",
+                        "number": "608",
+                        "code": "z"
+                    },
+                    {
+                        "operator": "startwith_text",
+                        "number": "608",
+                        "code": "2",
+                        "string": [
+                            "rameau"
+                        ]
+                    }
+                ],
+                "precede": {
+                    "depart": "z",
+                    "precedant": "3"
+                },
+                "message": "Zones 6XX doivent être liées à une notice d'autorité RAMEAU"
+            },
+            {
+                "index": 5034,
+                "number": "608",
+                "condition": [{
+                        "operator": "presente",
+                        "number": "608",
+                        "code": "z"
+                    },
+                    {
+                        "operator": "startwith_text",
+                        "number": "608",
+                        "code": "2",
+                        "string": [
+                            "rameau"
+                        ]
+                    }
+                ],
+                "precede": {
+                    "depart": "z",
+                    "precedant": "3"
+                },
+                "message": "Zones 6XX doivent être liées à une notice d'autorité RAMEAU"
+            },
+            {
+                "index": 5035,
+                "number": "608",
+                "condition": [{
+                        "operator": "presente",
+                        "number": "608",
+                        "code": "z"
+                    },
+                    {
+                        "operator": "startwith_text",
+                        "number": "608",
+                        "code": "2",
+                        "string": [
+                            "rameau"
+                        ]
+                    }
+                ],
+                "precede": {
+                    "depart": "z",
+                    "precedant": "3"
+                },
+                "message": "Zones 6XX doivent être liées à une notice d'autorité RAMEAU"
+            },
+            {
+                "index": 5036,
+                "number": "608",
+                "condition": [{
+                        "operator": "presente",
+                        "number": "608",
+                        "code": "z"
+                    },
+                    {
+                        "operator": "startwith_text",
+                        "number": "608",
+                        "code": "2",
+                        "string": [
+                            "rameau"
+                        ]
+                    }
+                ],
+                "precede": {
+                    "depart": "z",
+                    "precedant": "3"
+                },
+                "message": "Zones 6XX doivent être liées à une notice d'autorité RAMEAU"
+            },
+            {
+                "index": 5037,
+                "number": "608",
+                "condition": [{
+                        "operator": "presente",
+                        "number": "608",
+                        "code": "z"
+                    },
+                    {
+                        "operator": "startwith_text",
+                        "number": "608",
+                        "code": "2",
+                        "string": [
+                            "rameau"
+                        ]
+                    }
+                ],
+                "precede": {
+                    "depart": "z",
+                    "precedant": "3"
+                },
+                "message": "Zones 6XX doivent être liées à une notice d'autorité RAMEAU"
+            },
+            {
+                "index": 5038,
+                "number": "608",
+                "condition": [{
+                        "operator": "presente",
+                        "number": "608",
+                        "code": "z"
+                    },
+                    {
+                        "operator": "startwith_text",
+                        "number": "608",
+                        "code": "2",
+                        "string": [
+                            "rameau"
+                        ]
+                    }
+                ],
+                "precede": {
+                    "depart": "z",
+                    "precedant": "3"
+                },
+                "message": "Zones 6XX doivent être liées à une notice d'autorité RAMEAU"
+            },
+            {
+                "index": 5039,
+                "number": "608",
+                "condition": [{
+                        "operator": "presente",
+                        "number": "608",
+                        "code": "a"
+                    },
+                    {
+                        "operator": "startwith_text",
+                        "number": "608",
+                        "code": "2",
+                        "string": [
+                            "fmesh"
+                        ]
+                    }
+                ],
+                "precede": {
+                    "depart": "a",
+                    "precedant": "3"
+                },
+                "message": "Zones 6XX doivent être liées à une notice d'autorité RAMEAU"
+            },
+            {
+                "index": 5040,
+                "number": "608",
+                "condition": [{
+                        "operator": "presente",
+                        "number": "608",
+                        "code": "a"
+                    },
+                    {
+                        "operator": "startwith_text",
+                        "number": "608",
+                        "code": "2",
+                        "string": [
+                            "fmesh"
+                        ]
+                    }
+                ],
+                "precede": {
+                    "depart": "a",
+                    "precedant": "3"
+                },
+                "message": "Zones 6XX doivent être liées à une notice d'autorité RAMEAU"
+            },
+            {
+                "index": 5041,
+                "number": "608",
+                "condition": [{
+                        "operator": "presente",
+                        "number": "608",
+                        "code": "a"
+                    },
+                    {
+                        "operator": "startwith_text",
+                        "number": "608",
+                        "code": "2",
+                        "string": [
+                            "fmesh"
+                        ]
+                    }
+                ],
+                "precede": {
+                    "depart": "a",
+                    "precedant": "3"
+                },
+                "message": "Zones 6XX doivent être liées à une notice d'autorité RAMEAU"
+            },
+            {
+                "index": 5042,
+                "number": "608",
+                "condition": [{
+                        "operator": "presente",
+                        "number": "608",
+                        "code": "a"
+                    },
+                    {
+                        "operator": "startwith_text",
+                        "number": "608",
+                        "code": "2",
+                        "string": [
+                            "fmesh"
+                        ]
+                    }
+                ],
+                "precede": {
+                    "depart": "a",
+                    "precedant": "3"
+                },
+                "message": "Zones 6XX doivent être liées à une notice d'autorité RAMEAU"
+            },
+            {
+                "index": 5043,
+                "number": "608",
+                "condition": [{
+                        "operator": "presente",
+                        "number": "608",
+                        "code": "a"
+                    },
+                    {
+                        "operator": "startwith_text",
+                        "number": "608",
+                        "code": "2",
+                        "string": [
+                            "fmesh"
+                        ]
+                    }
+                ],
+                "precede": {
+                    "depart": "a",
+                    "precedant": "3"
+                },
+                "message": "Zones 6XX doivent être liées à une notice d'autorité RAMEAU"
+            },
+            {
+                "index": 5044,
+                "number": "608",
+                "condition": [{
+                        "operator": "presente",
+                        "number": "608",
+                        "code": "a"
+                    },
+                    {
+                        "operator": "startwith_text",
+                        "number": "608",
+                        "code": "2",
+                        "string": [
+                            "fmesh"
+                        ]
+                    }
+                ],
+                "precede": {
+                    "depart": "a",
+                    "precedant": "3"
+                },
+                "message": "Zones 6XX doivent être liées à une notice d'autorité RAMEAU"
+            },
+            {
+                "index": 5045,
+                "number": "608",
+                "condition": [{
+                        "operator": "presente",
+                        "number": "608",
+                        "code": "a"
+                    },
+                    {
+                        "operator": "startwith_text",
+                        "number": "608",
+                        "code": "2",
+                        "string": [
+                            "fmesh"
+                        ]
+                    }
+                ],
+                "precede": {
+                    "depart": "a",
+                    "precedant": "3"
+                },
+                "message": "Zones 6XX doivent être liées à une notice d'autorité RAMEAU"
+            },
+            {
+                "index": 5046,
+                "number": "608",
+                "condition": [{
+                        "operator": "presente",
+                        "number": "608",
+                        "code": "a"
+                    },
+                    {
+                        "operator": "startwith_text",
+                        "number": "608",
+                        "code": "2",
+                        "string": [
+                            "fmesh"
+                        ]
+                    }
+                ],
+                "precede": {
+                    "depart": "a",
+                    "precedant": "3"
+                },
+                "message": "Zones 6XX doivent être liées à une notice d'autorité RAMEAU"
+            }, {
+                "index": 5046,
+                "number": "608",
+                "condition": [{
+                        "operator": "presente",
+                        "number": "608",
+                        "code": "x"
+                    },
+                    {
+                        "operator": "startwith_text",
+                        "number": "608",
+                        "code": "2",
+                        "string": [
+                            "fmesh"
+                        ]
+                    }
+                ],
+                "precede": {
+                    "depart": "x",
+                    "precedant": "3"
+                },
+                "message": "Zones 6XX doivent être liées à une notice d'autorité RAMEAU"
+            },
+            {
+                "index": 5047,
+                "number": "608",
+                "condition": [{
+                        "operator": "presente",
+                        "number": "608",
+                        "code": "x"
+                    },
+                    {
+                        "operator": "startwith_text",
+                        "number": "608",
+                        "code": "2",
+                        "string": [
+                            "fmesh"
+                        ]
+                    }
+                ],
+                "precede": {
+                    "depart": "x",
+                    "precedant": "3"
+                },
+                "message": "Zones 6XX doivent être liées à une notice d'autorité RAMEAU"
+            },
+            {
+                "index": 5048,
+                "number": "608",
+                "condition": [{
+                        "operator": "presente",
+                        "number": "608",
+                        "code": "x"
+                    },
+                    {
+                        "operator": "startwith_text",
+                        "number": "608",
+                        "code": "2",
+                        "string": [
+                            "fmesh"
+                        ]
+                    }
+                ],
+                "precede": {
+                    "depart": "x",
+                    "precedant": "3"
+                },
+                "message": "Zones 6XX doivent être liées à une notice d'autorité RAMEAU"
+            },
+            {
+                "index": 5049,
+                "number": "608",
+                "condition": [{
+                        "operator": "presente",
+                        "number": "608",
+                        "code": "x"
+                    },
+                    {
+                        "operator": "startwith_text",
+                        "number": "608",
+                        "code": "2",
+                        "string": [
+                            "fmesh"
+                        ]
+                    }
+                ],
+                "precede": {
+                    "depart": "x",
+                    "precedant": "3"
+                },
+                "message": "Zones 6XX doivent être liées à une notice d'autorité RAMEAU"
+            },
+            {
+                "index": 5050,
+                "number": "608",
+                "condition": [{
+                        "operator": "presente",
+                        "number": "608",
+                        "code": "x"
+                    },
+                    {
+                        "operator": "startwith_text",
+                        "number": "608",
+                        "code": "2",
+                        "string": [
+                            "fmesh"
+                        ]
+                    }
+                ],
+                "precede": {
+                    "depart": "x",
+                    "precedant": "3"
+                },
+                "message": "Zones 6XX doivent être liées à une notice d'autorité RAMEAU"
+            },
+            {
+                "index": 5051,
+                "number": "608",
+                "condition": [{
+                        "operator": "presente",
+                        "number": "608",
+                        "code": "x"
+                    },
+                    {
+                        "operator": "startwith_text",
+                        "number": "608",
+                        "code": "2",
+                        "string": [
+                            "fmesh"
+                        ]
+                    }
+                ],
+                "precede": {
+                    "depart": "x",
+                    "precedant": "3"
+                },
+                "message": "Zones 6XX doivent être liées à une notice d'autorité RAMEAU"
+            },
+            {
+                "index": 5052,
+                "number": "608",
+                "condition": [{
+                        "operator": "presente",
+                        "number": "608",
+                        "code": "x"
+                    },
+                    {
+                        "operator": "startwith_text",
+                        "number": "608",
+                        "code": "2",
+                        "string": [
+                            "fmesh"
+                        ]
+                    }
+                ],
+                "precede": {
+                    "depart": "x",
+                    "precedant": "3"
+                },
+                "message": "Zones 6XX doivent être liées à une notice d'autorité RAMEAU"
+            },
+            {
+                "index": 5053,
+                "number": "608",
+                "condition": [{
+                        "operator": "presente",
+                        "number": "608",
+                        "code": "x"
+                    },
+                    {
+                        "operator": "startwith_text",
+                        "number": "608",
+                        "code": "2",
+                        "string": [
+                            "fmesh"
+                        ]
+                    }
+                ],
+                "precede": {
+                    "depart": "x",
+                    "precedant": "3"
+                },
+                "message": "Zones 6XX doivent être liées à une notice d'autorité RAMEAU"
+            },
+            {
+                "index": 5054,
+                "number": "608",
+                "condition": [{
+                        "operator": "presente",
+                        "number": "608",
+                        "code": "y"
+                    },
+                    {
+                        "operator": "startwith_text",
+                        "number": "608",
+                        "code": "2",
+                        "string": [
+                            "fmesh"
+                        ]
+                    }
+                ],
+                "precede": {
+                    "depart": "y",
+                    "precedant": "3"
+                },
+                "message": "Zones 6XX doivent être liées à une notice d'autorité RAMEAU"
+            },
+            {
+                "index": 5055,
+                "number": "608",
+                "condition": [{
+                        "operator": "presente",
+                        "number": "608",
+                        "code": "y"
+                    },
+                    {
+                        "operator": "startwith_text",
+                        "number": "608",
+                        "code": "2",
+                        "string": [
+                            "fmesh"
+                        ]
+                    }
+                ],
+                "precede": {
+                    "depart": "y",
+                    "precedant": "3"
+                },
+                "message": "Zones 6XX doivent être liées à une notice d'autorité RAMEAU"
+            },
+            {
+                "index": 5056,
+                "number": "608",
+                "condition": [{
+                        "operator": "presente",
+                        "number": "608",
+                        "code": "y"
+                    },
+                    {
+                        "operator": "startwith_text",
+                        "number": "608",
+                        "code": "2",
+                        "string": [
+                            "fmesh"
+                        ]
+                    }
+                ],
+                "precede": {
+                    "depart": "y",
+                    "precedant": "3"
+                },
+                "message": "Zones 6XX doivent être liées à une notice d'autorité RAMEAU"
+            },
+            {
+                "index": 5057,
+                "number": "608",
+                "condition": [{
+                        "operator": "presente",
+                        "number": "608",
+                        "code": "y"
+                    },
+                    {
+                        "operator": "startwith_text",
+                        "number": "608",
+                        "code": "2",
+                        "string": [
+                            "fmesh"
+                        ]
+                    }
+                ],
+                "precede": {
+                    "depart": "y",
+                    "precedant": "3"
+                },
+                "message": "Zones 6XX doivent être liées à une notice d'autorité RAMEAU"
+            },
+            {
+                "index": 5058,
+                "number": "608",
+                "condition": [{
+                        "operator": "presente",
+                        "number": "608",
+                        "code": "y"
+                    },
+                    {
+                        "operator": "startwith_text",
+                        "number": "608",
+                        "code": "2",
+                        "string": [
+                            "fmesh"
+                        ]
+                    }
+                ],
+                "precede": {
+                    "depart": "y",
+                    "precedant": "3"
+                },
+                "message": "Zones 6XX doivent être liées à une notice d'autorité RAMEAU"
+            },
+            {
+                "index": 5059,
+                "number": "608",
+                "condition": [{
+                        "operator": "presente",
+                        "number": "608",
+                        "code": "y"
+                    },
+                    {
+                        "operator": "startwith_text",
+                        "number": "608",
+                        "code": "2",
+                        "string": [
+                            "fmesh"
+                        ]
+                    }
+                ],
+                "precede": {
+                    "depart": "y",
+                    "precedant": "3"
+                },
+                "message": "Zones 6XX doivent être liées à une notice d'autorité RAMEAU"
+            },
+            {
+                "index": 5060,
+                "number": "608",
+                "condition": [{
+                        "operator": "presente",
+                        "number": "608",
+                        "code": "y"
+                    },
+                    {
+                        "operator": "startwith_text",
+                        "number": "608",
+                        "code": "2",
+                        "string": [
+                            "fmesh"
+                        ]
+                    }
+                ],
+                "precede": {
+                    "depart": "y",
+                    "precedant": "3"
+                },
+                "message": "Zones 6XX doivent être liées à une notice d'autorité RAMEAU"
+            },
+            {
+                "index": 5061,
+                "number": "608",
+                "condition": [{
+                        "operator": "presente",
+                        "number": "608",
+                        "code": "y"
+                    },
+                    {
+                        "operator": "startwith_text",
+                        "number": "608",
+                        "code": "2",
+                        "string": [
+                            "fmesh"
+                        ]
+                    }
+                ],
+                "precede": {
+                    "depart": "y",
+                    "precedant": "3"
+                },
+                "message": "Zones 6XX doivent être liées à une notice d'autorité RAMEAU"
+            },
+            {
+                "index": 5062,
+                "number": "608",
+                "condition": [{
+                        "operator": "presente",
+                        "number": "608",
+                        "code": "z"
+                    },
+                    {
+                        "operator": "startwith_text",
+                        "number": "608",
+                        "code": "2",
+                        "string": [
+                            "fmesh"
+                        ]
+                    }
+                ],
+                "precede": {
+                    "depart": "z",
+                    "precedant": "3"
+                },
+                "message": "Zones 6XX doivent être liées à une notice d'autorité RAMEAU"
+            },
+            {
+                "index": 5063,
+                "number": "608",
+                "condition": [{
+                        "operator": "presente",
+                        "number": "608",
+                        "code": "z"
+                    },
+                    {
+                        "operator": "startwith_text",
+                        "number": "608",
+                        "code": "2",
+                        "string": [
+                            "fmesh"
+                        ]
+                    }
+                ],
+                "precede": {
+                    "depart": "z",
+                    "precedant": "3"
+                },
+                "message": "Zones 6XX doivent être liées à une notice d'autorité RAMEAU"
+            },
+            {
+                "index": 5064,
+                "number": "608",
+                "condition": [{
+                        "operator": "presente",
+                        "number": "608",
+                        "code": "z"
+                    },
+                    {
+                        "operator": "startwith_text",
+                        "number": "608",
+                        "code": "2",
+                        "string": [
+                            "fmesh"
+                        ]
+                    }
+                ],
+                "precede": {
+                    "depart": "z",
+                    "precedant": "3"
+                },
+                "message": "Zones 6XX doivent être liées à une notice d'autorité RAMEAU"
+            },
+            {
+                "index": 5065,
+                "number": "608",
+                "condition": [{
+                        "operator": "presente",
+                        "number": "608",
+                        "code": "z"
+                    },
+                    {
+                        "operator": "startwith_text",
+                        "number": "608",
+                        "code": "2",
+                        "string": [
+                            "fmesh"
+                        ]
+                    }
+                ],
+                "precede": {
+                    "depart": "z",
+                    "precedant": "3"
+                },
+                "message": "Zones 6XX doivent être liées à une notice d'autorité RAMEAU"
+            },
+            {
+                "index": 5066,
+                "number": "608",
+                "condition": [{
+                        "operator": "presente",
+                        "number": "608",
+                        "code": "z"
+                    },
+                    {
+                        "operator": "startwith_text",
+                        "number": "608",
+                        "code": "2",
+                        "string": [
+                            "fmesh"
+                        ]
+                    }
+                ],
+                "precede": {
+                    "depart": "z",
+                    "precedant": "3"
+                },
+                "message": "Zones 6XX doivent être liées à une notice d'autorité RAMEAU"
+            },
+            {
+                "index": 5067,
+                "number": "608",
+                "condition": [{
+                        "operator": "presente",
+                        "number": "608",
+                        "code": "z"
+                    },
+                    {
+                        "operator": "startwith_text",
+                        "number": "608",
+                        "code": "2",
+                        "string": [
+                            "fmesh"
+                        ]
+                    }
+                ],
+                "precede": {
+                    "depart": "z",
+                    "precedant": "3"
+                },
+                "message": "Zones 6XX doivent être liées à une notice d'autorité RAMEAU"
+            },
+            {
+                "index": 5068,
+                "number": "608",
+                "condition": [{
+                        "operator": "presente",
+                        "number": "608",
+                        "code": "z"
+                    },
+                    {
+                        "operator": "startwith_text",
+                        "number": "608",
+                        "code": "2",
+                        "string": [
+                            "fmesh"
+                        ]
+                    }
+                ],
+                "precede": {
+                    "depart": "z",
+                    "precedant": "3"
+                },
+                "message": "Zones 6XX doivent être liées à une notice d'autorité RAMEAU"
+            },
+            {
+                "index": 5069,
+                "number": "608",
+                "condition": [{
+                        "operator": "presente",
+                        "number": "608",
+                        "code": "z"
+                    },
+                    {
+                        "operator": "startwith_text",
+                        "number": "608",
+                        "code": "2",
+                        "string": [
+                            "fmesh"
+                        ]
+                    }
+                ],
+                "precede": {
+                    "depart": "z",
+                    "precedant": "3"
+                },
+                "message": "Zones 6XX doivent être liées à une notice d'autorité RAMEAU"
             }
         ]
     },
     "Mémoire": {
-        "matching": [
-            {}
-        ],
-        "dependances": [
-            {}
-        ],
-        "Conditionnels": [
-            {}
-        ],
-        "Structurel": [
-            {}
-        ],
-        "idRef": [
-            {}
-        ],
-        "ordonnancement": [
-            {}
-        ],
-        "compte": [
-            {}
-        ],
-        "precedence": [
-            {}
-        ]
+        "matching": [{}],
+        "dependances": [{}],
+        "Conditionnels": [{}],
+        "Structurel": [{}],
+        "idRef": [{}],
+        "ordonnancement": [{}],
+        "compte": [{}],
+        "precedence": [{}]
     },
     "Electronique": {
-        "matching": [
-            {}
-        ],
-        "dependances": [
-            {}
-        ],
-        "Conditionnels": [
-            {}
-        ],
-        "Structurel": [
-            {}
-        ],
-        "idRef": [
-            {}
-        ],
-        "ordonnancement": [
-            {}
-        ],
-        "compte": [
-            {}
-        ],
-        "precedence": [
-            {}
-        ]
+        "matching": [{}],
+        "dependances": [{}],
+        "Conditionnels": [{}],
+        "Structurel": [{}],
+        "idRef": [{}],
+        "ordonnancement": [{}],
+        "compte": [{}],
+        "precedence": [{}]
     }
 }
