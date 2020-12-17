@@ -1,7 +1,7 @@
 const convert = require("xml-js");
 const path = require('path');
 const fs = require('fs');
-const ConditionMatching = require('../../regles/ConditionMatching');
+import ConditionMatching from '../../regles/ConditionMatching';
 import rules from '../../../../serveur/public/model_regles.json';
 
 let CATEGORIE;
