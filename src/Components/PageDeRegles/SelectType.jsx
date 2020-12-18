@@ -1,9 +1,10 @@
 import React, { useState } from 'react'
 import { Button, Card, Col, Container, ListGroup, Row } from 'react-bootstrap'
-import Form from 'react-bootstrap/Form'
+// import Form from 'react-bootstrap/Form'
 import FormJSON from "@rjsf/core";
 import { getSchemaMatching } from './forms/matching'
-// import { getSchemaDependencies } from './forms/depences'
+import { getSchemaDependencies } from './forms/depences'
+import { getSchemaConditionnels} from './forms/conditionnels'
 import ArrayFieldTemplate from './forms/ArrayFieldTemplate'
 import { generator, applyRule } from './generator'
 
@@ -12,14 +13,34 @@ const TypeList = ({categories}) => {
   
   const [useForm, setUseForm] = useState(false)
   const [type, setType] = useState("matching")
-  const [indexDesc, setIndexDesc] = useState(0)
+  const [index, setIndex] = useState(0)
 
   const types = [
-    { name: "Matching", type: "matching", description: "Description du type matching" },
-    { name: "Dépendances", type: "dependances", description: "Description du type dependances" },
-    { name: "Conditionnels", type: "Conditionnels", description: "Description du type Conditionnels" },
-    { name: "Structurels", type: "Structurel", description: "Description du type Structurel" },
-    { name: "Références", type: "idRef", description: "Description du type idRef" },
+    { name: "Matching", 
+      type: "matching",
+      description: "Description du type matching",
+      schema: getSchemaMatching(categories, rules)
+    },
+    { name: "Dépendances", 
+      type: "dependances",
+      description: "Description du type dependances",
+      schema: getSchemaDependencies()
+    },
+    { name: "Conditionnels", 
+      type: "Conditionnels",
+      description: "Description du type Conditionnels",
+      schema: getSchemaConditionnels()
+    },
+    { name: "Structurels", 
+      type: "Structurel",
+      description: "Description du type Structurel",
+      schema: getSchemaMatching()
+    },
+    { name: "Références", 
+      type: "idRef",
+      description: "Description du type idRef",
+      schema: getSchemaMatching()
+    },
   ]
 
   const rules = {
@@ -49,14 +70,12 @@ const TypeList = ({categories}) => {
 
   const handleTypeChange = (selectedType) => {
     setType(selectedType)
-    setIndexDesc(types.findIndex(t => t.type == selectedType))
+    setIndex(types.findIndex(t => t.type == selectedType))
   }
 
   const handleSelectedType = () => {
     setUseForm(!useForm)
   }
-
-  const schema = getSchemaMatching(categories, rules)
   
   const onSubmit = ({formData}, e) => {
     console.log(type)
@@ -90,7 +109,7 @@ const TypeList = ({categories}) => {
   const Form = () => (
     <FormJSON 
       className="col-12"
-      schema={schema}
+      schema={types[index].schema}
       ArrayFieldTemplate={ArrayFieldTemplate}
       onSubmit={onSubmit}
     >
@@ -116,7 +135,7 @@ const TypeList = ({categories}) => {
         </Col>
         <Col>
           <Card>
-            <Card.Body>{types[indexDesc].description}</Card.Body>
+            <Card.Body>{types[index].description}</Card.Body>
           </Card>
         </Col>
       </Row>

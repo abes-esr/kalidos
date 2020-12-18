@@ -1,6 +1,29 @@
+export const rulesSpec = {
+  rules: [
+    "must contain",
+    "must not contain",
+    "equals to",
+    "not equals to",
+    "starts with",
+    "not starts with",
+    "ends with",
+    "not ends with",
+    "characters number"
+  ],
+  names: [
+    "Doit contenir",
+    "Ne doit pas contenir",
+    "Égale à",
+    "Ne soit pas égale à",
+    "Commence par ",
+    "Ne doit pas commencer par",
+    "Finit par",
+    "Ne doit pas finir par",
+    "Nombre de caracteres"
+  ]
+}
 
 
-// caracter #
 export function characters_number(value) {
   return ['.', '{'+value+'}']
 }

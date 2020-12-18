@@ -210,7 +210,6 @@ function Table() {
 
   if (error)
     return <div>Error: {error.message}</div>;
-
   else if (!isLoaded)
     return <div>Loading...</div>;
   else {
@@ -221,11 +220,9 @@ function Table() {
         {
           props => (
             <div>
-              
               <div className="row">
                 <div className="col-10">
                 <SearchBar {...props.searchProps} className="align-self-center"/>
-                {/* <FormJSON schema={schema}></FormJSON> */}
                 </div>
                 <div className="col-2">
                   <Modal
@@ -238,7 +235,6 @@ function Table() {
               </div>
               <hr />
               <BootstrapTable {...props.baseProps} pagination={paginationFactory(options)} />
-
             </div>
           )
         }
