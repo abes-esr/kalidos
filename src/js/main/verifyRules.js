@@ -71,7 +71,7 @@ function getSudoc(rules, PPN) {
 function writeResult() {
     axios({
         method: 'POST',
-        url: ':3000/result',
+        url: '/result',
         contentType: "application/json",
         headers: {
             "Accept": "application/json",
@@ -91,7 +91,7 @@ function writeResult() {
 function deleteRule(index) {
     axios({
         method: 'DELETE',
-        url: ':3000/rules',
+        url: '/rules',
         contentType: "application/json",
         headers: {
             "Accept": "application/json",
@@ -108,7 +108,7 @@ function deleteRule(index) {
 }
 
 function updateRule(index, newRule) {
-    axios.put(':3000/rules', newRule, {
+    axios.put('/rules', newRule, {
         headers: {
             'Content-Type': 'application/json',
             "index": index
@@ -123,7 +123,7 @@ function updateRule(index, newRule) {
 function addRule(categorie, type, rule) {
     axios({
         method: 'POST',
-        url: ':3000/rules',
+        url: '/rules',
         contentType: "application/json",
         headers: {
             "Accept": "application/json",
@@ -143,7 +143,7 @@ function addRule(categorie, type, rule) {
 }
 
 function getRules(listPPN) {
-    axios.get(':3000/rules')
+    axios.get('/rules')
         .then(function (response) {
 
             listPPN.forEach(PPN => getSudoc(response.data, PPN));
