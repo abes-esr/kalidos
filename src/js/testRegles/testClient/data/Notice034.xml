@@ -1,4 +1,4 @@
-record>
+<record>
 <leader> cam0 22 450 </leader>
 <controlfield tag="001">003466752</controlfield>
 <controlfield tag="002">
@@ -309,7 +309,7 @@ record>
 <subfield code="a">BE</subfield>
 </datafield>
 <datafield tag="105" ind1=" " ind2=" ">
-<subfield code="a">a a 001yy</subfield>
+<subfield code="a">aa a 001yy</subfield>
 </datafield>
 <datafield tag="106" ind1=" " ind2=" ">
 <subfield code="a">r</subfield>
@@ -638,3 +638,4 @@ http://buadistant.univ-angers.fr/login?url=http://www.cairn.info/theories-du-dev
 <subfield code="5">130552106:11121243X</subfield>
 <subfield code="z">E/29235</subfield>
 </datafield>
+</record>

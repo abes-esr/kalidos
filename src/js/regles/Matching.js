@@ -20,9 +20,6 @@ var Matching = function () {
             if (text != undefined) {
                 const textWithoutLineBreak = text.toString().replace(/\n/g, '');
                 const match = textWithoutLineBreak.match(regex);
-                // if (regle.number == "700") {
-                //     console.log(text, regex, match, match && text === match[0]);
-                // }
                 addError = addError || !(match && textWithoutLineBreak === match[0]);
             }
         }
@@ -31,47 +28,61 @@ var Matching = function () {
 
     var testMatchRegexNumber = function (regle, datafields, controlfields, resultJson) {
         const regex = RegExp(regle.regex, 'g');
-        datafields.forEach(function (field) {
-            if (field._attributes.tag.toString() === regle.number.toString() || regle.number === "GLOBAL") {
-                if (field.subfield instanceof Array) {
-                    field.subfield.forEach(function (subfield) {
-                        let addError = matchFactoriser(regle, regex, subfield._text, subfield._text, subfield._attributes.code);
-                        if (addError) {
-                            resultJson.errors.push({
-                                message: regle.message,
-                                number: regle.number,
-                                code: regle.code,
-                            });
-                        }
-                    });
-                } else {
-                    let addError = matchFactoriser(regle, regex, field, field.subfield._text, field.subfield._attributes.code);
-                    if (addError) {
-                        resultJson.errors.push({
-                            message: regle.message,
-                            number: regle.number,
-                            code: regle.code
-                        });
-                    }
-                }
+        let addError = false;
+        for (let i in datafields) {
+            addError = verifyMatchInDatafield(datafields[i], regle, regex);
+            if (addError) {
+                break;
             }
-        });
-        //Cas ou la contrainte est dans le controlfield
+        }
+
+        if (addError) {
+            addErrorInJson(resultJson, regle);
+        }
+
+        // Cas où la contrainte est dans le controlfield
+        // Les controfields possèdent des tags qui ont la forme 00X 
+        // contrairement aux datafields où leur tags sont >= 100 
         const matchControlField = RegExp("^00.*", 'g');
-        if(!(regle.number instanceof Array) && RegExp(matchControlField).test(regle.number)) {
-            
-            const field_control = Parcours.findDataField(controlfields, regle.number)
-            if(field_control != null) {
-                const value = field_control._text
-                if(!RegExp(regex).test(value)) {
-                    resultJson.errors.push({
-                        message: regle.message,
-                        number: regle.number,
-                        code: regle.code,
-                    });
+        if (!(regle.number instanceof Array) && RegExp(matchControlField).test(regle.number)) {
+
+            const controlField = Parcours.findDataField(controlfields, regle.number)
+            if (controlField != null) {
+                const value = controlField._text
+                if (!RegExp(regex).test(value)) {
+                    addErrorInJson(resultJson, regle);
                 }
             }
         }
+    }
+
+
+    function verifyMatchInDatafield(datafield, regle, regex) {
+        const verificationTag = verifyTag(datafield, regle);
+        const verificationIndice = verifyIndice(datafield, regle);
+
+        if (verificationTag && verificationIndice) {
+            let subfieldList = datafield.subfield;
+            if (!(subfieldList instanceof Array)) {
+                subfieldList = [subfieldList];
+            }
+            const subfieldError = verifyMatchInSubfieldList(subfieldList, regle, regex);
+            if (subfieldError) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    function verifyMatchInSubfieldList(subfieldList, regle, regex) {
+        for (let j in subfieldList) {
+            const subfield = subfieldList[j];
+            const addError = matchFactoriser(regle, regex, subfield._text, subfield._text, subfield._attributes.code);
+            if (addError) {
+                return true;
+            }
+        }
+        return false;
     }
 
     var matchAll = function (textField, value) {
@@ -102,34 +113,25 @@ var Matching = function () {
             const field = Parcours.findDataField(datafields, regle.number[item])
             numberError.push(regle.number[item])
             let matchvalid = true
-            if (field != null && field.subfield instanceof Array) {
-                for (let i in field.subfield) {
-                    if (field.subfield[i]._attributes.code === regle.code) {
+            if (field != null) {
+                let subfieldList = field.subfield;
+                if(!(subfieldList instanceof Array)) {
+                    subfieldList = [subfieldList];
+                } 
+                
+                for (let i in subfieldList) {
+                    if (subfieldList[i]._attributes.code === regle.code) {
                         if (regle.match === "all") {
-                            matchvalid = matchAll(field.subfield[i]._text, value)
+                            matchvalid = matchAll(subfieldList[i]._text, value)
                         }
                         else if (regle.match === "one") {
-                            matchvalid = matchOne(field.subfield[i]._text, value)
+                            matchvalid = matchOne(subfieldList[i]._text, value)
                         }
                         if (matchvalid) {
                             valid -= 1
                             numberError.pop()
                         }
 
-                    }
-                }
-            } else if (field != null) {
-                if (field.subfield._attributes.code === regle.code) {
-                    // matchvalid = true;
-                    if (regle.match === "all") {
-                        matchvalid = matchAll(field.subfield._text, value)
-                    }
-                    else if (regle.match === "one") {
-                        matchvalid = matchOne(field.subfield._text, value)
-                    }
-                    if (matchvalid) {
-                        valid -= 1
-                        numberError.pop()
                     }
                 }
             } else {
@@ -158,8 +160,29 @@ var Matching = function () {
 
 
     return {
-        testMatchRegexRules: testMatchRegexRules
+        testMatchRegexRules: testMatchRegexRules,
+        testMatchRegexNumber: testMatchRegexNumber
     }
 }();
 
 module.exports = Matching;
+
+function addErrorInJson(resultJson, regle) {
+    resultJson.errors.push({
+        message: regle.message,
+        number: regle.number,
+        code: regle.code
+    });
+}
+
+function verifyTag(field, regle) {
+    const tagIsOk = field._attributes.tag.toString() === regle.number.toString();
+    const isGlobal = regle.number === "GLOBAL";
+    return tagIsOk || isGlobal;
+}
+
+function verifyIndice(field, regle) {
+    const ind1IsOk = !regle.ind1 || (regle.ind1 && regle.ind1 === field._attributes.ind1.toString().trim());
+    const ind2IsOk = !regle.ind2 || (regle.ind2 && regle.ind2 === field._attributes.ind2.toString().trim());
+    return ind1IsOk && ind2IsOk;
+}

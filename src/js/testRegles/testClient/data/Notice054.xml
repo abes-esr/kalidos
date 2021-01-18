@@ -1,224 +1,225 @@
 <record>
-<leader> cam0 22 450 </leader>
-<controlfield tag="001">09459435X</controlfield>
-<controlfield tag="002">38,98</controlfield>
-<controlfield tag="003">http://www.sudoc.fr/09459435X</controlfield>
-<controlfield tag="004">20060103</controlfield>
-<controlfield tag="005">20200409222057.000</controlfield>
-<controlfield tag="006">751052304</controlfield>
-<controlfield tag="007">693842301</controlfield>
-<controlfield tag="008">Aax3</controlfield>
-<datafield tag="033" ind1=" " ind2=" ">
-<subfield code="a">http://catalogue.bnf.fr/ark:/12148/cb309785867</subfield>
-</datafield>
-<datafield tag="035" ind1=" " ind2=" ">
-<subfield code="a">(OCoLC)458189208</subfield>
-</datafield>
-<datafield tag="035" ind1=" " ind2=" ">
-<subfield code="a">FRBNF309785860000001</subfield>
-</datafield>
-<datafield tag="035" ind1=" " ind2=" ">
-<subfield code="a">CG011903790701P</subfield>
-</datafield>
-<datafield tag="100" ind1=" " ind2=" ">
-<subfield code="a">20060103d1929 k y0frey50 ba</subfield>
-</datafield>
-<datafield tag="101" ind1="0" ind2=" ">
-<subfield code="a">fre</subfield>
-</datafield>
-<datafield tag="102" ind1=" " ind2=" ">
-<subfield code="a">FR</subfield>
-</datafield>
-<datafield tag="105" ind1=" " ind2=" ">
-<subfield code="a">ab va 000yy</subfield>
-</datafield>
-<datafield tag="106" ind1=" " ind2=" ">
-<subfield code="a">r</subfield>
-</datafield>
-<datafield tag="181" ind1=" " ind2=" ">
-<subfield code="6">z01</subfield>
-<subfield code="c">txt</subfield>
-<subfield code="2">rdacontent</subfield>
-</datafield>
-<datafield tag="181" ind1=" " ind2="1">
-<subfield code="6">z01</subfield>
-<subfield code="a">i#</subfield>
-<subfield code="b">xxxe##</subfield>
-</datafield>
-<datafield tag="182" ind1=" " ind2=" ">
-<subfield code="6">z01</subfield>
-<subfield code="c">n</subfield>
-<subfield code="2">rdamedia</subfield>
-</datafield>
-<datafield tag="182" ind1=" " ind2="1">
-<subfield code="6">z01</subfield>
-<subfield code="a">n</subfield>
-</datafield>
-<datafield tag="183" ind1=" " ind2="1">
-<subfield code="6">z01</subfield>
-<subfield code="a">nga</subfield>
-<subfield code="2">rdacarrier</subfield>
-</datafield>
-<datafield tag="200" ind1="1" ind2=" ">
-<subfield code="a">
+    <leader> cam0 22 450 </leader>
+    <controlfield tag="001">09459435X</controlfield>
+    <controlfield tag="002">38,98</controlfield>
+    <controlfield tag="003">http://www.sudoc.fr/09459435X</controlfield>
+    <controlfield tag="004">20060103</controlfield>
+    <controlfield tag="005">20200409222057.000</controlfield>
+    <controlfield tag="006">751052304</controlfield>
+    <controlfield tag="007">693842301</controlfield>
+    <controlfield tag="008">Aax3</controlfield>
+    <datafield tag="033" ind1=" " ind2=" ">
+        <subfield code="a">http://catalogue.bnf.fr/ark:/12148/cb309785867</subfield>
+    </datafield>
+    <datafield tag="035" ind1=" " ind2=" ">
+        <subfield code="a">(OCoLC)458189208</subfield>
+    </datafield>
+    <datafield tag="035" ind1=" " ind2=" ">
+        <subfield code="a">FRBNF309785860000001</subfield>
+    </datafield>
+    <datafield tag="035" ind1=" " ind2=" ">
+        <subfield code="a">CG011903790701P</subfield>
+    </datafield>
+    <datafield tag="100" ind1=" " ind2=" ">
+        <subfield code="a">20060103d1929 k y0frey50 ba</subfield>
+    </datafield>
+    <datafield tag="101" ind1="0" ind2=" ">
+        <subfield code="a">fre</subfield>
+    </datafield>
+    <datafield tag="102" ind1=" " ind2=" ">
+        <subfield code="a">FR</subfield>
+    </datafield>
+    <datafield tag="105" ind1=" " ind2=" ">
+        <subfield code="a">ab va 000yy</subfield>
+    </datafield>
+    <datafield tag="106" ind1=" " ind2=" ">
+        <subfield code="a">r</subfield>
+    </datafield>
+    <datafield tag="181" ind1=" " ind2=" ">
+        <subfield code="6">z01</subfield>
+        <subfield code="c">txt</subfield>
+        <subfield code="2">rdacontent</subfield>
+    </datafield>
+    <datafield tag="181" ind1=" " ind2="1">
+        <subfield code="6">z01</subfield>
+        <subfield code="a">i#</subfield>
+        <subfield code="b">xxxe##</subfield>
+    </datafield>
+    <datafield tag="182" ind1=" " ind2=" ">
+        <subfield code="6">z01</subfield>
+        <subfield code="c">n</subfield>
+        <subfield code="2">rdamedia</subfield>
+    </datafield>
+    <datafield tag="182" ind1=" " ind2="1">
+        <subfield code="6">z01</subfield>
+        <subfield code="a">n</subfield>
+    </datafield>
+    <datafield tag="183" ind1=" " ind2="1">
+        <subfield code="6">z01</subfield>
+        <subfield code="a">nga</subfield>
+        <subfield code="2">rdacarrier</subfield>
+    </datafield>
+    <datafield tag="200" ind1="1" ind2=" ">
+        <subfield code="a">
 Étude des eaux de la partie sud-est et sud-ouest du massif de la Chartreuse
-</subfield>
-<subfield code="f">par Paul Morel,...</subfield>
-</datafield>
-<datafield tag="214" ind1=" " ind2="0">
-<subfield code="a">Grenoble</subfield>
-<subfield code="c">Imprimerie Dardelet</subfield>
-<subfield code="d">1929</subfield>
-</datafield>
-<datafield tag="215" ind1=" " ind2=" ">
-<subfield code="a">1 vol. (143 p.)</subfield>
-<subfield code="c">ill., cartes</subfield>
-<subfield code="d">26 cm</subfield>
-</datafield>
-<datafield tag="328" ind1=" " ind2="0">
-<subfield code="z">Autre édition de</subfield>
-<subfield code="b">Thèse de doctorat</subfield>
-<subfield code="c">Pharmacie</subfield>
-<subfield code="e">Université de Lyon</subfield>
-<subfield code="d">1929</subfield>
-</datafield>
-<datafield tag="451" ind1=" " ind2="|">
-<subfield code="0">231633556</subfield>
-<subfield code="t">
+        </subfield>
+        <subfield code="f">par Paul Morel,...</subfield>
+    </datafield>
+    <datafield tag="214" ind1=" " ind2="0">
+        <subfield code="a">Grenoble</subfield>
+        <subfield code="c">Imprimerie Dardelet</subfield>
+        <subfield code="d">1929</subfield>
+    </datafield>
+    <datafield tag="215" ind1=" " ind2=" ">
+        <subfield code="a">1 vol. (143 p.)</subfield>
+        <subfield code="c">ill., cartes</subfield>
+        <subfield code="d">26 cm</subfield>
+    </datafield>
+    <datafield tag="328" ind1=" " ind2="0">
+        <subfield code="z">Autre édition de</subfield>
+        <subfield code="b">Thèse de doctorat</subfield>
+        <subfield code="c">Pharmacie</subfield>
+        <subfield code="e">Université de Lyon</subfield>
+        <subfield code="d">1929</subfield>
+    </datafield>
+    <datafield tag="451" ind1=" " ind2="|">
+        <subfield code="0">231633556</subfield>
+        <subfield code="t">
 Étude des eaux de la partie sud-est et sud-ouest du massif de la Chartreuse
-</subfield>
-<subfield code="f">Paul Morel,...</subfield>
-<subfield code="d">1929</subfield>
-<subfield code="p">1 vol. (142 p.-[1] dépl.)</subfield>
-</datafield>
-<datafield tag="579" ind1=" " ind2=" ">
-<subfield code="1">0499</subfield>
-<subfield code="3">231635508</subfield>
-<subfield code="t">
+        </subfield>
+        <subfield code="f">Paul Morel,...</subfield>
+        <subfield code="d">1929</subfield>
+        <subfield code="p">1 vol. (142 p.-[1] dépl.)</subfield>
+    </datafield>
+    <datafield tag="579" ind1=" " ind2=" ">
+        <subfield code="1">0499</subfield>
+        <subfield code="3">231635508</subfield>
+        <subfield code="t">
 Étude des eaux de la partie sud-est et sud-ouest du massif de la Chartreuse
-</subfield>
-<datafield tag="488" ind1=" " ind2="|">
-<subfield code="0">231633556</subfield>
-<subfield code="t">
+        </subfield>
+    </datafield>
+    <datafield tag="488" ind1=" " ind2="|">
+        <subfield code="0">231633556</subfield>
+        <subfield code="t">
 Étude des eaux de la partie sud-est et sud-ouest du massif de la Chartreuse
-</subfield>
-<subfield code="f">Paul Morel,...</subfield>
-<subfield code="d">1929</subfield>
-<subfield code="p">1 vol. (142 p.-[1] dépl.)</subfield>
-</datafield>
-<datafield tag="579" ind1=" " ind2=" ">
-<subfield code="1">0499</subfield>
-<subfield code="3">231635508</subfield>
-<subfield code="t">
+        </subfield>
+        <subfield code="f">Paul Morel,...</subfield>
+        <subfield code="d">1929</subfield>
+        <subfield code="p">1 vol. (142 p.-[1] dépl.)</subfield>
+    </datafield>
+    <datafield tag="579" ind1=" " ind2=" ">
+        <subfield code="1">0499</subfield>
+        <subfield code="3">231635508</subfield>
+        <subfield code="t">
 Étude des eaux de la partie sud-est et sud-ouest du massif de la Chartreuse
-</subfield>
-</datafield>
-<datafield tag="606" ind1=" " ind2=" ">
-<subfield code="3">027227987</subfield>
-<subfield code="a">Géologie</subfield>
-<subfield code="3">027226794</subfield>
-<subfield code="y">France</subfield>
-<subfield code="3">027358321</subfield>
-<subfield code="y">Isère (France)</subfield>
-<subfield code="2">rameau</subfield>
-</datafield>
-<datafield tag="606" ind1=" " ind2=" ">
-<subfield code="3">027794652</subfield>
-<subfield code="a">Eaux minérales</subfield>
-<subfield code="3">027226794</subfield>
-<subfield code="y">France</subfield>
-<subfield code="3">027358321</subfield>
-<subfield code="y">Isère (France)</subfield>
-<subfield code="2">rameau</subfield>
-</datafield>
-<datafield tag="606" ind1=" " ind2=" ">
-<subfield code="3">027794652</subfield>
-<subfield code="a">Eaux minérales</subfield>
-<subfield code="3">176320709</subfield>
-<subfield code="x">Propriétés physico-chimiques</subfield>
-<subfield code="2">rameau</subfield>
-</datafield>
-<datafield tag="606" ind1=" " ind2=" ">
-<subfield code="3">029840619</subfield>
-<subfield code="a">Eau</subfield>
-<subfield code="x">Chimie</subfield>
-<subfield code="2">rameau</subfield>
-</datafield>
-<datafield tag="607" ind1=" " ind2=" ">
-<subfield code="3">027364178</subfield>
-<subfield code="a">Chartreuse, Massif de la (France)</subfield>
-<subfield code="2">rameau</subfield>
-</datafield>
-<datafield tag="686" ind1=" " ind2=" ">
-<subfield code="a">610</subfield>
-<subfield code="2">TEF</subfield>
-</datafield>
-<datafield tag="700" ind1=" " ind2="1">
-<subfield code="3">225531526</subfield>
-<subfield code="a">Morel</subfield>
-<subfield code="b">Paul</subfield>
-<subfield code="f">1899-....</subfield>
-<subfield code="4">070</subfield>
-</datafield>
-<datafield tag="801" ind1=" " ind2="3">
-<subfield code="a">FR</subfield>
-<subfield code="b">Abes</subfield>
-<subfield code="c">20200409</subfield>
-<subfield code="g">AFNOR</subfield>
-</datafield>
-<datafield tag="801" ind1=" " ind2="0">
-<subfield code="a">FR</subfield>
-<subfield code="b">BNF</subfield>
-<subfield code="c">19970701</subfield>
-<subfield code="g">AFNOR</subfield>
-<subfield code="2">intermrc</subfield>
-</datafield>
-<datafield tag="930" ind1=" " ind2=" ">
-<subfield code="5">693882101:623368390</subfield>
-<subfield code="b">693882101</subfield>
-<subfield code="j">g</subfield>
-</datafield>
-<datafield tag="940" ind1=" " ind2=" ">
-<subfield code="5">693882101:623368390</subfield>
-<subfield code="a">20181113</subfield>
-<subfield code="b">x</subfield>
-</datafield>
-<datafield tag="941" ind1=" " ind2=" ">
-<subfield code="5">693882101:623368390</subfield>
-<subfield code="a">20181113</subfield>
-<subfield code="b">21:12:55.000</subfield>
-</datafield>
-<datafield tag="991" ind1=" " ind2=" ">
-<subfield code="5">693882101:623368390</subfield>
-<subfield code="a">
+        </subfield>
+    </datafield>
+    <datafield tag="606" ind1=" " ind2=" ">
+        <subfield code="3">027227987</subfield>
+        <subfield code="a">Géologie</subfield>
+        <subfield code="3">027226794</subfield>
+        <subfield code="y">France</subfield>
+        <subfield code="3">027358321</subfield>
+        <subfield code="y">Isère (France)</subfield>
+        <subfield code="2">rameau</subfield>
+    </datafield>
+    <datafield tag="606" ind1=" " ind2=" ">
+        <subfield code="3">027794652</subfield>
+        <subfield code="a">Eaux minérales</subfield>
+        <subfield code="3">027226794</subfield>
+        <subfield code="y">France</subfield>
+        <subfield code="3">027358321</subfield>
+        <subfield code="y">Isère (France)</subfield>
+        <subfield code="2">rameau</subfield>
+    </datafield>
+    <datafield tag="606" ind1=" " ind2=" ">
+        <subfield code="3">027794652</subfield>
+        <subfield code="a">Eaux minérales</subfield>
+        <subfield code="3">176320709</subfield>
+        <subfield code="x">Propriétés physico-chimiques</subfield>
+        <subfield code="2">rameau</subfield>
+    </datafield>
+    <datafield tag="606" ind1=" " ind2=" ">
+        <subfield code="3">029840619</subfield>
+        <subfield code="a">Eau</subfield>
+        <subfield code="x">Chimie</subfield>
+        <subfield code="2">rameau</subfield>
+    </datafield>
+    <datafield tag="607" ind1=" " ind2=" ">
+        <subfield code="3">027364178</subfield>
+        <subfield code="a">Chartreuse, Massif de la (France)</subfield>
+        <subfield code="2">rameau</subfield>
+    </datafield>
+    <datafield tag="686" ind1=" " ind2=" ">
+        <subfield code="a">610</subfield>
+        <subfield code="2">TEF</subfield>
+    </datafield>
+    <datafield tag="700" ind1=" " ind2="1">
+        <subfield code="3">225531526</subfield>
+        <subfield code="a">Morel</subfield>
+        <subfield code="b">Paul</subfield>
+        <subfield code="f">1899-....</subfield>
+        <subfield code="4">070</subfield>
+    </datafield>
+    <datafield tag="801" ind1=" " ind2="3">
+        <subfield code="a">FR</subfield>
+        <subfield code="b">Abes</subfield>
+        <subfield code="c">20200409</subfield>
+        <subfield code="g">AFNOR</subfield>
+    </datafield>
+    <datafield tag="801" ind1=" " ind2="0">
+        <subfield code="a">FR</subfield>
+        <subfield code="b">BNF</subfield>
+        <subfield code="c">19970701</subfield>
+        <subfield code="g">AFNOR</subfield>
+        <subfield code="2">intermrc</subfield>
+    </datafield>
+    <datafield tag="930" ind1=" " ind2=" ">
+        <subfield code="5">693882101:623368390</subfield>
+        <subfield code="b">693882101</subfield>
+        <subfield code="j">g</subfield>
+    </datafield>
+    <datafield tag="940" ind1=" " ind2=" ">
+        <subfield code="5">693882101:623368390</subfield>
+        <subfield code="a">20181113</subfield>
+        <subfield code="b">x</subfield>
+    </datafield>
+    <datafield tag="941" ind1=" " ind2=" ">
+        <subfield code="5">693882101:623368390</subfield>
+        <subfield code="a">20181113</subfield>
+        <subfield code="b">21:12:55.000</subfield>
+    </datafield>
+    <datafield tag="991" ind1=" " ind2=" ">
+        <subfield code="5">693882101:623368390</subfield>
+        <subfield code="a">
 Catalogage rétrospectif-2018-FINANCEMENT ABES-LOC-Lyon1 Santé thèses
-</subfield>
-</datafield>
-<datafield tag="930" ind1=" " ind2=" ">
-<subfield code="5">751052304:250134632</subfield>
-<subfield code="b">751052304</subfield>
-<subfield code="a">186 977</subfield>
-<subfield code="j">s</subfield>
-</datafield>
-<datafield tag="940" ind1=" " ind2=" ">
-<subfield code="5">751052304:250134632</subfield>
-<subfield code="a">20060103</subfield>
-<subfield code="b">x</subfield>
-</datafield>
-<datafield tag="941" ind1=" " ind2=" ">
-<subfield code="5">751052304:250134632</subfield>
-<subfield code="a">20060103</subfield>
-<subfield code="b">15:59:25.000</subfield>
-</datafield>
-<datafield tag="991" ind1=" " ind2=" ">
-<subfield code="5">751052304:250134632</subfield>
-<subfield code="a">JOUVE-MK-RETRO-DER-05-60-001</subfield>
-<subfield code="b">BC05000125-20060103-02B_0011_00446_01</subfield>
-</datafield>
-<datafield tag="999" ind1=" " ind2=" ">
-<subfield code="5">751052304:250134632</subfield>
-<subfield code="a">1NO</subfield>
-<subfield code="b">1ZRETRO</subfield>
-<subfield code="f">R</subfield>
-</datafield>
+        </subfield>
+    </datafield>
+    <datafield tag="930" ind1=" " ind2=" ">
+        <subfield code="5">751052304:250134632</subfield>
+        <subfield code="b">751052304</subfield>
+        <subfield code="a">186 977</subfield>
+        <subfield code="j">s</subfield>
+    </datafield>
+    <datafield tag="940" ind1=" " ind2=" ">
+        <subfield code="5">751052304:250134632</subfield>
+        <subfield code="a">20060103</subfield>
+        <subfield code="b">x</subfield>
+    </datafield>
+    <datafield tag="941" ind1=" " ind2=" ">
+        <subfield code="5">751052304:250134632</subfield>
+        <subfield code="a">20060103</subfield>
+        <subfield code="b">15:59:25.000</subfield>
+    </datafield>
+    <datafield tag="991" ind1=" " ind2=" ">
+        <subfield code="5">751052304:250134632</subfield>
+        <subfield code="a">JOUVE-MK-RETRO-DER-05-60-001</subfield>
+        <subfield code="b">BC05000125-20060103-02B_0011_00446_01</subfield>
+    </datafield>
+    <datafield tag="999" ind1=" " ind2=" ">
+        <subfield code="5">751052304:250134632</subfield>
+        <subfield code="a">1NO</subfield>
+        <subfield code="b">1ZRETRO</subfield>
+        <subfield code="f">R</subfield>
+    </datafield>
 </record>

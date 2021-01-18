@@ -72,9 +72,6 @@ Intérêt de la désépithélialisation d'un greffon conjonctif prélevé au pal
         <subfield code="a">Données textuelles (1 fichier PDF : X Ko)</subfield>
     </datafield>
     <!-- </datafield> -->
-    <datafield tag="307" ind1=" " ind2=" ">
-        <subfield code="a">L'impression du document génère ? p.</subfield>
-    </datafield>
     <datafield tag="320" ind1=" " ind2=" ">
         <subfield code="a">Bibliogr. f. 45-50</subfield>
     </datafield>
@@ -157,14 +154,7 @@ Intérêt de la désépithélialisation d'un greffon conjonctif prélevé au pal
         <subfield code="c">20201009</subfield>
         <subfield code="g">AFNOR</subfield>
     </datafield>
-    <datafield tag="856" ind1="4" ind2=" ">
-        <subfield code="5">692669902:676500129</subfield>
-        <subfield code="q">PDF</subfield>
-        <subfield code="u">URL</subfield>
-        <subfield code="z">
-Accès au texte intégral
-        </subfield>
-    </datafield>
+    
     <datafield tag="930" ind1=" " ind2=" ">
         <subfield code="5">692669902:676500129</subfield>
         <subfield code="b">692669902</subfield>

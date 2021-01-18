@@ -1304,20 +1304,21 @@ test('307$a ne doit pas contenir le caractère ?', () => {
     expect(resultJson.errors).toStrictEqual([]);
 });
 
-test('307$a ne doit pas contenir le caractère ? (FAIL)', () => {
-    const notice = getNotice("018");
-    const datafields = notice.record.datafield;
-    const controlfield = notice.record.controlfield;
-    let resultJson = {
-        PPN: 0,
-        errors: [],
-    };
-    const index = 10;
-    addRuleToTest(index);
-    Matching.testMatchRegexRules(CATEGORIE, ruleTest, controlfield, datafields, resultJson)
+// ORANGE pas de 307 :)
+// test('307$a ne doit pas contenir le caractère ? (FAIL)', () => {
+//     const notice = getNotice("018");
+//     const datafields = notice.record.datafield;
+//     const controlfield = notice.record.controlfield;
+//     let resultJson = {
+//         PPN: 0,
+//         errors: [],
+//     };
+//     const index = 10;
+//     addRuleToTest(index);
+//     Matching.testMatchRegexRules(CATEGORIE, ruleTest, controlfield, datafields, resultJson)
 
-    expect(resultJson.errors).not.toStrictEqual([]);
-});
+//     expect(resultJson.errors).not.toStrictEqual([]);
+// });
 
 
 // =================================================
@@ -1735,38 +1736,6 @@ test('701$b ne doit pas contenir Prénom (FAIL)', () => {
         errors: [],
     };
     const index = 15;
-    addRuleToTest(index);
-    Matching.testMatchRegexRules(CATEGORIE, ruleTest, controlfield, datafields, resultJson)
-
-    expect(resultJson.errors).not.toStrictEqual([]);
-});
-
-// =================================================
-
-test('701$b ne doit pas contenir Prénom', () => {
-    const notice = getNotice("017");
-    const datafields = notice.record.datafield;
-    const controlfield = notice.record.controlfield;
-    let resultJson = {
-        PPN: 0,
-        errors: [],
-    };
-    const index = 8;
-    addRuleToTest(index);
-    Matching.testMatchRegexRules(CATEGORIE, ruleTest, controlfield, datafields, resultJson)
-
-    expect(resultJson.errors).toStrictEqual([]);
-});
-
-test('701$b ne doit pas contenir Prénom (FAIL)', () => {
-    const notice = getNotice("018");
-    const datafields = notice.record.datafield;
-    const controlfield = notice.record.controlfield;
-    let resultJson = {
-        PPN: 0,
-        errors: [],
-    };
-    const index = 8;
     addRuleToTest(index);
     Matching.testMatchRegexRules(CATEGORIE, ruleTest, controlfield, datafields, resultJson)
 
