@@ -43,6 +43,30 @@ app.post('/result', (req, res) => {
 });
 
 /**
+ * crée un fichier txt avc la liste des notices erronées
+ * @body body : fichier resultat
+ * return code 200
+ */
+app.post('/notice', (req, res) => {
+  const json = req.body;
+  const data_verif = Object.keys(json).map((key) => [Number(key), json[key]]);
+  const listPPNWithError = data_verif.filter((row) => { return row[1].errors.length });
+
+  let stream = fs.createWriteStream(`${__dirname}/public/noticesErreurs.txt`);
+
+  stream.once('open', function(fd) {
+    let str;
+    for (let i = 0; i < listPPNWithError.length; i++) {
+      str = listPPNWithError[i][1]['PPN'];
+      stream.write(str + "\n");
+    }
+    stream.end();
+  });
+
+  res.sendStatus(200);
+});
+
+/**
  * ajoute une nouvelle regle dans le fichier de regles
  * @header type : type de la regle
  * @header categorie : categorie de la regle
