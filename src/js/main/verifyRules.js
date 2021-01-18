@@ -31,11 +31,15 @@ const NEWRULEMODIFIED = {
 const INDEX = 5;
 const REGEXENDUR = ".*^(NOM).*";
 
+let nombreTotalPPN = 0;
+let count = 0;
+
 function verifiyRulesByTextArea() {
     store.dispatch(cleanResult());
     window.location += 'interfaceVerif';
     const listPPN = document.getElementById("textAreaSaisie").value.split("\n").filter(x=>x!='');
     store.dispatch(setNombreTotalPPN(listPPN.length));
+    nombreTotalPPN = listPPN.length;
     getRules(listPPN);
 }
 
@@ -76,12 +80,12 @@ function writeResult() {
     }).then(function () {
         //console.log("ok")
     })
-        .catch(function (error) {
-            // handle error
-            console.log(error);
-        })
-        .then(function () {
-        });
+    .catch(function (error) {
+        // handle error
+        console.log(error);
+    })
+    .then(function () {
+    });
 }
 
 function deleteRule(index) {
@@ -96,11 +100,11 @@ function deleteRule(index) {
     }).then(function () {
         console.log("suppression ok")
     })
-        .catch(function (error) {
-            console.log(error);
-        })
-        .then(function () {
-        });
+    .catch(function (error) {
+        console.log(error);
+    })
+    .then(function () {
+    });
 }
 
 function updateRule(index, newRule) {
@@ -130,12 +134,12 @@ function addRule(categorie, type, rule) {
     }).then(function () {
         console.log("ok")
     })
-        .catch(function (error) {
-            // handle error
-            console.log(error);
-        })
-        .then(function () {
-        });
+    .catch(function (error) {
+        // handle error
+        console.log(error);
+    })
+    .then(function () {
+    });
 }
 
 function getRules(listPPN) {
@@ -153,10 +157,26 @@ function getRules(listPPN) {
         .then(function () {
             // always executed
         });
-
 }
 
+function noticesErreurs() {
+    axios({
+        method: 'POST',
+        url: '/notice',
+        contentType: "application/json",
+        headers: {
+            "Accept": "application/json",
+        },
+        data: store.getState().result,
+        port: 3000,
+    }).then(function () {
 
+    }).catch(function (error) {
+        console.log(error);
+    }).then(function () {
+        // always executed
+    });
+}
 
 function verifMain(rules, sudoc) {
 
@@ -183,6 +203,12 @@ function verifMain(rules, sudoc) {
 
 
     store.dispatch(addErrorPPN(resultJson));
+
+    count++;
+    if (count === nombreTotalPPN) {
+        noticesErreurs();
+    }
+
     //addRule(CATEGORIE,TYPE,NEWRULE)
 
 
