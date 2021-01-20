@@ -1,4 +1,4 @@
-import { CLEAN_RESULT, ADD_ERROR_PPN, ADD_ERROR_TEST, SET_NOMBRE_TOTAL_PPN, SET_PPNDISPLAY, SET_NUMPAGE, SET_RECHERCHEPPN, ADD_ERROR_PPN_ERRONNE } from '../actions';
+import { CLEAN_RESULT, ADD_ERROR_PPN, ADD_ERROR_TEST, SET_NOMBRE_TOTAL_PPN, SET_PPNDISPLAY, SET_NUMPAGE, SET_RECHERCHEPPN, ADD_ERROR_PPN_ERRONNE, SET_CHOIXCATEGORIE } from '../actions';
 import fakedata from '../Components/fakedata.json';
 /*const initialState = {
   result: {},
@@ -21,7 +21,8 @@ function rootReducer(state = initialState, action) {
           numPage: 1,
           recherchePPN: '',
         },
-        listPPNErronne:[]
+        listPPNErronne:[],
+        choixCategorie:""
       }
 
     case ADD_ERROR_PPN:
@@ -80,6 +81,11 @@ function rootReducer(state = initialState, action) {
           recherchePPN: action.payload,
         }
       }
+      case SET_CHOIXCATEGORIE:
+        return {
+          ...state,
+          choixCategorie: action.payload
+        }
   }
   return state;
 }

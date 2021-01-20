@@ -1,7 +1,6 @@
 import React from 'react';
 import Card12 from '../Générique/Card_12';
 import { verifiyRulesByTextArea } from '../../js/main/verifyRules'
-import verifyRules from '../../js/main/RulesEnDur'
 import Dropzone from './Dropzone';
 
 const SaisieManuelle = () => (
@@ -10,11 +9,12 @@ const SaisieManuelle = () => (
             <div className="col-lg-12">
                 <div className="form-group">
                     <label htmlFor='jeuDeRegles'>Choix du jeu de règles</label>
-                    <select className="form-control" aria-describedby="basic-addon1" id="jeuDeRegles">
-                        <option value="0" defaultValue>Choix automatique</option>
-                        <option value="1">Encyclopédie</option>
-                        <option value="2">Bibliographie</option>
-                        <option value="3">Thèse</option>
+                    <select className="form-control" aria-describedby="basic-addon1" id="choixCategorie">
+                        <option value="Generale" defaultValue>Générale</option>
+                        <option value="Electronique">Electronique</option>
+                        <option value="MémoireSoutenance">Mémoire Soutenance</option>
+                        <option value="MémoireReproduction">Mémoire Reproduction</option>
+                        <option value="AutreDocuments">Autre Documents</option>
                     </select>
                 </div>
             </div>
@@ -42,10 +42,6 @@ const PageDeSaisie = () => (
         <div className="row">
             <Card12 title={'Saisie des identifiants'} content={SaisieManuelle()} />
         </div>
-        <div className="row">
-            <button type="button" className="btn btn-primary" style={{width:'100%'}} onClick={verifyRules} >TEST RULES</button>
-        </div>
-
     </div>
 );
 

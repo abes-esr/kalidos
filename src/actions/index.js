@@ -6,6 +6,7 @@ export const SET_NOMBRE_TOTAL_PPN = 'SET_NOMBRE_TOTAL_PPN';
 export const SET_PPNDISPLAY = 'SET_PPNDISPLAY';
 export const SET_NUMPAGE = 'SET_NUMPAGE';
 export const SET_RECHERCHEPPN = 'SET_RECHERCHEPPN';
+export const SET_CHOIXCATEGORIE = 'SET_CHOIXCATEGORIE';
 
 export function cleanResult(payload) {
   return { type: CLEAN_RESULT, payload };
@@ -37,4 +38,8 @@ export function setNumPage(payload) {
 
 export function setRecherchePPN(payload) {
   return { type: SET_RECHERCHEPPN, payload };
+}
+
+export function setChoixCategorie(payload) {
+  return { type: SET_CHOIXCATEGORIE, payload };
 }
