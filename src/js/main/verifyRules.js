@@ -168,7 +168,7 @@ function verifMain(rules, sudoc) {
     // const leader = sudoc.record.leader;
     const controlfields = sudoc.record.controlfield;
     const datafields = sudoc.record.datafield;
-    const categorieChoose = "Generale";
+    const categorieChoose = store.getState().choixCategorie;
     let resultJson = {
         PPN: controlfields[0]._text,
         errors: [],
