@@ -7,10 +7,10 @@ const convert = require("xml-js");
 const ConditionStructurel = function () {
     let getDocument = undefined;
     let ppnInitiale = undefined;
-    const testConditionStrucutrelRules = async function (rules, controlfields, datafields, resultJson, getfunctionDocument) {
+    const testConditionStrucutrelRules = async function (categorie, rules, controlfields, datafields, resultJson, getfunctionDocument) {
         getDocument = getfunctionDocument
-        for(let iRegle in rules.Generale.ConditionStructurel) {
-            const regle = rules.Generale.ConditionStructurel[iRegle];
+        for(let iRegle in rules[categorie].ConditionStructurel) {
+            const regle = rules[categorie].ConditionStructurel[iRegle];
 
             //si on le field on check les conditions
             let checkedConds = true;

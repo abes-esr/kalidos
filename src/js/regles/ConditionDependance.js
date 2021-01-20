@@ -5,8 +5,8 @@ const Dependance = require("../regles/Dependance");
 
 var ConditionStructurel = function() {
 
-    var testConditionDependanceRules = function(rules, controlfields, datafields, resultJson) {
-        rules.Generale.ConditionDependance.forEach(function(regle) {
+    var testConditionDependanceRules = function(categorie, rules, controlfields, datafields, resultJson) {
+        rules[categorie].ConditionDependance.forEach(function(regle) {
 
                     var checkedConds = true;
                     regle.condition.forEach(function(condition) {
