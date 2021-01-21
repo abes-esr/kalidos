@@ -52,6 +52,7 @@ function verifyRules() {
 
 function getSudoc(rules, PPN) {
 
+
     axios.get('https://www.sudoc.fr/' + PPN + '.xml')
         .then(function (response) {
             const data = JSON.parse(
@@ -146,7 +147,7 @@ function getRules(listPPN) {
     axios.get('/rules')
         .then(function (response) {
 
-            listPPN.forEach(PPN => getSudoc(response.data, PPN));
+            listPPN.forEach(PPN => getSudoc(response.data, PPN.trim()));
             // getSudoc(response.data,'169450546');
             writeResult();
         })

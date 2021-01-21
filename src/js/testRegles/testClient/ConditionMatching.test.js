@@ -1239,3 +1239,23 @@ test("Si 456, alors vérifier que la notice en 456$0 contient 105$a Pos. 4-7= v 
 });
 
 
+// ===============================================================
+
+
+test("Zones 7XX : code fonction, vérifier qu'il s'agit d'un éditeur scientifique ou d'un directeur de publication ? (FAIL)", () => {
+    const notice = "032"
+    const index = 6000
+    const sudoc = getNotice(notice);
+    const datafields = sudoc.record.datafield;
+    const controlfields = sudoc.record.controlfield;
+    let resultJson = {
+        PPN: 0,
+        errors: [],
+    };
+    addRuleToTest(index);
+    const mockFunction = mockGetDataOnSudoc("");
+    ConditionMatching.testConditionMatchingRules(ruleTest, controlfields, datafields, resultJson,mockFunction);
+    expect(resultJson.errors).not.toStrictEqual([]);
+});
+
+
