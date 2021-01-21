@@ -609,7 +609,38 @@
                 "message": "100$a Pos. 9-12 = 214$d"
             }
         ],
-        "ConditionMatching": [{
+        "ConditionMatching": [
+            {
+                "condition": [{
+                    "operator": "equals_text",
+                    "number": "700",
+                    "code": "4",
+                    "string": [
+                        "340"
+                    ]
+                }
+            ],
+                "index": 6000,
+                "type": "allRequired",
+                "number": 214,
+                "message": "Zones 7XX : code fonction, vérifier qu'il s'agit d'un éditeur scientifique ou d'un directeur de publication ?",
+                "values": [{
+                    "number": 200,
+                    "code": "f",
+                    "message": "",
+                    "regex": "(?:(?!ed.)(?!edited)(?!edit).)+",
+                    "subFieldRequired": false
+                },
+                {
+                    "number": 200,
+                    "code": "g",
+                    "message": "",
+                    "regex": "(?:(?!ed.)(?!edited)(?!edit).)+",
+                    "subFieldRequired": false
+                }
+            ]
+            },
+            {
                 "condition": [{
                         "operator": "contains_text",
                         "number": "105",
