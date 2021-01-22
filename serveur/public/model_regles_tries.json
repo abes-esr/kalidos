@@ -3884,7 +3884,7 @@
                     {
                         "operator": "equals_text",
                         "number": 700,
-                        "code": 4,
+                        "code": "4",
                         "string": [
                             "340"
                         ]
@@ -3916,7 +3916,7 @@
                     {
                         "operator": "equals_text",
                         "number": 701,
-                        "code": 4,
+                        "code": "4",
                         "string": [
                             "340"
                         ]
@@ -3948,7 +3948,7 @@
                     {
                         "operator": "equals_text",
                         "number": 710,
-                        "code": 4,
+                        "code": "4",
                         "string": [
                             "340"
                         ]
@@ -3980,7 +3980,7 @@
                     {
                         "operator": "equals_text",
                         "number": 711,
-                        "code": 4,
+                        "code": "4",
                         "string": [
                             "340"
                         ]
@@ -4012,7 +4012,7 @@
                     {
                         "operator": "equals_text",
                         "number": 720,
-                        "code": 4,
+                        "code": "4",
                         "string": [
                             "340"
                         ]
@@ -4044,7 +4044,7 @@
                     {
                         "operator": "equals_text",
                         "number": 721,
-                        "code": 4,
+                        "code": "4",
                         "string": [
                             "340"
                         ]
@@ -4076,7 +4076,7 @@
                     {
                         "operator": "equals_text",
                         "number": 730,
-                        "code": 4,
+                        "code": "4",
                         "string": [
                             "340"
                         ]
@@ -4108,7 +4108,7 @@
                     {
                         "operator": "equals_text",
                         "number": 740,
-                        "code": 4,
+                        "code": "4",
                         "string": [
                             "340"
                         ]
@@ -4140,7 +4140,7 @@
                     {
                         "operator": "equals_text",
                         "number": 741,
-                        "code": 4,
+                        "code": "4",
                         "string": [
                             "340"
                         ]
@@ -6899,7 +6899,7 @@
                     {
                         "operator": "equals_text",
                         "number": 700,
-                        "code": 4,
+                        "code": "4",
                         "string": [
                             "340"
                         ]
@@ -6931,7 +6931,7 @@
                     {
                         "operator": "equals_text",
                         "number": 701,
-                        "code": 4,
+                        "code": "4",
                         "string": [
                             "340"
                         ]
@@ -6963,7 +6963,7 @@
                     {
                         "operator": "equals_text",
                         "number": 710,
-                        "code": 4,
+                        "code": "4",
                         "string": [
                             "340"
                         ]
@@ -6995,7 +6995,7 @@
                     {
                         "operator": "equals_text",
                         "number": 711,
-                        "code": 4,
+                        "code": "4",
                         "string": [
                             "340"
                         ]
@@ -7027,7 +7027,7 @@
                     {
                         "operator": "equals_text",
                         "number": 720,
-                        "code": 4,
+                        "code": "4",
                         "string": [
                             "340"
                         ]
@@ -7059,7 +7059,7 @@
                     {
                         "operator": "equals_text",
                         "number": 721,
-                        "code": 4,
+                        "code": "4",
                         "string": [
                             "340"
                         ]
@@ -7091,7 +7091,7 @@
                     {
                         "operator": "equals_text",
                         "number": 730,
-                        "code": 4,
+                        "code": "4",
                         "string": [
                             "340"
                         ]
@@ -7123,7 +7123,7 @@
                     {
                         "operator": "equals_text",
                         "number": 740,
-                        "code": 4,
+                        "code": "4",
                         "string": [
                             "340"
                         ]
@@ -7155,7 +7155,7 @@
                     {
                         "operator": "equals_text",
                         "number": 741,
-                        "code": 4,
+                        "code": "4",
                         "string": [
                             "340"
                         ]
