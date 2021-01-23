@@ -1,5 +1,5 @@
-import { getSchemaMatching, formatRule } from '../forms/matching';
-import { getSchemaDependencies } from '../forms/depences';
+import { getSchemaMatching, formatRuleMatching } from '../forms/matching';
+import { getSchemaDependencies } from '../forms/dependencies';
 import { getSchemaConditionnels} from '../forms/conditionnels';
 
 export function typesSpec(categories, rules) {
@@ -8,7 +8,7 @@ export function typesSpec(categories, rules) {
       type: "matching",
       description: "Description du type matching",
       schema: getSchemaMatching(categories, rules),
-      submit: formatRule,
+      submit: formatRuleMatching,
     },
     { name: "Dépendances", 
       type: "dependances",

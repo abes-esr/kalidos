@@ -1,3 +1,21 @@
+export function formatRuleDependencies(data) {
+    console.log('formatRuleDependencies');
+    const obj = {};
+    obj.operator = data.operator;
+    obj.message = data.message;
+    obj.field1 = {
+        number: data.field1_number,
+        code: data.field1_code,
+        pos: data.field1_pos,
+    }
+    obj.field2 = {
+        number: data.field2_number,
+        code: data.field2_code,
+        pos: data.field2_pos,
+    }
+    return obj;
+  }
+
 export function getSchemaDependencies(categories, rules) {
     return {
         definitions: {
