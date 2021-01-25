@@ -50,7 +50,7 @@ test("Si  105 $a Pos. 0-3 différent de la valeur \"y\" alors 215$c ne doit pas 
     };
     addRuleToTest(index);
     const mockFunction = mockGetDataOnSudoc("");
-    ConditionMatching.testConditionMatchingRules(CATEGORIE,ruleTest, controlfields, datafields, resultJson, mockFunction);
+    ConditionMatching.testConditionMatchingRules(CATEGORIE, ruleTest, controlfields, datafields, resultJson, mockFunction);
     expect(resultJson.errors).toStrictEqual([]);
 });
 
@@ -67,7 +67,7 @@ test("Si  105 $a Pos. 0-3 différent de la valeur \"y\" alors 215$c ne doit pas 
     };
     addRuleToTest(index);
     const mockFunction = mockGetDataOnSudoc("");
-    ConditionMatching.testConditionMatchingRules(CATEGORIE,ruleTest, controlfields, datafields, resultJson, mockFunction);
+    ConditionMatching.testConditionMatchingRules(CATEGORIE, ruleTest, controlfields, datafields, resultJson, mockFunction);
     expect(resultJson.errors).not.toStrictEqual([]);
 });
 
@@ -85,7 +85,7 @@ test("Si 105 $a Pos. 8 = 1 alors il faut aussi une 608 $302886431X $aActes de co
     };
     addRuleToTest(index);
     const mockFunction = mockGetDataOnSudoc("");
-    ConditionMatching.testConditionMatchingRules(CATEGORIE,ruleTest, controlfields, datafields, resultJson, mockFunction);
+    ConditionMatching.testConditionMatchingRules(CATEGORIE, ruleTest, controlfields, datafields, resultJson, mockFunction);
     expect(resultJson.errors).toStrictEqual([]);
 });
 
@@ -102,7 +102,7 @@ test("Si 105 $a Pos. 8 = 1 alors il faut aussi une 608 $302886431X $aActes de co
     };
     addRuleToTest(index);
     const mockFunction = mockGetDataOnSudoc("");
-    ConditionMatching.testConditionMatchingRules(CATEGORIE,ruleTest, controlfields, datafields, resultJson, mockFunction);
+    ConditionMatching.testConditionMatchingRules(CATEGORIE, ruleTest, controlfields, datafields, resultJson, mockFunction);
     expect(resultJson.errors).not.toStrictEqual([]);
 });
 
@@ -120,7 +120,7 @@ test("Si 105 $a Pos. 8 = 0 alors il ne doit pas y avoir 608 $302886431X ou $aAct
     };
     addRuleToTest(index);
     const mockFunction = mockGetDataOnSudoc("");
-    ConditionMatching.testConditionMatchingRules(CATEGORIE,ruleTest, controlfields, datafields, resultJson, mockFunction);
+    ConditionMatching.testConditionMatchingRules(CATEGORIE, ruleTest, controlfields, datafields, resultJson, mockFunction);
     expect(resultJson.errors).toStrictEqual([]);
 });
 
@@ -137,7 +137,7 @@ test("Si 105 $a Pos. 8 = 0 alors il ne doit pas y avoir 608 $302886431X ou $aAct
     };
     addRuleToTest(index);
     const mockFunction = mockGetDataOnSudoc("");
-    ConditionMatching.testConditionMatchingRules(CATEGORIE,ruleTest, controlfields, datafields, resultJson, mockFunction);
+    ConditionMatching.testConditionMatchingRules(CATEGORIE, ruleTest, controlfields, datafields, resultJson, mockFunction);
     expect(resultJson.errors).not.toStrictEqual([]);
 });
 
@@ -155,7 +155,7 @@ test("Si 105 $a Pos. 10 =1 alors il faut une 320 avec la mention \"Index\"", () 
     };
     addRuleToTest(index);
     const mockFunction = mockGetDataOnSudoc("");
-    ConditionMatching.testConditionMatchingRules(CATEGORIE,ruleTest, controlfields, datafields, resultJson, mockFunction);
+    ConditionMatching.testConditionMatchingRules(CATEGORIE, ruleTest, controlfields, datafields, resultJson, mockFunction);
     expect(resultJson.errors).toStrictEqual([]);
 });
 
@@ -172,7 +172,7 @@ test("Si 105 $a Pos. 10 =1 alors il faut une 320 avec la mention \"Index\" (FAIL
     };
     addRuleToTest(index);
     const mockFunction = mockGetDataOnSudoc("");
-    ConditionMatching.testConditionMatchingRules(CATEGORIE,ruleTest, controlfields, datafields, resultJson, mockFunction);
+    ConditionMatching.testConditionMatchingRules(CATEGORIE, ruleTest, controlfields, datafields, resultJson, mockFunction);
     expect(resultJson.errors).not.toStrictEqual([]);
 });
 
@@ -191,7 +191,7 @@ test("Si 214 #4$d, la zone doit commencer par \"C espace\"", () => {
     };
     addRuleToTest(index);
     const mockFunction = mockGetDataOnSudoc("");
-    ConditionMatching.testConditionMatchingRules(CATEGORIE,ruleTest, controlfields, datafields, resultJson, mockFunction);
+    ConditionMatching.testConditionMatchingRules(CATEGORIE, ruleTest, controlfields, datafields, resultJson, mockFunction);
     expect(resultJson.errors).toStrictEqual([]);
 });
 
@@ -208,7 +208,7 @@ test("Si 214 #4$d, la zone doit commencer par \"C espace\" (FAIL)", () => {
     };
     addRuleToTest(index);
     const mockFunction = mockGetDataOnSudoc("");
-    ConditionMatching.testConditionMatchingRules(CATEGORIE,ruleTest, controlfields, datafields, resultJson, mockFunction);
+    ConditionMatching.testConditionMatchingRules(CATEGORIE, ruleTest, controlfields, datafields, resultJson, mockFunction);
     expect(resultJson.errors).not.toStrictEqual([]);
 });
 
@@ -227,7 +227,7 @@ test("Si 214 #0 et $d, doit commencer par \"DL espace\" ou \"[\" ou un chiffre",
     };
     addRuleToTest(index);
     const mockFunction = mockGetDataOnSudoc("");
-    ConditionMatching.testConditionMatchingRules(CATEGORIE,ruleTest, controlfields, datafields, resultJson, mockFunction);
+    ConditionMatching.testConditionMatchingRules(CATEGORIE, ruleTest, controlfields, datafields, resultJson, mockFunction);
     expect(resultJson.errors).toStrictEqual([]);
 });
 
@@ -244,7 +244,7 @@ test("Si 214 #0 et $d, doit commencer par \"DL espace\" ou \"[\" ou un chiffre (
     };
     addRuleToTest(index);
     const mockFunction = mockGetDataOnSudoc("");
-    ConditionMatching.testConditionMatchingRules(CATEGORIE,ruleTest, controlfields, datafields, resultJson, mockFunction);
+    ConditionMatching.testConditionMatchingRules(CATEGORIE, ruleTest, controlfields, datafields, resultJson, mockFunction);
     expect(resultJson.errors).not.toStrictEqual([]);
 });
 
@@ -263,7 +263,7 @@ test("Si 600 $2rameau doit être présent", () => {
     };
     addRuleToTest(index);
     const mockFunction = mockGetDataOnSudoc("");
-    ConditionMatching.testConditionMatchingRules(CATEGORIE,ruleTest, controlfields, datafields, resultJson, mockFunction);
+    ConditionMatching.testConditionMatchingRules(CATEGORIE, ruleTest, controlfields, datafields, resultJson, mockFunction);
     expect(resultJson.errors).toStrictEqual([]);
 });
 
@@ -280,7 +280,7 @@ test("Si 600 $2rameau doit être présent (FAIL)", () => {
     };
     addRuleToTest(index);
     const mockFunction = mockGetDataOnSudoc("");
-    ConditionMatching.testConditionMatchingRules(CATEGORIE,ruleTest, controlfields, datafields, resultJson, mockFunction);
+    ConditionMatching.testConditionMatchingRules(CATEGORIE, ruleTest, controlfields, datafields, resultJson, mockFunction);
     expect(resultJson.errors).not.toStrictEqual([]);
 });
 
@@ -298,7 +298,7 @@ test("Si 601 $2rameau doit être présent", () => {
     };
     addRuleToTest(index);
     const mockFunction = mockGetDataOnSudoc("");
-    ConditionMatching.testConditionMatchingRules(CATEGORIE,ruleTest, controlfields, datafields, resultJson, mockFunction);
+    ConditionMatching.testConditionMatchingRules(CATEGORIE, ruleTest, controlfields, datafields, resultJson, mockFunction);
     expect(resultJson.errors).toStrictEqual([]);
 });
 
@@ -315,7 +315,7 @@ test("Si 601 $2rameau doit être présent (FAIL)", () => {
     };
     addRuleToTest(index);
     const mockFunction = mockGetDataOnSudoc("");
-    ConditionMatching.testConditionMatchingRules(CATEGORIE,ruleTest, controlfields, datafields, resultJson, mockFunction);
+    ConditionMatching.testConditionMatchingRules(CATEGORIE, ruleTest, controlfields, datafields, resultJson, mockFunction);
     expect(resultJson.errors).not.toStrictEqual([]);
 });
 
@@ -333,7 +333,7 @@ test("Si 602 $2rameau doit être présent", () => {
     };
     addRuleToTest(index);
     const mockFunction = mockGetDataOnSudoc("");
-    ConditionMatching.testConditionMatchingRules(CATEGORIE,ruleTest, controlfields, datafields, resultJson, mockFunction);
+    ConditionMatching.testConditionMatchingRules(CATEGORIE, ruleTest, controlfields, datafields, resultJson, mockFunction);
     expect(resultJson.errors).toStrictEqual([]);
 });
 
@@ -350,7 +350,7 @@ test("Si 602 $2rameau doit être présent (FAIL)", () => {
     };
     addRuleToTest(index);
     const mockFunction = mockGetDataOnSudoc("");
-    ConditionMatching.testConditionMatchingRules(CATEGORIE,ruleTest, controlfields, datafields, resultJson, mockFunction);
+    ConditionMatching.testConditionMatchingRules(CATEGORIE, ruleTest, controlfields, datafields, resultJson, mockFunction);
     expect(resultJson.errors).not.toStrictEqual([]);
 });
 
@@ -369,7 +369,7 @@ test("Si 604 $2rameau doit être présent", () => {
     };
     addRuleToTest(index);
     const mockFunction = mockGetDataOnSudoc("");
-    ConditionMatching.testConditionMatchingRules(CATEGORIE,ruleTest, controlfields, datafields, resultJson, mockFunction);
+    ConditionMatching.testConditionMatchingRules(CATEGORIE, ruleTest, controlfields, datafields, resultJson, mockFunction);
     expect(resultJson.errors).toStrictEqual([]);
 });
 
@@ -386,7 +386,7 @@ test("Si 604 $2rameau doit être présent (FAIL)", () => {
     };
     addRuleToTest(index);
     const mockFunction = mockGetDataOnSudoc("");
-    ConditionMatching.testConditionMatchingRules(CATEGORIE,ruleTest, controlfields, datafields, resultJson, mockFunction);
+    ConditionMatching.testConditionMatchingRules(CATEGORIE, ruleTest, controlfields, datafields, resultJson, mockFunction);
     expect(resultJson.errors).not.toStrictEqual([]);
 });
 
@@ -404,7 +404,7 @@ test("Si 605 $2rameau doit être présent", () => {
     };
     addRuleToTest(index);
     const mockFunction = mockGetDataOnSudoc("");
-    ConditionMatching.testConditionMatchingRules(CATEGORIE,ruleTest, controlfields, datafields, resultJson, mockFunction);
+    ConditionMatching.testConditionMatchingRules(CATEGORIE, ruleTest, controlfields, datafields, resultJson, mockFunction);
     expect(resultJson.errors).toStrictEqual([]);
 });
 
@@ -421,7 +421,7 @@ test("Si 605 $2rameau doit être présent (FAIL)", () => {
     };
     addRuleToTest(index);
     const mockFunction = mockGetDataOnSudoc("");
-    ConditionMatching.testConditionMatchingRules(CATEGORIE,ruleTest, controlfields, datafields, resultJson, mockFunction);
+    ConditionMatching.testConditionMatchingRules(CATEGORIE, ruleTest, controlfields, datafields, resultJson, mockFunction);
     expect(resultJson.errors).not.toStrictEqual([]);
 });
 
@@ -440,7 +440,7 @@ test("Si 856$5=692669902, alors doit être présente 310 ##$aL'accès à cette r
     };
     addRuleToTest(index);
     const mockFunction = mockGetDataOnSudoc("");
-    ConditionMatching.testConditionMatchingRules(CATEGORIE,ruleTest, controlfields, datafields, resultJson, mockFunction);
+    ConditionMatching.testConditionMatchingRules(CATEGORIE, ruleTest, controlfields, datafields, resultJson, mockFunction);
     expect(resultJson.errors).toStrictEqual([]);
 });
 
@@ -476,7 +476,7 @@ test("Si 305$a commence par \"Document numérisé dans le cadre du projet de num
     };
     addRuleToTest(index);
     const mockFunction = mockGetDataOnSudoc("");
-    ConditionMatching.testConditionMatchingRules(CATEGORIE,ruleTest, controlfields, datafields, resultJson, mockFunction);
+    ConditionMatching.testConditionMatchingRules(CATEGORIE, ruleTest, controlfields, datafields, resultJson, mockFunction);
     expect(resultJson.errors).toStrictEqual([]);
 });
 
@@ -493,7 +493,7 @@ test("Si 305$a commence par \"Document numérisé dans le cadre du projet de num
     };
     addRuleToTest(index);
     const mockFunction = mockGetDataOnSudoc("");
-    ConditionMatching.testConditionMatchingRules(CATEGORIE,ruleTest, controlfields, datafields, resultJson, mockFunction);
+    ConditionMatching.testConditionMatchingRules(CATEGORIE, ruleTest, controlfields, datafields, resultJson, mockFunction);
     expect(resultJson.errors).not.toStrictEqual([]);
 });
 
@@ -511,7 +511,7 @@ test("Si 328$zReproduction de, alors il faut une 701$4727", () => {
     };
     addRuleToTest(index);
     const mockFunction = mockGetDataOnSudoc("");
-    ConditionMatching.testConditionMatchingRules(CATEGORIE,ruleTest, controlfields, datafields, resultJson, mockFunction);
+    ConditionMatching.testConditionMatchingRules(CATEGORIE, ruleTest, controlfields, datafields, resultJson, mockFunction);
     expect(resultJson.errors).toStrictEqual([]);
 });
 
@@ -528,7 +528,7 @@ test("Si 328$zReproduction de, alors il faut une 701$4727 (FAIL)", () => {
     };
     addRuleToTest(index);
     const mockFunction = mockGetDataOnSudoc("");
-    ConditionMatching.testConditionMatchingRules(CATEGORIE,ruleTest, controlfields, datafields, resultJson, mockFunction);
+    ConditionMatching.testConditionMatchingRules(CATEGORIE, ruleTest, controlfields, datafields, resultJson, mockFunction);
     expect(resultJson.errors).not.toStrictEqual([]);
 });
 
@@ -546,7 +546,7 @@ test("Si 328$z n'est pas \"Reproduction de\", alors 701$4727 ne doit pas être p
     };
     addRuleToTest(index);
     const mockFunction = mockGetDataOnSudoc("");
-    ConditionMatching.testConditionMatchingRules(CATEGORIE,ruleTest, controlfields, datafields, resultJson, mockFunction);
+    ConditionMatching.testConditionMatchingRules(CATEGORIE, ruleTest, controlfields, datafields, resultJson, mockFunction);
     expect(resultJson.errors).toStrictEqual([]);
 });
 
@@ -563,7 +563,7 @@ test("Si 328$z n'est pas \"Reproduction de\", alors 701$4727 ne doit pas être p
     };
     addRuleToTest(index);
     const mockFunction = mockGetDataOnSudoc("");
-    ConditionMatching.testConditionMatchingRules(CATEGORIE,ruleTest, controlfields, datafields, resultJson, mockFunction);
+    ConditionMatching.testConditionMatchingRules(CATEGORIE, ruleTest, controlfields, datafields, resultJson, mockFunction);
     expect(resultJson.errors).not.toStrictEqual([]);
 });
 
@@ -582,7 +582,7 @@ test("Si 328$zReproduction de, alors il faut une 711$4295", () => {
     };
     addRuleToTest(index);
     const mockFunction = mockGetDataOnSudoc("");
-    ConditionMatching.testConditionMatchingRules(CATEGORIE,ruleTest, controlfields, datafields, resultJson, mockFunction);
+    ConditionMatching.testConditionMatchingRules(CATEGORIE, ruleTest, controlfields, datafields, resultJson, mockFunction);
     expect(resultJson.errors).toStrictEqual([]);
 });
 
@@ -599,7 +599,7 @@ test("Si 328$zReproduction de, alors il faut une 711$4295 (FAIL)", () => {
     };
     addRuleToTest(index);
     const mockFunction = mockGetDataOnSudoc("");
-    ConditionMatching.testConditionMatchingRules(CATEGORIE,ruleTest, controlfields, datafields, resultJson, mockFunction);
+    ConditionMatching.testConditionMatchingRules(CATEGORIE, ruleTest, controlfields, datafields, resultJson, mockFunction);
     expect(resultJson.errors).not.toStrictEqual([]);
 });
 
@@ -617,7 +617,7 @@ test("Si 328$z n'est pas \"Reproduction de\", alors 711$4295 ne doit pas être p
     };
     addRuleToTest(index);
     const mockFunction = mockGetDataOnSudoc("");
-    ConditionMatching.testConditionMatchingRules(CATEGORIE,ruleTest, controlfields, datafields, resultJson, mockFunction);
+    ConditionMatching.testConditionMatchingRules(CATEGORIE, ruleTest, controlfields, datafields, resultJson, mockFunction);
     expect(resultJson.errors).toStrictEqual([]);
 });
 
@@ -634,7 +634,7 @@ test("Si 328$z n'est pas \"Reproduction de\", alors 711$4295 ne doit pas être p
     };
     addRuleToTest(index);
     const mockFunction = mockGetDataOnSudoc("");
-    ConditionMatching.testConditionMatchingRules(CATEGORIE,ruleTest, controlfields, datafields, resultJson, mockFunction);
+    ConditionMatching.testConditionMatchingRules(CATEGORIE, ruleTest, controlfields, datafields, resultJson, mockFunction);
     expect(resultJson.errors).not.toStrictEqual([]);
 });
 
@@ -652,7 +652,7 @@ test("Si 328$zReproduction de, alors il faut une 608 $3027253139 $aThèses et é
     };
     addRuleToTest(index);
     const mockFunction = mockGetDataOnSudoc("");
-    ConditionMatching.testConditionMatchingRules(CATEGORIE,ruleTest, controlfields, datafields, resultJson, mockFunction);
+    ConditionMatching.testConditionMatchingRules(CATEGORIE, ruleTest, controlfields, datafields, resultJson, mockFunction);
     expect(resultJson.errors).toStrictEqual([]);
 });
 
@@ -669,7 +669,7 @@ test("Si 328$zReproduction de, alors il faut une 608 $3027253139 $aThèses et é
     };
     addRuleToTest(index);
     const mockFunction = mockGetDataOnSudoc("");
-    ConditionMatching.testConditionMatchingRules(CATEGORIE,ruleTest, controlfields, datafields, resultJson, mockFunction);
+    ConditionMatching.testConditionMatchingRules(CATEGORIE, ruleTest, controlfields, datafields, resultJson, mockFunction);
     expect(resultJson.errors).not.toStrictEqual([]);
 });
 
@@ -687,7 +687,7 @@ test("Si 328$z n'est pas \"Reproduction de\", alors 608 $3027253139Thèses et é
     };
     addRuleToTest(index);
     const mockFunction = mockGetDataOnSudoc("");
-    ConditionMatching.testConditionMatchingRules(CATEGORIE,ruleTest, controlfields, datafields, resultJson, mockFunction);
+    ConditionMatching.testConditionMatchingRules(CATEGORIE, ruleTest, controlfields, datafields, resultJson, mockFunction);
     expect(resultJson.errors).toStrictEqual([]);
 });
 
@@ -704,7 +704,7 @@ test("Si 328$z n'est pas \"Reproduction de\", alors 608 $3027253139Thèses et é
     };
     addRuleToTest(index);
     const mockFunction = mockGetDataOnSudoc("");
-    ConditionMatching.testConditionMatchingRules(CATEGORIE,ruleTest, controlfields, datafields, resultJson, mockFunction);
+    ConditionMatching.testConditionMatchingRules(CATEGORIE, ruleTest, controlfields, datafields, resultJson, mockFunction);
     expect(resultJson.errors).not.toStrictEqual([]);
 });
 
@@ -722,7 +722,7 @@ test("Si 214 ind2=2, alors $cBibliothèque Lyon 1", () => {
     };
     addRuleToTest(index);
     const mockFunction = mockGetDataOnSudoc("");
-    ConditionMatching.testConditionMatchingRules(CATEGORIE,ruleTest, controlfields, datafields, resultJson, mockFunction);
+    ConditionMatching.testConditionMatchingRules(CATEGORIE, ruleTest, controlfields, datafields, resultJson, mockFunction);
     expect(resultJson.errors).toStrictEqual([]);
 });
 
@@ -739,7 +739,7 @@ test("Si 214 ind2=2, alors $cBibliothèque Lyon 1 (FAIL)", () => {
     };
     addRuleToTest(index);
     const mockFunction = mockGetDataOnSudoc("");
-    ConditionMatching.testConditionMatchingRules(CATEGORIE,ruleTest, controlfields, datafields, resultJson, mockFunction);
+    ConditionMatching.testConditionMatchingRules(CATEGORIE, ruleTest, controlfields, datafields, resultJson, mockFunction);
     expect(resultJson.errors).not.toStrictEqual([]);
 });
 
@@ -758,7 +758,7 @@ test("608$3027253139 doit être présente", () => {
     };
     addRuleToTest(index);
     const mockFunction = mockGetDataOnSudoc("");
-    ConditionMatching.testConditionMatchingRules(CATEGORIE,ruleTest, controlfields, datafields, resultJson, mockFunction);
+    ConditionMatching.testConditionMatchingRules(CATEGORIE, ruleTest, controlfields, datafields, resultJson, mockFunction);
     expect(resultJson.errors).toStrictEqual([]);
 });
 
@@ -794,7 +794,7 @@ test("Au moins une 711$3 = 26402823 $4=295 doit être présente", () => {
     };
     addRuleToTest(index);
     const mockFunction = mockGetDataOnSudoc("");
-    ConditionMatching.testConditionMatchingRules(CATEGORIE,ruleTest, controlfields, datafields, resultJson, mockFunction);
+    ConditionMatching.testConditionMatchingRules(CATEGORIE, ruleTest, controlfields, datafields, resultJson, mockFunction);
     expect(resultJson.errors).toStrictEqual([]);
 });
 
@@ -830,7 +830,7 @@ test("Si 105 $a Pos. 4-7= m ou 7 il faut une 608 $3027253139 et $a Thèses et é
     };
     addRuleToTest(index);
     const mockFunction = mockGetDataOnSudoc("");
-    ConditionMatching.testConditionMatchingRules(CATEGORIE,ruleTest, controlfields, datafields, resultJson, mockFunction);
+    ConditionMatching.testConditionMatchingRules(CATEGORIE, ruleTest, controlfields, datafields, resultJson, mockFunction);
     expect(resultJson.errors).toStrictEqual([]);
 });
 
@@ -846,7 +846,7 @@ test("Si 105 $a Pos. 4-7= m ou 7 il faut une 608 $3027253139 et $a Thèses et é
     };
     addRuleToTest(index);
     const mockFunction = mockGetDataOnSudoc("");
-    ConditionMatching.testConditionMatchingRules(CATEGORIE,ruleTest, controlfields, datafields, resultJson, mockFunction);
+    ConditionMatching.testConditionMatchingRules(CATEGORIE, ruleTest, controlfields, datafields, resultJson, mockFunction);
     expect(resultJson.errors).not.toStrictEqual([]);
 });
 
@@ -869,7 +869,7 @@ test("856$zAccès au texte intégral sauf si 856$5=692669902, alors $zAccès ré
     };
     addRuleToTest(index);
     const mockFunction = mockGetDataOnSudoc("");
-    ConditionMatching.testConditionMatchingRules(CATEGORIE,ruleTest, controlfields, datafields, resultJson, mockFunction);
+    ConditionMatching.testConditionMatchingRules(CATEGORIE, ruleTest, controlfields, datafields, resultJson, mockFunction);
     expect(resultJson.errors).toStrictEqual([]);
 });
 
@@ -905,7 +905,7 @@ test("Si 105 $a Pos. 10 =0 alors il ne doit pas y avoir une 320$a = Index", () =
     };
     addRuleToTest(index);
     const mockFunction = mockGetDataOnSudoc("");
-    ConditionMatching.testConditionMatchingRules(CATEGORIE,ruleTest, controlfields, datafields, resultJson, mockFunction);
+    ConditionMatching.testConditionMatchingRules(CATEGORIE, ruleTest, controlfields, datafields, resultJson, mockFunction);
     expect(resultJson.errors).toStrictEqual([]);
 });
 
@@ -922,7 +922,7 @@ test("Si 105 $a Pos. 10 =0 alors il ne doit pas y avoir une 320$a = Index (FAIL)
     };
     addRuleToTest(index);
     const mockFunction = mockGetDataOnSudoc("");
-    ConditionMatching.testConditionMatchingRules(CATEGORIE,ruleTest, controlfields, datafields, resultJson, mockFunction);
+    ConditionMatching.testConditionMatchingRules(CATEGORIE, ruleTest, controlfields, datafields, resultJson, mockFunction);
     expect(resultJson.errors).not.toStrictEqual([]);
 });
 
@@ -940,7 +940,7 @@ test("606 et $3, doit contenir $2rameau ou $2fmesh", () => {
     };
     addRuleToTest(index);
     const mockFunction = mockGetDataOnSudoc("");
-    ConditionMatching.testConditionMatchingRules(CATEGORIE,ruleTest, controlfields, datafields, resultJson, mockFunction);
+    ConditionMatching.testConditionMatchingRules(CATEGORIE, ruleTest, controlfields, datafields, resultJson, mockFunction);
     expect(resultJson.errors).toStrictEqual([]);
 });
 
@@ -956,7 +956,7 @@ test("606 et $3, doit contenir $2rameau ou $2fmesh (FAIL)", () => {
     };
     addRuleToTest(index);
     const mockFunction = mockGetDataOnSudoc("");
-    ConditionMatching.testConditionMatchingRules(CATEGORIE,ruleTest, controlfields, datafields, resultJson, mockFunction);
+    ConditionMatching.testConditionMatchingRules(CATEGORIE, ruleTest, controlfields, datafields, resultJson, mockFunction);
     expect(resultJson.errors).not.toStrictEqual([]);
 });
 
@@ -974,7 +974,7 @@ test("608 et $3 doit contenir $2rameau ou $2fmesh", () => {
     };
     addRuleToTest(index);
     const mockFunction = mockGetDataOnSudoc("");
-    ConditionMatching.testConditionMatchingRules(CATEGORIE,ruleTest, controlfields, datafields, resultJson, mockFunction);
+    ConditionMatching.testConditionMatchingRules(CATEGORIE, ruleTest, controlfields, datafields, resultJson, mockFunction);
     expect(resultJson.errors).toStrictEqual([]);
 });
 
@@ -990,7 +990,7 @@ test("608 et $3 doit contenir $2rameau ou $2fmesh (FAIL)", () => {
     };
     addRuleToTest(index);
     const mockFunction = mockGetDataOnSudoc("");
-    ConditionMatching.testConditionMatchingRules(CATEGORIE,ruleTest, controlfields, datafields, resultJson, mockFunction);
+    ConditionMatching.testConditionMatchingRules(CATEGORIE, ruleTest, controlfields, datafields, resultJson, mockFunction);
     expect(resultJson.errors).not.toStrictEqual([]);
 });
 
@@ -1008,7 +1008,7 @@ test("Si 105 $a Pos. 4-7= v et Si 214 ind2=2, alors $aLyon", () => {
     };
     addRuleToTest(index);
     const mockFunction = mockGetDataOnSudoc("");
-    ConditionMatching.testConditionMatchingRules(CATEGORIE,ruleTest, controlfields, datafields, resultJson, mockFunction);
+    ConditionMatching.testConditionMatchingRules(CATEGORIE, ruleTest, controlfields, datafields, resultJson, mockFunction);
     expect(resultJson.errors).toStrictEqual([]);
 });
 
@@ -1024,7 +1024,7 @@ test("Si 105 $a Pos. 4-7= v et Si 214 ind2=2, alors $aLyon (FAIL)", () => {
     };
     addRuleToTest(index);
     const mockFunction = mockGetDataOnSudoc("");
-    ConditionMatching.testConditionMatchingRules(CATEGORIE,ruleTest, controlfields, datafields, resultJson, mockFunction);
+    ConditionMatching.testConditionMatchingRules(CATEGORIE, ruleTest, controlfields, datafields, resultJson, mockFunction);
     expect(resultJson.errors).not.toStrictEqual([]);
 });
 
@@ -1042,7 +1042,7 @@ test("Si 008 commence par Oa et 451 présente, alors vérifier que notice 451$0 
     };
     addRuleToTest(index);
     const mockFunction = mockGetDataOnSudoc("057");
-    await ConditionMatching.testConditionMatchingRules(CATEGORIE,ruleTest, controlfields, datafields, resultJson, mockFunction);
+    await ConditionMatching.testConditionMatchingRules(CATEGORIE, ruleTest, controlfields, datafields, resultJson, mockFunction);
     expect(resultJson.errors).toStrictEqual([]);
 });
 
@@ -1058,14 +1058,14 @@ test("Si 008 commence par Oa et 451 présente, alors vérifier que notice 451$0 
     };
     addRuleToTest(index);
     const mockFunction = mockGetDataOnSudoc("059");
-    await ConditionMatching.testConditionMatchingRules(CATEGORIE,ruleTest, controlfields, datafields, resultJson, mockFunction);
+    await ConditionMatching.testConditionMatchingRules(CATEGORIE, ruleTest, controlfields, datafields, resultJson, mockFunction);
     expect(resultJson.errors).not.toStrictEqual([]);
 });
 
 
 // ===============================================================
 
-test("Si 008 commence par Aa et 451 présente, alors vérifier que notice 451$0 contient une 008 qui commence par Aa",async () => {
+test("Si 008 commence par Aa et 451 présente, alors vérifier que notice 451$0 contient une 008 qui commence par Aa", async () => {
     const notice = "053"
     const index = 1017
     const sudoc = getNotice(notice);
@@ -1077,11 +1077,11 @@ test("Si 008 commence par Aa et 451 présente, alors vérifier que notice 451$0 
     };
     addRuleToTest(index);
     const mockFunction = mockGetDataOnSudoc("054");
-    await ConditionMatching.testConditionMatchingRules(CATEGORIE,ruleTest, controlfields, datafields, resultJson, mockFunction);
+    await ConditionMatching.testConditionMatchingRules(CATEGORIE, ruleTest, controlfields, datafields, resultJson, mockFunction);
     expect(resultJson.errors).toStrictEqual([]);
 });
 
-test("Si 008 commence par Aa et 451 présente, alors vérifier que notice 451$0 contient une 008 qui commence par Aa (FAIL)",async () => {
+test("Si 008 commence par Aa et 451 présente, alors vérifier que notice 451$0 contient une 008 qui commence par Aa (FAIL)", async () => {
     const notice = "055"
     const index = 1017
     const sudoc = getNotice(notice);
@@ -1093,14 +1093,14 @@ test("Si 008 commence par Aa et 451 présente, alors vérifier que notice 451$0 
     };
     addRuleToTest(index);
     const mockFunction = mockGetDataOnSudoc("056");
-    await ConditionMatching.testConditionMatchingRules(CATEGORIE,ruleTest, controlfields, datafields, resultJson, mockFunction);
+    await ConditionMatching.testConditionMatchingRules(CATEGORIE, ruleTest, controlfields, datafields, resultJson, mockFunction);
     expect(resultJson.errors).not.toStrictEqual([]);
 });
 
 
 // ===============================================================
 
-test("Si 008 commence par Oa et 452 présente, alors vérifier que notice 452$0 contient une 008 qui commence par Aa",async () => {
+test("Si 008 commence par Oa et 452 présente, alors vérifier que notice 452$0 contient une 008 qui commence par Aa", async () => {
     const notice = "065"
     const index = 1018
     const sudoc = getNotice(notice);
@@ -1112,11 +1112,11 @@ test("Si 008 commence par Oa et 452 présente, alors vérifier que notice 452$0 
     };
     addRuleToTest(index);
     const mockFunction = mockGetDataOnSudoc("066");
-    await ConditionMatching.testConditionMatchingRules(CATEGORIE,ruleTest, controlfields, datafields, resultJson, mockFunction);
+    await ConditionMatching.testConditionMatchingRules(CATEGORIE, ruleTest, controlfields, datafields, resultJson, mockFunction);
     expect(resultJson.errors).toStrictEqual([]);
 });
 
-test("Si 008 commence par Oa et 452 présente, alors vérifier que notice 452$0 contient une 008 qui commence par Aa (FAIL)",async () => {
+test("Si 008 commence par Oa et 452 présente, alors vérifier que notice 452$0 contient une 008 qui commence par Aa (FAIL)", async () => {
     const notice = "067"
     const index = 1018
     const sudoc = getNotice(notice);
@@ -1128,7 +1128,7 @@ test("Si 008 commence par Oa et 452 présente, alors vérifier que notice 452$0 
     };
     addRuleToTest(index);
     const mockFunction = mockGetDataOnSudoc("068");
-    await ConditionMatching.testConditionMatchingRules(CATEGORIE,ruleTest, controlfields, datafields, resultJson, mockFunction);
+    await ConditionMatching.testConditionMatchingRules(CATEGORIE, ruleTest, controlfields, datafields, resultJson, mockFunction);
     expect(resultJson.errors).not.toStrictEqual([]);
 });
 
@@ -1136,7 +1136,7 @@ test("Si 008 commence par Oa et 452 présente, alors vérifier que notice 452$0 
 
 // ===============================================================
 
-test("Si 008 commence par Aa et 452 présente, alors vérifier que notice 452$0 contient une 008 qui commence par Oa",async () => {
+test("Si 008 commence par Aa et 452 présente, alors vérifier que notice 452$0 contient une 008 qui commence par Oa", async () => {
     const notice = "061"
     const index = 1019
     const sudoc = getNotice(notice);
@@ -1148,7 +1148,7 @@ test("Si 008 commence par Aa et 452 présente, alors vérifier que notice 452$0 
     };
     addRuleToTest(index);
     const mockFunction = mockGetDataOnSudoc("062");
-    await ConditionMatching.testConditionMatchingRules(CATEGORIE,ruleTest, controlfields, datafields, resultJson, mockFunction);
+    await ConditionMatching.testConditionMatchingRules(CATEGORIE, ruleTest, controlfields, datafields, resultJson, mockFunction);
     expect(resultJson.errors).toStrictEqual([]);
 });
 
@@ -1164,7 +1164,7 @@ test("Si 008 commence par Aa et 452 présente, alors vérifier que notice 452$0 
     };
     addRuleToTest(index);
     const mockFunction = mockGetDataOnSudoc("064");
-    await ConditionMatching.testConditionMatchingRules(CATEGORIE,ruleTest, controlfields, datafields, resultJson, mockFunction);
+    await ConditionMatching.testConditionMatchingRules(CATEGORIE, ruleTest, controlfields, datafields, resultJson, mockFunction);
     expect(resultJson.errors).not.toStrictEqual([]);
 });
 
@@ -1172,7 +1172,7 @@ test("Si 008 commence par Aa et 452 présente, alors vérifier que notice 452$0 
 
 // ===============================================================
 
-test("Si 455, alors vérifier que la notice en 455$0 contient 105$a Pos. 4-7= m",async () => {
+test("Si 455, alors vérifier que la notice en 455$0 contient 105$a Pos. 4-7= m", async () => {
     const notice = "077"
     const index = 1020
     const sudoc = getNotice(notice);
@@ -1184,11 +1184,11 @@ test("Si 455, alors vérifier que la notice en 455$0 contient 105$a Pos. 4-7= m"
     };
     addRuleToTest(index);
     const mockFunction = mockGetDataOnSudoc("078");
-    await ConditionMatching.testConditionMatchingRules(CATEGORIE,ruleTest, controlfields, datafields, resultJson, mockFunction);
+    await ConditionMatching.testConditionMatchingRules(CATEGORIE, ruleTest, controlfields, datafields, resultJson, mockFunction);
     expect(resultJson.errors).toStrictEqual([]);
 });
 
-test("Si 455, alors vérifier que la notice en 455$0 contient 105$a Pos. 4-7= m (FAIL)",async () => {
+test("Si 455, alors vérifier que la notice en 455$0 contient 105$a Pos. 4-7= m (FAIL)", async () => {
     const notice = "079"
     const index = 1020
     const sudoc = getNotice(notice);
@@ -1200,7 +1200,7 @@ test("Si 455, alors vérifier que la notice en 455$0 contient 105$a Pos. 4-7= m 
     };
     addRuleToTest(index);
     const mockFunction = mockGetDataOnSudoc("080");
-    await ConditionMatching.testConditionMatchingRules(CATEGORIE,ruleTest, controlfields, datafields, resultJson, mockFunction);
+    await ConditionMatching.testConditionMatchingRules(CATEGORIE, ruleTest, controlfields, datafields, resultJson, mockFunction);
     expect(resultJson.errors).not.toStrictEqual([]);
 });
 
@@ -1218,7 +1218,7 @@ test("Si 456, alors vérifier que la notice en 456$0 contient 105$a Pos. 4-7= v"
     };
     addRuleToTest(index);
     const mockFunction = mockGetDataOnSudoc("070");
-    await ConditionMatching.testConditionMatchingRules(CATEGORIE,ruleTest, controlfields, datafields, resultJson, mockFunction);
+    await ConditionMatching.testConditionMatchingRules(CATEGORIE, ruleTest, controlfields, datafields, resultJson, mockFunction);
     expect(resultJson.errors).toStrictEqual([]);
 });
 
@@ -1234,7 +1234,7 @@ test("Si 456, alors vérifier que la notice en 456$0 contient 105$a Pos. 4-7= v 
     };
     addRuleToTest(index);
     const mockFunction = mockGetDataOnSudoc("072");
-    await ConditionMatching.testConditionMatchingRules(CATEGORIE,ruleTest, controlfields, datafields, resultJson, mockFunction);
+    await ConditionMatching.testConditionMatchingRules(CATEGORIE, ruleTest, controlfields, datafields, resultJson, mockFunction);
     expect(resultJson.errors).not.toStrictEqual([]);
 });
 
@@ -1254,7 +1254,7 @@ test("Zones 7XX : code fonction, vérifier qu'il s'agit d'un éditeur scientifiq
     };
     addRuleToTest(index);
     const mockFunction = mockGetDataOnSudoc("");
-    ConditionMatching.testConditionMatchingRules(ruleTest, controlfields, datafields, resultJson,mockFunction);
+    ConditionMatching.testConditionMatchingRules(CATEGORIE, ruleTest, controlfields, datafields, resultJson, mockFunction);
     expect(resultJson.errors).not.toStrictEqual([]);
 });
 
