@@ -42,7 +42,7 @@ test("Si 225 ind1=0 $a est différent du 410$t", () => {
         errors: [],
     };
     addRuleToTest(index);
-    ConditionDependance.testConditionDependanceRules(ruleTest,controlfields,datafields , resultJson);
+    ConditionDependance.testConditionDependanceRules(CATEGORIE,ruleTest,controlfields,datafields , resultJson);
     expect(resultJson.errors).toStrictEqual([]);
 });
 
@@ -58,7 +58,7 @@ test("Si 225 ind1=0 $a est différent du 410$t (FAIL)", () => {
         errors: [],
     };
     addRuleToTest(index);
-    ConditionDependance.testConditionDependanceRules(ruleTest,controlfields,datafields , resultJson);
+    ConditionDependance.testConditionDependanceRules(CATEGORIE,ruleTest,controlfields,datafields , resultJson);
     expect(resultJson.errors).not.toStrictEqual([]);
 });
 
@@ -77,7 +77,7 @@ test("Si 225 ind1=2 $a = 410$t", () => {
         errors: [],
     };
     addRuleToTest(index);
-    ConditionDependance.testConditionDependanceRules(ruleTest,controlfields,datafields , resultJson);
+    ConditionDependance.testConditionDependanceRules(CATEGORIE,ruleTest,controlfields,datafields , resultJson);
     expect(resultJson.errors).toStrictEqual([]);
 });
 
@@ -93,7 +93,7 @@ test("Si 225 ind1=2 $a = 410$t (FAIL)", () => {
         errors: [],
     };
     addRuleToTest(index);
-    ConditionDependance.testConditionDependanceRules(ruleTest,controlfields,datafields , resultJson);
+    ConditionDependance.testConditionDependanceRules(CATEGORIE,ruleTest,controlfields,datafields , resultJson);
     expect(resultJson.errors).not.toStrictEqual([]);
 });
 
@@ -112,7 +112,7 @@ test("Si 455, alors la date en 455$d = date en zone 100 position 13-16 ", () => 
         errors: [],
     };
     addRuleToTest(index);
-    ConditionDependance.testConditionDependanceRules(ruleTest,controlfields,datafields , resultJson);
+    ConditionDependance.testConditionDependanceRules(CATEGORIE,ruleTest,controlfields,datafields , resultJson);
     expect(resultJson.errors).toStrictEqual([]);
 });
 
@@ -128,7 +128,7 @@ test("Si 455, alors la date en 455$d = date en zone 100 position 13-16 ", () => 
 //         errors: [],
 //     };
 //     addRuleToTest(index);
-//     ConditionDependance.testConditionDependanceRules(ruleTest,controlfields,datafields , resultJson);
+//     ConditionDependance.testConditionDependanceRules(CATEGORIE,ruleTest,controlfields,datafields , resultJson);
 //     expect(resultJson.errors).not.toStrictEqual([]);
 // });
 

@@ -27,7 +27,7 @@ const mockResponse = {
  * renvois le fichier de regles
  */
 app.get('/rules', (req, res) => {
-  const file = `${__dirname}/public/model_regles.json`;
+  const file = `${__dirname}/public/model_regles_tries.json`;
   res.download(file); // Set disposition and send it.
 });
 
@@ -75,7 +75,7 @@ app.post('/notice', (req, res) => {
  * retourne 404 si le type/categorie n'existe pas
  */
 app.post('/rules', (req, res) => {
-  let json = fs.readFileSync(`${__dirname}/public/model_regles.json`);
+  let json = fs.readFileSync(`${__dirname}/public/model_regles_tries.json`);
   let rules = JSON.parse(json);
   const type = req.header("type");
   const categorie = req.header("categorie");
@@ -98,7 +98,7 @@ app.post('/rules', (req, res) => {
     console.log(rules[categorie][type]);
 
     const newJson = JSON.stringify(rules);
-    fs.writeFile(`${__dirname}/public/model_regles.json`, newJson, 'utf8', () => { });
+    fs.writeFile(`${__dirname}/public/model_regles_tries.json`, newJson, 'utf8', () => { });
 
     if (valid) {
       res.sendStatus(200);
@@ -117,7 +117,7 @@ app.post('/rules', (req, res) => {
  */
 app.delete('/rules', (req, res) => {
   console.log("DELETE")
-  let json = fs.readFileSync(`${__dirname}/public/model_regles.json`);
+  let json = fs.readFileSync(`${__dirname}/public/model_regles_tries.json`);
   let rules = JSON.parse(json);
   const index = parseInt(req.header("index"), 10);
   for (categorie in listCategorie) {
@@ -126,7 +126,7 @@ app.delete('/rules', (req, res) => {
         if (rules[listCategorie[categorie]][listType[type]][i].index == index) {
           rules[listCategorie[categorie]][listType[type]].splice(i, 1);
           const newJson = JSON.stringify(rules);
-          fs.writeFile(`${__dirname}/public/model_regles.json`, newJson, 'utf8', () => { });
+          fs.writeFile(`${__dirname}/public/model_regles_tries.json`, newJson, 'utf8', () => { });
           res.sendStatus(200);
           return;
         }
@@ -143,7 +143,7 @@ app.delete('/rules', (req, res) => {
  * return 200 ou 404
  */
 app.put('/rules', (req, res) => {
-  let json = fs.readFileSync(`${__dirname}/public/model_regles.json`);
+  let json = fs.readFileSync(`${__dirname}/public/model_regles_tries.json`);
   let rules = JSON.parse(json);
   const index = parseInt(req.header("index"), 10);
   for (categorie in listCategorie) {
@@ -153,7 +153,7 @@ app.put('/rules', (req, res) => {
           rules[listCategorie[categorie]][listType[type]][i] = req.body;
           rules[listCategorie[categorie]][listType[type]][i].index = index;
           const newJson = JSON.stringify(rules);
-          fs.writeFile(`${__dirname}/public/model_regles.json`, newJson, 'utf8', () => { });
+          fs.writeFile(`${__dirname}/public/model_regles_tries.json`, newJson, 'utf8', () => { });
           res.sendStatus(200);
           return;
         }
@@ -168,7 +168,7 @@ app.put('/rules', (req, res) => {
  * URL DE TEST
  */
 app.post('/testIdGenerator', (req, res) => {
-  let json = fs.readFileSync(`${__dirname}/public/model_regles.json`);
+  let json = fs.readFileSync(`${__dirname}/public/model_regles_tries.json`);
   let rules = JSON.parse(json);
   console.log(f.idGenerator(rules))
   res.sendStatus(200);

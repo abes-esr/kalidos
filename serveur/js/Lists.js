@@ -6,7 +6,7 @@ const path = require('path');
  * retourne une liste contenant en premiere position la liste des categories et en seconde la liste des types
  */
 var Lists = function() {
-  const json = fs.readFileSync(path.join(__dirname, '../public/model_regles.json'));
+  const json = fs.readFileSync(path.join(__dirname, '../public/model_regles_tries.json'));
   let rules = JSON.parse(json);
   var listCategorie = [];
   var listType = [];
