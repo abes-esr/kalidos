@@ -1,57 +1,86 @@
+import { generator } from '../generator';
+
 export function formatRuleIdRef(data) {
   console.log('formatRuleIdRef');
   const obj = {};
-  obj.operator = data.operator;
   obj.message = data.message;
   obj.condition = {
-    number: data.number,
-    code: data.code,
+    number: data.condition.number,
+    code: data.condition.code,
   }
   obj.identifiant = {
-    code: data.code,
+    code: data.identifiant.code,
   }
-  obj.condition = {
-    number: data.number,
-    regex: generator(data.rule, data.patterns, data.isWord),
+  obj.verification = {
+    number: data.verification.number,
+    regex: generator(data.verification.rule, data.verification.patterns, data.verification.isWord),
   }
   return obj;
 }
 
 export function getSchemaIdRef(categories, rules) {
-  return {
-      definitions: {
-          champs: {
-              type: "object",
-              properties: {
-                  number: {
-                      title: "Zone",
-                      type: "array",
-                      items: {
-                          type: "string",
-                      },
-                  },
-                  Pos: {
-                      title: "Position",
-                      type: "string",
-                      enum: ["[]", "[9,13]", "[13,17]", "[0,4]", "[0,2]"],
-                  },
-              },
-          },
-      },
-      type: "object",
-      properties: {
-          billing_address: {title:"Premier champs","$ref": "#/definitions/champs"},
-          shipping_address: {title:"Deuxiéme champs","$ref": "#/definitions/champs"},
-          Operator: {
-              title: "Opérateur",
-              type: "string",
-              enum: ["<=", "="],
-          },
-          message: {
-              title: "Message à afficher",
-              type: "string",
-              enum: rules.rules,
-          },
-      },
-  }
+    return {
+        definitions: {
+            condition: {
+                type: "object",
+                properties: {
+                    number: {
+                        title: "Zone",
+                        type: "string",
+                    },
+                    code: {
+                        title: "Sous zone",
+                        type: "string",
+                    },
+                },
+            },
+            identifiant: {
+                type: "object",
+                properties: {
+                    code: {
+                        title: "Sous zone",
+                        type: "string",
+                    },
+                }
+            },
+            verification: {
+                type: "object",
+                properties:{
+                    number: {
+                        title: "Zone",
+                        type: "string",
+                    },
+                    rule: {
+                        title: 'Regle a utiliser',
+                        type: 'string',
+                        enum: rules.rules,
+                        enumNames: rules.names,
+                    },
+                    isWord: {
+                        title: ' Le motif contiens de mots',
+                        type: 'boolean',
+                        enum: [true, false],
+                        enumNames: ["Oui", "Non"]
+                    },
+                    patterns: {
+                        title: 'Motif(s) a utiliser par la regle',
+                        type: 'array',
+                        items: {
+                            type: 'string',
+                        },
+                    },
+                }
+            }
+        },
+        type: "object",
+        properties: {
+            condition: {title:"Condition","$ref": "#/definitions/condition"},
+            identifiant: {title:"Identifiant","$ref": "#/definitions/identifiant"},
+            verification: {title:"Vérification","$ref": "#/definitions/verification"},
+            message: {
+                title: "Message à afficher",
+                type: "string",
+            },
+        },
+    }
 }

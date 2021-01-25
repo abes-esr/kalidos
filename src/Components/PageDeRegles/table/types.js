@@ -1,5 +1,7 @@
 import { getSchemaMatching, formatRuleMatching } from '../forms/matching';
-import { getSchemaDependencies } from '../forms/dependencies';
+import { getSchemaIdRef, formatRuleIdRef } from '../forms/idRefs'
+import { getSchemaDependencies, formatRuleDependencies } from '../forms/dependencies';
+import { getSchemaStructurel, formatRuleStructurel } from '../forms/structurelles';
 import { getSchemaConditionnels} from '../forms/conditionnels';
 
 export function typesSpec(categories, rules) {
@@ -13,7 +15,8 @@ export function typesSpec(categories, rules) {
     { name: "Dépendances", 
       type: "dependances",
       description: "Description du type dependances",
-      schema: getSchemaMatching(categories, rules),
+      schema: getSchemaDependencies(categories, rules),
+      submit: formatRuleDependencies,
     },
     { name: "Conditionnels", 
       type: "Conditionnels",
@@ -23,12 +26,14 @@ export function typesSpec(categories, rules) {
     { name: "Structurels", 
       type: "Structurel",
       description: "Description du type Structurel",
-      schema: getSchemaMatching(categories, rules),
+      schema: getSchemaStructurel(categories, rules),
+      submit: formatRuleStructurel,
     },
     { name: "Références", 
       type: "idRef",
       description: "Description du type idRef",
-      schema: getSchemaMatching(categories, rules),
+      schema: getSchemaIdRef(categories, rules),
+      submit: formatRuleIdRef
     }
   ]
 }

@@ -1,12 +1,14 @@
+import { getOperator } from '../generator';
+
 export function formatRuleDependencies(data) {
     console.log('formatRuleDependencies');
     const obj = {};
-    obj.operator = data.operator;
+    obj.operator = getOperator(data.operator);
     obj.message = data.message;
     obj.field1 = {
-        number: data.field1_number,
-        code: data.field1_code,
-        pos: data.field1_pos,
+        number: data.field1.number,
+        code: data.field1.code,
+        pos: data.field1.pos,
     }
     obj.field2 = {
         number: data.field2_number,
@@ -16,7 +18,7 @@ export function formatRuleDependencies(data) {
     return obj;
   }
 
-export function getSchemaDependencies(categories, rules) {
+  export function getSchemaDependencies(categories, rules) {
     return {
         definitions: {
             champs: {
@@ -24,12 +26,13 @@ export function getSchemaDependencies(categories, rules) {
                 properties: {
                     number: {
                         title: "Zone",
-                        type: "array",
-                        items: {
-                            type: "string",
-                        },
+                        type: "number",
                     },
-                    Pos: {
+                    code: {
+                        title: 'Sous Zone',
+                        type: 'string',
+                    },
+                    pos: {
                         title: "Position",
                         type: "string",
                         enum: ["[]", "[9,13]", "[13,17]", "[0,4]", "[0,2]"],
@@ -39,34 +42,18 @@ export function getSchemaDependencies(categories, rules) {
         },
         type: "object",
         properties: {
-            billing_address: {title:"Premier champs","$ref": "#/definitions/champs"},
-            shipping_address: {title:"Deuxiéme champs","$ref": "#/definitions/champs"},
-            Operator: {
+            field1: {title:"Premier champ","$ref": "#/definitions/champs"},
+            field2: {title:"Deuxiéme champ","$ref": "#/definitions/champs"},
+            operator: {
                 title: "Opérateur",
                 type: "string",
-                enum: ["<=", "="],
+                enum: ["<","<=", "=", ">=", ">"],
+                enumNames: ["Plus petit","Plus petit ou egal", "Egal", "Plus grand ou egal", "Plus grand"]
             },
             message: {
                 title: "Message à afficher",
                 type: "string",
-                enum: rules.rules,
             },
         },
     }
 }
-
-                    /*category2: {
-                        title: "Deuxiéme Champs",
-                    },
-                    number2: {
-                        title: "Zone",
-                        type: "array",
-                        items: {
-                            type: "string",
-                        },
-                    },
-                    Pos2: {
-                        title: "Position",
-                        type: "string",
-                        enum: ["[]", "[9,13]","[13,17]","[0,4]","[0,2]"],
-                    },*/

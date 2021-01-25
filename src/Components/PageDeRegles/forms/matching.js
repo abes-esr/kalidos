@@ -45,13 +45,13 @@ export function getSchemaMatching(categories, rules) {
         enumNames: rules.names,
       },
       isWord: {
-        title: 'Mots',
+        title: ' Le motif contiens de mots',
         type: 'boolean',
         enum: [true, false],
+        enumNames: ["Oui", "Non"]
       },
       patterns: {
-        title: 'Value',
-        description: 'Pattern to be used by the chosen rule ',
+        title: 'Motif(s) a utiliser par la regle',
         type: 'array',
         items: {
           type: 'string',

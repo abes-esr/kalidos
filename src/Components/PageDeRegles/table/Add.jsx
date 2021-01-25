@@ -19,8 +19,8 @@ function Add({ types }) {
 
   const onSubmit = ({ formData }, e) => {
     const obj = types[index].submit(formData);
-    console.log(`Add: ${obj}`);
-    console.log(e);
+    console.log('Add');
+    console.log(obj);
     // POST obj
     // refresh rules list
   };
