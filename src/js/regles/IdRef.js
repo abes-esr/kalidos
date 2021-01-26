@@ -16,11 +16,7 @@ var IdRef = function () {
             })
             .catch(function (error) {
                 //console.log("avant : " , resultJson)
-                resultJson.errors.push({
-                    message: regle.message + " ( " + regle.index + " ) ",
-                    number: regle.number,
-                    code: regle.code
-                });
+                addError(regle, resultJson);
                 //console.log("apres : " , resultJson)
             })
     }
@@ -39,11 +35,7 @@ var IdRef = function () {
 
         if (!valid) {
             //console.log("regle : " , regle.numRuleExcell)
-            resultJson.errors.push({
-                message: regle.message + " ( " + regle.index + " ) ",
-                number: regle.number,
-                code: regle.code
-            });
+            addError(regle, resultJson)
             //console.log(resultJson.errors)
         }
     }
@@ -103,8 +95,8 @@ var IdRef = function () {
     function addError(regle, resultJson) {
         resultJson.errors.push({
             message: regle.message + " ( " + regle.index + " ) ",
-            number: regle.number,
-            code: regle.code
+            number: regle.identifiant.number,
+            code: regle.identifiant.code
         });
     }
 
