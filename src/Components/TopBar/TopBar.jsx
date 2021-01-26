@@ -16,6 +16,7 @@ function TopBar({ compteurResult, nombreTotalPPN, result, listPPNErronne }) {
     const nombreErreurTotal = arrayResult.length === 0 ? 0 : arrayResult.map(x => x[1].errors.length).reduce((total, x) => total + x);
     let progressBar = '';
 
+
     if (compteurResult != nombreTotalPPN) {
         progressBar = <div className="progress" style={{ marginLeft: '17%', width: '66%' }}>
             <ProgressBar animated now={width} style={{ width: '100%', animationDuration: '0.01s' }} label={`${width}%`} />;
@@ -26,17 +27,22 @@ function TopBar({ compteurResult, nombreTotalPPN, result, listPPNErronne }) {
                 Nombre de PPN testés : {nombreTotalPPN}
             </Col>
             <Col className="text-warning" style={{ textAlign: 'center' }}>
-                Nombre d'erreurs totals : {nombreErreurTotal}
+                Nombre d'erreurs total : {nombreErreurTotal}
             </Col>
             <Col className="text-danger" style={{ textAlign: 'center' }}>
                 Nombre de PPN inexistants : {listPPNErronne.length}
             </Col>
         </Row>;
     }
+
     return (
         <nav className="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
             {progressBar}
         </nav>
     );
+
+
 }
 export default connect(mapStateToProps)(TopBar);
+
+//#/interfaceVerif

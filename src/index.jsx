@@ -14,10 +14,11 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { HashRouter as Router, Route } from "react-router-dom";
 import TopBar from './Components/TopBar/TopBar';
+import TopBarEmpty from './Components/TopBar/TopBarEmpty';
 import AppRouter from './Components/Router/Router';
 import store from './store/index';
 import { Provider } from 'react-redux';
-import { addErrorTest, cleanResult} from './actions/index';
+import { addErrorTest, cleanResult } from './actions/index';
 
 window.store = store;
 window.addErrorTest = addErrorTest;
@@ -33,8 +34,12 @@ import PageDeRegles from './Components/PageDeRegles/PageDeRegles';
 
 const Content = () => (
     <div>
-        <TopBar />
-
+        <Route
+            render={({ location }) => location.pathname !== "/interfaceVerif"
+                ? <TopBarEmpty />
+                : <TopBar />
+            }
+        />
         <div className="container">
 
             <Route exact path="/" component={PageDeSaisie} />
@@ -44,6 +49,8 @@ const Content = () => (
             {/* <Route path="/tempInterfaceVerif" component={TempInterfaceVerif} />
             <Route path="/tempInterfaceVerif2" component={TempInterfaceVerif2} /> */}
             <Route path="/interfaceRegles" component={PageDeRegles} />
+
+
         </div>
     </div>
 );
@@ -61,15 +68,15 @@ const Wrapper = () => (
 
 
                 <footer className="sticky-footer bg-white"
-                style={{
-                    bottom:0,
-                    left:0,
-                    width:"100%",
-                    zIndex:0,
-                }}>
+                    style={{
+                        bottom: 0,
+                        left: 0,
+                        width: "100%",
+                        zIndex: 0,
+                    }}>
                     <div className="container my-auto">
                         <div className="copyright text-center my-auto">
-                            <span>Copyright &copy; BiblioDev 2020</span>
+                            <span>Copyright &copy; BiblioDev 2021</span>
                         </div>
                     </div>
                 </footer>
