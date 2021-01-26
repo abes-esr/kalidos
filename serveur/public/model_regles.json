@@ -1,6 +1,7 @@
 {
     "Generale": {
-        "matching": [{
+        "matching": [
+            {
                 "index": 1,
                 "number": 201,
                 "code": "c",
@@ -548,7 +549,8 @@
                 "regex": "^(?!Reproduction numérique de l'édition de LIEU : EDITEUR, DATE).*$"
             }
         ],
-        "dependances": [{
+        "dependances": [
+            {
                 "index": 2,
                 "field1": {
                     "number": "100",
@@ -619,7 +621,7 @@
                         "340"
                     ]
                 }
-            ],
+                ],
                 "index": 6000,
                 "type": "allRequired",
                 "number": 214,
@@ -1656,7 +1658,8 @@
                 }]
             }
         ],
-        "ConditionStructurel": [{
+        "ConditionStructurel": [
+            {
                 "condition": [{
                     "operator": "contains_text",
                     "number": "105",
@@ -2992,7 +2995,8 @@
                 "message": "Si 105 $a Pos. 4-7= m, 214 ind2=\"1\""
             }
         ],
-        "ConditionDependance": [{
+        "ConditionDependance": [
+            {
                 "condition": [{
                     "operator": "presente",
                     "number": "225",
@@ -3055,7 +3059,8 @@
                 "message": "Si 455, alors la date en 455$d = date en zone 100 position 13-16"
             }
         ],
-        "Structurel": [{
+        "Structurel": [
+            {
                 "index": 28,
                 "number": [
                     "200"
@@ -3264,7 +3269,8 @@
                 "index": 51
             }
         ],
-        "idRef": [{
+        "idRef": [
+            {
                 "index": 52,
                 "numRuleExcell": 69,
                 "condition": [{
@@ -3659,12 +3665,14 @@
                 "message": "Incohérence indexation : vérifier que la zone 6XX est liée à une autorité RAMEAU"
             }
         ],
-        "ordonnancement": [{
+        "ordonnancement": [
+            {
             "index": 5006,
             "number": "214",
             "orderBy": "ind2",
             "message": "Zones 214 : garder l'ordre des indicateurs"
-        }],
+            }
+        ],
         "compte": [{
             "index": 5007,
             "number": "101",
@@ -3672,7 +3680,8 @@
             "contrainte": "330",
             "message": "Mention de résumé incohérente : vérifier zones 101 et le nombre de zones 330"
         }],
-        "precedence": [{
+        "precedence": [
+            {
                 "index": 5008,
                 "number": "608",
                 "condition": [{

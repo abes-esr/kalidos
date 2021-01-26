@@ -1,6 +1,29 @@
+export const rulesSpec = {
+  rules: [
+    "must contain",
+    "must not contain",
+    "equals to",
+    "not equals to",
+    "starts with",
+    "not starts with",
+    "ends with",
+    "not ends with",
+    "characters number"
+  ],
+  names: [
+    "Doit contenir",
+    "Ne doit pas contenir",
+    "Égale à",
+    "Ne soit pas égale à",
+    "Commence par ",
+    "Ne doit pas commencer par",
+    "Finit par",
+    "Ne doit pas finir par",
+    "Nombre de caracteres"
+  ]
+}
 
 
-// caracter #
 export function characters_number(value) {
   return ['.', '{'+value+'}']
 }
@@ -110,4 +133,21 @@ export function generator (func, items, isWord) {
   regex = prefix + items.join(join) + sufix
   console.log(func + ': ' + regex)
   return regex;
+}
+
+export function getOperator(operator){
+  switch (operator) {
+    case '<':
+      return 'less'
+    case '<=':
+        return 'lessEquals'
+    case '=':
+      return 'equals';
+    case '>=':
+      return 'greaterEquals';
+    case '>':
+      return 'greater'
+    default:
+      break;
+  }
 }

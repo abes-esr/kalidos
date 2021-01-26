@@ -9,11 +9,11 @@ const convert = require("xml-js");
 let ConditionMatching = function () {
     let getDocument = undefined;
     let ppnInitiale = undefined;
-    let testConditionMatchingRules = async function (rules, controlfields, datafields, resultJson, getfunctionDocument) {
+    let testConditionMatchingRules = async function (categorie, rules, controlfields, datafields, resultJson, getfunctionDocument) {
         getDocument = getfunctionDocument;
-        for (let iRegle in rules.Generale.ConditionMatching) 
+        for (let iRegle in rules[categorie].ConditionMatching) 
         {
-            const regle = rules.Generale.ConditionMatching[iRegle];
+            const regle = rules[categorie].ConditionMatching[iRegle];
             //recuperation du datafield
             let checkedConds = true;
             regle.condition.forEach(function (condition) {

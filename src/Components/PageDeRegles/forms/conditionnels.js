@@ -22,15 +22,7 @@ export function getSchemaConditionnels(categories, rules) {
                 title: "Premier paramétre",
                 type : "string",
             },
-            
-            },
-        },
-            message: {
-                title: "Message à afficher",
-                type: "string",
-                enum: rules.rules,
-            },
-        },
+        }
     }
 }
 

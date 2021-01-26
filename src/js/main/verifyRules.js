@@ -1,6 +1,6 @@
 const axios = require('axios');
 const convert = require("xml-js");
-import { cleanResult, addErrorPPN, setNombreTotalPPN } from '../../actions/index';
+import { cleanResult, addErrorPPN, setNombreTotalPPN, setChoixCategorie , addErrorPPNErronnee} from '../../actions/index';
 import store from '../../store/index';
 const Matching = require("../regles/Matching");
 const Structurel = require("../regles/Structurel");
@@ -12,32 +12,17 @@ const ConditionDependance = require("../regles/ConditionDependance");
 const Ordonnancement = require('../regles/Ordonnancement');
 const Compte = require('../regles/Compte');
 
-const PPN_EN_DUR = '169450546'
-const CATEGORIE = "Generale";
-const TYPE = "matching";
-const NEWRULE = {
-    "number": 404,
-    "code": "z",
-    "message": "NEW RULE",
-    "regex": "[A-Z]*[a-z]+"
-}
-
-const NEWRULEMODIFIED = {
-    "number": 404,
-    "code": "z",
-    "message": "NEW RULE MODIFIED",
-    "regex": "[A-Z]*[a-z]+"
-};
-const INDEX = 5;
-const REGEXENDUR = ".*^(NOM).*";
+const CATEGORIE_GENERALE = "Generale";
 
 let nombreTotalPPN = 0;
 let count = 0;
 
 function verifiyRulesByTextArea() {
     store.dispatch(cleanResult());
+    const choixCategorie = $("#choixCategorie").val();
+    store.dispatch(setChoixCategorie(choixCategorie));
     window.location += 'interfaceVerif';
-    const listPPN = document.getElementById("textAreaSaisie").value.split("\n").filter(x=>x!='');
+    const listPPN = document.getElementById("textAreaSaisie").value.split("\n").filter(x => x != '');
     store.dispatch(setNombreTotalPPN(listPPN.length));
     nombreTotalPPN = listPPN.length;
     getRules(listPPN);
@@ -58,11 +43,12 @@ function getSudoc(rules, PPN) {
             const data = JSON.parse(
                 convert.xml2json(response.data, { compact: true, spaces: 2 })
             );
-            verifMain(rules, data );
+            verifMain(rules, data);
         })
         .catch(function (error) {
             // handle error
             console.log(error);
+            store.dispatch(addErrorPPNErronnee(PPN));
         })
         .then(function () {
             // always executed
@@ -81,12 +67,12 @@ function writeResult() {
     }).then(function () {
         //console.log("ok")
     })
-    .catch(function (error) {
-        // handle error
-        console.log(error);
-    })
-    .then(function () {
-    });
+        .catch(function (error) {
+            // handle error
+            console.log(error);
+        })
+        .then(function () {
+        });
 }
 
 function deleteRule(index) {
@@ -101,11 +87,11 @@ function deleteRule(index) {
     }).then(function () {
         console.log("suppression ok")
     })
-    .catch(function (error) {
-        console.log(error);
-    })
-    .then(function () {
-    });
+        .catch(function (error) {
+            console.log(error);
+        })
+        .then(function () {
+        });
 }
 
 function updateRule(index, newRule) {
@@ -135,12 +121,12 @@ function addRule(categorie, type, rule) {
     }).then(function () {
         console.log("ok")
     })
-    .catch(function (error) {
-        // handle error
-        console.log(error);
-    })
-    .then(function () {
-    });
+        .catch(function (error) {
+            // handle error
+            console.log(error);
+        })
+        .then(function () {
+        });
 }
 
 function getRules(listPPN) {
@@ -184,6 +170,7 @@ function verifMain(rules, sudoc) {
     // const leader = sudoc.record.leader;
     const controlfields = sudoc.record.controlfield;
     const datafields = sudoc.record.datafield;
+    const categorieChoose = store.getState().choixCategorie;
     let resultJson = {
         PPN: controlfields[0]._text,
         errors: [],
@@ -192,15 +179,10 @@ function verifMain(rules, sudoc) {
     const getNoticeStructurelle = ConditionStructurel.getDataOnSudoc;
     const getNoticeSMatching = ConditionMatching.getDataOnSudoc;
 
-    Matching.testMatchRegexRules(CATEGORIE,rules,controlfields,datafields , resultJson)
-    Structurel.testMatchStructurelRules(CATEGORIE,rules,controlfields,datafields , resultJson)
-    Dependance.testMatchDependanceRules(CATEGORIE,rules,controlfields,datafields , resultJson)
-    IdRef.testIdRefRules(CATEGORIE,rules,controlfields,datafields , resultJson)
-    ConditionStructurel.testConditionStrucutrelRules(rules,controlfields,datafields , resultJson , getNoticeStructurelle)
-    ConditionMatching.testConditionMatchingRules(rules,controlfields,datafields , resultJson , getNoticeSMatching)
-    ConditionDependance.testConditionDependanceRules(rules,controlfields,datafields , resultJson)
-    Ordonnancement.testOrdonnancementRules(CATEGORIE, rules, controlfields, datafields, resultJson)
-    Compte.testCompteRules(CATEGORIE, rules, controlfields, datafields, resultJson)
+    testOnCategorie(CATEGORIE_GENERALE, rules, controlfields, datafields, resultJson, getNoticeStructurelle, getNoticeSMatching);
+    if(categorieChoose != CATEGORIE_GENERALE) {
+        testOnCategorie(categorieChoose, rules, controlfields, datafields, resultJson, getNoticeStructurelle, getNoticeSMatching);
+    }
 
 
     store.dispatch(addErrorPPN(resultJson));
@@ -209,14 +191,18 @@ function verifMain(rules, sudoc) {
     if (count === nombreTotalPPN) {
         noticesErreurs();
     }
-
-    //addRule(CATEGORIE,TYPE,NEWRULE)
-
-
-    //addRule(CATEGORIE,TYPE,NEWRULE);
-    //updateRule(INDEX,NEWRULEMODIFIED);
-    //deleteRule(INDEX)
-    //Regex.transform(REGEXENDUR,sudoc)
 }
 
 export { verifyRules, verifiyRulesByTextArea };
+function testOnCategorie(categorie, rules, controlfields, datafields, resultJson, getNoticeStructurelle, getNoticeSMatching) {
+    Matching.testMatchRegexRules(categorie, rules, controlfields, datafields, resultJson);
+    Structurel.testMatchStructurelRules(categorie, rules, controlfields, datafields, resultJson);
+    Dependance.testMatchDependanceRules(categorie, rules, controlfields, datafields, resultJson);
+    IdRef.testIdRefRules(categorie, rules, controlfields, datafields, resultJson);
+    ConditionStructurel.testConditionStrucutrelRules(categorie, rules, controlfields, datafields, resultJson, getNoticeStructurelle);
+    ConditionMatching.testConditionMatchingRules(categorie, rules, controlfields, datafields, resultJson, getNoticeSMatching);
+    ConditionDependance.testConditionDependanceRules(categorie, rules, controlfields, datafields, resultJson);
+    Ordonnancement.testOrdonnancementRules(categorie, rules, controlfields, datafields, resultJson);
+    Compte.testCompteRules(categorie, rules, controlfields, datafields, resultJson);
+}
+

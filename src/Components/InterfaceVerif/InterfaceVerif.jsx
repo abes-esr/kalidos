@@ -6,7 +6,7 @@ import TabPPN from './TabPPN';
 import TabPPNError from './TabPPNError';
 import { connect } from 'react-redux';
 import { MDBIcon } from 'mdbreact';
-import { Button, Tooltip, OverlayTrigger, Row } from 'react-bootstrap';
+import { Button, Tooltip, OverlayTrigger, Row, Col } from 'react-bootstrap';
 import { CSVLink, CSVDownload } from "react-csv";
 
 
@@ -89,7 +89,7 @@ function InterfaceVerif({ result, recherchePPN, compteurResult, listPPNErronne }
         }
     }
     //on élimine les erreurs redondantes
-    const sortedHeaders = errorHeaders.reduce(function(a,b){ if (a.indexOf(b) < 0)a.push(b); return a; }, []);
+    const sortedHeaders = errorHeaders.reduce(function (a, b) { if (a.indexOf(b) < 0) a.push(b); return a; }, []);
 
     //la liste des erreurs va constituer le header du excel
     const newCsvData = [];
@@ -124,33 +124,38 @@ function InterfaceVerif({ result, recherchePPN, compteurResult, listPPNErronne }
     }
 
     for (let i = 0; i < listPPNWithoutError.length; i++) {
-        newCsvData.push([ listPPNWithoutError[i][1]['PPN'], "" ]);
+        newCsvData.push([listPPNWithoutError[i][1]['PPN'], ""]);
     }
 
     return (
         <div>
-            <h2>
-                Interface de Verification
+            <Row>
+                <Col>
+                    <h2>
+                        Interface de Verification
+                </h2>
+                </Col>
+                <Col>
+                    <OverlayTrigger placement="top"  delay={{ show: 250, hide: 400 }} overlay={renderTooltip}>
 
-                <OverlayTrigger placement="top" delay={{ show: 250, hide: 400 }} overlay={renderTooltip}>
+                        <CSVLink data={csvData} filename={"recap_erreurs_completBU.csv"} separator={";"} headers={headers} style = {{margin:"1%",width:"48%", float: "left"}}>
+                            <Button variant="success" style = {{width:"100%"}}>
+                                <MDBIcon far icon="file-excel" />
+                            &nbsp; Descriptif complet
+                        </Button >
+                        </CSVLink>
+                    </OverlayTrigger>
+                    <OverlayTrigger placement="top"  delay={{ show: 250, hide: 400 }} overlay={renderTooltip2}>
 
-                    <CSVLink data={csvData} filename={"recap_erreurs_completBU.csv"} separator={";"} headers={headers} style={{ float: "right" }}>
-                        <Button variant="success">
-                            <MDBIcon far icon="file-excel" />
+                        <CSVLink data={newCsvData} filename={"recap_erreursBU.csv"} separator={";"} style = {{margin:"1%",width:"48%" , float: "right"}}>
+                            <Button variant="success" style = {{width:"100%"}}>
+                                <MDBIcon far icon="file-excel" />
+                            &nbsp; Double entrée
                         </Button>
-                    </CSVLink>
-                </OverlayTrigger>
-            </h2>
-            <div>
-                <OverlayTrigger placement="top" delay={{ show: 250, hide: 400 }} overlay={renderTooltip2}>
-
-                    <CSVLink data={newCsvData} filename={"recap_erreursBU.csv"} separator={";"} style={{ float: "right" }}>
-                        <Button variant="success">
-                            <MDBIcon far icon="file-excel" />
-                        </Button>
-                    </CSVLink>
-                </OverlayTrigger>
-            </div>
+                        </CSVLink>
+                    </OverlayTrigger>
+                </Col>
+            </Row>
             <br></br>
             <Row>
                 {

@@ -3880,293 +3880,275 @@
         "dependances": [],
         "ConditionMatching": [
             {
-                "condition": [
-                    {
-                        "operator": "equals_text",
-                        "number": 700,
-                        "code": "4",
-                        "string": [
-                            "340"
-                        ]
-                    }
+                "condition": [{
+                "operator": "equals_text",
+                "number": 700,
+                "code": 4,
+                "string": [
+                "340"
+                ]
+                }
                 ],
-                "index": 186,
+                "index": 6000,
                 "type": "allRequired",
                 "number": 214,
                 "message": "Zones 7XX : code fonction, vérifier qu il s agit d un éditeur scientifique ou d un directeur de publication ?",
-                "values": [
-                    {
-                        "number": 200,
-                        "code": "f",
-                        "message": "",
-                        "regex": "(?:(?!ed.)(?!edited)(?!edit).)+",
-                        "subFieldRequired": false
-                    },
-                    {
-                        "number": 200,
-                        "code": "g",
-                        "message": "",
-                        "regex": "(?:(?!ed.)(?!edited)(?!edit).)+",
-                        "subFieldRequired": false
-                    }
+                "values": [{
+                "number": 200,
+                "code": "f",
+                "message": "",
+                "regex": "(?:(?!ed.)(?!edited)(?!edit).)+",
+                "subFieldRequired": false
+                },
+                {
+                "number": 200,
+                "code": "g",
+                "message": "",
+                "regex": "(?:(?!ed.)(?!edited)(?!edit).)+",
+                "subFieldRequired": false
+                }
                 ]
-            },
-            {
-                "condition": [
-                    {
-                        "operator": "equals_text",
-                        "number": 701,
-                        "code": "4",
-                        "string": [
-                            "340"
-                        ]
-                    }
+                },
+                {
+                "condition": [{
+                "operator": "equals_text",
+                "number": 701,
+                "code": 4,
+                "string": [
+                "340"
+                ]
+                }
                 ],
-                "index": 187,
+                "index": 6000,
                 "type": "allRequired",
                 "number": 214,
                 "message": "Zones 7XX : code fonction, vérifier qu il s agit d un éditeur scientifique ou d un directeur de publication ?",
-                "values": [
-                    {
-                        "number": 200,
-                        "code": "f",
-                        "message": "",
-                        "regex": "(?:(?!ed.)(?!edited)(?!edit).)+",
-                        "subFieldRequired": false
-                    },
-                    {
-                        "number": 200,
-                        "code": "g",
-                        "message": "",
-                        "regex": "(?:(?!ed.)(?!edited)(?!edit).)+",
-                        "subFieldRequired": false
-                    }
+                "values": [{
+                "number": 200,
+                "code": "f",
+                "message": "",
+                "regex": "(?:(?!ed.)(?!edited)(?!edit).)+",
+                "subFieldRequired": false
+                },
+                {
+                "number": 200,
+                "code": "g",
+                "message": "",
+                "regex": "(?:(?!ed.)(?!edited)(?!edit).)+",
+                "subFieldRequired": false
+                }
                 ]
-            },
-            {
-                "condition": [
-                    {
-                        "operator": "equals_text",
-                        "number": 710,
-                        "code": "4",
-                        "string": [
-                            "340"
-                        ]
-                    }
+                },
+                {
+                "condition": [{
+                "operator": "equals_text",
+                "number": 710,
+                "code": 4,
+                "string": [
+                "340"
+                ]
+                }
                 ],
-                "index": 188,
+                "index": 6000,
                 "type": "allRequired",
                 "number": 214,
                 "message": "Zones 7XX : code fonction, vérifier qu il s agit d un éditeur scientifique ou d un directeur de publication ?",
-                "values": [
-                    {
-                        "number": 200,
-                        "code": "f",
-                        "message": "",
-                        "regex": "(?:(?!ed.)(?!edited)(?!edit).)+",
-                        "subFieldRequired": false
-                    },
-                    {
-                        "number": 200,
-                        "code": "g",
-                        "message": "",
-                        "regex": "(?:(?!ed.)(?!edited)(?!edit).)+",
-                        "subFieldRequired": false
-                    }
+                "values": [{
+                "number": 200,
+                "code": "f",
+                "message": "",
+                "regex": "(?:(?!ed.)(?!edited)(?!edit).)+",
+                "subFieldRequired": false
+                },
+                {
+                "number": 200,
+                "code": "g",
+                "message": "",
+                "regex": "(?:(?!ed.)(?!edited)(?!edit).)+",
+                "subFieldRequired": false
+                }
                 ]
-            },
-            {
-                "condition": [
-                    {
-                        "operator": "equals_text",
-                        "number": 711,
-                        "code": "4",
-                        "string": [
-                            "340"
-                        ]
-                    }
+                },
+                {
+                "condition": [{
+                "operator": "equals_text",
+                "number": 711,
+                "code": 4,
+                "string": [
+                "340"
+                ]
+                }
                 ],
-                "index": 189,
+                "index": 6000,
                 "type": "allRequired",
                 "number": 214,
                 "message": "Zones 7XX : code fonction, vérifier qu il s agit d un éditeur scientifique ou d un directeur de publication ?",
-                "values": [
-                    {
-                        "number": 200,
-                        "code": "f",
-                        "message": "",
-                        "regex": "(?:(?!ed.)(?!edited)(?!edit).)+",
-                        "subFieldRequired": false
-                    },
-                    {
-                        "number": 200,
-                        "code": "g",
-                        "message": "",
-                        "regex": "(?:(?!ed.)(?!edited)(?!edit).)+",
-                        "subFieldRequired": false
-                    }
+                "values": [{
+                "number": 200,
+                "code": "f",
+                "message": "",
+                "regex": "(?:(?!ed.)(?!edited)(?!edit).)+",
+                "subFieldRequired": false
+                },
+                {
+                "number": 200,
+                "code": "g",
+                "message": "",
+                "regex": "(?:(?!ed.)(?!edited)(?!edit).)+",
+                "subFieldRequired": false
+                }
                 ]
-            },
-            {
-                "condition": [
-                    {
-                        "operator": "equals_text",
-                        "number": 720,
-                        "code": "4",
-                        "string": [
-                            "340"
-                        ]
-                    }
+                },
+                {
+                "condition": [{
+                "operator": "equals_text",
+                "number": 720,
+                "code": 4,
+                "string": [
+                "340"
+                ]
+                }
                 ],
-                "index": 190,
+                "index": 6000,
                 "type": "allRequired",
                 "number": 214,
                 "message": "Zones 7XX : code fonction, vérifier qu il s agit d un éditeur scientifique ou d un directeur de publication ?",
-                "values": [
-                    {
-                        "number": 200,
-                        "code": "f",
-                        "message": "",
-                        "regex": "(?:(?!ed.)(?!edited)(?!edit).)+",
-                        "subFieldRequired": false
-                    },
-                    {
-                        "number": 200,
-                        "code": "g",
-                        "message": "",
-                        "regex": "(?:(?!ed.)(?!edited)(?!edit).)+",
-                        "subFieldRequired": false
-                    }
+                "values": [{
+                "number": 200,
+                "code": "f",
+                "message": "",
+                "regex": "(?:(?!ed.)(?!edited)(?!edit).)+",
+                "subFieldRequired": false
+                },
+                {
+                "number": 200,
+                "code": "g",
+                "message": "",
+                "regex": "(?:(?!ed.)(?!edited)(?!edit).)+",
+                "subFieldRequired": false
+                }
                 ]
-            },
-            {
-                "condition": [
-                    {
-                        "operator": "equals_text",
-                        "number": 721,
-                        "code": "4",
-                        "string": [
-                            "340"
-                        ]
-                    }
+                },
+                {
+                "condition": [{
+                "operator": "equals_text",
+                "number": 721,
+                "code": 4,
+                "string": [
+                "340"
+                ]
+                }
                 ],
-                "index": 191,
+                "index": 6000,
                 "type": "allRequired",
                 "number": 214,
                 "message": "Zones 7XX : code fonction, vérifier qu il s agit d un éditeur scientifique ou d un directeur de publication ?",
-                "values": [
-                    {
-                        "number": 200,
-                        "code": "f",
-                        "message": "",
-                        "regex": "(?:(?!ed.)(?!edited)(?!edit).)+",
-                        "subFieldRequired": false
-                    },
-                    {
-                        "number": 200,
-                        "code": "g",
-                        "message": "",
-                        "regex": "(?:(?!ed.)(?!edited)(?!edit).)+",
-                        "subFieldRequired": false
-                    }
+                "values": [{
+                "number": 200,
+                "code": "f",
+                "message": "",
+                "regex": "(?:(?!ed.)(?!edited)(?!edit).)+",
+                "subFieldRequired": false
+                },
+                {
+                "number": 200,
+                "code": "g",
+                "message": "",
+                "regex": "(?:(?!ed.)(?!edited)(?!edit).)+",
+                "subFieldRequired": false
+                }
                 ]
-            },
-            {
-                "condition": [
-                    {
-                        "operator": "equals_text",
-                        "number": 730,
-                        "code": "4",
-                        "string": [
-                            "340"
-                        ]
-                    }
+                },
+                {
+                "condition": [{
+                "operator": "equals_text",
+                "number": 730,
+                "code": 4,
+                "string": [
+                "340"
+                ]
+                }
                 ],
-                "index": 192,
+                "index": 6000,
                 "type": "allRequired",
                 "number": 214,
                 "message": "Zones 7XX : code fonction, vérifier qu il s agit d un éditeur scientifique ou d un directeur de publication ?",
-                "values": [
-                    {
-                        "number": 200,
-                        "code": "f",
-                        "message": "",
-                        "regex": "(?:(?!ed.)(?!edited)(?!edit).)+",
-                        "subFieldRequired": false
-                    },
-                    {
-                        "number": 200,
-                        "code": "g",
-                        "message": "",
-                        "regex": "(?:(?!ed.)(?!edited)(?!edit).)+",
-                        "subFieldRequired": false
-                    }
+                "values": [{
+                "number": 200,
+                "code": "f",
+                "message": "",
+                "regex": "(?:(?!ed.)(?!edited)(?!edit).)+",
+                "subFieldRequired": false
+                },
+                {
+                "number": 200,
+                "code": "g",
+                "message": "",
+                "regex": "(?:(?!ed.)(?!edited)(?!edit).)+",
+                "subFieldRequired": false
+                }
                 ]
-            },
-            {
-                "condition": [
-                    {
-                        "operator": "equals_text",
-                        "number": 740,
-                        "code": "4",
-                        "string": [
-                            "340"
-                        ]
-                    }
+                },
+                {
+                "condition": [{
+                "operator": "equals_text",
+                "number": 740,
+                "code": 4,
+                "string": [
+                "340"
+                ]
+                }
                 ],
-                "index": 193,
+                "index": 6000,
                 "type": "allRequired",
                 "number": 214,
                 "message": "Zones 7XX : code fonction, vérifier qu il s agit d un éditeur scientifique ou d un directeur de publication ?",
-                "values": [
-                    {
-                        "number": 200,
-                        "code": "f",
-                        "message": "",
-                        "regex": "(?:(?!ed.)(?!edited)(?!edit).)+",
-                        "subFieldRequired": false
-                    },
-                    {
-                        "number": 200,
-                        "code": "g",
-                        "message": "",
-                        "regex": "(?:(?!ed.)(?!edited)(?!edit).)+",
-                        "subFieldRequired": false
-                    }
+                "values": [{
+                "number": 200,
+                "code": "f",
+                "message": "",
+                "regex": "(?:(?!ed.)(?!edited)(?!edit).)+",
+                "subFieldRequired": false
+                },
+                {
+                "number": 200,
+                "code": "g",
+                "message": "",
+                "regex": "(?:(?!ed.)(?!edited)(?!edit).)+",
+                "subFieldRequired": false
+                }
                 ]
-            },
-            {
-                "condition": [
-                    {
-                        "operator": "equals_text",
-                        "number": 741,
-                        "code": "4",
-                        "string": [
-                            "340"
-                        ]
-                    }
+                },
+                {
+                "condition": [{
+                "operator": "equals_text",
+                "number": 741,
+                "code": 4,
+                "string": [
+                "340"
+                ]
+                }
                 ],
-                "index": 194,
+                "index": 6000,
                 "type": "allRequired",
                 "number": 214,
                 "message": "Zones 7XX : code fonction, vérifier qu il s agit d un éditeur scientifique ou d un directeur de publication ?",
-                "values": [
-                    {
-                        "number": 200,
-                        "code": "f",
-                        "message": "",
-                        "regex": "(?:(?!ed.)(?!edited)(?!edit).)+",
-                        "subFieldRequired": false
-                    },
-                    {
-                        "number": 200,
-                        "code": "g",
-                        "message": "",
-                        "regex": "(?:(?!ed.)(?!edited)(?!edit).)+",
-                        "subFieldRequired": false
-                    }
+                "values": [{
+                "number": 200,
+                "code": "f",
+                "message": "",
+                "regex": "(?:(?!ed.)(?!edited)(?!edit).)+",
+                "subFieldRequired": false
+                },
+                {
+                "number": 200,
+                "code": "g",
+                "message": "",
+                "regex": "(?:(?!ed.)(?!edited)(?!edit).)+",
+                "subFieldRequired": false
+                }
                 ]
-            },
+                },
             {
                 "condition": [
                     {
@@ -4177,7 +4159,7 @@
                         "ind2": "4"
                     }
                 ],
-                "index": 195,
+                "index": 186,
                 "type": "allRequired",
                 "number": 214,
                 "message": "Si 214 #4$d, la zone doit commencer par \"C espace\"",
@@ -4201,7 +4183,7 @@
                         "ind2": "0"
                     }
                 ],
-                "index": 196,
+                "index": 187,
                 "type": "allRequired",
                 "number": 214,
                 "message": "Si 214 #0 et $d, doit commencer par \"DL espace\" ou \"[\" ou un chiffre",
@@ -4233,7 +4215,7 @@
                         ]
                     }
                 ],
-                "index": 197,
+                "index": 188,
                 "type": "allRequired",
                 "number": "856",
                 "message": "856$zAccès au texte intégral sauf si 856$5=692669902, alors $zAccès réservé aux membres de Lyon 1 après authentification",
@@ -4258,7 +4240,7 @@
                         ]
                     }
                 ],
-                "index": 198,
+                "index": 189,
                 "type": "allRequired",
                 "number": 214,
                 "message": "Si 305$a commence par \"Document numérisé dans le cadre du projet de numérisation\", 214 $aLyon et $cBibliothèque Lyon 1",
@@ -4291,7 +4273,7 @@
                     "number": 456,
                     "code": "0"
                 },
-                "index": 199,
+                "index": 190,
                 "type": "allRequired",
                 "number": "105",
                 "message": "Si 456, alors vérifier que la notice en 456$0 contient 105$a Pos. 4-7= v",
@@ -4325,7 +4307,7 @@
                     }
                 ],
                 "type": "allRequired",
-                "index": 200,
+                "index": 191,
                 "number": "225",
                 "message": "Si 225 ind1=0 il faut au moins une 410"
             },
@@ -4347,7 +4329,7 @@
                     }
                 ],
                 "type": "allRequired",
-                "index": 201,
+                "index": 192,
                 "number": "225",
                 "message": "Si 225 ind1=0 $a alors 410$0 doit être présent"
             },
@@ -4369,7 +4351,7 @@
                     }
                 ],
                 "type": "allRequired",
-                "index": 202,
+                "index": 193,
                 "number": "225",
                 "message": "Si 225 ind1=2 $a alors 410$0 doit être présent"
             },
@@ -4391,7 +4373,7 @@
                     }
                 ],
                 "type": "allRequired",
-                "index": 203,
+                "index": 194,
                 "number": "225",
                 "message": "Si 225 ind1=2 $a alors 410$0 doit être présent"
             },
@@ -4413,7 +4395,7 @@
                     }
                 ],
                 "type": "allRequired",
-                "index": 204,
+                "index": 195,
                 "number": "225",
                 "message": "Si 225 ind1=2 il faut au moins une 410"
             },
@@ -4446,7 +4428,7 @@
                     }
                 ],
                 "type": "oneRequired",
-                "index": 205,
+                "index": 196,
                 "number": "008",
                 "message": "Si 008 commence par Aa et présence d'une 461, alors il doit y avoir une 305 ou 225"
             },
@@ -4474,7 +4456,7 @@
                     }
                 ],
                 "type": "allRequired",
-                "index": 206,
+                "index": 197,
                 "number": "008",
                 "message": "Si 008 commence par Oa et ne contient pas une 215, une 856 doit être présente"
             },
@@ -4502,7 +4484,7 @@
                     }
                 ],
                 "type": "allRequired",
-                "index": 207,
+                "index": 198,
                 "number": "856",
                 "message": "Si 856$5=692669902, une 310 doit être présente"
             },
@@ -4530,7 +4512,7 @@
                     "code": "0"
                 },
                 "type": "allRequired",
-                "index": 208,
+                "index": 199,
                 "number": "455",
                 "message": "Si 455, alors vérifier que la notice en 455$0 contient une 456 avec liens réciproques"
             },
@@ -4553,7 +4535,7 @@
                     }
                 ],
                 "type": "allRequired",
-                "index": 209,
+                "index": 200,
                 "number": "008",
                 "message": "Si 008 commence par Oa,  304 doit être présente"
             },
@@ -4576,7 +4558,7 @@
                     }
                 ],
                 "type": "allRequired",
-                "index": 210,
+                "index": 201,
                 "number": "008",
                 "message": "Si 008 commence par Oa, 307 doit être présente"
             },
@@ -4599,7 +4581,7 @@
                     }
                 ],
                 "type": "allRequired",
-                "index": 211,
+                "index": 202,
                 "number": "008",
                 "message": "Si 008 commence par Oa, 337 doit être présente"
             },
@@ -4622,7 +4604,7 @@
                     }
                 ],
                 "type": "allRequired",
-                "index": 212,
+                "index": 203,
                 "number": "008",
                 "message": "Si 008 commence par Oa, 230 doit être présente"
             },
@@ -4645,7 +4627,7 @@
                     }
                 ],
                 "type": "allRequired",
-                "index": 213,
+                "index": 204,
                 "number": "305",
                 "message": "Si 305$a commence par \"Document numérisé dans le cadre du projet de numérisation\", doit contenir une 324"
             },
@@ -4668,7 +4650,7 @@
                     }
                 ],
                 "type": "allRequired",
-                "index": 214,
+                "index": 205,
                 "number": "305",
                 "message": "Si 305$a commence par \"Document numérisé dans le cadre du projet de numérisation\", doit contenir une 455"
             },
@@ -4693,7 +4675,7 @@
                     }
                 ],
                 "type": "allRequired",
-                "index": 215,
+                "index": 206,
                 "number": "305",
                 "message": "Si 305$a commence par \"Document numérisé dans le cadre du projet de numérisation\", 214 ind1=' ' et ind2=\"0\""
             }
@@ -4709,7 +4691,7 @@
                         "ind2": ""
                     }
                 ],
-                "index": 216,
+                "index": 207,
                 "field1": {
                     "number": "225",
                     "code": "a"
@@ -4731,7 +4713,7 @@
                         "ind2": ""
                     }
                 ],
-                "index": 217,
+                "index": 208,
                 "field1": {
                     "number": "225",
                     "code": "a"
@@ -4751,7 +4733,7 @@
                         "code": ""
                     }
                 ],
-                "index": 218,
+                "index": 209,
                 "field1": {
                     "number": "455",
                     "code": "d"
@@ -4779,7 +4761,7 @@
                 "type": "required",
                 "message": "Ressource électronique : doit contenir une zone 303",
                 "numRuleExcell": 155,
-                "index": 219
+                "index": 210
             },
             {
                 "number": [
@@ -4791,13 +4773,13 @@
                 "type": "required",
                 "message": "Ressource électronique : doit contenir une zone 339",
                 "numRuleExcell": 156,
-                "index": 220
+                "index": 211
             }
         ],
         "idRef": [],
         "ordonnancement": [
             {
-                "index": 221,
+                "index": 212,
                 "number": "214",
                 "orderBy": "ind2",
                 "message": "Zones 214 : garder l'ordre des indicateurs"
@@ -4809,35 +4791,35 @@
     "MémoireSoutenance": {
         "matching": [
             {
-                "index": 222,
+                "index": 213,
                 "number": 230,
                 "code": "a",
                 "regex": "(?:(?!Mo).)+",
                 "message": "Zone 230 : corriger le poids en Ko"
             },
             {
-                "index": 223,
+                "index": 214,
                 "number": 230,
                 "code": "a",
                 "regex": "(?:(?!,).)+",
                 "message": "Zone 230 : corriger le poids en Ko"
             },
             {
-                "index": 224,
+                "index": 215,
                 "number": 230,
                 "code": "a",
                 "regex": "(?:(?!X Ko).)+",
                 "message": "Zone 230 : corriger le poids en Ko"
             },
             {
-                "index": 225,
+                "index": 216,
                 "number": 215,
                 "code": "a",
                 "regex": "(?:(?!nombre de).)+",
                 "message": "Zone 215 : compléter la pagination"
             },
             {
-                "index": 226,
+                "index": 217,
                 "number": "029",
                 "code": "b",
                 "regex": ".{12}",
@@ -4848,24 +4830,24 @@
                 "code": "b",
                 "message": "029$b ne doit pas contenir le caractère ?",
                 "regex": "(?:(?!\\?).)+",
-                "index": 227
+                "index": 218
             },
             {
                 "number": "029",
                 "code": "a",
                 "message": "029$a=FR",
                 "regex": "^FR$",
-                "index": 228
+                "index": 219
             },
             {
                 "number": "100",
                 "code": "a",
                 "message": "100$a ne doit pas contenir le caractère ?",
                 "regex": "(?:(?!\\?).)+",
-                "index": 229
+                "index": 220
             },
             {
-                "index": 230,
+                "index": 221,
                 "number": "102",
                 "code": "a",
                 "regex": "^FR$",
@@ -4876,17 +4858,17 @@
                 "code": "a",
                 "message": "200$a ne doit pas être Le Titre",
                 "regex": "^(?!Le Titre).*$",
-                "index": 231
+                "index": 222
             },
             {
                 "number": "200",
                 "code": "e",
                 "message": "200$e ne doit pas être complément du titre",
                 "regex": "^(?!complément du titre).*$",
-                "index": 232
+                "index": 223
             },
             {
-                "index": 233,
+                "index": 224,
                 "number": "200",
                 "code": "f",
                 "regex": "(?:(?!Auteur).)+",
@@ -4897,59 +4879,59 @@
                 "code": "g",
                 "message": "200$g ne doit pas finir par sous la direction de",
                 "regex": ".*(?<!sous la direction de)$",
-                "index": 234
+                "index": 225
             },
             {
                 "number": "214",
                 "code": "d",
                 "message": "214$d ne doit pas contenir le caractère ?",
                 "regex": "(?:(?!\\?).)+",
-                "index": 235
+                "index": 226
             },
             {
                 "number": "230",
                 "code": "a",
                 "message": "230$a ne doit pas contenir le caractère ?",
                 "regex": "(?:(?!\\?).)+",
-                "index": 236
+                "index": 227
             },
             {
                 "number": "307",
                 "code": "a",
                 "message": "307$a ne doit pas contenir le caractère ?",
                 "regex": "(?:(?!\\?).)+",
-                "index": 237
+                "index": 228
             },
             {
-                "index": 238,
+                "index": 229,
                 "number": "320",
                 "code": "a",
                 "regex": "(?:(?!p\\. ou f\\.).)+",
                 "message": "Zone 320 à compléter"
             },
             {
-                "index": 239,
+                "index": 230,
                 "number": 328,
                 "code": "c",
                 "message": "Zone 328$c : les sous-disciplines doivent être séparées par un point",
                 "regex": "(?:(?![:;\\?\\/]).)+"
             },
             {
-                "index": 240,
+                "index": 231,
                 "number": 328,
                 "code": "c",
                 "message": "Zone 328$c compléter la discipline",
                 "regex": "(?:(?!Discipline).)+"
             },
             {
-                "index": 241,
+                "index": 232,
                 "number": 328,
                 "code": "d",
                 "message": "Zone 328$d doit contenir uniquement l'année de soutenance",
                 "regex": "^[0-9]{4}$"
             },
             {
-                "index": 242,
+                "index": 233,
                 "number": 328,
                 "code": "d",
                 "message": "Zone 328$d doit contenir uniquement l'année de soutenance",
@@ -4960,31 +4942,31 @@
                 "code": "e",
                 "message": "328$e = Lyon 1 ou Université de Lyon ou Lyon",
                 "regex": "(Lyon 1)|(Université de Lyon)|(Lyon)",
-                "index": 243
+                "index": 234
             },
             {
                 "number": "330",
                 "code": "a",
                 "message": "330$a ne doit pas contenir Résumé en français",
                 "regex": "(?:(?!Résumé en français).)+",
-                "index": 244
+                "index": 235
             },
             {
                 "number": "700",
                 "code": "a",
                 "message": "700$a ne doit pas contenir Nom",
                 "regex": "(?:(?!Nom).)+",
-                "index": 245
+                "index": 236
             },
             {
                 "number": "700",
                 "code": "b",
                 "message": "700$b ne doit pas contenir Prénom",
                 "regex": "(?:(?!Prénom).)+",
-                "index": 246
+                "index": 237
             },
             {
-                "index": 247,
+                "index": 238,
                 "number": "700",
                 "code": "4",
                 "message": "Zone 700 : le code fonction doit être 070 pour l'auteur ou co-auteur de la thèse",
@@ -4995,31 +4977,31 @@
                 "code": "b",
                 "message": "701$b ne doit pas contenir Prénom",
                 "regex": "(?:(?!Prénom).)+",
-                "index": 248
+                "index": 239
             },
             {
                 "number": "856",
                 "code": "u",
                 "message": "856$u ne doit pas contenir URL",
                 "regex": "(?:(?!URL).)+",
-                "index": 249
+                "index": 240
             },
             {
-                "index": 250,
+                "index": 241,
                 "number": "856",
                 "code": "2",
                 "message": "Zone 305$2 générique à remplacer-supprimer",
                 "regex": "^((?!Texte du lien).)*$"
             },
             {
-                "index": 251,
+                "index": 242,
                 "number": "856",
                 "code": "q",
                 "message": "Zone 856$q : renseigner le format",
                 "regex": "^((?!Format).)*$"
             },
             {
-                "index": 252,
+                "index": 243,
                 "number": "017",
                 "code": "2",
                 "message": "107$2 à corriger (\"MEMLyon1\")",
@@ -5028,7 +5010,7 @@
         ],
         "dependances": [
             {
-                "index": 253,
+                "index": 244,
                 "field1": {
                     "number": "029",
                     "code": "b",
@@ -5056,7 +5038,7 @@
                         "code": "3"
                     }
                 ],
-                "index": 254,
+                "index": 245,
                 "type": "allRequired",
                 "number": 608,
                 "message": "Zone 608 : indexation Forme-Genre obligatoire (PPN 027253139)",
@@ -5083,7 +5065,7 @@
                         "code": "4"
                     }
                 ],
-                "index": 255,
+                "index": 246,
                 "type": "allRequired",
                 "number": 711,
                 "message": "Zone 711 : université de soutenance doit être présente (711$3026402823$4295)",
@@ -5120,7 +5102,7 @@
                         ]
                     }
                 ],
-                "index": 256,
+                "index": 247,
                 "type": "allRequired",
                 "number": "856",
                 "message": "856$zAccès au texte intégral sauf si 856$5=692669902, alors $zAccès réservé aux membres de Lyon 1 après authentification",
@@ -5150,7 +5132,7 @@
                         ]
                     }
                 ],
-                "index": 257,
+                "index": 248,
                 "type": "allRequired",
                 "number": "310",
                 "code": "a",
@@ -5193,7 +5175,7 @@
                     }
                 ],
                 "type": "allRequired",
-                "index": 258,
+                "index": 249,
                 "number": "008",
                 "message": "Si 008 commence par Aa, 215 $a et $d obligatoires"
             },
@@ -5213,7 +5195,7 @@
                     }
                 ],
                 "type": "allRequired",
-                "index": 259,
+                "index": 250,
                 "number": "101",
                 "message": "Si 101$d, 330 doit être présente"
             },
@@ -5247,7 +5229,7 @@
                     }
                 ],
                 "type": "allRequired",
-                "index": 260,
+                "index": 251,
                 "number": "105",
                 "message": "Si 105 $a Pos. 4-7= m, 214 ind2=\"1\""
             },
@@ -5276,7 +5258,7 @@
                     }
                 ],
                 "type": "allRequired",
-                "index": 261,
+                "index": 252,
                 "number": "328",
                 "message": "Zone 328$z incohérente avec le statut de la thèse"
             },
@@ -5304,7 +5286,7 @@
                     }
                 ],
                 "type": "allRequired",
-                "index": 262,
+                "index": 253,
                 "number": "008",
                 "message": "Si 008 commence par Oa et ne contient pas une 215, une 856 doit être présente"
             },
@@ -5332,7 +5314,7 @@
                     }
                 ],
                 "type": "allRequired",
-                "index": 263,
+                "index": 254,
                 "number": "451",
                 "message": "Si 451, alors vérifier que la notice 451$0 contient une 451 réciproque"
             },
@@ -5365,7 +5347,7 @@
                     }
                 ],
                 "type": "allRequired",
-                "index": 264,
+                "index": 255,
                 "number": "452",
                 "message": "Si 452, alors vérifier que la notice 452$0 contient une 452 réciproque et une 328$z"
             },
@@ -5388,7 +5370,7 @@
                     }
                 ],
                 "type": "allRequired",
-                "index": 265,
+                "index": 256,
                 "number": "008",
                 "message": "Si 008 commence par Oa,  304 doit être présente"
             },
@@ -5411,7 +5393,7 @@
                     }
                 ],
                 "type": "allRequired",
-                "index": 266,
+                "index": 257,
                 "number": "008",
                 "message": "Si 008 commence par Oa, 307 doit être présente"
             },
@@ -5434,7 +5416,7 @@
                     }
                 ],
                 "type": "allRequired",
-                "index": 267,
+                "index": 258,
                 "number": "008",
                 "message": "Si 008 commence par Oa, 337 doit être présente"
             },
@@ -5457,7 +5439,7 @@
                     }
                 ],
                 "type": "allRequired",
-                "index": 268,
+                "index": 259,
                 "number": "008",
                 "message": "Si 008 commence par Oa, 230 doit être présente"
             },
@@ -5485,7 +5467,7 @@
                     "code": "0"
                 },
                 "type": "allRequired",
-                "index": 269,
+                "index": 260,
                 "number": "456",
                 "message": "Si 456, alors vérifier que la notice en 456$0 contient une 455 avec liens réciproques"
             },
@@ -5508,7 +5490,7 @@
                     }
                 ],
                 "type": "allRequired",
-                "index": 270,
+                "index": 261,
                 "number": "325",
                 "message": "Si 325$a commence par \"Document numérisé dans le cadre d'un projet de numérisation du SCD de Lyon 1 :\", 456 doit être présente"
             },
@@ -5535,7 +5517,7 @@
                     }
                 ],
                 "type": "allRequired",
-                "index": 271,
+                "index": 262,
                 "number": "105",
                 "message": "Si 105 $a Pos. 4-7= \"m\", alors il faut une 029"
             },
@@ -5563,7 +5545,7 @@
                     }
                 ],
                 "type": "allRequired",
-                "index": 272,
+                "index": 263,
                 "number": "105",
                 "message": "Si 105 $a Pos. 4-7= \"m\" ou \"7\", alors il faut une 328"
             },
@@ -5591,7 +5573,7 @@
                     }
                 ],
                 "type": "allRequired",
-                "index": 273,
+                "index": 264,
                 "number": "105",
                 "message": "Si 105 $a Pos. 4-7= \"v\" ou \"7\", alors il faut une 017"
             },
@@ -5615,7 +5597,7 @@
                     }
                 ],
                 "type": "allRequired",
-                "index": 274,
+                "index": 265,
                 "number": "456",
                 "message": "Si 456, alors vérifier que la notice en 465$0  contient  328$z"
             },
@@ -5644,7 +5626,7 @@
                     }
                 ],
                 "type": "allRequired",
-                "index": 275,
+                "index": 266,
                 "number": "451",
                 "message": "Si 451 et 328$z, alors vérifier que la notice 451$0 ne contient pas 328$z"
             },
@@ -5673,7 +5655,7 @@
                     }
                 ],
                 "type": "allRequired",
-                "index": 276,
+                "index": 267,
                 "number": "451",
                 "message": "Si 451 et absence de 328$z, alors vérifier que la notice 451$0 contient 328$z"
             }
@@ -5690,7 +5672,7 @@
                 "type": "index",
                 "message": "Zone 328 : revoir la valeur des indicateurs",
                 "numRuleExcell": 117,
-                "index": 277
+                "index": 268
             },
             {
                 "number": [
@@ -5702,14 +5684,14 @@
                 "type": "exclude",
                 "message": "Zone 455 incompatible avec le type de thèse (soutenance)",
                 "numRuleExcell": 145,
-                "index": 278
+                "index": 269
             }
         ],
         "idRef": [],
         "ordonnancement": [],
         "compte": [
             {
-                "index": 279,
+                "index": 270,
                 "number": "101",
                 "code": "d",
                 "contrainte": "330",
@@ -5721,28 +5703,28 @@
     "MémoireReproduction": {
         "matching": [
             {
-                "index": 280,
+                "index": 271,
                 "number": 230,
                 "code": "a",
                 "regex": "(?:(?!Mo).)+",
                 "message": "Zone 230 : corriger le poids en Ko"
             },
             {
-                "index": 281,
+                "index": 272,
                 "number": 230,
                 "code": "a",
                 "regex": "(?:(?!,).)+",
                 "message": "Zone 230 : corriger le poids en Ko"
             },
             {
-                "index": 282,
+                "index": 273,
                 "number": 230,
                 "code": "a",
                 "regex": "(?:(?!X Ko).)+",
                 "message": "Zone 230 : corriger le poids en Ko"
             },
             {
-                "index": 283,
+                "index": 274,
                 "number": 215,
                 "code": "a",
                 "regex": "(?:(?!nombre de).)+",
@@ -5753,24 +5735,24 @@
                 "code": "a",
                 "message": "100$a ne doit pas contenir le caractère ?",
                 "regex": "(?:(?!\\?).)+",
-                "index": 284
+                "index": 275
             },
             {
                 "number": "200",
                 "code": "a",
                 "message": "200$a ne doit pas être Le Titre",
                 "regex": "^(?!Le Titre).*$",
-                "index": 285
+                "index": 276
             },
             {
                 "number": "200",
                 "code": "e",
                 "message": "200$e ne doit pas être complément du titre",
                 "regex": "^(?!complément du titre).*$",
-                "index": 286
+                "index": 277
             },
             {
-                "index": 287,
+                "index": 278,
                 "number": "200",
                 "code": "f",
                 "regex": "(?:(?!Auteur).)+",
@@ -5781,52 +5763,52 @@
                 "code": "g",
                 "message": "200$g ne doit pas finir par sous la direction de",
                 "regex": ".*(?<!sous la direction de)$",
-                "index": 288
+                "index": 279
             },
             {
                 "number": "214",
                 "code": "d",
                 "message": "214$d ne doit pas contenir le caractère ?",
                 "regex": "(?:(?!\\?).)+",
-                "index": 289
+                "index": 280
             },
             {
                 "number": "307",
                 "code": "a",
                 "message": "307$a ne doit pas contenir le caractère ?",
                 "regex": "(?:(?!\\?).)+",
-                "index": 290
+                "index": 281
             },
             {
-                "index": 291,
+                "index": 282,
                 "number": "320",
                 "code": "a",
                 "regex": "(?:(?!p\\. ou f\\.).)+",
                 "message": "Zone 320 à compléter"
             },
             {
-                "index": 292,
+                "index": 283,
                 "number": 328,
                 "code": "c",
                 "message": "Zone 328$c : les sous-disciplines doivent être séparées par un point",
                 "regex": "(?:(?![:;\\?\\/]).)+"
             },
             {
-                "index": 293,
+                "index": 284,
                 "number": 328,
                 "code": "c",
                 "message": "Zone 328$c compléter la discipline",
                 "regex": "(?:(?!Discipline).)+"
             },
             {
-                "index": 294,
+                "index": 285,
                 "number": 328,
                 "code": "d",
                 "message": "Zone 328$d doit contenir uniquement l'année de soutenance",
                 "regex": "^[0-9]{4}$"
             },
             {
-                "index": 295,
+                "index": 286,
                 "number": 328,
                 "code": "d",
                 "message": "Zone 328$d doit contenir uniquement l'année de soutenance",
@@ -5837,31 +5819,31 @@
                 "code": "e",
                 "message": "328$e = Lyon 1 ou Université de Lyon ou Lyon",
                 "regex": "(Lyon 1)|(Université de Lyon)|(Lyon)",
-                "index": 296
+                "index": 287
             },
             {
                 "number": "330",
                 "code": "a",
                 "message": "330$a ne doit pas contenir Résumé en français",
                 "regex": "(?:(?!Résumé en français).)+",
-                "index": 297
+                "index": 288
             },
             {
                 "number": "700",
                 "code": "a",
                 "message": "700$a ne doit pas contenir Nom",
                 "regex": "(?:(?!Nom).)+",
-                "index": 298
+                "index": 289
             },
             {
                 "number": "700",
                 "code": "b",
                 "message": "700$b ne doit pas contenir Prénom",
                 "regex": "(?:(?!Prénom).)+",
-                "index": 299
+                "index": 290
             },
             {
-                "index": 300,
+                "index": 291,
                 "number": "700",
                 "code": "4",
                 "message": "Zone 700 : le code fonction doit être 070 pour l'auteur ou co-auteur de la thèse",
@@ -5872,24 +5854,24 @@
                 "code": "u",
                 "message": "856$u ne doit pas contenir URL",
                 "regex": "(?:(?!URL).)+",
-                "index": 301
+                "index": 292
             },
             {
-                "index": 302,
+                "index": 293,
                 "number": "856",
                 "code": "2",
                 "message": "Zone 305$2 générique à remplacer-supprimer",
                 "regex": "^((?!Texte du lien).)*$"
             },
             {
-                "index": 303,
+                "index": 294,
                 "number": "856",
                 "code": "q",
                 "message": "Zone 856$q : renseigner le format",
                 "regex": "^((?!Format).)*$"
             },
             {
-                "index": 304,
+                "index": 295,
                 "number": "017",
                 "code": "2",
                 "message": "107$2 à corriger (\"MEMLyon1\")",
@@ -5908,7 +5890,7 @@
                         "ind2": "0"
                     }
                 ],
-                "index": 305,
+                "index": 296,
                 "type": "allRequired",
                 "number": 214,
                 "message": "Si 214 #0 et $d, doit commencer par \"DL espace\" ou \"[\" ou un chiffre",
@@ -5940,7 +5922,7 @@
                         ]
                     }
                 ],
-                "index": 306,
+                "index": 297,
                 "type": "allRequired",
                 "number": "856",
                 "message": "856$zAccès au texte intégral sauf si 856$5=692669902, alors $zAccès réservé aux membres de Lyon 1 après authentification",
@@ -5970,7 +5952,7 @@
                         ]
                     }
                 ],
-                "index": 307,
+                "index": 298,
                 "type": "allRequired",
                 "number": "310",
                 "code": "a",
@@ -6011,7 +5993,7 @@
                 ],
                 "number": "214",
                 "message": "Zone 214$a incohérente avec le statut de la thèse (reproduction)",
-                "index": 308,
+                "index": 299,
                 "type": "allRequired",
                 "values": [
                     {
@@ -6035,7 +6017,7 @@
                     "number": "455",
                     "code": "0"
                 },
-                "index": 309,
+                "index": 300,
                 "type": "allRequired",
                 "number": "105",
                 "message": "Si 455, alors vérifier que la notice en 455$0 contient 105$a Pos. 4-7= m",
@@ -6073,7 +6055,7 @@
                     "code": "0"
                 },
                 "type": "allRequired",
-                "index": 310,
+                "index": 301,
                 "number": "456",
                 "message": "Si 456, alors vérifier que la notice en 456$0 contient une 455 avec liens réciproques"
             },
@@ -6096,7 +6078,7 @@
                     }
                 ],
                 "type": "allRequired",
-                "index": 311,
+                "index": 302,
                 "number": "325",
                 "message": "Si 325$a commence par \"Document numérisé dans le cadre d'un projet de numérisation du SCD de Lyon 1 :\", 456 doit être présente"
             },
@@ -6111,7 +6093,7 @@
                         ]
                     }
                 ],
-                "index": 312,
+                "index": 303,
                 "type": "allRequired",
                 "number": 701,
                 "message": "Si 328$zReproduction de, alors il faut une 701$4727",
@@ -6136,7 +6118,7 @@
                         ]
                     }
                 ],
-                "index": 313,
+                "index": 304,
                 "type": "allRequired",
                 "number": 701,
                 "message": "Si 328$z n'est pas \"Reproduction de\", alors 701$4727 ne doit pas être présente",
@@ -6161,7 +6143,7 @@
                         ]
                     }
                 ],
-                "index": 314,
+                "index": 305,
                 "type": "allRequired",
                 "number": 711,
                 "message": "Si 328$zReproduction de, alors il faut une 711$4295",
@@ -6186,7 +6168,7 @@
                         ]
                     }
                 ],
-                "index": 315,
+                "index": 306,
                 "type": "allRequired",
                 "number": 711,
                 "message": "Si 328$z n'est pas \"Reproduction de\", alors 711$4295 ne doit pas être présente",
@@ -6211,7 +6193,7 @@
                         ]
                     }
                 ],
-                "index": 316,
+                "index": 307,
                 "type": "allRequired",
                 "number": 608,
                 "message": "Si 328$zReproduction de, alors il faut une 608 $3027253139 $aThèses et écrits académiques",
@@ -6243,7 +6225,7 @@
                         ]
                     }
                 ],
-                "index": 317,
+                "index": 308,
                 "type": "allRequired",
                 "number": 608,
                 "message": "Si 328$z n'est pas \"Reproduction de\", alors 608 $3027253139Thèses et écrits académiques ne doit pas être présente",
@@ -6290,7 +6272,7 @@
                     }
                 ],
                 "type": "allRequired",
-                "index": 318,
+                "index": 309,
                 "number": "008",
                 "message": "Si 008 commence par Aa, 215 $a et $d obligatoires"
             },
@@ -6318,7 +6300,7 @@
                     }
                 ],
                 "type": "allRequired",
-                "index": 319,
+                "index": 310,
                 "number": "328",
                 "message": "Si 328$z\"Reproduction de\", 455 doit être présente"
             },
@@ -6346,7 +6328,7 @@
                     }
                 ],
                 "type": "allRequired",
-                "index": 320,
+                "index": 311,
                 "number": "328",
                 "message": "Si 328$z\"Reproduction de\" , 456 ne doit pas être présente"
             },
@@ -6366,7 +6348,7 @@
                     }
                 ],
                 "type": "allRequired",
-                "index": 321,
+                "index": 312,
                 "number": "101",
                 "message": "Si 101$d, 330 doit être présente"
             },
@@ -6393,7 +6375,7 @@
                     }
                 ],
                 "type": "allRequired",
-                "index": 322,
+                "index": 313,
                 "number": "105",
                 "message": "Si 105 $a Pos. 4-7= \"v\", alors il faut une 328$z"
             },
@@ -6421,7 +6403,7 @@
                     }
                 ],
                 "type": "allRequired",
-                "index": 323,
+                "index": 314,
                 "number": "008",
                 "message": "Si 008 commence par Oa et ne contient pas une 215, une 856 doit être présente"
             },
@@ -6449,7 +6431,7 @@
                     }
                 ],
                 "type": "allRequired",
-                "index": 324,
+                "index": 315,
                 "number": "451",
                 "message": "Si 451, alors vérifier que la notice 451$0 contient une 451 réciproque"
             },
@@ -6482,7 +6464,7 @@
                     }
                 ],
                 "type": "allRequired",
-                "index": 325,
+                "index": 316,
                 "number": "452",
                 "message": "Si 452, alors vérifier que la notice 452$0 contient une 452 réciproque et une 328$z"
             },
@@ -6510,7 +6492,7 @@
                     "code": "0"
                 },
                 "type": "allRequired",
-                "index": 326,
+                "index": 317,
                 "number": "455",
                 "message": "Si 455, alors vérifier que la notice en 455$0 contient une 456 avec liens réciproques"
             },
@@ -6533,7 +6515,7 @@
                     }
                 ],
                 "type": "allRequired",
-                "index": 327,
+                "index": 318,
                 "number": "008",
                 "message": "Si 008 commence par Oa,  304 doit être présente"
             },
@@ -6556,7 +6538,7 @@
                     }
                 ],
                 "type": "allRequired",
-                "index": 328,
+                "index": 319,
                 "number": "008",
                 "message": "Si 008 commence par Oa, 307 doit être présente"
             },
@@ -6579,7 +6561,7 @@
                     }
                 ],
                 "type": "allRequired",
-                "index": 329,
+                "index": 320,
                 "number": "008",
                 "message": "Si 008 commence par Oa, 337 doit être présente"
             },
@@ -6602,7 +6584,7 @@
                     }
                 ],
                 "type": "allRequired",
-                "index": 330,
+                "index": 321,
                 "number": "008",
                 "message": "Si 008 commence par Oa, 230 doit être présente"
             },
@@ -6626,7 +6608,7 @@
                     }
                 ],
                 "type": "allRequired",
-                "index": 331,
+                "index": 322,
                 "number": "455",
                 "message": "Si 455, alors vérifier que la notice en 455$0 ne contient pas 328$z"
             },
@@ -6654,7 +6636,7 @@
                     }
                 ],
                 "type": "allRequired",
-                "index": 332,
+                "index": 323,
                 "number": "105",
                 "message": "Si 105 $a Pos. 4-7= \"m\" ou \"7\", alors il faut une 328"
             },
@@ -6695,7 +6677,7 @@
                     }
                 ],
                 "type": "oneRequired",
-                "index": 333,
+                "index": 324,
                 "number": "105",
                 "message": "Si 105 $a Pos. 4-7= \"v\", 214 ind2=\"0\" ou ind2=\"2\""
             },
@@ -6723,7 +6705,7 @@
                     }
                 ],
                 "type": "allRequired",
-                "index": 334,
+                "index": 325,
                 "number": "328",
                 "message": "Si 328$zReproduction de, alors il faut une 029"
             },
@@ -6751,7 +6733,7 @@
                     }
                 ],
                 "type": "allRequired",
-                "index": 335,
+                "index": 326,
                 "number": "328",
                 "message": "Si 328$z n'est pas \"Reproduction de\", alors 029 ne doit pas être présente"
             },
@@ -6780,7 +6762,7 @@
                     }
                 ],
                 "type": "allRequired",
-                "index": 336,
+                "index": 327,
                 "number": "451",
                 "message": "Si 451 et 328$z, alors vérifier que la notice 451$0 ne contient pas 328$z"
             },
@@ -6809,7 +6791,7 @@
                     }
                 ],
                 "type": "allRequired",
-                "index": 337,
+                "index": 328,
                 "number": "451",
                 "message": "Si 451 et absence de 328$z, alors vérifier que la notice 451$0 contient 328$z"
             }
@@ -6826,7 +6808,7 @@
                 "type": "index",
                 "message": "Zone 328 : revoir la valeur des indicateurs",
                 "numRuleExcell": 117,
-                "index": 338
+                "index": 329
             },
             {
                 "number": [
@@ -6838,13 +6820,13 @@
                 "type": "exclude",
                 "message": "Zone 456 incompatible avec le type de thèse (reproduction)",
                 "numRuleExcell": 147,
-                "index": 339
+                "index": 330
             }
         ],
         "idRef": [],
         "ordonnancement": [
             {
-                "index": 340,
+                "index": 331,
                 "number": "214",
                 "orderBy": "ind2",
                 "message": "Zones 214 : garder l'ordre des indicateurs"
@@ -6852,7 +6834,7 @@
         ],
         "compte": [
             {
-                "index": 341,
+                "index": 332,
                 "number": "101",
                 "code": "d",
                 "contrainte": "330",
@@ -6864,28 +6846,28 @@
     "AutreDocuments": {
         "matching": [
             {
-                "index": 342,
+                "index": 333,
                 "number": 215,
                 "code": "a",
                 "regex": "(?:(?!nombre de).)+",
                 "message": "Zone 215 : compléter la pagination"
             },
             {
-                "index": 343,
+                "index": 334,
                 "number": 328,
                 "code": "c",
                 "message": "Zone 328$c : les sous-disciplines doivent être séparées par un point",
                 "regex": "(?:(?![:;\\?\\/]).)+"
             },
             {
-                "index": 344,
+                "index": 335,
                 "number": 328,
                 "code": "d",
                 "message": "Zone 328$d doit contenir uniquement l'année de soutenance",
                 "regex": "^[0-9]{4}$"
             },
             {
-                "index": 345,
+                "index": 336,
                 "number": 328,
                 "code": "d",
                 "message": "Zone 328$d doit contenir uniquement l'année de soutenance",
@@ -6895,293 +6877,275 @@
         "dependances": [],
         "ConditionMatching": [
             {
-                "condition": [
-                    {
-                        "operator": "equals_text",
-                        "number": 700,
-                        "code": "4",
-                        "string": [
-                            "340"
-                        ]
-                    }
+                "condition": [{
+                "operator": "equals_text",
+                "number": 700,
+                "code": 4,
+                "string": [
+                "340"
+                ]
+                }
                 ],
-                "index": 346,
+                "index": 6000,
                 "type": "allRequired",
                 "number": 214,
                 "message": "Zones 7XX : code fonction, vérifier qu il s agit d un éditeur scientifique ou d un directeur de publication ?",
-                "values": [
-                    {
-                        "number": 200,
-                        "code": "f",
-                        "message": "",
-                        "regex": "(?:(?!ed.)(?!edited)(?!edit).)+",
-                        "subFieldRequired": false
-                    },
-                    {
-                        "number": 200,
-                        "code": "g",
-                        "message": "",
-                        "regex": "(?:(?!ed.)(?!edited)(?!edit).)+",
-                        "subFieldRequired": false
-                    }
+                "values": [{
+                "number": 200,
+                "code": "f",
+                "message": "",
+                "regex": "(?:(?!ed.)(?!edited)(?!edit).)+",
+                "subFieldRequired": false
+                },
+                {
+                "number": 200,
+                "code": "g",
+                "message": "",
+                "regex": "(?:(?!ed.)(?!edited)(?!edit).)+",
+                "subFieldRequired": false
+                }
                 ]
-            },
-            {
-                "condition": [
-                    {
-                        "operator": "equals_text",
-                        "number": 701,
-                        "code": "4",
-                        "string": [
-                            "340"
-                        ]
-                    }
+                },
+                {
+                "condition": [{
+                "operator": "equals_text",
+                "number": 701,
+                "code": 4,
+                "string": [
+                "340"
+                ]
+                }
                 ],
-                "index": 347,
+                "index": 6000,
                 "type": "allRequired",
                 "number": 214,
                 "message": "Zones 7XX : code fonction, vérifier qu il s agit d un éditeur scientifique ou d un directeur de publication ?",
-                "values": [
-                    {
-                        "number": 200,
-                        "code": "f",
-                        "message": "",
-                        "regex": "(?:(?!ed.)(?!edited)(?!edit).)+",
-                        "subFieldRequired": false
-                    },
-                    {
-                        "number": 200,
-                        "code": "g",
-                        "message": "",
-                        "regex": "(?:(?!ed.)(?!edited)(?!edit).)+",
-                        "subFieldRequired": false
-                    }
+                "values": [{
+                "number": 200,
+                "code": "f",
+                "message": "",
+                "regex": "(?:(?!ed.)(?!edited)(?!edit).)+",
+                "subFieldRequired": false
+                },
+                {
+                "number": 200,
+                "code": "g",
+                "message": "",
+                "regex": "(?:(?!ed.)(?!edited)(?!edit).)+",
+                "subFieldRequired": false
+                }
                 ]
-            },
-            {
-                "condition": [
-                    {
-                        "operator": "equals_text",
-                        "number": 710,
-                        "code": "4",
-                        "string": [
-                            "340"
-                        ]
-                    }
+                },
+                {
+                "condition": [{
+                "operator": "equals_text",
+                "number": 710,
+                "code": 4,
+                "string": [
+                "340"
+                ]
+                }
                 ],
-                "index": 348,
+                "index": 6000,
                 "type": "allRequired",
                 "number": 214,
                 "message": "Zones 7XX : code fonction, vérifier qu il s agit d un éditeur scientifique ou d un directeur de publication ?",
-                "values": [
-                    {
-                        "number": 200,
-                        "code": "f",
-                        "message": "",
-                        "regex": "(?:(?!ed.)(?!edited)(?!edit).)+",
-                        "subFieldRequired": false
-                    },
-                    {
-                        "number": 200,
-                        "code": "g",
-                        "message": "",
-                        "regex": "(?:(?!ed.)(?!edited)(?!edit).)+",
-                        "subFieldRequired": false
-                    }
+                "values": [{
+                "number": 200,
+                "code": "f",
+                "message": "",
+                "regex": "(?:(?!ed.)(?!edited)(?!edit).)+",
+                "subFieldRequired": false
+                },
+                {
+                "number": 200,
+                "code": "g",
+                "message": "",
+                "regex": "(?:(?!ed.)(?!edited)(?!edit).)+",
+                "subFieldRequired": false
+                }
                 ]
-            },
-            {
-                "condition": [
-                    {
-                        "operator": "equals_text",
-                        "number": 711,
-                        "code": "4",
-                        "string": [
-                            "340"
-                        ]
-                    }
+                },
+                {
+                "condition": [{
+                "operator": "equals_text",
+                "number": 711,
+                "code": 4,
+                "string": [
+                "340"
+                ]
+                }
                 ],
-                "index": 349,
+                "index": 6000,
                 "type": "allRequired",
                 "number": 214,
                 "message": "Zones 7XX : code fonction, vérifier qu il s agit d un éditeur scientifique ou d un directeur de publication ?",
-                "values": [
-                    {
-                        "number": 200,
-                        "code": "f",
-                        "message": "",
-                        "regex": "(?:(?!ed.)(?!edited)(?!edit).)+",
-                        "subFieldRequired": false
-                    },
-                    {
-                        "number": 200,
-                        "code": "g",
-                        "message": "",
-                        "regex": "(?:(?!ed.)(?!edited)(?!edit).)+",
-                        "subFieldRequired": false
-                    }
+                "values": [{
+                "number": 200,
+                "code": "f",
+                "message": "",
+                "regex": "(?:(?!ed.)(?!edited)(?!edit).)+",
+                "subFieldRequired": false
+                },
+                {
+                "number": 200,
+                "code": "g",
+                "message": "",
+                "regex": "(?:(?!ed.)(?!edited)(?!edit).)+",
+                "subFieldRequired": false
+                }
                 ]
-            },
-            {
-                "condition": [
-                    {
-                        "operator": "equals_text",
-                        "number": 720,
-                        "code": "4",
-                        "string": [
-                            "340"
-                        ]
-                    }
+                },
+                {
+                "condition": [{
+                "operator": "equals_text",
+                "number": 720,
+                "code": 4,
+                "string": [
+                "340"
+                ]
+                }
                 ],
-                "index": 350,
+                "index": 6000,
                 "type": "allRequired",
                 "number": 214,
                 "message": "Zones 7XX : code fonction, vérifier qu il s agit d un éditeur scientifique ou d un directeur de publication ?",
-                "values": [
-                    {
-                        "number": 200,
-                        "code": "f",
-                        "message": "",
-                        "regex": "(?:(?!ed.)(?!edited)(?!edit).)+",
-                        "subFieldRequired": false
-                    },
-                    {
-                        "number": 200,
-                        "code": "g",
-                        "message": "",
-                        "regex": "(?:(?!ed.)(?!edited)(?!edit).)+",
-                        "subFieldRequired": false
-                    }
+                "values": [{
+                "number": 200,
+                "code": "f",
+                "message": "",
+                "regex": "(?:(?!ed.)(?!edited)(?!edit).)+",
+                "subFieldRequired": false
+                },
+                {
+                "number": 200,
+                "code": "g",
+                "message": "",
+                "regex": "(?:(?!ed.)(?!edited)(?!edit).)+",
+                "subFieldRequired": false
+                }
                 ]
-            },
-            {
-                "condition": [
-                    {
-                        "operator": "equals_text",
-                        "number": 721,
-                        "code": "4",
-                        "string": [
-                            "340"
-                        ]
-                    }
+                },
+                {
+                "condition": [{
+                "operator": "equals_text",
+                "number": 721,
+                "code": 4,
+                "string": [
+                "340"
+                ]
+                }
                 ],
-                "index": 351,
+                "index": 6000,
                 "type": "allRequired",
                 "number": 214,
                 "message": "Zones 7XX : code fonction, vérifier qu il s agit d un éditeur scientifique ou d un directeur de publication ?",
-                "values": [
-                    {
-                        "number": 200,
-                        "code": "f",
-                        "message": "",
-                        "regex": "(?:(?!ed.)(?!edited)(?!edit).)+",
-                        "subFieldRequired": false
-                    },
-                    {
-                        "number": 200,
-                        "code": "g",
-                        "message": "",
-                        "regex": "(?:(?!ed.)(?!edited)(?!edit).)+",
-                        "subFieldRequired": false
-                    }
+                "values": [{
+                "number": 200,
+                "code": "f",
+                "message": "",
+                "regex": "(?:(?!ed.)(?!edited)(?!edit).)+",
+                "subFieldRequired": false
+                },
+                {
+                "number": 200,
+                "code": "g",
+                "message": "",
+                "regex": "(?:(?!ed.)(?!edited)(?!edit).)+",
+                "subFieldRequired": false
+                }
                 ]
-            },
-            {
-                "condition": [
-                    {
-                        "operator": "equals_text",
-                        "number": 730,
-                        "code": "4",
-                        "string": [
-                            "340"
-                        ]
-                    }
+                },
+                {
+                "condition": [{
+                "operator": "equals_text",
+                "number": 730,
+                "code": 4,
+                "string": [
+                "340"
+                ]
+                }
                 ],
-                "index": 352,
+                "index": 6000,
                 "type": "allRequired",
                 "number": 214,
                 "message": "Zones 7XX : code fonction, vérifier qu il s agit d un éditeur scientifique ou d un directeur de publication ?",
-                "values": [
-                    {
-                        "number": 200,
-                        "code": "f",
-                        "message": "",
-                        "regex": "(?:(?!ed.)(?!edited)(?!edit).)+",
-                        "subFieldRequired": false
-                    },
-                    {
-                        "number": 200,
-                        "code": "g",
-                        "message": "",
-                        "regex": "(?:(?!ed.)(?!edited)(?!edit).)+",
-                        "subFieldRequired": false
-                    }
+                "values": [{
+                "number": 200,
+                "code": "f",
+                "message": "",
+                "regex": "(?:(?!ed.)(?!edited)(?!edit).)+",
+                "subFieldRequired": false
+                },
+                {
+                "number": 200,
+                "code": "g",
+                "message": "",
+                "regex": "(?:(?!ed.)(?!edited)(?!edit).)+",
+                "subFieldRequired": false
+                }
                 ]
-            },
-            {
-                "condition": [
-                    {
-                        "operator": "equals_text",
-                        "number": 740,
-                        "code": "4",
-                        "string": [
-                            "340"
-                        ]
-                    }
+                },
+                {
+                "condition": [{
+                "operator": "equals_text",
+                "number": 740,
+                "code": 4,
+                "string": [
+                "340"
+                ]
+                }
                 ],
-                "index": 353,
+                "index": 6000,
                 "type": "allRequired",
                 "number": 214,
                 "message": "Zones 7XX : code fonction, vérifier qu il s agit d un éditeur scientifique ou d un directeur de publication ?",
-                "values": [
-                    {
-                        "number": 200,
-                        "code": "f",
-                        "message": "",
-                        "regex": "(?:(?!ed.)(?!edited)(?!edit).)+",
-                        "subFieldRequired": false
-                    },
-                    {
-                        "number": 200,
-                        "code": "g",
-                        "message": "",
-                        "regex": "(?:(?!ed.)(?!edited)(?!edit).)+",
-                        "subFieldRequired": false
-                    }
+                "values": [{
+                "number": 200,
+                "code": "f",
+                "message": "",
+                "regex": "(?:(?!ed.)(?!edited)(?!edit).)+",
+                "subFieldRequired": false
+                },
+                {
+                "number": 200,
+                "code": "g",
+                "message": "",
+                "regex": "(?:(?!ed.)(?!edited)(?!edit).)+",
+                "subFieldRequired": false
+                }
                 ]
-            },
-            {
-                "condition": [
-                    {
-                        "operator": "equals_text",
-                        "number": 741,
-                        "code": "4",
-                        "string": [
-                            "340"
-                        ]
-                    }
+                },
+                {
+                "condition": [{
+                "operator": "equals_text",
+                "number": 741,
+                "code": 4,
+                "string": [
+                "340"
+                ]
+                }
                 ],
-                "index": 354,
+                "index": 6000,
                 "type": "allRequired",
                 "number": 214,
                 "message": "Zones 7XX : code fonction, vérifier qu il s agit d un éditeur scientifique ou d un directeur de publication ?",
-                "values": [
-                    {
-                        "number": 200,
-                        "code": "f",
-                        "message": "",
-                        "regex": "(?:(?!ed.)(?!edited)(?!edit).)+",
-                        "subFieldRequired": false
-                    },
-                    {
-                        "number": 200,
-                        "code": "g",
-                        "message": "",
-                        "regex": "(?:(?!ed.)(?!edited)(?!edit).)+",
-                        "subFieldRequired": false
-                    }
+                "values": [{
+                "number": 200,
+                "code": "f",
+                "message": "",
+                "regex": "(?:(?!ed.)(?!edited)(?!edit).)+",
+                "subFieldRequired": false
+                },
+                {
+                "number": 200,
+                "code": "g",
+                "message": "",
+                "regex": "(?:(?!ed.)(?!edited)(?!edit).)+",
+                "subFieldRequired": false
+                }
                 ]
-            },
+                },
             {
                 "condition": [
                     {
@@ -7192,7 +7156,7 @@
                         "ind2": "4"
                     }
                 ],
-                "index": 355,
+                "index": 337,
                 "type": "allRequired",
                 "number": 214,
                 "message": "Si 214 #4$d, la zone doit commencer par \"C espace\"",
@@ -7216,7 +7180,7 @@
                         "ind2": "0"
                     }
                 ],
-                "index": 356,
+                "index": 338,
                 "type": "allRequired",
                 "number": 214,
                 "message": "Si 214 #0 et $d, doit commencer par \"DL espace\" ou \"[\" ou un chiffre",
@@ -7243,7 +7207,7 @@
                         ]
                     }
                 ],
-                "index": 357,
+                "index": 339,
                 "type": "allRequired",
                 "number": 701,
                 "message": "Si 328$zReproduction de, alors il faut une 701$4727",
@@ -7268,7 +7232,7 @@
                         ]
                     }
                 ],
-                "index": 358,
+                "index": 340,
                 "type": "allRequired",
                 "number": 701,
                 "message": "Si 328$z n'est pas \"Reproduction de\", alors 701$4727 ne doit pas être présente",
@@ -7293,7 +7257,7 @@
                         ]
                     }
                 ],
-                "index": 359,
+                "index": 341,
                 "type": "allRequired",
                 "number": 711,
                 "message": "Si 328$zReproduction de, alors il faut une 711$4295",
@@ -7318,7 +7282,7 @@
                         ]
                     }
                 ],
-                "index": 360,
+                "index": 342,
                 "type": "allRequired",
                 "number": 711,
                 "message": "Si 328$z n'est pas \"Reproduction de\", alors 711$4295 ne doit pas être présente",
@@ -7343,7 +7307,7 @@
                         ]
                     }
                 ],
-                "index": 361,
+                "index": 343,
                 "type": "allRequired",
                 "number": 608,
                 "message": "Si 328$zReproduction de, alors il faut une 608 $3027253139 $aThèses et écrits académiques",
@@ -7375,7 +7339,7 @@
                         ]
                     }
                 ],
-                "index": 362,
+                "index": 344,
                 "type": "allRequired",
                 "number": 608,
                 "message": "Si 328$z n'est pas \"Reproduction de\", alors 608 $3027253139Thèses et écrits académiques ne doit pas être présente",
@@ -7422,7 +7386,7 @@
                     }
                 ],
                 "type": "allRequired",
-                "index": 363,
+                "index": 345,
                 "number": "008",
                 "message": "Si 008 commence par Aa, 215 $a et $d obligatoires"
             },
@@ -7444,7 +7408,7 @@
                     }
                 ],
                 "type": "allRequired",
-                "index": 364,
+                "index": 346,
                 "number": "225",
                 "message": "Si 225 ind1=0 il faut au moins une 410"
             },
@@ -7466,7 +7430,7 @@
                     }
                 ],
                 "type": "allRequired",
-                "index": 365,
+                "index": 347,
                 "number": "225",
                 "message": "Si 225 ind1=0 $a alors 410$0 doit être présent"
             },
@@ -7488,7 +7452,7 @@
                     }
                 ],
                 "type": "allRequired",
-                "index": 366,
+                "index": 348,
                 "number": "225",
                 "message": "Si 225 ind1=2 $a alors 410$0 doit être présent"
             },
@@ -7510,7 +7474,7 @@
                     }
                 ],
                 "type": "allRequired",
-                "index": 367,
+                "index": 349,
                 "number": "225",
                 "message": "Si 225 ind1=2 il faut au moins une 410"
             },
@@ -7543,7 +7507,7 @@
                     }
                 ],
                 "type": "oneRequired",
-                "index": 368,
+                "index": 350,
                 "number": "008",
                 "message": "Si 008 commence par Aa et présence d'une 461, alors il doit y avoir une 305 ou 225"
             },
@@ -7571,7 +7535,7 @@
                     }
                 ],
                 "type": "allRequired",
-                "index": 369,
+                "index": 351,
                 "number": "328",
                 "message": "Si 328$z\"Reproduction de\", 455 doit être présente"
             },
@@ -7594,7 +7558,7 @@
                     }
                 ],
                 "type": "allRequired",
-                "index": 370,
+                "index": 352,
                 "number": "325",
                 "message": "Si 325$a commence par \"Document numérisé dans le cadre d'un projet de numérisation du SCD de Lyon 1 :\", 456 doit être présente"
             },
@@ -7622,7 +7586,7 @@
                     }
                 ],
                 "type": "allRequired",
-                "index": 371,
+                "index": 353,
                 "number": "105",
                 "message": "Si 105 $a Pos. 4-7= \"m\" ou \"7\", alors il faut une 328"
             },
@@ -7663,7 +7627,7 @@
                     }
                 ],
                 "type": "oneRequired",
-                "index": 372,
+                "index": 354,
                 "number": "105",
                 "message": "Si 105 $a Pos. 4-7= \"v\", 214 ind2=\"0\" ou ind2=\"2\""
             },
@@ -7691,7 +7655,7 @@
                     }
                 ],
                 "type": "allRequired",
-                "index": 373,
+                "index": 355,
                 "number": "328",
                 "message": "Si 328$zReproduction de, alors il faut une 029"
             },
@@ -7719,7 +7683,7 @@
                     }
                 ],
                 "type": "allRequired",
-                "index": 374,
+                "index": 356,
                 "number": "328",
                 "message": "Si 328$z n'est pas \"Reproduction de\", alors 029 ne doit pas être présente"
             }
@@ -7735,7 +7699,7 @@
                         "ind2": ""
                     }
                 ],
-                "index": 375,
+                "index": 357,
                 "field1": {
                     "number": "225",
                     "code": "a"
@@ -7757,7 +7721,7 @@
                         "ind2": ""
                     }
                 ],
-                "index": 376,
+                "index": 358,
                 "field1": {
                     "number": "225",
                     "code": "a"
@@ -7781,13 +7745,13 @@
                 "type": "index",
                 "message": "Zone 328 : revoir la valeur des indicateurs",
                 "numRuleExcell": 117,
-                "index": 377
+                "index": 359
             }
         ],
         "idRef": [],
         "ordonnancement": [
             {
-                "index": 378,
+                "index": 360,
                 "number": "214",
                 "orderBy": "ind2",
                 "message": "Zones 214 : garder l'ordre des indicateurs"
