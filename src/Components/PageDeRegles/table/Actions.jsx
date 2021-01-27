@@ -5,6 +5,7 @@ import { Button } from 'react-bootstrap';
 import { Edit, Delete } from '@material-ui/icons';
 import ArrayFieldTemplate from '../forms/ArrayFieldTemplate';
 import Modal from '../modals/Modal';
+import TestRegle from '../testRegle/testRegle';
 
 function Action({ row, types }) {
   const typeIndex = types.findIndex((t) => t.type === row.type);
@@ -31,20 +32,27 @@ function Action({ row, types }) {
 
   return (
     <div className="row">
-      <div className="col-5 mx-auto">
+      <div className="col-4 mx-auto">
         <Modal
           button={<Edit color="primary" fontSize="small" />}
           title="Edition"
           body={<EditForm />}
         />
       </div>
-      <div className="col-5 mx-auto">
+      <div className="col-4 mx-auto">
         <Modal
           button={<Delete color="error" fontSize="small" />}
           title="Supprimer"
           body="Êtes vous sûrs de vouloir supprimer cette régle ?"
           close="Annuler"
           accept="Supprimer"
+        />
+      </div>
+      <div className="col-4 mx-auto">
+        <Modal
+          button={<Edit color="primary" fontSize="small" />}
+          title="Tester la règle"
+          body={<TestRegle row={row} />}
         />
       </div>
     </div>
