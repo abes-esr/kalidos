@@ -2,9 +2,10 @@
 import React from 'react';
 import FormJSON from '@rjsf/core';
 import { Button } from 'react-bootstrap';
-import { Edit, Delete } from '@material-ui/icons';
+import { Edit, Delete, BugReport } from '@material-ui/icons';
 import ArrayFieldTemplate from '../forms/ArrayFieldTemplate';
 import Modal from '../modals/Modal';
+import ModalTestRegle from '../modals/ModalTestRegle';
 import TestRegle from '../testRegle/testRegle';
 
 function Action({ row, types }) {
@@ -32,27 +33,27 @@ function Action({ row, types }) {
 
   return (
     <div className="row">
-      <div className="col-4 mx-auto">
+      <div className="col-4 mx-auto" style={{padding:0}}>
         <Modal
           button={<Edit color="primary" fontSize="small" />}
           title="Edition"
           body={<EditForm />}
         />
       </div>
-      <div className="col-4 mx-auto">
+      <div className="col-4 mx-auto" style={{padding:0}}>
+        <ModalTestRegle
+          button={<BugReport color="action" fontSize="small" />}
+          title="Tester la règle"
+          body={<TestRegle row={row} />}
+        />
+      </div>
+      <div className="col-4 mx-auto" style={{padding:0}}>
         <Modal
           button={<Delete color="error" fontSize="small" />}
           title="Supprimer"
           body="Êtes vous sûrs de vouloir supprimer cette régle ?"
           close="Annuler"
           accept="Supprimer"
-        />
-      </div>
-      <div className="col-4 mx-auto">
-        <Modal
-          button={<Edit color="primary" fontSize="small" />}
-          title="Tester la règle"
-          body={<TestRegle row={row} />}
         />
       </div>
     </div>

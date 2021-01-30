@@ -54,7 +54,7 @@ function testRegle({ row }) {
             testOnCategorie(rule, controlfields, datafields, resultJson, getNoticeStructurelle, getNoticeSMatching)
 
             const resultatTest = document.getElementById("resultatTest");
-            let message = "Ok";
+            let message = "Le test est passé";
             if (resultJson.errors.length > 0) {
                 message = "Le test a échoué";
             }
@@ -94,12 +94,12 @@ function testRegle({ row }) {
             verification(rule, data);
 
         } catch {
-            document.getElementById("resultatTest").innerHTML = "problème sur le fake PPN (erreur sur l'écriture du XML)";
+            document.getElementById("resultatTest").innerHTML = "Un problème a été détécté sur le fake PPN (erreur sur l'écriture du XML)";
         }
     }
 
     return (
-        <Row>
+        <div>
             <Row>
                 <Col>
                     <label htmlFor="fakePPN">Fake PPN à renseigner pour le test</label>
@@ -110,21 +110,21 @@ function testRegle({ row }) {
             </Row>
             <Row>
                 <Col>
-                    <textarea id="fakePPN" defaultValue={fakePPN} rows="15" />
+                    <textarea id="fakePPN" style={{width:"100%"}} defaultValue={fakePPN} rows="15" />
                 </Col>
                 <Col>
-                    <textarea id="rulesJson" defaultValue={JSON.stringify(regle, null, '\t')} rows="15" disabled />
+                    <textarea id="rulesJson" style={{width:"100%"}} defaultValue={JSON.stringify(regle, null, '\t')} rows="15" disabled />
                 </Col>
             </Row>
             <Row>
                 <Col>
-                    <Button variant="primary" onClick={verifierRegle}>Vérifier la règle</Button>
+                    <Button variant="primary" style={{marginTop:"3%"}} onClick={verifierRegle}>Vérifier la règle</Button>
                 </Col>
                 <Col>
-                    <p style={{ fontWeight: "bold" }}>Résultat du test : </p><span id="resultatTest">pas encore de test</span>
+                    <p style={{ fontWeight: "bold" }}>Résultat du test : </p><span id="resultatTest">Pas encore de test</span>
                 </Col>
             </Row>
-        </Row>
+        </div>
     );
 }
 
