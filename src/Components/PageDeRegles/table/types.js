@@ -2,7 +2,12 @@ import { getSchemaMatching, formatRuleMatching } from '../forms/matching';
 import { getSchemaIdRef, formatRuleIdRef } from '../forms/idRefs'
 import { getSchemaDependencies, formatRuleDependencies } from '../forms/dependencies';
 import { getSchemaStructurel, formatRuleStructurel } from '../forms/structurelles';
-import { getSchemaConditionnels} from '../forms/conditionnels';
+import { getSchemaConditionnelsMatching, formatRuleConditionnelsMatching} from '../forms/conditionnelsMatching';
+import { getSchemaConditionnelsStructurel, formatRuleConditionnelsStructurel} from '../forms/conditionnelsStructugetSchemaConditionnelsStructurel';
+import { getSchemaConditionnelsDependance, formatRuleConditionnelsDependance} from '../forms/conditionnelsDepgetSchemaConditionnelsDependance';
+import { getSchemaCompte, formatRuleCompte} from '../forms/conditionnelsDepgetSchemaCompte';
+import { getSchemaOrdonnancement, formatRuleOrdonnancement} from '../forms/conditionnelsDepgetSchemaOrdonnancement';
+import { getSchemaPrecedence, formatRulePrecedence} from '../forms/conditionnelsDepgetSchemaPrecedence';
 
 export function typesSpec(categories, rules) {
   return [
@@ -18,20 +23,23 @@ export function typesSpec(categories, rules) {
       schema: getSchemaDependencies(categories, rules),
       submit: formatRuleDependencies,
     },
-    { name: "Conditionnels", 
+    { name: "Conditionnels Matching", 
       type: "ConditionMatching",
       description: "Description du type Conditionnels",
-      schema: getSchemaMatching(categories, rules),
+      schema: getSchemaConditionnelsMatching(categories, rules),
+      submit: formatRuleConditionnelsMatching,
     },
-    { name: "Conditionnels", 
+    { name: "Conditionnels Dependance", 
       type: "ConditionDependance",
       description: "Description du type Conditionnels",
-      schema: getSchemaMatching(categories, rules),
+      schema: getSchemaConditionnelsDependance(categories, rules),
+      submit: formatRuleConditionnelsDependance,
     },
-    { name: "Conditionnels", 
+    { name: "Conditionnels Structurel", 
       type: "ConditionStructurel",
       description: "Description du type Conditionnels",
-      schema: getSchemaMatching(categories, rules),
+      schema: getSchemaConditionnelsStructurel(categories, rules),
+      submit: formatRuleConditionnelsStructurel,
     },
     { name: "Structurels", 
       type: "Structurel",
@@ -46,19 +54,22 @@ export function typesSpec(categories, rules) {
       submit: formatRuleIdRef
     },
     { name: "Ordonnancement", 
-    type: "ordonnancement",
-    description: "Description du type Conditionnels",
-    schema: getSchemaMatching(categories, rules),
+      type: "ordonnancement",
+      description: "Description du type Conditionnels",
+      schema: getSchemaOrdonnancement(categories, rules),
+      submit: formatRuleOrdonnancement,
     },
     { name: "Compte", 
       type: "compte",
       description: "Description du type Conditionnels",
-      schema: getSchemaMatching(categories, rules),
+      schema: getSchemaCompte(categories, rules),
+      submit: formatRuleCompte,
     },
     { name: "Precedence", 
       type: "precedence",
       description: "Description du type Conditionnels",
-      schema: getSchemaMatching(categories, rules),
+      schema: getSchemaPrecedence(categories, rules),
+      submit: formatRulePrecedence,
     },
   ]
 }

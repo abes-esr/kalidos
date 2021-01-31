@@ -42,6 +42,11 @@ export function formatRuleDependencies(data) {
         },
         type: "object",
         properties: {
+            category: {
+                title: 'Type de document',
+                type: 'string',
+                enum: categories,
+            },
             field1: {title:"Premier champ","$ref": "#/definitions/champs"},
             field2: {title:"Deuxiéme champ","$ref": "#/definitions/champs"},
             operator: {
