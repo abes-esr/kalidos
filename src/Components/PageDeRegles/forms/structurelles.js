@@ -16,6 +16,11 @@ export function getSchemaStructurel(categories, rules) {
     return {
         type: "object",
         properties: {
+          category: {
+            title: 'Type de document',
+            type: 'string',
+            enum: categories,
+          },
           number: {
             title: 'Zone',
             type: 'array',

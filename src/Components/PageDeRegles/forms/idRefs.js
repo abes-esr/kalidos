@@ -74,6 +74,11 @@ export function getSchemaIdRef(categories, rules) {
         },
         type: "object",
         properties: {
+            category: {
+                title: 'Type de document',
+                type: 'string',
+                enum: categories,
+            },
             condition: {title:"Condition","$ref": "#/definitions/condition"},
             identifiant: {title:"Identifiant","$ref": "#/definitions/identifiant"},
             verification: {title:"Vérification","$ref": "#/definitions/verification"},

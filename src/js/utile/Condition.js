@@ -40,7 +40,12 @@ var Condition = function () {
                     }
                     let isMatched = false;
                     for (let j in condition.string) {
+                        // if(subfieldValue === "a a 000yy") {
+                        //     console.log("toto");
+                        // }
                         isMatched = testTagCondition(condition, subfieldValue, condition.string[j]);
+                        // console.log(subfieldValue,condition.operator, condition.string[j], isMatched);
+
                         if (isMatched) {
                             break;
                         }
