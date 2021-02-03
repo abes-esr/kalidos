@@ -29,6 +29,7 @@ export function getSchemaConditionnelsStructurel(categories, rules) {
                     },
                     ind2: {
                         title: "Indice 2",
+                        type: "string"
                     },
                     pos: {
                         title: "Position",

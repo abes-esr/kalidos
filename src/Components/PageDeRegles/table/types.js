@@ -3,11 +3,11 @@ import { getSchemaIdRef, formatRuleIdRef } from '../forms/idRefs'
 import { getSchemaDependencies, formatRuleDependencies } from '../forms/dependencies';
 import { getSchemaStructurel, formatRuleStructurel } from '../forms/structurelles';
 import { getSchemaConditionnelsMatching, formatRuleConditionnelsMatching} from '../forms/conditionnelsMatching';
-import { getSchemaConditionnelsStructurel, formatRuleConditionnelsStructurel} from '../forms/conditionnelsStructugetSchemaConditionnelsStructurel';
-import { getSchemaConditionnelsDependance, formatRuleConditionnelsDependance} from '../forms/conditionnelsDepgetSchemaConditionnelsDependance';
-import { getSchemaCompte, formatRuleCompte} from '../forms/conditionnelsDepgetSchemaCompte';
-import { getSchemaOrdonnancement, formatRuleOrdonnancement} from '../forms/conditionnelsDepgetSchemaOrdonnancement';
-import { getSchemaPrecedence, formatRulePrecedence} from '../forms/conditionnelsDepgetSchemaPrecedence';
+import { getSchemaConditionnelsStructurel, formatRuleConditionnelsStructurel} from '../forms/conditionnelsStructurel';
+import { getSchemaConditionnelsDependance, formatRuleConditionnelsDependance} from '../forms/conditionnelsDependance';
+import { getSchemaCompte, formatRuleCompte} from '../forms/compte';
+import { getSchemaOrdonnancement, formatRuleOrdonnancement} from '../forms/ordonnancement';
+import { getSchemaPrecedence, formatRulePrecedence} from '../forms/precedence';
 
 export function typesSpec(categories, rules) {
   return [

@@ -30,6 +30,7 @@ export function getSchemaConditionnelsDependance(categories, rules) {
                     },
                     ind2: {
                         title: "Indice 2",
+                        type: "string"
                     },
                     operator: {
                         title: "Operateur de matching",
