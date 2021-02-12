@@ -25,8 +25,9 @@ stages:
 
 production:
   stage: deploy
-  # before_script:
-  #   - apt-get update && apt-get install sshpass && apt-get install -y -qq rsync
+  before_script:
+    - apt-get update -qq && apt-get install -y -qq sshpass
+    - apt-get install -y rsync
   script:
     - export SSHPASS=$PASSWORD
     - sshpass -e ssh -o stricthostkeychecking=no $USER@$HOSTNAME "if cd $CI_PROJECT_NAME; then docker-compose down  && cd .. && rm -rf $CI_PROJECT_NAME; fi && git clone $CI_REPOSITORY_URL && docker build -t tiw5-projetbu ."
