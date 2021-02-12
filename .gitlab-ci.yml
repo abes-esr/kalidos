@@ -19,10 +19,10 @@ stages:
 #   - npm install
 
 
-test :
-  stage : test
-  script : 
-   - npm run test
+# test :
+#   stage : test
+#   script : 
+#    - npm run test
 
 build-image :
   image: docker:stable
