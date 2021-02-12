@@ -32,6 +32,7 @@ production:
     - sshpass -V
     - ssh -V
     - export SSHPASS=$PASSWORD
+    - echo "toto"
     - echo $USER
     - echo $PASSWORD
     - echo $HOSTNAME
