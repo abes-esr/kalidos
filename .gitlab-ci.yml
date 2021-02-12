@@ -5,23 +5,23 @@ stages:
   # - test
   - deploy
 
-# cache :
-#   paths :
-#    - node_modules/
+cache :
+  paths :
+   - node_modules/
 
-# install :
-#  stage : install
-#  artifacts:
-#     paths:
-#       - node_modules/
-#  script:
-#   - npm install
+install :
+ stage : install
+ artifacts:
+    paths:
+      - node_modules/
+ script:
+  - yarn install
 
 
-# test :
-#   stage : test
-#   script : 
-#    - npm run test
+test :
+  stage : test
+  script : 
+   - npm run test
 
 production:
   stage: deploy
