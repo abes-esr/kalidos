@@ -3,7 +3,7 @@ image : node:latest
 stages:
   - install
   - test
-  - build
+  - build-image
   - deploy
 
 # cache :
@@ -26,7 +26,7 @@ stages:
 
 build-image :
   image: docker:stable
-  stage: docker
+  stage: build-image
   services:
     - docker:18-dind
   tags:
