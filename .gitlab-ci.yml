@@ -6,23 +6,23 @@ stages:
   - build-image
   - deploy
 
-# cache :
-#   paths :
-#    - node_modules/
+cache :
+  paths :
+   - node_modules/
 
-# install :
-#  stage : install
-#  artifacts:
-#     paths:
-#       - node_modules/
-#  script:
-#   - npm install
+install :
+ stage : install
+ artifacts:
+    paths:
+      - node_modules/
+ script:
+  - npm install
 
 
-# test :
-#   stage : test
-#   script : 
-#    - npm run test
+test :
+  stage : test
+  script : 
+   - npm run test
 
 build-image :
   image: docker:stable
@@ -37,16 +37,18 @@ build-image :
     - docker push $CI_REGISTRY_IMAGE:latest
   only:
     - deploy
+    - master
 
 
-# production:
-#   stage: deploy
-#   before_script:
-#     - apt-get update -qq && apt-get install -y -qq sshpass
-#   script:
-#     - echo $CI_REPOSITORY_URL
-#     - export SSHPASS=$PASSWORD
-#     - sshpass -e ssh -o stricthostkeychecking=no $USER@$HOSTNAME "if cd $CI_PROJECT_NAME; then docker-compose down  && cd .. && rm -rf $CI_PROJECT_NAME; fi && git clone $CI_REPOSITORY_URL && cd $CI_PROJECT_NAME && git checkout deploy && docker build -t tiw5-projetbu . && cd .."
-#     - sshpass -e ssh -o stricthostkeychecking=no $USER@$HOSTNAME  "cd $CI_PROJECT_NAME  && docker-compose up -d"
-#   only:
-#     - deploy
+production:
+  stage: deploy
+  before_script:
+    - apt-get update -qq && apt-get install -y -qq sshpass
+  script:
+    - echo $CI_REPOSITORY_URL
+    - export SSHPASS=$PASSWORD
+    - sshpass -e ssh -o stricthostkeychecking=no $USER@$HOSTNAME "if cd $CI_PROJECT_NAME; then docker-compose down  && cd .. && rm -rf $CI_PROJECT_NAME; fi && git clone $CI_REPOSITORY_URL && cd $CI_PROJECT_NAME && git checkout deploy && cd .."
+    - sshpass -e ssh -o stricthostkeychecking=no $USER@$HOSTNAME  "cd $CI_PROJECT_NAME  && docker-compose up -d"
+  only:
+    - deploy
+    - master
