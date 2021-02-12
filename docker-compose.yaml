@@ -1,0 +1,10 @@
+version: "3.3"
+
+services:
+  projetbu:
+    image: tiw5-projetbu:latest
+    container_name: projetbu
+    restart: always
+    ports:
+      - "3000:3000"
+
