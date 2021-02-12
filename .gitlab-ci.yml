@@ -29,8 +29,9 @@ production:
     - apt-get update -qq && apt-get install -y -qq sshpass
     - apt-get install -y rsync
   script:
-    - export SSHPASS=$PASSWORD
-    - sshpass -e ssh -o StrictHostKeyChecking=no -vvv $USER@$$HOSTNAME "echo testing"
+    # - export SSHPASS=$PASSWORD
+    # - sshpass -e ssh -o StrictHostKeyChecking=no -vvv $USER@$$HOSTNAME "echo testing"
+    - sshpass -p "$PASSWORD" ssh -o StrictHostKeyChecking=no $USER@$$HOSTNAME
     # - sshpass -e ssh -o stricthostkeychecking=no $USER@$HOSTNAME "if cd $CI_PROJECT_NAME; then docker-compose down  && cd .. && rm -rf $CI_PROJECT_NAME; fi && git clone $CI_REPOSITORY_URL && docker build -t tiw5-projetbu ."
     # - sshpass -e ssh -o stricthostkeychecking=no $USER@$HOSTNAME  "cd $CI_PROJECT_NAME  && docker-compose up -d"
 
