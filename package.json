@@ -57,8 +57,7 @@
     "semantic-ui-react": "^2.0.0",
     "startbootstrap-sb-admin-2": "^4.1.1",
     "xml-js": "^1.6.11",
-    "xml2js": "^0.4.23",
-    "yarn": "^1.22.10"
+    "xml2js": "^0.4.23"
   },
   "devDependencies": {
     "@babel/core": "^7.12.10",
