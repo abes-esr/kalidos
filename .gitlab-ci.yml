@@ -19,16 +19,16 @@ stages:
 #   - npm install
 
 
-# test :
-#   stage : test
-#   script : 
-#    - npm run test
+test :
+  stage : test
+  script : 
+   - npm run test
 
 build-image :
-  image: docker:latest
+  image: docker:stable
   stage: build-image
   services:
-    - docker:dind
+    - docker:18-dind
   script:
     - docker login -u $CI_REGISTRY_USER -p $CI_REGISTRY_PASSWORD $CI_REGISTRY
     - docker build -t $CI_REGISTRY_IMAGE:latest --build-arg HTTP_PROXY="http://proxy.univ-lyon1.fr:3128" --build-arg HTTPS_PROXY="http://proxy.univ-lyon1.fr:3128" --build-arg  NO_PROXY="127.0.0.0/16,10.0.0.0/8,172.16.0.0/12,192.168.0.0/16,localhost,.novalocal,.univ-lyon1.fr" .
