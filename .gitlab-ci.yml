@@ -3,35 +3,54 @@ image : node:latest
 stages:
   - install
   - test
+  - build
   - deploy
 
-cache :
-  paths :
-   - node_modules/
+# cache :
+#   paths :
+#    - node_modules/
 
-install :
- stage : install
- artifacts:
-    paths:
-      - node_modules/
- script:
-  - npm install
+# install :
+#  stage : install
+#  artifacts:
+#     paths:
+#       - node_modules/
+#  script:
+#   - npm install
 
 
-test :
-  stage : test
-  script : 
-   - npm run test
+# test :
+#   stage : test
+#   script : 
+#    - npm run test
 
-production:
-  stage: deploy
-  before_script:
-    - apt-get update -qq && apt-get install -y -qq sshpass
+build-image :
+  image: docker:stable
+  stage: docker
+  services:
+    - docker:18-dind
+  tags:
+    - docker_ci_build
   script:
-    - echo $CI_REPOSITORY_URL
-    - export SSHPASS=$PASSWORD
-    - sshpass -e ssh -o stricthostkeychecking=no $USER@$HOSTNAME "if cd $CI_PROJECT_NAME; then docker-compose down  && cd .. && rm -rf $CI_PROJECT_NAME; fi && git clone $CI_REPOSITORY_URL && cd $CI_PROJECT_NAME && git checkout deploy && docker build -t tiw5-projetbu . && cd .."
-    - sshpass -e ssh -o stricthostkeychecking=no $USER@$HOSTNAME  "cd $CI_PROJECT_NAME  && docker-compose up -d"
-
+    - echo $CI_REGISTRY_USER
+    - echo $CI_REGISTRY_IMAGE
+    - echo $CI_REGISTRY
+    - echo $CI_REGISTRY_PASSWORD
+    - docker login -u $CI_REGISTRY_USER -p $CI_REGISTRY_PASSWORD $CI_REGISTRY
+    - docker build -t $CI_REGISTRY_IMAGE:latest --build-arg HTTP_PROXY="http://proxy.univ-lyon1.fr:3128" --build-arg HTTPS_PROXY="http://proxy.univ-lyon1.fr:3128" --build-arg  NO_PROXY="127.0.0.0/16,10.0.0.0/8,172.16.0.0/12,192.168.0.0/16,localhost,.novalocal,.univ-lyon1.fr" .
+    - docker push $CI_REGISTRY_IMAGE:latest
   only:
     - deploy
+
+
+# production:
+#   stage: deploy
+#   before_script:
+#     - apt-get update -qq && apt-get install -y -qq sshpass
+#   script:
+#     - echo $CI_REPOSITORY_URL
+#     - export SSHPASS=$PASSWORD
+#     - sshpass -e ssh -o stricthostkeychecking=no $USER@$HOSTNAME "if cd $CI_PROJECT_NAME; then docker-compose down  && cd .. && rm -rf $CI_PROJECT_NAME; fi && git clone $CI_REPOSITORY_URL && cd $CI_PROJECT_NAME && git checkout deploy && docker build -t tiw5-projetbu . && cd .."
+#     - sshpass -e ssh -o stricthostkeychecking=no $USER@$HOSTNAME  "cd $CI_PROJECT_NAME  && docker-compose up -d"
+#   only:
+#     - deploy
