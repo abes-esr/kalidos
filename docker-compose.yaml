@@ -1,0 +1,10 @@
+version: "3.3"
+
+services:
+  projetbu:
+    image: forge.univ-lyon1.fr:4567/p1607511/projet_bu
+    container_name: projetbu
+    restart: always
+    ports:
+      - "3000:3000"
+
