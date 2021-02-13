@@ -20,23 +20,23 @@ install :
   - npm install
 
 
-test :
-  stage : test
-  script : 
-   - npm run test
+# test :
+#   stage : test
+#   script : 
+#    - npm run test
 
 
 
-heroku:
-  stage: heroku
-  image: ruby:latest
-  script:
-    - apt-get update -qy
-    - apt-get install -y ruby-dev
-    - gem install dpl
-    - dpl --provider=heroku --app=budev --api-key=d2da7495-2783-4633-ba2e-817d155d2dee
-  only:
-    - master
+# heroku:
+#   stage: heroku
+#   image: ruby:latest
+#   script:
+#     - apt-get update -qy
+#     - apt-get install -y ruby-dev
+#     - gem install dpl
+#     - dpl --provider=heroku --app=budev --api-key=d2da7495-2783-4633-ba2e-817d155d2dee
+#   only:
+#     - master
 
 
 build-image :
@@ -55,15 +55,15 @@ build-image :
     - master
 
 
-production:
-  stage: deploy
-  before_script:
-    - apt-get update -qq && apt-get install -y -qq sshpass
-  script:
-    - echo $CI_REPOSITORY_URL
-    - export SSHPASS=$PASSWORD
-    - sshpass -e ssh -o stricthostkeychecking=no $USER@$HOSTNAME "if cd $CI_PROJECT_NAME; then docker-compose down  && cd .. && rm -rf $CI_PROJECT_NAME; fi && git clone $CI_REPOSITORY_URL && cd $CI_PROJECT_NAME && git checkout deploy && cd .."
-    - sshpass -e ssh -o stricthostkeychecking=no $USER@$HOSTNAME  "cd $CI_PROJECT_NAME  && docker-compose up -d"
-  only:
-    - deploy
-    - master
+# production:
+#   stage: deploy
+#   before_script:
+#     - apt-get update -qq && apt-get install -y -qq sshpass
+#   script:
+#     - echo $CI_REPOSITORY_URL
+#     - export SSHPASS=$PASSWORD
+#     - sshpass -e ssh -o stricthostkeychecking=no $USER@$HOSTNAME "if cd $CI_PROJECT_NAME; then docker-compose down  && cd .. && rm -rf $CI_PROJECT_NAME; fi && git clone $CI_REPOSITORY_URL && cd $CI_PROJECT_NAME && git checkout deploy && cd .."
+#     - sshpass -e ssh -o stricthostkeychecking=no $USER@$HOSTNAME  "cd $CI_PROJECT_NAME  && docker-compose up -d"
+#   only:
+#     - deploy
+#     - master
