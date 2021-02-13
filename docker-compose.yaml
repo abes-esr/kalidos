@@ -2,7 +2,7 @@ version: "3.3"
 
 services:
   projetbu:
-    image: tiw5-projetbu:latest
+    image: forge.univ-lyon1.fr:4567/p1607511/projet_bu
     container_name: projetbu
     restart: always
     ports:
