@@ -940,7 +940,7 @@
             {
                 "regex": "(?:(?!Mo).)+",
                 "code": "a",
-                "message": "Zone 230 : corriger le poids en Ko",
+                "message": "Zone 230 : corriger le poids en Mo",
                 "number": 230,
                 "index": 38
             },
@@ -952,7 +952,7 @@
                 "index": 39
             },
             {
-                "regex": "(?:(?!X Ko).)+",
+                "regex": "(?:(?!X Ko)(?!X ko)(?!x Ko)(?!x ko).)+",
                 "code": "a",
                 "message": "Zone 230 : corriger le poids en Ko",
                 "number": 230,
@@ -1005,7 +1005,7 @@
                 "message": "200$a ne doit pas être Le Titre",
                 "index": 47,
                 "number": "200",
-                "regex": "^(?!Le Titre).*$"
+                "regex": "^(?!Le Titre)(?!le titre)(?!Le titre).*$"
             },
             {
                 "code": "e",
@@ -1852,7 +1852,7 @@
             {
                 "regex": "(?:(?!Mo).)+",
                 "code": "a",
-                "message": "Zone 230 : corriger le poids en Ko",
+                "message": "Zone 230 : corriger le poids en Mo",
                 "number": 230,
                 "index": 96
             },
@@ -1864,7 +1864,7 @@
                 "index": 97
             },
             {
-                "regex": "(?:(?!X Ko).)+",
+                "regex": "(?:(?!X Ko)(?!X ko)(?!x Ko)(?!x ko).)+",
                 "code": "a",
                 "message": "Zone 230 : corriger le poids en Ko",
                 "number": 230,
@@ -1889,7 +1889,7 @@
                 "message": "200$a ne doit pas être Le Titre",
                 "index": 101,
                 "number": "200",
-                "regex": "^(?!Le Titre).*$"
+                "regex": "^(?!Le Titre)(?!le titre)(?!Le titre).*$"
             },
             {
                 "code": "e",
@@ -3007,7 +3007,7 @@
                 "index": 159
             },
             {
-                "regex": "(?:(?!X Ko).)+",
+                "regex": "(?:(?!X Ko)(?!X ko)(?!x Ko)(?!x ko).)+",
                 "code": "a",
                 "message": "Zone 230 : corriger le poids en Ko",
                 "number": 230,
@@ -3170,6 +3170,7 @@
         ],
         "idRef": [],
         "ConditionMatching": [
+
             {
                 "message": "Zones 7XX : code fonction, vérifier qu il s agit d un éditeur scientifique ou d un directeur de publication ?",
                 "number": 214,
@@ -5829,17 +5830,16 @@
                 "number": "700",
                 "index": 295
             },
+
             {
-                "message": "Zone 701 : lien auteur à effectuer",
-                "number": "701",
-                "match": "all",
-                "value": [
-                    "^((?!Nom du co-auteur).)*$",
-                    "^((?!Nom du directeur).)*$"
-                ],
+                "regex": "(?:(?!Nom du co-auteur)(?!Nom du directeur).)+",
                 "code": "a",
+                "message": "Zone 701 : lien auteur à effectuer",
+                "number": 701,
                 "index": 296
             },
+
+
             {
                 "code": "d",
                 "message": "200$d doit commencer par = espace",

@@ -64,15 +64,13 @@ var IdRef = function () {
      */
     var conditionNotice = function (datafields, regle) {
         let retour = [];
-        let valid = false;
+        let valid = true;
         const fields = Parcours.findDataFields(datafields, regle.condition[0].number)
         for (let j in fields) {
-            retour.push(fields[j])
-            valid = false;
+            valid = true;
             for (let i in regle.condition) {
                 if (regle.condition[i].code != null && regle.condition[i].regex != null) {
                     valid = testValueCode(fields[j], regle.condition[i].code, regle.condition[i].regex)
-                    console.log("if"valid)
                 }
                 else if (regle.condition[i].code != null) {
                     valid = Parcours.testCode(fields[j], regle.condition[i].code)
@@ -80,9 +78,12 @@ var IdRef = function () {
                 } else {
                     valid = fields[j] != null
                 }
+                if(!valid) {
+                    break;
+                }
             }
-            if (!valid) {
-                retour.pop()
+            if (valid) {
+                retour.push(fields[j])
             }
         }
         return retour

@@ -29,7 +29,7 @@ var Condition = function () {
             } else if (condition.operator === "not_presente") {
                 if (condition.code.toString() !== "") {
                     return Parcours.getSubfieldValue(fields[i], condition.code) == null;
-                }
+                } else return false;
             } else if (otherOperator(condition)) {
                 if (condition.string.toString() !== "") {
                     let subfieldValue;
