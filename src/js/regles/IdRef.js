@@ -72,9 +72,11 @@ var IdRef = function () {
             for (let i in regle.condition) {
                 if (regle.condition[i].code != null && regle.condition[i].regex != null) {
                     valid = testValueCode(fields[j], regle.condition[i].code, regle.condition[i].regex)
+                    console.log("if"valid)
                 }
                 else if (regle.condition[i].code != null) {
                     valid = Parcours.testCode(fields[j], regle.condition[i].code)
+                    console.log(valid)
                 } else {
                     valid = fields[j] != null
                 }

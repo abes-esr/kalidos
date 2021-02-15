@@ -11,6 +11,8 @@ import ConditionMatching from "../regles/ConditionMatching";
 import ConditionDependance from "../regles/ConditionDependance";
 import Ordonnancement from "../regles/Ordonnancement";
 import Compte from "../regles/Compte";
+import Precedence from "../regles/Precedence";
+
 
 const CATEGORIE_GENERALE = "Generale";
 
@@ -203,5 +205,6 @@ function testOnCategorie(categorie, rules, controlfields, datafields, resultJson
     ConditionDependance.testConditionDependanceRules(categorie, rules, controlfields, datafields, resultJson);
     Ordonnancement.testOrdonnancementRules(categorie, rules, controlfields, datafields, resultJson);
     Compte.testCompteRules(categorie, rules, controlfields, datafields, resultJson);
+    Precedence.testPrecedenceRules(categorie, rules, controlfields, datafields, resultJson);
 }
 

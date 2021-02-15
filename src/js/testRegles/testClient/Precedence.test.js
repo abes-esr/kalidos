@@ -47,7 +47,7 @@ test("608 $a et $2rameau, $a doit être précédé d’un $3", () => {
     expect(resultJson.errors).toStrictEqual([]);
 });
 
-test("608 $a et $2rameau, $a doit être précédé d’un $3 (FAIL)", () => {
+test("607 $a et $2rameau, $a doit être précédé d’un $3 (FAIL)", () => {
     const notice = "004"
     const index = 5009
     const sudoc = getNotice(notice);

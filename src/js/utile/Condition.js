@@ -76,11 +76,13 @@ function testTagCondition(condition, subfieldValue, item) {
         return !subfieldPresent || subfieldValue.trim() !== item.toString();
     }else if (condition.operator === "not_startwith_text") {
         return !subfieldPresent || !subfieldValue.trim().startsWith(item.toString());
+    } else if (condition.operator === 'not_contains_text') {
+        return !subfieldPresent || !Parcours.slice(condition.pos[0], condition.pos[1], subfieldValue).includes(item.toString());
     }
     return false
 }
 
 function otherOperator(condition) {
     return condition.operator === "contains_text" || condition.operator === "startwith_text" ||
-        condition.operator === "equals_text" || condition.operator === "not_equals_text" || condition.operator === "not_startwith_text";
+        condition.operator === "equals_text" || condition.operator === "not_equals_text" || condition.operator === "not_startwith_text" || condition.operator === 'not_contains_text';
 }
