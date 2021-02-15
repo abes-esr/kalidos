@@ -1,4 +1,4 @@
-const Parcours = require("../utile/Parcours");
+import Parcours from "../utile/Parcours";
 
 var Ordonnancement = function () {
     var testOrdonnancementRules = function (categorie, rules, controlfields, datafields, resultJson) {
@@ -23,6 +23,7 @@ var Ordonnancement = function () {
             message: regle.message,
             number: regle.number
         });
+        Parcours.addErrorSynchro();
     }
 
 
@@ -32,4 +33,4 @@ var Ordonnancement = function () {
     }
 }();
 
-module.exports = Ordonnancement;
+export default Ordonnancement;

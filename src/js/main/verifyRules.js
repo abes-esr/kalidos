@@ -1,16 +1,16 @@
 const axios = require('axios');
 const convert = require("xml-js");
-import { cleanResult, addErrorPPN, setNombreTotalPPN, setChoixCategorie , addErrorPPNErronnee} from '../../actions/index';
+import { cleanResult, addErrorPPN, setNombreTotalPPN, setChoixCategorie, addErrorPPNErronnee } from '../../actions/index';
 import store from '../../store/index';
-const Matching = require("../regles/Matching");
-const Structurel = require("../regles/Structurel");
-const Dependance = require("../regles/Dependance");
-const IdRef = require("../regles/IdRef");
+import Matching from "../regles/Matching";
+import Structurel from "../regles/Structurel";
+import Dependance from "../regles/Dependance";
+import IdRef from "../regles/IdRef";
 import ConditionStructurel from "../regles/ConditionStructurelle";
 import ConditionMatching from "../regles/ConditionMatching";
-const ConditionDependance = require("../regles/ConditionDependance");
-const Ordonnancement = require('../regles/Ordonnancement');
-const Compte = require('../regles/Compte');
+import ConditionDependance from "../regles/ConditionDependance";
+import Ordonnancement from "../regles/Ordonnancement";
+import Compte from "../regles/Compte";
 
 const CATEGORIE_GENERALE = "Generale";
 
@@ -180,10 +180,9 @@ function verifMain(rules, sudoc) {
     const getNoticeSMatching = ConditionMatching.getDataOnSudoc;
 
     testOnCategorie(CATEGORIE_GENERALE, rules, controlfields, datafields, resultJson, getNoticeStructurelle, getNoticeSMatching);
-    if(categorieChoose != CATEGORIE_GENERALE) {
+    if (categorieChoose != CATEGORIE_GENERALE) {
         testOnCategorie(categorieChoose, rules, controlfields, datafields, resultJson, getNoticeStructurelle, getNoticeSMatching);
     }
-
 
     store.dispatch(addErrorPPN(resultJson));
 

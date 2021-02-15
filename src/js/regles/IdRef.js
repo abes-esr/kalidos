@@ -1,4 +1,4 @@
-const Parcours = require("../utile/Parcours");
+import Parcours from "../utile/Parcours";
 const convert = require("xml-js");
 const axios = require('axios');
 
@@ -98,6 +98,7 @@ var IdRef = function () {
             number: regle.identifiant.number,
             code: regle.identifiant.code
         });
+        Parcours.addErrorSynchro();
     }
 
 
@@ -157,4 +158,4 @@ var IdRef = function () {
     }
 }();
 
-module.exports = IdRef;
+export default IdRef;

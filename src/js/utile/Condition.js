@@ -1,4 +1,4 @@
-const Parcours = require("../utile/Parcours");
+import Parcours from "../utile/Parcours";
 
 var Condition = function () {
 
@@ -61,7 +61,8 @@ var Condition = function () {
     }
 }();
 
-module.exports = Condition;
+// module.exports = Condition;
+export default Condition;
 
 function testTagCondition(condition, subfieldValue, item) {
     const subfieldPresent = subfieldValue != null;
