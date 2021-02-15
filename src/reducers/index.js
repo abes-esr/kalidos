@@ -1,4 +1,4 @@
-import { CLEAN_RESULT, ADD_ERROR_PPN, ADD_ERROR_TEST, SET_NOMBRE_TOTAL_PPN, SET_PPNDISPLAY, SET_NUMPAGE, SET_RECHERCHEPPN, ADD_ERROR_PPN_ERRONNE, SET_CHOIXCATEGORIE } from '../actions';
+import { CLEAN_RESULT, ADD_ERROR_PPN, ADD_ERROR_TEST, SET_NOMBRE_TOTAL_PPN, SET_PPNDISPLAY, SET_NUMPAGE, SET_RECHERCHEPPN, ADD_ERROR_PPN_ERRONNE, SET_CHOIXCATEGORIE, INCREMENTE_SYNCHRO } from '../actions';
 import fakedata from '../Components/fakedata.json';
 /*const initialState = {
   result: {},
@@ -21,8 +21,9 @@ function rootReducer(state = initialState, action) {
           numPage: 1,
           recherchePPN: '',
         },
-        listPPNErronne:[],
-        choixCategorie:""
+        listPPNErronne: [],
+        choixCategorie: "",
+        compteurErreurPourSynchro: 0
       }
 
     case ADD_ERROR_PPN:
@@ -81,11 +82,16 @@ function rootReducer(state = initialState, action) {
           recherchePPN: action.payload,
         }
       }
-      case SET_CHOIXCATEGORIE:
-        return {
-          ...state,
-          choixCategorie: action.payload
-        }
+    case SET_CHOIXCATEGORIE:
+      return {
+        ...state,
+        choixCategorie: action.payload
+      }
+    case INCREMENTE_SYNCHRO:
+      return {
+        ...state,
+        compteurErreurPourSynchro: state.compteurErreurPourSynchro + 1
+      }
   }
   return state;
 }

@@ -10,6 +10,7 @@ import { setPPNDisplay, setNumPage, setRecherchePPN } from '../../actions/index'
 const mapStateToProps = (state) => ({
     PPNDisplay: state.displayVerif.PPNDisplay,
     numPage: state.displayVerif.numPage,
+    compteurErreurPourSynchro: state.compteurErreurPourSynchro
 });
 
 
@@ -37,7 +38,7 @@ function tooltipPPN({nombrePPNTotal, nombreErreurTotal}) {
 }
 
 
-function TabPPN({ listPPN, SetPPNDisplay, SetNumPage, numPage, SetRecherchePPN, PPNDisplay }) {
+function TabPPN({ listPPN, SetPPNDisplay, SetNumPage, numPage, SetRecherchePPN, PPNDisplay, compteurErreurPourSynchro }) {
     const nombrePPNTotal = listPPN.length;
     window.toto = listPPN;
     const nombreErreurTotal = nombrePPNTotal === 0 ? 0 : listPPN.map(x => x[1].errors.length).reduce((total, x) => total + x);

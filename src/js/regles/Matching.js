@@ -1,4 +1,4 @@
-const Parcours = require("../utile/Parcours");
+import Parcours from "../utile/Parcours";
 
 var Matching = function () {
     var testMatchRegexRules = function (categorie, rules, controlfields, datafields, resultJson) {
@@ -150,10 +150,11 @@ var Matching = function () {
                     errors += " , ";
                 }
             }
-            resultJson.errors.push({
+            const tempRegle = {
                 message: message,
                 number: errors
-            });
+            }
+            addErrorInJson(resultJson, tempRegle);
         }
 
     }
@@ -165,7 +166,7 @@ var Matching = function () {
     }
 }();
 
-module.exports = Matching;
+export default Matching;
 
 function addErrorInJson(resultJson, regle) {
     resultJson.errors.push({
@@ -173,6 +174,7 @@ function addErrorInJson(resultJson, regle) {
         number: regle.number,
         code: regle.code
     });
+    Parcours.addErrorSynchro();
 }
 
 function verifyTag(field, regle) {

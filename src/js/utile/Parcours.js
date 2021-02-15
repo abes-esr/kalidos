@@ -1,3 +1,7 @@
+import store from '../../store/index';
+import { incrementeSynchro } from '../../actions/index';
+
+
 var Parcours = function () {
 
     /**
@@ -193,9 +197,15 @@ var Parcours = function () {
         return text.slice(start > 0 ? start -1  : 0, end);
     }
 
-
+    //Ne sert que pour synchroniser les données et la vue à cause des requêtes axios
+    const addErrorSynchro = function() {
+        if(store !== undefined) {
+            store.dispatch(incrementeSynchro("toto"));
+        }
+    }
 
     return {
+        addErrorSynchro:addErrorSynchro,
         findDataField: findDataField,
         getSubfieldValue:getSubfieldValue,
         getCategories : getCategories,
@@ -212,4 +222,5 @@ var Parcours = function () {
     }
 }();
 
-module.exports = Parcours;
+// module.exports = Parcours;
+export default Parcours;

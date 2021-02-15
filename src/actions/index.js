@@ -7,6 +7,11 @@ export const SET_PPNDISPLAY = 'SET_PPNDISPLAY';
 export const SET_NUMPAGE = 'SET_NUMPAGE';
 export const SET_RECHERCHEPPN = 'SET_RECHERCHEPPN';
 export const SET_CHOIXCATEGORIE = 'SET_CHOIXCATEGORIE';
+export const INCREMENTE_SYNCHRO = 'INCREMENTE_SYNCHRO';
+
+export function incrementeSynchro(payload) {
+  return {type: INCREMENTE_SYNCHRO, payload};
+}
 
 export function cleanResult(payload) {
   return { type: CLEAN_RESULT, payload };

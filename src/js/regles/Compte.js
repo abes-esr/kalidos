@@ -1,4 +1,4 @@
-const Parcours = require("../utile/Parcours");
+import Parcours from "../utile/Parcours";
 
 var Compte = function () {
     var testCompteRules = function (categorie, rules, controlfields, datafields, resultJson) {
@@ -21,6 +21,7 @@ var Compte = function () {
             message: regle.message,
             number: regle.number
         });
+        Parcours.addErrorSynchro();
     }
 
 
@@ -30,4 +31,4 @@ var Compte = function () {
     }
 }();
 
-module.exports = Compte;
+export default Compte;

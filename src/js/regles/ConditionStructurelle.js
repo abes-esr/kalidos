@@ -1,5 +1,5 @@
-const Parcours = require("../utile/Parcours");
-const Condition = require("../utile/Condition");
+import Parcours from "../utile/Parcours";
+import Condition from "../utile/Condition";
 const axios = require('axios');
 const convert = require("xml-js");
 
@@ -9,7 +9,7 @@ const ConditionStructurel = function () {
     let ppnInitiale = undefined;
     const testConditionStrucutrelRules = async function (categorie, rules, controlfields, datafields, resultJson, getfunctionDocument) {
         getDocument = getfunctionDocument
-        for(let iRegle in rules[categorie].ConditionStructurel) {
+        for (let iRegle in rules[categorie].ConditionStructurel) {
             const regle = rules[categorie].ConditionStructurel[iRegle];
 
             //si on le field on check les conditions
@@ -167,6 +167,7 @@ function addError(resultJson, regle) {
         message: regle.message,
         number: regle.number,
     });
+    Parcours.addErrorSynchro();
 }
 
 function getListDatafield(datafields, value) {
@@ -191,7 +192,7 @@ function getDataOnSudoc(datafields, number, code) {
                     convert.xml2json(response.data, { compact: true, spaces: 2 })
                 );
                 return data;
-
+                    
             })
             .catch(function (error) {
                 console.log("error matching reciproque");
