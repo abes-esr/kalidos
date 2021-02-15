@@ -1,7 +1,7 @@
 const convert = require("xml-js");
 const path = require('path');
 const fs = require('fs');
-const Precedence = require('../../regles/Precedence');
+import Precedence from '../../regles/Precedence';
 import rules from '../../../../serveur/public/model_regles.json';
 
 let CATEGORIE;

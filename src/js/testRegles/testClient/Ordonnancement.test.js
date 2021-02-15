@@ -1,7 +1,7 @@
 const convert = require("xml-js");
 const path = require('path');
 const fs = require('fs');
-const Ordonnancement = require('../../regles/Ordonnancement');
+import Ordonnancement from '../../regles/Ordonnancement';
 import rules from '../../../../serveur/public/model_regles.json';
 
 let CATEGORIE;
