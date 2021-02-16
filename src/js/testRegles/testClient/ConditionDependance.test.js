@@ -1,7 +1,7 @@
 const convert = require("xml-js");
 const path = require('path');
 const fs = require('fs');
-const ConditionDependance = require('../../regles/ConditionDependance');
+import ConditionDependance from '../../regles/ConditionDependance';
 import rules from '../../../../serveur/public/model_regles.json';
 
 let CATEGORIE;

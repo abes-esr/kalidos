@@ -9,8 +9,9 @@ var IdRef = function () {
     var getRequest = function (identifiant, regle, resultJson) {
         axios.get("https://www.idref.fr/" + identifiant + ".xml")
             .then(function (response) {
+                const xml = response.data.replaceAll('&', '')
                 const data = JSON.parse(
-                    convert.xml2json(response.data, { compact: true, spaces: 2 })
+                    convert.xml2json(xml, { compact: true, spaces: 2 })
                 );
                 validateIdRef(data, regle, resultJson)
             })
@@ -64,11 +65,10 @@ var IdRef = function () {
      */
     var conditionNotice = function (datafields, regle) {
         let retour = [];
-        let valid = false;
+        let valid = true;
         const fields = Parcours.findDataFields(datafields, regle.condition[0].number)
         for (let j in fields) {
-            retour.push(fields[j])
-            valid = false;
+            valid = true;
             for (let i in regle.condition) {
                 if (regle.condition[i].code != null && regle.condition[i].regex != null) {
                     valid = testValueCode(fields[j], regle.condition[i].code, regle.condition[i].regex)
@@ -78,9 +78,12 @@ var IdRef = function () {
                 } else {
                     valid = fields[j] != null
                 }
+                if(!valid) {
+                    break;
+                }
             }
-            if (!valid) {
-                retour.pop()
+            if (valid) {
+                retour.push(fields[j])
             }
         }
         return retour

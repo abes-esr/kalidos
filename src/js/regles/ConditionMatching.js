@@ -25,12 +25,14 @@ let ConditionMatching = function () {
 
                 let checkControlFields = controlfields;
                 let checkDataFields = datafields;
-
                 if (regle.reciproque) {
                     ppnInitiale = Parcours.findDataField(controlfields, "001")._text;
                     const data = await getDocument(datafields, regle, resultJson);
+                    console.log("data : " , data)
                     if (data === null) {
+                        console.log("data === null")
                         addError(resultJson, regle);
+                        console.log(resultJson)
                         return;
                     }
                     checkControlFields = data.record.controlfield;
@@ -38,32 +40,36 @@ let ConditionMatching = function () {
                 }
 
                 if (!checkValues(regle, checkDataFields, checkControlFields)) {
+                    console.log("checkValues(regle, checkDataFields, checkControlFields)")
                     addError(resultJson, regle);
                 }
             }
         }
     }
 
-    function getDataOnSudoc(datafields, regle, resultJson) {
+    async function getDataOnSudoc(datafields, regle, resultJson) {
         let field = Parcours.findDataField(datafields, regle.reciproque.number);
         let ppnDest = Parcours.getSubfieldValue(field, regle.reciproque.code);
 
-        axios.get("https://www.sudoc.fr/" + ppnDest + ".xml")
+        const result = await axios.get("https://www.sudoc.fr/" + ppnDest + ".xml")
             .then(function (response) {
+                const xml = response.data.replaceAll('&', '')
                 const data = JSON.parse(
-                    convert.xml2json(response.data, {
+                    convert.xml2json(xml, {
                         compact: true,
                         spaces: 2
                     })
                 );
-
+                console.log(data)
                 return data;
             })
             .catch(function (error) {
+                console.log(error)
                 addError(resultJson, regle);
+                return null
 
             });
-        return null;
+        return result;
     }
 
 

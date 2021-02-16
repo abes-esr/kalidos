@@ -38,7 +38,7 @@ const ConditionStructurel = function () {
                     addError(resultJson, regle);
                     return null;
                 }
-
+                
                 let checkControlFields = controlfields;
                 let checkDataFields = datafields;
                 if (regle.reciproque) {
@@ -81,7 +81,7 @@ const ConditionStructurel = function () {
             return false;
 
         }
-
+       
         return isCheckValues;
     }
 
@@ -111,6 +111,7 @@ const ConditionStructurel = function () {
 export default ConditionStructurel;
 
 function verifyOne(datafields, value, controlfields, checkReciproque) {
+    
     const listDatafield = getListDatafield(datafields, value);
     let result = verifyPresence(value, listDatafield);
     result = result || verifyIndex(value, listDatafield);
@@ -120,7 +121,8 @@ function verifyOne(datafields, value, controlfields, checkReciproque) {
 
 function verifyPresenceSubfield(value, listDatafield) {
     const subfield = Parcours.getSubfieldValue(listDatafield[0], value.code);
-    if ((subfield != null) === value.present) {
+    const isExist = subfield != null
+    if (isExist === value.present) {
         return true;
     }
     return false;
@@ -181,24 +183,28 @@ function getListDatafield(datafields, value) {
     return dataField;
 }
 
-function getDataOnSudoc(datafields, number, code) {
+async function getDataOnSudoc(datafields, number, code) {
     const dataField = Parcours.findDataField(datafields, number);
     const ppnDest = Parcours.getSubfieldValue(dataField, code);
 
     if (ppnDest !== null) {
-        axios.get("https://www.sudoc.fr/" + ppnDest + ".xml")
+        const result = await axios.get("https://www.sudoc.fr/" + ppnDest + ".xml")
             .then(function (response) {
+                const xml = response.data.replaceAll('&', '')
                 const data = JSON.parse(
-                    convert.xml2json(response.data, { compact: true, spaces: 2 })
+                    convert.xml2json(xml, { compact: true, spaces: 2 })
                 );
                 return data;
                     
             })
             .catch(function (error) {
                 console.log("error matching reciproque");
+                return null;
             });
+            return result
     }
-    return null;
+    return null
+    
 }
 
 

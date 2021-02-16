@@ -1,16 +1,17 @@
 /* eslint-disable react/prop-types */
 import React from 'react';
 import { Row, Col, Button } from 'react-bootstrap';
-const convert = require("xml-js");
-const Matching = require("../../../js/regles/Matching");
-const Structurel = require("../../../js/regles/Structurel");
-const Dependance = require("../../../js/regles/Dependance");
-const IdRef = require("../../../js/regles/IdRef");
+const convert = require ("xml-js");
+import Matching from "../../../js/regles/Matching";
+import Structurel from "../../../js/regles/Structurel";
+import Dependance from "../../../js/regles/Dependance";
+import IdRef from "../../../js/regles/IdRef"; 
 import ConditionStructurel from "../../../js/regles/ConditionStructurelle";
 import ConditionMatching from "../../../js/regles/ConditionMatching";
-const ConditionDependance = require("../../../js/regles/ConditionDependance");
-const Ordonnancement = require('../../../js/regles/Ordonnancement');
-const Compte = require('../../../js/regles/Compte');
+import ConditionDependance from "../../../js/regles/ConditionDependance";
+import Ordonnancement from '../../../js/regles/Ordonnancement';
+import Compte from '../../../js/regles/Compte';
+import Precedence from '../../../js/regles/Precedence';
 
 function testRegle({ row }) {
     const regle = row.regleInitial;
@@ -37,6 +38,7 @@ function testRegle({ row }) {
         ConditionDependance.testConditionDependanceRules(categorie, rule, controlfields, datafields, resultJson);
         Ordonnancement.testOrdonnancementRules(categorie, rule, controlfields, datafields, resultJson);
         Compte.testCompteRules(categorie, rule, controlfields, datafields, resultJson);
+        Precedence.testPrecedenceRules(categorie, rule, controlfields, datafields, resultJson);
     }
 
     const verification = (rule, data) => {
@@ -60,8 +62,9 @@ function testRegle({ row }) {
             }
             resultatTest.innerHTML = message;
 
-        } catch {
+        } catch (e) {
             document.getElementById("resultatTest").innerHTML = "erreur inconnue";
+            console.log(e)
         }
 
 
@@ -70,8 +73,9 @@ function testRegle({ row }) {
     const verifierRegle = () => {
         try {
             const xmlStr = document.getElementById("fakePPN").value;
+            const xml = xmlStr.replaceAll('&', '')
             const data = JSON.parse(
-                convert.xml2json(xmlStr, { compact: true, spaces: 2 })
+                convert.xml2json(xml, { compact: true, spaces: 2 })
             );
             const type = row.index.split("_")[1];
             const rule = {
