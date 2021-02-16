@@ -23,6 +23,8 @@ const mockResponse = {
   bar: 'foo',
 };
 
+let noticeCounter = 0;
+
 /**
  * renvois le fichier de regles
  */
@@ -43,26 +45,37 @@ app.post('/result', (req, res) => {
 });
 
 /**
- * crée un fichier txt avc la liste des notices erronées
- * @body body : fichier resultat
+ * renvoie les notices erronées
+ */
+app.get('/getNotices', (req, res) => {
+  const file = `${__dirname}/public/noticesErreurs.json`;
+  res.download(file); // Set disposition and send it.
+});
+
+/**
+ * remplace le contenu des notices erronées par le body de la requete
+ * @body body : listes des notices des ppn erronés
  * return code 200
  */
 app.post('/notice', (req, res) => {
-  const json = req.body;
-  const data_verif = Object.keys(json).map((key) => [Number(key), json[key]]);
-  const listPPNWithError = data_verif.filter((row) => { return row[1].errors.length });
+  const errorIndex = req.body;
+  noticeCounter++;
+  fs.readFile(`${__dirname}/public/noticesErreurs.json`, 'utf8', function readFileCallback(err, data){
+    if (err) {
+        console.log(err);
+    } else {
+      let obj = JSON.parse(data);
 
-  let stream = fs.createWriteStream(`${__dirname}/public/noticesErreurs.txt`);
-
-  stream.once('open', function(fd) {
-    let str;
-    for (let i = 0; i < listPPNWithError.length; i++) {
-      str = listPPNWithError[i][1]['PPN'];
-      stream.write(str + "\n");
+      console.log("obj avant injection notice", obj);
+      obj[noticeCounter] = errorIndex;
+      console.log("obj après injection notice", obj);
+      
+      json = JSON.stringify(obj);
+      fs.writeFile(`${__dirname}/public/noticesErreurs.json`, json, 'utf8', function(err, result) {
+        if(err) console.log('error', err);
+      });
     }
-    stream.end();
   });
-
   res.sendStatus(200);
 });
 

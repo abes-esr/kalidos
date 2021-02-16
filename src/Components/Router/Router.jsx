@@ -37,6 +37,12 @@ const Router_App = () => (
                         <span>Interface des règles</span>
                     </Link>
                 </li>
+                <li className="nav-item">
+                    <Link to="/noticesErreurs" className="nav-link">
+                        <i className="fas fa-fw fa-wrench"></i>
+                        <span>Notices erronées</span>
+                    </Link>
+                </li>
             </ul>
 
 );
