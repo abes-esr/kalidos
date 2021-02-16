@@ -8,6 +8,7 @@ export const SET_NUMPAGE = 'SET_NUMPAGE';
 export const SET_RECHERCHEPPN = 'SET_RECHERCHEPPN';
 export const SET_CHOIXCATEGORIE = 'SET_CHOIXCATEGORIE';
 export const INCREMENTE_SYNCHRO = 'INCREMENTE_SYNCHRO';
+export const SET_NOTICEDISPLAY = 'SET_NOTICEDISPLAY';
 
 export function incrementeSynchro(payload) {
   return {type: INCREMENTE_SYNCHRO, payload};
@@ -47,4 +48,8 @@ export function setRecherchePPN(payload) {
 
 export function setChoixCategorie(payload) {
   return { type: SET_CHOIXCATEGORIE, payload };
+}
+
+export function setNoticeDisplay(payload) {
+  return { type: SET_NOTICEDISPLAY, payload };
 }

@@ -27,6 +27,19 @@ function verifiyRulesByTextArea() {
     const listPPN = document.getElementById("textAreaSaisie").value.split("\n").filter(x => x != '');
     store.dispatch(setNombreTotalPPN(listPPN.length));
     nombreTotalPPN = listPPN.length;
+    count = 0;
+    getRules(listPPN);
+}
+
+function verifiyRulesByTextAreaNotice (listPPN) {
+    store.dispatch(cleanResult());
+    const choixCategorie = $("#choixCategorie").val();
+    store.dispatch(setChoixCategorie(choixCategorie));
+    let path = location.protocol + '//' + location.host + '/#/interfaceVerif';
+    window.location = path;
+    store.dispatch(setNombreTotalPPN(listPPN.length));
+    nombreTotalPPN = listPPN.length;
+    count = 0;
     getRules(listPPN);
 }
 
@@ -148,7 +161,32 @@ function getRules(listPPN) {
         });
 }
 
-function noticesErreurs() {
+function getNoticeErreurs() {
+    axios.get('/getNotices')
+    .then(function (response) {
+
+    })
+    .catch(function (error) {
+        console.log(error);
+    })
+    .then(function () {
+        // always executed
+    });
+}
+
+function noticeErreurs(){
+    const json = store.getState().result;
+    const data_verif = Object.keys(json).map((key) => [Number(key), json[key]]);
+    const listPPNWithError = data_verif.filter((row) => { return row[1].errors.length });
+    
+    let errorIndex = [];
+    for (let i = 0; i < listPPNWithError.length; i++) {
+        errorIndex.push(listPPNWithError[i][1]['PPN']);
+    }
+    addNoticeErreurs(errorIndex);
+}
+
+function addNoticeErreurs(errorIndex) {
     axios({
         method: 'POST',
         url: '/notice',
@@ -156,7 +194,7 @@ function noticesErreurs() {
         headers: {
             "Accept": "application/json",
         },
-        data: store.getState().result,
+        data: errorIndex,
         port: 3000,
     }).then(function () {
 
@@ -190,11 +228,11 @@ function verifMain(rules, sudoc) {
 
     count++;
     if (count === nombreTotalPPN) {
-        noticesErreurs();
+        noticeErreurs();  
     }
 }
 
-export { verifyRules, verifiyRulesByTextArea };
+export { verifyRules, verifiyRulesByTextArea, verifiyRulesByTextAreaNotice };
 function testOnCategorie(categorie, rules, controlfields, datafields, resultJson, getNoticeStructurelle, getNoticeSMatching) {
     Matching.testMatchRegexRules(categorie, rules, controlfields, datafields, resultJson);
     Structurel.testMatchStructurelRules(categorie, rules, controlfields, datafields, resultJson);

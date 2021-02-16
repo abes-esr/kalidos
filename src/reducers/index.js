@@ -1,4 +1,4 @@
-import { CLEAN_RESULT, ADD_ERROR_PPN, ADD_ERROR_TEST, SET_NOMBRE_TOTAL_PPN, SET_PPNDISPLAY, SET_NUMPAGE, SET_RECHERCHEPPN, ADD_ERROR_PPN_ERRONNE, SET_CHOIXCATEGORIE, INCREMENTE_SYNCHRO } from '../actions';
+import { CLEAN_RESULT, ADD_ERROR_PPN, ADD_ERROR_TEST, SET_NOMBRE_TOTAL_PPN, SET_PPNDISPLAY, SET_NUMPAGE, SET_RECHERCHEPPN, ADD_ERROR_PPN_ERRONNE, SET_CHOIXCATEGORIE, INCREMENTE_SYNCHRO, SET_NOTICEDISPLAY } from '../actions';
 import fakedata from '../Components/fakedata.json';
 /*const initialState = {
   result: {},
@@ -91,6 +91,14 @@ function rootReducer(state = initialState, action) {
       return {
         ...state,
         compteurErreurPourSynchro: state.compteurErreurPourSynchro + 1
+      }
+    case SET_NOTICEDISPLAY:
+      return {
+        ...state,
+        displayVerif: {
+          ...state.displayVerif,
+          noticeDisplay: action.payload,
+        }
       }
   }
   return state;
