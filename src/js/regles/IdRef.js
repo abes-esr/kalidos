@@ -9,8 +9,9 @@ var IdRef = function () {
     var getRequest = function (identifiant, regle, resultJson) {
         axios.get("https://www.idref.fr/" + identifiant + ".xml")
             .then(function (response) {
+                const xml = response.data.replaceAll('&', '')
                 const data = JSON.parse(
-                    convert.xml2json(response.data, { compact: true, spaces: 2 })
+                    convert.xml2json(xml, { compact: true, spaces: 2 })
                 );
                 validateIdRef(data, regle, resultJson)
             })

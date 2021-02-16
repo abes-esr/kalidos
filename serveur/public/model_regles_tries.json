@@ -80,6 +80,41 @@
         "idRef": [],
         "ConditionMatching": [
             {
+                "message": "Si 105 $a 5e position en commençant par la fin = 1 alors il faut aussi une 608 $302886431XActes de congrès",
+                "number": 608,
+                "condition": [
+                    {
+                        "string": [
+                            "1"
+                        ],
+                        "code": "a",
+                        "pos": [
+                           5
+                        ],
+                        "number": "105",
+                        "operator": "count_from_end"
+                    }
+                ],
+                "index": 334,
+                "values": [
+                    {
+                        "subFieldRequired": true,
+                        "code": "3",
+                        "message": "",
+                        "number": 608,
+                        "regex": "^02886431X$"
+                    },
+                    {
+                        "subFieldRequired": true,
+                        "code": "a",
+                        "message": "",
+                        "number": 608,
+                        "regex": "^Actes de congrès$"
+                    }
+                ],
+                "type": "allRequired"
+            },
+            {
                 "message": "Zones 7XX : code fonction, vérifier qu il s agit d un éditeur scientifique ou d un directeur de publication ?",
                 "number": 214,
                 "condition": [
@@ -594,6 +629,63 @@
         "dependances": [],
         "ConditionStructurel": [
             {
+                "message": "Si 105 $a Pos. 4-7= \"v\", alors il faut une 328$z",
+                "number": "105",
+                "condition": [
+                    {
+                        "string": [
+                            "v"
+                        ],
+                        "code": "a",
+                        "pos": [
+                            0,
+                            99999
+                        ],
+                        "number": "105",
+                        "operator": "contains_text"
+                    }
+                ],
+                "index": 147,
+                "type": "allRequired",
+                "value": [
+                    {
+                        "code": "z",
+                        "number": "328",
+                        "present": true
+                    }
+                ]
+            },
+            {
+                "message": "Zone 328 obligatoire pour une thèse ou mémoire (soutenance)",
+                "number": "105",
+                "condition": [
+                    {
+                        "string": [
+                            "m",
+                            "7"
+                        ],
+                        "ind1": "",
+                        "pos": [
+                            0,
+                            999999
+                        ],
+                        "number": "105",
+                        "ind2": "",
+                        "code": "a",
+                        "operator": "contains_text"
+                    }
+                ],
+                "index": 25,
+                "type": "allRequired",
+                "value": [
+                    {
+                        "code": "",
+                        "number": "328",
+                        "present": true
+                    }
+                ]
+            },
+            {
                 "message": "Si 008 commence par Aa, 215 $a et $d obligatoires",
                 "number": "008",
                 "condition": [
@@ -606,7 +698,7 @@
                         "operator": "startwith_text"
                     }
                 ],
-                "index": 25,
+                "index": 26,
                 "type": "allRequired",
                 "value": [
                     {
@@ -633,7 +725,7 @@
                         "ind2": ""
                     }
                 ],
-                "index": 26,
+                "index": 27,
                 "type": "allRequired",
                 "value": [
                     {
@@ -655,7 +747,7 @@
                         "ind2": ""
                     }
                 ],
-                "index": 27,
+                "index": 28,
                 "type": "allRequired",
                 "value": [
                     {
@@ -677,7 +769,7 @@
                         "ind2": ""
                     }
                 ],
-                "index": 28,
+                "index": 29,
                 "type": "allRequired",
                 "value": [
                     {
@@ -699,7 +791,7 @@
                         "ind2": ""
                     }
                 ],
-                "index": 29,
+                "index": 30,
                 "type": "allRequired",
                 "value": [
                     {
@@ -727,7 +819,7 @@
                         "operator": "presente"
                     }
                 ],
-                "index": 30,
+                "index": 31,
                 "type": "oneRequired",
                 "value": [
                     {
@@ -760,7 +852,7 @@
                         "operator": "equals_text"
                     }
                 ],
-                "index": 31,
+                "index": 32,
                 "type": "allRequired",
                 "value": [
                     {
@@ -783,7 +875,7 @@
                         "operator": "startwith_text"
                     }
                 ],
-                "index": 32,
+                "index": 33,
                 "type": "allRequired",
                 "value": [
                     {
@@ -811,7 +903,7 @@
                         "operator": "contains_text"
                     }
                 ],
-                "index": 33,
+                "index": 34,
                 "type": "allRequired",
                 "value": [
                     {
@@ -843,7 +935,7 @@
                         "operator": "contains_text"
                     }
                 ],
-                "index": 34,
+                "index": 35,
                 "type": "oneRequired",
                 "value": [
                     {
@@ -880,7 +972,7 @@
                         "operator": "equals_text"
                     }
                 ],
-                "index": 35,
+                "index": 36,
                 "type": "allRequired",
                 "value": [
                     {
@@ -908,7 +1000,7 @@
                         "operator": "not_equals_text"
                     }
                 ],
-                "index": 36,
+                "index": 37,
                 "type": "allRequired",
                 "value": [
                     {
@@ -930,7 +1022,7 @@
                 "type": "index",
                 "numRuleExcell": 117,
                 "message": "Zone 328 : revoir la valeur des indicateurs",
-                "index": 37
+                "index": 38
             }
         ]
     },
@@ -942,54 +1034,54 @@
                 "code": "a",
                 "message": "Zone 230 : corriger le poids en Mo",
                 "number": 230,
-                "index": 38
+                "index": 39
             },
             {
                 "regex": "(?:(?!,).)+",
                 "code": "a",
                 "message": "Zone 230 : corriger le poids en Ko",
                 "number": 230,
-                "index": 39
+                "index": 40
             },
             {
                 "regex": "(?:(?!X Ko)(?!X ko)(?!x Ko)(?!x ko).)+",
                 "code": "a",
                 "message": "Zone 230 : corriger le poids en Ko",
                 "number": 230,
-                "index": 40
+                "index": 41
             },
             {
                 "regex": "(?:(?!nombre de).)+",
                 "code": "a",
                 "message": "Zone 215 : compléter la pagination",
                 "number": 215,
-                "index": 41
+                "index": 42
             },
             {
                 "regex": ".{12}",
                 "code": "b",
                 "message": "Zone 029 : le numéro d'ordre doit contenir 12 caractères",
                 "number": "029",
-                "index": 42
+                "index": 43
             },
             {
                 "code": "b",
                 "message": "029$b ne doit pas contenir le caractère ?",
-                "index": 43,
+                "index": 44,
                 "number": "029",
                 "regex": "(?:(?!\\?).)+"
             },
             {
                 "code": "a",
                 "message": "029$a=FR",
-                "index": 44,
+                "index": 45,
                 "number": "029",
                 "regex": "^FR$"
             },
             {
                 "code": "a",
                 "message": "100$a ne doit pas contenir le caractère ?",
-                "index": 45,
+                "index": 46,
                 "number": "100",
                 "regex": "(?:(?!\\?).)+"
             },
@@ -998,19 +1090,19 @@
                 "code": "a",
                 "message": "Zone 102 $a doit être FR",
                 "number": "102",
-                "index": 46
+                "index": 47
             },
             {
                 "code": "a",
                 "message": "200$a ne doit pas être Le Titre",
-                "index": 47,
+                "index": 48,
                 "number": "200",
                 "regex": "^(?!Le Titre)(?!le titre)(?!Le titre).*$"
             },
             {
                 "code": "e",
                 "message": "200$e ne doit pas être complément du titre",
-                "index": 48,
+                "index": 49,
                 "number": "200",
                 "regex": "^(?!complément du titre).*$"
             },
@@ -1019,33 +1111,33 @@
                 "code": "f",
                 "message": "Zone 200 : compléter le nom de l'auteur",
                 "number": "200",
-                "index": 49
+                "index": 50
             },
             {
                 "code": "g",
                 "message": "200$g ne doit pas finir par sous la direction de",
-                "index": 50,
+                "index": 51,
                 "number": "200",
                 "regex": ".*(?<!sous la direction de)$"
             },
             {
                 "code": "d",
                 "message": "214$d ne doit pas contenir le caractère ?",
-                "index": 51,
+                "index": 52,
                 "number": "214",
                 "regex": "(?:(?!\\?).)+"
             },
             {
                 "code": "a",
                 "message": "230$a ne doit pas contenir le caractère ?",
-                "index": 52,
+                "index": 53,
                 "number": "230",
                 "regex": "(?:(?!\\?).)+"
             },
             {
                 "code": "a",
                 "message": "307$a ne doit pas contenir le caractère ?",
-                "index": 53,
+                "index": 54,
                 "number": "307",
                 "regex": "(?:(?!\\?).)+"
             },
@@ -1054,61 +1146,61 @@
                 "code": "a",
                 "message": "Zone 320 à compléter",
                 "number": "320",
-                "index": 54
+                "index": 55
             },
             {
                 "regex": "(?:(?![:;\\?\\/]).)+",
                 "code": "c",
                 "message": "Zone 328$c : les sous-disciplines doivent être séparées par un point",
                 "number": 328,
-                "index": 55
+                "index": 56
             },
             {
                 "regex": "(?:(?!Discipline).)+",
                 "code": "c",
                 "message": "Zone 328$c compléter la discipline",
                 "number": 328,
-                "index": 56
+                "index": 57
             },
             {
                 "regex": "^[0-9]{4}$",
                 "code": "d",
                 "message": "Zone 328$d doit contenir uniquement l'année de soutenance",
                 "number": 328,
-                "index": 57
+                "index": 58
             },
             {
                 "regex": "(?:(?![\\?;,]).)+",
                 "code": "d",
                 "message": "Zone 328$d doit contenir uniquement l'année de soutenance",
                 "number": 328,
-                "index": 58
+                "index": 59
             },
             {
                 "code": "e",
                 "message": "328$e = Lyon 1 ou Université de Lyon ou Lyon",
-                "index": 59,
+                "index": 60,
                 "number": "328",
                 "regex": "(Lyon 1)|(Université de Lyon)|(Lyon)"
             },
             {
                 "code": "a",
                 "message": "330$a ne doit pas contenir Résumé en français",
-                "index": 60,
+                "index": 61,
                 "number": "330",
                 "regex": "(?:(?!Résumé en français).)+"
             },
             {
                 "code": "a",
                 "message": "700$a ne doit pas contenir Nom",
-                "index": 61,
+                "index": 62,
                 "number": "700",
                 "regex": "(?:(?!Nom).)+"
             },
             {
                 "code": "b",
                 "message": "700$b ne doit pas contenir Prénom",
-                "index": 62,
+                "index": 63,
                 "number": "700",
                 "regex": "(?:(?!Prénom).)+"
             },
@@ -1117,19 +1209,19 @@
                 "code": "4",
                 "message": "Zone 700 : le code fonction doit être 070 pour l'auteur ou co-auteur de la thèse",
                 "number": "700",
-                "index": 63
+                "index": 64
             },
             {
                 "code": "b",
                 "message": "701$b ne doit pas contenir Prénom",
-                "index": 64,
+                "index": 65,
                 "number": "701",
                 "regex": "(?:(?!Prénom).)+"
             },
             {
                 "code": "u",
                 "message": "856$u ne doit pas contenir URL",
-                "index": 65,
+                "index": 66,
                 "number": "856",
                 "regex": "(?:(?!URL).)+"
             },
@@ -1138,21 +1230,21 @@
                 "code": "2",
                 "message": "Zone 305$2 générique à remplacer-supprimer",
                 "number": "856",
-                "index": 66
+                "index": 67
             },
             {
                 "regex": "^((?!Format).)*$",
                 "code": "q",
                 "message": "Zone 856$q : renseigner le format",
                 "number": "856",
-                "index": 67
+                "index": 68
             },
             {
                 "regex": "^MEMLyon1$",
                 "code": "2",
                 "message": "107$2 à corriger (\"MEMLyon1\")",
                 "number": "017",
-                "index": 68
+                "index": 69
             }
         ],
         "ConditionDependance": [],
@@ -1168,7 +1260,7 @@
                         "operator": "presente"
                     }
                 ],
-                "index": 69,
+                "index": 70,
                 "values": [
                     {
                         "subFieldRequired": true,
@@ -1195,7 +1287,7 @@
                         "operator": "presente"
                     }
                 ],
-                "index": 70,
+                "index": 71,
                 "values": [
                     {
                         "subFieldRequired": true,
@@ -1230,9 +1322,9 @@
                         "code": "5",
                         "number": "856",
                         "operator": "startwith_text"
-                    }      
+                    }
                 ],
-                "index": 71,
+                "index": 72,
                 "values": [
                     {
                         "subFieldRequired": true,
@@ -1262,7 +1354,7 @@
                         "operator": "not_startwith_text"
                     }
                 ],
-                "index": 338,
+                "index": 73,
                 "values": [
                     {
                         "subFieldRequired": true,
@@ -1292,7 +1384,7 @@
                         "operator": "startwith_text"
                     }
                 ],
-                "index": 72,
+                "index": 74,
                 "code": "a",
                 "type": "allRequired",
                 "values": [
@@ -1315,7 +1407,7 @@
                 "message": "Mention de résumé incohérente : vérifier zones 101 et le nombre de zones 330",
                 "number": "101",
                 "contrainte": "330",
-                "index": 73
+                "index": 75
             }
         ],
         "dependances": [
@@ -1329,7 +1421,7 @@
                     ],
                     "number": "029"
                 },
-                "index": 74,
+                "index": 76,
                 "field2": {
                     "code": "d",
                     "pos": [],
@@ -1340,6 +1432,66 @@
             }
         ],
         "ConditionStructurel": [
+            {
+                "message": "Zone 328 obligatoire pour une thèse ou mémoire (soutenance)",
+                "number": "105",
+                "condition": [
+                    {
+                        "string": [
+                            "m",
+                            "7"
+                        ],
+                        "ind1": "",
+                        "pos": [
+                            0,
+                            999999
+                        ],
+                        "number": "105",
+                        "ind2": "",
+                        "code": "a",
+                        "operator": "contains_text"
+                    }
+                ],
+                "index": 77,
+                "type": "allRequired",
+                "value": [
+                    {
+                        "code": "",
+                        "number": "328",
+                        "present": true
+                    }
+                ]
+            },
+            {
+                "message": "Zone 328 obligatoire pour une thèse ou mémoire (soutenance)",
+                "number": "105",
+                "condition": [
+                    {
+                        "string": [
+                            "v",
+                            "7"
+                        ],
+                        "ind1": "",
+                        "pos": [
+                            0,
+                            999999
+                        ],
+                        "number": "105",
+                        "ind2": "",
+                        "code": "a",
+                        "operator": "contains_text"
+                    }
+                ],
+                "index": 78,
+                "type": "allRequired",
+                "value": [
+                    {
+                        "code": "",
+                        "number": "017",
+                        "present": true
+                    }
+                ]
+            },
             {
                 "message": "Si 008 commence par Aa, 215 $a et $d obligatoires",
                 "number": "008",
@@ -1353,7 +1505,7 @@
                         "operator": "startwith_text"
                     }
                 ],
-                "index": 75,
+                "index": 79,
                 "type": "allRequired",
                 "value": [
                     {
@@ -1378,7 +1530,7 @@
                         "operator": "presente"
                     }
                 ],
-                "index": 76,
+                "index": 80,
                 "type": "allRequired",
                 "value": [
                     {
@@ -1410,7 +1562,7 @@
                         "operator": "contains_text"
                     }
                 ],
-                "index": 77,
+                "index": 81,
                 "type": "allRequired",
                 "value": [
                     {
@@ -1441,7 +1593,7 @@
                         "operator": "contains_text"
                     }
                 ],
-                "index": 78,
+                "index": 82,
                 "type": "allRequired",
                 "value": [
                     {
@@ -1469,7 +1621,7 @@
                         "operator": "not_presente"
                     }
                 ],
-                "index": 79,
+                "index": 83,
                 "type": "allRequired",
                 "value": [
                     {
@@ -1490,7 +1642,7 @@
                         "operator": "presente"
                     }
                 ],
-                "index": 80,
+                "index": 84,
                 "reciproque": {
                     "code": "0",
                     "number": "451"
@@ -1518,7 +1670,7 @@
                         "operator": "presente"
                     }
                 ],
-                "index": 81,
+                "index": 85,
                 "reciproque": {
                     "code": "0",
                     "number": "452"
@@ -1553,7 +1705,7 @@
                         "operator": "startwith_text"
                     }
                 ],
-                "index": 82,
+                "index": 86,
                 "type": "allRequired",
                 "value": [
                     {
@@ -1576,7 +1728,7 @@
                         "operator": "startwith_text"
                     }
                 ],
-                "index": 83,
+                "index": 87,
                 "type": "allRequired",
                 "value": [
                     {
@@ -1599,7 +1751,7 @@
                         "operator": "startwith_text"
                     }
                 ],
-                "index": 84,
+                "index": 88,
                 "type": "allRequired",
                 "value": [
                     {
@@ -1622,7 +1774,7 @@
                         "operator": "startwith_text"
                     }
                 ],
-                "index": 85,
+                "index": 89,
                 "type": "allRequired",
                 "value": [
                     {
@@ -1643,7 +1795,7 @@
                         "operator": "presente"
                     }
                 ],
-                "index": 86,
+                "index": 90,
                 "reciproque": {
                     "code": "0",
                     "number": "456"
@@ -1673,7 +1825,7 @@
                         "operator": "startwith_text"
                     }
                 ],
-                "index": 87,
+                "index": 91,
                 "type": "allRequired",
                 "value": [
                     {
@@ -1700,7 +1852,7 @@
                         "operator": "contains_text"
                     }
                 ],
-                "index": 88,
+                "index": 92,
                 "type": "allRequired",
                 "value": [
                     {
@@ -1728,7 +1880,7 @@
                         "operator": "contains_text"
                     }
                 ],
-                "index": 89,
+                "index": 93,
                 "type": "allRequired",
                 "value": [
                     {
@@ -1756,7 +1908,7 @@
                         "operator": "contains_text"
                     }
                 ],
-                "index": 90,
+                "index": 94,
                 "type": "allRequired",
                 "value": [
                     {
@@ -1777,7 +1929,7 @@
                         "operator": "presente"
                     }
                 ],
-                "index": 91,
+                "index": 95,
                 "reciproque": {
                     "code": "0",
                     "number": "456"
@@ -1806,7 +1958,7 @@
                         "operator": "presente"
                     }
                 ],
-                "index": 92,
+                "index": 96,
                 "reciproque": {
                     "code": "0",
                     "number": "451"
@@ -1835,7 +1987,7 @@
                         "operator": "not_presente"
                     }
                 ],
-                "index": 93,
+                "index": 97,
                 "reciproque": {
                     "code": "0",
                     "number": "451"
@@ -1860,7 +2012,7 @@
                 "type": "index",
                 "numRuleExcell": 117,
                 "message": "Zone 328 : revoir la valeur des indicateurs",
-                "index": 94
+                "index": 98
             },
             {
                 "ind1": "",
@@ -1872,7 +2024,7 @@
                 "type": "exclude",
                 "numRuleExcell": 145,
                 "message": "Zone 455 incompatible avec le type de thèse (soutenance)",
-                "index": 95
+                "index": 99
             }
         ]
     },
@@ -1884,47 +2036,47 @@
                 "code": "a",
                 "message": "Zone 230 : corriger le poids en Mo",
                 "number": 230,
-                "index": 96
+                "index": 100
             },
             {
                 "regex": "(?:(?!,).)+",
                 "code": "a",
                 "message": "Zone 230 : corriger le poids en Ko",
                 "number": 230,
-                "index": 97
+                "index": 101
             },
             {
                 "regex": "(?:(?!X Ko)(?!X ko)(?!x Ko)(?!x ko).)+",
                 "code": "a",
                 "message": "Zone 230 : corriger le poids en Ko",
                 "number": 230,
-                "index": 98
+                "index": 102
             },
             {
                 "regex": "(?:(?!nombre de).)+",
                 "code": "a",
                 "message": "Zone 215 : compléter la pagination",
                 "number": 215,
-                "index": 99
+                "index": 103
             },
             {
                 "code": "a",
                 "message": "100$a ne doit pas contenir le caractère ?",
-                "index": 100,
+                "index": 104,
                 "number": "100",
                 "regex": "(?:(?!\\?).)+"
             },
             {
                 "code": "a",
                 "message": "200$a ne doit pas être Le Titre",
-                "index": 101,
+                "index": 105,
                 "number": "200",
                 "regex": "^(?!Le Titre)(?!le titre)(?!Le titre).*$"
             },
             {
                 "code": "e",
                 "message": "200$e ne doit pas être complément du titre",
-                "index": 102,
+                "index": 106,
                 "number": "200",
                 "regex": "^(?!complément du titre).*$"
             },
@@ -1933,26 +2085,26 @@
                 "code": "f",
                 "message": "Zone 200 : compléter le nom de l'auteur",
                 "number": "200",
-                "index": 103
+                "index": 107
             },
             {
                 "code": "g",
                 "message": "200$g ne doit pas finir par sous la direction de",
-                "index": 104,
+                "index": 108,
                 "number": "200",
                 "regex": ".*(?<!sous la direction de)$"
             },
             {
                 "code": "d",
                 "message": "214$d ne doit pas contenir le caractère ?",
-                "index": 105,
+                "index": 109,
                 "number": "214",
                 "regex": "(?:(?!\\?).)+"
             },
             {
                 "code": "a",
                 "message": "307$a ne doit pas contenir le caractère ?",
-                "index": 106,
+                "index": 110,
                 "number": "307",
                 "regex": "(?:(?!\\?).)+"
             },
@@ -1961,61 +2113,61 @@
                 "code": "a",
                 "message": "Zone 320 à compléter",
                 "number": "320",
-                "index": 107
+                "index": 111
             },
             {
                 "regex": "(?:(?![:;\\?\\/]).)+",
                 "code": "c",
                 "message": "Zone 328$c : les sous-disciplines doivent être séparées par un point",
                 "number": 328,
-                "index": 108
+                "index": 112
             },
             {
                 "regex": "(?:(?!Discipline).)+",
                 "code": "c",
                 "message": "Zone 328$c compléter la discipline",
                 "number": 328,
-                "index": 109
+                "index": 113
             },
             {
                 "regex": "^[0-9]{4}$",
                 "code": "d",
                 "message": "Zone 328$d doit contenir uniquement l'année de soutenance",
                 "number": 328,
-                "index": 110
+                "index": 114
             },
             {
                 "regex": "(?:(?![\\?;,]).)+",
                 "code": "d",
                 "message": "Zone 328$d doit contenir uniquement l'année de soutenance",
                 "number": 328,
-                "index": 111
+                "index": 115
             },
             {
                 "code": "e",
                 "message": "328$e = Lyon 1 ou Université de Lyon ou Lyon",
-                "index": 112,
+                "index": 116,
                 "number": "328",
                 "regex": "(Lyon 1)|(Université de Lyon)|(Lyon)"
             },
             {
                 "code": "a",
                 "message": "330$a ne doit pas contenir Résumé en français",
-                "index": 113,
+                "index": 117,
                 "number": "330",
                 "regex": "(?:(?!Résumé en français).)+"
             },
             {
                 "code": "a",
                 "message": "700$a ne doit pas contenir Nom",
-                "index": 114,
+                "index": 118,
                 "number": "700",
                 "regex": "(?:(?!Nom).)+"
             },
             {
                 "code": "b",
                 "message": "700$b ne doit pas contenir Prénom",
-                "index": 115,
+                "index": 119,
                 "number": "700",
                 "regex": "(?:(?!Prénom).)+"
             },
@@ -2024,12 +2176,12 @@
                 "code": "4",
                 "message": "Zone 700 : le code fonction doit être 070 pour l'auteur ou co-auteur de la thèse",
                 "number": "700",
-                "index": 116
+                "index": 120
             },
             {
                 "code": "u",
                 "message": "856$u ne doit pas contenir URL",
-                "index": 117,
+                "index": 121,
                 "number": "856",
                 "regex": "(?:(?!URL).)+"
             },
@@ -2038,21 +2190,21 @@
                 "code": "2",
                 "message": "Zone 305$2 générique à remplacer-supprimer",
                 "number": "856",
-                "index": 118
+                "index": 122
             },
             {
                 "regex": "^((?!Format).)*$",
                 "code": "q",
                 "message": "Zone 856$q : renseigner le format",
                 "number": "856",
-                "index": 119
+                "index": 123
             },
             {
                 "regex": "^MEMLyon1$",
                 "code": "2",
                 "message": "107$2 à corriger (\"MEMLyon1\")",
                 "number": "017",
-                "index": 120
+                "index": 124
             }
         ],
         "ConditionDependance": [],
@@ -2070,7 +2222,7 @@
                         "ind2": "0"
                     }
                 ],
-                "index": 121,
+                "index": 125,
                 "values": [
                     {
                         "subFieldRequired": true,
@@ -2102,7 +2254,7 @@
                         "operator": "startwith_text"
                     }
                 ],
-                "index": 122,
+                "index": 126,
                 "values": [
                     {
                         "subFieldRequired": true,
@@ -2132,7 +2284,7 @@
                         "operator": "not_startwith_text"
                     }
                 ],
-                "index": 338,
+                "index": 127,
                 "values": [
                     {
                         "subFieldRequired": true,
@@ -2162,7 +2314,7 @@
                         "operator": "startwith_text"
                     }
                 ],
-                "index": 123,
+                "index": 128,
                 "code": "a",
                 "type": "allRequired",
                 "values": [
@@ -2201,7 +2353,7 @@
                         "ind2": "2"
                     }
                 ],
-                "index": 124,
+                "index": 129,
                 "values": [
                     {
                         "subFieldRequired": true,
@@ -2224,14 +2376,14 @@
                         "operator": "presente"
                     }
                 ],
-                "index": 125,
+                "index": 130,
                 "values": [
                     {
                         "subFieldRequired": true,
                         "code": "a",
                         "message": "",
                         "number": "105",
-                        "regex": "^(.{3}m|.{4}m|.{5}m|.{6}m).*$"
+                        "regex": "^.*m.*$"
                     }
                 ],
                 "reciproque": {
@@ -2250,7 +2402,7 @@
                         "operator": "presente"
                     }
                 ],
-                "index": 126,
+                "index": 131,
                 "reciproque": {
                     "code": "0",
                     "number": "456"
@@ -2280,7 +2432,7 @@
                         "operator": "startwith_text"
                     }
                 ],
-                "index": 127,
+                "index": 132,
                 "type": "allRequired",
                 "value": [
                     {
@@ -2303,7 +2455,7 @@
                         "operator": "equals_text"
                     }
                 ],
-                "index": 128,
+                "index": 133,
                 "values": [
                     {
                         "subFieldRequired": true,
@@ -2328,7 +2480,7 @@
                         "operator": "not_equals_text"
                     }
                 ],
-                "index": 129,
+                "index": 134,
                 "values": [
                     {
                         "subFieldRequired": false,
@@ -2353,7 +2505,7 @@
                         "operator": "equals_text"
                     }
                 ],
-                "index": 130,
+                "index": 135,
                 "values": [
                     {
                         "subFieldRequired": true,
@@ -2378,7 +2530,7 @@
                         "operator": "not_equals_text"
                     }
                 ],
-                "index": 131,
+                "index": 136,
                 "values": [
                     {
                         "subFieldRequired": false,
@@ -2403,7 +2555,7 @@
                         "operator": "equals_text"
                     }
                 ],
-                "index": 132,
+                "index": 137,
                 "values": [
                     {
                         "subFieldRequired": true,
@@ -2435,7 +2587,7 @@
                         "operator": "not_equals_text"
                     }
                 ],
-                "index": 133,
+                "index": 138,
                 "values": [
                     {
                         "subFieldRequired": false,
@@ -2460,7 +2612,7 @@
                 "message": "Zones 214 : garder l'ordre des indicateurs",
                 "number": "214",
                 "orderBy": "ind2",
-                "index": 134
+                "index": 139
             }
         ],
         "compte": [
@@ -2469,11 +2621,41 @@
                 "message": "Mention de résumé incohérente : vérifier zones 101 et le nombre de zones 330",
                 "number": "101",
                 "contrainte": "330",
-                "index": 135
+                "index": 140
             }
         ],
         "dependances": [],
         "ConditionStructurel": [
+            {
+                "message": "Zone 328 obligatoire pour une thèse ou mémoire (soutenance)",
+                "number": "105",
+                "condition": [
+                    {
+                        "string": [
+                            "m",
+                            "7"
+                        ],
+                        "ind1": "",
+                        "pos": [
+                            0,
+                            999999
+                        ],
+                        "number": "105",
+                        "ind2": "",
+                        "code": "a",
+                        "operator": "contains_text"
+                    }
+                ],
+                "index": 141,
+                "type": "allRequired",
+                "value": [
+                    {
+                        "code": "",
+                        "number": "328",
+                        "present": true
+                    }
+                ]
+            },
             {
                 "message": "Zone 456 incompatible avec le type de thèse (reproduction)",
                 "number": "456",
@@ -2493,7 +2675,7 @@
                         "operator": "contains_text"
                     }
                 ],
-                "index": 350,
+                "index": 142,
                 "type": "allRequired",
                 "value": [
                     {
@@ -2516,7 +2698,7 @@
                         "operator": "startwith_text"
                     }
                 ],
-                "index": 136,
+                "index": 143,
                 "type": "allRequired",
                 "value": [
                     {
@@ -2549,7 +2731,7 @@
                         "operator": "equals_text"
                     }
                 ],
-                "index": 137,
+                "index": 144,
                 "type": "allRequired",
                 "value": [
                     {
@@ -2577,7 +2759,7 @@
                         "operator": "equals_text"
                     }
                 ],
-                "index": 138,
+                "index": 145,
                 "type": "allRequired",
                 "value": [
                     {
@@ -2597,7 +2779,7 @@
                         "operator": "presente"
                     }
                 ],
-                "index": 139,
+                "index": 146,
                 "type": "allRequired",
                 "value": [
                     {
@@ -2617,14 +2799,14 @@
                         ],
                         "code": "a",
                         "pos": [
-                            4,
-                            7
+                            0,
+                            99999
                         ],
                         "number": "105",
                         "operator": "contains_text"
                     }
                 ],
-                "index": 140,
+                "index": 147,
                 "type": "allRequired",
                 "value": [
                     {
@@ -2652,7 +2834,7 @@
                         "operator": "not_presente"
                     }
                 ],
-                "index": 141,
+                "index": 148,
                 "type": "allRequired",
                 "value": [
                     {
@@ -2673,7 +2855,7 @@
                         "operator": "presente"
                     }
                 ],
-                "index": 142,
+                "index": 149,
                 "reciproque": {
                     "code": "0",
                     "number": "451"
@@ -2701,7 +2883,7 @@
                         "operator": "presente"
                     }
                 ],
-                "index": 143,
+                "index": 150,
                 "reciproque": {
                     "code": "0",
                     "number": "452"
@@ -2734,7 +2916,7 @@
                         "operator": "presente"
                     }
                 ],
-                "index": 144,
+                "index": 151,
                 "reciproque": {
                     "code": "0",
                     "number": "455"
@@ -2764,7 +2946,7 @@
                         "operator": "startwith_text"
                     }
                 ],
-                "index": 145,
+                "index": 152,
                 "type": "allRequired",
                 "value": [
                     {
@@ -2787,7 +2969,7 @@
                         "operator": "startwith_text"
                     }
                 ],
-                "index": 146,
+                "index": 153,
                 "type": "allRequired",
                 "value": [
                     {
@@ -2810,7 +2992,7 @@
                         "operator": "startwith_text"
                     }
                 ],
-                "index": 147,
+                "index": 154,
                 "type": "allRequired",
                 "value": [
                     {
@@ -2833,7 +3015,7 @@
                         "operator": "startwith_text"
                     }
                 ],
-                "index": 148,
+                "index": 155,
                 "type": "allRequired",
                 "value": [
                     {
@@ -2854,7 +3036,7 @@
                         "operator": "present"
                     }
                 ],
-                "index": 149,
+                "index": 156,
                 "reciproque": {
                     "code": "0",
                     "number": "455"
@@ -2885,7 +3067,7 @@
                         "operator": "contains_text"
                     }
                 ],
-                "index": 150,
+                "index": 157,
                 "type": "allRequired",
                 "value": [
                     {
@@ -2917,7 +3099,7 @@
                         "operator": "contains_text"
                     }
                 ],
-                "index": 151,
+                "index": 158,
                 "type": "oneRequired",
                 "value": [
                     {
@@ -2954,7 +3136,7 @@
                         "operator": "equals_text"
                     }
                 ],
-                "index": 152,
+                "index": 159,
                 "type": "allRequired",
                 "value": [
                     {
@@ -2982,7 +3164,7 @@
                         "operator": "not_equals_text"
                     }
                 ],
-                "index": 153,
+                "index": 160,
                 "type": "allRequired",
                 "value": [
                     {
@@ -3008,7 +3190,7 @@
                         "operator": "presente"
                     }
                 ],
-                "index": 154,
+                "index": 161,
                 "reciproque": {
                     "code": "0",
                     "number": "451"
@@ -3037,7 +3219,7 @@
                         "operator": "not_presente"
                     }
                 ],
-                "index": 155,
+                "index": 162,
                 "reciproque": {
                     "code": "0",
                     "number": "451"
@@ -3062,7 +3244,7 @@
                 "type": "index",
                 "numRuleExcell": 117,
                 "message": "Zone 328 : revoir la valeur des indicateurs",
-                "index": 156
+                "index": 163
             },
             {
                 "ind1": "",
@@ -3074,7 +3256,7 @@
                 "type": "exclude",
                 "numRuleExcell": 147,
                 "message": "Zone 456 incompatible avec le type de thèse (reproduction)",
-                "index": 157
+                "index": 164
             }
         ]
     },
@@ -3086,40 +3268,40 @@
                 "code": "a",
                 "message": "Zone 230 : corriger le poids en Ko",
                 "number": 230,
-                "index": 158
+                "index": 165
             },
             {
                 "regex": "(?:(?!,).)+",
                 "code": "a",
                 "message": "Zone 230 : corriger le poids en Ko",
                 "number": 230,
-                "index": 159
+                "index": 166
             },
             {
                 "regex": "(?:(?!X Ko)(?!X ko)(?!x Ko)(?!x ko).)+",
                 "code": "a",
                 "message": "Zone 230 : corriger le poids en Ko",
                 "number": 230,
-                "index": 160
+                "index": 167
             },
             {
                 "code": "a",
                 "message": "230$a ne doit pas contenir le caractère ?",
-                "index": 161,
+                "index": 168,
                 "number": "230",
                 "regex": "(?:(?!\\?).)+"
             },
             {
                 "code": "a",
                 "message": "307$a ne doit pas contenir le caractère ?",
-                "index": 162,
+                "index": 169,
                 "number": "307",
                 "regex": "(?:(?!\\?).)+"
             },
             {
                 "code": "u",
                 "message": "856$u ne doit pas contenir URL",
-                "index": 163,
+                "index": 170,
                 "number": "856",
                 "regex": "(?:(?!URL).)+"
             },
@@ -3128,63 +3310,63 @@
                 "code": "d",
                 "message": "Zone 339 : corriger avec l'année de mise en ligne",
                 "number": "339",
-                "index": 164
+                "index": 171
             },
             {
-                "regex": "^((?!X vues).)*$",
+                "regex": "^((?!X vues)(?!x vues).)*$",
                 "code": "a",
                 "message": "Zone 230 à compléter",
                 "number": "230",
-                "index": 165
+                "index": 172
             },
             {
-                "regex": "^((?!est de : X pages).)*$",
+                "regex": "^((?!est de : X pages)(?!est de : x pages).)*$",
                 "code": "a",
                 "message": "Zone 307 à compléter",
                 "number": "307",
-                "index": 166
+                "index": 173
             },
             {
                 "regex": "^((?!AAAA-MM-JJ).)*$",
                 "code": "a",
                 "message": "Zone 303 à compléter",
                 "number": "303",
-                "index": 167
+                "index": 174
             },
             {
                 "regex": "^(?!Note sur l'édition et l'histoire bibliographique).*$",
                 "code": "a",
                 "message": "Zone 305 générique à remplacer-supprimer",
                 "number": "305",
-                "index": 168
+                "index": 175
             },
             {
                 "regex": "^(?!Reproduction numérique de l'édition de LIEU : EDITEUR, DATE).*$",
                 "code": "a",
                 "message": "Zone 324 à compléter",
                 "number": "324",
-                "index": 169
+                "index": 176
             },
             {
                 "regex": "^((?!fichier au\\(x\\) format\\(s\\)…).)*$",
                 "code": "a",
                 "message": "Zone 337 à compléter",
                 "number": "337",
-                "index": 170
+                "index": 177
             },
             {
                 "regex": "^((?!Texte du lien).)*$",
                 "code": "2",
                 "message": "Zone 305$2 générique à remplacer-supprimer",
                 "number": "856",
-                "index": 171
+                "index": 178
             },
             {
-                "regex": "^((?!Format).)*$",
+                "regex": "^((?!Format)(?!format).)*$",
                 "code": "q",
                 "message": "Zone 856$q : renseigner le format",
                 "number": "856",
-                "index": 172
+                "index": 179
             }
         ],
         "ConditionDependance": [
@@ -3203,7 +3385,7 @@
                     "code": "a",
                     "number": "225"
                 },
-                "index": 173,
+                "index": 180,
                 "field2": {
                     "code": "t",
                     "number": "410"
@@ -3225,7 +3407,7 @@
                     "code": "a",
                     "number": "225"
                 },
-                "index": 174,
+                "index": 181,
                 "field2": {
                     "code": "t",
                     "number": "410"
@@ -3245,7 +3427,7 @@
                     "code": "d",
                     "number": "455"
                 },
-                "index": 175,
+                "index": 182,
                 "field2": {
                     "code": "a",
                     "pos": [
@@ -3259,7 +3441,41 @@
         ],
         "idRef": [],
         "ConditionMatching": [
-
+            {
+                "message": "Si 105 $a 5e position en commençant par la fin = 1 alors il faut aussi une 608 $302886431XActes de congrès",
+                "number": 608,
+                "condition": [
+                    {
+                        "string": [
+                            "1"
+                        ],
+                        "code": "a",
+                        "pos": [
+                           5
+                        ],
+                        "number": "105",
+                        "operator": "count_from_end"
+                    }
+                ],
+                "index": 334,
+                "values": [
+                    {
+                        "subFieldRequired": true,
+                        "code": "3",
+                        "message": "",
+                        "number": 608,
+                        "regex": "^02886431X$"
+                    },
+                    {
+                        "subFieldRequired": true,
+                        "code": "a",
+                        "message": "",
+                        "number": 608,
+                        "regex": "^Actes de congrès$"
+                    }
+                ],
+                "type": "allRequired"
+            },
             {
                 "message": "Zones 7XX : code fonction, vérifier qu il s agit d un éditeur scientifique ou d un directeur de publication ?",
                 "number": 214,
@@ -3270,230 +3486,6 @@
                         ],
                         "code": "4",
                         "number": 700,
-                        "operator": "equals_text"
-                    }
-                ],
-                "index": 176,
-                "values": [
-                    {
-                        "subFieldRequired": false,
-                        "code": "f",
-                        "message": "",
-                        "number": 200,
-                        "regex": "(?:(?!ed.)(?!edited)(?!edit).)+"
-                    },
-                    {
-                        "subFieldRequired": false,
-                        "code": "g",
-                        "message": "",
-                        "number": 200,
-                        "regex": "(?:(?!ed.)(?!edited)(?!edit).)+"
-                    }
-                ],
-                "type": "allRequired"
-            },
-            {
-                "message": "Zones 7XX : code fonction, vérifier qu il s agit d un éditeur scientifique ou d un directeur de publication ?",
-                "number": 214,
-                "condition": [
-                    {
-                        "string": [
-                            "340"
-                        ],
-                        "code": "4",
-                        "number": 701,
-                        "operator": "equals_text"
-                    }
-                ],
-                "index": 177,
-                "values": [
-                    {
-                        "subFieldRequired": false,
-                        "code": "f",
-                        "message": "",
-                        "number": 200,
-                        "regex": "(?:(?!ed.)(?!edited)(?!edit).)+"
-                    },
-                    {
-                        "subFieldRequired": false,
-                        "code": "g",
-                        "message": "",
-                        "number": 200,
-                        "regex": "(?:(?!ed.)(?!edited)(?!edit).)+"
-                    }
-                ],
-                "type": "allRequired"
-            },
-            {
-                "message": "Zones 7XX : code fonction, vérifier qu il s agit d un éditeur scientifique ou d un directeur de publication ?",
-                "number": 214,
-                "condition": [
-                    {
-                        "string": [
-                            "340"
-                        ],
-                        "code": "4",
-                        "number": 710,
-                        "operator": "equals_text"
-                    }
-                ],
-                "index": 178,
-                "values": [
-                    {
-                        "subFieldRequired": false,
-                        "code": "f",
-                        "message": "",
-                        "number": 200,
-                        "regex": "(?:(?!ed.)(?!edited)(?!edit).)+"
-                    },
-                    {
-                        "subFieldRequired": false,
-                        "code": "g",
-                        "message": "",
-                        "number": 200,
-                        "regex": "(?:(?!ed.)(?!edited)(?!edit).)+"
-                    }
-                ],
-                "type": "allRequired"
-            },
-            {
-                "message": "Zones 7XX : code fonction, vérifier qu il s agit d un éditeur scientifique ou d un directeur de publication ?",
-                "number": 214,
-                "condition": [
-                    {
-                        "string": [
-                            "340"
-                        ],
-                        "code": "4",
-                        "number": 711,
-                        "operator": "equals_text"
-                    }
-                ],
-                "index": 179,
-                "values": [
-                    {
-                        "subFieldRequired": false,
-                        "code": "f",
-                        "message": "",
-                        "number": 200,
-                        "regex": "(?:(?!ed.)(?!edited)(?!edit).)+"
-                    },
-                    {
-                        "subFieldRequired": false,
-                        "code": "g",
-                        "message": "",
-                        "number": 200,
-                        "regex": "(?:(?!ed.)(?!edited)(?!edit).)+"
-                    }
-                ],
-                "type": "allRequired"
-            },
-            {
-                "message": "Zones 7XX : code fonction, vérifier qu il s agit d un éditeur scientifique ou d un directeur de publication ?",
-                "number": 214,
-                "condition": [
-                    {
-                        "string": [
-                            "340"
-                        ],
-                        "code": "4",
-                        "number": 720,
-                        "operator": "equals_text"
-                    }
-                ],
-                "index": 180,
-                "values": [
-                    {
-                        "subFieldRequired": false,
-                        "code": "f",
-                        "message": "",
-                        "number": 200,
-                        "regex": "(?:(?!ed.)(?!edited)(?!edit).)+"
-                    },
-                    {
-                        "subFieldRequired": false,
-                        "code": "g",
-                        "message": "",
-                        "number": 200,
-                        "regex": "(?:(?!ed.)(?!edited)(?!edit).)+"
-                    }
-                ],
-                "type": "allRequired"
-            },
-            {
-                "message": "Zones 7XX : code fonction, vérifier qu il s agit d un éditeur scientifique ou d un directeur de publication ?",
-                "number": 214,
-                "condition": [
-                    {
-                        "string": [
-                            "340"
-                        ],
-                        "code": "4",
-                        "number": 721,
-                        "operator": "equals_text"
-                    }
-                ],
-                "index": 181,
-                "values": [
-                    {
-                        "subFieldRequired": false,
-                        "code": "f",
-                        "message": "",
-                        "number": 200,
-                        "regex": "(?:(?!ed.)(?!edited)(?!edit).)+"
-                    },
-                    {
-                        "subFieldRequired": false,
-                        "code": "g",
-                        "message": "",
-                        "number": 200,
-                        "regex": "(?:(?!ed.)(?!edited)(?!edit).)+"
-                    }
-                ],
-                "type": "allRequired"
-            },
-            {
-                "message": "Zones 7XX : code fonction, vérifier qu il s agit d un éditeur scientifique ou d un directeur de publication ?",
-                "number": 214,
-                "condition": [
-                    {
-                        "string": [
-                            "340"
-                        ],
-                        "code": "4",
-                        "number": 730,
-                        "operator": "equals_text"
-                    }
-                ],
-                "index": 182,
-                "values": [
-                    {
-                        "subFieldRequired": false,
-                        "code": "f",
-                        "message": "",
-                        "number": 200,
-                        "regex": "(?:(?!ed.)(?!edited)(?!edit).)+"
-                    },
-                    {
-                        "subFieldRequired": false,
-                        "code": "g",
-                        "message": "",
-                        "number": 200,
-                        "regex": "(?:(?!ed.)(?!edited)(?!edit).)+"
-                    }
-                ],
-                "type": "allRequired"
-            },
-            {
-                "message": "Zones 7XX : code fonction, vérifier qu il s agit d un éditeur scientifique ou d un directeur de publication ?",
-                "number": 214,
-                "condition": [
-                    {
-                        "string": [
-                            "340"
-                        ],
-                        "code": "4",
-                        "number": 740,
                         "operator": "equals_text"
                     }
                 ],
@@ -3525,11 +3517,235 @@
                             "340"
                         ],
                         "code": "4",
-                        "number": 741,
+                        "number": 701,
                         "operator": "equals_text"
                     }
                 ],
                 "index": 184,
+                "values": [
+                    {
+                        "subFieldRequired": false,
+                        "code": "f",
+                        "message": "",
+                        "number": 200,
+                        "regex": "(?:(?!ed.)(?!edited)(?!edit).)+"
+                    },
+                    {
+                        "subFieldRequired": false,
+                        "code": "g",
+                        "message": "",
+                        "number": 200,
+                        "regex": "(?:(?!ed.)(?!edited)(?!edit).)+"
+                    }
+                ],
+                "type": "allRequired"
+            },
+            {
+                "message": "Zones 7XX : code fonction, vérifier qu il s agit d un éditeur scientifique ou d un directeur de publication ?",
+                "number": 214,
+                "condition": [
+                    {
+                        "string": [
+                            "340"
+                        ],
+                        "code": "4",
+                        "number": 710,
+                        "operator": "equals_text"
+                    }
+                ],
+                "index": 185,
+                "values": [
+                    {
+                        "subFieldRequired": false,
+                        "code": "f",
+                        "message": "",
+                        "number": 200,
+                        "regex": "(?:(?!ed.)(?!edited)(?!edit).)+"
+                    },
+                    {
+                        "subFieldRequired": false,
+                        "code": "g",
+                        "message": "",
+                        "number": 200,
+                        "regex": "(?:(?!ed.)(?!edited)(?!edit).)+"
+                    }
+                ],
+                "type": "allRequired"
+            },
+            {
+                "message": "Zones 7XX : code fonction, vérifier qu il s agit d un éditeur scientifique ou d un directeur de publication ?",
+                "number": 214,
+                "condition": [
+                    {
+                        "string": [
+                            "340"
+                        ],
+                        "code": "4",
+                        "number": 711,
+                        "operator": "equals_text"
+                    }
+                ],
+                "index": 186,
+                "values": [
+                    {
+                        "subFieldRequired": false,
+                        "code": "f",
+                        "message": "",
+                        "number": 200,
+                        "regex": "(?:(?!ed.)(?!edited)(?!edit).)+"
+                    },
+                    {
+                        "subFieldRequired": false,
+                        "code": "g",
+                        "message": "",
+                        "number": 200,
+                        "regex": "(?:(?!ed.)(?!edited)(?!edit).)+"
+                    }
+                ],
+                "type": "allRequired"
+            },
+            {
+                "message": "Zones 7XX : code fonction, vérifier qu il s agit d un éditeur scientifique ou d un directeur de publication ?",
+                "number": 214,
+                "condition": [
+                    {
+                        "string": [
+                            "340"
+                        ],
+                        "code": "4",
+                        "number": 720,
+                        "operator": "equals_text"
+                    }
+                ],
+                "index": 187,
+                "values": [
+                    {
+                        "subFieldRequired": false,
+                        "code": "f",
+                        "message": "",
+                        "number": 200,
+                        "regex": "(?:(?!ed.)(?!edited)(?!edit).)+"
+                    },
+                    {
+                        "subFieldRequired": false,
+                        "code": "g",
+                        "message": "",
+                        "number": 200,
+                        "regex": "(?:(?!ed.)(?!edited)(?!edit).)+"
+                    }
+                ],
+                "type": "allRequired"
+            },
+            {
+                "message": "Zones 7XX : code fonction, vérifier qu il s agit d un éditeur scientifique ou d un directeur de publication ?",
+                "number": 214,
+                "condition": [
+                    {
+                        "string": [
+                            "340"
+                        ],
+                        "code": "4",
+                        "number": 721,
+                        "operator": "equals_text"
+                    }
+                ],
+                "index": 188,
+                "values": [
+                    {
+                        "subFieldRequired": false,
+                        "code": "f",
+                        "message": "",
+                        "number": 200,
+                        "regex": "(?:(?!ed.)(?!edited)(?!edit).)+"
+                    },
+                    {
+                        "subFieldRequired": false,
+                        "code": "g",
+                        "message": "",
+                        "number": 200,
+                        "regex": "(?:(?!ed.)(?!edited)(?!edit).)+"
+                    }
+                ],
+                "type": "allRequired"
+            },
+            {
+                "message": "Zones 7XX : code fonction, vérifier qu il s agit d un éditeur scientifique ou d un directeur de publication ?",
+                "number": 214,
+                "condition": [
+                    {
+                        "string": [
+                            "340"
+                        ],
+                        "code": "4",
+                        "number": 730,
+                        "operator": "equals_text"
+                    }
+                ],
+                "index": 189,
+                "values": [
+                    {
+                        "subFieldRequired": false,
+                        "code": "f",
+                        "message": "",
+                        "number": 200,
+                        "regex": "(?:(?!ed.)(?!edited)(?!edit).)+"
+                    },
+                    {
+                        "subFieldRequired": false,
+                        "code": "g",
+                        "message": "",
+                        "number": 200,
+                        "regex": "(?:(?!ed.)(?!edited)(?!edit).)+"
+                    }
+                ],
+                "type": "allRequired"
+            },
+            {
+                "message": "Zones 7XX : code fonction, vérifier qu il s agit d un éditeur scientifique ou d un directeur de publication ?",
+                "number": 214,
+                "condition": [
+                    {
+                        "string": [
+                            "340"
+                        ],
+                        "code": "4",
+                        "number": 740,
+                        "operator": "equals_text"
+                    }
+                ],
+                "index": 190,
+                "values": [
+                    {
+                        "subFieldRequired": false,
+                        "code": "f",
+                        "message": "",
+                        "number": 200,
+                        "regex": "(?:(?!ed.)(?!edited)(?!edit).)+"
+                    },
+                    {
+                        "subFieldRequired": false,
+                        "code": "g",
+                        "message": "",
+                        "number": 200,
+                        "regex": "(?:(?!ed.)(?!edited)(?!edit).)+"
+                    }
+                ],
+                "type": "allRequired"
+            },
+            {
+                "message": "Zones 7XX : code fonction, vérifier qu il s agit d un éditeur scientifique ou d un directeur de publication ?",
+                "number": 214,
+                "condition": [
+                    {
+                        "string": [
+                            "340"
+                        ],
+                        "code": "4",
+                        "number": 741,
+                        "operator": "equals_text"
+                    }
+                ],
+                "index": 191,
                 "values": [
                     {
                         "subFieldRequired": false,
@@ -3560,7 +3776,7 @@
                         "ind2": "4"
                     }
                 ],
-                "index": 185,
+                "index": 192,
                 "values": [
                     {
                         "subFieldRequired": true,
@@ -3584,7 +3800,7 @@
                         "ind2": "0"
                     }
                 ],
-                "index": 186,
+                "index": 193,
                 "values": [
                     {
                         "subFieldRequired": true,
@@ -3616,7 +3832,7 @@
                         "operator": "startwith_text"
                     }
                 ],
-                "index": 187,
+                "index": 194,
                 "values": [
                     {
                         "subFieldRequired": true,
@@ -3646,7 +3862,7 @@
                         "operator": "not_startwith_text"
                     }
                 ],
-                "index": 338,
+                "index": 195,
                 "values": [
                     {
                         "subFieldRequired": true,
@@ -3671,7 +3887,7 @@
                         "operator": "startwith_text"
                     }
                 ],
-                "index": 188,
+                "index": 196,
                 "values": [
                     {
                         "subFieldRequired": true,
@@ -3701,14 +3917,14 @@
                         "operator": "presente"
                     }
                 ],
-                "index": 189,
+                "index": 197,
                 "values": [
                     {
                         "subFieldRequired": true,
                         "code": "a",
                         "message": "",
                         "number": "105",
-                        "regex": "^(.{3}v|.{4}v|.{5}v|.{6}v).*$"
+                        "regex": "^.*v.*$"
                     }
                 ],
                 "reciproque": {
@@ -3722,7 +3938,7 @@
                 "message": "Zones 214 : garder l'ordre des indicateurs",
                 "number": "214",
                 "orderBy": "ind2",
-                "index": 190
+                "index": 198
             }
         ],
         "compte": [],
@@ -3740,7 +3956,7 @@
                         "ind2": ""
                     }
                 ],
-                "index": 191,
+                "index": 199,
                 "type": "allRequired",
                 "value": [
                     {
@@ -3762,7 +3978,7 @@
                         "ind2": ""
                     }
                 ],
-                "index": 192,
+                "index": 200,
                 "type": "allRequired",
                 "value": [
                     {
@@ -3784,7 +4000,7 @@
                         "ind2": ""
                     }
                 ],
-                "index": 193,
+                "index": 201,
                 "type": "allRequired",
                 "value": [
                     {
@@ -3806,7 +4022,7 @@
                         "ind2": ""
                     }
                 ],
-                "index": 194,
+                "index": 202,
                 "type": "allRequired",
                 "value": [
                     {
@@ -3828,7 +4044,7 @@
                         "ind2": ""
                     }
                 ],
-                "index": 195,
+                "index": 203,
                 "type": "allRequired",
                 "value": [
                     {
@@ -3856,7 +4072,7 @@
                         "operator": "presente"
                     }
                 ],
-                "index": 196,
+                "index": 204,
                 "type": "oneRequired",
                 "value": [
                     {
@@ -3889,7 +4105,7 @@
                         "operator": "not_presente"
                     }
                 ],
-                "index": 197,
+                "index": 205,
                 "type": "allRequired",
                 "value": [
                     {
@@ -3917,7 +4133,7 @@
                         "operator": "startwith_text"
                     }
                 ],
-                "index": 198,
+                "index": 206,
                 "type": "allRequired",
                 "value": [
                     {
@@ -3938,7 +4154,7 @@
                         "operator": "presente"
                     }
                 ],
-                "index": 199,
+                "index": 207,
                 "reciproque": {
                     "code": "0",
                     "number": "455"
@@ -3968,7 +4184,7 @@
                         "operator": "startwith_text"
                     }
                 ],
-                "index": 200,
+                "index": 208,
                 "type": "allRequired",
                 "value": [
                     {
@@ -3991,7 +4207,7 @@
                         "operator": "startwith_text"
                     }
                 ],
-                "index": 201,
+                "index": 209,
                 "type": "allRequired",
                 "value": [
                     {
@@ -4014,7 +4230,7 @@
                         "operator": "startwith_text"
                     }
                 ],
-                "index": 202,
+                "index": 210,
                 "type": "allRequired",
                 "value": [
                     {
@@ -4037,7 +4253,7 @@
                         "operator": "startwith_text"
                     }
                 ],
-                "index": 203,
+                "index": 211,
                 "type": "allRequired",
                 "value": [
                     {
@@ -4060,7 +4276,7 @@
                         "operator": "startwith_text"
                     }
                 ],
-                "index": 204,
+                "index": 212,
                 "type": "allRequired",
                 "value": [
                     {
@@ -4083,7 +4299,7 @@
                         "operator": "startwith_text"
                     }
                 ],
-                "index": 205,
+                "index": 213,
                 "type": "allRequired",
                 "value": [
                     {
@@ -4106,7 +4322,7 @@
                         "operator": "startwith_text"
                     }
                 ],
-                "index": 206,
+                "index": 214,
                 "type": "allRequired",
                 "value": [
                     {
@@ -4130,7 +4346,7 @@
                 "type": "required",
                 "numRuleExcell": 155,
                 "message": "Ressource électronique : doit contenir une zone 303",
-                "index": 207
+                "index": 215
             },
             {
                 "ind1": "",
@@ -4142,7 +4358,7 @@
                 "type": "required",
                 "numRuleExcell": 156,
                 "message": "Ressource électronique : doit contenir une zone 339",
-                "index": 208
+                "index": 216
             }
         ]
     },
@@ -4170,210 +4386,18 @@
                         "operator": "startwith_text"
                     }
                 ],
-                "index": 209
-            },
-            {
-                "message": "Zones 6XX doivent être liées à une notice d'autorité RAMEAU",
-                "precede": {
-                    "precedant": "3",
-                    "depart": "a"
-                },
-                "number": "607",
-                "condition": [
-                    {
-                        "code": "a",
-                        "number": "607",
-                        "operator": "presente"
-                    },
-                    {
-                        "string": [
-                            "rameau"
-                        ],
-                        "code": "2",
-                        "number": "607",
-                        "operator": "startwith_text"
-                    }
-                ],
-                "index": 210
-            },
-            {
-                "message": "Zones 6XX doivent être liées à une notice d'autorité RAMEAU",
-                "precede": {
-                    "precedant": "3",
-                    "depart": "a"
-                },
-                "number": "606",
-                "condition": [
-                    {
-                        "code": "a",
-                        "number": "606",
-                        "operator": "presente"
-                    },
-                    {
-                        "string": [
-                            "rameau"
-                        ],
-                        "code": "2",
-                        "number": "606",
-                        "operator": "startwith_text"
-                    }
-                ],
-                "index": 211
-            },
-            {
-                "message": "Zones 6XX doivent être liées à une notice d'autorité RAMEAU",
-                "precede": {
-                    "precedant": "3",
-                    "depart": "a"
-                },
-                "number": "605",
-                "condition": [
-                    {
-                        "code": "a",
-                        "number": "605",
-                        "operator": "presente"
-                    },
-                    {
-                        "string": [
-                            "rameau"
-                        ],
-                        "code": "2",
-                        "number": "605",
-                        "operator": "startwith_text"
-                    }
-                ],
-                "index": 212
-            },
-            {
-                "message": "Zones 6XX doivent être liées à une notice d'autorité RAMEAU",
-                "precede": {
-                    "precedant": "3",
-                    "depart": "a"
-                },
-                "number": "604",
-                "condition": [
-                    {
-                        "code": "a",
-                        "number": "604",
-                        "operator": "presente"
-                    },
-                    {
-                        "string": [
-                            "rameau"
-                        ],
-                        "code": "2",
-                        "number": "604",
-                        "operator": "startwith_text"
-                    }
-                ],
-                "index": 213
-            },
-            {
-                "message": "Zones 6XX doivent être liées à une notice d'autorité RAMEAU",
-                "precede": {
-                    "precedant": "3",
-                    "depart": "a"
-                },
-                "number": "602",
-                "condition": [
-                    {
-                        "code": "a",
-                        "number": "602",
-                        "operator": "presente"
-                    },
-                    {
-                        "string": [
-                            "rameau"
-                        ],
-                        "code": "2",
-                        "number": "602",
-                        "operator": "startwith_text"
-                    }
-                ],
-                "index": 214
-            },
-            {
-                "message": "Zones 6XX doivent être liées à une notice d'autorité RAMEAU",
-                "precede": {
-                    "precedant": "3",
-                    "depart": "a"
-                },
-                "number": "601",
-                "condition": [
-                    {
-                        "code": "a",
-                        "number": "601",
-                        "operator": "presente"
-                    },
-                    {
-                        "string": [
-                            "rameau"
-                        ],
-                        "code": "2",
-                        "number": "601",
-                        "operator": "startwith_text"
-                    }
-                ],
-                "index": 215
-            },
-            {
-                "message": "Zones 6XX doivent être liées à une notice d'autorité RAMEAU",
-                "precede": {
-                    "precedant": "3",
-                    "depart": "a"
-                },
-                "number": "600",
-                "condition": [
-                    {
-                        "code": "a",
-                        "number": "600",
-                        "operator": "presente"
-                    },
-                    {
-                        "string": [
-                            "rameau"
-                        ],
-                        "code": "2",
-                        "number": "600",
-                        "operator": "startwith_text"
-                    }
-                ],
-                "index": 216
-            },
-            {
-                "message": "Zones 6XX doivent être liées à une notice d'autorité RAMEAU",
-                "precede": {
-                    "precedant": "3",
-                    "depart": "x"
-                },
-                "number": "608",
-                "condition": [
-                    {
-                        "code": "x",
-                        "number": "608",
-                        "operator": "presente"
-                    },
-                    {
-                        "string": [
-                            "rameau"
-                        ],
-                        "code": "2",
-                        "number": "608",
-                        "operator": "startwith_text"
-                    }
-                ],
                 "index": 217
             },
             {
                 "message": "Zones 6XX doivent être liées à une notice d'autorité RAMEAU",
                 "precede": {
                     "precedant": "3",
-                    "depart": "x"
+                    "depart": "a"
                 },
                 "number": "607",
                 "condition": [
                     {
-                        "code": "x",
+                        "code": "a",
                         "number": "607",
                         "operator": "presente"
                     },
@@ -4392,12 +4416,12 @@
                 "message": "Zones 6XX doivent être liées à une notice d'autorité RAMEAU",
                 "precede": {
                     "precedant": "3",
-                    "depart": "x"
+                    "depart": "a"
                 },
                 "number": "606",
                 "condition": [
                     {
-                        "code": "x",
+                        "code": "a",
                         "number": "606",
                         "operator": "presente"
                     },
@@ -4416,12 +4440,12 @@
                 "message": "Zones 6XX doivent être liées à une notice d'autorité RAMEAU",
                 "precede": {
                     "precedant": "3",
-                    "depart": "x"
+                    "depart": "a"
                 },
                 "number": "605",
                 "condition": [
                     {
-                        "code": "x",
+                        "code": "a",
                         "number": "605",
                         "operator": "presente"
                     },
@@ -4440,12 +4464,12 @@
                 "message": "Zones 6XX doivent être liées à une notice d'autorité RAMEAU",
                 "precede": {
                     "precedant": "3",
-                    "depart": "x"
+                    "depart": "a"
                 },
                 "number": "604",
                 "condition": [
                     {
-                        "code": "x",
+                        "code": "a",
                         "number": "604",
                         "operator": "presente"
                     },
@@ -4464,12 +4488,12 @@
                 "message": "Zones 6XX doivent être liées à une notice d'autorité RAMEAU",
                 "precede": {
                     "precedant": "3",
-                    "depart": "x"
+                    "depart": "a"
                 },
                 "number": "602",
                 "condition": [
                     {
-                        "code": "x",
+                        "code": "a",
                         "number": "602",
                         "operator": "presente"
                     },
@@ -4488,12 +4512,12 @@
                 "message": "Zones 6XX doivent être liées à une notice d'autorité RAMEAU",
                 "precede": {
                     "precedant": "3",
-                    "depart": "x"
+                    "depart": "a"
                 },
                 "number": "601",
                 "condition": [
                     {
-                        "code": "x",
+                        "code": "a",
                         "number": "601",
                         "operator": "presente"
                     },
@@ -4512,12 +4536,12 @@
                 "message": "Zones 6XX doivent être liées à une notice d'autorité RAMEAU",
                 "precede": {
                     "precedant": "3",
-                    "depart": "x"
+                    "depart": "a"
                 },
                 "number": "600",
                 "condition": [
                     {
-                        "code": "x",
+                        "code": "a",
                         "number": "600",
                         "operator": "presente"
                     },
@@ -4536,12 +4560,12 @@
                 "message": "Zones 6XX doivent être liées à une notice d'autorité RAMEAU",
                 "precede": {
                     "precedant": "3",
-                    "depart": "y"
+                    "depart": "x"
                 },
                 "number": "608",
                 "condition": [
                     {
-                        "code": "y",
+                        "code": "x",
                         "number": "608",
                         "operator": "presente"
                     },
@@ -4560,12 +4584,12 @@
                 "message": "Zones 6XX doivent être liées à une notice d'autorité RAMEAU",
                 "precede": {
                     "precedant": "3",
-                    "depart": "y"
+                    "depart": "x"
                 },
                 "number": "607",
                 "condition": [
                     {
-                        "code": "y",
+                        "code": "x",
                         "number": "607",
                         "operator": "presente"
                     },
@@ -4584,12 +4608,12 @@
                 "message": "Zones 6XX doivent être liées à une notice d'autorité RAMEAU",
                 "precede": {
                     "precedant": "3",
-                    "depart": "y"
+                    "depart": "x"
                 },
                 "number": "606",
                 "condition": [
                     {
-                        "code": "y",
+                        "code": "x",
                         "number": "606",
                         "operator": "presente"
                     },
@@ -4608,12 +4632,12 @@
                 "message": "Zones 6XX doivent être liées à une notice d'autorité RAMEAU",
                 "precede": {
                     "precedant": "3",
-                    "depart": "y"
+                    "depart": "x"
                 },
                 "number": "605",
                 "condition": [
                     {
-                        "code": "y",
+                        "code": "x",
                         "number": "605",
                         "operator": "presente"
                     },
@@ -4632,12 +4656,12 @@
                 "message": "Zones 6XX doivent être liées à une notice d'autorité RAMEAU",
                 "precede": {
                     "precedant": "3",
-                    "depart": "y"
+                    "depart": "x"
                 },
                 "number": "604",
                 "condition": [
                     {
-                        "code": "y",
+                        "code": "x",
                         "number": "604",
                         "operator": "presente"
                     },
@@ -4656,12 +4680,12 @@
                 "message": "Zones 6XX doivent être liées à une notice d'autorité RAMEAU",
                 "precede": {
                     "precedant": "3",
-                    "depart": "y"
+                    "depart": "x"
                 },
                 "number": "602",
                 "condition": [
                     {
-                        "code": "y",
+                        "code": "x",
                         "number": "602",
                         "operator": "presente"
                     },
@@ -4680,12 +4704,12 @@
                 "message": "Zones 6XX doivent être liées à une notice d'autorité RAMEAU",
                 "precede": {
                     "precedant": "3",
-                    "depart": "y"
+                    "depart": "x"
                 },
                 "number": "601",
                 "condition": [
                     {
-                        "code": "y",
+                        "code": "x",
                         "number": "601",
                         "operator": "presente"
                     },
@@ -4704,12 +4728,12 @@
                 "message": "Zones 6XX doivent être liées à une notice d'autorité RAMEAU",
                 "precede": {
                     "precedant": "3",
-                    "depart": "y"
+                    "depart": "x"
                 },
                 "number": "600",
                 "condition": [
                     {
-                        "code": "y",
+                        "code": "x",
                         "number": "600",
                         "operator": "presente"
                     },
@@ -4728,13 +4752,13 @@
                 "message": "Zones 6XX doivent être liées à une notice d'autorité RAMEAU",
                 "precede": {
                     "precedant": "3",
-                    "depart": "z"
+                    "depart": "y"
                 },
-                "number": "600",
+                "number": "608",
                 "condition": [
                     {
-                        "code": "z",
-                        "number": "600",
+                        "code": "y",
+                        "number": "608",
                         "operator": "presente"
                     },
                     {
@@ -4742,7 +4766,7 @@
                             "rameau"
                         ],
                         "code": "2",
-                        "number": "600",
+                        "number": "608",
                         "operator": "startwith_text"
                     }
                 ],
@@ -4752,13 +4776,13 @@
                 "message": "Zones 6XX doivent être liées à une notice d'autorité RAMEAU",
                 "precede": {
                     "precedant": "3",
-                    "depart": "z"
+                    "depart": "y"
                 },
-                "number": "601",
+                "number": "607",
                 "condition": [
                     {
-                        "code": "z",
-                        "number": "601",
+                        "code": "y",
+                        "number": "607",
                         "operator": "presente"
                     },
                     {
@@ -4766,7 +4790,7 @@
                             "rameau"
                         ],
                         "code": "2",
-                        "number": "601",
+                        "number": "607",
                         "operator": "startwith_text"
                     }
                 ],
@@ -4776,13 +4800,13 @@
                 "message": "Zones 6XX doivent être liées à une notice d'autorité RAMEAU",
                 "precede": {
                     "precedant": "3",
-                    "depart": "z"
+                    "depart": "y"
                 },
-                "number": "602",
+                "number": "606",
                 "condition": [
                     {
-                        "code": "z",
-                        "number": "602",
+                        "code": "y",
+                        "number": "606",
                         "operator": "presente"
                     },
                     {
@@ -4790,7 +4814,7 @@
                             "rameau"
                         ],
                         "code": "2",
-                        "number": "602",
+                        "number": "606",
                         "operator": "startwith_text"
                     }
                 ],
@@ -4800,13 +4824,13 @@
                 "message": "Zones 6XX doivent être liées à une notice d'autorité RAMEAU",
                 "precede": {
                     "precedant": "3",
-                    "depart": "z"
+                    "depart": "y"
                 },
-                "number": "604",
+                "number": "605",
                 "condition": [
                     {
-                        "code": "z",
-                        "number": "604",
+                        "code": "y",
+                        "number": "605",
                         "operator": "presente"
                     },
                     {
@@ -4814,7 +4838,7 @@
                             "rameau"
                         ],
                         "code": "2",
-                        "number": "604",
+                        "number": "605",
                         "operator": "startwith_text"
                     }
                 ],
@@ -4824,13 +4848,13 @@
                 "message": "Zones 6XX doivent être liées à une notice d'autorité RAMEAU",
                 "precede": {
                     "precedant": "3",
-                    "depart": "z"
+                    "depart": "y"
                 },
-                "number": "605",
+                "number": "604",
                 "condition": [
                     {
-                        "code": "z",
-                        "number": "605",
+                        "code": "y",
+                        "number": "604",
                         "operator": "presente"
                     },
                     {
@@ -4838,7 +4862,7 @@
                             "rameau"
                         ],
                         "code": "2",
-                        "number": "605",
+                        "number": "604",
                         "operator": "startwith_text"
                     }
                 ],
@@ -4848,13 +4872,13 @@
                 "message": "Zones 6XX doivent être liées à une notice d'autorité RAMEAU",
                 "precede": {
                     "precedant": "3",
-                    "depart": "z"
+                    "depart": "y"
                 },
-                "number": "606",
+                "number": "602",
                 "condition": [
                     {
-                        "code": "z",
-                        "number": "606",
+                        "code": "y",
+                        "number": "602",
                         "operator": "presente"
                     },
                     {
@@ -4862,7 +4886,7 @@
                             "rameau"
                         ],
                         "code": "2",
-                        "number": "606",
+                        "number": "602",
                         "operator": "startwith_text"
                     }
                 ],
@@ -4872,6 +4896,198 @@
                 "message": "Zones 6XX doivent être liées à une notice d'autorité RAMEAU",
                 "precede": {
                     "precedant": "3",
+                    "depart": "y"
+                },
+                "number": "601",
+                "condition": [
+                    {
+                        "code": "y",
+                        "number": "601",
+                        "operator": "presente"
+                    },
+                    {
+                        "string": [
+                            "rameau"
+                        ],
+                        "code": "2",
+                        "number": "601",
+                        "operator": "startwith_text"
+                    }
+                ],
+                "index": 239
+            },
+            {
+                "message": "Zones 6XX doivent être liées à une notice d'autorité RAMEAU",
+                "precede": {
+                    "precedant": "3",
+                    "depart": "y"
+                },
+                "number": "600",
+                "condition": [
+                    {
+                        "code": "y",
+                        "number": "600",
+                        "operator": "presente"
+                    },
+                    {
+                        "string": [
+                            "rameau"
+                        ],
+                        "code": "2",
+                        "number": "600",
+                        "operator": "startwith_text"
+                    }
+                ],
+                "index": 240
+            },
+            {
+                "message": "Zones 6XX doivent être liées à une notice d'autorité RAMEAU",
+                "precede": {
+                    "precedant": "3",
+                    "depart": "z"
+                },
+                "number": "600",
+                "condition": [
+                    {
+                        "code": "z",
+                        "number": "600",
+                        "operator": "presente"
+                    },
+                    {
+                        "string": [
+                            "rameau"
+                        ],
+                        "code": "2",
+                        "number": "600",
+                        "operator": "startwith_text"
+                    }
+                ],
+                "index": 241
+            },
+            {
+                "message": "Zones 6XX doivent être liées à une notice d'autorité RAMEAU",
+                "precede": {
+                    "precedant": "3",
+                    "depart": "z"
+                },
+                "number": "601",
+                "condition": [
+                    {
+                        "code": "z",
+                        "number": "601",
+                        "operator": "presente"
+                    },
+                    {
+                        "string": [
+                            "rameau"
+                        ],
+                        "code": "2",
+                        "number": "601",
+                        "operator": "startwith_text"
+                    }
+                ],
+                "index": 242
+            },
+            {
+                "message": "Zones 6XX doivent être liées à une notice d'autorité RAMEAU",
+                "precede": {
+                    "precedant": "3",
+                    "depart": "z"
+                },
+                "number": "602",
+                "condition": [
+                    {
+                        "code": "z",
+                        "number": "602",
+                        "operator": "presente"
+                    },
+                    {
+                        "string": [
+                            "rameau"
+                        ],
+                        "code": "2",
+                        "number": "602",
+                        "operator": "startwith_text"
+                    }
+                ],
+                "index": 243
+            },
+            {
+                "message": "Zones 6XX doivent être liées à une notice d'autorité RAMEAU",
+                "precede": {
+                    "precedant": "3",
+                    "depart": "z"
+                },
+                "number": "604",
+                "condition": [
+                    {
+                        "code": "z",
+                        "number": "604",
+                        "operator": "presente"
+                    },
+                    {
+                        "string": [
+                            "rameau"
+                        ],
+                        "code": "2",
+                        "number": "604",
+                        "operator": "startwith_text"
+                    }
+                ],
+                "index": 244
+            },
+            {
+                "message": "Zones 6XX doivent être liées à une notice d'autorité RAMEAU",
+                "precede": {
+                    "precedant": "3",
+                    "depart": "z"
+                },
+                "number": "605",
+                "condition": [
+                    {
+                        "code": "z",
+                        "number": "605",
+                        "operator": "presente"
+                    },
+                    {
+                        "string": [
+                            "rameau"
+                        ],
+                        "code": "2",
+                        "number": "605",
+                        "operator": "startwith_text"
+                    }
+                ],
+                "index": 245
+            },
+            {
+                "message": "Zones 6XX doivent être liées à une notice d'autorité RAMEAU",
+                "precede": {
+                    "precedant": "3",
+                    "depart": "z"
+                },
+                "number": "606",
+                "condition": [
+                    {
+                        "code": "z",
+                        "number": "606",
+                        "operator": "presente"
+                    },
+                    {
+                        "string": [
+                            "rameau"
+                        ],
+                        "code": "2",
+                        "number": "606",
+                        "operator": "startwith_text"
+                    }
+                ],
+                "index": 246
+            },
+            {
+                "message": "Zones 6XX doivent être liées à une notice d'autorité RAMEAU",
+                "precede": {
+                    "precedant": "3",
                     "depart": "z"
                 },
                 "number": "607",
@@ -4890,7 +5106,7 @@
                         "operator": "startwith_text"
                     }
                 ],
-                "index": 239
+                "index": 247
             },
             {
                 "message": "Zones 6XX doivent être liées à une notice d'autorité RAMEAU",
@@ -4908,198 +5124,6 @@
                     {
                         "string": [
                             "rameau"
-                        ],
-                        "code": "2",
-                        "number": "608",
-                        "operator": "startwith_text"
-                    }
-                ],
-                "index": 240
-            },
-            {
-                "message": "Zones 6XX doivent être liées à une notice d'autorité RAMEAU ou Fmesh",
-                "precede": {
-                    "precedant": "3",
-                    "depart": "a"
-                },
-                "number": "600",
-                "condition": [
-                    {
-                        "code": "a",
-                        "number": "600",
-                        "operator": "presente"
-                    },
-                    {
-                        "string": [
-                            "fmesh"
-                        ],
-                        "code": "2",
-                        "number": "600",
-                        "operator": "startwith_text"
-                    }
-                ],
-                "index": 241
-            },
-            {
-                "message": "Zones 6XX doivent être liées à une notice d'autorité RAMEAU ou Fmesh",
-                "precede": {
-                    "precedant": "3",
-                    "depart": "a"
-                },
-                "number": "601",
-                "condition": [
-                    {
-                        "code": "a",
-                        "number": "601",
-                        "operator": "presente"
-                    },
-                    {
-                        "string": [
-                            "fmesh"
-                        ],
-                        "code": "2",
-                        "number": "601",
-                        "operator": "startwith_text"
-                    }
-                ],
-                "index": 242
-            },
-            {
-                "message": "Zones 6XX doivent être liées à une notice d'autorité RAMEAU ou Fmesh",
-                "precede": {
-                    "precedant": "3",
-                    "depart": "a"
-                },
-                "number": "602",
-                "condition": [
-                    {
-                        "code": "a",
-                        "number": "602",
-                        "operator": "presente"
-                    },
-                    {
-                        "string": [
-                            "fmesh"
-                        ],
-                        "code": "2",
-                        "number": "602",
-                        "operator": "startwith_text"
-                    }
-                ],
-                "index": 243
-            },
-            {
-                "message": "Zones 6XX doivent être liées à une notice d'autorité RAMEAU ou Fmesh",
-                "precede": {
-                    "precedant": "3",
-                    "depart": "a"
-                },
-                "number": "604",
-                "condition": [
-                    {
-                        "code": "a",
-                        "number": "604",
-                        "operator": "presente"
-                    },
-                    {
-                        "string": [
-                            "fmesh"
-                        ],
-                        "code": "2",
-                        "number": "604",
-                        "operator": "startwith_text"
-                    }
-                ],
-                "index": 244
-            },
-            {
-                "message": "Zones 6XX doivent être liées à une notice d'autorité RAMEAU ou Fmesh",
-                "precede": {
-                    "precedant": "3",
-                    "depart": "a"
-                },
-                "number": "605",
-                "condition": [
-                    {
-                        "code": "a",
-                        "number": "605",
-                        "operator": "presente"
-                    },
-                    {
-                        "string": [
-                            "fmesh"
-                        ],
-                        "code": "2",
-                        "number": "605",
-                        "operator": "startwith_text"
-                    }
-                ],
-                "index": 245
-            },
-            {
-                "message": "Zones 6XX doivent être liées à une notice d'autorité RAMEAU ou Fmesh",
-                "precede": {
-                    "precedant": "3",
-                    "depart": "a"
-                },
-                "number": "606",
-                "condition": [
-                    {
-                        "code": "a",
-                        "number": "606",
-                        "operator": "presente"
-                    },
-                    {
-                        "string": [
-                            "fmesh"
-                        ],
-                        "code": "2",
-                        "number": "606",
-                        "operator": "startwith_text"
-                    }
-                ],
-                "index": 246
-            },
-            {
-                "message": "Zones 6XX doivent être liées à une notice d'autorité RAMEAU ou Fmesh",
-                "precede": {
-                    "precedant": "3",
-                    "depart": "a"
-                },
-                "number": "607",
-                "condition": [
-                    {
-                        "code": "a",
-                        "number": "607",
-                        "operator": "presente"
-                    },
-                    {
-                        "string": [
-                            "fmesh"
-                        ],
-                        "code": "2",
-                        "number": "607",
-                        "operator": "startwith_text"
-                    }
-                ],
-                "index": 247
-            },
-            {
-                "message": "Zones 6XX doivent être liées à une notice d'autorité RAMEAU ou Fmesh",
-                "precede": {
-                    "precedant": "3",
-                    "depart": "a"
-                },
-                "number": "608",
-                "condition": [
-                    {
-                        "code": "a",
-                        "number": "608",
-                        "operator": "presente"
-                    },
-                    {
-                        "string": [
-                            "fmesh"
                         ],
                         "code": "2",
                         "number": "608",
@@ -5112,12 +5136,12 @@
                 "message": "Zones 6XX doivent être liées à une notice d'autorité RAMEAU ou Fmesh",
                 "precede": {
                     "precedant": "3",
-                    "depart": "x"
+                    "depart": "a"
                 },
                 "number": "600",
                 "condition": [
                     {
-                        "code": "x",
+                        "code": "a",
                         "number": "600",
                         "operator": "presente"
                     },
@@ -5136,12 +5160,12 @@
                 "message": "Zones 6XX doivent être liées à une notice d'autorité RAMEAU ou Fmesh",
                 "precede": {
                     "precedant": "3",
-                    "depart": "x"
+                    "depart": "a"
                 },
                 "number": "601",
                 "condition": [
                     {
-                        "code": "x",
+                        "code": "a",
                         "number": "601",
                         "operator": "presente"
                     },
@@ -5160,12 +5184,12 @@
                 "message": "Zones 6XX doivent être liées à une notice d'autorité RAMEAU ou Fmesh",
                 "precede": {
                     "precedant": "3",
-                    "depart": "x"
+                    "depart": "a"
                 },
                 "number": "602",
                 "condition": [
                     {
-                        "code": "x",
+                        "code": "a",
                         "number": "602",
                         "operator": "presente"
                     },
@@ -5184,12 +5208,12 @@
                 "message": "Zones 6XX doivent être liées à une notice d'autorité RAMEAU ou Fmesh",
                 "precede": {
                     "precedant": "3",
-                    "depart": "x"
+                    "depart": "a"
                 },
                 "number": "604",
                 "condition": [
                     {
-                        "code": "x",
+                        "code": "a",
                         "number": "604",
                         "operator": "presente"
                     },
@@ -5208,12 +5232,12 @@
                 "message": "Zones 6XX doivent être liées à une notice d'autorité RAMEAU ou Fmesh",
                 "precede": {
                     "precedant": "3",
-                    "depart": "x"
+                    "depart": "a"
                 },
                 "number": "605",
                 "condition": [
                     {
-                        "code": "x",
+                        "code": "a",
                         "number": "605",
                         "operator": "presente"
                     },
@@ -5232,12 +5256,12 @@
                 "message": "Zones 6XX doivent être liées à une notice d'autorité RAMEAU ou Fmesh",
                 "precede": {
                     "precedant": "3",
-                    "depart": "x"
+                    "depart": "a"
                 },
                 "number": "606",
                 "condition": [
                     {
-                        "code": "x",
+                        "code": "a",
                         "number": "606",
                         "operator": "presente"
                     },
@@ -5256,12 +5280,12 @@
                 "message": "Zones 6XX doivent être liées à une notice d'autorité RAMEAU ou Fmesh",
                 "precede": {
                     "precedant": "3",
-                    "depart": "x"
+                    "depart": "a"
                 },
                 "number": "607",
                 "condition": [
                     {
-                        "code": "x",
+                        "code": "a",
                         "number": "607",
                         "operator": "presente"
                     },
@@ -5280,12 +5304,12 @@
                 "message": "Zones 6XX doivent être liées à une notice d'autorité RAMEAU ou Fmesh",
                 "precede": {
                     "precedant": "3",
-                    "depart": "x"
+                    "depart": "a"
                 },
                 "number": "608",
                 "condition": [
                     {
-                        "code": "x",
+                        "code": "a",
                         "number": "608",
                         "operator": "presente"
                     },
@@ -5304,12 +5328,12 @@
                 "message": "Zones 6XX doivent être liées à une notice d'autorité RAMEAU ou Fmesh",
                 "precede": {
                     "precedant": "3",
-                    "depart": "y"
+                    "depart": "x"
                 },
                 "number": "600",
                 "condition": [
                     {
-                        "code": "y",
+                        "code": "x",
                         "number": "600",
                         "operator": "presente"
                     },
@@ -5328,6 +5352,198 @@
                 "message": "Zones 6XX doivent être liées à une notice d'autorité RAMEAU ou Fmesh",
                 "precede": {
                     "precedant": "3",
+                    "depart": "x"
+                },
+                "number": "601",
+                "condition": [
+                    {
+                        "code": "x",
+                        "number": "601",
+                        "operator": "presente"
+                    },
+                    {
+                        "string": [
+                            "fmesh"
+                        ],
+                        "code": "2",
+                        "number": "601",
+                        "operator": "startwith_text"
+                    }
+                ],
+                "index": 258
+            },
+            {
+                "message": "Zones 6XX doivent être liées à une notice d'autorité RAMEAU ou Fmesh",
+                "precede": {
+                    "precedant": "3",
+                    "depart": "x"
+                },
+                "number": "602",
+                "condition": [
+                    {
+                        "code": "x",
+                        "number": "602",
+                        "operator": "presente"
+                    },
+                    {
+                        "string": [
+                            "fmesh"
+                        ],
+                        "code": "2",
+                        "number": "602",
+                        "operator": "startwith_text"
+                    }
+                ],
+                "index": 259
+            },
+            {
+                "message": "Zones 6XX doivent être liées à une notice d'autorité RAMEAU ou Fmesh",
+                "precede": {
+                    "precedant": "3",
+                    "depart": "x"
+                },
+                "number": "604",
+                "condition": [
+                    {
+                        "code": "x",
+                        "number": "604",
+                        "operator": "presente"
+                    },
+                    {
+                        "string": [
+                            "fmesh"
+                        ],
+                        "code": "2",
+                        "number": "604",
+                        "operator": "startwith_text"
+                    }
+                ],
+                "index": 260
+            },
+            {
+                "message": "Zones 6XX doivent être liées à une notice d'autorité RAMEAU ou Fmesh",
+                "precede": {
+                    "precedant": "3",
+                    "depart": "x"
+                },
+                "number": "605",
+                "condition": [
+                    {
+                        "code": "x",
+                        "number": "605",
+                        "operator": "presente"
+                    },
+                    {
+                        "string": [
+                            "fmesh"
+                        ],
+                        "code": "2",
+                        "number": "605",
+                        "operator": "startwith_text"
+                    }
+                ],
+                "index": 261
+            },
+            {
+                "message": "Zones 6XX doivent être liées à une notice d'autorité RAMEAU ou Fmesh",
+                "precede": {
+                    "precedant": "3",
+                    "depart": "x"
+                },
+                "number": "606",
+                "condition": [
+                    {
+                        "code": "x",
+                        "number": "606",
+                        "operator": "presente"
+                    },
+                    {
+                        "string": [
+                            "fmesh"
+                        ],
+                        "code": "2",
+                        "number": "606",
+                        "operator": "startwith_text"
+                    }
+                ],
+                "index": 262
+            },
+            {
+                "message": "Zones 6XX doivent être liées à une notice d'autorité RAMEAU ou Fmesh",
+                "precede": {
+                    "precedant": "3",
+                    "depart": "x"
+                },
+                "number": "607",
+                "condition": [
+                    {
+                        "code": "x",
+                        "number": "607",
+                        "operator": "presente"
+                    },
+                    {
+                        "string": [
+                            "fmesh"
+                        ],
+                        "code": "2",
+                        "number": "607",
+                        "operator": "startwith_text"
+                    }
+                ],
+                "index": 263
+            },
+            {
+                "message": "Zones 6XX doivent être liées à une notice d'autorité RAMEAU ou Fmesh",
+                "precede": {
+                    "precedant": "3",
+                    "depart": "x"
+                },
+                "number": "608",
+                "condition": [
+                    {
+                        "code": "x",
+                        "number": "608",
+                        "operator": "presente"
+                    },
+                    {
+                        "string": [
+                            "fmesh"
+                        ],
+                        "code": "2",
+                        "number": "608",
+                        "operator": "startwith_text"
+                    }
+                ],
+                "index": 264
+            },
+            {
+                "message": "Zones 6XX doivent être liées à une notice d'autorité RAMEAU ou Fmesh",
+                "precede": {
+                    "precedant": "3",
+                    "depart": "y"
+                },
+                "number": "600",
+                "condition": [
+                    {
+                        "code": "y",
+                        "number": "600",
+                        "operator": "presente"
+                    },
+                    {
+                        "string": [
+                            "fmesh"
+                        ],
+                        "code": "2",
+                        "number": "600",
+                        "operator": "startwith_text"
+                    }
+                ],
+                "index": 265
+            },
+            {
+                "message": "Zones 6XX doivent être liées à une notice d'autorité RAMEAU ou Fmesh",
+                "precede": {
+                    "precedant": "3",
                     "depart": "y"
                 },
                 "number": "601",
@@ -5346,7 +5562,7 @@
                         "operator": "startwith_text"
                     }
                 ],
-                "index": 258
+                "index": 266
             },
             {
                 "message": "Zones 6XX doivent être liées à une notice d'autorité RAMEAU ou Fmesh",
@@ -5370,7 +5586,7 @@
                         "operator": "startwith_text"
                     }
                 ],
-                "index": 259
+                "index": 267
             },
             {
                 "message": "Zones 6XX doivent être liées à une notice d'autorité RAMEAU ou Fmesh",
@@ -5394,7 +5610,7 @@
                         "operator": "startwith_text"
                     }
                 ],
-                "index": 260
+                "index": 268
             },
             {
                 "message": "Zones 6XX doivent être liées à une notice d'autorité RAMEAU ou Fmesh",
@@ -5418,7 +5634,7 @@
                         "operator": "startwith_text"
                     }
                 ],
-                "index": 261
+                "index": 269
             },
             {
                 "message": "Zones 6XX doivent être liées à une notice d'autorité RAMEAU ou Fmesh",
@@ -5442,7 +5658,7 @@
                         "operator": "startwith_text"
                     }
                 ],
-                "index": 262
+                "index": 270
             },
             {
                 "message": "Zones 6XX doivent être liées à une notice d'autorité RAMEAU ou Fmesh",
@@ -5466,7 +5682,7 @@
                         "operator": "startwith_text"
                     }
                 ],
-                "index": 263
+                "index": 271
             },
             {
                 "message": "Zones 6XX doivent être liées à une notice d'autorité RAMEAU ou Fmesh",
@@ -5490,7 +5706,7 @@
                         "operator": "startwith_text"
                     }
                 ],
-                "index": 264
+                "index": 272
             },
             {
                 "message": "Zones 6XX doivent être liées à une notice d'autorité RAMEAU ou Fmesh",
@@ -5514,7 +5730,7 @@
                         "operator": "startwith_text"
                     }
                 ],
-                "index": 265
+                "index": 273
             },
             {
                 "message": "Zones 6XX doivent être liées à une notice d'autorité RAMEAU ou Fmesh",
@@ -5538,7 +5754,7 @@
                         "operator": "startwith_text"
                     }
                 ],
-                "index": 266
+                "index": 274
             },
             {
                 "message": "Zones 6XX doivent être liées à une notice d'autorité RAMEAU ou Fmesh",
@@ -5562,7 +5778,7 @@
                         "operator": "startwith_text"
                     }
                 ],
-                "index": 267
+                "index": 275
             },
             {
                 "message": "Zones 6XX doivent être liées à une notice d'autorité RAMEAU ou Fmesh",
@@ -5586,7 +5802,7 @@
                         "operator": "startwith_text"
                     }
                 ],
-                "index": 268
+                "index": 276
             },
             {
                 "message": "Zones 6XX doivent être liées à une notice d'autorité RAMEAU ou Fmesh",
@@ -5610,7 +5826,7 @@
                         "operator": "startwith_text"
                     }
                 ],
-                "index": 269
+                "index": 277
             },
             {
                 "message": "Zones 6XX doivent être liées à une notice d'autorité RAMEAU ou Fmesh",
@@ -5634,7 +5850,7 @@
                         "operator": "startwith_text"
                     }
                 ],
-                "index": 270
+                "index": 278
             },
             {
                 "message": "Zones 6XX doivent être liées à une notice d'autorité RAMEAU ou Fmesh",
@@ -5658,7 +5874,7 @@
                         "operator": "startwith_text"
                     }
                 ],
-                "index": 271
+                "index": 279
             },
             {
                 "message": "Zones 6XX doivent être liées à une notice d'autorité RAMEAU ou Fmesh",
@@ -5682,7 +5898,7 @@
                         "operator": "startwith_text"
                     }
                 ],
-                "index": 272
+                "index": 280
             }
         ],
         "matching": [
@@ -5691,62 +5907,62 @@
                 "code": "c",
                 "message": "caractères interdits : $",
                 "number": 201,
-                "index": 273
+                "index": 281
             },
             {
                 "regex": ".*x3.*",
                 "number": "008",
                 "message": "Zone 008 erronée",
                 "numRuleExcell": 2,
-                "index": 274
+                "index": 282
             },
             {
                 "regex": "^.*fre.*$",
                 "message": "Zone 100 : langue de catalogage à corriger",
                 "number": "100",
-                "index": 275,
+                "index": 283,
                 "code": "a",
                 "numRuleExcell": 2
             },
             {
                 "code": "f",
                 "message": "701$f doit contenir 9 caractères",
-                "index": 276,
+                "index": 284,
                 "number": 701,
                 "regex": ".{9}"
             },
             {
                 "code": "c",
                 "message": "200$c ne doit pas contenir le caractère / ou : ou .",
-                "index": 277,
+                "index": 285,
                 "number": 200,
                 "regex": "(?:(?![/:.]).)+"
             },
             {
                 "code": "a",
                 "message": "606$a ne doit pas contenir vedette",
-                "index": 279,
+                "index": 286,
                 "number": "606",
                 "regex": "(?:(?!vedette).)+"
             },
             {
                 "code": "d",
                 "message": "328$d ne doit pas contenir le caractère ?",
-                "index": 280,
+                "index": 287,
                 "number": "328",
                 "regex": ".(?:(?!\\?).)+"
             },
             {
                 "code": "",
                 "message": "Ne doit pas contenir le caractère ’",
-                "index": 281,
+                "index": 288,
                 "number": "GLOBAL",
                 "regex": "(?:(?!’).)+"
             },
             {
                 "code": "e",
                 "message": "200$e ne doit pas contenir le caractère / ou : ou .",
-                "index": 282,
+                "index": 289,
                 "number": 200,
                 "regex": "(?:(?![/:.]).)+"
             },
@@ -5790,7 +6006,7 @@
                     "^((?!735).)*$"
                 ],
                 "code": "4",
-                "index": 283
+                "index": 290
             },
             {
                 "message": "7X2 $4=020, 050, 060, 075, 080, 140, 150, 160, 310, 320, 390, 450, 490, 500, 540, 580, 610, 620, 640, 650, 680, 700, 720, 740, 750, 753",
@@ -5829,54 +6045,54 @@
                     "753"
                 ],
                 "code": "4",
-                "index": 284
+                "index": 291
             },
             {
                 "code": "a",
                 "message": "Données codées à compléter",
-                "index": 285,
+                "index": 292,
                 "number": "100",
                 "regex": "(?:(?!\\|).)+"
             },
             {
                 "code": "a",
                 "message": "Zone 105 à compléter",
-                "index": 286,
+                "index": 293,
                 "number": "105",
                 "regex": "(?:(?!\\|).)+"
             },
             {
                 "code": "a",
                 "message": "Zone 200 : supprimer le double espace",
-                "index": 287,
+                "index": 294,
                 "number": "200",
                 "regex": "(?:(?!(  )).)+"
             },
             {
                 "code": "a",
                 "message": "200$a ne doit pas contenir le caractère / ou : ou .",
-                "index": 288,
+                "index": 295,
                 "number": 200,
                 "regex": "(?:(?![/:.]).)+"
             },
             {
                 "code": "d",
                 "message": "200$d ne doit pas contenir le caractère / ou : ou .",
-                "index": 289,
+                "index": 296,
                 "number": 200,
                 "regex": "(?:(?![/:.]).)+"
             },
             {
                 "code": "f",
                 "message": "Vérifier les dates de l'autorité auteur",
-                "index": 290,
+                "index": 297,
                 "number": 700,
                 "regex": ".{9}.*$"
             },
             {
                 "code": "f",
                 "message": "Vérifier les dates de l'autorité auteur",
-                "index": 291,
+                "index": 298,
                 "number": 701,
                 "regex": ".{9}.*$"
             },
@@ -5900,7 +6116,7 @@
                     "^((?!ram).)*$"
                 ],
                 "code": "2",
-                "index": 292
+                "index": 299
             },
             {
                 "message": "Zones 7XX : code fonction erroné",
@@ -5920,7 +6136,7 @@
                     "^((?!000).)*$"
                 ],
                 "code": "4",
-                "index": 293
+                "index": 300
             },
             {
                 "message": "Zones 7XX : code fonction à employer uniquement lorsqu'aucune autre fonction plus spécifique ne convient",
@@ -5940,29 +6156,26 @@
                     "^((?!205).)*$"
                 ],
                 "code": "4",
-                "index": 294
+                "index": 301
             },
             {
                 "regex": "(?:(?!Prénom).)+",
                 "code": "b",
                 "message": "Zone 700 : lien auteur à effectuer",
                 "number": "700",
-                "index": 295
+                "index": 302
             },
-
             {
                 "regex": "(?:(?!Nom du co-auteur)(?!Nom du directeur).)+",
                 "code": "a",
                 "message": "Zone 701 : lien auteur à effectuer",
                 "number": 701,
-                "index": 296
+                "index": 303
             },
-
-
             {
                 "code": "d",
                 "message": "200$d doit commencer par = espace",
-                "index": 297,
+                "index": 304,
                 "number": 200,
                 "regex": "^(= ).*"
             }
@@ -5985,7 +6198,7 @@
                         "number": "701"
                     }
                 ],
-                "index": 298,
+                "index": 305,
                 "numRuleExcell": 69
             },
             {
@@ -6004,7 +6217,7 @@
                         "number": "600"
                     }
                 ],
-                "index": 299,
+                "index": 306,
                 "numRuleExcell": 48
             },
             {
@@ -6023,7 +6236,7 @@
                         "number": "601"
                     }
                 ],
-                "index": 300,
+                "index": 307,
                 "numRuleExcell": 50
             },
             {
@@ -6042,7 +6255,7 @@
                         "number": "602"
                     }
                 ],
-                "index": 301,
+                "index": 308,
                 "numRuleExcell": 52
             },
             {
@@ -6061,7 +6274,7 @@
                         "number": "604"
                     }
                 ],
-                "index": 302,
+                "index": 309,
                 "numRuleExcell": 54
             },
             {
@@ -6080,7 +6293,7 @@
                         "number": "605"
                     }
                 ],
-                "index": 303,
+                "index": 310,
                 "numRuleExcell": 56
             },
             {
@@ -6104,7 +6317,7 @@
                         "regex": "^rameau$"
                     }
                 ],
-                "index": 304,
+                "index": 311,
                 "numRuleExcell": 58
             },
             {
@@ -6128,7 +6341,7 @@
                         "regex": "^fmesh$"
                     }
                 ],
-                "index": 305,
+                "index": 312,
                 "numRuleExcell": 60
             },
             {
@@ -6147,7 +6360,7 @@
                         "number": "607"
                     }
                 ],
-                "index": 306,
+                "index": 313,
                 "numRuleExcell": 61
             },
             {
@@ -6166,7 +6379,7 @@
                         "number": "608"
                     }
                 ],
-                "index": 307,
+                "index": 314,
                 "numRuleExcell": 62
             },
             {
@@ -6185,7 +6398,7 @@
                         "number": "616"
                     }
                 ],
-                "index": 308,
+                "index": 315,
                 "numRuleExcell": 65
             },
             {
@@ -6204,7 +6417,7 @@
                         "number": "700"
                     }
                 ],
-                "index": 309,
+                "index": 316,
                 "numRuleExcell": 67
             },
             {
@@ -6222,7 +6435,7 @@
                         "number": "702"
                     }
                 ],
-                "index": 310,
+                "index": 317,
                 "numRuleExcell": 70
             },
             {
@@ -6240,7 +6453,7 @@
                         "number": "710"
                     }
                 ],
-                "index": 311,
+                "index": 318,
                 "numRuleExcell": 71
             },
             {
@@ -6258,7 +6471,7 @@
                         "number": "711"
                     }
                 ],
-                "index": 312,
+                "index": 319,
                 "numRuleExcell": 72
             },
             {
@@ -6276,7 +6489,7 @@
                         "number": "712"
                     }
                 ],
-                "index": 313,
+                "index": 320,
                 "numRuleExcell": 72
             },
             {
@@ -6294,7 +6507,7 @@
                         "number": "720"
                     }
                 ],
-                "index": 314,
+                "index": 321,
                 "numRuleExcell": 74
             },
             {
@@ -6312,7 +6525,7 @@
                         "number": "721"
                     }
                 ],
-                "index": 315,
+                "index": 322,
                 "numRuleExcell": 75
             },
             {
@@ -6330,7 +6543,7 @@
                         "number": "722"
                     }
                 ],
-                "index": 316,
+                "index": 323,
                 "numRuleExcell": 76
             },
             {
@@ -6354,7 +6567,7 @@
                         "regex": "^rameau$"
                     }
                 ],
-                "index": 317
+                "index": 324
             },
             {
                 "verification": {
@@ -6377,7 +6590,7 @@
                         "regex": "^rameau$"
                     }
                 ],
-                "index": 318
+                "index": 325
             },
             {
                 "verification": {
@@ -6400,7 +6613,7 @@
                         "regex": "^rameau$"
                     }
                 ],
-                "index": 319
+                "index": 326
             }
         ],
         "ConditionMatching": [
@@ -6414,7 +6627,7 @@
                         "operator": "presente"
                     }
                 ],
-                "index": 320,
+                "index": 327,
                 "values": [
                     {
                         "subFieldRequired": true,
@@ -6440,7 +6653,7 @@
                         "operator": "presente"
                     }
                 ],
-                "index": 321,
+                "index": 328,
                 "values": [
                     {
                         "subFieldRequired": true,
@@ -6473,7 +6686,7 @@
                         "operator": "contains_text"
                     }
                 ],
-                "index": 322,
+                "index": 329,
                 "values": [
                     {
                         "subFieldRequired": true,
@@ -6498,7 +6711,7 @@
                         "operator": "startwith_text"
                     }
                 ],
-                "index": 323,
+                "index": 330,
                 "values": [
                     {
                         "subFieldRequired": true,
@@ -6523,7 +6736,7 @@
                         "operator": "not_startwith_text"
                     }
                 ],
-                "index": 324,
+                "index": 331,
                 "values": [
                     {
                         "subFieldRequired": true,
@@ -6552,7 +6765,7 @@
                         "operator": "contains_text"
                     }
                 ],
-                "index": 325,
+                "index": 332,
                 "values": [
                     {
                         "subFieldRequired": true,
@@ -6588,7 +6801,7 @@
                         "operator": "not_contains_text"
                     }
                 ],
-                "index": 326,
+                "index": 333,
                 "values": [
                     {
                         "subFieldRequired": true,
@@ -6600,44 +6813,9 @@
                 ],
                 "type": "allRequired"
             },
+            
             {
-                "message": "Si 105 $a Pos. 8 = 1 alors il faut aussi une 608 $302886431XActes de congrès",
-                "number": 608,
-                "condition": [
-                    {
-                        "string": [
-                            "1"
-                        ],
-                        "code": "a",
-                        "pos": [
-                            8,
-                            9
-                        ],
-                        "number": "105",
-                        "operator": "contains_text"
-                    }
-                ],
-                "index": 327,
-                "values": [
-                    {
-                        "subFieldRequired": true,
-                        "code": "3",
-                        "message": "",
-                        "number": 608,
-                        "regex": "^02886431X$"
-                    },
-                    {
-                        "subFieldRequired": true,
-                        "code": "a",
-                        "message": "",
-                        "number": 608,
-                        "regex": "^Actes de congrès$"
-                    }
-                ],
-                "type": "allRequired"
-            },
-            {
-                "message": "Si 105 $a Pos. 8 = 0 alors il ne doit pas y avoir 608 $302886431X ou $aActes de congrès",
+                "message": "Si 105 $a 5e position en commençant par la fin = 0 alors il ne doit pas y avoir 608 $302886431X ou $aActes de congrès",
                 "number": 608,
                 "condition": [
                     {
@@ -6646,14 +6824,13 @@
                         ],
                         "code": "a",
                         "pos": [
-                            8,
-                            9
+                            5
                         ],
                         "number": "105",
-                        "operator": "contains_text"
+                        "operator": "count_from_end"
                     }
                 ],
-                "index": 328,
+                "index": 335,
                 "values": [
                     {
                         "subFieldRequired": false,
@@ -6673,7 +6850,7 @@
                 "type": "oneRequired"
             },
             {
-                "message": "Si 105 $a Pos. 10 =1 alors il faut une 320 avec la mention \"Index\"",
+                "message": "Si 105 $a 3e position en commençant par la fin =1 alors il faut une 320 avec la mention \"Index\"",
                 "number": 320,
                 "condition": [
                     {
@@ -6682,14 +6859,13 @@
                         ],
                         "code": "a",
                         "pos": [
-                            10,
-                            11
+                            3
                         ],
                         "number": "105",
-                        "operator": "contains_text"
+                        "operator": "count_from_end"
                     }
                 ],
-                "index": 329,
+                "index": 336,
                 "values": [
                     {
                         "subFieldRequired": true,
@@ -6702,7 +6878,7 @@
                 "type": "allRequired"
             },
             {
-                "message": "Si 105 $a Pos. 10 =0 alors il ne doit pas y avoir une 320 avec la mention \"Index\"",
+                "message": "Si 105 $a  3e position en commençant par la fin  =0 alors il ne doit pas y avoir une 320 avec la mention \"Index\"",
                 "number": 320,
                 "condition": [
                     {
@@ -6711,14 +6887,13 @@
                         ],
                         "code": "a",
                         "pos": [
-                            10,
-                            11
+                            3
                         ],
                         "number": "105",
-                        "operator": "contains_text"
+                        "operator": "count_from_end"
                     }
                 ],
-                "index": 330,
+                "index": 337,
                 "values": [
                     {
                         "subFieldRequired": true,
@@ -6748,7 +6923,7 @@
                         "operator": "contains_text"
                     }
                 ],
-                "index": 331,
+                "index": 338,
                 "values": [
                     {
                         "subFieldRequired": true,
@@ -6779,7 +6954,7 @@
                         "ind2": "2"
                     }
                 ],
-                "index": 332,
+                "index": 339,
                 "values": [
                     {
                         "subFieldRequired": true,
@@ -6803,14 +6978,14 @@
                         "ind2": "2"
                     }
                 ],
-                "index": 333,
+                "index": 340,
                 "values": [
                     {
                         "subFieldRequired": true,
                         "code": "c",
                         "message": "",
                         "number": 214,
-                        "regex": "^Bibliothèque Lyon 1$"
+                        "regex": "^(Bibliothèque Lyon 1)|(\\[Bibliothèque Lyon 1\\])$"
                     }
                 ],
                 "type": "allRequired"
@@ -6833,7 +7008,7 @@
                         "operator": "presente"
                     }
                 ],
-                "index": 334,
+                "index": 341,
                 "code": "",
                 "reciproque": {
                     "code": "0",
@@ -6868,7 +7043,7 @@
                         "operator": "presente"
                     }
                 ],
-                "index": 335,
+                "index": 342,
                 "values": [
                     {
                         "subFieldRequired": true,
@@ -6902,7 +7077,7 @@
                         "operator": "presente"
                     }
                 ],
-                "index": 336,
+                "index": 343,
                 "values": [
                     {
                         "subFieldRequired": true,
@@ -6936,7 +7111,7 @@
                         "operator": "presente"
                     }
                 ],
-                "index": 337,
+                "index": 344,
                 "values": [
                     {
                         "subFieldRequired": true,
@@ -6951,7 +7126,6 @@
                     "number": 452
                 }
             },
-            
             {
                 "message": "Si 600 $2rameau doit être présent",
                 "number": 600,
@@ -6962,7 +7136,7 @@
                         "operator": "presente"
                     }
                 ],
-                "index": 339,
+                "index": 345,
                 "values": [
                     {
                         "subFieldRequired": true,
@@ -6984,7 +7158,7 @@
                         "operator": "presente"
                     }
                 ],
-                "index": 340,
+                "index": 346,
                 "values": [
                     {
                         "subFieldRequired": true,
@@ -7006,7 +7180,7 @@
                         "operator": "presente"
                     }
                 ],
-                "index": 341,
+                "index": 347,
                 "values": [
                     {
                         "subFieldRequired": true,
@@ -7028,7 +7202,7 @@
                         "operator": "presente"
                     }
                 ],
-                "index": 342,
+                "index": 348,
                 "values": [
                     {
                         "subFieldRequired": true,
@@ -7050,7 +7224,7 @@
                         "operator": "presente"
                     }
                 ],
-                "index": 343,
+                "index": 349,
                 "values": [
                     {
                         "subFieldRequired": true,
@@ -7072,7 +7246,7 @@
                         "operator": "presente"
                     }
                 ],
-                "index": 344,
+                "index": 350,
                 "values": [
                     {
                         "subFieldRequired": true,
@@ -7098,7 +7272,7 @@
                     ],
                     "number": "100"
                 },
-                "index": 345,
+                "index": 351,
                 "field2": {
                     "code": "a",
                     "pos": [
@@ -7120,7 +7294,7 @@
                     ],
                     "number": "100"
                 },
-                "index": 346,
+                "index": 352,
                 "field2": {
                     "code": "d",
                     "pos": [],
@@ -7132,66 +7306,6 @@
         ],
         "ConditionStructurel": [
             {
-                "message": "Zone 328 obligatoire pour une thèse ou mémoire (soutenance)",
-                "number": "105",
-                "condition": [
-                    {
-                        "string": [
-                            "v",
-                            "7"
-                        ],
-                        "ind1": "",
-                        "pos": [
-                            4,
-                            7
-                        ],
-                        "number": "105",
-                        "ind2": "",
-                        "code": "a",
-                        "operator": "contains_text"
-                    }
-                ],
-                "index": 347,
-                "type": "allRequired",
-                "value": [
-                    {
-                        "code": "",
-                        "number": "017",
-                        "present": true
-                    }
-                ]
-            },
-            {
-                "message": "Zone 328 obligatoire pour une thèse ou mémoire (soutenance)",
-                "number": "105",
-                "condition": [
-                    {
-                        "string": [
-                            "m",
-                            "7"
-                        ],
-                        "ind1": "",
-                        "pos": [
-                            4,
-                            7
-                        ],
-                        "number": "105",
-                        "ind2": "",
-                        "code": "a",
-                        "operator": "contains_text"
-                    }
-                ],
-                "index": 348,
-                "type": "allRequired",
-                "value": [
-                    {
-                        "code": "",
-                        "number": "328",
-                        "present": true
-                    }
-                ]
-            },
-            {
                 "message": "Zone 029 obligatoire pour une thèse (soutenance)",
                 "number": "105",
                 "condition": [
@@ -7201,8 +7315,8 @@
                         ],
                         "ind1": "",
                         "pos": [
-                            4,
-                            7
+                            0,
+                            999999
                         ],
                         "number": "105",
                         "ind2": "",
@@ -7210,7 +7324,7 @@
                         "operator": "contains_text"
                     }
                 ],
-                "index": 349,
+                "index": 353,
                 "type": "allRequired",
                 "value": [
                     {
@@ -7240,7 +7354,7 @@
                         "operator": "not_presente"
                     }
                 ],
-                "index": 351,
+                "index": 354,
                 "type": "allRequired",
                 "value": [
                     {
@@ -7262,7 +7376,7 @@
                         "ind2": ""
                     }
                 ],
-                "index": 352,
+                "index": 355,
                 "type": "allRequired",
                 "value": [
                     {
@@ -7289,7 +7403,7 @@
                         "ind2": ""
                     }
                 ],
-                "index": 353,
+                "index": 356,
                 "type": "allRequired",
                 "value": [
                     {
@@ -7311,7 +7425,7 @@
                         "ind2": ""
                     }
                 ],
-                "index": 354,
+                "index": 357,
                 "type": "allRequired",
                 "value": [
                     {
@@ -7343,7 +7457,7 @@
                         "ind2": ""
                     }
                 ],
-                "index": 355,
+                "index": 358,
                 "type": "allRequired",
                 "value": [
                     {
@@ -7365,7 +7479,7 @@
                         "ind2": ""
                     }
                 ],
-                "index": 356,
+                "index": 359,
                 "type": "allRequired",
                 "value": [
                     {
@@ -7397,7 +7511,7 @@
                         "operator": "contains_text"
                     }
                 ],
-                "index": 357,
+                "index": 360,
                 "type": "allRequired",
                 "value": [
                     {
@@ -7429,7 +7543,7 @@
                         "operator": "contains_text"
                     }
                 ],
-                "index": 358,
+                "index": 361,
                 "type": "allRequired",
                 "value": [
                     {
@@ -7469,7 +7583,7 @@
                         "operator": "contains_text"
                     }
                 ],
-                "index": 359,
+                "index": 362,
                 "type": "allRequired",
                 "value": [
                     {
@@ -7492,7 +7606,7 @@
                         "operator": "startwith_text"
                     }
                 ],
-                "index": 360,
+                "index": 363,
                 "type": "allRequired",
                 "value": [
                     {
@@ -7514,7 +7628,7 @@
                         "ind2": ""
                     }
                 ],
-                "index": 361,
+                "index": 364,
                 "type": "allRequired",
                 "value": [
                     {
@@ -7537,7 +7651,7 @@
                         "operator": "startwith_text"
                     }
                 ],
-                "index": 362,
+                "index": 365,
                 "type": "allRequired",
                 "value": [
                     {
@@ -7558,7 +7672,7 @@
                         "operator": "presente"
                     }
                 ],
-                "index": 363,
+                "index": 366,
                 "reciproque": {
                     "code": "0",
                     "number": "488"
@@ -7585,7 +7699,7 @@
                         "operator": "presente"
                     }
                 ],
-                "index": 364,
+                "index": 367,
                 "type": "allRequired",
                 "value": [
                     {
@@ -7617,7 +7731,7 @@
                         "operator": "equals_text"
                     }
                 ],
-                "index": 365,
+                "index": 368,
                 "type": "allRequired",
                 "value": [
                     {
@@ -7637,7 +7751,7 @@
                         "operator": "presente"
                     }
                 ],
-                "index": 366,
+                "index": 369,
                 "type": "allRequired",
                 "value": [
                     {
@@ -7659,14 +7773,16 @@
                         "string": [
                             "v"
                         ],
-                        "pos":[0,9000],
+                        "pos": [
+                            0,
+                            9000
+                        ],
                         "code": "a",
                         "number": "105",
                         "operator": "not_contains_text"
-                        
                     }
                 ],
-                "index": 367,
+                "index": 370,
                 "type": "oneRequired",
                 "value": [
                     {
@@ -7697,7 +7813,7 @@
                         "ind2": "1"
                     }
                 ],
-                "index": 368,
+                "index": 371,
                 "type": "allRequired",
                 "value": [
                     {
@@ -7717,7 +7833,7 @@
                 ],
                 "ind2": "",
                 "code": "",
-                "index": 369,
+                "index": 372,
                 "message": "200 obligatoire"
             },
             {
@@ -7728,7 +7844,7 @@
                 ],
                 "ind2": "",
                 "code": "",
-                "index": 370,
+                "index": 373,
                 "numRuleExcell": 22,
                 "message": "La notice doit contenir au moins une zone 181"
             },
@@ -7740,7 +7856,7 @@
                 ],
                 "ind2": "",
                 "code": "",
-                "index": 371,
+                "index": 374,
                 "numRuleExcell": 23,
                 "message": "La notice doit contenir au moins une zone 182"
             },
@@ -7752,7 +7868,7 @@
                 ],
                 "ind2": "",
                 "code": "",
-                "index": 372,
+                "index": 375,
                 "numRuleExcell": 24,
                 "message": "La notice doit contenir au moins zone 183"
             },
@@ -7764,7 +7880,7 @@
                 ],
                 "ind2": "",
                 "code": "",
-                "index": 373,
+                "index": 376,
                 "numRuleExcell": 46,
                 "message": "Supprimer la zone 309 une fois la correction demandée effectuée"
             },
@@ -7784,7 +7900,7 @@
                 ],
                 "ind2": "",
                 "code": "",
-                "index": 374,
+                "index": 377,
                 "numRuleExcell": 85,
                 "message": "Mention d'auteur obligatoire"
             },
@@ -7804,7 +7920,7 @@
                 ],
                 "ind2": "",
                 "code": "3",
-                "index": 375,
+                "index": 378,
                 "numRuleExcell": 86,
                 "message": "Zones 7XX : lier à une notice d'autorité"
             },
@@ -7818,7 +7934,7 @@
                 "type": "exclude",
                 "numRuleExcell": 27,
                 "message": "Zone 200$d : à remplacer par les zones 181, 182 et 183",
-                "index": 376
+                "index": 379
             },
             {
                 "ind1": "",
@@ -7830,7 +7946,7 @@
                 "type": "exclude",
                 "numRuleExcell": 32,
                 "message": "Zone 210 à remplacer par 214 (document en main)",
-                "index": 377
+                "index": 380
             },
             {
                 "ind1": "",
@@ -7842,11 +7958,11 @@
                 "type": "exclude",
                 "numRuleExcell": 118,
                 "message": "Zone 328 incohérente avec le statut de la thèse : une reproduction doit contenir la sous-zone $z",
-                "index": 378
+                "index": 381
             },
             {
                 "ind1": "",
-                "index": 379,
+                "index": 382,
                 "number": [
                     "608"
                 ],

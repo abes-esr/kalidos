@@ -64,6 +64,15 @@ var Condition = function () {
 // module.exports = Condition;
 export default Condition;
 
+function compteFromEnd(condition , subfieldValue) {
+    if(condition.pos.length === 1) {
+        const retrait = condition.pos[0];
+        const sousChaine = subfieldValue.slice(subfieldValue.length - retrait,subfieldValue.length - retrait + 1)
+        return sousChaine.includes(condition.string[0].toString()); 
+    }
+    return false
+}
+
 function testTagCondition(condition, subfieldValue, item) {
     const subfieldPresent = subfieldValue != null;
     if (condition.operator === "contains_text") {
@@ -78,11 +87,14 @@ function testTagCondition(condition, subfieldValue, item) {
         return !subfieldPresent || !subfieldValue.trim().startsWith(item.toString());
     } else if (condition.operator === 'not_contains_text') {
         return !subfieldPresent || !Parcours.slice(condition.pos[0], condition.pos[1], subfieldValue).includes(item.toString());
+    } else if (condition.operator === 'count_from_end') { 
+        return subfieldPresent && compteFromEnd(condition , subfieldValue)
     }
     return false
 }
 
 function otherOperator(condition) {
     return condition.operator === "contains_text" || condition.operator === "startwith_text" ||
-        condition.operator === "equals_text" || condition.operator === "not_equals_text" || condition.operator === "not_startwith_text" || condition.operator === 'not_contains_text';
+        condition.operator === "equals_text" || condition.operator === "not_equals_text" || condition.operator === "not_startwith_text" 
+        || condition.operator === 'not_contains_text' || condition.operator === 'count_from_end';
 }
