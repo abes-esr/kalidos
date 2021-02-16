@@ -45,41 +45,6 @@ app.post('/result', (req, res) => {
 });
 
 /**
- * renvoie les notices erronées
- */
-app.get('/getNotices', (req, res) => {
-  const file = `${__dirname}/public/noticesErreurs.json`;
-  res.download(file); // Set disposition and send it.
-});
-
-/**
- * remplace le contenu des notices erronées par le body de la requete
- * @body body : listes des notices des ppn erronés
- * return code 200
- */
-app.post('/notice', (req, res) => {
-  const errorIndex = req.body;
-  noticeCounter++;
-  fs.readFile(`${__dirname}/public/noticesErreurs.json`, 'utf8', function readFileCallback(err, data){
-    if (err) {
-        console.log(err);
-    } else {
-      let obj = JSON.parse(data);
-
-      console.log("obj avant injection notice", obj);
-      obj[noticeCounter] = errorIndex;
-      console.log("obj après injection notice", obj);
-      
-      json = JSON.stringify(obj);
-      fs.writeFile(`${__dirname}/public/noticesErreurs.json`, json, 'utf8', function(err, result) {
-        if(err) console.log('error', err);
-      });
-    }
-  });
-  res.sendStatus(200);
-});
-
-/**
  * ajoute une nouvelle regle dans le fichier de regles
  * @header type : type de la regle
  * @header categorie : categorie de la regle
@@ -175,6 +140,59 @@ app.put('/rules', (req, res) => {
   }
   res.sendStatus(404);
 
+});
+
+/**
+ * renvoie les notices erronées
+ */
+app.get('/getNotices', (req, res) => {
+  const file = `${__dirname}/public/noticesErreurs.json`;
+  res.download(file); // Set disposition and send it.
+});
+
+/**
+ * ajoute une notice à la liste des notices erronés
+ * @body body : notice à ajouter
+ * return code 200
+ */
+app.post('/notice', (req, res) => {
+  const errorIndex = req.body;
+  noticeCounter++;
+  fs.readFile(`${__dirname}/public/noticesErreurs.json`, 'utf8', function readFileCallback(err, data){
+    if (err) {
+        console.log(err);
+    } else {
+      let obj = JSON.parse(data);
+      obj[noticeCounter] = errorIndex;
+      json = JSON.stringify(obj);
+      fs.writeFile(`${__dirname}/public/noticesErreurs.json`, json, 'utf8', function(err, result) {
+        if(err) console.log('error', err);
+      });
+    }
+  });
+  res.sendStatus(200);
+});
+
+/**
+ * supression d'une notice
+ * @header index : identifiant de la notice à supprimer
+ * return 200
+ */
+app.delete('/deleteNotice', (req, res) => {
+  const index =  parseInt(req.header("index"), 10);
+  fs.readFile(`${__dirname}/public/noticesErreurs.json`, 'utf8', function readFileCallback(err, data){
+    if (err) {
+        console.log(err);
+    } else {
+      let obj = JSON.parse(data);
+      delete obj[index];
+      json = JSON.stringify(obj);
+      fs.writeFile(`${__dirname}/public/noticesErreurs.json`, json, 'utf8', function(err, result) {
+        if(err) console.log('error', err);
+      });
+    }
+  });
+  res.sendStatus(200);
 });
 
 /**

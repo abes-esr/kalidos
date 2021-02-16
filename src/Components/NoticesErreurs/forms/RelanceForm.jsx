@@ -1,6 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
-import { verifiyRulesByTextAreaNotice } from '../../js/main/verifyRules'
+import { verifiyRulesByTextAreaNotice } from '../../../js/main/verifyRules'
 
 const mapStateToProps = (state) => ({
   noticeDisplay: state.displayVerif.noticeDisplay
