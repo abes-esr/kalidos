@@ -14,7 +14,7 @@ const mapStateToProps = (state) => ({
     result: state.result,
     recherchePPN: state.displayVerif.recherchePPN,
     compteurResult: state.compteurResult,
-    listPPNErronne: state.listPPNErronne,
+    listPPNErronne: state.listPPNErronne
 });
 
 const renderTooltip = (props) => (
@@ -136,19 +136,19 @@ function InterfaceVerif({ result, recherchePPN, compteurResult, listPPNErronne }
                 </h2>
                 </Col>
                 <Col>
-                    <OverlayTrigger placement="top"  delay={{ show: 250, hide: 400 }} overlay={renderTooltip}>
+                    <OverlayTrigger placement="top" delay={{ show: 250, hide: 400 }} overlay={renderTooltip}>
 
-                        <CSVLink data={csvData} filename={"recap_erreurs_completBU.csv"} separator={";"} headers={headers} style = {{margin:"1%",width:"48%", float: "left"}}>
-                            <Button variant="success" style = {{width:"100%"}}>
+                        <CSVLink data={csvData} filename={"recap_erreurs_completBU.csv"} separator={";"} headers={headers} style={{ margin: "1%", width: "48%", float: "left" }}>
+                            <Button variant="success" style={{ width: "100%" }}>
                                 <MDBIcon far icon="file-excel" />
                             &nbsp; Descriptif complet
                         </Button >
                         </CSVLink>
                     </OverlayTrigger>
-                    <OverlayTrigger placement="top"  delay={{ show: 250, hide: 400 }} overlay={renderTooltip2}>
+                    <OverlayTrigger placement="top" delay={{ show: 250, hide: 400 }} overlay={renderTooltip2}>
 
-                        <CSVLink data={newCsvData} filename={"recap_erreursBU.csv"} separator={";"} style = {{margin:"1%",width:"48%" , float: "right"}}>
-                            <Button variant="success" style = {{width:"100%"}}>
+                        <CSVLink data={newCsvData} filename={"recap_erreursBU.csv"} separator={";"} style={{ margin: "1%", width: "48%", float: "right" }}>
+                            <Button variant="success" style={{ width: "100%" }}>
                                 <MDBIcon far icon="file-excel" />
                             &nbsp; Double entrée
                         </Button>

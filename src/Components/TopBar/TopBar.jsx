@@ -8,9 +8,10 @@ const mapStateToProps = (state) => ({
     nombreTotalPPN: state.nombreTotalPPN,
     result: state.result,
     listPPNErronne: state.listPPNErronne,
+    compteurErreurPourSynchro: state.compteurErreurPourSynchro
 });
 
-function TopBar({ compteurResult, nombreTotalPPN, result, listPPNErronne }) {
+function TopBar({ compteurResult, nombreTotalPPN, result, listPPNErronne, compteurErreurPourSynchro }) {
     const width = parseInt(100 * compteurResult / nombreTotalPPN);
     const arrayResult = Object.keys(result).map((key) => [Number(key), result[key]]);
     const nombreErreurTotal = arrayResult.length === 0 ? 0 : arrayResult.map(x => x[1].errors.length).reduce((total, x) => total + x);

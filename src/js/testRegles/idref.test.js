@@ -1,7 +1,7 @@
 const convert = require("xml-js");
 const path = require('path');
 const fs = require('fs');
-const IdRef = require("../regles/IdRef");
+import IdRef from "../regles/IdRef";
 // import "@babel/polyfill";
 import rules from '../../../serveur/public/model_regles.json';
 

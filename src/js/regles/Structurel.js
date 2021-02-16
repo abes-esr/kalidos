@@ -1,4 +1,4 @@
-const Parcours = require("../utile/Parcours");
+import Parcours from "../utile/Parcours";
 
 var Structurel = function () {
 
@@ -137,6 +137,7 @@ var Structurel = function () {
                     message: message,
                     number: number
                 });
+                Parcours.addErrorSynchro();
             }
         });
 
@@ -147,4 +148,4 @@ var Structurel = function () {
     }
 }();
 
-module.exports = Structurel;
+export default Structurel;

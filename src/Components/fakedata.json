@@ -5,9 +5,11 @@
   "displayVerif": {
     "PPNDisplay": 0,
     "numPage": 1,
-    "recherchePPN": ""
+    "recherchePPN": "",
+    "noticeDisplay": 0
   },
   "listPPNErronne":[],
-  "choixCategorie":""
+  "choixCategorie":"",
+  "compteurErreurPourSynchro" : 0
 
   }

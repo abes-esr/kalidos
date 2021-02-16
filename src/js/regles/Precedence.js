@@ -1,5 +1,5 @@
-const Parcours = require("../utile/Parcours");
-const Condition = require("../utile/Condition");
+import Parcours from "../utile/Parcours";
+import Condition from "../utile/Condition";
 
 var Precedence = function () {
     var testPrecedenceRules = function (categorie, rules, controlfields, datafields, resultJson) {
@@ -41,6 +41,7 @@ var Precedence = function () {
             message: regle.message,
             number: regle.number
         });
+        Parcours.addErrorSynchro();
     }
 
 
@@ -50,4 +51,4 @@ var Precedence = function () {
     }
 }();
 
-module.exports = Precedence;
+export default Precedence;

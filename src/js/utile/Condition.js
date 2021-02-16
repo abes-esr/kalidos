@@ -1,4 +1,4 @@
-const Parcours = require("../utile/Parcours");
+import Parcours from "../utile/Parcours";
 
 var Condition = function () {
 
@@ -29,7 +29,7 @@ var Condition = function () {
             } else if (condition.operator === "not_presente") {
                 if (condition.code.toString() !== "") {
                     return Parcours.getSubfieldValue(fields[i], condition.code) == null;
-                }
+                } else return false;
             } else if (otherOperator(condition)) {
                 if (condition.string.toString() !== "") {
                     let subfieldValue;
@@ -61,7 +61,8 @@ var Condition = function () {
     }
 }();
 
-module.exports = Condition;
+// module.exports = Condition;
+export default Condition;
 
 function testTagCondition(condition, subfieldValue, item) {
     const subfieldPresent = subfieldValue != null;
@@ -75,11 +76,13 @@ function testTagCondition(condition, subfieldValue, item) {
         return !subfieldPresent || subfieldValue.trim() !== item.toString();
     }else if (condition.operator === "not_startwith_text") {
         return !subfieldPresent || !subfieldValue.trim().startsWith(item.toString());
+    } else if (condition.operator === 'not_contains_text') {
+        return !subfieldPresent || !Parcours.slice(condition.pos[0], condition.pos[1], subfieldValue).includes(item.toString());
     }
     return false
 }
 
 function otherOperator(condition) {
     return condition.operator === "contains_text" || condition.operator === "startwith_text" ||
-        condition.operator === "equals_text" || condition.operator === "not_equals_text" || condition.operator === "not_startwith_text";
+        condition.operator === "equals_text" || condition.operator === "not_equals_text" || condition.operator === "not_startwith_text" || condition.operator === 'not_contains_text';
 }

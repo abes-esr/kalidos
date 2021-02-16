@@ -23,6 +23,8 @@ const mockResponse = {
   bar: 'foo',
 };
 
+let noticeCounter = 0;
+
 /**
  * renvois le fichier de regles
  */
@@ -39,30 +41,6 @@ app.get('/rules', (req, res) => {
 app.post('/result', (req, res) => {
   const json = JSON.stringify(req.body);
   fs.writeFile(`${__dirname}/public/result.json`, json, 'utf8', () => { });
-  res.sendStatus(200);
-});
-
-/**
- * crée un fichier txt avc la liste des notices erronées
- * @body body : fichier resultat
- * return code 200
- */
-app.post('/notice', (req, res) => {
-  const json = req.body;
-  const data_verif = Object.keys(json).map((key) => [Number(key), json[key]]);
-  const listPPNWithError = data_verif.filter((row) => { return row[1].errors.length });
-
-  let stream = fs.createWriteStream(`${__dirname}/public/noticesErreurs.txt`);
-
-  stream.once('open', function(fd) {
-    let str;
-    for (let i = 0; i < listPPNWithError.length; i++) {
-      str = listPPNWithError[i][1]['PPN'];
-      stream.write(str + "\n");
-    }
-    stream.end();
-  });
-
   res.sendStatus(200);
 });
 
@@ -162,6 +140,59 @@ app.put('/rules', (req, res) => {
   }
   res.sendStatus(404);
 
+});
+
+/**
+ * renvoie les notices erronées
+ */
+app.get('/getNotices', (req, res) => {
+  const file = `${__dirname}/public/noticesErreurs.json`;
+  res.download(file); // Set disposition and send it.
+});
+
+/**
+ * ajoute une notice à la liste des notices erronés
+ * @body body : notice à ajouter
+ * return code 200
+ */
+app.post('/notice', (req, res) => {
+  const errorIndex = req.body;
+  noticeCounter++;
+  fs.readFile(`${__dirname}/public/noticesErreurs.json`, 'utf8', function readFileCallback(err, data){
+    if (err) {
+        console.log(err);
+    } else {
+      let obj = JSON.parse(data);
+      obj[noticeCounter] = errorIndex;
+      json = JSON.stringify(obj);
+      fs.writeFile(`${__dirname}/public/noticesErreurs.json`, json, 'utf8', function(err, result) {
+        if(err) console.log('error', err);
+      });
+    }
+  });
+  res.sendStatus(200);
+});
+
+/**
+ * supression d'une notice
+ * @header index : identifiant de la notice à supprimer
+ * return 200
+ */
+app.delete('/deleteNotice', (req, res) => {
+  const index =  parseInt(req.header("index"), 10);
+  fs.readFile(`${__dirname}/public/noticesErreurs.json`, 'utf8', function readFileCallback(err, data){
+    if (err) {
+        console.log(err);
+    } else {
+      let obj = JSON.parse(data);
+      delete obj[index];
+      json = JSON.stringify(obj);
+      fs.writeFile(`${__dirname}/public/noticesErreurs.json`, json, 'utf8', function(err, result) {
+        if(err) console.log('error', err);
+      });
+    }
+  });
+  res.sendStatus(200);
 });
 
 /**

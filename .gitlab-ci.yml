@@ -3,6 +3,8 @@ image : node:latest
 stages:
   - install
   - test
+  - heroku
+  - build-image
   - deploy
 
 cache :
@@ -23,8 +25,10 @@ test :
   script : 
    - npm run test
 
-production:
-  stage: deploy
+
+
+heroku:
+  stage: heroku
   image: ruby:latest
   script:
     - apt-get update -qy
@@ -32,4 +36,34 @@ production:
     - gem install dpl
     - dpl --provider=heroku --app=budev --api-key=d2da7495-2783-4633-ba2e-817d155d2dee
   only:
+    - master
+
+
+build-image :
+  image: docker:stable
+  stage: build-image
+  services:
+    - docker:18-dind
+  tags:
+    - docker_ci_build
+  script:
+    - docker login -u $CI_REGISTRY_USER -p $CI_REGISTRY_PASSWORD $CI_REGISTRY
+    - docker build -t $CI_REGISTRY_IMAGE:latest --build-arg HTTP_PROXY="http://proxy.univ-lyon1.fr:3128" --build-arg HTTPS_PROXY="http://proxy.univ-lyon1.fr:3128" --build-arg  NO_PROXY="127.0.0.0/16,10.0.0.0/8,172.16.0.0/12,192.168.0.0/16,localhost,.novalocal,.univ-lyon1.fr" .
+    - docker push $CI_REGISTRY_IMAGE:latest
+  only:
+    - deploy
+    - master
+
+
+production:
+  stage: deploy
+  before_script:
+    - apt-get update -qq && apt-get install -y -qq sshpass
+  script:
+    - echo $CI_REPOSITORY_URL
+    - export SSHPASS=$PASSWORD
+    - sshpass -e ssh -o stricthostkeychecking=no $USER@$HOSTNAME "if cd $CI_PROJECT_NAME; then docker-compose down  && cd .. && rm -rf $CI_PROJECT_NAME; fi && git clone $CI_REPOSITORY_URL && cd $CI_PROJECT_NAME && git checkout deploy && cd .."
+    - sshpass -e ssh -o stricthostkeychecking=no $USER@$HOSTNAME  "cd $CI_PROJECT_NAME && docker image rm $CI_REGISTRY_IMAGE:latest  && docker-compose up -d"
+  only:
+    - deploy
     - master

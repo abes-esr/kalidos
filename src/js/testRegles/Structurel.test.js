@@ -1,7 +1,7 @@
 const convert = require("xml-js");
 const path = require('path');
 const fs = require('fs');
-const Structurel = require("../regles/Structurel");
+import Structurel from "../regles/Structurel";
 import rules from '../../../serveur/public/model_regles.json';
 
 let CATEGORIE;

@@ -1,5 +1,5 @@
-const Parcours = require("../utile/Parcours");
-const Condition = require("../utile/Condition");
+import Parcours from "../utile/Parcours";
+import Condition from "../utile/Condition";
 const axios = require('axios');
 const convert = require("xml-js");
 
@@ -9,7 +9,7 @@ const ConditionStructurel = function () {
     let ppnInitiale = undefined;
     const testConditionStrucutrelRules = async function (categorie, rules, controlfields, datafields, resultJson, getfunctionDocument) {
         getDocument = getfunctionDocument
-        for(let iRegle in rules[categorie].ConditionStructurel) {
+        for (let iRegle in rules[categorie].ConditionStructurel) {
             const regle = rules[categorie].ConditionStructurel[iRegle];
 
             //si on le field on check les conditions
@@ -38,7 +38,7 @@ const ConditionStructurel = function () {
                     addError(resultJson, regle);
                     return null;
                 }
-
+                
                 let checkControlFields = controlfields;
                 let checkDataFields = datafields;
                 if (regle.reciproque) {
@@ -81,7 +81,7 @@ const ConditionStructurel = function () {
             return false;
 
         }
-
+       
         return isCheckValues;
     }
 
@@ -111,6 +111,7 @@ const ConditionStructurel = function () {
 export default ConditionStructurel;
 
 function verifyOne(datafields, value, controlfields, checkReciproque) {
+    
     const listDatafield = getListDatafield(datafields, value);
     let result = verifyPresence(value, listDatafield);
     result = result || verifyIndex(value, listDatafield);
@@ -120,7 +121,8 @@ function verifyOne(datafields, value, controlfields, checkReciproque) {
 
 function verifyPresenceSubfield(value, listDatafield) {
     const subfield = Parcours.getSubfieldValue(listDatafield[0], value.code);
-    if ((subfield != null) === value.present) {
+    const isExist = subfield != null
+    if (isExist === value.present) {
         return true;
     }
     return false;
@@ -167,6 +169,7 @@ function addError(resultJson, regle) {
         message: regle.message,
         number: regle.number,
     });
+    Parcours.addErrorSynchro();
 }
 
 function getListDatafield(datafields, value) {
@@ -191,7 +194,7 @@ function getDataOnSudoc(datafields, number, code) {
                     convert.xml2json(response.data, { compact: true, spaces: 2 })
                 );
                 return data;
-
+                    
             })
             .catch(function (error) {
                 console.log("error matching reciproque");

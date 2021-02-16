@@ -1,4 +1,4 @@
-const Parcours = require("../utile/Parcours");
+import Parcours from "../utile/Parcours";
 
 /* 
 Dependance
@@ -66,12 +66,12 @@ var Dependance = function () {
             const field1 = Parcours.findDataField(datafields, regle.field1.number)
             const field2 = Parcours.findDataField(datafields, regle.field2.number)
             if (!applyRuleOnFields(field1, field2, regle)) {
-
                 resultJson.errors.push({
                     message: regle.message,
                     number: regle.field1.number + " , " + regle.field2.number,
                     code: regle.field1.code + " , " + regle.field2.code
                 });
+                Parcours.addErrorSynchro();
             }
 
         });
@@ -83,4 +83,4 @@ var Dependance = function () {
     }
 }();
 
-module.exports = Dependance;
+export default Dependance;

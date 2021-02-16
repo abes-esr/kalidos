@@ -4,7 +4,7 @@ import json
 
 #On récupère les règles
 modelReglesJson = {}
-with open('serveur/public/model_regles_tries.json') as f:
+with open('serveur/public/model_regles_tries.json', encoding='utf-8') as f:
     modelReglesJson = json.load(f)
 
 #On refait l'index de toutes les règles

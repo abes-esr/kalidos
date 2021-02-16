@@ -13,32 +13,6 @@ export function formatRuleConditionnelsDependance(data) {
 export function getSchemaConditionnelsDependance(categories, rules) {
     return {
         definitions: {
-            conditions: {
-                type: "object",
-                properties: {
-                    number: {
-                        title: "Zone", 
-                        type: "number",
-                    },
-                    code: {
-                        title: 'Sous Zone',
-                        type: 'string',
-                    },
-                    ind1: {
-                        title: "Indice 1",
-                        type: "string"
-                    },
-                    ind2: {
-                        title: "Indice 2",
-                        type: "string"
-                    },
-                    operator: {
-                        title: "Operateur de matching",
-                        type: "string",
-                        enum: ["presente", "contains_text", "startwith_text", "not_startwith_text", "not_contains_text", "not_equals_text"],
-                    },
-                },
-            },
             champs: {
                 type: "object",
                 properties: {
@@ -60,18 +34,51 @@ export function getSchemaConditionnelsDependance(categories, rules) {
                 type: 'string',
                 enum: categories,
             },
-            condition: {title:"Condition","$ref": "#/definitions/conditions"},
+            condition: {
+                title:"Conditions",
+                type: "array",
+                items: {
+                    type: "object",
+                    properties: {
+                        number: {
+                            title: "Zone", 
+                            type: "number",
+                        },
+                        code: {
+                            title: 'Sous Zone',
+                            type: 'string',
+                        },
+                        ind1: {
+                            title: "Indice 1",
+                            type: "string"
+                        },
+                        ind2: {
+                            title: "Indice 2",
+                            type: "string"
+                        },
+                        operator: {
+                            title: "Operateur de matching",
+                            type: "string",
+                            enum: ["presente", "contains_text", "not_contains_text", "startwith_text", "not_startwith_text","not_equals_text", "equals_text"],
+                            enumNames: ["Valeur presente", "Doit contenir","Ne doit pas contenir", "Commence par", "Ne doit pas commencer par", "Ne soit pas égale à", "Égale à"]
+                        },
+                    },
+                    required: ['number', 'code', 'ind1', 'ind2', 'operator'],
+                }
+            },
             field1: {title:"Premier champ","$ref": "#/definitions/champs"},
             field2: {title:"Deuxiéme champ","$ref": "#/definitions/champs"},
             operator: {
                 title: "Operateur",
                 type: "string",
-                enum: ["presente", "contains_text", "startwith_text", "not_startwith_text", "not_contains_text", "not_equals_text"],
+                enum: ["presente", "contains_text", "not_contains_text", "startwith_text", "not_startwith_text","not_equals_text", "equals_text"],
+                enumNames: ["Valeur presente", "Doit contenir","Ne doit pas contenir", "Commence par", "Ne doit pas commencer par", "Ne soit pas égale à", "Égale à"]
             },
             message: {
                 title: "Message à afficher",
                 type: "string",
             },
         },
+        required: ['category', 'field1', 'field2', 'operator', 'condition'],
     }
 }

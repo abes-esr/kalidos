@@ -1,3 +1,7 @@
+/**
+ * Ameliorer values
+ * @param {*} data 
+ */
 export function formatRuleConditionnelsMatching(data) {
     console.log('formatRuleConditionnelsMatching');
     const obj = {};
@@ -11,38 +15,6 @@ export function formatRuleConditionnelsMatching(data) {
 
 export function getSchemaConditionnelsMatching(categories, rules) {
     return {
-        definitions: {
-            values: {
-                type: "object",
-                properties: {
-                    number: {
-                        title: "Zone",
-                        type: "number",
-                    },
-                    code: {
-                        title: 'Sous Zone',
-                        type: 'string',
-                    },
-                    message: {
-                        title: "Message",
-                        type: 'string',
-                    },
-                    rule: {
-                        title: 'Regle a utiliser',
-                        type: 'string',
-                        enum: rules.rules,
-                        enumNames: rules.names,
-                    },
-                    isWord: {
-                        title: ' Le motif contiens de mots',
-                        type: 'boolean',
-                        enum: [true, false],
-                        enumNames: ["Oui", "Non"]
-                    },
-                      
-                },
-            }
-        },
         type: "object",
         properties: {
             category: {
@@ -71,6 +43,7 @@ export function getSchemaConditionnelsMatching(categories, rules) {
                             enumNames: ["Valeur Presente", "Doit contenir","Ne doit pas contenir", "Commence par", "Ne doit pas commencer par", "Ne soit pas égale à", "Égale à"],
                         },
                     },
+                    required: ['number', 'code', 'operator'],
                 }
             },
             type:{
@@ -78,7 +51,40 @@ export function getSchemaConditionnelsMatching(categories, rules) {
                 enum: ["allRequired", "oneRequired"],
                 enumNames: ["Tous obligatoires", "Une obligatoire"]
             },
-            values: {title:"Valeurs","$ref": "#/definitions/values"},
+            values: {
+                title:"Valeurs",
+                type: "array",
+                items: {
+                    type: "object",
+                    properties: {
+                        number: {
+                            title: "Zone",
+                            type: "number",
+                        },
+                        code: {
+                            title: 'Sous Zone',
+                            type: 'string',
+                        },
+                        message: {
+                            title: "Message",
+                            type: 'string',
+                        },
+                        rule: {
+                            title: 'Regle a utiliser',
+                            type: 'string',
+                            enum: rules.rules,
+                            enumNames: rules.names,
+                        },
+                        isWord: {
+                            title: 'Le motif contiens de mots',
+                            type: 'boolean',
+                            enum: [true, false],
+                            enumNames: ["Oui", "Non"]
+                        },
+                          
+                    },
+                }
+            },
             number: {
                 title: "Zone",
                 type: "number",
@@ -88,5 +94,6 @@ export function getSchemaConditionnelsMatching(categories, rules) {
                 type: "string",
             },
         },
+        required: ['category', 'number', 'condition','type', 'values', 'message'],
     }
 }
