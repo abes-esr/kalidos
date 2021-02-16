@@ -12,24 +12,6 @@ export function formatRuleConditionnelsMatching(data) {
 export function getSchemaConditionnelsMatching(categories, rules) {
     return {
         definitions: {
-            champs: {
-                type: "object",
-                properties: {
-                    number: {
-                        title: "Zone",
-                        type: "number",
-                    },
-                    code: {
-                        title: 'Sous Zone',
-                        type: 'string',
-                    },
-                    operator: {
-                        title: "Operateur de matching",
-                        type: "string",
-                        enum: ["presente", "contains_text", "startwith_text", "not_startwith_text", "not_contains_text", "not_equals_text"],
-                    },
-                },
-            },
             values: {
                 type: "object",
                 properties: {
@@ -68,11 +50,33 @@ export function getSchemaConditionnelsMatching(categories, rules) {
                 type: 'string',
                 enum: categories,
             },
-            condition: {title:"Condition","$ref": "#/definitions/champs"},
+            condition: {
+                title:"Conditions",
+                type: "array",
+                items: {
+                    type: "object",
+                    properties: {
+                        number: {
+                            title: "Zone",
+                            type: "number",
+                        },
+                        code: {
+                            title: 'Sous Zone',
+                            type: 'string',
+                        },
+                        operator: {
+                            title: "Operateur de matching",
+                            type: "string",
+                            enum: ["presente", "contains_text", "not_contains_text", "startwith_text", "not_startwith_text","not_equals_text", "equals_text"],
+                            enumNames: ["Valeur Presente", "Doit contenir","Ne doit pas contenir", "Commence par", "Ne doit pas commencer par", "Ne soit pas égale à", "Égale à"],
+                        },
+                    },
+                }
+            },
             type:{
                 title: "Type",
-                enum: ["required", "require with value", "exclude"],
-                enumNames: ["Obligatoire", "Obligatoire avec valeur", "Exclure"]
+                enum: ["allRequired", "oneRequired"],
+                enumNames: ["Tous obligatoires", "Une obligatoire"]
             },
             values: {title:"Valeurs","$ref": "#/definitions/values"},
             number: {

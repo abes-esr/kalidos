@@ -17,7 +17,7 @@ export function getSchemaConditionnelsDependance(categories, rules) {
                 type: "object",
                 properties: {
                     number: {
-                        title: "Zone",
+                        title: "Zone", 
                         type: "number",
                     },
                     code: {
