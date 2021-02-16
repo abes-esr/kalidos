@@ -1229,8 +1229,8 @@
                         ],
                         "code": "5",
                         "number": "856",
-                        "operator": "equals_text"
-                    }
+                        "operator": "startwith_text"
+                    }      
                 ],
                 "index": 71,
                 "values": [
@@ -1240,6 +1240,36 @@
                         "message": "",
                         "number": "856",
                         "regex": "^Accès réservé aux membres de Lyon 1 après authentification$"
+                    }
+                ],
+                "type": "allRequired"
+            },
+            {
+                "message": "856$zAccès au texte intégral sauf si 856$5=692669902, alors $zAccès réservé aux membres de Lyon 1 après authentification",
+                "number": "856",
+                "condition": [
+                    {
+                        "code": "5",
+                        "number": "856",
+                        "operator": "presente"
+                    },
+                    {
+                        "string": [
+                            "692669902"
+                        ],
+                        "code": "5",
+                        "number": "856",
+                        "operator": "not_startwith_text"
+                    }
+                ],
+                "index": 338,
+                "values": [
+                    {
+                        "subFieldRequired": true,
+                        "code": "z",
+                        "message": "",
+                        "number": "856",
+                        "regex": "^Accès au texte intégral$"
                     }
                 ],
                 "type": "allRequired"
@@ -2069,7 +2099,7 @@
                         ],
                         "code": "5",
                         "number": "856",
-                        "operator": "equals_text"
+                        "operator": "startwith_text"
                     }
                 ],
                 "index": 122,
@@ -2080,6 +2110,36 @@
                         "message": "",
                         "number": "856",
                         "regex": "^Accès réservé aux membres de Lyon 1 après authentification$"
+                    }
+                ],
+                "type": "allRequired"
+            },
+            {
+                "message": "856$zAccès au texte intégral sauf si 856$5=692669902, alors $zAccès réservé aux membres de Lyon 1 après authentification",
+                "number": "856",
+                "condition": [
+                    {
+                        "code": "5",
+                        "number": "856",
+                        "operator": "presente"
+                    },
+                    {
+                        "string": [
+                            "692669902"
+                        ],
+                        "code": "5",
+                        "number": "856",
+                        "operator": "not_startwith_text"
+                    }
+                ],
+                "index": 338,
+                "values": [
+                    {
+                        "subFieldRequired": true,
+                        "code": "z",
+                        "message": "",
+                        "number": "856",
+                        "regex": "^Accès au texte intégral$"
                     }
                 ],
                 "type": "allRequired"
@@ -3524,7 +3584,7 @@
                         ],
                         "code": "5",
                         "number": "856",
-                        "operator": "equals_text"
+                        "operator": "startwith_text"
                     }
                 ],
                 "index": 187,
@@ -3535,6 +3595,36 @@
                         "message": "",
                         "number": "856",
                         "regex": "^Accès réservé aux membres de Lyon 1 après authentification$"
+                    }
+                ],
+                "type": "allRequired"
+            },
+            {
+                "message": "856$zAccès au texte intégral sauf si 856$5=692669902, alors $zAccès réservé aux membres de Lyon 1 après authentification",
+                "number": "856",
+                "condition": [
+                    {
+                        "code": "5",
+                        "number": "856",
+                        "operator": "presente"
+                    },
+                    {
+                        "string": [
+                            "692669902"
+                        ],
+                        "code": "5",
+                        "number": "856",
+                        "operator": "not_startwith_text"
+                    }
+                ],
+                "index": 338,
+                "values": [
+                    {
+                        "subFieldRequired": true,
+                        "code": "z",
+                        "message": "",
+                        "number": "856",
+                        "regex": "^Accès au texte intégral$"
                     }
                 ],
                 "type": "allRequired"
@@ -6832,36 +6922,7 @@
                     "number": 452
                 }
             },
-            {
-                "message": "856$zAccès au texte intégral sauf si 856$5=692669902, alors $zAccès réservé aux membres de Lyon 1 après authentification",
-                "number": "856",
-                "condition": [
-                    {
-                        "code": "5",
-                        "number": "856",
-                        "operator": "presente"
-                    },
-                    {
-                        "string": [
-                            "692669902"
-                        ],
-                        "code": "5",
-                        "number": "856",
-                        "operator": "not_equals_text"
-                    }
-                ],
-                "index": 338,
-                "values": [
-                    {
-                        "subFieldRequired": true,
-                        "code": "z",
-                        "message": "",
-                        "number": "856",
-                        "regex": "^Accès au texte intégral$"
-                    }
-                ],
-                "type": "allRequired"
-            },
+            
             {
                 "message": "Si 600 $2rameau doit être présent",
                 "number": 600,
