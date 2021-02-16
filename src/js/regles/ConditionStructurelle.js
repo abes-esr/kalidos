@@ -38,7 +38,7 @@ const ConditionStructurel = function () {
                     addError(resultJson, regle);
                     return null;
                 }
-
+                
                 let checkControlFields = controlfields;
                 let checkDataFields = datafields;
                 if (regle.reciproque) {
@@ -81,7 +81,7 @@ const ConditionStructurel = function () {
             return false;
 
         }
-
+       
         return isCheckValues;
     }
 
@@ -111,6 +111,7 @@ const ConditionStructurel = function () {
 export default ConditionStructurel;
 
 function verifyOne(datafields, value, controlfields, checkReciproque) {
+    
     const listDatafield = getListDatafield(datafields, value);
     let result = verifyPresence(value, listDatafield);
     result = result || verifyIndex(value, listDatafield);
@@ -120,7 +121,8 @@ function verifyOne(datafields, value, controlfields, checkReciproque) {
 
 function verifyPresenceSubfield(value, listDatafield) {
     const subfield = Parcours.getSubfieldValue(listDatafield[0], value.code);
-    if ((subfield != null) === value.present) {
+    const isExist = subfield != null
+    if (isExist === value.present) {
         return true;
     }
     return false;

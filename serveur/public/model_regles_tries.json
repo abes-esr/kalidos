@@ -1289,7 +1289,7 @@
                         ],
                         "code": "5",
                         "number": "856",
-                        "operator": "equals_text"
+                        "operator": "startwith_text"
                     }
                 ],
                 "index": 72,
@@ -2159,7 +2159,7 @@
                         ],
                         "code": "5",
                         "number": "856",
-                        "operator": "equals_text"
+                        "operator": "startwith_text"
                     }
                 ],
                 "index": 123,
@@ -2187,8 +2187,8 @@
                         ],
                         "code": "a",
                         "pos": [
-                            4,
-                            7
+                            0,
+                            9999
                         ],
                         "number": "105",
                         "operator": "contains_text"
@@ -2208,7 +2208,7 @@
                         "code": "a",
                         "message": "",
                         "number": "214",
-                        "regex": "^Lyon$"
+                        "regex": "^(Lyon)|(\\[Lyon\\])$"
                     }
                 ],
                 "type": "allRequired"
@@ -2474,6 +2474,35 @@
         ],
         "dependances": [],
         "ConditionStructurel": [
+            {
+                "message": "Zone 456 incompatible avec le type de thèse (reproduction)",
+                "number": "456",
+                "condition": [
+                    {
+                        "string": [
+                            "v"
+                        ],
+                        "ind1": "",
+                        "pos": [
+                            0,
+                            9999
+                        ],
+                        "number": "105",
+                        "ind2": "",
+                        "code": "a",
+                        "operator": "contains_text"
+                    }
+                ],
+                "index": 350,
+                "type": "allRequired",
+                "value": [
+                    {
+                        "code": "",
+                        "number": "456",
+                        "present": false
+                    }
+                ]
+            },
             {
                 "message": "Si 008 commence par Aa, 215 $a et $d obligatoires",
                 "number": "008",
@@ -3885,7 +3914,7 @@
                         ],
                         "code": "5",
                         "number": "856",
-                        "operator": "equals_text"
+                        "operator": "startwith_text"
                     }
                 ],
                 "index": 198,
@@ -7188,35 +7217,6 @@
                         "code": "",
                         "number": "029",
                         "present": true
-                    }
-                ]
-            },
-            {
-                "message": "Zone 456 incompatible avec le type de thèse (reproduction)",
-                "number": "856",
-                "condition": [
-                    {
-                        "string": [
-                            "v"
-                        ],
-                        "ind1": "",
-                        "pos": [
-                            4,
-                            7
-                        ],
-                        "number": "105",
-                        "ind2": "",
-                        "code": "a",
-                        "operator": "contains_text"
-                    }
-                ],
-                "index": 350,
-                "type": "allRequired",
-                "value": [
-                    {
-                        "code": "",
-                        "number": "456",
-                        "present": false
                     }
                 ]
             },

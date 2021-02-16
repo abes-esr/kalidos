@@ -74,7 +74,6 @@ var IdRef = function () {
                 }
                 else if (regle.condition[i].code != null) {
                     valid = Parcours.testCode(fields[j], regle.condition[i].code)
-                    console.log(valid)
                 } else {
                     valid = fields[j] != null
                 }

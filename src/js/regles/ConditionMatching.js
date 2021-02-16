@@ -25,12 +25,13 @@ let ConditionMatching = function () {
 
                 let checkControlFields = controlfields;
                 let checkDataFields = datafields;
-
                 if (regle.reciproque) {
                     ppnInitiale = Parcours.findDataField(controlfields, "001")._text;
                     const data = await getDocument(datafields, regle, resultJson);
+                    console.log("data : " , data)
                     if (data === null) {
                         addError(resultJson, regle);
+                        console.log(resultJson)
                         return;
                     }
                     checkControlFields = data.record.controlfield;

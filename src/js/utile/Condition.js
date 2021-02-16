@@ -46,7 +46,7 @@ var Condition = function () {
                         isMatched = testTagCondition(condition, subfieldValue, condition.string[j]);
                         // console.log(subfieldValue,condition.operator, condition.string[j], isMatched);
 
-                        if (!isMatched) {
+                        if (isMatched) {
                             break;
                         }
                     }
