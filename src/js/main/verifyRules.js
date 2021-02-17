@@ -12,6 +12,7 @@ import ConditionDependance from "../regles/ConditionDependance";
 import Ordonnancement from "../regles/Ordonnancement";
 import Compte from "../regles/Compte";
 import Precedence from "../regles/Precedence";
+import { WindowSidebar } from 'react-bootstrap-icons';
 
 
 const CATEGORIE_GENERALE = "Generale";
@@ -55,8 +56,9 @@ function getSudoc(rules, PPN) {
 
     axios.get('https://www.sudoc.fr/' + PPN + '.xml')
         .then(function (response) {
+            const xml = response.data.replaceAll('&', '')
             const data = JSON.parse(
-                convert.xml2json(response.data, { compact: true, spaces: 2 })
+                convert.xml2json(xml, { compact: true, spaces: 2 })     
             );
             verifMain(rules, data);
         })

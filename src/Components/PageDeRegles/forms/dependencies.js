@@ -1,9 +1,9 @@
-import { getOperator } from '../generator';
+import mathOperators from '../operators';
 
 export function formatRuleDependencies(data) {
     console.log('formatRuleDependencies');
     const obj = {};
-    obj.operator = getOperator(data.operator);
+    obj.operator = data.operator;
     obj.message = data.message;
     obj.field1 = {
         number: data.field1.number,
@@ -26,7 +26,7 @@ export function formatRuleDependencies(data) {
                 properties: {
                     number: {
                         title: "Zone",
-                        type: "number",
+                        type: "string",
                     },
                     code: {
                         title: 'Sous Zone',
@@ -34,10 +34,16 @@ export function formatRuleDependencies(data) {
                     },
                     pos: {
                         title: "Position",
-                        type: "string",
-                        enum: ["[]", "[9,13]", "[13,17]", "[0,4]", "[0,2]"],
+                        type: "array",
+                        maxItems: 2,
+                        items:{
+                            title: " Position dans le XML",
+                            type: "number"
+                        }
                     },
                 },
+                required: ['number', 'code', 'pos'],
+
             },
         },
         type: "object",
@@ -47,18 +53,21 @@ export function formatRuleDependencies(data) {
                 type: 'string',
                 enum: categories,
             },
-            field1: {title:"Premier champ","$ref": "#/definitions/champs"},
-            field2: {title:"Deuxiéme champ","$ref": "#/definitions/champs"},
             operator: {
                 title: "Opérateur",
+                description: "Opérateur de dépendence entre le premier champ et le deuxiéme champ",
                 type: "string",
-                enum: ["<","<=", "=", ">=", ">"],
-                enumNames: ["Plus petit","Plus petit ou egal", "Egal", "Plus grand ou egal", "Plus grand"]
+                enum: mathOperators.rules,
+                enumNames: mathOperators.names
             },
+            field1: {title:"Premier champ","$ref": "#/definitions/champs"},
+            field2: {title:"Deuxiéme champ","$ref": "#/definitions/champs"},
             message: {
                 title: "Message à afficher",
                 type: "string",
             },
         },
+        required: ['category', 'operator', 'field1', 'field2', 'message'],
+
     }
 }

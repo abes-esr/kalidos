@@ -23,6 +23,17 @@ function Table() {
   const [columns, setColumns] = useState(columnsSpec);
   const { SearchBar } = Search;
 
+  const newRule = function (rule) {
+    rule.action = ""
+    rules.unshift(rule)
+    const newRules = rules
+    setRules(newRules)
+  }
+
+  const editRule = function (rule) {
+    window.location.reload()
+  }
+  
   useEffect(() => {
     fetch('/rules')
       .then((res) => res.json())
@@ -39,7 +50,7 @@ function Table() {
             editable: false,
             searchable: false,
             headerStyle: () => ({ width: '10%', whiteSpace: 'nowrap' }),
-            formatter: (cell, row) => <Action row={row} types={t} />,
+            formatter: (cell, row) => <Action row={row} types={t} editRule={editRule}/>,
           }]);
           setTypes(t);
         },
@@ -74,7 +85,7 @@ function Table() {
                     button={<AddCircle fontSize="large" />}
                     title="Ajouter une régle"
                     // body="{<SelectType categories={categories}/>}"
-                    body={<Add types={types} />}
+                    body={<Add types={types} newRule={newRule}/>}
                   />
                 </div>
               </div>

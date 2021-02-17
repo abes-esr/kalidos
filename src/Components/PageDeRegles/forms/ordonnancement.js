@@ -24,11 +24,14 @@ export function getSchemaOrdonnancement(categories, rules) {
             orderBy: {
                 title: 'Ordonner par',
                 type: 'string',
+                enum: ['ind1', 'ind2'],
+                enumNames: ['Indice 1', 'Indice 2']
             },
             message: {
                 title: "Message à afficher",
                 type: "string",
             },
         },
+        required: ['category', 'number', 'orderBy', 'message'],
     }
 }

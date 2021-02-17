@@ -5,7 +5,7 @@ import {
 } from 'react-bootstrap';
 import ArrayFieldTemplate from '../forms/ArrayFieldTemplate';
 
-function Add({ types }) {
+function Add({ types, newRule }) {
   const [useForm, setUseForm] = useState(false);
   const [index, setIndex] = useState(0);
 
@@ -21,6 +21,37 @@ function Add({ types }) {
     const obj = types[index].submit(formData);
     console.log('Add');
     console.log(obj);
+    const type = types[index].type;
+    const category = formData.category;
+
+    const requestOptions = {
+      method: 'POST',
+      headers: { 
+        'Content-Type': 'application/json',
+        'type': type,
+        'categorie': category
+      },
+      body: JSON.stringify(obj)
+    };
+
+    fetch('/rules', requestOptions)
+      .then(response => {
+        switch (response.status) {
+          case 200:
+            alert("Nouvelle règle ajouté!")
+            setUseForm(!useForm)
+            obj.category = category
+            obj.type = type
+            newRule(obj)
+            break;
+          case 304:
+            alert("Règle déjà existente")
+            break;
+          default:
+            alert("Le type / categorie n'existent pas")
+            break;
+        }
+      })
     // POST obj
     // refresh rules list
   };

@@ -135,19 +135,3 @@ export function generator (func, items, isWord) {
   return regex;
 }
 
-export function getOperator(operator){
-  switch (operator) {
-    case '<':
-      return 'less'
-    case '<=':
-        return 'lessEquals'
-    case '=':
-      return 'equals';
-    case '>=':
-      return 'greaterEquals';
-    case '>':
-      return 'greater'
-    default:
-      break;
-  }
-}

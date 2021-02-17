@@ -6,6 +6,7 @@ export function formatRuleStructurel(data) {
   obj.number = data.number;
   obj.ind1 = data.ind1 ? data.ind1 : "";
   obj.ind2 = data.ind2 ? data.ind2 : "";
+  obj.code = data.code ? data.code : "";
   obj.type = data.type;
   if (data.type === 'Obligatoire avec valeur') 
     obj.value = data.value;
@@ -42,11 +43,12 @@ export function getSchemaStructurel(categories, rules) {
           },
           type:{
             title: "Type",
-            enum: ["required", "require with value", "exclude"],
-            enumNames: ["Obligatoire", "Obligatoire avec valeur", "Exclure"]
+            enum: ["required", "require one", "exclude", "contains code", "index", "required with value"],
+            enumNames: ["Obligatoire", "Une seule est obligatoire", "Exclure", "Contiens sous zone", "Indice", "Obligatoire avec valeur",]
           },
           value:{
-            title: 'Valeur (Obligatoire avec valeur)',
+            title: 'Valeur',
+            description: "Valeur à utiliser pour l'option 'Obligatoire avec valeur'",
             type: 'string',
           },
           message: {
@@ -54,5 +56,7 @@ export function getSchemaStructurel(categories, rules) {
             type: "string",
           },
         },
+        required: ['category', 'number', 'type', 'message'],
+
     }
 }

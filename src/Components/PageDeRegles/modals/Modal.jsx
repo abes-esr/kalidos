@@ -4,9 +4,10 @@ import PropTypes from 'prop-types';
 import { Modal, Button } from 'react-bootstrap';
 import IconButton from '@material-ui/core/IconButton';
 
-function FormModal({
-  button, title, body, close, accept,
-}) {
+function FormModal(props) {
+  const {
+    button, title, body, close, accept, acceptFunc
+  } = props
   const [showHide, setShowHide] = useState(false);
 
   const handleModalShowHide = () => {
@@ -19,6 +20,9 @@ function FormModal({
 
   const whenAccepting = () => {
     handleModalShowHide();
+    if (acceptFunc){
+      acceptFunc()
+    }
   };
   return (
     <div>
@@ -26,7 +30,7 @@ function FormModal({
         {button}
       </IconButton>
 
-      <Modal show={showHide}>
+      <Modal show={showHide} onHide={whenClosing}>
 
         <Modal.Header closeButton onClick={() => whenClosing()}>
           <Modal.Title>{title}</Modal.Title>

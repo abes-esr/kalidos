@@ -183,24 +183,28 @@ function getListDatafield(datafields, value) {
     return dataField;
 }
 
-function getDataOnSudoc(datafields, number, code) {
+async function getDataOnSudoc(datafields, number, code) {
     const dataField = Parcours.findDataField(datafields, number);
     const ppnDest = Parcours.getSubfieldValue(dataField, code);
 
     if (ppnDest !== null) {
-        axios.get("https://www.sudoc.fr/" + ppnDest + ".xml")
+        const result = await axios.get("https://www.sudoc.fr/" + ppnDest + ".xml")
             .then(function (response) {
+                const xml = response.data.replaceAll('&', '')
                 const data = JSON.parse(
-                    convert.xml2json(response.data, { compact: true, spaces: 2 })
+                    convert.xml2json(xml, { compact: true, spaces: 2 })
                 );
                 return data;
                     
             })
             .catch(function (error) {
                 console.log("error matching reciproque");
+                return null;
             });
+            return result
     }
-    return null;
+    return null
+    
 }
 
 

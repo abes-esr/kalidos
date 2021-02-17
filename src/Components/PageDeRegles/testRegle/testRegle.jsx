@@ -73,8 +73,9 @@ function testRegle({ row }) {
     const verifierRegle = () => {
         try {
             const xmlStr = document.getElementById("fakePPN").value;
+            const xml = xmlStr.replaceAll('&', '')
             const data = JSON.parse(
-                convert.xml2json(xmlStr, { compact: true, spaces: 2 })
+                convert.xml2json(xml, { compact: true, spaces: 2 })
             );
             const type = row.index.split("_")[1];
             const rule = {
