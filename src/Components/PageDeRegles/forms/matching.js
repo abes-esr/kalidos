@@ -53,6 +53,7 @@ export function getSchemaMatching(categories, rules) {
       },
       patterns: {
         title: 'Motif(s) à utiliser par la règle',
+        description: "match = all tous les motifs doivent être validés \nmatch = one au moins un motif doit être validé.",
         type: 'array',
         items: {
           type: 'string',
@@ -68,6 +69,6 @@ export function getSchemaMatching(categories, rules) {
         type: 'string',
       },
     },
-    required: ['category', 'number', 'code', 'isWord', 'message'],
+    required: ['category', 'number','rule', 'patterns',  'code', 'message'],
   };
 }

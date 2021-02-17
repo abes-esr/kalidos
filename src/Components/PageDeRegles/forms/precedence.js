@@ -4,8 +4,9 @@ export function formatRulePrecedence(data) {
     console.log('formatRulePrecedence');
     const obj = {};
     obj.number = data.number;
-    obj.orderBy = data.orderBy;
     obj.message = data.message;
+    obj.condition = data.condition;
+    obj.precede = data.precede;
     return obj;
 }
 
@@ -67,7 +68,7 @@ export function getSchemaPrecedence(categories, rules) {
                             enumNames: operators.names
                         },
                     },
-                    required: ['string', 'number', 'orderBy', 'operator'],
+                    required: ['number', 'orderBy', 'operator'],
                 }
             },
             precede: {title:"Precede","$ref": "#/definitions/precede"},

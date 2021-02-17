@@ -18,12 +18,11 @@ function Table() {
   const [error, setError] = useState(null);
   const [isLoaded, setIsLoaded] = useState(false);
   const [rules, setRules] = useState([]);
-  // const [categories, setCategory] = useState([]);
   const [types, setTypes] = useState([]);
   const [columns, setColumns] = useState(columnsSpec);
   const { SearchBar } = Search;
 
-  const newRule = function (rule) {
+  function newRule(rule) {
     rule.action = ""
     const newRules = rules
     newRules.unshift(rule)
@@ -31,29 +30,38 @@ function Table() {
   }
 
   function editRule(rule) {
-    console.log(rule)
-    console.log("avant")
-    console.log(rules)
     setRules(
-    function(oldArray){
-      const i = oldArray.findIndex(r => r.index === rule.index);
-      console.log("i "+ i)
-      return [
-        oldArray.splice(0, i - 1),
-        {
-          ...rule
-        },
-        oldArray.splice(i + 1),
-      ]
-      // const newArray = oldArray;
-      // newArray[i] = rule;
-      // console.log(newArray);
-      // setRules(newArray)
-    })
-    console.log("apres")
-    console.log(rules)
+      function(oldArray){
+        const i = oldArray.findIndex(r => r.index === rule.index);
+        let before = oldArray.slice(0, i);
+        let after = oldArray.slice(i + 1)
+        let newArray = [
+          ...before,
+          {
+            ...rule
+          },
+          ...after,
+        ]
+        return newArray
+      }
+    )
   }
   
+  function deleteRule(index) {
+    setRules(
+      function(oldArray){
+        const i = oldArray.findIndex(r => r.index === index);
+        let before = oldArray.slice(0, i);
+        let after = oldArray.slice(i + 1)
+        let newArray = [
+          ...before,
+          ...after,
+        ]
+        return newArray
+      }
+    )
+  }
+
   useEffect(() => {
     fetch('/rules')
       .then((res) => res.json())
@@ -63,16 +71,18 @@ function Table() {
           const filtered = filtering(result);
           setRules(filtered.rules);
           // setCategory(filtered.categories);
-          const t = typesSpec(filtered.categories, rulesSpec);
+          
+          let t = typesSpec(filtered.categories, rulesSpec);
+          setTypes(t);
           setColumns([...columnsSpec, {
             dataField: 'action',
             text: 'Action',
             editable: false,
             searchable: false,
             headerStyle: () => ({ width: '10%', whiteSpace: 'nowrap' }),
-            formatter: (cell, row) => <Action row={row} types={t} editRule={editRule}/>,
+            formatter: (cell, row) => <Action row={row} types={t} editRule={editRule} deleteRule={deleteRule}/>,
           }]);
-          setTypes(t);
+          
         },
         (e) => {
           setIsLoaded(true);

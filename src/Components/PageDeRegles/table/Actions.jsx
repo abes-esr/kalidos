@@ -8,7 +8,7 @@ import Modal from '../modals/Modal';
 import ModalTestRegle from '../modals/ModalTestRegle';
 import TestRegle from '../testRegle/testRegle';
 
-function Action({ row, types, editRule }) {
+function Action({ row, types, editRule, deleteRule }) {
   const typeIndex = types.findIndex((t) => t.type === row.type);
   const { schema } = types[typeIndex];
 
@@ -44,7 +44,7 @@ function Action({ row, types, editRule }) {
       })
   };
 
-  const deleted = function () {
+  const onAcceptDelete = function () {
     const requestOptions = {
       method: 'DELETE',
       headers: { 
@@ -57,26 +57,29 @@ function Action({ row, types, editRule }) {
       .then(response => {
         switch (response.status) {
           case 200:
-            alert("Règle suprimé!")
-            editRule({})
+            deleteRule(row.index)
             break;
           default:
-            alert("Le type / categorie n'existent pas")
+            alert("Régle pas trouvé")
             break;
         }
       })
   }
 
-  const EditForm = () => (
+  const EditForm = () => {
+    let editSchema = schema
+    delete editSchema.properties.category
+    editSchema.required = editSchema.required.slice(1)
+    return (
     <FormJSON
       className="col-12"
-      schema={schema}
+      schema={editSchema}
       ArrayFieldTemplate={ArrayFieldTemplate}
       onSubmit={onSubmit}
     >
       <Button className="m-1" variant="primary" type="submit">Valider</Button>
     </FormJSON>
-  );
+  )};
 
   return (
     <div className="row">
@@ -101,7 +104,7 @@ function Action({ row, types, editRule }) {
           body="Êtes vous sûrs de vouloir supprimer cette régle ?"
           close="Annuler"
           accept="Supprimer"
-          acceptFunc={deleted}
+          acceptFunc={onAcceptDelete}
         />
       </div>
     </div>

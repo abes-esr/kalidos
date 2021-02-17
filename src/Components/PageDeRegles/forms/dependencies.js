@@ -8,12 +8,12 @@ export function formatRuleDependencies(data) {
     obj.field1 = {
         number: data.field1.number,
         code: data.field1.code,
-        pos: data.field1.pos,
+        pos: data.field1.pos? data.field1.pos : [],
     }
     obj.field2 = {
         number: data.field2_number,
         code: data.field2_code,
-        pos: data.field2_pos,
+        pos: data.field2_pos? data.field2.pos : [],
     }
     return obj;
   }
@@ -42,7 +42,7 @@ export function formatRuleDependencies(data) {
                         }
                     },
                 },
-                required: ['number', 'code', 'pos'],
+                required: ['number', 'code'],
 
             },
         },
@@ -55,7 +55,7 @@ export function formatRuleDependencies(data) {
             },
             operator: {
                 title: "Opérateur",
-                description: "Opérateur de dépendence entre le premier champ et le deuxiéme champ",
+                description: "Opérateur à appliquer",
                 type: "string",
                 enum: mathOperators.rules,
                 enumNames: mathOperators.names
