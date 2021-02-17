@@ -25,13 +25,33 @@ function Table() {
 
   const newRule = function (rule) {
     rule.action = ""
-    rules.unshift(rule)
     const newRules = rules
+    newRules.unshift(rule)
     setRules(newRules)
   }
 
-  const editRule = function (rule) {
-    window.location.reload()
+  function editRule(rule) {
+    console.log(rule)
+    console.log("avant")
+    console.log(rules)
+    setRules(
+    function(oldArray){
+      const i = oldArray.findIndex(r => r.index === rule.index);
+      console.log("i "+ i)
+      return [
+        oldArray.splice(0, i - 1),
+        {
+          ...rule
+        },
+        oldArray.splice(i + 1),
+      ]
+      // const newArray = oldArray;
+      // newArray[i] = rule;
+      // console.log(newArray);
+      // setRules(newArray)
+    })
+    console.log("apres")
+    console.log(rules)
   }
   
   useEffect(() => {

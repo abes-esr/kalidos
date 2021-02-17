@@ -29,7 +29,6 @@ function Action({ row, types, editRule }) {
         switch (response.status) {
           case 200:
             alert("Règle edité!")
-            console.log(row)
             obj.category = row.category
             obj.type = row.type
             obj.index = row.index
