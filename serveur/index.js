@@ -24,10 +24,9 @@ const mockResponse = {
   bar: 'foo',
 };
 
-let noticeCounter = 0;
 
 /**
- * renvois le fichier de regles
+ * renvoie le fichier de règles
  */
 app.get('/rules', (req, res) => {
   const file = `${__dirname}/public/model_regles_tries.json`;
@@ -35,7 +34,7 @@ app.get('/rules', (req, res) => {
 });
 
 /**
- * remplace le contenu du fichier result.json par le body de la requete
+ * remplace le contenu du fichier result.json par le body de la requête
  * @body body : fichier resultat
  * return code 200
  */
@@ -46,12 +45,12 @@ app.post('/result', (req, res) => {
 });
 
 /**
- * ajoute une nouvelle regle dans le fichier de regles
- * @header type : type de la regle
- * @header categorie : categorie de la regle
- * retourne 200 si ajout avec succes
- * retourne 304 si on tente d'ajouter une regle deja existante
- * retourne 404 si le type/categorie n'existe pas
+ * ajoute une nouvelle règle dans le fichier de règles
+ * @header type : type de la règle
+ * @header categorie : catégorie de la règle
+ * retourne 200 si ajout avec succés
+ * retourne 304 si on tente d'ajouter une règle déjà existante
+ * retourne 404 si le type/catégorie n'existe pas
  */
 app.post('/rules', (req, res) => {
   let json = fs.readFileSync(`${__dirname}/public/model_regles_tries.json`);
@@ -90,8 +89,8 @@ app.post('/rules', (req, res) => {
 });
 
 /**
- * supression d'une regle
- * @header index : identifiant de la regle a supprimer
+ * supression d'une règle
+ * @header index : identifiant de la règle à supprimer
  * return 200 ou 404
  */
 app.delete('/rules', (req, res) => {
@@ -116,9 +115,9 @@ app.delete('/rules', (req, res) => {
 });
 
 /**
- * modification d'une regle
- * @header index : identifiant de la regle a modifier
- * @body body : nouvelle regle
+ * modification d'une règle
+ * @header index : identifiant de la règle à modifier
+ * @body body : nouvelle règle
  * return 200 ou 404
  */
 app.put('/rules', (req, res) => {
@@ -152,19 +151,22 @@ app.get('/getNotices', (req, res) => {
 });
 
 /**
- * ajoute une notice à la liste des notices erronés
+ * ajoute une notice à la liste des notices erronés, 
+ * l'index de la notice est un timestamp
  * @body body : notice à ajouter
  * return code 200
  */
-app.post('/notice', (req, res) => {
+app.post('/notices', (req, res) => {
   const errorIndex = req.body;
-  noticeCounter++;
+  let datetime = new Date();
+  let index = datetime.toISOString().slice(0,19);
+  index = index.replace("T", " ");
   fs.readFile(`${__dirname}/public/noticesErreurs.json`, 'utf8', function readFileCallback(err, data){
     if (err) {
         console.log(err);
     } else {
       let obj = JSON.parse(data);
-      obj[noticeCounter] = errorIndex;
+      obj[index] = errorIndex;
       json = JSON.stringify(obj);
       fs.writeFile(`${__dirname}/public/noticesErreurs.json`, json, 'utf8', function(err, result) {
         if(err) console.log('error', err);
@@ -179,8 +181,8 @@ app.post('/notice', (req, res) => {
  * @header index : identifiant de la notice à supprimer
  * return 200
  */
-app.delete('/deleteNotice', (req, res) => {
-  const index =  parseInt(req.header("index"), 10);
+app.delete('/notices', (req, res) => {
+  const index = req.header("index");
   fs.readFile(`${__dirname}/public/noticesErreurs.json`, 'utf8', function readFileCallback(err, data){
     if (err) {
         console.log(err);

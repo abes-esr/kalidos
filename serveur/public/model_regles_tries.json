@@ -7766,7 +7766,7 @@
                 ]
             },
             {
-                "message": "214\t214 #0 ou 214#1 obligatoire, sauf si 105$a contiens v",
+                "message": "214\t214 #0 ou 214#1 obligatoire, sauf si 105$a contient v",
                 "number": "105",
                 "condition": [
                     {
