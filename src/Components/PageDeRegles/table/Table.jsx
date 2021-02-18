@@ -120,7 +120,7 @@ function Table() {
                 </div>
               </div>
               <hr />
-              <BootstrapTable {...props.baseProps} pagination={paginationFactory(options)} />
+              <BootstrapTable {...props.baseProps} pagination={paginationFactory(options)} striped bordered hover />
             </div>
           )
         }

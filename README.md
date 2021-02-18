@@ -1,4 +1,4 @@
-# BiblioDev
+# KaliDoS
 
 + `npm run build` construit le projet
 + `npm run start` lance le serveur.
