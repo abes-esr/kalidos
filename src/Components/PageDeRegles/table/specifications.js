@@ -1,7 +1,7 @@
 
 export const options = {
   paginationSize: 4,
-  pageStartIndex: 0,
+  pageStartIndex: 1,
   hidePageListOnlyOnePage: true,
   firstPageText: 'Premiére',
   prePageText: 'Retour',

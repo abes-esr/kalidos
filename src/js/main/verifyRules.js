@@ -35,6 +35,19 @@ function verifiyRulesByTextArea() {
     getRules(listPPN);
 }
 
+function verifiyRulesByTextAreaNotice (listPPN) {
+    store.dispatch(cleanResult());
+    const choixCategorie = $("#choixCategorie").val();
+    store.dispatch(setChoixCategorie(choixCategorie));
+    let path = location.protocol + '//' + location.host + '/#/interfaceVerif';
+    window.location = path;
+    store.dispatch(setNombreTotalPPN(listPPN.length));
+    nombreTotalPPN = listPPN.length;
+    count = 0;
+    getRules(listPPN);
+}
+
+
 /**
  * recuperer un PPN dans la base du sudoc et lance sa verification
  * @param {json} rules regles a valider 
@@ -238,7 +251,7 @@ function verifMain(rules, sudoc) {
     }
 }
 
-export {verifiyRulesByTextArea};
+export {verifiyRulesByTextArea, verifiyRulesByTextAreaNotice};
 
 /**
  * Teste tous les type de regle sur un PPN
