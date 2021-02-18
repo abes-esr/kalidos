@@ -28,11 +28,8 @@ let ConditionMatching = function () {
                 if (regle.reciproque) {
                     ppnInitiale = Parcours.findDataField(controlfields, "001")._text;
                     const data = await getDocument(datafields, regle, resultJson);
-                    console.log("data : " , data)
                     if (data === null) {
-                        console.log("data === null")
                         addError(resultJson, regle);
-                        console.log(resultJson)
                         return;
                     }
                     checkControlFields = data.record.controlfield;
@@ -40,7 +37,6 @@ let ConditionMatching = function () {
                 }
 
                 if (!checkValues(regle, checkDataFields, checkControlFields)) {
-                    console.log("checkValues(regle, checkDataFields, checkControlFields)")
                     addError(resultJson, regle);
                 }
             }
@@ -60,7 +56,6 @@ let ConditionMatching = function () {
                         spaces: 2
                     })
                 );
-                console.log(data)
                 return data;
             })
             .catch(function (error) {

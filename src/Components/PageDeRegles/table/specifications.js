@@ -1,4 +1,3 @@
-
 export const options = {
   paginationSize: 4,
   pageStartIndex: 1,
@@ -9,7 +8,7 @@ export const options = {
   lastPageText: 'Derniére',
   showTotal: true,
   disablePageTitle: true,
-  sizePerPageList: [20, 50, 100]
+  sizePerPageList: [20, 50, 100],
 };
 
 export const columnsSpec =  [
