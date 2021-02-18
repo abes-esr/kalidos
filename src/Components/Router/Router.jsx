@@ -44,8 +44,8 @@ const Router_App = () => (
         </li>
         <li className="nav-item">
             <Link to="/noticesErreurs" className="nav-link">
-                <i className="fa fa-exclamation-triangle" style={{ marginRight: "3px" }}></i>
-                <span>Notices erronées</span>
+                <i className="fas fa-history" style={{ marginRight: "3px" }}></i>
+                <span>Historique</span>
             </Link>
         </li>
     </ul>

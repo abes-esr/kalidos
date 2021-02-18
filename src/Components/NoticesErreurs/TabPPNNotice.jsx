@@ -24,8 +24,8 @@ function TabPPNNotice({ notices, noticeDisplay }) {
           <th>
             <span style={{display: "inline-block", marginRight:"10px"}} >
               <Modal
-                button="Relancer la notice"
-                title="Relancer la notice"
+                button="Relancer le contrôle"
+                title="Relancer le contrôle"
                 body={<RelanceForm notices={notices} />}
               />
             </span>

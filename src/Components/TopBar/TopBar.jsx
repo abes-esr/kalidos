@@ -28,7 +28,7 @@ function TopBar({ compteurResult, nombreTotalPPN, result, listPPNErronne, compte
                 Nombre de PPN testés : {nombreTotalPPN}
             </Col>
             <Col className="text-warning" style={{ textAlign: 'center' }}>
-                Nombre d'erreurs total : {nombreErreurTotal}
+                Nombre total d'erreurs : {nombreErreurTotal}
             </Col>
             <Col className="text-danger" style={{ textAlign: 'center' }}>
                 Nombre de PPN inexistants : {listPPNErronne.length}

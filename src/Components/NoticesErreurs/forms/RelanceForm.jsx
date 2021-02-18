@@ -19,10 +19,10 @@ function RelanceForm({ notices, noticeDisplay }) {
             <label htmlFor='jeuDeRegles'>Choix du jeu de règles</label>
             <select className="form-control" aria-describedby="basic-addon1" id="choixCategorie">
               <option value="Generale" defaultValue>Générale</option>
-              <option value="Electronique">Electronique</option>
-              <option value="MémoireSoutenance">Mémoire Soutenance</option>
-              <option value="MémoireReproduction">Mémoire Reproduction</option>
-              <option value="AutreDocuments">Autre Documents</option>
+              <option value="Electronique">Monographie électronique</option>
+              <option value="MémoireSoutenance">Thèses et Mémoires (soutenance)</option>
+              <option value="MémoireReproduction">Thèses mémoires (reproduction)</option>
+              <option value="AutreDocuments">Monographies imprimées et autres documents</option>
             </select>
           </div>
         </div>
