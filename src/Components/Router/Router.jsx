@@ -25,25 +25,25 @@ const Router_App = () => (
 
         <li className="nav-item">
             <Link to="/" className="nav-link">
-                <i className="fas fa-fw fa-chart-area"></i>
+            <i class="fas fa-pencil-alt" style={{marginRight:"3px"}}></i>
                 <span>Saisie des identifiants</span>
             </Link>
         </li>
         <li className="nav-item">
             <Link to="/interfaceVerif" className="nav-link">
-                <i className="fas fa-fw fa-wrench"></i>
-                <span>Interface de Verification</span>
+            <i class="far fa-list-alt" style={{marginRight:"3px"}}></i>
+                <span>Interface de vérification</span>
             </Link>
         </li>
         <li className="nav-item">
             <Link to="/interfaceRegles" className="nav-link">
-                <i className="fas fa-fw fa-wrench"></i>
+                <i className="fas fa-fw fa-wrench" style={{marginRight:"3px"}}></i>
                 <span>Interface des règles</span>
             </Link>
         </li>
         <li className="nav-item">
             <Link to="/noticesErreurs" className="nav-link">
-                <i className="fas fa-fw fa-wrench"></i>
+                <i className="fa fa-exclamation-triangle" style={{marginRight:"3px"}}></i>
                 <span>Notices erronées</span>
             </Link>
         </li>
