@@ -11,49 +11,6 @@ export function formatRuleConditionnelsStructurel(data) {
 
 export function getSchemaConditionnelsStructurel(categories, rules) {
     return {
-        definitions: {
-            champs: {
-                type: "object",
-                properties: {
-                    number: {
-                        title: "Zone",
-                        type: "number",
-                    },
-                    code: {
-                        title: 'Sous Zone',
-                        type: 'string',
-                    },
-                    ind1: {
-                        title: "Indice 1",
-                        type: "string"
-                    },
-                    ind2: {
-                        title: "Indice 2",
-                        type: "string"
-                    },
-                    pos: {
-                        title: "Position",
-                        type: "object",
-                        properties: {
-                            x: {title: "x", type: "number"},
-                            y: {title: "y", type: "number"},
-                        }
-                    },
-                    string: {
-                        title: "String",
-                        type: "array",
-                        items: {
-                            type: "string",
-                        }
-                    },
-                    operator: {
-                        title: "Operateur de matching",
-                        type: "string",
-                        enum: ["presente", "contains_text", "startwith_text", "not_startwith_text", "not_contains_text", "not_equals_text"],
-                    },
-                },
-            },
-        },
         type: "object",
         properties: {
             category: {
@@ -61,8 +18,32 @@ export function getSchemaConditionnelsStructurel(categories, rules) {
                 type: 'string',
                 enum: categories,
             },
-            condition: {title:"Condition","$ref": "#/definitions/champs"},
+            condition: {
+                title:"Conditions",
+                type: "array",
+                items: {
+                    type: "object",
+                    properties: {
+                        number: {
+                            title: "Zone",
+                            type: "number",
+                        },
+                        code: {
+                            title: 'Sous Zone',
+                            type: 'string',
+                        },
+                        operator: {
+                            title: "Operateur",
+                            type: "string",
+                            enum: ["presente", "contains_text", "not_contains_text", "startwith_text", "not_startwith_text","not_equals_text", "equals_text"],
+                            enumNames: ["Valeur Presente", "Doit contenir","Ne doit pas contenir", "Commence par", "Ne doit pas commencer par", "Ne soit pas égale à", "Égale à"],
+                        },
+                    },
+                    required: ['number', 'code', 'operator'],
+                }
+            },
             value: {
+                title: "Valeurs", 
                 type: "array",
                 items: {
                     type: "object",
@@ -90,13 +71,15 @@ export function getSchemaConditionnelsStructurel(categories, rules) {
             },
             type:{
                 title: "Type",
-                enum: ["required", "require with value", "exclude"],
-                enumNames: ["Obligatoire", "Obligatoire avec valeur", "Exclure"]
+                enum: ["allRequired", "oneRequired"],
+                enumNames: ["Tous obligatoires", "Une obligatoire"]
             },
             message: {
                 title: "Message à afficher",
                 type: "string",
             },
+
         },
+        required: ['category', 'number', 'condition','type', 'values', 'message'],
     }
 }

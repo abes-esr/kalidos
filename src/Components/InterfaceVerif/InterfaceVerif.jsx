@@ -132,7 +132,7 @@ function InterfaceVerif({ result, recherchePPN, compteurResult, listPPNErronne }
             <Row>
                 <Col>
                     <h2>
-                        Interface de Verification
+                        Interface de vérification
                 </h2>
                 </Col>
                 <Col>

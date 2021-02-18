@@ -1,7 +1,6 @@
-
 export const options = {
   paginationSize: 4,
-  pageStartIndex: 0,
+  pageStartIndex: 1,
   hidePageListOnlyOnePage: true,
   firstPageText: 'Premiére',
   prePageText: 'Retour',
@@ -9,7 +8,7 @@ export const options = {
   lastPageText: 'Derniére',
   showTotal: true,
   disablePageTitle: true,
-  sizePerPageList: [20, 50, 100]
+  sizePerPageList: [20, 50, 100],
 };
 
 export const columnsSpec =  [

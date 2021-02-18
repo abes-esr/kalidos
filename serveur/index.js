@@ -2,6 +2,7 @@ const express = require('express');
 const bodyParser = require('body-parser')
 const f = require('./js/index');
 const Lists = require('./js/Lists');
+const favicon = require('serve-favicon')
 
 const res = Lists.setup()
 const listCategorie = res[0]
@@ -12,11 +13,11 @@ const app = express();
 const path = require('path');
 const fs = require('fs');
 
-
-
 const DIST_DIR = path.join(__dirname, '../dist');
+app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')))
 app.use(bodyParser.json())
 app.use(express.static(DIST_DIR));
+app.use(bodyParser.urlencoded({ extended: true }));
 const port = process.env.PORT || 3000;
 const mockResponse = {
   foo: 'bar',

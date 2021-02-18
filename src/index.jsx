@@ -78,7 +78,7 @@ const Wrapper = () => (
                     }}>
                     <div className="container my-auto">
                         <div className="copyright text-center my-auto">
-                            <span>Copyright &copy; BiblioDev 2021</span>
+                            <span>Copyright &copy; KaliDoS 2021</span>
                         </div>
                     </div>
                 </footer>

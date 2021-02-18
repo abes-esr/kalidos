@@ -1,9 +1,12 @@
+import operators from '../operators'
+
 export function formatRulePrecedence(data) {
     console.log('formatRulePrecedence');
     const obj = {};
     obj.number = data.number;
-    obj.orderBy = data.orderBy;
     obj.message = data.message;
+    obj.condition = data.condition;
+    obj.precede = data.precede;
     return obj;
 }
 
@@ -15,14 +18,15 @@ export function getSchemaPrecedence(categories, rules) {
                 type: "object",
                 properties: {
                     depart: {
-                        title: "Depart",
+                        title: "Sous zone de départ",
                         type: "string",
                     },
                     precedant: {
-                        title: 'Precedant',
+                        title: 'Sous zone precedante',
                         type: 'string',
                     },
                 },
+                required: ['depart', 'precedant'],
             }
         },
         type: "object",
@@ -37,32 +41,34 @@ export function getSchemaPrecedence(categories, rules) {
                 type: "number",
             },
             condition: {
-                title:"Condition",
+                title:"Conditions",
                 type: 'array',
                 items: {
                     type: "object",
                     properties: {
                         number: {
                             title: "Zone",
-                            type: "number",
+                            type: "string",
                         },
                         code: {
                             title: 'Sous Zone',
                             type: 'string',
                         },
                         string: {
-                            title: 'String',
+                            title: 'Mot(s) à utiliser',
                             type: 'array',
                             items: {
                                 type: "string"
                             }
                         },
                         operator: {
-                            title: "Operateur de matching",
+                            title: "Operateur",
                             type: "string",
-                            enum: ["presente", "contains_text", "startwith_text", "not_startwith_text", "not_contains_text", "not_equals_text"],
+                            enum: operators.rules,
+                            enumNames: operators.names
                         },
                     },
+                    required: ['number', 'orderBy', 'operator'],
                 }
             },
             precede: {title:"Precede","$ref": "#/definitions/precede"},
@@ -71,5 +77,6 @@ export function getSchemaPrecedence(categories, rules) {
                 type: "string",
             },
         },
+        required: ['category', 'number', 'condition', 'precede', 'message'],
     }
 }

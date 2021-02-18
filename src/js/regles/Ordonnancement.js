@@ -1,6 +1,14 @@
 import Parcours from "../utile/Parcours";
 
 var Ordonnancement = function () {
+    /**
+     * Verifie les regles de type Ordonnancement
+     * @param {String} categorie categorie du document
+     * @param {json} rules fichier de regle
+     * @param {json} controlfields zone de controle
+     * @param {json} datafields zone de données
+     * @param {json} resultJson fichier de resultat
+     */
     var testOrdonnancementRules = function (categorie, rules, controlfields, datafields, resultJson) {
         rules[categorie].ordonnancement.forEach(function (regle) {
             const fields = Parcours.findDataFields(datafields, regle.number);
@@ -18,6 +26,11 @@ var Ordonnancement = function () {
         });
     }
 
+    /**
+     * ajoute une erreur au fichier de resultat
+     * @param {json} regle 
+     * @param {json} resultJson 
+     */
     function addError(regle, resultJson) {
         resultJson.errors.push({
             message: regle.message,

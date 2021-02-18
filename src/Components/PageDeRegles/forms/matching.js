@@ -39,19 +39,21 @@ export function getSchemaMatching(categories, rules) {
         type: 'string',
       },
       rule: {
-        title: 'Regle a utiliser',
+        title: 'Règle a utiliser',
         type: 'string',
         enum: rules.rules,
         enumNames: rules.names,
       },
       isWord: {
         title: ' Le motif contiens de mots',
+        description: 'Les caractères seuls et les chiffres ne comptent pas comme mots',
         type: 'boolean',
         enum: [true, false],
         enumNames: ["Oui", "Non"]
       },
       patterns: {
-        title: 'Motif(s) a utiliser par la regle',
+        title: 'Motif(s) à utiliser par la règle',
+        description: "match = all tous les motifs doivent être validés \nmatch = one au moins un motif doit être validé.",
         type: 'array',
         items: {
           type: 'string',
@@ -63,10 +65,10 @@ export function getSchemaMatching(categories, rules) {
         enum: ['all', 'one'],
       },
       message: {
-        title: 'Vérification',
+        title: 'Message à afficher',
         type: 'string',
       },
     },
-    required: ['category', 'number', 'code', 'isWord', 'message'],
+    required: ['category', 'number','rule', 'patterns',  'code', 'message'],
   };
 }

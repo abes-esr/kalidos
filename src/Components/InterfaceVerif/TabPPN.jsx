@@ -1,6 +1,5 @@
 import { Card, ListGroup, Badge, Row, OverlayTrigger, Tooltip, Button } from 'react-bootstrap';
 import Pagination from '@material-ui/lab/Pagination';
-import style from '../../style.css';
 import { withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 import React from 'react';
@@ -40,7 +39,6 @@ function tooltipPPN({nombrePPNTotal, nombreErreurTotal}) {
 
 function TabPPN({ listPPN, SetPPNDisplay, SetNumPage, numPage, SetRecherchePPN, PPNDisplay, compteurErreurPourSynchro }) {
     const nombrePPNTotal = listPPN.length;
-    window.toto = listPPN;
     const nombreErreurTotal = nombrePPNTotal === 0 ? 0 : listPPN.map(x => x[1].errors.length).reduce((total, x) => total + x);
     const nbElemParPage = 10;
     let nbPageTotal = listPPN.length / nbElemParPage;

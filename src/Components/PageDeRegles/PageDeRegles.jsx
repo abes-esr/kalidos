@@ -5,6 +5,10 @@ import Table from './table/Table'
 
 const PageDeRegles = () => (
     <div>
+        <h2>
+            Interface des règles
+        </h2>
+        <br></br>
         <div className="row">
             <Card12 title={'Jeu de règles'} content={<Table />} />
         </div>

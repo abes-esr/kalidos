@@ -9,6 +9,7 @@ export function formatRuleIdRef(data) {
     code: data.condition.code,
   }
   obj.identifiant = {
+    number: data.identifiant.number,
     code: data.identifiant.code,
   }
   obj.verification = {
@@ -21,7 +22,7 @@ export function formatRuleIdRef(data) {
 export function getSchemaIdRef(categories, rules) {
     return {
         definitions: {
-            condition: {
+            identifiant: {
                 type: "object",
                 properties: {
                     number: {
@@ -33,15 +34,7 @@ export function getSchemaIdRef(categories, rules) {
                         type: "string",
                     },
                 },
-            },
-            identifiant: {
-                type: "object",
-                properties: {
-                    code: {
-                        title: "Sous zone",
-                        type: "string",
-                    },
-                }
+                required: ['number', 'code'],
             },
             verification: {
                 type: "object",
@@ -69,7 +62,8 @@ export function getSchemaIdRef(categories, rules) {
                             type: 'string',
                         },
                     },
-                }
+                },
+                required: ['number', 'rule', 'isWord', 'patterns'],
             }
         },
         type: "object",
@@ -79,13 +73,31 @@ export function getSchemaIdRef(categories, rules) {
                 type: 'string',
                 enum: categories,
             },
-            condition: {title:"Condition","$ref": "#/definitions/condition"},
             identifiant: {title:"Identifiant","$ref": "#/definitions/identifiant"},
             verification: {title:"Vérification","$ref": "#/definitions/verification"},
+            condition: {
+                title:"Condition",
+                type: "array",
+                items: {
+                    type: "object",
+                    properties: {
+                        number: {
+                            title: "Zone",
+                            type: "string",
+                        },
+                        code: {
+                            title: "Sous zone",
+                            type: "string",
+                        },
+                    },
+                    required: ['number', 'code'],
+                }
+            },
             message: {
                 title: "Message à afficher",
                 type: "string",
             },
         },
+        required: ['category','identifiant', 'verification', 'condition', 'message'],
     }
 }

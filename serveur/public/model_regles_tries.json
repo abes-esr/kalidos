@@ -7959,19 +7959,6 @@
                 "numRuleExcell": 118,
                 "message": "Zone 328 incohérente avec le statut de la thèse : une reproduction doit contenir la sous-zone $z",
                 "index": 381
-            },
-            {
-                "ind1": "",
-                "index": 382,
-                "number": [
-                    "608"
-                ],
-                "ind2": "",
-                "code": "3",
-                "type": "required with value",
-                "numRuleExcell": 126,
-                "message": "Zone 608 : indexation Forme-Genre obligatoire (PPN 027253139)",
-                "value": "027253139"
             }
         ]
     }

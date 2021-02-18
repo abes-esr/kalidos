@@ -28,4 +28,4 @@ cd projet_bu
 docker-compose up -d
 ```
 
-Ces commandes permet de relancer l'application si celle ci a été stopper, par exemple apres une mise a jour de l'openstack ou la machine virtuelle est hebergée. Aucunne perte de données dans ce mode.
+Ces commandes permettent de relancer l'application si celle ci a été stoppé, par exemple apres une mise a jour de l'openstack ou la machine virtuelle est hebergée. Aucun impact sur les données de l'utilisateur dans ce mode.

@@ -4,7 +4,14 @@ import Dependance from "../regles/Dependance";
 
 
 var ConditionDependance = function () {
-
+    /**
+     * teste les regles de type Condition Dependance
+     * @param {String} categorie categorie de la regle a tester
+     * @param {json} rules fichier de regles
+     * @param {json} controlfields zones de controle
+     * @param {json} datafields zone de données
+     * @param {json} resultJson ficher de resultat
+     */
     var testConditionDependanceRules = function (categorie, rules, controlfields, datafields, resultJson) {
         rules[categorie].ConditionDependance.forEach(function (regle) {
 

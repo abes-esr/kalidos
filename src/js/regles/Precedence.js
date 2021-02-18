@@ -2,6 +2,14 @@ import Parcours from "../utile/Parcours";
 import Condition from "../utile/Condition";
 
 var Precedence = function () {
+    /**
+     * Verifie les regles de type Precedence
+     * @param {String} categorie categorie du document
+     * @param {json} rules fichier de regle
+     * @param {json} controlfields zone de controle
+     * @param {json} datafields zone de données
+     * @param {json} resultJson fichier de resultat
+     */
     var testPrecedenceRules = function (categorie, rules, controlfields, datafields, resultJson) {
         rules[categorie].precedence.forEach(function (regle) {
            
@@ -36,6 +44,11 @@ var Precedence = function () {
         });
     }
 
+    /**
+     * ajoute une erreur au fichier de resultat
+     * @param {json} regle 
+     * @param {json} resultJson 
+     */
     function addError(regle, resultJson) {
         resultJson.errors.push({
             message: regle.message,

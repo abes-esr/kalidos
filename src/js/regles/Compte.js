@@ -1,6 +1,15 @@
 import Parcours from "../utile/Parcours";
 
+
 var Compte = function () {
+    /**
+     * teste les regles de type Compte
+     * @param {String} categorie categorie de la regle a tester
+     * @param {json} rules fichier de regles
+     * @param {json} controlfields zones de controle
+     * @param {json} datafields zone de données
+     * @param {json} resultJson ficher de resultat
+     */
     var testCompteRules = function (categorie, rules, controlfields, datafields, resultJson) {
         rules[categorie].compte.forEach(function (regle) {
             const fields = Parcours.findDataFields(datafields, regle.number);
@@ -16,6 +25,12 @@ var Compte = function () {
         });
     }
 
+
+    /**
+     * Ajoute une erreur au fichier de resultat
+     * @param {json} regle regle courrante
+     * @param {json} resultJson fichier de resultat
+     */
     function addError(regle, resultJson) {
         resultJson.errors.push({
             message: regle.message,
@@ -27,7 +42,6 @@ var Compte = function () {
 
     return {
         testCompteRules: testCompteRules
-
     }
 }();
 

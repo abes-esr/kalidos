@@ -10,7 +10,6 @@ export const filtering = (result) => {
     for (const type in result[category]) {
       let filter = result[category][type].map((r) => {
         r.regleInitial = Object.assign({}, r);
-        r.index = r.index + '_' + type + '_' + category
         if (Array.isArray(r.number)) { r.number = r.number.toString() }
         r.category = category
         r.type = type

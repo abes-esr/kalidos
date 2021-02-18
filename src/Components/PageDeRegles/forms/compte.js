@@ -2,12 +2,11 @@ export function formatRuleCompte(data) {
     console.log('formatRuleCompte');
     const obj = {};
     obj.number = data.number;
-    obj.code = data.code;    
+    obj.code = data.code;
     obj.contrainte = data.contrainte;
     obj.message = data.message;
     return obj;
 }
-
 
 export function getSchemaCompte(categories, rules) {
     return {
@@ -35,5 +34,7 @@ export function getSchemaCompte(categories, rules) {
                 type: "string",
             },
         },
+        required: ['category', 'number', 'code', 'contrainte', 'message'],
+
     }
 }
