@@ -47,3 +47,5 @@ dist/
 package-lock.json
 tiw5-projetbu.tar
 
+serveur\public\noticesErreurs.json
+
