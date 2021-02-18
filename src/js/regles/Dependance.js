@@ -9,7 +9,12 @@ Dependance
 
 var Dependance = function () {
 
-
+    /**
+     * applique une regle de dependance entre deux champs
+     * @param {json} field1 datafield 1
+     * @param {json} field2 datafield 2
+     * @param {json} regle regle courante
+     */
     function applyRuleOnFields(field1, field2, regle) {
 
         if (field1 != null && field2 != null) {
@@ -60,7 +65,14 @@ var Dependance = function () {
     }
 
 
-
+    /**
+     * Applique les verrification sur les regles de type Dependance
+     * @param {json} categorie Catagorie de document a tester
+     * @param {json} rules fichier de regle
+     * @param {json} controlfields zone de controle
+     * @param {json} datafields zone de données
+     * @param {json} resultJson fichier de resultat
+     */
     var testMatchDependanceRules = function (categorie,rules, controlfields, datafields, resultJson) {
         rules[categorie].dependances.forEach(function (regle) {
             const field1 = Parcours.findDataField(datafields, regle.field1.number)
