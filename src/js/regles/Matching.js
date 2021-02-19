@@ -201,7 +201,8 @@ var Matching = function () {
             }
             const tempRegle = {
                 message: message,
-                number: errors
+                number: errors,
+                code : regle
             }
             addErrorInJson(resultJson, tempRegle);
         }

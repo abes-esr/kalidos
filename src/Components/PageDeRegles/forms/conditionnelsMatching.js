@@ -76,7 +76,7 @@ export function getSchemaConditionnelsMatching(categories, rules) {
                             enumNames: rules.names,
                         },
                         isWord: {
-                            title: 'Le motif contiens de mots',
+                            title: 'Le motif contient de mots',
                             type: 'boolean',
                             enum: [true, false],
                             enumNames: ["Oui", "Non"]

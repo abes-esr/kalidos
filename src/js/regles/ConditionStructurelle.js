@@ -229,6 +229,7 @@ function addError(resultJson, regle) {
     resultJson.errors.push({
         message: regle.message,
         number: regle.number,
+        code: regle.condition[0].code
     });
     Parcours.addErrorSynchro();
 }

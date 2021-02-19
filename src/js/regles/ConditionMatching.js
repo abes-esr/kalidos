@@ -91,6 +91,7 @@ let ConditionMatching = function () {
         resultJson.errors.push({
             message: regle.message,
             number: regle.number,
+            code: regle.condition[0].code
         });
         Parcours.addErrorSynchro();
     }
