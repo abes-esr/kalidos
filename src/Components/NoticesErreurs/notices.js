@@ -18,7 +18,6 @@ function deleteNotice(index) {
             "index": index,
         },
     }).then(function () {
-        console.log("suppression notice ok");
         store.dispatch(setNoticeDisplay(0));
         window.location.reload();
     })

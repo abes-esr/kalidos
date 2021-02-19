@@ -202,7 +202,7 @@ var Matching = function () {
             const tempRegle = {
                 message: message,
                 number: errors,
-                code : regle
+                code : regle.code
             }
             addErrorInJson(resultJson, tempRegle);
         }

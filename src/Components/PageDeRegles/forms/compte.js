@@ -1,5 +1,5 @@
 export function formatRuleCompte(data) {
-    console.log('formatRuleCompte');
+    //console.log('formatRuleCompte');
     const obj = {};
     obj.number = data.number;
     obj.code = data.code;

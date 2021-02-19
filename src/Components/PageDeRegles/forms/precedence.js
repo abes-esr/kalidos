@@ -1,7 +1,7 @@
 import operators from '../operators'
 
 export function formatRulePrecedence(data) {
-    console.log('formatRulePrecedence');
+    //console.log('formatRulePrecedence');
     const obj = {};
     obj.number = data.number;
     obj.message = data.message;

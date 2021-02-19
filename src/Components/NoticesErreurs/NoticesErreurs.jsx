@@ -19,10 +19,8 @@ function NoticesErreurs() {
         (data) => {
           setIsLoaded(true);
           setNotices(data);
-          console.log("data", data);
           const data_notices = modifKey(data);
           setDataNotices(data_notices);
-          console.log("data_notices", data_notices);
         },
         (e) => {
           setIsLoaded(true);

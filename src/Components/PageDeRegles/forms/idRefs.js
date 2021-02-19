@@ -1,7 +1,7 @@
 import { generator } from '../generator';
 
 export function formatRuleIdRef(data) {
-  console.log('formatRuleIdRef');
+  //console.log('formatRuleIdRef');
   const obj = {};
   obj.message = data.message;
   obj.condition = {

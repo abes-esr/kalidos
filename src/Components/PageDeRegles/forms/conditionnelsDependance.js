@@ -1,5 +1,5 @@
 export function formatRuleConditionnelsDependance(data) {
-    console.log('formatRuleConditionnelsDependance');
+    //console.log('formatRuleConditionnelsDependance');
     const obj = {};
     obj.condition = data.condition;
     obj.message = data.message;
