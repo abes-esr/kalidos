@@ -19,8 +19,10 @@ function NoticesErreurs() {
         (data) => {
           setIsLoaded(true);
           setNotices(data);
+          console.log("data", data);
           const data_notices = modifKey(data);
           setDataNotices(data_notices);
+          console.log("data_notices", data_notices);
         },
         (e) => {
           setIsLoaded(true);
@@ -45,7 +47,7 @@ function NoticesErreurs() {
       <br></br>
       <Row>
         <Card4
-          title={"Notices erronées"}
+          title={"Notices erronées (year-month-day)"}
           content={<TabNotice listNotices={data_notices} />}
         />
         <Card8

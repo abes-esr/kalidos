@@ -44,7 +44,7 @@ export function getSchemaStructurel(categories, rules) {
       type:{
         title: "Type",
         enum: ["required", "require one", "exclude", "contains code", "index", "required with value"],
-        enumNames: ["Obligatoire", "Une seule est obligatoire", "Exclure", "Contiens sous zone", "Indice", "Obligatoire avec valeur",]
+        enumNames: ["Obligatoire", "Une seule est obligatoire", "Exclure", "Contient sous zone", "Indice", "Obligatoire avec valeur",]
       },
       value:{
         title: 'Valeur',

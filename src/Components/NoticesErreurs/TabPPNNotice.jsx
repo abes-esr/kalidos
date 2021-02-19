@@ -29,7 +29,7 @@ function TabPPNNotice({ notices, noticeDisplay }) {
                 body={<RelanceForm notices={notices} />}
               />
             </span>
-            <span style={{display: "inline-block"}}>
+            <span style={{display: "inline-block", float: "right"}}>
               <ModalDelete
                 button={<Delete htmlColor="#fff" fontSize="small" />}
                 title="Supprimer la notice"

@@ -45,7 +45,7 @@ export function getSchemaMatching(categories, rules) {
         enumNames: rules.names,
       },
       isWord: {
-        title: ' Le motif contiens de mots',
+        title: ' Le motif contient de mots',
         description: 'Les caractères seuls et les chiffres ne comptent pas comme mots',
         type: 'boolean',
         enum: [true, false],
