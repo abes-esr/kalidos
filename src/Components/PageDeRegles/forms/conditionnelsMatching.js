@@ -3,7 +3,7 @@
  * @param {*} data 
  */
 export function formatRuleConditionnelsMatching(data) {
-    console.log('formatRuleConditionnelsMatching');
+    //console.log('formatRuleConditionnelsMatching');
     const obj = {};
     obj.number = data.number;
     obj.condition = data.condition;

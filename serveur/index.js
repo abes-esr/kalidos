@@ -73,7 +73,7 @@ app.post('/rules', (req, res) => {
     }
 
 
-    console.log(rules[categorie][type]);
+    //console.log(rules[categorie][type]);
 
     const newJson = JSON.stringify(rules);
     fs.writeFile(`${__dirname}/public/model_regles_tries.json`, newJson, 'utf8', () => { });
@@ -94,7 +94,7 @@ app.post('/rules', (req, res) => {
  * return 200 ou 404
  */
 app.delete('/rules', (req, res) => {
-  console.log("DELETE")
+  //console.log("DELETE")
   let json = fs.readFileSync(`${__dirname}/public/model_regles_tries.json`);
   let rules = JSON.parse(json);
   const index = parseInt(req.header("index"), 10);

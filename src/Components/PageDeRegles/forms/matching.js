@@ -1,7 +1,7 @@
 import { generator, applyRule } from '../generator';
 
 export function formatRuleMatching(data) {
-  console.log('formatRuleMatching');
+  //console.log('formatRuleMatching');
   const obj = {};
   obj.code = data.code;
   obj.message = data.message;

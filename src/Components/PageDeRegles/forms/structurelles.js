@@ -1,6 +1,6 @@
 
 export function formatRuleStructurel(data) {
-  console.log('formatRuleStructurel');
+  //console.log('formatRuleStructurel');
   const obj = {};
   obj.message = data.message;
   obj.number = data.number;

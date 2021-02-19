@@ -1,7 +1,7 @@
 import mathOperators from '../operators';
 
 export function formatRuleDependencies(data) {
-    console.log('formatRuleDependencies');
+    //console.log('formatRuleDependencies');
     const obj = {};
     obj.operator = data.operator;
     obj.message = data.message;
