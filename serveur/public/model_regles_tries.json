@@ -141,14 +141,14 @@
                         "code": "f",
                         "message": "",
                         "number": 200,
-                        "regex": "(?:(?!ed.)(?!edited)(?!edit).)+"
+                        "regex": "(?:(?!ed\\.)(?!edited)(?!edit)(?!éd\\.)(?!édited)(?!édit).)+"
                     },
                     {
                         "subFieldRequired": false,
                         "code": "g",
                         "message": "",
                         "number": 200,
-                        "regex": "(?:(?!ed.)(?!edited)(?!edit).)+"
+                        "regex": "(?:(?!ed\\.)(?!edited)(?!edit)(?!éd\\.)(?!édited)(?!édit).)+"
                     }
                 ],
                 "type": "allRequired",
@@ -174,14 +174,14 @@
                         "code": "f",
                         "message": "",
                         "number": 200,
-                        "regex": "(?:(?!ed.)(?!edited)(?!edit).)+"
+                        "regex": "(?:(?!ed\\.)(?!edited)(?!edit)(?!éd\\.)(?!édited)(?!édit).)+"
                     },
                     {
                         "subFieldRequired": false,
                         "code": "g",
                         "message": "",
                         "number": 200,
-                        "regex": "(?:(?!ed.)(?!edited)(?!edit).)+"
+                        "regex": "(?:(?!ed\\.)(?!edited)(?!edit)(?!éd\\.)(?!édited)(?!édit).)+"
                     }
                 ],
                 "type": "allRequired",
@@ -207,14 +207,14 @@
                         "code": "f",
                         "message": "",
                         "number": 200,
-                        "regex": "(?:(?!ed.)(?!edited)(?!edit).)+"
+                        "regex": "(?:(?!ed\\.)(?!edited)(?!edit)(?!éd\\.)(?!édited)(?!édit).)+"
                     },
                     {
                         "subFieldRequired": false,
                         "code": "g",
                         "message": "",
                         "number": 200,
-                        "regex": "(?:(?!ed.)(?!edited)(?!edit).)+"
+                        "regex": "(?:(?!ed\\.)(?!edited)(?!edit)(?!éd\\.)(?!édited)(?!édit).)+"
                     }
                 ],
                 "type": "allRequired",
@@ -240,14 +240,14 @@
                         "code": "f",
                         "message": "",
                         "number": 200,
-                        "regex": "(?:(?!ed.)(?!edited)(?!edit).)+"
+                        "regex": "(?:(?!ed\\.)(?!edited)(?!edit)(?!éd\\.)(?!édited)(?!édit).)+"
                     },
                     {
                         "subFieldRequired": false,
                         "code": "g",
                         "message": "",
                         "number": 200,
-                        "regex": "(?:(?!ed.)(?!edited)(?!edit).)+"
+                        "regex": "(?:(?!ed\\.)(?!edited)(?!edit)(?!éd\\.)(?!édited)(?!édit).)+"
                     }
                 ],
                 "type": "allRequired",
@@ -273,14 +273,14 @@
                         "code": "f",
                         "message": "",
                         "number": 200,
-                        "regex": "(?:(?!ed.)(?!edited)(?!edit).)+"
+                        "regex": "(?:(?!ed\\.)(?!edited)(?!edit)(?!éd\\.)(?!édited)(?!édit).)+"
                     },
                     {
                         "subFieldRequired": false,
                         "code": "g",
                         "message": "",
                         "number": 200,
-                        "regex": "(?:(?!ed.)(?!edited)(?!edit).)+"
+                        "regex": "(?:(?!ed\\.)(?!edited)(?!edit)(?!éd\\.)(?!édited)(?!édit).)+"
                     }
                 ],
                 "type": "allRequired",
@@ -306,14 +306,14 @@
                         "code": "f",
                         "message": "",
                         "number": 200,
-                        "regex": "(?:(?!ed.)(?!edited)(?!edit).)+"
+                        "regex": "(?:(?!ed\\.)(?!edited)(?!edit)(?!éd\\.)(?!édited)(?!édit).)+"
                     },
                     {
                         "subFieldRequired": false,
                         "code": "g",
                         "message": "",
                         "number": 200,
-                        "regex": "(?:(?!ed.)(?!edited)(?!edit).)+"
+                        "regex": "(?:(?!ed\\.)(?!edited)(?!edit)(?!éd\\.)(?!édited)(?!édit).)+"
                     }
                 ],
                 "type": "allRequired",
@@ -339,14 +339,14 @@
                         "code": "f",
                         "message": "",
                         "number": 200,
-                        "regex": "(?:(?!ed.)(?!edited)(?!edit).)+"
+                        "regex": "(?:(?!ed\\.)(?!edited)(?!edit)(?!éd\\.)(?!édited)(?!édit).)+"
                     },
                     {
                         "subFieldRequired": false,
                         "code": "g",
                         "message": "",
                         "number": 200,
-                        "regex": "(?:(?!ed.)(?!edited)(?!edit).)+"
+                        "regex": "(?:(?!ed\\.)(?!edited)(?!edit)(?!éd\\.)(?!édited)(?!édit).)+"
                     }
                 ],
                 "type": "allRequired",
@@ -372,14 +372,14 @@
                         "code": "f",
                         "message": "",
                         "number": 200,
-                        "regex": "(?:(?!ed.)(?!edited)(?!edit).)+"
+                        "regex": "(?:(?!ed\\.)(?!edited)(?!edit)(?!éd\\.)(?!édited)(?!édit).)+"
                     },
                     {
                         "subFieldRequired": false,
                         "code": "g",
                         "message": "",
                         "number": 200,
-                        "regex": "(?:(?!ed.)(?!edited)(?!edit).)+"
+                        "regex": "(?:(?!ed\\.)(?!edited)(?!edit)(?!éd\\.)(?!édited)(?!édit).)+"
                     }
                 ],
                 "type": "allRequired",
@@ -405,14 +405,14 @@
                         "code": "f",
                         "message": "",
                         "number": 200,
-                        "regex": "(?:(?!ed.)(?!edited)(?!edit).)+"
+                        "regex": "(?:(?!ed\\.)(?!edited)(?!edit)(?!éd\\.)(?!édited)(?!édit).)+"
                     },
                     {
                         "subFieldRequired": false,
                         "code": "g",
                         "message": "",
                         "number": 200,
-                        "regex": "(?:(?!ed.)(?!edited)(?!edit).)+"
+                        "regex": "(?:(?!ed\\.)(?!edited)(?!edit)(?!éd\\.)(?!édited)(?!édit).)+"
                     }
                 ],
                 "type": "allRequired",
@@ -3661,14 +3661,14 @@
                         "code": "f",
                         "message": "",
                         "number": 200,
-                        "regex": "(?:(?!ed.)(?!edited)(?!edit).)+"
+                        "regex": "(?:(?!ed\\.)(?!edited)(?!edit)(?!éd\\.)(?!édited)(?!édit).)+"
                     },
                     {
                         "subFieldRequired": false,
                         "code": "g",
                         "message": "",
                         "number": 200,
-                        "regex": "(?:(?!ed.)(?!edited)(?!edit).)+"
+                        "regex": "(?:(?!ed\\.)(?!edited)(?!edit)(?!éd\\.)(?!édited)(?!édit).)+"
                     }
                 ],
                 "type": "allRequired",
@@ -3694,14 +3694,14 @@
                         "code": "f",
                         "message": "",
                         "number": 200,
-                        "regex": "(?:(?!ed.)(?!edited)(?!edit).)+"
+                        "regex": "(?:(?!ed\\.)(?!edited)(?!edit)(?!éd\\.)(?!édited)(?!édit).)+"
                     },
                     {
                         "subFieldRequired": false,
                         "code": "g",
                         "message": "",
                         "number": 200,
-                        "regex": "(?:(?!ed.)(?!edited)(?!edit).)+"
+                        "regex": "(?:(?!ed\\.)(?!edited)(?!edit)(?!éd\\.)(?!édited)(?!édit).)+"
                     }
                 ],
                 "type": "allRequired",
@@ -3727,14 +3727,14 @@
                         "code": "f",
                         "message": "",
                         "number": 200,
-                        "regex": "(?:(?!ed.)(?!edited)(?!edit).)+"
+                        "regex": "(?:(?!ed\\.)(?!edited)(?!edit)(?!éd\\.)(?!édited)(?!édit).)+"
                     },
                     {
                         "subFieldRequired": false,
                         "code": "g",
                         "message": "",
                         "number": 200,
-                        "regex": "(?:(?!ed.)(?!edited)(?!edit).)+"
+                        "regex": "(?:(?!ed\\.)(?!edited)(?!edit)(?!éd\\.)(?!édited)(?!édit).)+"
                     }
                 ],
                 "type": "allRequired",
@@ -3760,14 +3760,14 @@
                         "code": "f",
                         "message": "",
                         "number": 200,
-                        "regex": "(?:(?!ed.)(?!edited)(?!edit).)+"
+                        "regex": "(?:(?!ed\\.)(?!edited)(?!edit)(?!éd\\.)(?!édited)(?!édit).)+"
                     },
                     {
                         "subFieldRequired": false,
                         "code": "g",
                         "message": "",
                         "number": 200,
-                        "regex": "(?:(?!ed.)(?!edited)(?!edit).)+"
+                        "regex": "(?:(?!ed\\.)(?!edited)(?!edit)(?!éd\\.)(?!édited)(?!édit).)+"
                     }
                 ],
                 "type": "allRequired",
@@ -3793,14 +3793,14 @@
                         "code": "f",
                         "message": "",
                         "number": 200,
-                        "regex": "(?:(?!ed.)(?!edited)(?!edit).)+"
+                        "regex": "(?:(?!ed\\.)(?!edited)(?!edit)(?!éd\\.)(?!édited)(?!édit).)+"
                     },
                     {
                         "subFieldRequired": false,
                         "code": "g",
                         "message": "",
                         "number": 200,
-                        "regex": "(?:(?!ed.)(?!edited)(?!edit).)+"
+                        "regex": "(?:(?!ed\\.)(?!edited)(?!edit)(?!éd\\.)(?!édited)(?!édit).)+"
                     }
                 ],
                 "type": "allRequired",
@@ -3826,14 +3826,14 @@
                         "code": "f",
                         "message": "",
                         "number": 200,
-                        "regex": "(?:(?!ed.)(?!edited)(?!edit).)+"
+                        "regex": "(?:(?!ed\\.)(?!edited)(?!edit)(?!éd\\.)(?!édited)(?!édit).)+"
                     },
                     {
                         "subFieldRequired": false,
                         "code": "g",
                         "message": "",
                         "number": 200,
-                        "regex": "(?:(?!ed.)(?!edited)(?!edit).)+"
+                        "regex": "(?:(?!ed\\.)(?!edited)(?!edit)(?!éd\\.)(?!édited)(?!édit).)+"
                     }
                 ],
                 "type": "allRequired",
@@ -3859,14 +3859,14 @@
                         "code": "f",
                         "message": "",
                         "number": 200,
-                        "regex": "(?:(?!ed.)(?!edited)(?!edit).)+"
+                        "regex": "(?:(?!ed\\.)(?!edited)(?!edit)(?!éd\\.)(?!édited)(?!édit).)+"
                     },
                     {
                         "subFieldRequired": false,
                         "code": "g",
                         "message": "",
                         "number": 200,
-                        "regex": "(?:(?!ed.)(?!edited)(?!edit).)+"
+                        "regex": "(?:(?!ed\\.)(?!edited)(?!edit)(?!éd\\.)(?!édited)(?!édit).)+"
                     }
                 ],
                 "type": "allRequired",
@@ -3892,14 +3892,14 @@
                         "code": "f",
                         "message": "",
                         "number": 200,
-                        "regex": "(?:(?!ed.)(?!edited)(?!edit).)+"
+                        "regex": "(?:(?!ed\\.)(?!edited)(?!edit)(?!éd\\.)(?!édited)(?!édit).)+"
                     },
                     {
                         "subFieldRequired": false,
                         "code": "g",
                         "message": "",
                         "number": 200,
-                        "regex": "(?:(?!ed.)(?!edited)(?!edit).)+"
+                        "regex": "(?:(?!ed\\.)(?!edited)(?!edit)(?!éd\\.)(?!édited)(?!édit).)+"
                     }
                 ],
                 "type": "allRequired",
@@ -3925,14 +3925,14 @@
                         "code": "f",
                         "message": "",
                         "number": 200,
-                        "regex": "(?:(?!ed.)(?!edited)(?!edit).)+"
+                        "regex": "(?:(?!ed\\.)(?!edited)(?!edit)(?!éd\\.)(?!édited)(?!édit).)+"
                     },
                     {
                         "subFieldRequired": false,
                         "code": "g",
                         "message": "",
                         "number": 200,
-                        "regex": "(?:(?!ed.)(?!edited)(?!edit).)+"
+                        "regex": "(?:(?!ed\\.)(?!edited)(?!edit)(?!éd\\.)(?!édited)(?!édit).)+"
                     }
                 ],
                 "type": "allRequired",
