@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from "react";
 import Card4 from "../Générique/Card_4";
 import Card8 from "../Générique/Card_8";
+import { Row, Col } from "react-bootstrap";
 import TabNotice from "./TabNotice";
 import TabPPNNotice from "./TabPPNNotice";
+import ModalDelete from './modals/ModalDelete';
+import DeleteHistoForm from './forms/DeleteHistoForm';
 import { modifKey } from "./notices";
-import { Row } from "react-bootstrap";
 
 function NoticesErreurs() {
   const [error, setError] = useState(null);
@@ -41,11 +43,21 @@ function NoticesErreurs() {
 
   return (
     <div>
-      <h2>Historique des notices erronées</h2>
+      <Row>
+        <Col><h2>Historique des notices erronées</h2></Col>
+        <Col>
+          <ModalDelete
+            button="Supprimer l'historique"
+            title="Supprimer l'historique"
+            body={<DeleteHistoForm />}
+          />
+        </Col>
+      </Row>
+      
       <br></br>
       <Row>
         <Card4
-          title={"Notices erronées (year-month-day)"}
+          title={"Notices erronées"}
           content={<TabNotice listNotices={data_notices} />}
         />
         <Card8
