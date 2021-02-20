@@ -123,7 +123,7 @@
             },
             {
                 "message": "Zones 7XX : code fonction, vérifier qu il s agit d un éditeur scientifique ou d un directeur de publication ?",
-                "number": 214,
+                "number": 700,
                 "condition": [
                     {
                         "string": [
@@ -156,7 +156,7 @@
             },
             {
                 "message": "Zones 7XX : code fonction, vérifier qu il s agit d un éditeur scientifique ou d un directeur de publication ?",
-                "number": 214,
+                "number": 701,
                 "condition": [
                     {
                         "string": [
@@ -189,7 +189,7 @@
             },
             {
                 "message": "Zones 7XX : code fonction, vérifier qu il s agit d un éditeur scientifique ou d un directeur de publication ?",
-                "number": 214,
+                "number": 710,
                 "condition": [
                     {
                         "string": [
@@ -222,7 +222,7 @@
             },
             {
                 "message": "Zones 7XX : code fonction, vérifier qu il s agit d un éditeur scientifique ou d un directeur de publication ?",
-                "number": 214,
+                "number": 711,
                 "condition": [
                     {
                         "string": [
@@ -255,7 +255,7 @@
             },
             {
                 "message": "Zones 7XX : code fonction, vérifier qu il s agit d un éditeur scientifique ou d un directeur de publication ?",
-                "number": 214,
+                "number": 720,
                 "condition": [
                     {
                         "string": [
@@ -288,7 +288,7 @@
             },
             {
                 "message": "Zones 7XX : code fonction, vérifier qu il s agit d un éditeur scientifique ou d un directeur de publication ?",
-                "number": 214,
+                "number": 721,
                 "condition": [
                     {
                         "string": [
@@ -321,7 +321,7 @@
             },
             {
                 "message": "Zones 7XX : code fonction, vérifier qu il s agit d un éditeur scientifique ou d un directeur de publication ?",
-                "number": 214,
+                "number": 730,
                 "condition": [
                     {
                         "string": [
@@ -354,7 +354,7 @@
             },
             {
                 "message": "Zones 7XX : code fonction, vérifier qu il s agit d un éditeur scientifique ou d un directeur de publication ?",
-                "number": 214,
+                "number": 740,
                 "condition": [
                     {
                         "string": [
@@ -387,7 +387,7 @@
             },
             {
                 "message": "Zones 7XX : code fonction, vérifier qu il s agit d un éditeur scientifique ou d un directeur de publication ?",
-                "number": 214,
+                "number": 741,
                 "condition": [
                     {
                         "string": [
@@ -3643,7 +3643,7 @@
             },
             {
                 "message": "Zones 7XX : code fonction, vérifier qu il s agit d un éditeur scientifique ou d un directeur de publication ?",
-                "number": 214,
+                "number": 700,
                 "condition": [
                     {
                         "string": [
@@ -3676,7 +3676,7 @@
             },
             {
                 "message": "Zones 7XX : code fonction, vérifier qu il s agit d un éditeur scientifique ou d un directeur de publication ?",
-                "number": 214,
+                "number": 701,
                 "condition": [
                     {
                         "string": [
@@ -3709,7 +3709,7 @@
             },
             {
                 "message": "Zones 7XX : code fonction, vérifier qu il s agit d un éditeur scientifique ou d un directeur de publication ?",
-                "number": 214,
+                "number": 710,
                 "condition": [
                     {
                         "string": [
@@ -3742,7 +3742,7 @@
             },
             {
                 "message": "Zones 7XX : code fonction, vérifier qu il s agit d un éditeur scientifique ou d un directeur de publication ?",
-                "number": 214,
+                "number": 711,
                 "condition": [
                     {
                         "string": [
@@ -3775,7 +3775,7 @@
             },
             {
                 "message": "Zones 7XX : code fonction, vérifier qu il s agit d un éditeur scientifique ou d un directeur de publication ?",
-                "number": 214,
+                "number": 720,
                 "condition": [
                     {
                         "string": [
@@ -3808,7 +3808,7 @@
             },
             {
                 "message": "Zones 7XX : code fonction, vérifier qu il s agit d un éditeur scientifique ou d un directeur de publication ?",
-                "number": 214,
+                "number": 721,
                 "condition": [
                     {
                         "string": [
@@ -3841,7 +3841,7 @@
             },
             {
                 "message": "Zones 7XX : code fonction, vérifier qu il s agit d un éditeur scientifique ou d un directeur de publication ?",
-                "number": 214,
+                "number": 730,
                 "condition": [
                     {
                         "string": [
@@ -3874,7 +3874,7 @@
             },
             {
                 "message": "Zones 7XX : code fonction, vérifier qu il s agit d un éditeur scientifique ou d un directeur de publication ?",
-                "number": 214,
+                "number": 740,
                 "condition": [
                     {
                         "string": [
@@ -3907,7 +3907,7 @@
             },
             {
                 "message": "Zones 7XX : code fonction, vérifier qu il s agit d un éditeur scientifique ou d un directeur de publication ?",
-                "number": 214,
+                "number": 741,
                 "condition": [
                     {
                         "string": [
