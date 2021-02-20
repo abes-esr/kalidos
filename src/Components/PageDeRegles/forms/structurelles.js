@@ -22,6 +22,10 @@ export function getSchemaStructurel(categories, rules) {
         type: 'string',
         enum: categories,
       },
+      numRuleExcell: {
+        title: "Nombre de ligne sur Excel",
+        type: "number",
+      },
       number: {
         title: 'Zone',
         type: 'array',
@@ -53,7 +57,7 @@ export function getSchemaStructurel(categories, rules) {
         type: "string",
       },
     },
-    required: ['category', 'number', 'type', 'message'],
+    required: ['category', 'numRuleExcell', 'number', 'type', 'message'],
 
   }
 }

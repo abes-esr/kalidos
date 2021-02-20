@@ -32,13 +32,17 @@ export function getSchemaMatching(categories, rules) {
         type: 'string',
         enum: categories,
       },
+      numRuleExcell: {
+        title: "Nombre de ligne sur Excel",
+        type: "number",
+      },
       datafields:{
         title: 'Quantite de datafields',
         type: 'string',
         enum: ['Un', 'Plusieurs'],
       },
     },
-    required: ['category','datafields'],
+    required: ['category','numRuleExcell','datafields'],
     dependencies: {
       datafields: {
         oneOf: [

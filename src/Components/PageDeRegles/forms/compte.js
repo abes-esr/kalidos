@@ -18,6 +18,10 @@ export function getSchemaCompte(categories, rules) {
                 type: 'string',
                 enum: categories,
             },
+            numRuleExcell: {
+                title: "Nombre de ligne sur Excel",
+                type: "number",
+            },
             number: {
                 title: 'Zone',
                 type: 'string',
@@ -35,7 +39,7 @@ export function getSchemaCompte(categories, rules) {
                 type: "string",
             },
         },
-        required: ['category', 'number', 'code', 'contrainte', 'message'],
+        required: ['category','numRuleExcell', 'number', 'code', 'contrainte', 'message'],
 
     }
 }

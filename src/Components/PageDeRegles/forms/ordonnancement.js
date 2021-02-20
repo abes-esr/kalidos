@@ -18,6 +18,10 @@ export function getSchemaOrdonnancement(categories, rules) {
                 type: 'string',
                 enum: categories,
             },
+            numRuleExcell: {
+                title: "Nombre de ligne sur Excel",
+                type: "number",
+            },
             number: {
                 title: 'Zone',
                 type: 'string',
@@ -33,6 +37,6 @@ export function getSchemaOrdonnancement(categories, rules) {
                 type: "string",
             },
         },
-        required: ['category', 'number', 'orderBy', 'message'],
+        required: ['category', 'numRuleExcell', 'number', 'orderBy', 'message'],
     }
 }

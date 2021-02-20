@@ -1,7 +1,7 @@
 import { conditions } from "./conditions";
 
 export function formatRuleConditionnelsStructurel(data) {
-    //console.log('formatRuleConditionnelsStructurel');
+    console.log('formatRuleConditionnelsStructurel');
     const obj = {};
     obj.number = data.number;
     obj.condition = data.condition;
@@ -20,6 +20,10 @@ export function getSchemaConditionnelsStructurel(categories, rules) {
                 title: 'Type de document',
                 type: 'string',
                 enum: categories,
+            },
+            numRuleExcell: {
+                title: "Nombre de ligne sur Excel",
+                type: "number",
             },
             condition: conditions,
             number: {
@@ -82,6 +86,6 @@ export function getSchemaConditionnelsStructurel(categories, rules) {
             },
 
         },
-        required: ['category', 'number', 'condition','type', 'values', 'message'],
+        required: ['category', 'numRuleExcell', 'number', 'condition','type', 'values', 'message'],
     }
 }

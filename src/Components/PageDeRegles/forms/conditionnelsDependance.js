@@ -2,7 +2,7 @@ import { mathOperators } from "../operators";
 import { conditions } from "./conditions";
 
 export function formatRuleConditionnelsDependance(data) {
-    //console.log('formatRuleConditionnelsDependance');
+    console.log('formatRuleConditionnelsDependance');
     const obj = {};
     obj.condition = data.condition;
     obj.message = data.message;
@@ -39,6 +39,10 @@ export function getSchemaConditionnelsDependance(categories, rules) {
                 type: 'string',
                 enum: categories,
             },
+            numRuleExcell: {
+                title: "Nombre de ligne sur Excel",
+                type: "number",
+            },
             condition: conditions,
             field1: {title:"Premier champ","$ref": "#/definitions/champs"},
             field2: {title:"Deuxiéme champ","$ref": "#/definitions/champs"},
@@ -53,6 +57,6 @@ export function getSchemaConditionnelsDependance(categories, rules) {
                 type: "string",
             },
         },
-        required: ['category', 'field1', 'field2', 'operator', 'condition'],
+        required: ['category','numRuleExcell','field1', 'field2', 'operator', 'condition'],
     }
 }

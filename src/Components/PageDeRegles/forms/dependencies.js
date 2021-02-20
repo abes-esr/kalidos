@@ -47,6 +47,10 @@ return obj;
                 type: 'string',
                 enum: categories,
             },
+            numRuleExcell: {
+                title: "Nombre de ligne sur Excel",
+                type: "number",
+            },
             field1: {title:"Premier datafield","$ref": "#/definitions/champs"},
             field2: {title:"Deuxiéme datafield","$ref": "#/definitions/champs"},
             operator: {
@@ -60,7 +64,7 @@ return obj;
                 type: "string",
             },
         },
-        required: ['category', 'operator', 'field1', 'field2', 'message'],
+        required: ['category','numRuleExcell', 'operator', 'field1', 'field2', 'message'],
 
     }
 }

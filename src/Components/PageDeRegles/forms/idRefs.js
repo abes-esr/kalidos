@@ -61,7 +61,6 @@ export function getSchemaIdRef(categories, rules) {
                     },
                     isWord: {
                         title: ' Le motif contient de mots',
-                        type: 'boolean',
                         enum: [true, false],
                         enumNames: ["Oui", "Non"]
                     },
@@ -82,6 +81,10 @@ export function getSchemaIdRef(categories, rules) {
                 title: 'Type de document',
                 type: 'string',
                 enum: categories,
+            },
+            numRuleExcell: {
+                title: "Nombre de ligne sur Excel",
+                type: "number",
             },
             condition: {
                 title:"Condition",
@@ -147,6 +150,6 @@ export function getSchemaIdRef(categories, rules) {
                 type: "string",
             },
         },
-        required: ['category','identifiant', 'verification', 'condition', 'message'],
+        required: ['category', 'numRuleExcell' ,'identifiant', 'verification', 'condition', 'message'],
     }
 }

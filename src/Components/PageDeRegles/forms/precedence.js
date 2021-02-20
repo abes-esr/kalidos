@@ -21,6 +21,10 @@ export function getSchemaPrecedence(categories, rules) {
                 type: 'string',
                 enum: categories,
             },
+            numRuleExcell: {
+                title: "Nombre de ligne sur Excel",
+                type: "number",
+            },
             number: {
                 title: "Zone",
                 type: "string",
@@ -46,6 +50,6 @@ export function getSchemaPrecedence(categories, rules) {
                 type: "string",
             },
         },
-        required: ['category', 'number', 'condition', 'precede', 'message'],
+        required: ['category', 'numRuleExcell', 'number', 'condition', 'precede', 'message'],
     }
 }

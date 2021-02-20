@@ -2,7 +2,7 @@ import { generator } from "../generator";
 import { conditions } from "./conditions";
 
 export function formatRuleConditionnelsMatching(data) {
-    //console.log('formatRuleConditionnelsMatching');
+    console.log('formatRuleConditionnelsMatching');
     const obj = {};
     obj.number = data.number;
     obj.condition = data.condition;
@@ -30,6 +30,10 @@ export function getSchemaConditionnelsMatching(categories, rules) {
                 title: 'Type de document',
                 type: 'string',
                 enum: categories,
+            },
+            numRuleExcell: {
+                title: "Nombre de ligne sur Excel",
+                type: "number",
             },
             condition: conditions,
             number: {
@@ -90,6 +94,6 @@ export function getSchemaConditionnelsMatching(categories, rules) {
                 type: "string",
             },
         },
-        required: ['category', 'number', 'condition','type', 'values', 'message'],
+        required: ['category','numRuleExcell', 'number', 'condition','type', 'values', 'message'],
     }
 }
