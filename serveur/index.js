@@ -1,5 +1,6 @@
 const express = require('express');
-const bodyParser = require('body-parser')
+const bodyParser = require('body-parser');
+const moment = require('moment');
 const f = require('./js/index');
 const Lists = require('./js/Lists');
 const favicon = require('serve-favicon')
@@ -158,15 +159,13 @@ app.get('/getNotices', (req, res) => {
  */
 app.post('/notices', (req, res) => {
   const errorIndex = req.body;
-  let datetime = new Date();
-  let index = datetime.toISOString().slice(0,19);
-  index = index.replace("T", " ");
+  const datetime = moment().format('DD/MM/YYYY') + " " + moment().format('HH:mm:ss');
   fs.readFile(`${__dirname}/public/noticesErreurs.json`, 'utf8', function readFileCallback(err, data){
     if (err) {
         console.log(err);
     } else {
       let obj = JSON.parse(data);
-      obj[index] = errorIndex;
+      obj[datetime] = errorIndex;
       json = JSON.stringify(obj);
       fs.writeFile(`${__dirname}/public/noticesErreurs.json`, json, 'utf8', function(err, result) {
         if(err) console.log('error', err);
@@ -189,6 +188,26 @@ app.delete('/notices', (req, res) => {
     } else {
       let obj = JSON.parse(data);
       delete obj[index];
+      json = JSON.stringify(obj);
+      fs.writeFile(`${__dirname}/public/noticesErreurs.json`, json, 'utf8', function(err, result) {
+        if(err) console.log('error', err);
+      });
+    }
+  });
+  res.sendStatus(200);
+});
+
+/**
+ * supression de toute les notices, réécrit un json vide
+ * @header index : identifiant de la notice à supprimer
+ * return 200
+ */
+app.delete('/deleteAllNotices', (req, res) => {
+  fs.readFile(`${__dirname}/public/noticesErreurs.json`, 'utf8', function readFileCallback(err, data){
+    if (err) {
+        console.log(err);
+    } else {
+      let obj = {};
       json = JSON.stringify(obj);
       fs.writeFile(`${__dirname}/public/noticesErreurs.json`, json, 'utf8', function(err, result) {
         if(err) console.log('error', err);
