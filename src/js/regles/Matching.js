@@ -202,7 +202,8 @@ var Matching = function () {
             const tempRegle = {
                 message: message,
                 number: errors,
-                code : regle.code
+                code : regle.code,
+                numRuleExcell: regle.numRuleExcell
             }
             addErrorInJson(resultJson, tempRegle);
         }
@@ -227,7 +228,8 @@ function addErrorInJson(resultJson, regle) {
     resultJson.errors.push({
         message: regle.message,
         number: regle.number,
-        code: regle.code
+        code: regle.code,
+        numRuleExcell: regle.numRuleExcell
     });
     Parcours.addErrorSynchro();
 }

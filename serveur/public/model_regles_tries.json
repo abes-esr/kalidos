@@ -7,28 +7,32 @@
                 "code": "a",
                 "message": "Zone 215 : compléter la pagination",
                 "number": 215,
-                "index": 1
+                "index": 1,
+                "numRuleExcell":97
             },
             {
                 "regex": "(?:(?![:;\\?\\/]).)+",
                 "code": "c",
                 "message": "Zone 328$c : les sous-disciplines doivent être séparées par un point",
                 "number": 328,
-                "index": 2
+                "index": 2,
+                "numRuleExcell":120
             },
             {
                 "regex": "^[0-9]{4}$",
                 "code": "d",
                 "message": "Zone 328$d doit contenir uniquement l'année de soutenance",
                 "number": 328,
-                "index": 3
+                "index": 3,
+                "numRuleExcell":122
             },
             {
                 "regex": "(?:(?![\\?;,]).)+",
                 "code": "d",
                 "message": "Zone 328$d doit contenir uniquement l'année de soutenance",
                 "number": 328,
-                "index": 4
+                "index": 4,
+                "numRuleExcell":123
             }
         ],
         "ConditionDependance": [
@@ -52,7 +56,8 @@
                     "code": "t",
                     "number": "410"
                 },
-                "operator": "not_equals"
+                "operator": "not_equals",
+                "numRuleExcell": 40
             },
             {
                 "message": "Si 225 ind1=2 $a = 410$t",
@@ -74,7 +79,8 @@
                     "code": "t",
                     "number": "410"
                 },
-                "operator": "equals"
+                "operator": "equals",
+                "numRuleExcell": 41
             }
         ],
         "idRef": [],
@@ -112,7 +118,8 @@
                         "regex": "^Actes de congrès$"
                     }
                 ],
-                "type": "allRequired"
+                "type": "allRequired",
+                "numRuleExcell": 13
             },
             {
                 "message": "Zones 7XX : code fonction, vérifier qu il s agit d un éditeur scientifique ou d un directeur de publication ?",
@@ -144,7 +151,8 @@
                         "regex": "(?:(?!ed.)(?!edited)(?!edit).)+"
                     }
                 ],
-                "type": "allRequired"
+                "type": "allRequired",
+                "numRuleExcell":91
             },
             {
                 "message": "Zones 7XX : code fonction, vérifier qu il s agit d un éditeur scientifique ou d un directeur de publication ?",
@@ -176,7 +184,8 @@
                         "regex": "(?:(?!ed.)(?!edited)(?!edit).)+"
                     }
                 ],
-                "type": "allRequired"
+                "type": "allRequired",
+                "numRuleExcell":91
             },
             {
                 "message": "Zones 7XX : code fonction, vérifier qu il s agit d un éditeur scientifique ou d un directeur de publication ?",
@@ -208,7 +217,8 @@
                         "regex": "(?:(?!ed.)(?!edited)(?!edit).)+"
                     }
                 ],
-                "type": "allRequired"
+                "type": "allRequired",
+                "numRuleExcell":91
             },
             {
                 "message": "Zones 7XX : code fonction, vérifier qu il s agit d un éditeur scientifique ou d un directeur de publication ?",
@@ -240,7 +250,8 @@
                         "regex": "(?:(?!ed.)(?!edited)(?!edit).)+"
                     }
                 ],
-                "type": "allRequired"
+                "type": "allRequired",
+                "numRuleExcell":91
             },
             {
                 "message": "Zones 7XX : code fonction, vérifier qu il s agit d un éditeur scientifique ou d un directeur de publication ?",
@@ -272,7 +283,8 @@
                         "regex": "(?:(?!ed.)(?!edited)(?!edit).)+"
                     }
                 ],
-                "type": "allRequired"
+                "type": "allRequired",
+                "numRuleExcell":91
             },
             {
                 "message": "Zones 7XX : code fonction, vérifier qu il s agit d un éditeur scientifique ou d un directeur de publication ?",
@@ -304,7 +316,8 @@
                         "regex": "(?:(?!ed.)(?!edited)(?!edit).)+"
                     }
                 ],
-                "type": "allRequired"
+                "type": "allRequired",
+                "numRuleExcell":91
             },
             {
                 "message": "Zones 7XX : code fonction, vérifier qu il s agit d un éditeur scientifique ou d un directeur de publication ?",
@@ -336,7 +349,8 @@
                         "regex": "(?:(?!ed.)(?!edited)(?!edit).)+"
                     }
                 ],
-                "type": "allRequired"
+                "type": "allRequired",
+                "numRuleExcell":91
             },
             {
                 "message": "Zones 7XX : code fonction, vérifier qu il s agit d un éditeur scientifique ou d un directeur de publication ?",
@@ -368,7 +382,8 @@
                         "regex": "(?:(?!ed.)(?!edited)(?!edit).)+"
                     }
                 ],
-                "type": "allRequired"
+                "type": "allRequired",
+                "numRuleExcell":91
             },
             {
                 "message": "Zones 7XX : code fonction, vérifier qu il s agit d un éditeur scientifique ou d un directeur de publication ?",
@@ -400,7 +415,8 @@
                         "regex": "(?:(?!ed.)(?!edited)(?!edit).)+"
                     }
                 ],
-                "type": "allRequired"
+                "type": "allRequired",
+                "numRuleExcell":91
             },
             {
                 "message": "Si 214 #4$d, la zone doit commencer par \"C espace\"",
@@ -424,7 +440,8 @@
                         "regex": "^(C ).*"
                     }
                 ],
-                "type": "allRequired"
+                "type": "allRequired",
+                "numRuleExcell":33
             },
             {
                 "message": "Si 214 #0 et $d, doit commencer par \"DL espace\" ou \"[\" ou un chiffre",
@@ -450,7 +467,8 @@
                         "ind1": ""
                     }
                 ],
-                "type": "allRequired"
+                "type": "allRequired",
+                "numRuleExcell":36
             },
             {
                 "message": "Si 328$zReproduction de, alors il faut une 701$4727",
@@ -475,7 +493,8 @@
                         "regex": "^727$"
                     }
                 ],
-                "type": "allRequired"
+                "type": "allRequired",
+                "numRuleExcell": 185
             },
             {
                 "message": "Si 328$z n'est pas \"Reproduction de\", alors 701$4727 ne doit pas être présente",
@@ -500,7 +519,8 @@
                         "regex": "^(?:(?!727).)*"
                     }
                 ],
-                "type": "allRequired"
+                "type": "allRequired",
+                "numRuleExcell": 186
             },
             {
                 "message": "Si 328$zReproduction de, alors il faut une 711$4295",
@@ -525,7 +545,8 @@
                         "regex": "^295$"
                     }
                 ],
-                "type": "allRequired"
+                "type": "allRequired",
+                "numRuleExcell":187
             },
             {
                 "message": "Si 328$z n'est pas \"Reproduction de\", alors 711$4295 ne doit pas être présente",
@@ -550,7 +571,8 @@
                         "regex": "^(?:(?!295).)*"
                     }
                 ],
-                "type": "allRequired"
+                "type": "allRequired",
+                "numRuleExcell":188
             },
             {
                 "message": "Si 328$zReproduction de, alors il faut une 608 $3027253139 $aThèses et écrits académiques",
@@ -582,7 +604,8 @@
                         "regex": "^Thèses et écrits académiques$"
                     }
                 ],
-                "type": "allRequired"
+                "type": "allRequired",
+                "numRuleExcell":189
             },
             {
                 "message": "Si 328$z n'est pas \"Reproduction de\", alors 608 $3027253139Thèses et écrits académiques ne doit pas être présente",
@@ -614,7 +637,8 @@
                         "regex": "^(?:(?!Thèses et écrits académiques).)*"
                     }
                 ],
-                "type": "allRequired"
+                "type": "allRequired",
+                "numRuleExcell":190
             }
         ],
         "ordonnancement": [
@@ -653,7 +677,8 @@
                         "number": "328",
                         "present": true
                     }
-                ]
+                ],
+                "numRuleExcell":182
             },
             {
                 "message": "Zone 328 obligatoire pour une thèse ou mémoire (soutenance)",
@@ -683,7 +708,8 @@
                         "number": "328",
                         "present": true
                     }
-                ]
+                ],
+                "numRuleExcell":179
             },
             {
                 "message": "Si 008 commence par Aa, 215 $a et $d obligatoires",
@@ -711,7 +737,8 @@
                         "number": "215",
                         "present": true
                     }
-                ]
+                ],
+                "numRuleExcell": 38
             },
             {
                 "message": "Si 225 ind1=0 il faut au moins une 410",
@@ -733,7 +760,8 @@
                         "number": "410",
                         "present": true
                     }
-                ]
+                ],
+                "numRuleExcell": 39
             },
             {
                 "message": "Si 225 ind1=0 $a alors 410$0 doit être présent",
@@ -755,7 +783,8 @@
                         "number": "410",
                         "present": true
                     }
-                ]
+                ],
+                "numRuleExcell": 42
             },
             {
                 "message": "Si 225 ind1=2 $a alors 410$0 doit être présent",
@@ -777,7 +806,8 @@
                         "number": "410",
                         "present": true
                     }
-                ]
+                ],
+                "numRuleExcell": 43
             },
             {
                 "message": "Si 225 ind1=2 il faut au moins une 410",
@@ -799,7 +829,8 @@
                         "number": "410",
                         "present": true
                     }
-                ]
+                ],
+                "numRuleExcell":45
             },
             {
                 "message": "Si 008 commence par Aa et présence d'une 461, alors il doit y avoir une 305 ou 225",
@@ -832,7 +863,8 @@
                         "number": "225",
                         "present": true
                     }
-                ]
+                ],
+                "numRuleExcell":47
             },
             {
                 "message": "Si 328$z\"Reproduction de\", 455 doit être présente",
@@ -860,7 +892,8 @@
                         "number": "455",
                         "present": true
                     }
-                ]
+                ],
+                "numRuleExcell":92
             },
             {
                 "message": "Si 325$a commence par \"Document numérisé dans le cadre d'un projet de numérisation du SCD de Lyon 1 :\", 456 doit être présente",
@@ -883,7 +916,8 @@
                         "number": "456",
                         "present": true
                     }
-                ]
+                ],
+                "numRuleExcell":164
             },
             {
                 "message": "Si 105 $a Pos. 4-7= \"m\" ou \"7\", alors il faut une 328",
@@ -952,7 +986,8 @@
                         "present": true,
                         "ind2": "2"
                     }
-                ]
+                ],
+                "numRuleExcell":111
             },
             {
                 "message": "Si 328$zReproduction de, alors il faut une 029",
@@ -980,7 +1015,8 @@
                         "number": "029",
                         "present": true
                     }
-                ]
+                ],
+                "numRuleExcell":183
             },
             {
                 "message": "Si 328$z n'est pas \"Reproduction de\", alors 029 ne doit pas être présente",
@@ -1008,7 +1044,8 @@
                         "number": "029",
                         "present": false
                     }
-                ]
+                ],
+                "numRuleExcell":184
             }
         ],
         "Structurel": [
@@ -1041,147 +1078,168 @@
                 "code": "a",
                 "message": "Zone 230 : corriger le poids en Ko",
                 "number": 230,
-                "index": 40
+                "index": 40,
+                "numRuleExcell": 95
             },
             {
                 "regex": "(?:(?!X Ko)(?!X ko)(?!x Ko)(?!x ko).)+",
                 "code": "a",
                 "message": "Zone 230 : corriger le poids en Ko",
                 "number": 230,
-                "index": 41
+                "index": 41,
+                "numRuleExcell": 96
             },
             {
                 "regex": "(?:(?!nombre de).)+",
                 "code": "a",
                 "message": "Zone 215 : compléter la pagination",
                 "number": 215,
-                "index": 42
+                "index": 42,
+                "numRuleExcell":97
             },
             {
                 "regex": ".{12}",
                 "code": "b",
                 "message": "Zone 029 : le numéro d'ordre doit contenir 12 caractères",
                 "number": "029",
-                "index": 43
+                "index": 43,
+                "numRuleExcell":98
             },
             {
                 "code": "b",
                 "message": "029$b ne doit pas contenir le caractère ?",
                 "index": 44,
                 "number": "029",
-                "regex": "(?:(?!\\?).)+"
+                "regex": "(?:(?!\\?).)+",
+                "numRuleExcell":99
             },
             {
                 "code": "a",
                 "message": "029$a=FR",
                 "index": 45,
                 "number": "029",
-                "regex": "^FR$"
+                "regex": "^FR$",
+                "numRuleExcell":100
             },
             {
                 "code": "a",
                 "message": "100$a ne doit pas contenir le caractère ?",
                 "index": 46,
                 "number": "100",
-                "regex": "(?:(?!\\?).)+"
+                "regex": "(?:(?!\\?).)+",
+                "numRuleExcell":103
             },
             {
                 "regex": "^FR$",
                 "code": "a",
                 "message": "Zone 102 $a doit être FR",
                 "number": "102",
-                "index": 47
+                "index": 47,
+                "numRuleExcell":104
             },
             {
                 "code": "a",
                 "message": "200$a ne doit pas être Le Titre",
                 "index": 48,
                 "number": "200",
-                "regex": "^(?!Le Titre)(?!le titre)(?!Le titre).*$"
+                "regex": "^(?!Le Titre)(?!le titre)(?!Le titre).*$",
+                "numRuleExcell":107
             },
             {
                 "code": "e",
                 "message": "200$e ne doit pas être complément du titre",
                 "index": 49,
                 "number": "200",
-                "regex": "^(?!complément du titre).*$"
+                "regex": "^(?!complément du titre).*$",
+                "numRuleExcell":108
             },
             {
                 "regex": "(?:(?!Auteur).)+",
                 "code": "f",
                 "message": "Zone 200 : compléter le nom de l'auteur",
                 "number": "200",
-                "index": 50
+                "index": 50,
+                "numRuleExcell":109
             },
             {
                 "code": "g",
                 "message": "200$g ne doit pas finir par sous la direction de",
                 "index": 51,
                 "number": "200",
-                "regex": ".*(?<!sous la direction de)$"
+                "regex": ".*(?<!sous la direction de)$",
+                "numRuleExcell":110
             },
             {
                 "code": "d",
                 "message": "214$d ne doit pas contenir le caractère ?",
                 "index": 52,
                 "number": "214",
-                "regex": "(?:(?!\\?).)+"
+                "regex": "(?:(?!\\?).)+",
+                "numRuleExcell":113
             },
             {
                 "code": "a",
                 "message": "230$a ne doit pas contenir le caractère ?",
                 "index": 53,
                 "number": "230",
-                "regex": "(?:(?!\\?).)+"
+                "regex": "(?:(?!\\?).)+",
+                "numRuleExcell":114
             },
             {
                 "code": "a",
                 "message": "307$a ne doit pas contenir le caractère ?",
                 "index": 54,
                 "number": "307",
-                "regex": "(?:(?!\\?).)+"
+                "regex": "(?:(?!\\?).)+",
+                "numRuleExcell":115
             },
             {
                 "regex": "(?:(?!p\\. ou f\\.).)+",
                 "code": "a",
                 "message": "Zone 320 à compléter",
                 "number": "320",
-                "index": 55
+                "index": 55,
+                "numRuleExcell":116
             },
             {
                 "regex": "(?:(?![:;\\?\\/]).)+",
                 "code": "c",
                 "message": "Zone 328$c : les sous-disciplines doivent être séparées par un point",
                 "number": 328,
-                "index": 56
+                "index": 56,
+                "numRuleExcell":120
             },
             {
                 "regex": "(?:(?!Discipline).)+",
                 "code": "c",
                 "message": "Zone 328$c compléter la discipline",
                 "number": 328,
-                "index": 57
+                "index": 57,
+                "numRuleExcell":121
             },
             {
                 "regex": "^[0-9]{4}$",
                 "code": "d",
                 "message": "Zone 328$d doit contenir uniquement l'année de soutenance",
                 "number": 328,
-                "index": 58
+                "index": 58,
+                "numRuleExcell":122
             },
             {
                 "regex": "(?:(?![\\?;,]).)+",
                 "code": "d",
                 "message": "Zone 328$d doit contenir uniquement l'année de soutenance",
                 "number": 328,
-                "index": 59
+                "index": 59,
+                "numRuleExcell":123
             },
             {
                 "code": "e",
                 "message": "328$e = Lyon 1 ou Université de Lyon ou Lyon",
                 "index": 60,
                 "number": "328",
-                "regex": "(Lyon 1)|(Université de Lyon)|(Lyon)"
+                "regex": "(Lyon 1)|(Université de Lyon)|(Lyon)",
+                "numRuleExcell":124
             },
             {
                 "code": "a",
@@ -1195,56 +1253,64 @@
                 "message": "700$a ne doit pas contenir Nom",
                 "index": 62,
                 "number": "700",
-                "regex": "(?:(?!Nom).)+"
+                "regex": "(?:(?!Nom).)+",
+                "numRuleExcell":128
             },
             {
                 "code": "b",
                 "message": "700$b ne doit pas contenir Prénom",
                 "index": 63,
                 "number": "700",
-                "regex": "(?:(?!Prénom).)+"
+                "regex": "(?:(?!Prénom).)+",
+                "numRuleExcell":129
             },
             {
                 "regex": "^070$",
                 "code": "4",
                 "message": "Zone 700 : le code fonction doit être 070 pour l'auteur ou co-auteur de la thèse",
                 "number": "700",
-                "index": 64
+                "index": 64,
+                "numRuleExcell":131
             },
             {
                 "code": "b",
                 "message": "701$b ne doit pas contenir Prénom",
                 "index": 65,
                 "number": "701",
-                "regex": "(?:(?!Prénom).)+"
+                "regex": "(?:(?!Prénom).)+",
+                "numRuleExcell":132
             },
             {
                 "code": "u",
                 "message": "856$u ne doit pas contenir URL",
                 "index": 66,
                 "number": "856",
-                "regex": "(?:(?!URL).)+"
+                "regex": "(?:(?!URL).)+",
+                "numRuleExcell": 135
             },
             {
                 "regex": "^((?!Texte du lien).)*$",
                 "code": "2",
                 "message": "Zone 305$2 générique à remplacer-supprimer",
                 "number": "856",
-                "index": 67
+                "index": 67,
+                "numRuleExcell":175
             },
             {
                 "regex": "^((?!Format).)*$",
                 "code": "q",
                 "message": "Zone 856$q : renseigner le format",
                 "number": "856",
-                "index": 68
+                "index": 68,
+                "numRuleExcell":176
             },
             {
                 "regex": "^MEMLyon1$",
                 "code": "2",
                 "message": "107$2 à corriger (\"MEMLyon1\")",
                 "number": "017",
-                "index": 69
+                "index": 69,
+                "numRuleExcell":181
             }
         ],
         "ConditionDependance": [],
@@ -1270,7 +1336,8 @@
                         "regex": "^027253139$"
                     }
                 ],
-                "type": "allRequired"
+                "type": "allRequired",
+                "numRuleExcell": 126
             },
             {
                 "message": "Zone 711 : université de soutenance doit être présente (711$3026402823$4295)",
@@ -1304,7 +1371,8 @@
                         "regex": "^295$"
                     }
                 ],
-                "type": "allRequired"
+                "type": "allRequired",
+                "numRuleExcell":133
             },
             {
                 "message": "856$zAccès au texte intégral sauf si 856$5=692669902, alors $zAccès réservé aux membres de Lyon 1 après authentification",
@@ -1334,7 +1402,8 @@
                         "regex": "^Accès réservé aux membres de Lyon 1 après authentification$"
                     }
                 ],
-                "type": "allRequired"
+                "type": "allRequired",
+                "numRuleExcell":136
             },
             {
                 "message": "856$zAccès au texte intégral sauf si 856$5=692669902, alors $zAccès réservé aux membres de Lyon 1 après authentification",
@@ -1364,7 +1433,8 @@
                         "regex": "^Accès au texte intégral$"
                     }
                 ],
-                "type": "allRequired"
+                "type": "allRequired",
+                "numRuleExcell":136
             },
             {
                 "message": "Si 856$5=692669902, alors doit être présente 310 ##$aL'accès à cette ressource est réservé aux membres de Lyon 1 après authentification",
@@ -1397,7 +1467,8 @@
                         "code": "a",
                         "message": ""
                     }
-                ]
+                ],
+                "numRuleExcell":137
             }
         ],
         "ordonnancement": [],
@@ -1407,7 +1478,8 @@
                 "message": "Mention de résumé incohérente : vérifier zones 101 et le nombre de zones 330",
                 "number": "101",
                 "contrainte": "330",
-                "index": 75
+                "index": 75,
+                "numRuleExcell": 106
             }
         ],
         "dependances": [
@@ -1460,7 +1532,8 @@
                         "number": "328",
                         "present": true
                     }
-                ]
+                ],
+                "numRuleExcell":179
             },
             {
                 "message": "Zone 328 obligatoire pour une thèse ou mémoire (soutenance)",
@@ -1490,7 +1563,8 @@
                         "number": "017",
                         "present": true
                     }
-                ]
+                ],
+                "numRuleExcell":179
             },
             {
                 "message": "Si 008 commence par Aa, 215 $a et $d obligatoires",
@@ -1538,7 +1612,8 @@
                         "number": "330",
                         "present": true
                     }
-                ]
+                ],
+                "numRuleExcell": 105
             },
             {
                 "message": "Si 105 $a Pos. 4-7= m, 214 ind2=\"1\"",
@@ -1572,7 +1647,8 @@
                         "present": true,
                         "ind2": "1"
                     }
-                ]
+                ],
+                "numRuleExcell":112
             },
             {
                 "message": "Zone 328$z incohérente avec le statut de la thèse",
@@ -1601,7 +1677,8 @@
                         "number": "328",
                         "present": false
                     }
-                ]
+                ],
+                "numRuleExcell":119
             },
             {
                 "message": "Si 008 commence par Oa et ne contient pas une 215, une 856 doit être présente",
@@ -1657,7 +1734,8 @@
                         "number": "451",
                         "present": true
                     }
-                ]
+                ],
+                "numRuleExcell":139
             },
             {
                 "message": "Si 452, alors vérifier que la notice 452$0 contient une 452 réciproque et une 328$z",
@@ -1690,7 +1768,8 @@
                         "number": "328",
                         "present": true
                     }
-                ]
+                ],
+                "numRuleExcell":142
             },
             {
                 "message": "Si 008 commence par Oa,  304 doit être présente",
@@ -1713,7 +1792,8 @@
                         "number": "304",
                         "present": true
                     }
-                ]
+                ],
+                "numRuleExcell":151
             },
             {
                 "message": "Si 008 commence par Oa, 307 doit être présente",
@@ -1736,7 +1816,8 @@
                         "number": "307",
                         "present": true
                     }
-                ]
+                ],
+                "numRuleExcell":152
             },
             {
                 "message": "Si 008 commence par Oa, 337 doit être présente",
@@ -1759,7 +1840,8 @@
                         "number": "337",
                         "present": true
                     }
-                ]
+                ],
+                "numRuleExcell":153
             },
             {
                 "message": "Si 008 commence par Oa, 230 doit être présente",
@@ -1782,7 +1864,8 @@
                         "number": "230",
                         "present": true
                     }
-                ]
+                ],
+                "numRuleExcell":154
             },
             {
                 "message": "Si 456, alors vérifier que la notice en 456$0 contient une 455 avec liens réciproques",
@@ -1810,7 +1893,8 @@
                         "number": "456",
                         "present": true
                     }
-                ]
+                ],
+                "numRuleExcell":160
             },
             {
                 "message": "Si 325$a commence par \"Document numérisé dans le cadre d'un projet de numérisation du SCD de Lyon 1 :\", 456 doit être présente",
@@ -1833,7 +1917,8 @@
                         "number": "456",
                         "present": true
                     }
-                ]
+                ],
+                "numRuleExcell":164
             },
             {
                 "message": "Si 105 $a Pos. 4-7= \"m\", alors il faut une 029",
@@ -1916,7 +2001,8 @@
                         "number": "017",
                         "present": true
                     }
-                ]
+                ],
+                "numRuleExcell":180
             },
             {
                 "message": "Si 456, alors vérifier que la notice en 465$0  contient  328$z",
@@ -1940,7 +2026,8 @@
                         "number": "328",
                         "present": true
                     }
-                ]
+                ],
+                "numRuleExcell":193
             },
             {
                 "message": "Si 451 et 328$z, alors vérifier que la notice 451$0 ne contient pas 328$z",
@@ -1969,7 +2056,8 @@
                         "number": "328",
                         "present": false
                     }
-                ]
+                ],
+                "numRuleExcell":203
             },
             {
                 "message": "Si 451 et absence de 328$z, alors vérifier que la notice 451$0 contient 328$z",
@@ -1998,7 +2086,8 @@
                         "number": "328",
                         "present": true
                     }
-                ]
+                ],
+                "numRuleExcell":204
             }
         ],
         "Structurel": [
@@ -2043,168 +2132,192 @@
                 "code": "a",
                 "message": "Zone 230 : corriger le poids en Ko",
                 "number": 230,
-                "index": 101
+                "index": 101,
+                "numRuleExcell": 95
             },
             {
                 "regex": "(?:(?!X Ko)(?!X ko)(?!x Ko)(?!x ko).)+",
                 "code": "a",
                 "message": "Zone 230 : corriger le poids en Ko",
                 "number": 230,
-                "index": 102
+                "index": 102,
+                "numRuleExcell": 96
             },
             {
                 "regex": "(?:(?!nombre de).)+",
                 "code": "a",
                 "message": "Zone 215 : compléter la pagination",
                 "number": 215,
-                "index": 103
+                "index": 103,
+                "numRuleExcell":97
             },
             {
                 "code": "a",
                 "message": "100$a ne doit pas contenir le caractère ?",
                 "index": 104,
                 "number": "100",
-                "regex": "(?:(?!\\?).)+"
+                "regex": "(?:(?!\\?).)+",
+                "numRuleExcell":103
             },
             {
                 "code": "a",
                 "message": "200$a ne doit pas être Le Titre",
                 "index": 105,
                 "number": "200",
-                "regex": "^(?!Le Titre)(?!le titre)(?!Le titre).*$"
+                "regex": "^(?!Le Titre)(?!le titre)(?!Le titre).*$",
+                "numRuleExcell":107
             },
             {
                 "code": "e",
                 "message": "200$e ne doit pas être complément du titre",
                 "index": 106,
                 "number": "200",
-                "regex": "^(?!complément du titre).*$"
+                "regex": "^(?!complément du titre).*$",
+                "numRuleExcell":108
             },
             {
                 "regex": "(?:(?!Auteur).)+",
                 "code": "f",
                 "message": "Zone 200 : compléter le nom de l'auteur",
                 "number": "200",
-                "index": 107
+                "index": 107,
+                "numRuleExcell":109
             },
             {
                 "code": "g",
                 "message": "200$g ne doit pas finir par sous la direction de",
                 "index": 108,
                 "number": "200",
-                "regex": ".*(?<!sous la direction de)$"
+                "regex": ".*(?<!sous la direction de)$",
+                "numRuleExcell":110
             },
             {
                 "code": "d",
                 "message": "214$d ne doit pas contenir le caractère ?",
                 "index": 109,
                 "number": "214",
-                "regex": "(?:(?!\\?).)+"
+                "regex": "(?:(?!\\?).)+",
+                "numRuleExcell":113
             },
             {
                 "code": "a",
                 "message": "307$a ne doit pas contenir le caractère ?",
                 "index": 110,
                 "number": "307",
-                "regex": "(?:(?!\\?).)+"
+                "regex": "(?:(?!\\?).)+",
+                "numRuleExcell":115
             },
             {
                 "regex": "(?:(?!p\\. ou f\\.).)+",
                 "code": "a",
                 "message": "Zone 320 à compléter",
                 "number": "320",
-                "index": 111
+                "index": 111,
+                "numRuleExcell":116
             },
             {
                 "regex": "(?:(?![:;\\?\\/]).)+",
                 "code": "c",
                 "message": "Zone 328$c : les sous-disciplines doivent être séparées par un point",
                 "number": 328,
-                "index": 112
+                "index": 112,
+                "numRuleExcell":120
             },
             {
                 "regex": "(?:(?!Discipline).)+",
                 "code": "c",
                 "message": "Zone 328$c compléter la discipline",
                 "number": 328,
-                "index": 113
+                "index": 113,
+                "numRuleExcell":121
             },
             {
                 "regex": "^[0-9]{4}$",
                 "code": "d",
                 "message": "Zone 328$d doit contenir uniquement l'année de soutenance",
                 "number": 328,
-                "index": 114
+                "index": 114,
+                "numRuleExcell":122
             },
             {
                 "regex": "(?:(?![\\?;,]).)+",
                 "code": "d",
                 "message": "Zone 328$d doit contenir uniquement l'année de soutenance",
                 "number": 328,
-                "index": 115
+                "index": 115,
+                "numRuleExcell":123
             },
             {
                 "code": "e",
                 "message": "328$e = Lyon 1 ou Université de Lyon ou Lyon",
                 "index": 116,
                 "number": "328",
-                "regex": "(Lyon 1)|(Université de Lyon)|(Lyon)"
+                "regex": "(Lyon 1)|(Université de Lyon)|(Lyon)",
+                "numRuleExcell":124
             },
             {
                 "code": "a",
                 "message": "330$a ne doit pas contenir Résumé en français",
                 "index": 117,
                 "number": "330",
-                "regex": "(?:(?!Résumé en français).)+"
+                "regex": "(?:(?!Résumé en français).)+",
+                "numRuleExcell":125
             },
             {
                 "code": "a",
                 "message": "700$a ne doit pas contenir Nom",
                 "index": 118,
                 "number": "700",
-                "regex": "(?:(?!Nom).)+"
+                "regex": "(?:(?!Nom).)+",
+                "numRuleExcell":128
             },
             {
                 "code": "b",
                 "message": "700$b ne doit pas contenir Prénom",
                 "index": 119,
                 "number": "700",
-                "regex": "(?:(?!Prénom).)+"
+                "regex": "(?:(?!Prénom).)+",
+                "numRuleExcell":129
             },
             {
                 "regex": "^070$",
                 "code": "4",
                 "message": "Zone 700 : le code fonction doit être 070 pour l'auteur ou co-auteur de la thèse",
                 "number": "700",
-                "index": 120
+                "index": 120,
+                "numRuleExcell":131
             },
             {
                 "code": "u",
                 "message": "856$u ne doit pas contenir URL",
                 "index": 121,
                 "number": "856",
-                "regex": "(?:(?!URL).)+"
+                "regex": "(?:(?!URL).)+",
+                "numRuleExcell": 135
             },
             {
                 "regex": "^((?!Texte du lien).)*$",
                 "code": "2",
                 "message": "Zone 305$2 générique à remplacer-supprimer",
                 "number": "856",
-                "index": 122
+                "index": 122,
+                "numRuleExcell":175
             },
             {
                 "regex": "^((?!Format).)*$",
                 "code": "q",
                 "message": "Zone 856$q : renseigner le format",
                 "number": "856",
-                "index": 123
+                "index": 123,
+                "numRuleExcell":176
             },
             {
                 "regex": "^MEMLyon1$",
                 "code": "2",
                 "message": "107$2 à corriger (\"MEMLyon1\")",
                 "number": "017",
-                "index": 124
+                "index": 124,
+                "numRuleExcell":181
             }
         ],
         "ConditionDependance": [],
@@ -2234,7 +2347,8 @@
                         "ind1": ""
                     }
                 ],
-                "type": "allRequired"
+                "type": "allRequired",
+                "numRuleExcell":36
             },
             {
                 "message": "856$zAccès au texte intégral sauf si 856$5=692669902, alors $zAccès réservé aux membres de Lyon 1 après authentification",
@@ -2264,7 +2378,8 @@
                         "regex": "^Accès réservé aux membres de Lyon 1 après authentification$"
                     }
                 ],
-                "type": "allRequired"
+                "type": "allRequired",
+                "numRuleExcell":136
             },
             {
                 "message": "856$zAccès au texte intégral sauf si 856$5=692669902, alors $zAccès réservé aux membres de Lyon 1 après authentification",
@@ -2294,7 +2409,8 @@
                         "regex": "^Accès au texte intégral$"
                     }
                 ],
-                "type": "allRequired"
+                "type": "allRequired",
+                "numRuleExcell":136
             },
             {
                 "message": "Si 856$5=692669902, alors doit être présente 310 ##$aL'accès à cette ressource est réservé aux membres de Lyon 1 après authentification",
@@ -2327,7 +2443,8 @@
                         "code": "a",
                         "message": ""
                     }
-                ]
+                ],
+                "numRuleExcell":137
             },
             {
                 "message": "Zone 214$a incohérente avec le statut de la thèse (reproduction)",
@@ -2363,7 +2480,8 @@
                         "regex": "^(Lyon)|(\\[Lyon\\])$"
                     }
                 ],
-                "type": "allRequired"
+                "type": "allRequired",
+                "numRuleExcell":149
             },
             {
                 "message": "Si 455, alors vérifier que la notice en 455$0 contient 105$a Pos. 4-7= m",
@@ -2389,7 +2507,8 @@
                 "reciproque": {
                     "code": "0",
                     "number": "455"
-                }
+                },
+                "numRuleExcell":159
             },
             {
                 "message": "Si 456, alors vérifier que la notice en 456$0 contient une 455 avec liens réciproques",
@@ -2417,7 +2536,8 @@
                         "number": "456",
                         "present": true
                     }
-                ]
+                ],
+                "numRuleExcell":160
             },
             {
                 "message": "Si 325$a commence par \"Document numérisé dans le cadre d'un projet de numérisation du SCD de Lyon 1 :\", 456 doit être présente",
@@ -2440,7 +2560,8 @@
                         "number": "456",
                         "present": true
                     }
-                ]
+                ],
+                "numRuleExcell":164
             },
             {
                 "message": "Si 328$zReproduction de, alors il faut une 701$4727",
@@ -2465,7 +2586,8 @@
                         "regex": "^727$"
                     }
                 ],
-                "type": "allRequired"
+                "type": "allRequired",
+                "numRuleExcell":185
             },
             {
                 "message": "Si 328$z n'est pas \"Reproduction de\", alors 701$4727 ne doit pas être présente",
@@ -2490,7 +2612,8 @@
                         "regex": "^(?:(?!727).)*"
                     }
                 ],
-                "type": "allRequired"
+                "type": "allRequired",
+                "numRuleExcell":186
             },
             {
                 "message": "Si 328$zReproduction de, alors il faut une 711$4295",
@@ -2515,7 +2638,8 @@
                         "regex": "^295$"
                     }
                 ],
-                "type": "allRequired"
+                "type": "allRequired",
+                "numRuleExcell":187
             },
             {
                 "message": "Si 328$z n'est pas \"Reproduction de\", alors 711$4295 ne doit pas être présente",
@@ -2540,7 +2664,8 @@
                         "regex": "^(?:(?!295).)*"
                     }
                 ],
-                "type": "allRequired"
+                "type": "allRequired",
+                "numRuleExcell":188
             },
             {
                 "message": "Si 328$zReproduction de, alors il faut une 608 $3027253139 $aThèses et écrits académiques",
@@ -2572,7 +2697,8 @@
                         "regex": "^Thèses et écrits académiques$"
                     }
                 ],
-                "type": "allRequired"
+                "type": "allRequired",
+                "numRuleExcell":189
             },
             {
                 "message": "Si 328$z n'est pas \"Reproduction de\", alors 608 $3027253139Thèses et écrits académiques ne doit pas être présente",
@@ -2604,7 +2730,8 @@
                         "regex": "^(?:(?!Thèses et écrits académiques).)*"
                     }
                 ],
-                "type": "allRequired"
+                "type": "allRequired",
+                "numRuleExcell":190
             }
         ],
         "ordonnancement": [
@@ -2621,7 +2748,8 @@
                 "message": "Mention de résumé incohérente : vérifier zones 101 et le nombre de zones 330",
                 "number": "101",
                 "contrainte": "330",
-                "index": 140
+                "index": 140,
+                "numRuleExcell": 106
             }
         ],
         "dependances": [],
@@ -2654,7 +2782,8 @@
                         "number": "328",
                         "present": true
                     }
-                ]
+                ],
+                "numRuleExcell":179
             },
             {
                 "message": "Zone 456 incompatible avec le type de thèse (reproduction)",
@@ -2683,7 +2812,8 @@
                         "number": "456",
                         "present": false
                     }
-                ]
+                ],
+                "numRuleExcell":147
             },
             {
                 "message": "Si 008 commence par Aa, 215 $a et $d obligatoires",
@@ -2767,7 +2897,8 @@
                         "number": "456",
                         "present": false
                     }
-                ]
+                ],
+                "numRuleExcell": 93
             },
             {
                 "message": "Si 101$d, 330 doit être présente",
@@ -2787,7 +2918,8 @@
                         "number": "330",
                         "present": true
                     }
-                ]
+                ],
+                "numRuleExcell": 105
             },
             {
                 "message": "Si 105 $a Pos. 4-7= \"v\", alors il faut une 328$z",
@@ -2814,7 +2946,8 @@
                         "number": "328",
                         "present": true
                     }
-                ]
+                ],
+                "numRuleExcell":182
             },
             {
                 "message": "Si 008 commence par Oa et ne contient pas une 215, une 856 doit être présente",
@@ -2870,7 +3003,8 @@
                         "number": "451",
                         "present": true
                     }
-                ]
+                ],
+                "numRuleExcell":139
             },
             {
                 "message": "Si 452, alors vérifier que la notice 452$0 contient une 452 réciproque et une 328$z",
@@ -2903,7 +3037,8 @@
                         "number": "328",
                         "present": true
                     }
-                ]
+                ],
+                "numRuleExcell":142
             },
             {
                 "message": "Si 455, alors vérifier que la notice en 455$0 contient une 456 avec liens réciproques",
@@ -2931,7 +3066,8 @@
                         "number": "455",
                         "present": true
                     }
-                ]
+                ],
+                "numRuleExcell":148
             },
             {
                 "message": "Si 008 commence par Oa,  304 doit être présente",
@@ -2954,7 +3090,8 @@
                         "number": "304",
                         "present": true
                     }
-                ]
+                ],
+                "numRuleExcell":151
             },
             {
                 "message": "Si 008 commence par Oa, 307 doit être présente",
@@ -2977,7 +3114,8 @@
                         "number": "307",
                         "present": true
                     }
-                ]
+                ],
+                "numRuleExcell":152
             },
             {
                 "message": "Si 008 commence par Oa, 337 doit être présente",
@@ -3000,7 +3138,8 @@
                         "number": "337",
                         "present": true
                     }
-                ]
+                ],
+                "numRuleExcell":153
             },
             {
                 "message": "Si 008 commence par Oa, 230 doit être présente",
@@ -3023,7 +3162,8 @@
                         "number": "230",
                         "present": true
                     }
-                ]
+                ],
+                "numRuleExcell":154
             },
             {
                 "message": "Si 455, alors vérifier que la notice en 455$0 ne contient pas 328$z",
@@ -3047,7 +3187,8 @@
                         "number": "328",
                         "present": false
                     }
-                ]
+                ],
+                "numRuleExcell":158
             },
             {
                 "message": "Si 105 $a Pos. 4-7= \"m\" ou \"7\", alors il faut une 328",
@@ -3116,7 +3257,8 @@
                         "present": true,
                         "ind2": "2"
                     }
-                ]
+                ],
+                "numRuleExcell":111
             },
             {
                 "message": "Si 328$zReproduction de, alors il faut une 029",
@@ -3144,7 +3286,8 @@
                         "number": "029",
                         "present": true
                     }
-                ]
+                ],
+                "numRuleExcell":183
             },
             {
                 "message": "Si 328$z n'est pas \"Reproduction de\", alors 029 ne doit pas être présente",
@@ -3172,7 +3315,8 @@
                         "number": "029",
                         "present": false
                     }
-                ]
+                ],
+                "numRuleExcell":184
             },
             {
                 "message": "Si 451 et 328$z, alors vérifier que la notice 451$0 ne contient pas 328$z",
@@ -3201,7 +3345,8 @@
                         "number": "328",
                         "present": false
                     }
-                ]
+                ],
+                "numRuleExcell":203
             },
             {
                 "message": "Si 451 et absence de 328$z, alors vérifier que la notice 451$0 contient 328$z",
@@ -3230,7 +3375,8 @@
                         "number": "328",
                         "present": true
                     }
-                ]
+                ],
+                "numRuleExcell":204
             }
         ],
         "Structurel": [
@@ -3268,105 +3414,120 @@
                 "code": "a",
                 "message": "Zone 230 : corriger le poids en Ko",
                 "number": 230,
-                "index": 165
+                "index": 165,
+                "numRuleExcell": 94
             },
             {
                 "regex": "(?:(?!,).)+",
                 "code": "a",
                 "message": "Zone 230 : corriger le poids en Ko",
                 "number": 230,
-                "index": 166
+                "index": 166,
+                "numRuleExcell": 95
             },
             {
                 "regex": "(?:(?!X Ko)(?!X ko)(?!x Ko)(?!x ko).)+",
                 "code": "a",
                 "message": "Zone 230 : corriger le poids en Ko",
                 "number": 230,
-                "index": 167
+                "index": 167,
+                "numRuleExcell": 96
             },
             {
                 "code": "a",
                 "message": "230$a ne doit pas contenir le caractère ?",
                 "index": 168,
                 "number": "230",
-                "regex": "(?:(?!\\?).)+"
+                "regex": "(?:(?!\\?).)+",
+                "numRuleExcell":114
             },
             {
                 "code": "a",
                 "message": "307$a ne doit pas contenir le caractère ?",
                 "index": 169,
                 "number": "307",
-                "regex": "(?:(?!\\?).)+"
+                "regex": "(?:(?!\\?).)+",
+                "numRuleExcell":115
             },
             {
                 "code": "u",
                 "message": "856$u ne doit pas contenir URL",
                 "index": 170,
                 "number": "856",
-                "regex": "(?:(?!URL).)+"
+                "regex": "(?:(?!URL).)+",
+                "numRuleExcell": 135
             },
             {
                 "regex": "^((?!Année de mise en ligne).)*$",
                 "code": "d",
                 "message": "Zone 339 : corriger avec l'année de mise en ligne",
                 "number": "339",
-                "index": 171
+                "index": 171,
+                "numRuleExcell":157
             },
             {
                 "regex": "^((?!X vues)(?!x vues).)*$",
                 "code": "a",
                 "message": "Zone 230 à compléter",
                 "number": "230",
-                "index": 172
+                "index": 172,
+                "numRuleExcell":169
             },
             {
                 "regex": "^((?!est de : X pages)(?!est de : x pages).)*$",
                 "code": "a",
                 "message": "Zone 307 à compléter",
                 "number": "307",
-                "index": 173
+                "index": 173,
+                "numRuleExcell":170
             },
             {
                 "regex": "^((?!AAAA-MM-JJ).)*$",
                 "code": "a",
                 "message": "Zone 303 à compléter",
                 "number": "303",
-                "index": 174
+                "index": 174,
+                "numRuleExcell":171
             },
             {
                 "regex": "^(?!Note sur l'édition et l'histoire bibliographique).*$",
                 "code": "a",
                 "message": "Zone 305 générique à remplacer-supprimer",
                 "number": "305",
-                "index": 175
+                "index": 175,
+                "numRuleExcell":172
             },
             {
                 "regex": "^(?!Reproduction numérique de l'édition de LIEU : EDITEUR, DATE).*$",
                 "code": "a",
                 "message": "Zone 324 à compléter",
                 "number": "324",
-                "index": 176
+                "index": 176,
+                "numRuleExcell":173
             },
             {
                 "regex": "^((?!fichier au\\(x\\) format\\(s\\)…).)*$",
                 "code": "a",
                 "message": "Zone 337 à compléter",
                 "number": "337",
-                "index": 177
+                "index": 177,
+                "numRuleExcell":174
             },
             {
                 "regex": "^((?!Texte du lien).)*$",
                 "code": "2",
                 "message": "Zone 305$2 générique à remplacer-supprimer",
                 "number": "856",
-                "index": 178
+                "index": 178,
+                "numRuleExcell":175
             },
             {
                 "regex": "^((?!Format)(?!format).)*$",
                 "code": "q",
                 "message": "Zone 856$q : renseigner le format",
                 "number": "856",
-                "index": 179
+                "index": 179,
+                "numRuleExcell":176
             }
         ],
         "ConditionDependance": [
@@ -3390,7 +3551,8 @@
                     "code": "t",
                     "number": "410"
                 },
-                "operator": "not_equals"
+                "operator": "not_equals",
+                "numRuleExcell": 40
             },
             {
                 "message": "Si 225 ind1=2 $a = 410$t",
@@ -3412,7 +3574,8 @@
                     "code": "t",
                     "number": "410"
                 },
-                "operator": "equals"
+                "operator": "equals",
+                "numRuleExcell": 41
             },
             {
                 "message": "Si 455, alors la date en 455$d = date en zone 100 position 13-16",
@@ -3436,7 +3599,8 @@
                     ],
                     "number": "100"
                 },
-                "operator": "equals"
+                "operator": "equals",
+                "numRuleExcell": 177
             }
         ],
         "idRef": [],
@@ -3474,7 +3638,8 @@
                         "regex": "^Actes de congrès$"
                     }
                 ],
-                "type": "allRequired"
+                "type": "allRequired",
+                "numRuleExcell": 13
             },
             {
                 "message": "Zones 7XX : code fonction, vérifier qu il s agit d un éditeur scientifique ou d un directeur de publication ?",
@@ -3506,7 +3671,8 @@
                         "regex": "(?:(?!ed.)(?!edited)(?!edit).)+"
                     }
                 ],
-                "type": "allRequired"
+                "type": "allRequired",
+                "numRuleExcell":91
             },
             {
                 "message": "Zones 7XX : code fonction, vérifier qu il s agit d un éditeur scientifique ou d un directeur de publication ?",
@@ -3538,7 +3704,8 @@
                         "regex": "(?:(?!ed.)(?!edited)(?!edit).)+"
                     }
                 ],
-                "type": "allRequired"
+                "type": "allRequired",
+                "numRuleExcell":91
             },
             {
                 "message": "Zones 7XX : code fonction, vérifier qu il s agit d un éditeur scientifique ou d un directeur de publication ?",
@@ -3570,7 +3737,8 @@
                         "regex": "(?:(?!ed.)(?!edited)(?!edit).)+"
                     }
                 ],
-                "type": "allRequired"
+                "type": "allRequired",
+                "numRuleExcell":91
             },
             {
                 "message": "Zones 7XX : code fonction, vérifier qu il s agit d un éditeur scientifique ou d un directeur de publication ?",
@@ -3602,7 +3770,8 @@
                         "regex": "(?:(?!ed.)(?!edited)(?!edit).)+"
                     }
                 ],
-                "type": "allRequired"
+                "type": "allRequired",
+                "numRuleExcell":91
             },
             {
                 "message": "Zones 7XX : code fonction, vérifier qu il s agit d un éditeur scientifique ou d un directeur de publication ?",
@@ -3634,7 +3803,8 @@
                         "regex": "(?:(?!ed.)(?!edited)(?!edit).)+"
                     }
                 ],
-                "type": "allRequired"
+                "type": "allRequired",
+                "numRuleExcell":91
             },
             {
                 "message": "Zones 7XX : code fonction, vérifier qu il s agit d un éditeur scientifique ou d un directeur de publication ?",
@@ -3666,7 +3836,8 @@
                         "regex": "(?:(?!ed.)(?!edited)(?!edit).)+"
                     }
                 ],
-                "type": "allRequired"
+                "type": "allRequired",
+                "numRuleExcell":91
             },
             {
                 "message": "Zones 7XX : code fonction, vérifier qu il s agit d un éditeur scientifique ou d un directeur de publication ?",
@@ -3698,7 +3869,8 @@
                         "regex": "(?:(?!ed.)(?!edited)(?!edit).)+"
                     }
                 ],
-                "type": "allRequired"
+                "type": "allRequired",
+                "numRuleExcell":91
             },
             {
                 "message": "Zones 7XX : code fonction, vérifier qu il s agit d un éditeur scientifique ou d un directeur de publication ?",
@@ -3730,7 +3902,8 @@
                         "regex": "(?:(?!ed.)(?!edited)(?!edit).)+"
                     }
                 ],
-                "type": "allRequired"
+                "type": "allRequired",
+                "numRuleExcell":91
             },
             {
                 "message": "Zones 7XX : code fonction, vérifier qu il s agit d un éditeur scientifique ou d un directeur de publication ?",
@@ -3762,7 +3935,8 @@
                         "regex": "(?:(?!ed.)(?!edited)(?!edit).)+"
                     }
                 ],
-                "type": "allRequired"
+                "type": "allRequired",
+                "numRuleExcell":91
             },
             {
                 "message": "Si 214 #4$d, la zone doit commencer par \"C espace\"",
@@ -3786,7 +3960,8 @@
                         "regex": "^(C ).*"
                     }
                 ],
-                "type": "allRequired"
+                "type": "allRequired",
+                "numRuleExcell":33
             },
             {
                 "message": "Si 214 #0 et $d, doit commencer par \"DL espace\" ou \"[\" ou un chiffre",
@@ -3812,7 +3987,8 @@
                         "ind1": ""
                     }
                 ],
-                "type": "allRequired"
+                "type": "allRequired",
+                "numRuleExcell":36
             },
             {
                 "message": "856$zAccès au texte intégral sauf si 856$5=692669902, alors $zAccès réservé aux membres de Lyon 1 après authentification",
@@ -3842,7 +4018,8 @@
                         "regex": "^Accès réservé aux membres de Lyon 1 après authentification$"
                     }
                 ],
-                "type": "allRequired"
+                "type": "allRequired",
+                "numRuleExcell":136
             },
             {
                 "message": "856$zAccès au texte intégral sauf si 856$5=692669902, alors $zAccès réservé aux membres de Lyon 1 après authentification",
@@ -3872,7 +4049,8 @@
                         "regex": "^Accès au texte intégral$"
                     }
                 ],
-                "type": "allRequired"
+                "type": "allRequired",
+                "numRuleExcell":136
             },
             {
                 "message": "Si 305$a commence par \"Document numérisé dans le cadre du projet de numérisation\", 214 $aLyon et $cBibliothèque Lyon 1",
@@ -3904,7 +4082,8 @@
                         "regex": "^Bibliothèque Lyon 1$"
                     }
                 ],
-                "type": "allRequired"
+                "type": "allRequired",
+                "numRuleExcell":168
             },
             {
                 "message": "Si 456, alors vérifier que la notice en 456$0 contient 105$a Pos. 4-7= v",
@@ -3930,7 +4109,8 @@
                 "reciproque": {
                     "code": "0",
                     "number": 456
-                }
+                },
+                "numRuleExcell":194
             }
         ],
         "ordonnancement": [
@@ -3938,7 +4118,8 @@
                 "message": "Zones 214 : garder l'ordre des indicateurs",
                 "number": "214",
                 "orderBy": "ind2",
-                "index": 198
+                "index": 198,
+                "numRuleExcell": 37
             }
         ],
         "compte": [],
@@ -3964,7 +4145,8 @@
                         "number": "410",
                         "present": true
                     }
-                ]
+                ],
+                "numRuleExcell": 39
             },
             {
                 "message": "Si 225 ind1=0 $a alors 410$0 doit être présent",
@@ -3986,7 +4168,8 @@
                         "number": "410",
                         "present": true
                     }
-                ]
+                ],
+                "numRuleExcell": 42
             },
             {
                 "message": "Si 225 ind1=2 $a alors 410$0 doit être présent",
@@ -4008,7 +4191,8 @@
                         "number": "410",
                         "present": true
                     }
-                ]
+                ],
+                "numRuleExcell": 43
             },
             {
                 "message": "Si 225 ind1=2 $a alors 410$0 doit être présent",
@@ -4030,7 +4214,8 @@
                         "number": "410",
                         "present": true
                     }
-                ]
+                ],
+                "numRuleExcell": 43
             },
             {
                 "message": "Si 225 ind1=2 il faut au moins une 410",
@@ -4052,7 +4237,8 @@
                         "number": "410",
                         "present": true
                     }
-                ]
+                ],
+                "numRuleExcell":45
             },
             {
                 "message": "Si 008 commence par Aa et présence d'une 461, alors il doit y avoir une 305 ou 225",
@@ -4085,7 +4271,8 @@
                         "number": "225",
                         "present": true
                     }
-                ]
+                ],
+                "numRuleExcell":47
             },
             {
                 "message": "Si 008 commence par Oa et ne contient pas une 215, une 856 doit être présente",
@@ -4141,7 +4328,8 @@
                         "number": "310",
                         "present": true
                     }
-                ]
+                ],
+                "numRuleExcell":137
             },
             {
                 "message": "Si 455, alors vérifier que la notice en 455$0 contient une 456 avec liens réciproques",
@@ -4169,7 +4357,8 @@
                         "number": "455",
                         "present": true
                     }
-                ]
+                ],
+                "numRuleExcell":148
             },
             {
                 "message": "Si 008 commence par Oa,  304 doit être présente",
@@ -4192,7 +4381,8 @@
                         "number": "304",
                         "present": true
                     }
-                ]
+                ],
+                "numRuleExcell":151
             },
             {
                 "message": "Si 008 commence par Oa, 307 doit être présente",
@@ -4215,7 +4405,8 @@
                         "number": "307",
                         "present": true
                     }
-                ]
+                ],
+                "numRuleExcell":152
             },
             {
                 "message": "Si 008 commence par Oa, 337 doit être présente",
@@ -4238,7 +4429,8 @@
                         "number": "337",
                         "present": true
                     }
-                ]
+                ],
+                "numRuleExcell":153
             },
             {
                 "message": "Si 008 commence par Oa, 230 doit être présente",
@@ -4261,7 +4453,8 @@
                         "number": "230",
                         "present": true
                     }
-                ]
+                ],
+                "numRuleExcell":154
             },
             {
                 "message": "Si 305$a commence par \"Document numérisé dans le cadre du projet de numérisation\", doit contenir une 324",
@@ -4284,7 +4477,8 @@
                         "number": "324",
                         "present": true
                     }
-                ]
+                ],
+                "numRuleExcell":165
             },
             {
                 "message": "Si 305$a commence par \"Document numérisé dans le cadre du projet de numérisation\", doit contenir une 455",
@@ -4307,7 +4501,8 @@
                         "number": "455",
                         "present": true
                     }
-                ]
+                ],
+                "numRuleExcell":166
             },
             {
                 "message": "Si 305$a commence par \"Document numérisé dans le cadre du projet de numérisation\", 214 ind1=' ' et ind2=\"0\"",
@@ -4332,7 +4527,8 @@
                         "present": true,
                         "ind2": "0"
                     }
-                ]
+                ],
+                "numRuleExcell":167
             }
         ],
         "Structurel": [
@@ -4386,7 +4582,8 @@
                         "operator": "startwith_text"
                     }
                 ],
-                "index": 217
+                "index": 217,
+                "numRuleExcell":195
             },
             {
                 "message": "Zones 6XX doivent être liées à une notice d'autorité RAMEAU",
@@ -4410,7 +4607,8 @@
                         "operator": "startwith_text"
                     }
                 ],
-                "index": 218
+                "index": 218,
+                "numRuleExcell":195
             },
             {
                 "message": "Zones 6XX doivent être liées à une notice d'autorité RAMEAU",
@@ -4434,7 +4632,8 @@
                         "operator": "startwith_text"
                     }
                 ],
-                "index": 219
+                "index": 219,
+                "numRuleExcell":195
             },
             {
                 "message": "Zones 6XX doivent être liées à une notice d'autorité RAMEAU",
@@ -4458,7 +4657,8 @@
                         "operator": "startwith_text"
                     }
                 ],
-                "index": 220
+                "index": 220,
+                "numRuleExcell":195
             },
             {
                 "message": "Zones 6XX doivent être liées à une notice d'autorité RAMEAU",
@@ -4482,7 +4682,8 @@
                         "operator": "startwith_text"
                     }
                 ],
-                "index": 221
+                "index": 221,
+                "numRuleExcell":195
             },
             {
                 "message": "Zones 6XX doivent être liées à une notice d'autorité RAMEAU",
@@ -4506,7 +4707,8 @@
                         "operator": "startwith_text"
                     }
                 ],
-                "index": 222
+                "index": 222,
+                "numRuleExcell":195
             },
             {
                 "message": "Zones 6XX doivent être liées à une notice d'autorité RAMEAU",
@@ -4530,7 +4732,8 @@
                         "operator": "startwith_text"
                     }
                 ],
-                "index": 223
+                "index": 223,
+                "numRuleExcell":195
             },
             {
                 "message": "Zones 6XX doivent être liées à une notice d'autorité RAMEAU",
@@ -4554,7 +4757,8 @@
                         "operator": "startwith_text"
                     }
                 ],
-                "index": 224
+                "index": 224,
+                "numRuleExcell":195
             },
             {
                 "message": "Zones 6XX doivent être liées à une notice d'autorité RAMEAU",
@@ -4578,7 +4782,8 @@
                         "operator": "startwith_text"
                     }
                 ],
-                "index": 225
+                "index": 225,
+                "numRuleExcell":196
             },
             {
                 "message": "Zones 6XX doivent être liées à une notice d'autorité RAMEAU",
@@ -4602,7 +4807,8 @@
                         "operator": "startwith_text"
                     }
                 ],
-                "index": 226
+                "index": 226,
+                "numRuleExcell":196
             },
             {
                 "message": "Zones 6XX doivent être liées à une notice d'autorité RAMEAU",
@@ -4626,7 +4832,8 @@
                         "operator": "startwith_text"
                     }
                 ],
-                "index": 227
+                "index": 227,
+                "numRuleExcell":196
             },
             {
                 "message": "Zones 6XX doivent être liées à une notice d'autorité RAMEAU",
@@ -4650,7 +4857,8 @@
                         "operator": "startwith_text"
                     }
                 ],
-                "index": 228
+                "index": 228,
+                "numRuleExcell":196
             },
             {
                 "message": "Zones 6XX doivent être liées à une notice d'autorité RAMEAU",
@@ -4674,7 +4882,8 @@
                         "operator": "startwith_text"
                     }
                 ],
-                "index": 229
+                "index": 229,
+                "numRuleExcell":196
             },
             {
                 "message": "Zones 6XX doivent être liées à une notice d'autorité RAMEAU",
@@ -4698,7 +4907,8 @@
                         "operator": "startwith_text"
                     }
                 ],
-                "index": 230
+                "index": 230,
+                "numRuleExcell":196
             },
             {
                 "message": "Zones 6XX doivent être liées à une notice d'autorité RAMEAU",
@@ -4722,7 +4932,8 @@
                         "operator": "startwith_text"
                     }
                 ],
-                "index": 231
+                "index": 231,
+                "numRuleExcell":196
             },
             {
                 "message": "Zones 6XX doivent être liées à une notice d'autorité RAMEAU",
@@ -4746,7 +4957,8 @@
                         "operator": "startwith_text"
                     }
                 ],
-                "index": 232
+                "index": 232,
+                "numRuleExcell":196
             },
             {
                 "message": "Zones 6XX doivent être liées à une notice d'autorité RAMEAU",
@@ -4770,7 +4982,8 @@
                         "operator": "startwith_text"
                     }
                 ],
-                "index": 233
+                "index": 233,
+                "numRuleExcell":197
             },
             {
                 "message": "Zones 6XX doivent être liées à une notice d'autorité RAMEAU",
@@ -4794,7 +5007,8 @@
                         "operator": "startwith_text"
                     }
                 ],
-                "index": 234
+                "index": 234,
+                "numRuleExcell":197
             },
             {
                 "message": "Zones 6XX doivent être liées à une notice d'autorité RAMEAU",
@@ -4818,7 +5032,8 @@
                         "operator": "startwith_text"
                     }
                 ],
-                "index": 235
+                "index": 235,
+                "numRuleExcell":197
             },
             {
                 "message": "Zones 6XX doivent être liées à une notice d'autorité RAMEAU",
@@ -4842,7 +5057,8 @@
                         "operator": "startwith_text"
                     }
                 ],
-                "index": 236
+                "index": 236,
+                "numRuleExcell":197
             },
             {
                 "message": "Zones 6XX doivent être liées à une notice d'autorité RAMEAU",
@@ -4866,7 +5082,8 @@
                         "operator": "startwith_text"
                     }
                 ],
-                "index": 237
+                "index": 237,
+                "numRuleExcell":197
             },
             {
                 "message": "Zones 6XX doivent être liées à une notice d'autorité RAMEAU",
@@ -4890,7 +5107,8 @@
                         "operator": "startwith_text"
                     }
                 ],
-                "index": 238
+                "index": 238,
+                "numRuleExcell":197
             },
             {
                 "message": "Zones 6XX doivent être liées à une notice d'autorité RAMEAU",
@@ -4914,7 +5132,8 @@
                         "operator": "startwith_text"
                     }
                 ],
-                "index": 239
+                "index": 239,
+                "numRuleExcell":197
             },
             {
                 "message": "Zones 6XX doivent être liées à une notice d'autorité RAMEAU",
@@ -4938,7 +5157,8 @@
                         "operator": "startwith_text"
                     }
                 ],
-                "index": 240
+                "index": 240,
+                "numRuleExcell":197
             },
             {
                 "message": "Zones 6XX doivent être liées à une notice d'autorité RAMEAU",
@@ -4962,7 +5182,8 @@
                         "operator": "startwith_text"
                     }
                 ],
-                "index": 241
+                "index": 241,
+                "numRuleExcell":198
             },
             {
                 "message": "Zones 6XX doivent être liées à une notice d'autorité RAMEAU",
@@ -4986,7 +5207,8 @@
                         "operator": "startwith_text"
                     }
                 ],
-                "index": 242
+                "index": 242,
+                "numRuleExcell":198
             },
             {
                 "message": "Zones 6XX doivent être liées à une notice d'autorité RAMEAU",
@@ -5010,7 +5232,8 @@
                         "operator": "startwith_text"
                     }
                 ],
-                "index": 243
+                "index": 243,
+                "numRuleExcell":198
             },
             {
                 "message": "Zones 6XX doivent être liées à une notice d'autorité RAMEAU",
@@ -5034,7 +5257,8 @@
                         "operator": "startwith_text"
                     }
                 ],
-                "index": 244
+                "index": 244,
+                "numRuleExcell":198
             },
             {
                 "message": "Zones 6XX doivent être liées à une notice d'autorité RAMEAU",
@@ -5058,7 +5282,8 @@
                         "operator": "startwith_text"
                     }
                 ],
-                "index": 245
+                "index": 245,
+                "numRuleExcell":198
             },
             {
                 "message": "Zones 6XX doivent être liées à une notice d'autorité RAMEAU",
@@ -5082,7 +5307,8 @@
                         "operator": "startwith_text"
                     }
                 ],
-                "index": 246
+                "index": 246,
+                "numRuleExcell":198
             },
             {
                 "message": "Zones 6XX doivent être liées à une notice d'autorité RAMEAU",
@@ -5106,7 +5332,8 @@
                         "operator": "startwith_text"
                     }
                 ],
-                "index": 247
+                "index": 247,
+                "numRuleExcell":198
             },
             {
                 "message": "Zones 6XX doivent être liées à une notice d'autorité RAMEAU",
@@ -5130,7 +5357,8 @@
                         "operator": "startwith_text"
                     }
                 ],
-                "index": 248
+                "index": 248,
+                "numRuleExcell":198
             },
             {
                 "message": "Zones 6XX doivent être liées à une notice d'autorité RAMEAU ou Fmesh",
@@ -5154,7 +5382,8 @@
                         "operator": "startwith_text"
                     }
                 ],
-                "index": 249
+                "index": 249,
+                "numRuleExcell":199
             },
             {
                 "message": "Zones 6XX doivent être liées à une notice d'autorité RAMEAU ou Fmesh",
@@ -5178,7 +5407,8 @@
                         "operator": "startwith_text"
                     }
                 ],
-                "index": 250
+                "index": 250,
+                "numRuleExcell":199
             },
             {
                 "message": "Zones 6XX doivent être liées à une notice d'autorité RAMEAU ou Fmesh",
@@ -5202,7 +5432,8 @@
                         "operator": "startwith_text"
                     }
                 ],
-                "index": 251
+                "index": 251,
+                "numRuleExcell":199
             },
             {
                 "message": "Zones 6XX doivent être liées à une notice d'autorité RAMEAU ou Fmesh",
@@ -5226,7 +5457,8 @@
                         "operator": "startwith_text"
                     }
                 ],
-                "index": 252
+                "index": 252,
+                "numRuleExcell":199
             },
             {
                 "message": "Zones 6XX doivent être liées à une notice d'autorité RAMEAU ou Fmesh",
@@ -5250,7 +5482,8 @@
                         "operator": "startwith_text"
                     }
                 ],
-                "index": 253
+                "index": 253,
+                "numRuleExcell":199
             },
             {
                 "message": "Zones 6XX doivent être liées à une notice d'autorité RAMEAU ou Fmesh",
@@ -5274,7 +5507,8 @@
                         "operator": "startwith_text"
                     }
                 ],
-                "index": 254
+                "index": 254,
+                "numRuleExcell":199
             },
             {
                 "message": "Zones 6XX doivent être liées à une notice d'autorité RAMEAU ou Fmesh",
@@ -5298,7 +5532,8 @@
                         "operator": "startwith_text"
                     }
                 ],
-                "index": 255
+                "index": 255,
+                "numRuleExcell":199
             },
             {
                 "message": "Zones 6XX doivent être liées à une notice d'autorité RAMEAU ou Fmesh",
@@ -5322,7 +5557,8 @@
                         "operator": "startwith_text"
                     }
                 ],
-                "index": 256
+                "index": 256,
+                "numRuleExcell":199
             },
             {
                 "message": "Zones 6XX doivent être liées à une notice d'autorité RAMEAU ou Fmesh",
@@ -5346,7 +5582,8 @@
                         "operator": "startwith_text"
                     }
                 ],
-                "index": 257
+                "index": 257,
+                "numRuleExcell":200
             },
             {
                 "message": "Zones 6XX doivent être liées à une notice d'autorité RAMEAU ou Fmesh",
@@ -5370,7 +5607,8 @@
                         "operator": "startwith_text"
                     }
                 ],
-                "index": 258
+                "index": 258,
+                "numRuleExcell":200
             },
             {
                 "message": "Zones 6XX doivent être liées à une notice d'autorité RAMEAU ou Fmesh",
@@ -5394,7 +5632,8 @@
                         "operator": "startwith_text"
                     }
                 ],
-                "index": 259
+                "index": 259,
+                "numRuleExcell":200
             },
             {
                 "message": "Zones 6XX doivent être liées à une notice d'autorité RAMEAU ou Fmesh",
@@ -5418,7 +5657,8 @@
                         "operator": "startwith_text"
                     }
                 ],
-                "index": 260
+                "index": 260,
+                "numRuleExcell":200
             },
             {
                 "message": "Zones 6XX doivent être liées à une notice d'autorité RAMEAU ou Fmesh",
@@ -5442,7 +5682,8 @@
                         "operator": "startwith_text"
                     }
                 ],
-                "index": 261
+                "index": 261,
+                "numRuleExcell":200
             },
             {
                 "message": "Zones 6XX doivent être liées à une notice d'autorité RAMEAU ou Fmesh",
@@ -5466,7 +5707,8 @@
                         "operator": "startwith_text"
                     }
                 ],
-                "index": 262
+                "index": 262,
+                "numRuleExcell":200
             },
             {
                 "message": "Zones 6XX doivent être liées à une notice d'autorité RAMEAU ou Fmesh",
@@ -5490,7 +5732,8 @@
                         "operator": "startwith_text"
                     }
                 ],
-                "index": 263
+                "index": 263,
+                "numRuleExcell":200
             },
             {
                 "message": "Zones 6XX doivent être liées à une notice d'autorité RAMEAU ou Fmesh",
@@ -5514,7 +5757,8 @@
                         "operator": "startwith_text"
                     }
                 ],
-                "index": 264
+                "index": 264,
+                "numRuleExcell":200
             },
             {
                 "message": "Zones 6XX doivent être liées à une notice d'autorité RAMEAU ou Fmesh",
@@ -5538,7 +5782,8 @@
                         "operator": "startwith_text"
                     }
                 ],
-                "index": 265
+                "index": 265,
+                "numRuleExcell":201
             },
             {
                 "message": "Zones 6XX doivent être liées à une notice d'autorité RAMEAU ou Fmesh",
@@ -5562,7 +5807,8 @@
                         "operator": "startwith_text"
                     }
                 ],
-                "index": 266
+                "index": 266,
+                "numRuleExcell":201
             },
             {
                 "message": "Zones 6XX doivent être liées à une notice d'autorité RAMEAU ou Fmesh",
@@ -5586,7 +5832,8 @@
                         "operator": "startwith_text"
                     }
                 ],
-                "index": 267
+                "index": 267,
+                "numRuleExcell":201
             },
             {
                 "message": "Zones 6XX doivent être liées à une notice d'autorité RAMEAU ou Fmesh",
@@ -5610,7 +5857,8 @@
                         "operator": "startwith_text"
                     }
                 ],
-                "index": 268
+                "index": 268,
+                "numRuleExcell":201
             },
             {
                 "message": "Zones 6XX doivent être liées à une notice d'autorité RAMEAU ou Fmesh",
@@ -5634,7 +5882,8 @@
                         "operator": "startwith_text"
                     }
                 ],
-                "index": 269
+                "index": 269,
+                "numRuleExcell":201
             },
             {
                 "message": "Zones 6XX doivent être liées à une notice d'autorité RAMEAU ou Fmesh",
@@ -5658,7 +5907,8 @@
                         "operator": "startwith_text"
                     }
                 ],
-                "index": 270
+                "index": 270,
+                "numRuleExcell":201
             },
             {
                 "message": "Zones 6XX doivent être liées à une notice d'autorité RAMEAU ou Fmesh",
@@ -5682,7 +5932,8 @@
                         "operator": "startwith_text"
                     }
                 ],
-                "index": 271
+                "index": 271,
+                "numRuleExcell":201
             },
             {
                 "message": "Zones 6XX doivent être liées à une notice d'autorité RAMEAU ou Fmesh",
@@ -5706,7 +5957,8 @@
                         "operator": "startwith_text"
                     }
                 ],
-                "index": 272
+                "index": 272,
+                "numRuleExcell":201
             },
             {
                 "message": "Zones 6XX doivent être liées à une notice d'autorité RAMEAU ou Fmesh",
@@ -5730,7 +5982,8 @@
                         "operator": "startwith_text"
                     }
                 ],
-                "index": 273
+                "index": 273,
+                "numRuleExcell":202
             },
             {
                 "message": "Zones 6XX doivent être liées à une notice d'autorité RAMEAU ou Fmesh",
@@ -5754,7 +6007,8 @@
                         "operator": "startwith_text"
                     }
                 ],
-                "index": 274
+                "index": 274,
+                "numRuleExcell":202
             },
             {
                 "message": "Zones 6XX doivent être liées à une notice d'autorité RAMEAU ou Fmesh",
@@ -5778,7 +6032,8 @@
                         "operator": "startwith_text"
                     }
                 ],
-                "index": 275
+                "index": 275,
+                "numRuleExcell":202
             },
             {
                 "message": "Zones 6XX doivent être liées à une notice d'autorité RAMEAU ou Fmesh",
@@ -5802,7 +6057,8 @@
                         "operator": "startwith_text"
                     }
                 ],
-                "index": 276
+                "index": 276,
+                "numRuleExcell":202
             },
             {
                 "message": "Zones 6XX doivent être liées à une notice d'autorité RAMEAU ou Fmesh",
@@ -5826,7 +6082,8 @@
                         "operator": "startwith_text"
                     }
                 ],
-                "index": 277
+                "index": 277,
+                "numRuleExcell":202
             },
             {
                 "message": "Zones 6XX doivent être liées à une notice d'autorité RAMEAU ou Fmesh",
@@ -5850,7 +6107,8 @@
                         "operator": "startwith_text"
                     }
                 ],
-                "index": 278
+                "index": 278,
+                "numRuleExcell":202
             },
             {
                 "message": "Zones 6XX doivent être liées à une notice d'autorité RAMEAU ou Fmesh",
@@ -5874,7 +6132,8 @@
                         "operator": "startwith_text"
                     }
                 ],
-                "index": 279
+                "index": 279,
+                "numRuleExcell":202
             },
             {
                 "message": "Zones 6XX doivent être liées à une notice d'autorité RAMEAU ou Fmesh",
@@ -5898,7 +6157,8 @@
                         "operator": "startwith_text"
                     }
                 ],
-                "index": 280
+                "index": 280,
+                "numRuleExcell":202
             }
         ],
         "matching": [
@@ -5913,7 +6173,7 @@
                 "regex": ".*x3.*",
                 "number": "008",
                 "message": "Zone 008 erronée",
-                "numRuleExcell": 2,
+                "numRuleExcell": 1,
                 "index": 282
             },
             {
@@ -5922,7 +6182,7 @@
                 "number": "100",
                 "index": 283,
                 "code": "a",
-                "numRuleExcell": 2
+                "numRuleExcell": 3
             },
             {
                 "code": "f",
@@ -5936,14 +6196,16 @@
                 "message": "200$c ne doit pas contenir le caractère / ou : ou .",
                 "index": 285,
                 "number": 200,
-                "regex": "(?:(?![/:.]).)+"
+                "regex": "(?:(?![/:.]).)+",
+                "numRuleExcell": 31
             },
             {
                 "code": "a",
                 "message": "606$a ne doit pas contenir vedette",
                 "index": 286,
                 "number": "606",
-                "regex": "(?:(?!vedette).)+"
+                "regex": "(?:(?!vedette).)+",
+                "numRuleExcell":127
             },
             {
                 "code": "d",
@@ -5957,14 +6219,16 @@
                 "message": "Ne doit pas contenir le caractère ’",
                 "index": 288,
                 "number": "GLOBAL",
-                "regex": "(?:(?!’).)+"
+                "regex": "(?:(?!’).)+",
+                "numRuleExcell":84
             },
             {
                 "code": "e",
                 "message": "200$e ne doit pas contenir le caractère / ou : ou .",
                 "index": 289,
                 "number": 200,
-                "regex": "(?:(?![/:.]).)+"
+                "regex": "(?:(?![/:.]).)+",
+                "numRuleExcell":29
             },
             {
                 "message": "7X0 et 7X1 ne doit pas contenir $4=020, 050, 060, 075, 080, 140, 150, 160, 310, 320, 390, 450, 490, 500, 540, 580, 610, 620, 640, 650, 680, 700, 720, 740, 750, 753",
@@ -6006,7 +6270,8 @@
                     "^((?!735).)*$"
                 ],
                 "code": "4",
-                "index": 290
+                "index": 290,
+                "numRuleExcell":89
             },
             {
                 "message": "7X2 $4=020, 050, 060, 075, 080, 140, 150, 160, 310, 320, 390, 450, 490, 500, 540, 580, 610, 620, 640, 650, 680, 700, 720, 740, 750, 753",
@@ -6045,56 +6310,64 @@
                     "753"
                 ],
                 "code": "4",
-                "index": 291
+                "index": 291,
+                "numRuleExcell":89
             },
             {
                 "code": "a",
                 "message": "Données codées à compléter",
                 "index": 292,
                 "number": "100",
-                "regex": "(?:(?!\\|).)+"
+                "regex": "(?:(?!\\|).)+",
+                "numRuleExcell": 5
             },
             {
                 "code": "a",
                 "message": "Zone 105 à compléter",
                 "index": 293,
                 "number": "105",
-                "regex": "(?:(?!\\|).)+"
+                "regex": "(?:(?!\\|).)+",
+                "numRuleExcell":20
             },
             {
                 "code": "a",
                 "message": "Zone 200 : supprimer le double espace",
                 "index": 294,
                 "number": "200",
-                "regex": "(?:(?!(  )).)+"
+                "regex": "(?:(?!(  )).)+",
+                "numRuleExcell":25
             },
             {
                 "code": "a",
                 "message": "200$a ne doit pas contenir le caractère / ou : ou .",
                 "index": 295,
                 "number": 200,
-                "regex": "(?:(?![/:.]).)+"
+                "regex": "(?:(?![/:.]).)+",
+                "numRuleExcell":28
             },
             {
                 "code": "d",
                 "message": "200$d ne doit pas contenir le caractère / ou : ou .",
                 "index": 296,
                 "number": 200,
-                "regex": "(?:(?![/:.]).)+"
+                "regex": "(?:(?![/:.]).)+",
+                "numRuleExcell":30
             },
             {
                 "code": "f",
                 "message": "Vérifier les dates de l'autorité auteur",
                 "index": 297,
                 "number": 700,
-                "regex": ".{9}.*$"
+                "regex": ".{9}.*$",
+                "numRuleExcell":66
             },
             {
                 "code": "f",
                 "message": "Vérifier les dates de l'autorité auteur",
                 "index": 298,
                 "number": 701,
-                "regex": ".{9}.*$"
+                "regex": ".{9}.*$",
+                "numRuleExcell":68
             },
             {
                 "message": "Zones 6XX : $2 mal orthographié",
@@ -6116,7 +6389,8 @@
                     "^((?!ram).)*$"
                 ],
                 "code": "2",
-                "index": 299
+                "index": 299,
+                "numRuleExcell":83
             },
             {
                 "message": "Zones 7XX : code fonction erroné",
@@ -6136,7 +6410,8 @@
                     "^((?!000).)*$"
                 ],
                 "code": "4",
-                "index": 300
+                "index": 300,
+                "numRuleExcell":87
             },
             {
                 "message": "Zones 7XX : code fonction à employer uniquement lorsqu'aucune autre fonction plus spécifique ne convient",
@@ -6156,7 +6431,8 @@
                     "^((?!205).)*$"
                 ],
                 "code": "4",
-                "index": 301
+                "index": 301,
+                "numRuleExcell":88
             },
             {
                 "regex": "(?:(?!Prénom).)+",
@@ -6170,14 +6446,16 @@
                 "code": "a",
                 "message": "Zone 701 : lien auteur à effectuer",
                 "number": 701,
-                "index": 303
+                "index": 303,
+                "numRuleExcell":131
             },
             {
                 "code": "d",
                 "message": "200$d doit commencer par = espace",
                 "index": 304,
                 "number": 200,
-                "regex": "^(= ).*"
+                "regex": "^(= ).*",
+                "numRuleExcell":26
             }
         ],
         "ConditionDependance": [],
@@ -6567,7 +6845,8 @@
                         "regex": "^rameau$"
                     }
                 ],
-                "index": 324
+                "index": 324,
+                "numRuleExcell":79
             },
             {
                 "verification": {
@@ -6590,7 +6869,8 @@
                         "regex": "^rameau$"
                     }
                 ],
-                "index": 325
+                "index": 325,
+                "numRuleExcell":81
             },
             {
                 "verification": {
@@ -6613,7 +6893,8 @@
                         "regex": "^rameau$"
                     }
                 ],
-                "index": 326
+                "index": 326,
+                "numRuleExcell":82
             }
         ],
         "ConditionMatching": [
@@ -6641,7 +6922,8 @@
                 "verifyZone": {
                     "code": "3",
                     "number": "608"
-                }
+                },
+                "numRuleExcell":64
             },
             {
                 "message": "Zone 6XX $2 mal orthographié ou absent",
@@ -6667,7 +6949,8 @@
                 "verifyZone": {
                     "code": "3",
                     "number": "606"
-                }
+                },
+                "numRuleExcell":59
             },
             {
                 "message": "Mention d'index incohérente : vérifier zones 105 et 320",
@@ -6696,7 +6979,8 @@
                         "regex": "(?:(?!Index).)+"
                     }
                 ],
-                "type": "allRequired"
+                "type": "allRequired",
+                "numRuleExcell":15
             },
             {
                 "message": "Zone 856 : le texte ne correspond pas au type d'accès (internet-intranet)",
@@ -6721,7 +7005,8 @@
                         "regex": "^(Accès réservé aux membres de Lyon 1 après authentification).*$"
                     }
                 ],
-                "type": "allRequired"
+                "type": "allRequired",
+                "numRuleExcell":136
             },
             {
                 "message": "Zone 856 : le texte ne correspond pas au type d'accès (internet-intranet)",
@@ -6746,7 +7031,8 @@
                         "regex": "^Accès au texte intégral$"
                     }
                 ],
-                "type": "allRequired"
+                "type": "allRequired",
+                "numRuleExcell":136
             },
             {
                 "message": "Zone 608 : indexation Forme-Genre obligatoire",
@@ -6811,7 +7097,8 @@
                         "regex": "^.+"
                     }
                 ],
-                "type": "allRequired"
+                "type": "allRequired",
+                "numRuleExcell": 11
             },
             
             {
@@ -6847,7 +7134,8 @@
                         "regex": "^(?!Actes de congrès$).*$"
                     }
                 ],
-                "type": "oneRequired"
+                "type": "oneRequired",
+                "numRuleExcell": 14
             },
             {
                 "message": "Si 105 $a 3e position en commençant par la fin =1 alors il faut une 320 avec la mention \"Index\"",
@@ -6875,7 +7163,8 @@
                         "regex": "^.*(Index).*"
                     }
                 ],
-                "type": "allRequired"
+                "type": "allRequired",
+                "numRuleExcell": 15
             },
             {
                 "message": "Si 105 $a  3e position en commençant par la fin  =0 alors il ne doit pas y avoir une 320 avec la mention \"Index\"",
@@ -6903,7 +7192,8 @@
                         "regex": "^((?!Index).)*$"
                     }
                 ],
-                "type": "allRequired"
+                "type": "allRequired",
+                "numRuleExcell":17
             },
             {
                 "message": "Si 105 $a Pos. 4-7= m ou 7 il faut une 608 $3027253139 et $a Thèses et écrits académiques",
@@ -6940,7 +7230,8 @@
                         "regex": "^027253139$"
                     }
                 ],
-                "type": "allRequired"
+                "type": "allRequired",
+                "numRuleExcell":19
             },
             {
                 "message": "Si 214 ind2=2, alors $aLyon",
@@ -6964,7 +7255,8 @@
                         "regex": "^Lyon$"
                     }
                 ],
-                "type": "allRequired"
+                "type": "allRequired",
+                "numRuleExcell":149
             },
             {
                 "message": "Si 214 ind2=2, alors $cBibliothèque Lyon 1",
@@ -6988,7 +7280,8 @@
                         "regex": "^(Bibliothèque Lyon 1)|(\\[Bibliothèque Lyon 1\\])$"
                     }
                 ],
-                "type": "allRequired"
+                "type": "allRequired",
+                "numRuleExcell":150
             },
             {
                 "message": "Si 008 commence par Oa et 451 présente, alors vérifier que notice 451$0 contient une 008 qui commence par Oa",
@@ -7022,7 +7315,8 @@
                         "number": "008",
                         "regex": "^(Oa).*"
                     }
-                ]
+                ],
+                "numRuleExcell":140
             },
             {
                 "message": "Si 008 commence par Aa et 451 présente, alors vérifier que notice 451$0 contient une 008 qui commence par Aa",
@@ -7056,7 +7350,8 @@
                 "reciproque": {
                     "code": "0",
                     "number": 451
-                }
+                },
+                "numRuleExcell":141
             },
             {
                 "message": "Si 008 commence par Oa et 452 présente, alors vérifier que notice 452$0 contient une 008 qui commence par Aa",
@@ -7090,7 +7385,8 @@
                 "reciproque": {
                     "code": "0",
                     "number": 452
-                }
+                },
+                "numRuleExcell":143
             },
             {
                 "message": "Si 008 commence par Aa et 452 présente, alors vérifier que notice 452$0 contient une 008 qui commence par Oa",
@@ -7124,7 +7420,8 @@
                 "reciproque": {
                     "code": "0",
                     "number": 452
-                }
+                },
+                "numRuleExcell":144
             },
             {
                 "message": "Si 600 $2rameau doit être présent",
@@ -7146,7 +7443,8 @@
                         "regex": "^rameau$"
                     }
                 ],
-                "type": "allRequired"
+                "type": "allRequired",
+                "numRuleExcell":49
             },
             {
                 "message": "Si 601 $2rameau doit être présent",
@@ -7168,7 +7466,8 @@
                         "regex": "^rameau$"
                     }
                 ],
-                "type": "allRequired"
+                "type": "allRequired",
+                "numRuleExcell":51
             },
             {
                 "message": "Si 602 $2rameau doit être présent",
@@ -7190,7 +7489,8 @@
                         "regex": "^rameau$"
                     }
                 ],
-                "type": "allRequired"
+                "type": "allRequired",
+                "numRuleExcell": 53
             },
             {
                 "message": "Si 604 $2rameau doit être présent",
@@ -7212,7 +7512,8 @@
                         "regex": "^rameau$"
                     }
                 ],
-                "type": "allRequired"
+                "type": "allRequired",
+                "numRuleExcell":55
             },
             {
                 "message": "Si 605 $2rameau doit être présent",
@@ -7234,7 +7535,8 @@
                         "regex": "^rameau$"
                     }
                 ],
-                "type": "allRequired"
+                "type": "allRequired",
+                "numRuleExcell":57
             },
             {
                 "message": "Si 607 $2rameau doit être présent",
@@ -7256,7 +7558,8 @@
                         "regex": "^rameau$"
                     }
                 ],
-                "type": "allRequired"
+                "type": "allRequired",
+                "numRuleExcell":62
             }
         ],
         "ordonnancement": [],
@@ -7300,7 +7603,7 @@
                     "pos": [],
                     "number": "214"
                 },
-                "numRuleExcell": 3,
+                "numRuleExcell": 2,
                 "operator": "equals"
             }
         ],
@@ -7332,7 +7635,8 @@
                         "number": "029",
                         "present": true
                     }
-                ]
+                ],
+                "numRuleExcell": 178
             },
             {
                 "message": "Zone 856 : une ressource électronique doit contenir l'accès",
@@ -7362,7 +7666,8 @@
                         "number": "856",
                         "present": true
                     }
-                ]
+                ],
+                "numRuleExcell":134
             },
             {
                 "message": "Si 101 ind1=1 il faut au moins un $a et $c",
@@ -7389,7 +7694,8 @@
                         "number": "101",
                         "present": true
                     }
-                ]
+                ],
+                "numRuleExcell": 6
             },
             {
                 "message": "Si 101 ind1=0 il ne faut pas $c",
@@ -7411,7 +7717,8 @@
                         "number": "101",
                         "present": false
                     }
-                ]
+                ],
+                "numRuleExcell": 7
             },
             {
                 "message": "Si 101 ind1=2 il faut au moins une $a, $b et $c",
@@ -7443,7 +7750,8 @@
                         "number": "101",
                         "present": true
                     }
-                ]
+                ],
+                "numRuleExcell": 8
             },
             {
                 "message": "Si 101 ind1=1 il faut une 454",
@@ -7465,7 +7773,8 @@
                         "number": "454",
                         "present": true
                     }
-                ]
+                ],
+                "numRuleExcell": 9
             },
             {
                 "message": "Si 101 ind1=2 il faut une 454",
@@ -7487,7 +7796,8 @@
                         "number": "454",
                         "present": true
                     }
-                ]
+                ],
+                "numRuleExcell": 10
             },
             {
                 "message": "Si  105 $a Pos. 0-3 = 'y' alors 215$c ne doit pas être présent",
@@ -7519,7 +7829,8 @@
                         "number": "215",
                         "present": false
                     }
-                ]
+                ],
+                "numRuleExcell": 12
             },
             {
                 "message": "Si 105 $a Pos. 4-7 =a alors il faut une 320",
@@ -7551,7 +7862,8 @@
                         "number": "320",
                         "present": true
                     }
-                ]
+                ],
+                "numRuleExcell":17
             },
             {
                 "message": "Si 105 $a Pos. 4-7= t, m, l, q, j, f, e, b ou 7 il faut la présence d'une 608",
@@ -7591,7 +7903,8 @@
                         "number": "608",
                         "present": true
                     }
-                ]
+                ],
+                "numRuleExcell":18
             },
             {
                 "message": "Si 008 commence par Aa, présence obligatoire d'une zone 106",
@@ -7614,7 +7927,8 @@
                         "number": "106",
                         "present": true
                     }
-                ]
+                ],
+                "numRuleExcell":21
             },
             {
                 "message": "Si 225 ind1=1 $a alors 461 doit être présent",
@@ -7636,7 +7950,8 @@
                         "number": "461",
                         "present": true
                     }
-                ]
+                ],
+                "numRuleExcell":44
             },
             {
                 "message": "Si 305$a commence par \"Document numérisé dans le cadre du projet de numérisation\", doit contenir une 324",
@@ -7659,7 +7974,8 @@
                         "number": "324",
                         "present": true
                     }
-                ]
+                ],
+                "numRuleExcell":165
             },
             {
                 "message": "Si 488, alors vérifier les liens réciproques de la notice en 488$0",
@@ -7687,7 +8003,8 @@
                         "number": "488",
                         "present": true
                     }
-                ]
+                ],
+                "numRuleExcell":146
             },
             {
                 "message": "Si 456, alors vérifier que la notice en 456$0 contient une 455 avec liens réciproques",
@@ -7711,7 +8028,8 @@
                         "number": "456",
                         "present": true
                     }
-                ]
+                ],
+                "numRuleExcell":160
             },
             {
                 "message": "Si 328$zReproduction de, alors il faut une 455",
@@ -7739,7 +8057,8 @@
                         "number": "455",
                         "present": true
                     }
-                ]
+                ],
+                "numRuleExcell":92
             },
             {
                 "message": "Si 456, alors vérifier que la notice en 456$0 contient une 455 avec liens réciproques",
@@ -7763,7 +8082,8 @@
                         "number": "455",
                         "present": true
                     }
-                ]
+                ],
+                "numRuleExcell":160
             },
             {
                 "message": "214\t214 #0 ou 214#1 obligatoire, sauf si 105$a contient v",
@@ -7799,7 +8119,8 @@
                         "present": true,
                         "ind2": "1"
                     }
-                ]
+                ],
+                "numRuleExcell":34
             },
             {
                 "message": "Si 214 #1 $d obligatoire",
@@ -7821,7 +8142,8 @@
                         "number": "214",
                         "present": true
                     }
-                ]
+                ],
+                "numRuleExcell":35
             }
         ],
         "Structurel": [

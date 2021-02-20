@@ -177,7 +177,8 @@ var Structurel = function () {
             if (isPushInJson) {
                 resultJson.errors.push({
                     message: message,
-                    number: number
+                    number: number,
+                    numRuleExcell: regle.numRuleExcell
                 });
                 Parcours.addErrorSynchro();
             }
