@@ -61,11 +61,11 @@ Par exemple : Si plusieurs 101$d, il doit y avoir autant de 330
 
 ```json
 {
-    "number": "101", # Numéro du datafield à vérifier
-    "code": "d", # Code de la sous-zone à vérifier
-    "contrainte": "330", # Numéro du datafield qui servira de comparateur
-    "message": "Mention de résumé incohérente : vérifier zones 101 et le nombre de zones 330", # Message a afficher en cas de violation de la regle
-    "index": 75 # Identifiant unique de la regle
+    "number": "101", // Numéro du datafield à vérifier
+    "code": "d", // Code de la sous-zone à vérifier
+    "contrainte": "330", // Numéro du datafield qui servira de comparateur
+    "message": "Mention de résumé incohérente : vérifier zones 101 et le nombre de zones 330", // Message a afficher en cas de violation de la regle
+    "index": 75, // Identifiant unique de la regle
 }
 ```
 
@@ -77,21 +77,21 @@ Exemple : le les 4 premiers caracteres du sous champ 029\$b doivent etre egaux a
 ```json
  {
     "field1": {  
-        "number": "029" # Numéro du premier datafield
-        "code": "b", # Code du subfield à vérifier
-        "pos": [ # Sous-chaîne à prélever dans le subfield
+        "number": "029", // Numéro du premier datafield
+        "code": "b", // Code du subfield à vérifier
+        "pos": [ // Sous-chaîne à prélever dans le subfield
             0,
             4
         ],
     },
     "field2": {
-        "number": "328" # Numéro du second datafield
-        "code": "d", # Code du subfield à vérifier
-        "pos": [], # Sous chaine a prélever dans le subfield
+        "number": "328", // Numéro du second datafield
+        "code": "d", // Code du subfield à vérifier
+        "pos": [], // Sous chaine a prélever dans le subfield
     },
-    "operator": "equals", # Opérateur à appliquer 
-    "message": "Année de soutenance : l'année en 029 et 328 doivent être identiques", # Message a afficher en cas de violation 
-    "index": 76 # Identifiant unique de la regle
+    "operator": "equals", // Opérateur à appliquer 
+    "message": "Année de soutenance : l'année en 029 et 328 doivent être identiques", // Message a afficher en cas de violation 
+    "index": 76, // Identifiant unique de la regle
 }
 ```
 
@@ -112,25 +112,25 @@ Exemple : Si il existe une 606\$y et que 606\$2 est egal a la chaine `rameau` al
 {
     "condition": [
         {
-            "number": "606", # Numéro de la première condition
-            "code": "y" # Code de la premiere condition
+            "number": "606", // Numéro de la première condition
+            "code": "y", // Code de la premiere condition
         },
         {
-            "number": "606", # Numéro de la seconde condition
-            "code": "2", # Code de la seconde condition
-            "regex": "^rameau$" # Regex que doit vérifier la valeur du champ
+            "number": "606", // Numéro de la seconde condition
+            "code": "2", // Code de la seconde condition
+            "regex": "^rameau$", // Regex que doit vérifier la valeur du champ
         }
     ],
     "verification": {
-        "number": "008", # Numéro du champ à vérifier dans la notice externe
-        "regex": "^Tg.*" # Regex que doit vérifier la valeur du champ dans la notice externe
+        "number": "008", // Numéro du champ à vérifier dans la notice externe
+        "regex": "^Tg.*", // Regex que doit vérifier la valeur du champ dans la notice externe
     },
     "identifiant": {
-        "number": "606", # Numéro du datafield où recuperer l'identifiant de la notice externe
-        "code": "3" # Code du subfield où recuperer l'identifiant de la notice externe
+        "number": "606", // Numéro du datafield où recuperer l'identifiant de la notice externe
+        "code": "3", // Code du subfield où recuperer l'identifiant de la notice externe
     },
-    "message": "Incohérence indexation : vérifier que la zone 6XX est liée à une autorité RAMEAU",# Message à afficher en cas de violation
-    "index": 325 # Identifiant unique de la règle
+    "message": "Incohérence indexation : vérifier que la zone 6XX est liée à une autorité RAMEAU",// Message à afficher en cas de violation
+    "index": 325, // Identifiant unique de la règle
 },
 ```
 ## Matching
@@ -138,11 +138,11 @@ Exemple : Si il existe une 606\$y et que 606\$2 est egal a la chaine `rameau` al
 Par exemple : 230\$a ne doit pas contenir Mo
 ```json
 {
-    "number": 230, # Numéro du datafield à vérifier
-    "code": "a", # Code du subfield à vérifier
-    "regex": "(?:(?!Mo).)+", # Regex que doit vérifier la valeur du champ
-    "message": "Zone 230 : corriger le poids en Mo", # Message à afficher en cas de violation
-    "index": 39 # Identifiant unique de la règle
+    "number": 230, // Numéro du datafield à vérifier
+    "code": "a", // Code du subfield à vérifier
+    "regex": "(?:(?!Mo).)+", // Regex que doit vérifier la valeur du champ
+    "message": "Zone 230 : corriger le poids en Mo", // Message à afficher en cas de violation
+    "index": 39, // Identifiant unique de la règle
 },
 ```
 
@@ -151,7 +151,7 @@ Par exemple : 7XX\$4 ne doit pas contenir les valeurs 020, 050, 060 , ...
 
 ```json
 {
-    "number": [ # Liste des datafield à inclure
+    "number": [ // Liste des datafield à inclure
         "700",
         "701",
         "710",
@@ -159,8 +159,8 @@ Par exemple : 7XX\$4 ne doit pas contenir les valeurs 020, 050, 060 , ...
         "720",
         "721"
     ],
-    "code": "4", # Code du subfield à contraindre
-    "value": [ # Liste des pattern
+    "code": "4", // Code du subfield à contraindre
+    "value": [ // Liste des pattern
         "^((?!020).)*$",
         "^((?!050).)*$",
         "^((?!060).)*$",
@@ -188,9 +188,9 @@ Par exemple : 7XX\$4 ne doit pas contenir les valeurs 020, 050, 060 , ...
         "^((?!750).)*$",
         "^((?!735).)*$"
     ],
-    "match": "all", # Type de l'operation
-    "message": "7X0 et 7X1 ne doit pas contenir $4=020, 050, 060, 075, 080, 140, 150, 160, 310, 320, 390, 450, 490, 500, 540, 580, 610, 620, 640, 650, 680, 700, 720, 740, 750, 753",# Message à afficher en cas de violation
-    "index": 38 # Identifiant unique de la règle
+    "match": "all", // Type de l'operation
+    "message": "7X0 et 7X1 ne doit pas contenir $4=020, 050, 060, 075, 080, 140, 150, 160, 310, 320, 390, 450, 490, 500, 540, 580, 610, 620, 640, 650, 680, 700, 720, 740, 750, 753",// Message à afficher en cas de violation
+    "index": 38, // Identifiant unique de la règle
 },
 ```
 Dans ce type d'écriture de regle il faut spécifier le type de matching, match = `all` pour spécifier que tous les pattern doivent être validés, ou match = `one` pour préciser qu'au moins un pattern doit être validé.
@@ -200,10 +200,10 @@ Dans ce type d'écriture de regle il faut spécifier le type de matching, match 
 Exemple : Si plusieurs zones 214, doivent respecter l'ordre des chiffres de l'ind2
 ```json
 {
-    "number": "214", # Numéro de la liste des datafields
-    "orderBy": "ind2", # Champ sur lequel appliquer le tri
-    "message": "Zones 214 : garder l'ordre des indicateurs", # Message à afficher en cas de violation
-    "index": 24 # Identifiant unique de la règle
+    "number": "214", // Numéro de la liste des datafields
+    "orderBy": "ind2", // Champ sur lequel appliquer le tri
+    "message": "Zones 214 : garder l'ordre des indicateurs", // Message à afficher en cas de violation
+    "index": 24,// Identifiant unique de la règle
 }
 ```
 
@@ -212,15 +212,15 @@ Exemple : Si plusieurs zones 214, doivent respecter l'ordre des chiffres de l'in
 Exemple : 328 doit contenir ind1=" " ind2="0"
 ```json
 {
-    "ind1": " ",# ind1 sur lequel appliquer la contrainte , par default ""
-    "number": [ # Liste de numéro de datafields
+    "ind1": " ",// ind1 sur lequel appliquer la contrainte , par default ""
+    "number": [ // Liste de numéro de datafields
         "328"
     ],
-    "ind2": "0", # ind2 sur lequel appliquer la contrainte , par default ""
-    "code": "", # Code sur lequel appliquer la contrainte , par default ""
-    "type": "index", # Type de contrainte a appliquer
-    "message": "Zone 328 : revoir la valeur des indicateurs", # Message à afficher en cas de violation
-    "index": 38 # Identifiant unique de la règle
+    "ind2": "0", // ind2 sur lequel appliquer la contrainte , par default ""
+    "code": "", // Code sur lequel appliquer la contrainte , par default ""
+    "type": "index", // Type de contrainte a appliquer
+    "message": "Zone 328 : revoir la valeur des indicateurs", // Message à afficher en cas de violation
+    "index": 38, // Identifiant unique de la règle
 }
 ```
 
@@ -250,25 +250,25 @@ Exemple :
 - Condition de presence d'un champ : vérifie la présence du datafield 214 avec l'indice 2 égale à 2, et d'un subfield de code a
 ```json
 {
-    "operator": "presente", # Nom de l'opérateur
-    "number": "214", # Numéro du datafield à vérifier
-    "ind1": "", # Valeur de l'indice 1 du datafield
-    "ind2": "2", # Valeur de l'indice 2 du datafield
-    "code": "a" # Code du subfield
+    "operator": "presente", // Nom de l'opérateur
+    "number": "214", // Numéro du datafield à vérifier
+    "ind1": "", // Valeur de l'indice 1 du datafield
+    "ind2": "2", // Valeur de l'indice 2 du datafield
+    "code": "a", // Code du subfield
 }
 ```
 
 - Condition sur la contenance d'un texte : vérifie que le caractère a la position 10 105\$a est egal a 0
 ```json
 {
-    "operator": "contains_text", # Nom de l'opérateur
-    "number": "105", # Numéro du datafield à vérifier
-    "code": "a", # Code du subfield
-    "pos": [ # Sous-chaîne à prélever dans le subfield
+    "operator": "contains_text", // Nom de l'opérateur
+    "number": "105", // Numéro du datafield à vérifier
+    "code": "a", // Code du subfield
+    "pos": [ // Sous-chaîne à prélever dans le subfield
         10,
         11
     ],
-    "string": [ # Texte à vérifier
+    "string": [ // Texte à vérifier
         "0"
     ]
 }
@@ -277,10 +277,10 @@ Exemple :
 - Condition sur le commencement du texte : vérifie que la valeur de 856$5 commence par 692669902 
 ```json
 {
-    "operator": "startwith_text", # Nom de l'opérateur
-    "number": "856", # Numéro du datafield à vérifier
-    "code": "5", # Code du subfield à vérifier
-    "string": [ # Texte à vérifier
+    "operator": "startwith_text", // Nom de l'opérateur
+    "number": "856", // Numéro du datafield à vérifier
+    "code": "5", // Code du subfield à vérifier
+    "string": [ // Texte à vérifier
         "692669902" 
     ]
 }
@@ -289,10 +289,10 @@ Exemple :
 - Condition sur l'égalité d'un texte : vérifie que la valeur de 328$z soit égal à "Reproduction de"
 ```json
 {
-    "operator": "equals_text", # Nom de l'opérateur
-    "number": "328", # Numéro du datafield à vérifier
-    "code": "z", # Code du subfield à vérifier
-    "string": [ # Texte à vérifier
+    "operator": "equals_text", // Nom de l'opérateur
+    "number": "328", // Numéro du datafield à vérifier
+    "code": "z", // Code du subfield à vérifier
+    "string": [ // Texte à vérifier
         "Reproduction de"
     ]
 }
@@ -300,13 +300,13 @@ Exemple :
 - Condition sur une sous-chaîne se trouvant à la fin de la chaîne de caractère : 105 $a 5e position en commençant par la fin = 1
 ```json
 {
-    "operator": "count_from_end", # Nom de l'opérateur
-    "number": "105", # Numéro du datafield à vérifier
-    "code": "a", # Code du subfield à vérifier
-    "string": [ # Texte à vérifier
+    "operator": "count_from_end", // Nom de l'opérateur
+    "number": "105", // Numéro du datafield à vérifier
+    "code": "a", // Code du subfield à vérifier
+    "string": [ // Texte à vérifier
         "1"
     ],
-    "pos": [ # Nombre de caractère à compter en partant de la fin
+    "pos": [ // Nombre de caractère à compter en partant de la fin
        5
     ]
 }
@@ -321,26 +321,26 @@ Exemple : 608\$a et 608\$2rameau, 608\$a doit être précédé d’un 608\$3
  {
 "condition": [
     {
-        "code": "a", # Code de la seconde condition
-        "number": "608", # Identifiant de la seconde condition
-        "operator": "presente" # operateur condititionnel
+        "code": "a", // Code de la seconde condition
+        "number": "608", // Identifiant de la seconde condition
+        "operator": "presente", // operateur condititionnel
     },
     {
-        "string": [ # chaine de caractere a matcher 
+        "string": [ // chaine de caractere a matcher 
             "rameau"
         ],
-        "code": "2", # Code de la seconde condition
-        "number": "608", # Identifiant de la seconde condition
-        "operator": "startwith_text" # operateur condititionnel
+        "code": "2", // Code de la seconde condition
+        "number": "608", // Identifiant de la seconde condition
+        "operator": "startwith_text", // operateur condititionnel
     }
 ],
 "precede": {
-    "precedant": "3", # code du subfield precedant
-    "depart": "a" # code du subfield precedé
+    "precedant": "3", // code du subfield precedant
+    "depart": "a", // code du subfield precedé
 },
-"number": "608",# Numéro de la liste des datafields
-"message": "Zones 6XX doivent être liées à une notice d'autorité RAMEAU", # Message à afficher en cas de violation
-"index": 217 # Identifiant unique de la règle
+"number": "608",// Numéro de la liste des datafields
+"message": "Zones 6XX doivent être liées à une notice d'autorité RAMEAU", // Message à afficher en cas de violation
+"index": 217, // Identifiant unique de la règle
 }
 ```
 ## ConditionDependance
@@ -348,14 +348,14 @@ Exemple : 608\$a et 608\$2rameau, 608\$a doit être précédé d’un 608\$3
 > Applique une règle de dépence si les conditions sont validées
 ```json
 {
-    "condition": [{ # Liste des conditions à vérifier
+    "condition": [{ // Liste des conditions à vérifier
         "operator": "presente",
         "number": "225",
         "code": "",
         "ind1": "0",
         "ind2": ""
     }],
-    # Les champs suivants sont les mêmes que ceux dans les règle de dépendances.
+    // Les champs suivants sont les mêmes que ceux dans les règle de dépendances.
     "field1": {
         "number": "225",
         "code": "a"
@@ -375,7 +375,7 @@ Exemple : 608\$a et 608\$2rameau, 608\$a doit être précédé d’un 608\$3
 
 ```json
 {
-    "condition": [{ # Liste des conditions à vérifier
+    "condition": [{ // Liste des conditions à vérifier
             "operator": "equals_text",
             "number": "700",
             "code": "4",
@@ -384,25 +384,25 @@ Exemple : 608\$a et 608\$2rameau, 608\$a doit être précédé d’un 608\$3
             ]
         }
     ],
-    "number": 200,# Numéro du datafield à traîter
-    "values": [{# Liste des règles de types Matching à évaluer
+    "number": 200,// Numéro du datafield à traîter
+    "values": [{// Liste des règles de types Matching à évaluer
             "number": 200,
             "code": "f",
             "message": "",
             "regex": "(?:(?!ed.)(?!edited)(?!edit).)+",
-            "subFieldRequired": false # Champ permettant d'indiquer si le subfield doit être présent ou non
+            "subFieldRequired": false // Champ permettant d'indiquer si le subfield doit être présent ou non
         },
         {
             "number": 200,
             "code": "g",
             "message": "",
             "regex": "(?:(?!ed.)(?!edited)(?!edit).)+",
-            "subFieldRequired": false # Champ permettant d'indiquer si le subfield doit être présent ou non
+            "subFieldRequired": false // Champ permettant d'indiquer si le subfield doit être présent ou non
         }
     ],
     "type": "allRequired",
-    "message": "Zones 7XX : code fonction, vérifier qu'il s'agit d'un éditeur scientifique ou d'un directeur de publication ?", # Message à afficher en cas de violation
-    "index": 6000 # Identifiant unique de la règle
+    "message": "Zones 7XX : code fonction, vérifier qu'il s'agit d'un éditeur scientifique ou d'un directeur de publication ?", // Message à afficher en cas de violation
+    "index": 6000,  // Identifiant unique de la règle
 }
 ```
 
@@ -415,7 +415,7 @@ Le champ ``type`` peut contenir deux valeurs :
 Exemple : Si le datafield 225 possède un indice 1 qui a une valeur à 0, alors il faut un datafield 410
  ```json
  {
-    "condition": [ # Liste des conditions à vérifier
+    "condition": [  // Liste des conditions à vérifier
         {
             "code": "",
             "ind1": "0",
@@ -424,20 +424,20 @@ Exemple : Si le datafield 225 possède un indice 1 qui a une valeur à 0, alors 
             "ind2": ""
         }
     ],
-    "number": "225", # Numéro du datafield à traiter
+    "number": "225", // Numéro du datafield à traiter
     "type": "allRequired",
     "value": [
         {
-            "number": "410", # Numéro du datafield
-            "code": "", # Code du datafield
-            "ind1": undefined,# Valeur de l'indice 1 du datafield
-            "ind2": undefined,# Valeur de l'indice 2 du datafield
-            "reciproque": undefined,# Indique si la règle est réciproque ou non
-            "present": true # Indique si le champ doit être présent
+            "number": "410", // Numéro du datafield
+            "code": "", // Code du datafield
+            "ind1": undefined, // Valeur de l'indice 1 du datafield
+            "ind2": undefined,// Valeur de l'indice 2 du datafield
+            "reciproque": undefined,// Indique si la règle est réciproque ou non
+            "present": true // Indique si le champ doit être présent
         }
-    ]
-    "message": "Si 225 ind1=0 il faut au moins une 410",# Message à afficher en cas de violation
-    "index": 199 # Identifiant unique de la règle
+    ],
+    "message": "Si 225 ind1=0 il faut au moins une 410",// Message à afficher en cas de violation
+    "index": 199, // Identifiant unique de la règle
 },
  ```
 

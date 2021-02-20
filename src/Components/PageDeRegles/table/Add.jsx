@@ -5,6 +5,7 @@ import {
 } from 'react-bootstrap';
 import ArrayFieldTemplate from '../forms/ArrayFieldTemplate';
 
+
 function Add({ types, newRule }) {
   const [useForm, setUseForm] = useState(false);
   const [index, setIndex] = useState(0);
@@ -83,7 +84,7 @@ function Add({ types, newRule }) {
           <ListGroup>
             {
               types.map((type) => (
-                <ListGroup.Item key={type.type} action onClick={() => handleTypeChange(type.type)}>
+                <ListGroup.Item key={type.type} action onClick={() => handleTypeChange(type.type)} className={'listGroupPPN'}>
                   {type.name}
                 </ListGroup.Item>
               ))

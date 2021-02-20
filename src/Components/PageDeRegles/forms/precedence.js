@@ -1,7 +1,7 @@
 import { conditions } from './conditions';
 
 export function formatRulePrecedence(data) {
-    console.log('formatRulePrecedence');
+    //console.log('formatRulePrecedence');
     const obj = {};
     obj.number = data.number;
     obj.precede = data.precede;

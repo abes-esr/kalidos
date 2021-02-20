@@ -10,7 +10,6 @@ function RelanceForm({ notices, noticeDisplay }) {
   if (noticeDisplay === 0 || notices[noticeDisplay] === undefined) {
     return "";
   }
-  const listPPN = notices[noticeDisplay];
   return (
     <div>
       <p>Êtes-vous sûr ?</p>

@@ -5,7 +5,12 @@ const axios = require('axios');
 
 
 var IdRef = function () {
-
+    /**
+     * Recupere un PPN sur le serveur externe IDREF
+     * @param {String} identifiant PPN a recuperer
+     * @param {json} regle regle courante
+     * @param {json} resultJson fichier de resultat
+     */
     var getRequest = function (identifiant, regle, resultJson) {
         axios.get("https://www.idref.fr/" + identifiant + ".xml")
             .then(function (response) {
@@ -22,6 +27,12 @@ var IdRef = function () {
             })
     }
 
+    /**
+     * Verifie que le document IDREF est valide
+     * @param {json} data données du documents IDREF
+     * @param {json} regle regle courante
+     * @param {json} resultJson fichier de resultat
+     */
     var validateIdRef = function (data, regle, resultJson) {
         const controlfield = data.record.controlfield;
         const field = Parcours.findDataField(controlfield, regle.verification.number)
@@ -41,6 +52,12 @@ var IdRef = function () {
         }
     }
 
+    /**
+     * verifie que la valeur du subfield est valide
+     * @param {json} field datafield a tester
+     * @param {String} code code du subfield a tester
+     * @param {String} regex regex a matcher
+     */
     var testValueCode = function (field, code, regex) {
         const subfield = Parcours.getSubfieldValue(field, code)
         const regExp = RegExp(regex);
@@ -52,7 +69,11 @@ var IdRef = function () {
         }
     }
 
-
+    /**
+     * filtre une liste selon la valeur
+     * @param {Array} array liste a filtrer
+     * @param {*} value valeur filtre
+     */
     function remove(array, value) {
         array = array.filter(function (item) {
             return item !== value
@@ -60,8 +81,8 @@ var IdRef = function () {
     }
     /**
      * Teste la condition de la regle 
-     * @param {*} datafields 
-     * @param {*} regle 
+     * @param {json} datafields 
+     * @param {json} regle 
      */
     var conditionNotice = function (datafields, regle) {
         let retour = [];
@@ -90,11 +111,21 @@ var IdRef = function () {
     }
 
 
+    /**
+     * Verifie qu'un datafield n'existe pas
+     * @param {json} datafields zone de données
+     * @param {json} regle regle courrante
+     */
     function validEmptyArray(datafields, regle) {
         const fields = Parcours.findDataFields(datafields, regle.condition[0].number)
         return !fields.length > 0
     }
 
+    /**
+     * Ajoute une erreur au fichier resultat
+     * @param {json} regle regle courrante
+     * @param {json} resultJson fichier resultat
+     */
     function addError(regle, resultJson) {
         resultJson.errors.push({
             message: regle.message + " ( " + regle.index + " ) ",
@@ -108,9 +139,9 @@ var IdRef = function () {
 
 
     /**
-     * Recupere l'idantifiant à utiliser pour requeter le serveur externe
-     * @param {*} datafields 
-     * @param {*} regle 
+     * Recupere l'identifiant à utiliser pour requeter le serveur externe
+     * @param {json} datafields zone de données
+     * @param {json} regle regle courrante
      */
     var identifiantNotice = function (fields, regle) {
         let identifiant = [];
@@ -133,6 +164,14 @@ var IdRef = function () {
         return identifiant
     }
 
+    /**
+     * Valide les regles de type Idref
+     * @param {String} categorie categorie du document
+     * @param {json} rules fichier de regle
+     * @param {json} controlfields zone de controle
+     * @param {json} datafields zone de données
+     * @param {json} resultJson fichier de resultat
+     */
     var testIdRefRules = function (categorie, rules, controlfields, datafields, resultJson) {
         rules[categorie].idRef.forEach(function (regle) {
             const fieldsValid = conditionNotice(datafields, regle)

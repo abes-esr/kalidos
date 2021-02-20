@@ -4,21 +4,20 @@ import store from '../../store/index';
 
 
 export const modifKey = (result) => {
-    const data_notice = Object.keys(result).map((key) => [Number(key), result[key]]);
+    const data_notice = Object.keys(result).map((key) => [String(key), result[key]]);
     return data_notice;
 };
 
 function deleteNotice(index) {
     axios({
         method: 'DELETE',
-        url: '/deleteNotice',
+        url: '/notices',
         contentType: "application/json",
         headers: {
             "Accept": "application/json",
             "index": index,
         },
     }).then(function () {
-        console.log("suppression notice ok");
         store.dispatch(setNoticeDisplay(0));
         window.location.reload();
     })

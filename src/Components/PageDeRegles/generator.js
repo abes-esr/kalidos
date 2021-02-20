@@ -131,7 +131,7 @@ export function generator (func, items, isWord) {
 
   let join = isWord ? '|' : ''
   regex = prefix + items.join(join) + sufix
-  console.log(func + ': ' + regex)
+  //console.log(func + ': ' + regex)
   return regex;
 }
 

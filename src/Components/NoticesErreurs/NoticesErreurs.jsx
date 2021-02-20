@@ -45,7 +45,7 @@ function NoticesErreurs() {
       <br></br>
       <Row>
         <Card4
-          title={"Notices erronées"}
+          title={"Notices erronées (year-month-day)"}
           content={<TabNotice listNotices={data_notices} />}
         />
         <Card8

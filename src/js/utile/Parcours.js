@@ -6,8 +6,8 @@ var Parcours = function () {
 
     /**
      * Retourne un champ de notice
-     * @param {*} datafields 
-     * @param {*} number 
+     * @param {json} datafields zone de données
+     * @param {String} number identifiant du datafield
      */
     const findDataField = function (datafields, number) {
         let retour = null
@@ -20,6 +20,13 @@ var Parcours = function () {
         return retour;
     }
 
+    /**
+     * Recupere un datafield ayant les caracteristiques passées en parametre, si il existe
+     * @param {json} datafields zone de données
+     * @param {String} number identifiant
+     * @param {String} ind1 valeur de l'ind1
+     * @param {String} ind2 valeur de l'ind2
+     */
     const findDataFieldById = function (datafields, number , ind1 , ind2) {
         let retour = null
         datafields.forEach(function (field) {
@@ -33,6 +40,13 @@ var Parcours = function () {
         return retour;
     }
 
+    /**
+     * Retourne tous les datafield ayant les caracteristiques passées en parametre s'ils existent
+     * @param {json} datafields zone de données
+     * @param {String} number identifiant
+     * @param {String} ind1 valeur de l'ind1
+     * @param {String} ind2 valeur de l'ind2
+     */
     const findDataFieldsById = function (datafields, number , ind1 , ind2) {
         let retour = []
         // let count = 0;
@@ -45,7 +59,11 @@ var Parcours = function () {
         return retour;
     }
 
-
+    /**
+     * Retourne tous les datafield ayant le number passées en parametre s'ils existent
+     * @param {json} datafields zone de données
+     * @param {String} number identifiant
+     */
     const findDataFields = function (datafields, number) {
         let retour = []
         let count = 0;
@@ -59,6 +77,12 @@ var Parcours = function () {
         return retour;
     }
 
+    /**
+     * Filtre les datafield par la valeur de la variable
+     * @param {json} datafields 
+     * @param {String} variable variable filtre
+     * @param {String} value valeur de la variable
+     */
     const filterDatafield = function(datafields,variable, value) {
         let retour = [];
         for(let i in datafields) {
@@ -70,6 +94,12 @@ var Parcours = function () {
         return retour;
     }
 
+    /**
+     * Recupere une liste de subfield contenu dans une liste de datafield qui valident une valeur de code
+     * @param {json} datafields zone de données
+     * @param {String} number identifiant des datafields
+     * @param {String} code code a matcher pour les subfields
+     */
     const getAllDatafieldVerifyZone = function(datafields , number , code) {
         let retour  = [];
         const fields = findDataFields(datafields, number);
@@ -89,8 +119,8 @@ var Parcours = function () {
 
     /**
      * retourne la valeur d'un champ d'une notice
-     * @param {*} field 
-     * @param {*} code 
+     * @param {json} field liste de datafield
+     * @param {String} code code a matcher
      */
     const getSubfieldValue = function(field,code) {
         if (field != null && field.subfield instanceof Array) {
@@ -110,6 +140,11 @@ var Parcours = function () {
     }
 
 
+    /**
+     * recupere une liste de subfield celon une valeur de code
+     * @param {json} fields liste de datafield
+     * @param {String} code code a matcher
+     */
     const getListSubfieldValue = function(fields,code) {
         let retour = [];
         for (let i in fields ) {
@@ -130,7 +165,12 @@ var Parcours = function () {
 
 
 
-
+    /**
+     * recupere les subfield qui valident le codeCondition et le codeIdentifiant
+     * @param {json} field list de datafield
+     * @param {String} codeCondition code a matcher
+     * @param {String} codeIdentifiant code a matcher
+     */
     const getIdentifiantValue = function(field,codeCondition,codeIdentifiant) {
         let retour = null;
         if (field != null && field.subfield instanceof Array) {
@@ -150,6 +190,11 @@ var Parcours = function () {
         return null
     }
 
+    /**
+     * Teste si un subfield avec une valeur de code donné existe
+     * @param {json} field datafield a tester
+     * @param {String} code code a tester
+     */
     const testCode = function(field,code) {
         if (field != null && field.subfield instanceof Array) {
             for (let i in field.subfield) {
@@ -168,7 +213,7 @@ var Parcours = function () {
 
     /**
      * retourne la liste des Categories de regles (General ,Electronique , ...)
-     * @param {*} regles 
+     * @param {json} regles fichier de regles
      */
     const getCategories = function (regles) {
         let catagorie = []
@@ -180,7 +225,7 @@ var Parcours = function () {
 
     /**
      * Retourne la liste des types de regles (matching, structurel ,...)
-     * @param {*} regles 
+     * @param {json} regles fichier de regles
      */
     const getTypes = function (regles) {
         let types = []
@@ -193,11 +238,19 @@ var Parcours = function () {
         return types
     }
 
+    /**
+     * decoupe une chaine de caractere 
+     * @param {*} start debut
+     * @param {*} end fin
+     * @param {*} text texte a decouper
+     */
     const slice = function (start, end, text){
         return text.slice(start > 0 ? start -1  : 0, end);
     }
 
-    //Ne sert que pour synchroniser les données et la vue à cause des requêtes axios
+    /**
+     * permet la synchronisation de l'interface de verification des resultats
+     */
     const addErrorSynchro = function() {
         if(store !== undefined) {
             store.dispatch(incrementeSynchro("toto"));

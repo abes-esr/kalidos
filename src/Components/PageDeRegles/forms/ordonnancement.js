@@ -1,5 +1,5 @@
 export function formatRuleOrdonnancement(data) {
-    console.log('formatRuleOrdonnancement');
+    //console.log('formatRuleOrdonnancement');
     const obj = {};
     obj.number = data.number;
     obj.orderBy = data.orderBy;

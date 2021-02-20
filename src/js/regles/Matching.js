@@ -1,6 +1,14 @@
 import Parcours from "../utile/Parcours";
 
 var Matching = function () {
+    /**
+     * Verifie les regles de type Matching
+     * @param {String} categorie categorie du document
+     * @param {json} rules fichier de regle
+     * @param {json} controlfields zone de controle
+     * @param {json} datafields zone de données
+     * @param {json} resultJson fichier de resultat
+     */
     var testMatchRegexRules = function (categorie, rules, controlfields, datafields, resultJson) {
         rules[categorie].matching.forEach(function (regle) {
             if (regle.number instanceof Array) {
@@ -11,7 +19,14 @@ var Matching = function () {
         });
     }
 
-    // Faudrait trouver un nom plus explicite
+   /**
+    * verrifie le matching d'une regle
+    * @param {json} regle regle courrante
+    * @param {String} regex regex a matcher
+    * @param {json} field zone de données
+    * @param {String} text texte a tester
+    * @param {String} code code du subfield
+    */
     function matchFactoriser(regle, regex, field, text, code) {
         let addError = false;
         if (code === regle.code || regle.number === "GLOBAL") {
@@ -26,6 +41,13 @@ var Matching = function () {
         return addError;
     }
 
+    /**
+     * ?_?
+     * @param {*} regle 
+     * @param {*} datafields 
+     * @param {*} controlfields 
+     * @param {*} resultJson 
+     */
     var testMatchRegexNumber = function (regle, datafields, controlfields, resultJson) {
         const regex = RegExp(regle.regex, 'g');
         let addError = false;
@@ -56,7 +78,12 @@ var Matching = function () {
         }
     }
 
-
+    /**
+     * Verifie qu'une regle est valide dans un datafield
+     * @param {json} datafield zone de données
+     * @param {json} regle regle courante
+     * @param {String} regex regex a matcher
+     */
     function verifyMatchInDatafield(datafield, regle, regex) {
         const verificationTag = verifyTag(datafield, regle);
         const verificationIndice = verifyIndice(datafield, regle);
@@ -74,6 +101,12 @@ var Matching = function () {
         return false;
     }
 
+    /**
+     * Verifie qu'une regle est valide dans une liste de subfield
+     * @param {json} subfieldList liste de subfield
+     * @param {json} regle regle courante
+     * @param {String} regex regex a matcher
+     */
     function verifyMatchInSubfieldList(subfieldList, regle, regex) {
         for (let j in subfieldList) {
             const subfield = subfieldList[j];
@@ -85,6 +118,11 @@ var Matching = function () {
         return false;
     }
 
+    /**
+     * verifie si un champ matche avec toutes les regex 
+     * @param {String} textField texte a tester
+     * @param {List<String>} value liste de regex a matcher
+     */
     var matchAll = function (textField, value) {
         for (const j in value) {
             //console.log(value[j] , " : " , field.subfield[i]._text , " -> " , !RegExp(value[j]).test(field.subfield[i]._text))
@@ -95,6 +133,11 @@ var Matching = function () {
         return true;
     }
 
+    /**
+     * verifie si un champ matche avec au moins une regex parmis la liste 
+     * @param {String} textField texte a tester
+     * @param {List<String>} value liste de regex
+     */
     var matchOne = function (textField, value) {
         for (const j in value) {
             if (RegExp(value[j]).test(textField)) {
@@ -104,6 +147,12 @@ var Matching = function () {
         return false;
     }
 
+    /**
+     * Teste une regex sur un datafield, en prenant en compte les possible duplications de celui ci dans le documents
+     * @param {String} regle regle courrante
+     * @param {json} datafields zone de données
+     * @param {json} resultJson fichier de resultat
+     */
     var testMatchRegexNumberArray = function (regle, datafields, resultJson) {
         let valid = regle.number.length
         let numberError = []
@@ -152,7 +201,8 @@ var Matching = function () {
             }
             const tempRegle = {
                 message: message,
-                number: errors
+                number: errors,
+                code : regle.code
             }
             addErrorInJson(resultJson, tempRegle);
         }
@@ -168,6 +218,11 @@ var Matching = function () {
 
 export default Matching;
 
+/**
+ * Ajoute une erreur au fichier de resultat
+ * @param {json} resultJson fichier de resultat
+ * @param {json} regle regle courrante
+ */
 function addErrorInJson(resultJson, regle) {
     resultJson.errors.push({
         message: regle.message,
@@ -177,12 +232,22 @@ function addErrorInJson(resultJson, regle) {
     Parcours.addErrorSynchro();
 }
 
+/**
+ * verifie le tag de la regle
+ * @param {json} field datafield a verifier
+ * @param {json} regle regle courrante
+ */
 function verifyTag(field, regle) {
     const tagIsOk = field._attributes.tag.toString() === regle.number.toString();
     const isGlobal = regle.number === "GLOBAL";
     return tagIsOk || isGlobal;
 }
 
+/**
+ * verrifie les indices
+ * @param {json} field datafield a verifier
+ * @param {json} regle regle courrante
+ */
 function verifyIndice(field, regle) {
     const ind1IsOk = !regle.ind1 || (regle.ind1 && regle.ind1 === field._attributes.ind1.toString().trim());
     const ind2IsOk = !regle.ind2 || (regle.ind2 && regle.ind2 === field._attributes.ind2.toString().trim());

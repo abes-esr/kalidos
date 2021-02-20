@@ -1,7 +1,7 @@
 import { conditions } from "./conditions";
 
 export function formatRuleConditionnelsStructurel(data) {
-    console.log('formatRuleConditionnelsStructurel');
+    //console.log('formatRuleConditionnelsStructurel');
     const obj = {};
     obj.number = data.number;
     obj.condition = data.condition;

@@ -20,6 +20,9 @@ const CATEGORIE_GENERALE = "Generale";
 let nombreTotalPPN = 0;
 let count = 0;
 
+/**
+ * Permet de vérifier le PPN en le tapant dans le formulaire
+ */
 function verifiyRulesByTextArea() {
     store.dispatch(cleanResult());
     const choixCategorie = $("#choixCategorie").val();
@@ -44,16 +47,13 @@ function verifiyRulesByTextAreaNotice (listPPN) {
     getRules(listPPN);
 }
 
-function verifyRules() {
-    store.dispatch(cleanResult());
-    window.location += 'tempInterfaceVerif';
-    getRules();
-}
 
-
+/**
+ * récupérer un PPN dans la base du sudoc et lance sa vérification
+ * @param {json} rules règles à valider 
+ * @param {string} PPN identifiant du PPN
+ */
 function getSudoc(rules, PPN) {
-
-
     axios.get('https://www.sudoc.fr/' + PPN + '.xml')
         .then(function (response) {
             const xml = response.data.replaceAll('&', '')
@@ -72,6 +72,9 @@ function getSudoc(rules, PPN) {
         });
 }
 
+/**
+ * ecrit les résultats de la vérification des règles dans un fichier json sur le serveur
+ */
 function writeResult() {
     axios({
         method: 'POST',
@@ -92,6 +95,10 @@ function writeResult() {
         });
 }
 
+/**
+ * supprime une règle sur le serveur
+ * @param {int} index identifiant de la règle à supprimer
+ */
 function deleteRule(index) {
     axios({
         method: 'DELETE',
@@ -111,6 +118,12 @@ function deleteRule(index) {
         });
 }
 
+
+/**
+ * permet de mettre à jour une règle sur le serveur
+ * @param {int} index identifiant de la règle à modifier
+ * @param {json} newRule règle mise à jour
+ */
 function updateRule(index, newRule) {
     axios.put('/rules', newRule, {
         headers: {
@@ -124,6 +137,12 @@ function updateRule(index, newRule) {
     });
 }
 
+/**
+ * ajoute une nouvelle règle sur le serveur
+ * @param {string} categorie nom de la catégorie ou ajouter la règle
+ * @param {string} type nom du type de la règle
+ * @param {json} rule regle à ajouter
+ */
 function addRule(categorie, type, rule) {
     axios({
         method: 'POST',
@@ -146,6 +165,10 @@ function addRule(categorie, type, rule) {
         });
 }
 
+/**
+ * récupère la liste des règles sur le serveur et lance la vérification pour tous les PPN
+ * @param {List<String>} listPPN 
+ */
 function getRules(listPPN) {
     axios.get('/rules')
         .then(function (response) {
@@ -163,18 +186,7 @@ function getRules(listPPN) {
         });
 }
 
-function getNoticeErreurs() {
-    axios.get('/getNotices')
-    .then(function (response) {
 
-    })
-    .catch(function (error) {
-        console.log(error);
-    })
-    .then(function () {
-        // always executed
-    });
-}
 
 function noticeErreurs(){
     const json = store.getState().result;
@@ -191,7 +203,7 @@ function noticeErreurs(){
 function addNoticeErreurs(errorIndex) {
     axios({
         method: 'POST',
-        url: '/notice',
+        url: '/notices',
         contentType: "application/json",
         headers: {
             "Accept": "application/json",
@@ -207,6 +219,11 @@ function addNoticeErreurs(errorIndex) {
     });
 }
 
+/**
+ * lance la vérification du jeu de règles sur un sudoc
+ * @param {json} rules jeu de règle
+ * @param {xml} sudoc document à vérifier
+ */
 function verifMain(rules, sudoc) {
 
     // const leader = sudoc.record.leader;
@@ -234,7 +251,18 @@ function verifMain(rules, sudoc) {
     }
 }
 
-export { verifyRules, verifiyRulesByTextArea, verifiyRulesByTextAreaNotice };
+export {verifiyRulesByTextArea, verifiyRulesByTextAreaNotice};
+
+/**
+ * Teste tous les type de règle sur un PPN
+ * @param {string} categorie nom de la catégorie de règle à appliquer
+ * @param {json} rules fichier de règles
+ * @param {json} controlfields zone de controle du sudoc
+ * @param {json} datafields zone de données du sudoc
+ * @param {json} resultJson fichier de résultat
+ * @param {function} getNoticeStructurelle fonction pour récupérer une notice sur le sudoc
+ * @param {function} getNoticeSMatching fonction pour récupérer une notice sur le sudoc
+ */
 function testOnCategorie(categorie, rules, controlfields, datafields, resultJson, getNoticeStructurelle, getNoticeSMatching) {
     Matching.testMatchRegexRules(categorie, rules, controlfields, datafields, resultJson);
     Structurel.testMatchStructurelRules(categorie, rules, controlfields, datafields, resultJson);

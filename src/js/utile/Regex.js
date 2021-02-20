@@ -1,5 +1,5 @@
 /**
- * Classe de manipulation de REGEX
+ * fichier 100% useless mais garde une place dans notre coeur
  */
 var Regex = function () {
   let chaine = "";

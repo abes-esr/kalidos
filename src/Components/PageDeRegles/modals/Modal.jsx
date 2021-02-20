@@ -20,7 +20,7 @@ function FormModal(props) {
 
   const whenAccepting = () => {
     handleModalShowHide();
-    if (acceptFunc){
+    if (acceptFunc) {
       acceptFunc()
     }
   };
@@ -38,15 +38,15 @@ function FormModal(props) {
 
         <Modal.Body>{body}</Modal.Body>
 
-        { (close !== null && accept !== null) && (
-        <Modal.Footer>
-          <Button variant="secondary" onClick={() => whenClosing()}>
-            {close}
-          </Button>
-          <Button variant="primary" onClick={() => whenAccepting()}>
-            {accept}
-          </Button>
-        </Modal.Footer>
+        {(close !== null && accept !== null) && (
+          <Modal.Footer>
+            <Button variant="secondary" onClick={() => whenClosing()}>
+              {close}
+            </Button>
+            <Button variant="primary" onClick={() => whenAccepting()}>
+              {accept}
+            </Button>
+          </Modal.Footer>
         )}
       </Modal>
     </div>

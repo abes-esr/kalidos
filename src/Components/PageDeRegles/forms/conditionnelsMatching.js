@@ -2,7 +2,7 @@ import { generator } from "../generator";
 import { conditions } from "./conditions";
 
 export function formatRuleConditionnelsMatching(data) {
-    console.log('formatRuleConditionnelsMatching');
+    //console.log('formatRuleConditionnelsMatching');
     const obj = {};
     obj.number = data.number;
     obj.condition = data.condition;
@@ -57,7 +57,7 @@ export function getSchemaConditionnelsMatching(categories, rules) {
                             enumNames: rules.names,
                         },
                         isWord: {
-                            title: 'Le(s) motif(s) ont plusieurs caractères?',
+                            title: 'Le motif contient de mots',
                             enum: [true, false],
                             enumNames: ["Oui", "Non"]
                         },

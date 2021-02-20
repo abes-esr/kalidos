@@ -9,6 +9,15 @@ const convert = require("xml-js");
 let ConditionMatching = function () {
     let getDocument = undefined;
     let ppnInitiale = undefined;
+    /**
+ * teste les regles de type Condition Matching
+ * @param {String} categorie categorie de la regle a tester
+ * @param {json} rules fichier de regles
+ * @param {json} controlfields zones de controle
+ * @param {json} datafields zone de données
+ * @param {json} resultJson ficher de resultat
+ * @param {function} getfunctionDocument fonction pour recuperer un PPN 
+ */
     let testConditionMatchingRules = async function (categorie, rules, controlfields, datafields, resultJson, getfunctionDocument) {
         getDocument = getfunctionDocument;
         for (let iRegle in rules[categorie].ConditionMatching) {
@@ -28,11 +37,8 @@ let ConditionMatching = function () {
                 if (regle.reciproque) {
                     ppnInitiale = Parcours.findDataField(controlfields, "001")._text;
                     const data = await getDocument(datafields, regle, resultJson);
-                    console.log("data : " , data)
                     if (data === null) {
-                        console.log("data === null")
                         addError(resultJson, regle);
-                        console.log(resultJson)
                         return;
                     }
                     checkControlFields = data.record.controlfield;
@@ -40,13 +46,18 @@ let ConditionMatching = function () {
                 }
 
                 if (!checkValues(regle, checkDataFields, checkControlFields)) {
-                    console.log("checkValues(regle, checkDataFields, checkControlFields)")
                     addError(resultJson, regle);
                 }
             }
         }
     }
 
+    /**
+     * recupere un PPN sur le sudoc
+     * @param {json} datafields zone de données
+     * @param {json} regle regle courante
+     * @param {json} resultJson fichier de resultats
+     */
     async function getDataOnSudoc(datafields, regle, resultJson) {
         let field = Parcours.findDataField(datafields, regle.reciproque.number);
         let ppnDest = Parcours.getSubfieldValue(field, regle.reciproque.code);
@@ -60,7 +71,6 @@ let ConditionMatching = function () {
                         spaces: 2
                     })
                 );
-                console.log(data)
                 return data;
             })
             .catch(function (error) {
@@ -72,15 +82,26 @@ let ConditionMatching = function () {
         return result;
     }
 
-
+    /**
+     * Ajoute une erreur dans le fichier de resultat
+     * @param {json} resultJson fichier de resultat
+     * @param {json} regle regle courrante
+     */
     function addError(resultJson, regle) {
         resultJson.errors.push({
             message: regle.message,
             number: regle.number,
+            code: regle.condition[0].code
         });
         Parcours.addErrorSynchro();
     }
 
+    /**
+     * Verrifie si les données respectent la regle courrante
+     * @param {json} regle regle courante
+     * @param {json} datafields zone de données
+     * @param {json} controlfields zone de controle
+     */
     function checkValues(regle, datafields, controlfields) {
         let isOk = true;
         // if(regle.reciproque !== undefined) {
@@ -94,20 +115,31 @@ let ConditionMatching = function () {
         return isOk;
     }
 
-
+    /**
+     * Mock fonction pour les tests
+     * @param {String} number PPN a recuperer
+     */
     function mockGetDataOnSudoc(number) {
         return function (datafields, number2, code) {
             return getNotice(number)
         }
     }
 
-
+    /**
+     * recupere un PPN pour les tests
+     * @param {String} number PPN a recuperer
+     */
     function getNotice(number) {
         const xmlPPN = fs.readFileSync(path.join(__dirname, '../testRegles/testClient/data/' + number + '.xml'), 'utf8');
         return JSON.parse(convert.xml2json(xmlPPN, { compact: true, spaces: 2 }));
     }
 
-
+    /**
+     * Verifie que toutes les implications de la regle sont valides
+     * @param {json} regle regle courante
+     * @param {json} datafields zone de données
+     * @param {json} controlfields zone de controle
+     */
     function verifyAllRequired(regle, datafields, controlfields) {
         for (let index in regle.values) {
             // Soit le champ n'est pas requis et on continue
@@ -123,6 +155,12 @@ let ConditionMatching = function () {
         return true;
     }
 
+    /**
+     * Verifie que l'une des implications de la regle est valide
+     * @param {json} regle regle courante
+     * @param {json} datafields zone de données
+     * @param {json} controlfields zone de controle
+     */
     function verifyOneRequired(regle, datafields, controlfields) {
         for (let index in regle.values) {
             // Soit le champ n'est pas requis et on continue
@@ -138,6 +176,12 @@ let ConditionMatching = function () {
         return false;
     }
 
+    /**
+     * Verifie la reciprocité entre deux PPN
+     * @param {json} datafields zone de données
+     * @param {string} number numero du datafield
+     * @param {string} code code du subfield
+     */
     function checkReciproque(datafields, number, code) {
 
         let tempDataField = Parcours.findDataField(datafields, number);
@@ -148,6 +192,13 @@ let ConditionMatching = function () {
         return subfieldValue === ppnInitiale;
     }
 
+    /**
+     * verifie qu'une regle est valide
+     * @param {*} regle regle courante
+     * @param {*} index index du regex (on est pas sur -_-)
+     * @param {*} datafields zone de données
+     * @param {*} controlfields zone de controle
+     */
     function verifyOneRule(regle, index, datafields, controlfields) {
         const value = regle.values[index];
         let res = { errors: [] };
@@ -159,6 +210,13 @@ let ConditionMatching = function () {
         return res.errors.length === 0;
     }
 
+    /**
+     * verifie si le datafield existe
+     * @param {json} datafields zone de données
+     * @param {json} controlfields zone de controle
+     * @param {json} regle regle courante
+     * @param {json} index index de la regex (on est pas sur ?_?)
+     */
     function isDatafieldExist(datafields, controlfields, regle, index) {
         const number = regle.values[index].number;
         const code = regle.values[index].code;

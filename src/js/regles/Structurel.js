@@ -2,15 +2,29 @@ import Parcours from "../utile/Parcours";
 
 var Structurel = function () {
 
-
+    /**
+     * verifie les regles de sous-type required
+     * @param {String} type type de la regle
+     * @param {json} retour valeur de retour -> datafield
+     */
     function verifyRequire(type, retour) {
         return type === "required" && retour == null;
     }
 
+    /**
+     * verifie les regles de sous-type exclude
+     * @param {String} type type de la regle
+     * @param {json} retour valeur de retour -> datafield
+     */
     function verifyExclude(type, retour) {
         return type === "exclude" && retour != null
     }
 
+    /**
+     * verifie une regle de sous-type "required one"
+     * @param {json} regle regle courrante
+     * @param {json} datafields zone de données
+     */
     function verifyRequireOne(regle, datafields) {
         if (regle.type === "required one") {
             for (let item in regle.number) {
@@ -23,6 +37,11 @@ var Structurel = function () {
         return false;
     }
 
+    /**
+ * verifie une regle de sous-type "contains code"
+ * @param {json} regle regle courrante
+ * @param {json} datafields zone de données
+ */
     function verifyContainsCode(regle, datafields) {
         if (regle.type == "contains code") {
             let valid = regle.number.length;
@@ -60,6 +79,11 @@ var Structurel = function () {
         }
     }
 
+    /**
+* verifie une regle de sous-type "index"
+* @param {json} regle regle courrante
+* @param {json} datafields zone de données
+*/
     function verifyIndex(regle, datafields) {
         if (regle.type == "index") {
             for (let item in regle.number) {
@@ -74,6 +98,11 @@ var Structurel = function () {
     }
 
 
+    /**
+* verifie une regle de sous-type "required with value"
+* @param {json} regle regle courrante
+* @param {json} datafields zone de données
+*/
     function verifyRequiredValue(regle, datafields) {
         if (regle.type == "required with value") {
             for (let item in regle.number) {
@@ -89,11 +118,16 @@ var Structurel = function () {
         }
     }
 
+    /**
+* verifie une regle de sous-type "exclude"
+* @param {json} regle regle courrante
+* @param {json} datafields zone de données
+*/
     function verifyExcludeCode(regle, datafields) {
         if (regle.type == "exclude") {
             for (let item in regle.number) {
                 const field = Parcours.findDataField(datafields, regle.number[item])
-                if(Parcours.testCode(field,regle.code)) {
+                if (Parcours.testCode(field, regle.code)) {
                     return true
                 }
             }
@@ -102,6 +136,14 @@ var Structurel = function () {
         }
     }
 
+    /**
+ * Verifie les regles de type Structurel
+ * @param {String} categorie categorie du document
+ * @param {json} rules fichier de regle
+ * @param {json} controlfields zone de controle
+ * @param {json} datafields zone de données
+ * @param {json} resultJson fichier de resultat
+ */
     var testMatchStructurelRules = function (categorie, rules, controlfields, datafields, resultJson) {
         rules[categorie].Structurel.forEach(function (regle) {
             const ind1 = regle.ind1

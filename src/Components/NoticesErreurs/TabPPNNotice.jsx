@@ -24,12 +24,12 @@ function TabPPNNotice({ notices, noticeDisplay }) {
           <th>
             <span style={{display: "inline-block", marginRight:"10px"}} >
               <Modal
-                button="Relancer la notice"
-                title="Relancer la notice"
+                button="Relancer le contrôle"
+                title="Relancer le contrôle"
                 body={<RelanceForm notices={notices} />}
               />
             </span>
-            <span style={{display: "inline-block"}}>
+            <span style={{display: "inline-block", float: "right"}}>
               <ModalDelete
                 button={<Delete htmlColor="#fff" fontSize="small" />}
                 title="Supprimer la notice"
