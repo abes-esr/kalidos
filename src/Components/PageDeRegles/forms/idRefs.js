@@ -4,10 +4,19 @@ export function formatRuleIdRef(data) {
   //console.log('formatRuleIdRef');
   const obj = {};
   obj.message = data.message;
-  obj.condition = {
-    number: data.condition.number,
-    code: data.condition.code,
-  }
+  obj.condition = data.condition.map(cond => {
+    if (cond.matching === 'Oui')
+        return {
+            number: cond.number,
+            code: cond.code,
+            regex: generator(cond.matching.rule, cond.matching.patterns, cond.matching.isWord),
+        }
+    else
+        return {
+            number: cond.number,
+            code: cond.code,
+        }
+  })
   obj.identifiant = {
     number: data.identifiant.number,
     code: data.identifiant.code,
@@ -74,8 +83,6 @@ export function getSchemaIdRef(categories, rules) {
                 type: 'string',
                 enum: categories,
             },
-            identifiant: {title:"Identifiant","$ref": "#/definitions/identifiant"},
-            verification: {title:"Vérification","$ref": "#/definitions/verification"},
             condition: {
                 title:"Condition",
                 type: "array",
@@ -90,10 +97,51 @@ export function getSchemaIdRef(categories, rules) {
                             title: "Sous zone",
                             type: "string",
                         },
+                        matching:{
+                            title: "Condition de matching?",
+                            enum: ['Oui', 'Non']
+                        }
                     },
                     required: ['number', 'code'],
+                    dependencies: {
+                        matching: {
+                            oneOf: [
+                                {
+                                    properties: {
+                                        matching: { enum: ['Oui'] },
+                                        rule: {
+                                            title: 'Règle à utiliser',
+                                            type: 'string',
+                                            enum: rules.rules,
+                                            enumNames: rules.names,
+                                        },
+                                        isWord: {
+                                            title: 'Le motif contient de mots',
+                                            enum: [true, false],
+                                            enumNames: ["Oui", "Non"]
+                                        },
+                                        patterns: {
+                                            title: "Motifs",
+                                            type: 'array',
+                                            items: {
+                                              type: 'string',
+                                            },
+                                        },
+                                    },
+                                    required: ['rule','patterns', 'isWord']
+                                },
+                                {
+                                    properties: {
+                                        matching: { enum: ['Non'] }
+                                    }
+                                }
+                            ]
+                        }
+                    }
                 }
             },
+            identifiant: {title:"Identifiant","$ref": "#/definitions/identifiant"},
+            verification: {title:"Vérification","$ref": "#/definitions/verification"},
             message: {
                 title: "Message à afficher",
                 type: "string",
