@@ -1,12 +1,13 @@
+/**
+ * Filters the model_regles_tries.json to a single list of all the rules
+ * having the category and type inside the element
+ * @param {Array} result 
+ */
 export const filtering = (result) => {
   let rules = []
   let categories = []
-  for (const category in result) { // category => {Generale, Memoire, Electronique}
+  for (const category in result) {
     categories.push(category)
-    /***************************************************************
-     *     IF TO REMOVE ONCE MEMORE AND ELECTRONIQUE ARE ADDED
-     ***************************************************************/
-    // if (category == "Generale") {
     for (const type in result[category]) {
       let filter = result[category][type].map((r) => {
         r.regleInitial = Object.assign({}, r);
@@ -19,34 +20,6 @@ export const filtering = (result) => {
       })
       rules = rules.concat(filter)
     }
-    // }
   }
   return { rules: rules, categories: categories }
 };
-
-/** 
- * Deletes a rule from the table
- * @param {*} row 
- * @param {*} rules 
- */
-export const deleting = (row, rules) => {
-  var headers = new Headers();
-  headers.set("index", row.index)
-  fetch("/rules", {
-    method: 'DELETE',
-    headers: headers
-  }).then(res => console.log(res))
-  return rules.filter(rule => rule.index != row.index)
-}
-
-/**
- * Edits a row on the table
- * @param {*} row 
- */
-export const editing = (row, rules) => {
-
-}
-
-export const adding = () => {
-
-}

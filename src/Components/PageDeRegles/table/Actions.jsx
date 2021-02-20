@@ -70,12 +70,16 @@ function Action({ row, types, editRule, deleteRule }) {
     let editSchema = schema
     delete editSchema.properties.category
     editSchema.required = editSchema.required.slice(1)
+    if (row.type === "matching"){
+      row.number = String(row.number).split(',')
+    }
     return (
     <FormJSON
       className="col-12"
       schema={editSchema}
       ArrayFieldTemplate={ArrayFieldTemplate}
       onSubmit={onSubmit}
+      formData={row}
     >
       <Button className="m-1" variant="primary" type="submit">Valider</Button>
     </FormJSON>

@@ -16,7 +16,8 @@ export function formatRuleIdRef(data) {
     number: data.verification.number,
     regex: generator(data.verification.rule, data.verification.patterns, data.verification.isWord),
   }
-  return obj;
+  console.log(obj);
+return obj;
 }
 
 export function getSchemaIdRef(categories, rules) {
@@ -26,11 +27,11 @@ export function getSchemaIdRef(categories, rules) {
                 type: "object",
                 properties: {
                     number: {
-                        title: "Zone",
+                        title: "Datafield où recuperer l'identifiant de la notice externe",
                         type: "string",
                     },
                     code: {
-                        title: "Sous zone",
+                        title: "Subfield où recuperer l'identifiant de la notice externe",
                         type: "string",
                     },
                 },
@@ -40,7 +41,7 @@ export function getSchemaIdRef(categories, rules) {
                 type: "object",
                 properties:{
                     number: {
-                        title: "Zone",
+                        title: "Champ à vérifier dans la notice externe",
                         type: "string",
                     },
                     rule: {

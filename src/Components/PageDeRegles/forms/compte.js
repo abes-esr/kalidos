@@ -5,7 +5,8 @@ export function formatRuleCompte(data) {
     obj.code = data.code;
     obj.contrainte = data.contrainte;
     obj.message = data.message;
-    return obj;
+    console.log(obj);
+return obj;
 }
 
 export function getSchemaCompte(categories, rules) {
@@ -26,7 +27,7 @@ export function getSchemaCompte(categories, rules) {
                 type: 'string',
             },
             contrainte: {
-                title: 'Contrainte',
+                title: 'Numéro du datafield qui servira de comparateur',
                 type: 'string',
             },
             message: {

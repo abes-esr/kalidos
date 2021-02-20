@@ -61,32 +61,32 @@ export function not_ends_with(isWord) {
   return isWord? ['.*(?<!(', '))$'] : ['.*(?<!(', ']))$']
 }
 
-export function applyRule(func, items, isWord){
+export function applyRule(func, items){
   let prefix, sufix = ''
   switch (func) {
     case "must contain":
-      [prefix , sufix] = must_contain(isWord,items)
+      [prefix , sufix] = must_contain(true,items)
       break;
     case "must not contain":
-      [prefix , sufix] = must_not_contain(isWord)
+      [prefix , sufix] = must_not_contain(true)
       break;
     case "equals to":
-      [prefix , sufix] = equals_to(isWord)
+      [prefix , sufix] = equals_to(true)
       break;
     case "not equals to":
-      [prefix , sufix] = not_equals_to(isWord)
+      [prefix , sufix] = not_equals_to(true)
       break;
     case "starts with":
-      [prefix , sufix] = starts_with(isWord)
+      [prefix , sufix] = starts_with(true)
       break;
     case "not starts with":
-      [prefix , sufix] = not_starts_with(isWord)
+      [prefix , sufix] = not_starts_with(true)
       break;
     case "ends with":
-      [prefix , sufix] = ends_with(isWord)
+      [prefix , sufix] = ends_with(true)
       break;
     case "not ends with":
-      [prefix , sufix] = not_ends_with(isWord)
+      [prefix , sufix] = not_ends_with(true)
       break;
     default:
       break;

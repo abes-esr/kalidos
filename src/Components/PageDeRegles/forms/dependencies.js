@@ -1,21 +1,14 @@
-import mathOperators from '../operators';
+import { mathOperators } from '../operators';
 
 export function formatRuleDependencies(data) {
     console.log('formatRuleDependencies');
     const obj = {};
     obj.operator = data.operator;
     obj.message = data.message;
-    obj.field1 = {
-        number: data.field1.number,
-        code: data.field1.code,
-        pos: data.field1.pos? data.field1.pos : [],
-    }
-    obj.field2 = {
-        number: data.field2_number,
-        code: data.field2_code,
-        pos: data.field2_pos? data.field2.pos : [],
-    }
-    return obj;
+    obj.field1 = data.field1;
+    obj.field2 = data.field2;
+    console.log(obj);
+return obj;
   }
 
   export function getSchemaDependencies(categories, rules) {
@@ -31,6 +24,7 @@ export function formatRuleDependencies(data) {
                     code: {
                         title: 'Sous Zone',
                         type: 'string',
+                        default: ""
                     },
                     pos: {
                         title: "Position",
@@ -42,7 +36,7 @@ export function formatRuleDependencies(data) {
                         }
                     },
                 },
-                required: ['number', 'code'],
+                required: ['number'],
 
             },
         },
@@ -53,15 +47,14 @@ export function formatRuleDependencies(data) {
                 type: 'string',
                 enum: categories,
             },
+            field1: {title:"Premier datafield","$ref": "#/definitions/champs"},
+            field2: {title:"Deuxiéme datafield","$ref": "#/definitions/champs"},
             operator: {
-                title: "Opérateur",
-                description: "Opérateur à appliquer",
+                title: "Opérateur à appliquer",
                 type: "string",
                 enum: mathOperators.rules,
                 enumNames: mathOperators.names
             },
-            field1: {title:"Premier champ","$ref": "#/definitions/champs"},
-            field2: {title:"Deuxiéme champ","$ref": "#/definitions/champs"},
             message: {
                 title: "Message à afficher",
                 type: "string",

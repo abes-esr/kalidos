@@ -1,3 +1,6 @@
+import { mathOperators } from "../operators";
+import { conditions } from "./conditions";
+
 export function formatRuleConditionnelsDependance(data) {
     console.log('formatRuleConditionnelsDependance');
     const obj = {};
@@ -6,7 +9,8 @@ export function formatRuleConditionnelsDependance(data) {
     obj.field1 = data.field1;    
     obj.field2 = data.field2;
     obj.operator = data.operator;
-    return obj;
+    console.log(obj);
+return obj;
 }
 
 
@@ -18,13 +22,14 @@ export function getSchemaConditionnelsDependance(categories, rules) {
                 properties: {
                     number: {
                         title: "Zone",
-                        type: "number",
+                        type: "string",
                     },
                     code: {
                         title: 'Sous Zone',
                         type: 'string',
                     }
                 },
+                required: ['number', 'code']
             }
         },
         type: "object",
@@ -34,45 +39,14 @@ export function getSchemaConditionnelsDependance(categories, rules) {
                 type: 'string',
                 enum: categories,
             },
-            condition: {
-                title:"Conditions",
-                type: "array",
-                items: {
-                    type: "object",
-                    properties: {
-                        number: {
-                            title: "Zone", 
-                            type: "number",
-                        },
-                        code: {
-                            title: 'Sous Zone',
-                            type: 'string',
-                        },
-                        ind1: {
-                            title: "Indice 1",
-                            type: "string"
-                        },
-                        ind2: {
-                            title: "Indice 2",
-                            type: "string"
-                        },
-                        operator: {
-                            title: "Operateur de matching",
-                            type: "string",
-                            enum: ["presente", "contains_text", "not_contains_text", "startwith_text", "not_startwith_text","not_equals_text", "equals_text"],
-                            enumNames: ["Valeur presente", "Doit contenir","Ne doit pas contenir", "Commence par", "Ne doit pas commencer par", "Ne soit pas égale à", "Égale à"]
-                        },
-                    },
-                    required: ['number', 'code', 'ind1', 'ind2', 'operator'],
-                }
-            },
+            condition: conditions,
             field1: {title:"Premier champ","$ref": "#/definitions/champs"},
             field2: {title:"Deuxiéme champ","$ref": "#/definitions/champs"},
             operator: {
-                title: "Operateur",
+                title: "Opérateur à appliquer",
                 type: "string",
-                enum: ["presente", "contains_text", "not_contains_text", "startwith_text", "not_startwith_text","not_equals_text", "equals_text"],
-                enumNames: ["Valeur presente", "Doit contenir","Ne doit pas contenir", "Commence par", "Ne doit pas commencer par", "Ne soit pas égale à", "Égale à"]
+                enum: mathOperators.rules,
+                enumNames: mathOperators.names
             },
             message: {
                 title: "Message à afficher",

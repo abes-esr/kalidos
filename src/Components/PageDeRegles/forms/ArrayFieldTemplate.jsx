@@ -1,6 +1,6 @@
 import React from "react"
 import { Col, Container, Row } from 'react-bootstrap'
-import AddIcon from '@material-ui/icons/Add'
+import AddIcon from '@material-ui/icons/AddCircle'
 import CancelIcon from '@material-ui/icons/Cancel'
 import { IconButton } from "@material-ui/core"
 
@@ -8,7 +8,7 @@ export default function ArrayFieldTemplate(props) {
   
   const AddingField = () => (
     <Row className="p-1 align-items-center">
-      <Col>
+      <Col xs={8}>
           <p>{props.title}</p>
       </Col>
       <Col>
