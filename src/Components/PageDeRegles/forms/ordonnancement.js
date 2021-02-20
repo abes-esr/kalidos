@@ -4,7 +4,8 @@ export function formatRuleOrdonnancement(data) {
     obj.number = data.number;
     obj.orderBy = data.orderBy;
     obj.message = data.message;
-    return obj;
+    console.log(obj);
+return obj;
 }
 
 
@@ -17,12 +18,16 @@ export function getSchemaOrdonnancement(categories, rules) {
                 type: 'string',
                 enum: categories,
             },
+            numRuleExcell: {
+                title: "Nombre de ligne sur Excel",
+                type: "number",
+            },
             number: {
                 title: 'Zone',
                 type: 'string',
             },
             orderBy: {
-                title: 'Ordonner par',
+                title: 'Indice sur lequel appliquer le tri',
                 type: 'string',
                 enum: ['ind1', 'ind2'],
                 enumNames: ['Indice 1', 'Indice 2']
@@ -32,6 +37,6 @@ export function getSchemaOrdonnancement(categories, rules) {
                 type: "string",
             },
         },
-        required: ['category', 'number', 'orderBy', 'message'],
+        required: ['category', 'numRuleExcell', 'number', 'orderBy', 'message'],
     }
 }

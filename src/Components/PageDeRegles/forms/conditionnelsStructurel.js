@@ -1,12 +1,15 @@
+import { conditions } from "./conditions";
+
 export function formatRuleConditionnelsStructurel(data) {
-    //console.log('formatRuleConditionnelsStructurel');
+    console.log('formatRuleConditionnelsStructurel');
     const obj = {};
     obj.number = data.number;
     obj.condition = data.condition;
-    obj.value = data.value;
+    obj.value = data.values;
     obj.type = data.type;
     obj.message = data.message;
-    return obj;
+    console.log(obj);
+return obj;
 }
 
 export function getSchemaConditionnelsStructurel(categories, rules) {
@@ -18,31 +21,16 @@ export function getSchemaConditionnelsStructurel(categories, rules) {
                 type: 'string',
                 enum: categories,
             },
-            condition: {
-                title:"Conditions",
-                type: "array",
-                items: {
-                    type: "object",
-                    properties: {
-                        number: {
-                            title: "Zone",
-                            type: "number",
-                        },
-                        code: {
-                            title: 'Sous Zone',
-                            type: 'string',
-                        },
-                        operator: {
-                            title: "Operateur",
-                            type: "string",
-                            enum: ["presente", "contains_text", "not_contains_text", "startwith_text", "not_startwith_text","not_equals_text", "equals_text"],
-                            enumNames: ["Valeur Presente", "Doit contenir","Ne doit pas contenir", "Commence par", "Ne doit pas commencer par", "Ne soit pas égale à", "Égale à"],
-                        },
-                    },
-                    required: ['number', 'code', 'operator'],
-                }
+            numRuleExcell: {
+                title: "Nombre de ligne sur Excel",
+                type: "number",
             },
-            value: {
+            condition: conditions,
+            number: {
+                title: "Zone",
+                type: "string",
+            },
+            values: {
                 title: "Valeurs", 
                 type: "array",
                 items: {
@@ -50,24 +38,42 @@ export function getSchemaConditionnelsStructurel(categories, rules) {
                     properties: {
                         number: {
                             title: "Zone",
-                            type: "number",
+                            type: "string",
                         },
                         code: {
                             title: 'Sous Zone',
                             type: 'string',
                         },
+                        ind1: {
+                            title: "Indice 1 du datafield",
+                            type: "string",
+                            default: ""
+                        },
+                        ind2: {
+                            title: "Indice 2 du datafield",
+                            type: "string",
+                            default: ""
+                        },
+                        reciproque:{
+                            title: 'La règle est réciproque ou non',
+                            type: "object",
+                            properties: {
+                                number: {
+                                    title: "Zone",
+                                    type: "string",
+                                },
+                                code: {
+                                    title: 'Sous Zone',
+                                    type: 'string',
+                                }
+                            },
+                        },
                         present: {
-                            title: 'Le valeur est present?',
+                            title: 'Le champ doit être présent ?',
                             type: "boolean",
-                            enum: [true, false],
-                            enumNames: ["Oui", "Non"]
                         } 
                     }
                 }
-            },
-            number: {
-                title: "Zone",
-                type: "number",
             },
             type:{
                 title: "Type",
@@ -80,6 +86,6 @@ export function getSchemaConditionnelsStructurel(categories, rules) {
             },
 
         },
-        required: ['category', 'number', 'condition','type', 'values', 'message'],
+        required: ['category', 'numRuleExcell', 'number', 'condition','type', 'values', 'message'],
     }
 }

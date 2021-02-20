@@ -1,13 +1,13 @@
-import { getSchemaMatching, formatRuleMatching } from '../forms/matching';
-import { getSchemaIdRef, formatRuleIdRef } from '../forms/idRefs'
-import { getSchemaDependencies, formatRuleDependencies } from '../forms/dependencies';
-import { getSchemaStructurel, formatRuleStructurel } from '../forms/structurelles';
-import { getSchemaConditionnelsMatching, formatRuleConditionnelsMatching} from '../forms/conditionnelsMatching';
-import { getSchemaConditionnelsStructurel, formatRuleConditionnelsStructurel} from '../forms/conditionnelsStructurel';
-import { getSchemaConditionnelsDependance, formatRuleConditionnelsDependance} from '../forms/conditionnelsDependance';
-import { getSchemaCompte, formatRuleCompte} from '../forms/compte';
-import { getSchemaOrdonnancement, formatRuleOrdonnancement} from '../forms/ordonnancement';
-import { getSchemaPrecedence, formatRulePrecedence} from '../forms/precedence';
+import { getSchemaMatching, formatRuleMatching, formatDataMatching } from '../forms/matching';
+import { getSchemaIdRef, formatRuleIdRef, formatDataDependencies } from '../forms/idRefs'
+import { getSchemaDependencies, formatRuleDependencies, formatDataConditionnelsMatching } from '../forms/dependencies';
+import { getSchemaStructurel, formatRuleStructurel, formatDataConditionnelsDependance } from '../forms/structurelles';
+import { getSchemaConditionnelsMatching, formatRuleConditionnelsMatching, formatDataConditionnelsStructurel } from '../forms/conditionnelsMatching';
+import { getSchemaConditionnelsStructurel, formatRuleConditionnelsStructurel, formatDataStructurel } from '../forms/conditionnelsStructurel';
+import { getSchemaConditionnelsDependance, formatRuleConditionnelsDependance, formatDataIdRef } from '../forms/conditionnelsDependance';
+import { getSchemaCompte, formatRuleCompte, formatDataOrdonnancement } from '../forms/compte';
+import { getSchemaOrdonnancement, formatRuleOrdonnancement, formatDataCompte } from '../forms/ordonnancement';
+import { getSchemaPrecedence, formatRulePrecedence, formatDataPrecedence } from '../forms/precedence';
 
 export function typesSpec(categories, rules) {
   return [
@@ -51,7 +51,7 @@ export function typesSpec(categories, rules) {
       type: "idRef",
       description: "Description du type idRef",
       schema: getSchemaIdRef(categories, rules),
-      submit: formatRuleIdRef
+      submit: formatRuleIdRef,
     },
     { name: "Ordonnancement", 
       type: "ordonnancement",

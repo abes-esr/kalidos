@@ -13,7 +13,7 @@ const Router_App = () => (
         <Link to="/" className="sidebar-brand d-flex align-items-center justify-content-center">
             <div className="sidebar-brand-icon">
                 <img
-                    height={50}
+                    height={57}
                     width={200}
                     src={KALIDOS}
                     alt="KALIDOS"

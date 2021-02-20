@@ -34,7 +34,8 @@ var Ordonnancement = function () {
     function addError(regle, resultJson) {
         resultJson.errors.push({
             message: regle.message,
-            number: regle.number
+            number: regle.number,
+            numRuleExcell: regle.numRuleExcell
         });
         Parcours.addErrorSynchro();
     }

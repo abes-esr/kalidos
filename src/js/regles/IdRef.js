@@ -130,7 +130,8 @@ var IdRef = function () {
         resultJson.errors.push({
             message: regle.message + " ( " + regle.index + " ) ",
             number: regle.identifiant.number,
-            code: regle.identifiant.code
+            code: regle.identifiant.code,
+            numRuleExcell: regle.numRuleExcell
         });
         Parcours.addErrorSynchro();
     }

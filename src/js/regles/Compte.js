@@ -35,7 +35,8 @@ var Compte = function () {
         resultJson.errors.push({
             message: regle.message,
             number: regle.number,
-            code: regle.code
+            code: regle.code,
+            numRuleExcell: regle.numRuleExcell
         });
         Parcours.addErrorSynchro();
     }

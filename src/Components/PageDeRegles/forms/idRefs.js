@@ -4,10 +4,19 @@ export function formatRuleIdRef(data) {
   //console.log('formatRuleIdRef');
   const obj = {};
   obj.message = data.message;
-  obj.condition = {
-    number: data.condition.number,
-    code: data.condition.code,
-  }
+  obj.condition = data.condition.map(cond => {
+    if (cond.matching === 'Oui')
+        return {
+            number: cond.number,
+            code: cond.code,
+            regex: generator(cond.matching.rule, cond.matching.patterns, cond.matching.isWord),
+        }
+    else
+        return {
+            number: cond.number,
+            code: cond.code,
+        }
+  })
   obj.identifiant = {
     number: data.identifiant.number,
     code: data.identifiant.code,
@@ -16,7 +25,8 @@ export function formatRuleIdRef(data) {
     number: data.verification.number,
     regex: generator(data.verification.rule, data.verification.patterns, data.verification.isWord),
   }
-  return obj;
+  console.log(obj);
+return obj;
 }
 
 export function getSchemaIdRef(categories, rules) {
@@ -26,11 +36,11 @@ export function getSchemaIdRef(categories, rules) {
                 type: "object",
                 properties: {
                     number: {
-                        title: "Zone",
+                        title: "Datafield où recuperer l'identifiant de la notice externe",
                         type: "string",
                     },
                     code: {
-                        title: "Sous zone",
+                        title: "Subfield où recuperer l'identifiant de la notice externe",
                         type: "string",
                     },
                 },
@@ -40,7 +50,7 @@ export function getSchemaIdRef(categories, rules) {
                 type: "object",
                 properties:{
                     number: {
-                        title: "Zone",
+                        title: "Champ à vérifier dans la notice externe",
                         type: "string",
                     },
                     rule: {
@@ -51,7 +61,6 @@ export function getSchemaIdRef(categories, rules) {
                     },
                     isWord: {
                         title: ' Le motif contient de mots',
-                        type: 'boolean',
                         enum: [true, false],
                         enumNames: ["Oui", "Non"]
                     },
@@ -73,8 +82,10 @@ export function getSchemaIdRef(categories, rules) {
                 type: 'string',
                 enum: categories,
             },
-            identifiant: {title:"Identifiant","$ref": "#/definitions/identifiant"},
-            verification: {title:"Vérification","$ref": "#/definitions/verification"},
+            numRuleExcell: {
+                title: "Nombre de ligne sur Excel",
+                type: "number",
+            },
             condition: {
                 title:"Condition",
                 type: "array",
@@ -89,15 +100,56 @@ export function getSchemaIdRef(categories, rules) {
                             title: "Sous zone",
                             type: "string",
                         },
+                        matching:{
+                            title: "Condition de matching?",
+                            enum: ['Oui', 'Non']
+                        }
                     },
                     required: ['number', 'code'],
+                    dependencies: {
+                        matching: {
+                            oneOf: [
+                                {
+                                    properties: {
+                                        matching: { enum: ['Oui'] },
+                                        rule: {
+                                            title: 'Règle à utiliser',
+                                            type: 'string',
+                                            enum: rules.rules,
+                                            enumNames: rules.names,
+                                        },
+                                        isWord: {
+                                            title: 'Le motif contient de mots',
+                                            enum: [true, false],
+                                            enumNames: ["Oui", "Non"]
+                                        },
+                                        patterns: {
+                                            title: "Motifs",
+                                            type: 'array',
+                                            items: {
+                                              type: 'string',
+                                            },
+                                        },
+                                    },
+                                    required: ['rule','patterns', 'isWord']
+                                },
+                                {
+                                    properties: {
+                                        matching: { enum: ['Non'] }
+                                    }
+                                }
+                            ]
+                        }
+                    }
                 }
             },
+            identifiant: {title:"Identifiant","$ref": "#/definitions/identifiant"},
+            verification: {title:"Vérification","$ref": "#/definitions/verification"},
             message: {
                 title: "Message à afficher",
                 type: "string",
             },
         },
-        required: ['category','identifiant', 'verification', 'condition', 'message'],
+        required: ['category', 'numRuleExcell' ,'identifiant', 'verification', 'condition', 'message'],
     }
 }

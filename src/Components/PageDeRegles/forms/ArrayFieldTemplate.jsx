@@ -1,6 +1,6 @@
 import React from "react"
 import { Col, Container, Row } from 'react-bootstrap'
-import AddIcon from '@material-ui/icons/Add'
+import AddIcon from '@material-ui/icons/AddCircle'
 import CancelIcon from '@material-ui/icons/Cancel'
 import { IconButton } from "@material-ui/core"
 
@@ -8,7 +8,7 @@ export default function ArrayFieldTemplate(props) {
   
   const AddingField = () => (
     <Row className="p-1 align-items-center">
-      <Col>
+      <Col xs={8}>
           <p>{props.title}</p>
       </Col>
       <Col>
@@ -24,16 +24,20 @@ export default function ArrayFieldTemplate(props) {
       {props.canAdd && <AddingField/>}
 
       <Container>
-        {props.items && props.items.map(element => (
+        {props.items && props.items.map(element => {
+          console.log(element.children)
+          return(
           <Row key={element.key} className={element.className}>
-            <div className="col-10"> {element.children} </div>
+            <div className="col-10 shadow p-3 m-0 bg-white rounded"> 
+              {element.children}
+            </div>
             <div className="col-2">
               <IconButton size="small" variant="outlined" onClick={element.onDropIndexClick(element.index)}>
                 <CancelIcon/>
               </IconButton>
             </div>
           </Row>
-        ))}
+        )})}
       </Container>
     </div>
   );

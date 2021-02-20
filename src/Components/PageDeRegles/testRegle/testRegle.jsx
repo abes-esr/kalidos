@@ -77,7 +77,7 @@ function testRegle({ row }) {
             const data = JSON.parse(
                 convert.xml2json(xml, { compact: true, spaces: 2 })
             );
-            const type = row.index.split("_")[1];
+            const type = row.type;
             const rule = {
                 "Generale":
                 {
@@ -97,7 +97,8 @@ function testRegle({ row }) {
 
             verification(rule, data);
 
-        } catch {
+        } catch(e) {
+            console.log(e);
             document.getElementById("resultatTest").innerHTML = "Un problème a été détécté sur le fake PPN (erreur sur l'écriture du XML)";
         }
     }

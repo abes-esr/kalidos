@@ -1,20 +1,37 @@
-import operators from '../operators'
+import { conditions } from './conditions';
 
 export function formatRulePrecedence(data) {
     //console.log('formatRulePrecedence');
     const obj = {};
     obj.number = data.number;
-    obj.message = data.message;
-    obj.condition = data.condition;
     obj.precede = data.precede;
-    return obj;
+    obj.condition = data.condition;
+    obj.message = data.message;
+    console.log(obj);
+return obj;
 }
 
 
 export function getSchemaPrecedence(categories, rules) {
     return {
-        definitions: {
+        type: "object",
+        properties: {
+            category: {
+                title: 'Type de document',
+                type: 'string',
+                enum: categories,
+            },
+            numRuleExcell: {
+                title: "Nombre de ligne sur Excel",
+                type: "number",
+            },
+            number: {
+                title: "Zone",
+                type: "string",
+            },
+            condition: conditions,
             precede: {
+                title:"Precede",            
                 type: "object",
                 properties: {
                     depart: {
@@ -27,56 +44,12 @@ export function getSchemaPrecedence(categories, rules) {
                     },
                 },
                 required: ['depart', 'precedant'],
-            }
-        },
-        type: "object",
-        properties: {
-            category: {
-                title: 'Type de document',
-                type: 'string',
-                enum: categories,
             },
-            number: {
-                title: "Zone",
-                type: "number",
-            },
-            condition: {
-                title:"Conditions",
-                type: 'array',
-                items: {
-                    type: "object",
-                    properties: {
-                        number: {
-                            title: "Zone",
-                            type: "string",
-                        },
-                        code: {
-                            title: 'Sous Zone',
-                            type: 'string',
-                        },
-                        string: {
-                            title: 'Mot(s) à utiliser',
-                            type: 'array',
-                            items: {
-                                type: "string"
-                            }
-                        },
-                        operator: {
-                            title: "Operateur",
-                            type: "string",
-                            enum: operators.rules,
-                            enumNames: operators.names
-                        },
-                    },
-                    required: ['number', 'orderBy', 'operator'],
-                }
-            },
-            precede: {title:"Precede","$ref": "#/definitions/precede"},
             message: {
                 title: "Message à afficher",
                 type: "string",
             },
         },
-        required: ['category', 'number', 'condition', 'precede', 'message'],
+        required: ['category', 'numRuleExcell', 'number', 'condition', 'precede', 'message'],
     }
 }
