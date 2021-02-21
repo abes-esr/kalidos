@@ -46,11 +46,13 @@ function NoticesErreurs() {
       <Row>
         <Col><h2>Historique des notices erronées</h2></Col>
         <Col>
-          <ModalDelete
-            button="Supprimer l'historique"
-            title="Supprimer l'historique"
-            body={<DeleteHistoForm />}
-          />
+          <span style={{float: "right"}}>
+            <ModalDelete
+              button="Supprimer l'historique"
+              title="Supprimer l'historique"
+              body={<DeleteHistoForm />}
+            />
+          </span>
         </Col>
       </Row>
       
