@@ -58,27 +58,35 @@ L'utilisateur va donc dans un premier temps choisir le type de documents parmi l
 
  ![](https://i.ibb.co/RSdQhLW/c7.png)
 
-Il pourra aussi préciser si le motif contient de mots ou pas. Il rajoutera aussi la condition sous forme du numéro de la **Zone** et la **Sous Zone**, suivit par le message à afficher en cas de violation de cette règle
+Il pourra aussi préciser si le motif contient de mots ou pas. Il rajoutera aussi la condition sous forme du numéro de la **Zone** et la **Sous Zone**, suivit par le message à afficher en cas de violation de cette règle.
 
 ## Matching
 
 >Nous rappelons que ce type de règle permet d'imposer une contrainte sur la chaine de caractère d'une **Sous Zone** si elle existe
 >Nous rappelons l'exemple : Le champ (Zone$Sous Zone)  230\$a ne doit pas contenir 'Mo'
 
-![](https://i.ibb.co/mNhQT4f/c8.png)
+![]()
 
-L'utilisateur va donc dans un premier temps choisir le type de documents parmi les 5 types existants dans `Type de documents`, Il saisira ensuite la **Zone** et la **Sous Zone** concernés de ce document. Il précisera ensuite la règle à utiliser parmi :
+L'utilisateur va donc dans un premier temps choisir le type de documents parmi les 5 types existants dans `Type de documents`, Il choisira ensuite les quantité de champs (**datafields**) sur les quels la vérification doit être faite, dans cet exemple nous choisirons un seul. L'utilisateur saisira ensuite la **Zone** et la **Sous Zone** concernés de ce document. Il précisera ensuite la règle à utiliser parmi :
 
 ![](https://i.ibb.co/RSdQhLW/c7.png)
 
-Il pourra aussi préciser si le motif contient de mots ou pas, ainsi que le motif ou les motifs à utiliser pour la règle choisie. A la fin il définira dans **Match** le type du match : le *Tout* ou bien un *seul*, suivit par le message à afficher en cas de violation de cette règle.
+Une fois cela fait, il précisera si **le(s) motif(s) ont plusieurs caractères?**, il saisira par la suite les motifs concernés, suivit par le message à afficher en cas de violation de cette règle.
+
+
+
+Comme il est également possible d’inclure plusieurs champs dans une même règle et plusieurs motifs à matcher. Par exemple : 700$4  et 701$4 ne doivent pas contenir les valeurs 020, 050, 060. Et dans l'animation suivante nous mettrons en évidence cela :
+
+  ![]()
+
+
 
 ## Ordonnancement
 
 > Nous rappelons que ce type de règle vérifie l'ordonnancement de toutes les **Zone** possédant le même identifiant soient triée en fonction de leur indice.
 > Nous rappelons l'exemple : Si plusieurs zones sont égale à 214, alors ils doivent respecter l'ordre des chiffres de l'indice 2
 
-![](https://i.ibb.co/KxqwXS0/C9.png)
+![]()
 
 L'utilisateur va donc dans un premier temps choisir le type de documents parmi les 5 types existants dans `Type de documents`, Il saisira ensuite la **Zone** concernées de ce document. Il précisera ensuite l'ordre à respecter à savoir par :
 
