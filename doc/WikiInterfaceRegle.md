@@ -6,20 +6,16 @@ Comme le montre la figure dans cette interface nous pouvons parcourir les règle
 
 ![](https://i.ibb.co/341nHBB/c15.png)
 
-Supprimer 
 
-Modifier 
-
-Tester
 
 Lorsque l'utilisateur clique sur `Ajouter une règle`, la fenêtre suivante apparait, où il devrai choisir le type de règle correspondant parmi les 10 types qui existent, et qui sont pour rappel : 
 
 
 ``Matching``, ``Dépendances``, ``Conditionnels Matching``, ``Conditionnels Dependance``, ``Conditionnels Structurel``, ``Structurels``, ``Références``, ``Ordonnancement``, ``Compte``, ``Precedence``. 
 
-En effet chaque type aura son propre formulaire que nous détaillerons par la suite. En sélectionnant un type de règle, dans la partie `Description du type de règle`, nous mettrons en évidence explication pour ce type, afin de mieux guider l'utilisateur qui souhaite ajouter une nouvelle règle.
+En effet chaque type aura son propre formulaire que nous détaillerons par la suite. En sélectionnant un type de règle, une description textuelle ainsi qu'une animation sous forme de GIF met en évidence cette règle et permet de donner une explication pour ce type de règle, et ceci afin de mieux guider l'utilisateur qui souhaite ajouter une nouvelle règle.
 
-![](https://i.ibb.co/QpP3p3C/C2.png)
+![](https://i.ibb.co/W0svYFj/C16.png)
 
 En cliquant sur suivant l'utilisateur sera rediriger directement vers une fenêtre qui correspond au type choisi. Nous allons maintenant expliquer pour chaque type de règle son formulaire correspondant.
 
