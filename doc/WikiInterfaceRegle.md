@@ -86,7 +86,7 @@ Comme il est également possible d’inclure plusieurs champs dans une même rè
 > Nous rappelons que ce type de règle vérifie l'ordonnancement de toutes les **Zone** possédant le même identifiant, en effet il faut qu'elles soient triées en fonction de leur indice (1 ou 2).
 > Nous rappelons l'exemple : Si plusieurs zones sont égale à 214, alors elles doivent respecter l'ordre des chiffres de l'indice 2
 
-![]()
+![](https://i.ibb.co/JHX6X1k/ordonnancement.gif)
 
 L'utilisateur va donc dans un premier temps choisir le type de documents parmi les 5 types existants dans `Type de documents`, Il saisira ensuite la **Zone** concernées de ce document. Il précisera ensuite l'ordre à respecter à savoir par :
 
@@ -99,7 +99,7 @@ Il finira par le message à afficher en cas de violation de cette règle.
 > Nous rappelons que ce type de règle impose des contraintes sur la structure du document
 > Nous rappelons l'exemple : La **Zone** '328' doit contenir ind1=" "  et ind2="0"
 
-![]()
+![](https://i.ibb.co/mD4Qt1g/structurel1.gif)
 
 
 
