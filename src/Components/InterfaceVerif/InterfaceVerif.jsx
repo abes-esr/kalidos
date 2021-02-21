@@ -37,13 +37,15 @@ function InterfaceVerif({ result, recherchePPN, compteurResult, listPPNErronne }
 
     const listPPNWithGoodName = listPPNWithError.filter((row) => { return row[1].PPN.toString().includes(recherchePPN) });
 
-    //old excel
+    // excel avec descriptif complet
     const headers = [
         { label: "PPN", key: "ppn" },
+        { label: "Bibliothèque", key: "biblio" },
         { label: "Erreurs", key: "error" },
-        { label: "Message", key: "message" },
-        { label: "Number", key: "number" },
-        { label: "Code", key: "code" }
+        { label: "Règle", key: "message" },
+        { label: "Zone", key: "number" },
+        { label: "Sous-zone", key: "code" },
+        { label: "Commentaire", key: "comm" }
     ];
 
     const csvData = [];
@@ -54,31 +56,36 @@ function InterfaceVerif({ result, recherchePPN, compteurResult, listPPNErronne }
             if (j == 0) {
                 csvData.push({
                     ppn: listPPNWithError[i][1]['PPN'],
+                    biblio: listPPNWithError[i][1]['biblio'],
                     error: error_number,
                     message: listPPNWithError[i][1]['errors'][j]['message'],
                     number: listPPNWithError[i][1]['errors'][j]['number'],
                     code: listPPNWithError[i][1]['errors'][j]['code'],
+                    comm: ""
                 })
-            } else {
+            } else { // éviter les redondances des champs ppn, biblio et error
                 csvData.push({
                     ppn: "",
+                    biblio: "",
                     error: "",
                     message: listPPNWithError[i][1]['errors'][j]['message'],
                     number: listPPNWithError[i][1]['errors'][j]['number'],
                     code: listPPNWithError[i][1]['errors'][j]['code'],
+                    comm: ""
                 })
             }
         }
     }
 
     for (let i = 0; i < listPPNWithoutError.length; i++) {
-        csvData.push({ ppn: listPPNWithoutError[i][1]['PPN'], error: "0", message: "", number: "", code: "" })
+        csvData.push({ ppn: listPPNWithoutError[i][1]['PPN'], biblio: listPPNWithoutError[i][1]['biblio'], error: "0", message: "", number: "", code: "", comm: "" })
     }
 
-    // new excel
 
-    //on crée une liste des erreurs présentes dans les ppn
-    const errorHeaders = [""];
+    // excel avec erreurs cochées
+
+    // on crée une liste des erreurs présentes dans les ppn
+    const errorHeaders = ["", "Bibliothèque"];
 
     for (let i = 0; i < listPPNWithError.length; i++) {
         let error_number = listPPNWithError[i][1]['errors'].length;
@@ -88,10 +95,10 @@ function InterfaceVerif({ result, recherchePPN, compteurResult, listPPNErronne }
             )
         }
     }
-    //on élimine les erreurs redondantes
+    // on élimine les erreurs redondantes
     const sortedHeaders = errorHeaders.reduce(function (a, b) { if (a.indexOf(b) < 0) a.push(b); return a; }, []);
 
-    //la liste des erreurs va constituer le header du excel
+    // la liste des erreurs va constituer le header du excel
     const newCsvData = [];
     newCsvData.push(sortedHeaders);
 
@@ -106,7 +113,7 @@ function InterfaceVerif({ result, recherchePPN, compteurResult, listPPNErronne }
 
             if (indexError > 0) {
                 if (j == 0) {
-                    let excelRow = [listPPNWithError[i][1]['PPN']];
+                    let excelRow = [listPPNWithError[i][1]['PPN'], listPPNWithError[i][1]['biblio']];
                     for (let k = 1; k < sortedHeaders.length; k++) {
                         excelRow.push("");
                     }
@@ -114,7 +121,7 @@ function InterfaceVerif({ result, recherchePPN, compteurResult, listPPNErronne }
                     excelRow[indexError] = "X";
                     newCsvData.push(excelRow);
                 } else {
-                    //éviter redondance des ppn
+                    // éviter redondance des ppn et des biblio
                     let excelRow = newCsvData.pop();
                     excelRow[indexError] = "X";
                     newCsvData.push(excelRow);
@@ -124,7 +131,7 @@ function InterfaceVerif({ result, recherchePPN, compteurResult, listPPNErronne }
     }
 
     for (let i = 0; i < listPPNWithoutError.length; i++) {
-        newCsvData.push([listPPNWithoutError[i][1]['PPN'], ""]);
+        newCsvData.push([listPPNWithoutError[i][1]['PPN'], listPPNWithoutError[i][1]['biblio'], ""]);
     }
 
     return (

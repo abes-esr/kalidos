@@ -2,6 +2,7 @@ const axios = require('axios');
 const convert = require("xml-js");
 import { cleanResult, addErrorPPN, setNombreTotalPPN, setChoixCategorie, addErrorPPNErronnee } from '../../actions/index';
 import store from '../../store/index';
+import Parcours from "../utile/Parcours";
 import Matching from "../regles/Matching";
 import Structurel from "../regles/Structurel";
 import Dependance from "../regles/Dependance";
@@ -87,12 +88,12 @@ function writeResult() {
     }).then(function () {
         //console.log("ok")
     })
-        .catch(function (error) {
-            // handle error
-            console.log(error);
-        })
-        .then(function () {
-        });
+    .catch(function (error) {
+        // handle error
+        console.log(error);
+    })
+    .then(function () {
+    });
 }
 
 /**
@@ -111,11 +112,11 @@ function deleteRule(index) {
     }).then(function () {
         console.log("suppression ok")
     })
-        .catch(function (error) {
-            console.log(error);
-        })
-        .then(function () {
-        });
+    .catch(function (error) {
+        console.log(error);
+    })
+    .then(function () {
+    });
 }
 
 
@@ -157,12 +158,12 @@ function addRule(categorie, type, rule) {
     }).then(function () {
         console.log("ok")
     })
-        .catch(function (error) {
-            // handle error
-            console.log(error);
-        })
-        .then(function () {
-        });
+    .catch(function (error) {
+        // handle error
+        console.log(error);
+    })
+    .then(function () {
+    });
 }
 
 /**
@@ -219,6 +220,65 @@ function addNoticeErreurs(errorIndex) {
     });
 }
 
+function prioBiblio (biblio) {
+    const biblios = biblio.split(":");
+    let prio = {};
+    for (let i = 0; i < biblios.length; i++) {
+        switch (biblios[i]) {
+            case '692662101':
+                return biblios[i];
+            case '693882101':
+                prio[biblios[i]] = 2;
+                break;
+            case '692669902':
+                prio[biblios[i]] = 3;
+                break;
+            case '693842301':
+                prio[biblios[i]] = 4;
+                break;
+            case '693882213':
+                prio[biblios[i]] = 5;
+                break;
+            case '692662209':
+                prio[biblios[i]] = 6;
+                break;
+            case '692662214':
+                prio[biblios[i]] = 7;
+                break;
+            case '010532202':
+                prio[biblios[i]] = 8;
+                break;
+            case '693872104':
+                prio[biblios[i]] = 9;
+                break;
+            case '010532301':
+                prio[biblios[i]] = 10;
+                break;
+            case '692662208':
+                prio[biblios[i]] = 11;
+                break;
+            case '692042202':
+                prio[biblios[i]] = 12;
+                break;
+            case '692662217':
+                prio[biblios[i]] = 13;
+                break;
+            case '422182310':
+                prio[biblios[i]] = 14;
+                break;
+            default:
+                break;      
+        }
+    }
+    const prio_tab = Object.keys(prio).map((key) => [String(key), prio[key]]);
+    let max_prio = prio_tab[0][0];
+    for (let i = 1; i < prio_tab.length; i++) {
+        if (prio_tab[i][1] < prio_tab[i-1][1])
+            max_prio = prio_tab[i][0];
+    }
+    return max_prio;
+}
+
 /**
  * lance la vérification du jeu de règles sur un sudoc
  * @param {json} rules jeu de règle
@@ -242,6 +302,14 @@ function verifMain(rules, sudoc) {
     if (categorieChoose != CATEGORIE_GENERALE) {
         testOnCategorie(categorieChoose, rules, controlfields, datafields, resultJson, getNoticeStructurelle, getNoticeSMatching);
     }
+    
+    let field = Parcours.findDataField(datafields, 930);
+    let bib = Parcours.getSubfieldValue(field, "b");
+    // pour l'instant pas vu plus d'une biblio dans le champ 930$b
+
+    if (bib.indexOf(':') > -1)
+        bib = prioBiblio(bib);
+    resultJson["biblio"] = bib;
 
     store.dispatch(addErrorPPN(resultJson));
 
