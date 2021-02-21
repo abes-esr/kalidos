@@ -83,7 +83,7 @@ Comme il est également possible d’inclure plusieurs champs dans une même rè
 
 ## Ordonnancement
 
-> Nous rappelons que ce type de règle vérifie l'ordonnancement de toutes les **Zone** possédant le même identifiant soient triée en fonction de leur indice.
+> Nous rappelons que ce type de règle vérifie l'ordonnancement de toutes les **Zone** possédant le même identifiant, en effet il faut qu'il soient triée en fonction de leur indice (1 ou 2).
 > Nous rappelons l'exemple : Si plusieurs zones sont égale à 214, alors ils doivent respecter l'ordre des chiffres de l'indice 2
 
 ![]()
@@ -99,7 +99,7 @@ Il finira par le message à afficher en cas de violation de cette règle.
 > Nous rappelons que ce type de règle impose des contraintes sur la structure du document
 > Nous rappelons l'exemple : La **Zone** '328' doit contenir ind1=" "  et ind2="0"
 
-![](https://i.ibb.co/9t45KsK/C10.png)
+![]()
 
 
 
@@ -115,97 +115,19 @@ Si le type de contrainte est une valeur obligatoire, il devra alors préciser ce
 > Verifie dans un datafield qu'une sous-zone est bien precedé par une autre sous-zone
 > Exemple : 608\$a et 608\$2rameau, 608\$a doit être précédé d’un 608\$3
 
-```json
- {
-"condition": [
-    {
-        "code": "a", // Code de la seconde condition
-        "number": "608", // Identifiant de la seconde condition
-        "operator": "presente", // operateur condititionnel
-    },
-    {
-        "string": [ // chaine de caractere a matcher 
-            "rameau"
-        ],
-        "code": "2", // Code de la seconde condition
-        "number": "608", // Identifiant de la seconde condition
-        "operator": "startwith_text", // operateur condititionnel
-    }
-],
-"precede": {
-    "precedant": "3", // code du subfield precedant
-    "depart": "a", // code du subfield precedé
-},
-"number": "608",// Numéro de la liste des datafields
-"message": "Zones 6XX doivent être liées à une notice d'autorité RAMEAU", // Message à afficher en cas de violation
-"index": 217, // Identifiant unique de la règle
-}
-```
+
 
 ## ConditionDependance
 
 > Applique une règle de dépence si les conditions sont validées
 
-```json
-{
-    "condition": [{ // Liste des conditions à vérifier
-        "operator": "presente",
-        "number": "225",
-        "code": "",
-        "ind1": "0",
-        "ind2": ""
-    }],
-    // Les champs suivants sont les mêmes que ceux dans les règle de dépendances.
-    "field1": {
-        "number": "225",
-        "code": "a"
-    },
-    "field2": {
-        "number": "410",
-        "code": "t"
-    },
-    "operator": "not_equals",
-    "message": "Si 225 ind1=0 $a est différent du 410$t",
-    "index": 2000
-},
-```
+
 
 ## ConditionMatching
 
 > Applique une regle de matching si les conditions sont validées, de plus on peut imposer la présence d'un champ.
 
-```json
-{
-    "condition": [{ // Liste des conditions à vérifier
-            "operator": "equals_text",
-            "number": "700",
-            "code": "4",
-            "string": [
-                "340"
-            ]
-        }
-    ],
-    "number": 200,// Numéro du datafield à traîter
-    "values": [{// Liste des règles de types Matching à évaluer
-            "number": 200,
-            "code": "f",
-            "message": "",
-            "regex": "(?:(?!ed.)(?!edited)(?!edit).)+",
-            "subFieldRequired": false // Champ permettant d'indiquer si le subfield doit être présent ou non
-        },
-        {
-            "number": 200,
-            "code": "g",
-            "message": "",
-            "regex": "(?:(?!ed.)(?!edited)(?!edit).)+",
-            "subFieldRequired": false // Champ permettant d'indiquer si le subfield doit être présent ou non
-        }
-    ],
-    "type": "allRequired",
-    "message": "Zones 7XX : code fonction, vérifier qu'il s'agit d'un éditeur scientifique ou d'un directeur de publication ?", // Message à afficher en cas de violation
-    "index": 6000,  // Identifiant unique de la règle
-}
-```
+
 
 Le champ ``type`` peut contenir deux valeurs :
 
@@ -217,32 +139,6 @@ Le champ ``type`` peut contenir deux valeurs :
 > Applique une règle de type structurelle si les conditions sont validées. Ces règles de structures peuvent être appliqués soit sur le PPN en cours de traitement, soit sur un autre PPN (réciproque)
 > Exemple : Si le datafield 225 possède un indice 1 qui a une valeur à 0, alors il faut un datafield 410
 
- ```json
- {
-    "condition": [  // Liste des conditions à vérifier
-        {
-            "code": "",
-            "ind1": "0",
-            "number": "225",
-            "operator": "presente",
-            "ind2": ""
-        }
-    ],
-    "number": "225", // Numéro du datafield à traiter
-    "type": "allRequired",
-    "value": [
-        {
-            "number": "410", // Numéro du datafield
-            "code": "", // Code du datafield
-            "ind1": undefined, // Valeur de l'indice 1 du datafield
-            "ind2": undefined,// Valeur de l'indice 2 du datafield
-            "reciproque": undefined,// Indique si la règle est réciproque ou non
-            "present": true // Indique si le champ doit être présent
-        }
-    ],
-    "message": "Si 225 ind1=0 il faut au moins une 410",// Message à afficher en cas de violation
-    "index": 199, // Identifiant unique de la règle
-},
- ```
+
 
  
