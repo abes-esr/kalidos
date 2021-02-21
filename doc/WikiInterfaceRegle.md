@@ -65,7 +65,7 @@ Il pourra aussi préciser si le motif contient de mots ou pas. Il rajoutera auss
 >Nous rappelons que ce type de règle permet d'imposer une contrainte sur la chaine de caractère d'une **Sous Zone** si elle existe
 >Nous rappelons l'exemple : Le champ (Zone$Sous Zone)  230\$a ne doit pas contenir 'Mo'
 
-![]()
+![](https://i.ibb.co/WPvv5xJ/matchingun.gif)
 
 L'utilisateur va donc dans un premier temps choisir le type de documents parmi les 5 types existants dans `Type de documents`, Il choisira ensuite les quantité de champs (**datafields**) sur les quels la vérification doit être faite, dans cet exemple nous choisirons un seul. L'utilisateur saisira ensuite la **Zone** et la **Sous Zone** concernés de ce document. Il précisera ensuite la règle à utiliser parmi :
 
@@ -77,7 +77,7 @@ Une fois cela fait, il précisera si **le(s) motif(s) ont plusieurs caractères?
 
 Comme il est également possible d’inclure plusieurs champs dans une même règle et plusieurs motifs à matcher. Par exemple : 700$4  et 701$4 ne doivent pas contenir les valeurs 020, 050, 060. Et dans l'animation suivante nous mettrons en évidence cela :
 
-  ![]()
+  ![](https://i.ibb.co/K5kpjM0/matchingplusieurs.gif)
 
 
 
