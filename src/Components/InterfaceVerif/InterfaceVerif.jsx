@@ -32,6 +32,8 @@ const renderTooltip2 = (props) => (
 function InterfaceVerif({ result, recherchePPN, compteurResult, listPPNErronne }) {
     const data_verif = Object.keys(result).map((key) => [Number(key), result[key]]);
 
+    console.log(data_verif);
+
     const listPPNWithError = data_verif.filter((row) => { return row[1].errors.length });
     const listPPNWithoutError = data_verif.filter((row) => row[1].errors.length < 1);
 

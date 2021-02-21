@@ -2,6 +2,7 @@ const axios = require('axios');
 const convert = require("xml-js");
 import { cleanResult, addErrorPPN, setNombreTotalPPN, setChoixCategorie, addErrorPPNErronnee } from '../../actions/index';
 import store from '../../store/index';
+import Parcours from "../utile/Parcours";
 import Matching from "../regles/Matching";
 import Structurel from "../regles/Structurel";
 import Dependance from "../regles/Dependance";
@@ -87,12 +88,12 @@ function writeResult() {
     }).then(function () {
         //console.log("ok")
     })
-        .catch(function (error) {
-            // handle error
-            console.log(error);
-        })
-        .then(function () {
-        });
+    .catch(function (error) {
+        // handle error
+        console.log(error);
+    })
+    .then(function () {
+    });
 }
 
 /**
@@ -111,11 +112,11 @@ function deleteRule(index) {
     }).then(function () {
         console.log("suppression ok")
     })
-        .catch(function (error) {
-            console.log(error);
-        })
-        .then(function () {
-        });
+    .catch(function (error) {
+        console.log(error);
+    })
+    .then(function () {
+    });
 }
 
 
@@ -157,12 +158,12 @@ function addRule(categorie, type, rule) {
     }).then(function () {
         console.log("ok")
     })
-        .catch(function (error) {
-            // handle error
-            console.log(error);
-        })
-        .then(function () {
-        });
+    .catch(function (error) {
+        // handle error
+        console.log(error);
+    })
+    .then(function () {
+    });
 }
 
 /**
@@ -219,6 +220,42 @@ function addNoticeErreurs(errorIndex) {
     });
 }
 
+function prioBiblio (biblio) {
+    let bib = biblio;
+    switch (bib) {
+        case '692662101':
+            break;
+        case '693882101':
+            break;
+        case '692669902':
+            break;
+        case '693842301':
+            break;
+        case '693882213':
+            break;
+        case '692662209':
+            break;
+        case '692662214':
+            break;
+        case '010532202':
+            break;
+        case '693872104':
+            break;
+        case '010532301':
+            break;
+        case '692662208':
+            break;
+        case '692042202':
+            break;
+        case '692662217':
+            break;
+        case '422182310':
+            break;     
+        default:
+            
+    }
+}
+
 /**
  * lance la vérification du jeu de règles sur un sudoc
  * @param {json} rules jeu de règle
@@ -242,6 +279,12 @@ function verifMain(rules, sudoc) {
     if (categorieChoose != CATEGORIE_GENERALE) {
         testOnCategorie(categorieChoose, rules, controlfields, datafields, resultJson, getNoticeStructurelle, getNoticeSMatching);
     }
+    
+    let field = Parcours.findDataField(datafields, 930);
+    let bib = Parcours.getSubfieldValue(field, "b");
+    // pour l'instant pas vu plus d'une biblio dans le champ 930$b
+    // fonction prioBiblio in progress
+    resultJson["biblio"] = bib;
 
     store.dispatch(addErrorPPN(resultJson));
 
