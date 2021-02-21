@@ -221,39 +221,62 @@ function addNoticeErreurs(errorIndex) {
 }
 
 function prioBiblio (biblio) {
-    let bib = biblio;
-    switch (bib) {
-        case '692662101':
-            break;
-        case '693882101':
-            break;
-        case '692669902':
-            break;
-        case '693842301':
-            break;
-        case '693882213':
-            break;
-        case '692662209':
-            break;
-        case '692662214':
-            break;
-        case '010532202':
-            break;
-        case '693872104':
-            break;
-        case '010532301':
-            break;
-        case '692662208':
-            break;
-        case '692042202':
-            break;
-        case '692662217':
-            break;
-        case '422182310':
-            break;     
-        default:
-            
+    const biblios = biblio.split(":");
+    let prio = {};
+    for (let i = 0; i < biblios.length; i++) {
+        switch (biblios[i]) {
+            case '692662101':
+                return biblios[i];
+            case '693882101':
+                prio[biblios[i]] = 2;
+                break;
+            case '692669902':
+                prio[biblios[i]] = 3;
+                break;
+            case '693842301':
+                prio[biblios[i]] = 4;
+                break;
+            case '693882213':
+                prio[biblios[i]] = 5;
+                break;
+            case '692662209':
+                prio[biblios[i]] = 6;
+                break;
+            case '692662214':
+                prio[biblios[i]] = 7;
+                break;
+            case '010532202':
+                prio[biblios[i]] = 8;
+                break;
+            case '693872104':
+                prio[biblios[i]] = 9;
+                break;
+            case '010532301':
+                prio[biblios[i]] = 10;
+                break;
+            case '692662208':
+                prio[biblios[i]] = 11;
+                break;
+            case '692042202':
+                prio[biblios[i]] = 12;
+                break;
+            case '692662217':
+                prio[biblios[i]] = 13;
+                break;
+            case '422182310':
+                prio[biblios[i]] = 14;
+                break;
+            default:
+                break;      
+        }
     }
+    const prio_tab = Object.keys(prio).map((key) => [String(key), prio[key]]);
+    let max_prio = prio_tab[0][0];
+    for (let i = 1; i < prio_tab.length; i++) {
+        if (prio_tab[i][1] < prio_tab[i-1][1])
+            max_prio = prio_tab[i][0];
+    }
+    return max_prio;
 }
 
 /**
@@ -283,7 +306,9 @@ function verifMain(rules, sudoc) {
     let field = Parcours.findDataField(datafields, 930);
     let bib = Parcours.getSubfieldValue(field, "b");
     // pour l'instant pas vu plus d'une biblio dans le champ 930$b
-    // fonction prioBiblio in progress
+
+    if (bib.indexOf(':') > -1)
+        bib = prioBiblio(bib);
     resultJson["biblio"] = bib;
 
     store.dispatch(addErrorPPN(resultJson));
