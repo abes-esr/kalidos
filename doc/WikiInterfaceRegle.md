@@ -30,14 +30,22 @@ En cliquant sur suivant l'utilisateur sera rediriger directement vers une fenêt
 
 L'utilisateur va donc dans un premier temps choisir le type de documents parmi les 5 types existants dans `Type de documents`, Il saisira ensuite la **Zone** et la **Sous Zone** du documents concerné, puis dans **Numéro de zone qui servira de comparateur*** il saisira la zone du document sur lequel la vérification doit être faite. Il ajoutera enfin un message à afficher en cas de violation de cette règle.
 
-## Dependance
+## Dépendance
 
-> Nous rappelons que ce type de règle effectue une opération de comparaison entre deux champs d'un même document, ce type de règle s'intéresse a la valeur des **Sous Zone** 
+> Nous rappelons que ce type de règle effectue une opération de comparaison entre deux champs d'un même document, ce type de règle s'intéresse a la valeur des **Sous Zone**.
 > Nous rappelons l'exemple : les 4 premiers caractères du sous champ (Zone$Sous Zone) 029\$b doivent être égaux au champ (Zone$Sous Zone) 328\$d .
 
-![](https://i.ibb.co/wQSssHT/C4.png)
+![](https://i.ibb.co/wL0hR5c/dependences.gif)
 
-L'utilisateur va donc dans un premier temps choisir le type de documents parmi les 5 types existants dans `Type de documents`, Il saisira ensuite l'**opérateur** à appliquer pour comparer parmi ( ``equals`` : == , ``not_equals`` : != , ``greater`` : > , ``lesser`` : <, ``greaterEquals`` : >= , ``lesserEquals`` : >= ) , puis la **Zone** et la **Sous Zone**  des deux champs en précisant pour chaque champs la position dans le XML. Il ajoutera enfin un message à afficher qui correspond à cette règle.
+L'utilisateur va donc dans un premier temps choisir le type de documents parmi les 5 types existants dans `Type de documents`, Il saisira ensuite la **Zone** et la **Sous Zone** du premier datafieled, ensuite il précisera la plage de valeur à comparer dans **Position**, comme ici nous comparons les 4 premiers caractères, il a fallu préciser la position 0 puis la position 4 dans le XML. L'utilisateur va ensuite préciser la  **Zone** et la **Sous Zone** du deuxième datafieled, sans préciser la position une deuxième fois car souhaitons pour cette exemple vérifier une égalité en choisissant l'**opérateur**  `égale à`  parmi les opérateurs:
+
+- ​    "Ne soit pas égale à",
+- ​    "Plus grand que",
+- ​    "Plus grand ou égal que",
+- ​    "Plus petit que",
+- ​    "Plus petit ou égal que"
+
+Il ajoutera enfin un message à afficher en cas de violation de cette règle.
 
 ## IdRef
 
