@@ -13,7 +13,7 @@ export function typesSpec(categories, rules) {
     { name: "Matching", 
       type: "matching",
       gif: "../../../../static/compte.gif",
-      description: "Description du type matching",
+      description: "Ce type de règle permet d'imposer une contrainte sur la chaine de caractère d'une Sous Zone si elle existe. Nous rappelons l'exemple : Le champ (Zone$Sous Zone)  230$a ne doit pas contenir 'Mo'. Il est également possible d’inclure plusieurs champs dans une même règle et plusieurs motifs à matcher. Par exemple : 700$4 et 701$4 ne doivent pas contenir les valeurs 020, 050, 060.",
       schema: getSchemaMatching(categories, rules),
       submit: formatRuleMatching,
     },
