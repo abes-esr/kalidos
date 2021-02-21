@@ -33,3 +33,10 @@ Enfin, deux boutons verts situés à droite du titre de la page permettent de t�
 - Le second rapport dispose toutes les erreurs possibles dans l'entête du fichier excel et les PPN testés en tant que colonnes. Pour chaque PPN, on coche les erreurs correspondantes.
 
 ## Historique
+
+Chaque test réalisé par l'application est stocké dans l'historique. Celui-ci permet de retrouver les résultats de chacun des tests et de les relancer si besoin. 
+La structure de la page ressemble beaucoup à l'interface de vérification. 
+- À droite, on retrouve les précédents test réalisés, nommés selon leur date et sélectionnables. 
+- À gauche, on a le contenu des tests sélectionnés, c'est-à-dire l'ensemble des PPN erronnés du test sélectionné. Il est possible de cliquer sur le bouton `relancer le contrôle` et de recommencer ce test, on est alors redirigé vers l'interface de vérification. On peut également supprimer ce test de l'historique via le bouton `Supprimer la notice`.
+
+Enfin, le bouton `Supprimer l'historique` situé à droite du titre de la page permet de faire table rase des notices de l'historique.
