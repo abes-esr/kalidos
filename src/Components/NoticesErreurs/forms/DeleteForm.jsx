@@ -6,7 +6,7 @@ const mapStateToProps = (state) => ({
   noticeDisplay: state.displayVerif.noticeDisplay
 });
 
-function RelanceForm({ notices, noticeDisplay }) {
+function DeleteForm({ notices, noticeDisplay }) {
   if (noticeDisplay === 0 || notices[noticeDisplay] === undefined) {
     return "";
   }
@@ -22,4 +22,4 @@ function RelanceForm({ notices, noticeDisplay }) {
   );
 }
 
-export default connect(mapStateToProps)(RelanceForm);
+export default connect(mapStateToProps)(DeleteForm);

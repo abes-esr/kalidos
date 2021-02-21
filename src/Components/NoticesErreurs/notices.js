@@ -29,4 +29,20 @@ function deleteNotice(index) {
     });
 }
 
-export { deleteNotice };
+function deleteAllNotices() {
+    axios({
+        method: 'DELETE',
+        url: '/deleteAllNotices'
+    }).then(function () {
+        store.dispatch(setNoticeDisplay(0));
+        window.location.reload();
+    })
+    .catch(function (error) {
+        console.log(error);
+    })
+    .then(function () {
+        // always executed
+    });
+}
+
+export { deleteNotice, deleteAllNotices };

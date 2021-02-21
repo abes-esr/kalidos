@@ -1,7 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
 import { Table } from "react-bootstrap";
-import { Delete } from '@material-ui/icons';
 import Modal from './modals/Modal';
 import ModalDelete from './modals/ModalDelete';
 import RelanceForm from './forms/RelanceForm';
@@ -31,7 +30,7 @@ function TabPPNNotice({ notices, noticeDisplay }) {
             </span>
             <span style={{display: "inline-block", float: "right"}}>
               <ModalDelete
-                button={<Delete htmlColor="#fff" fontSize="small" />}
+                button="Supprimer la notice"
                 title="Supprimer la notice"
                 body={<DeleteForm notices={notices} />}
               />
