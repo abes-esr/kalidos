@@ -2,10 +2,9 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { Modal, Button } from 'react-bootstrap';
+import { Delete } from '@material-ui/icons';
 
-function FormModal({
-  button, title, body, close, accept,
-}) {
+function FormModal({ button, title, body, close, accept }) {
   const [showHide, setShowHide] = useState(false);
 
   const handleModalShowHide = () => {
@@ -19,10 +18,13 @@ function FormModal({
   const whenAccepting = () => {
     handleModalShowHide();
   };
+
   return (
     <div>
       <Button className="btn btn-danger" onClick={() => handleModalShowHide()}>
         {button}
+        &nbsp;&nbsp;
+        <Delete htmlColor="#fff" fontSize="small" />
       </Button>
 
       <Modal show={showHide}>
