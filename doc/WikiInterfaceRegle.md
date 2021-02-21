@@ -83,8 +83,8 @@ Comme il est également possible d’inclure plusieurs champs dans une même rè
 
 ## Ordonnancement
 
-> Nous rappelons que ce type de règle vérifie l'ordonnancement de toutes les **Zone** possédant le même identifiant, en effet il faut qu'il soient triée en fonction de leur indice (1 ou 2).
-> Nous rappelons l'exemple : Si plusieurs zones sont égale à 214, alors ils doivent respecter l'ordre des chiffres de l'indice 2
+> Nous rappelons que ce type de règle vérifie l'ordonnancement de toutes les **Zone** possédant le même identifiant, en effet il faut qu'elles soient triées en fonction de leur indice (1 ou 2).
+> Nous rappelons l'exemple : Si plusieurs zones sont égale à 214, alors elles doivent respecter l'ordre des chiffres de l'indice 2
 
 ![]()
 
