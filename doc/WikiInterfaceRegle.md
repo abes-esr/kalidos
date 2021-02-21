@@ -21,12 +21,14 @@ En cliquant sur suivant l'utilisateur sera rediriger directement vers une fenêt
 
 ## Compte
 
-> Nous rappelons que ce type de règle vérifie que la **Zone**  combiner avec sa  **Sous Zone** d'un document doit être d'un autre document à **Zone** la d'un autre document qui est spécifiée dans `Contrainte`.
+> Nous rappelons que ce type de règle vérifie que la **Zone**  combiner avec sa  **Sous Zone** d'un document doit être d'un autre document à **Zone** la d'un autre document qui est spécifiée dans `Numéro de zone qui servira de comparateur*`.
 > Nous rappelons aussi par exemple : Si plusieurs Zone égale à '101' avec la Sous Zone 'd' , il doit y avoir autant de  document avec la zone '330'.
 
-![](https://i.ibb.co/9w8ZR6m/C3.png)
+![](https://i.ibb.co/vYZFvDJ/compte.gif)
 
-L'utilisateur va donc dans un premier temps choisir le type de documents parmi les 5 types existants dans `Type de documents`, Il saisira ensuite la **Zone** et la **Sous Zone** du documents concerné, puis dans **Contrainte** il saisira la zone du document sur lequel la vérification doit être faite. Il ajoutera enfin un message à afficher qui correspond à cette règle.
+
+
+L'utilisateur va donc dans un premier temps choisir le type de documents parmi les 5 types existants dans `Type de documents`, Il saisira ensuite la **Zone** et la **Sous Zone** du documents concerné, puis dans **Numéro de zone qui servira de comparateur*** il saisira la zone du document sur lequel la vérification doit être faite. Il ajoutera enfin un message à afficher en cas de violation de cette règle.
 
 ## Dependance
 
