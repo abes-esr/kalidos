@@ -4,7 +4,7 @@ Dans cette interface un utilisateur peut ajouter, modifier ou bien supprimer une
 
 Comme le montre la figure dans cette interface nous pouvons parcourir les règles qui existent par type de documents qui sont pour rappelle : ``Monographies imprimées et autres documents``, ``Thèse et Mémoires (Soutenance)``, ``Thèse et Mémoires (Reproduction)``, ``Monographie électronique`` et ``Générale``. Ici chaque règle aura une colonne `Vérification` qui correspond au message à afficher lorsque la règle est violée. Dans cette interface l'utilisateur a aussi la possibilité de rechercher une règle précise parmi les règles existantes, en entrant les mots clés dans la barre de recherche. 
 
-![](https://i.ibb.co/h71YHwH/C1.png)
+![](https://i.ibb.co/341nHBB/c15.png)
 
 Supprimer 
 
