@@ -62,7 +62,7 @@ export function typesSpec(categories, rules) {
     { name: "Ordonnancement", 
       type: "ordonnancement",
       gif: "../../../../static/ordonnancement.gif",
-      description: "Description du type Conditionnels",
+      description: "Ce type de règle vérifie l'ordonnancement de toutes les Zone possédant le même identifiant, en effet il faut qu'elles soient triée en fonction de leur indice (1 ou 2).Nous rappelons l'exemple : Si plusieurs zones sont égale à 214, alors elles doivent respecter l'ordre des chiffres de l'indice 2",
       schema: getSchemaOrdonnancement(categories, rules),
       submit: formatRuleOrdonnancement,
     },
