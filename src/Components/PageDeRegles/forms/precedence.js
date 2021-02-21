@@ -8,7 +8,7 @@ export function formatRulePrecedence(data) {
     obj.condition = data.condition;
     obj.message = data.message;
     console.log(obj);
-return obj;
+    return obj;
 }
 
 
@@ -19,10 +19,10 @@ export function getSchemaPrecedence(categories, rules) {
             category: {
                 title: 'Type de document',
                 type: 'string',
-                enum: categories,
+                enum: categories.fields, enumNames: categories.tags
             },
             numRuleExcell: {
-                title: "Nombre de ligne sur Excel",
+                title: "Identifiant Excel",
                 type: "number",
             },
             number: {

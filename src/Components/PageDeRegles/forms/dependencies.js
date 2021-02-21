@@ -8,7 +8,7 @@ export function formatRuleDependencies(data) {
     obj.field1 = data.field1;
     obj.field2 = data.field2;
     console.log(obj);
-return obj;
+    return obj;
   }
 
   export function getSchemaDependencies(categories, rules) {
@@ -33,7 +33,8 @@ return obj;
                         items:{
                             title: " Position dans le XML",
                             type: "number"
-                        }
+                        },
+                        default: []
                     },
                 },
                 required: ['number'],
@@ -45,10 +46,10 @@ return obj;
             category: {
                 title: 'Type de document',
                 type: 'string',
-                enum: categories,
+                enum: categories.fields, enumNames: categories.tags
             },
             numRuleExcell: {
-                title: "Nombre de ligne sur Excel",
+                title: "Identifiant Excel",
                 type: "number",
             },
             field1: {title:"Premier datafield","$ref": "#/definitions/champs"},

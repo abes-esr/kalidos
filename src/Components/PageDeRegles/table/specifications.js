@@ -16,14 +16,14 @@ export const columnsSpec =  [
     dataField: 'category',
     text: 'Type de document',
     headerStyle: (colum, colIndex) => {
-      return { width: '15%', whiteSpace: 'nowrap' };
+      return { width: '20%', whiteSpace: 'nowrap' };
     }
   },
   {
     dataField: 'number',
     text: 'Zone',
     headerStyle: (colum, colIndex) => {
-      return { width: '10%', whiteSpace: 'nowrap' };
+      return { width: '7%', whiteSpace: 'nowrap' };
     }
   },
   {
@@ -31,6 +31,13 @@ export const columnsSpec =  [
     text: 'Sous zone',
     headerStyle: (colum, colIndex) => {
       return { width: '10%', whiteSpace: 'nowrap' };
+    }
+  },
+  {
+    dataField: 'numRuleExcell',
+    text: 'ID Excel',
+    headerStyle: (colum, colIndex) => {
+      return { width: '9%', whiteSpace: 'nowrap' };
     }
   },
   {

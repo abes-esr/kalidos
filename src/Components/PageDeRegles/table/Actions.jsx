@@ -12,14 +12,6 @@ function Action({ row, types, editRule, deleteRule }) {
   const typeIndex = types.findIndex((t) => t.type === row.type);
   const { schema } = types[typeIndex];
 
-  function tooltipModifierRegle() {
-    return (
-      <Tooltip id="button-tooltip" style={{ margin: 0 }}>
-        Modifier le contenu de la règle
-      </Tooltip>
-    )
-  }
-
 
   function tooltipTesterRegle() {
     return (
@@ -28,16 +20,6 @@ function Action({ row, types, editRule, deleteRule }) {
       </Tooltip>
     )
   }
-
-
-  function tooltipSupprimerRegle() {
-    return (
-      <Tooltip id="button-tooltip" style={{ margin: 0 }}>
-        Supprimer la règle
-      </Tooltip>
-    )
-  }
-
 
   const onSubmit = ({ formData }, e) => {
     const obj = types[typeIndex].submit(formData);
@@ -65,7 +47,7 @@ function Action({ row, types, editRule, deleteRule }) {
             alert("Règle déjà existente")
             break;
           default:
-            alert("Le type / categorie n'existent pas")
+            alert("Le type / categorie n'existe pas")
             break;
         }
       })
@@ -87,7 +69,7 @@ function Action({ row, types, editRule, deleteRule }) {
             deleteRule(row.index)
             break;
           default:
-            alert("Régle pas trouvé")
+            alert("Règle pas trouvé")
             break;
         }
       })
@@ -101,29 +83,33 @@ function Action({ row, types, editRule, deleteRule }) {
       row.number = String(row.number).split(',')
     }
     return (
-    <FormJSON
-      className="col-12"
-      schema={editSchema}
-      ArrayFieldTemplate={ArrayFieldTemplate}
-      onSubmit={onSubmit}
-      formData={row}
-    >
-      <Button className="m-1" variant="primary" type="submit">Valider</Button>
-    </FormJSON>
+    <Container>
+    <Row>
+      <h6>Règle de type : {row.type}</h6>
+    </Row>
+    <Row>
+      <FormJSON
+        className="col-12"
+        schema={editSchema}
+        ArrayFieldTemplate={ArrayFieldTemplate}
+        onSubmit={onSubmit}
+        formData={row}
+      >
+        <Button className="m-1" variant="primary" type="submit">Valider</Button>
+      </FormJSON>
+    </Row>
+  </Container>
   )};
 
   return (
     <div className="row">
       <div className="col-4 mx-auto" style={{ padding: 0 }}>
         <Modal
-          button={
-            <OverlayTrigger
-              placement="auto"
-              delay={{ show: 250, hide: 400 }}
-              overlay={tooltipModifierRegle()}
-            >
-              <Edit color="primary" fontSize="small" />
-            </OverlayTrigger>
+          icon={ <Edit color="primary" fontSize="small" />}
+          overlay={
+            <Tooltip id="button-tooltip" style={{ margin: 0 }}>
+              Modifier le contenu de la règle
+            </Tooltip>
           }
           title="Edition"
           body={<EditForm />}
@@ -146,17 +132,14 @@ function Action({ row, types, editRule, deleteRule }) {
       </div>
       <div className="col-4 mx-auto" style={{ padding: 0 }}>
         <Modal
-          button={
-            <OverlayTrigger
-              placement="auto"
-              delay={{ show: 250, hide: 400 }}
-              overlay={tooltipSupprimerRegle()}
-            >
-              <Delete color="error" fontSize="small" />
-            </OverlayTrigger>
+          icon={<Delete color="error" fontSize="small" />}
+          overlay={
+            <Tooltip id="button-tooltip" style={{ margin: 0 }}>
+              Supprimer la règle
+            </Tooltip>
           }
           title="Supprimer"
-          body="Êtes vous sûrs de vouloir supprimer cette régle ?"
+          body="Êtes vous sûrs de vouloir supprimer cette règle ?"
           close="Annuler"
           accept="Supprimer"
           acceptFunc={onAcceptDelete}

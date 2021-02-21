@@ -1,10 +1,11 @@
 import { generator } from '../generator';
 
 export function formatRuleIdRef(data) {
-  //console.log('formatRuleIdRef');
+  console.log('formatRuleIdRef');
   const obj = {};
   obj.message = data.message;
   obj.condition = data.condition.map(cond => {
+      console.log(cond)
     if (cond.matching === 'Oui')
         return {
             number: cond.number,
@@ -26,7 +27,7 @@ export function formatRuleIdRef(data) {
     regex: generator(data.verification.rule, data.verification.patterns, data.verification.isWord),
   }
   console.log(obj);
-return obj;
+    return obj;
 }
 
 export function getSchemaIdRef(categories, rules) {
@@ -80,10 +81,10 @@ export function getSchemaIdRef(categories, rules) {
             category: {
                 title: 'Type de document',
                 type: 'string',
-                enum: categories,
+                enum: categories.fields, enumNames: categories.tags
             },
             numRuleExcell: {
-                title: "Nombre de ligne sur Excel",
+                title: "Identifiant Excel",
                 type: "number",
             },
             condition: {
@@ -143,13 +144,13 @@ export function getSchemaIdRef(categories, rules) {
                     }
                 }
             },
-            identifiant: {title:"Identifiant","$ref": "#/definitions/identifiant"},
             verification: {title:"Vérification","$ref": "#/definitions/verification"},
+            identifiant: {title:"Identifiant","$ref": "#/definitions/identifiant"},
             message: {
                 title: "Message à afficher",
                 type: "string",
             },
         },
-        required: ['category', 'numRuleExcell' ,'identifiant', 'verification', 'condition', 'message'],
+        // required: ['category', 'numRuleExcell' ,'identifiant', 'verification', 'condition', 'message'],
     }
 }

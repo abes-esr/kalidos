@@ -1,12 +1,13 @@
 export function formatRuleCompte(data) {
-    //console.log('formatRuleCompte');
+    console.log('formatRuleCompte');
+    console.log(data)
     const obj = {};
     obj.number = data.number;
     obj.code = data.code;
     obj.contrainte = data.contrainte;
     obj.message = data.message;
     console.log(obj);
-return obj;
+    return obj;
 }
 
 export function getSchemaCompte(categories, rules) {
@@ -16,10 +17,11 @@ export function getSchemaCompte(categories, rules) {
             category: {
                 title: 'Type de document',
                 type: 'string',
-                enum: categories,
+                enum: categories.fields, 
+                enumNames: categories.tags
             },
             numRuleExcell: {
-                title: "Nombre de ligne sur Excel",
+                title: "Identifiant Excel",
                 type: "number",
             },
             number: {
@@ -31,7 +33,7 @@ export function getSchemaCompte(categories, rules) {
                 type: 'string',
             },
             contrainte: {
-                title: 'Numéro du datafield qui servira de comparateur',
+                title: 'Numéro de zone qui servira de comparateur',
                 type: 'string',
             },
             message: {

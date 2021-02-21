@@ -25,7 +25,6 @@ export default function ArrayFieldTemplate(props) {
 
       <Container>
         {props.items && props.items.map(element => {
-          console.log(element.children)
           return(
           <Row key={element.key} className={element.className}>
             <div className="col-10 shadow p-3 m-0 bg-white rounded"> 

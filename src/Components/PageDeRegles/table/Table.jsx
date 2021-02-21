@@ -1,12 +1,13 @@
 /* eslint-disable import/no-extraneous-dependencies */
 /* eslint-disable react/jsx-props-no-spreading */
-import { OverlayTrigger, Tooltip, Button } from 'react-bootstrap';
+import { OverlayTrigger, Tooltip } from 'react-bootstrap';
 import React, { useState, useEffect } from 'react';
+import Button from '@material-ui/core/Button';
 import BootstrapTable from 'react-bootstrap-table-next';
 import paginationFactory from 'react-bootstrap-table2-paginator';
 import ToolkitProvider, { Search } from 'react-bootstrap-table2-toolkit';
 import 'react-bootstrap-table2-paginator/dist/react-bootstrap-table2-paginator.min.css';
-import { AddCircle } from '@material-ui/icons';
+import AddIcon from '@material-ui/icons/Add';
 import Modal from '../modals/Modal';
 import { filtering } from './rules';
 import { options, columnsSpec } from './specifications';
@@ -36,14 +37,6 @@ function Table() {
     return (
       <Tooltip id="button-tooltip" style={{ margin: 0 }}>
         Recherche dans la liste de règle
-      </Tooltip>
-    )
-  }
-
-  function tooltipAjouterRegle() {
-    return (
-      <Tooltip id="button-tooltip" style={{ margin: 0 }}>
-        Ajouter une nouvelle règle
       </Tooltip>
     )
   }
@@ -96,10 +89,10 @@ function Table() {
           setIsLoaded(true);
           const filtered = filtering(result);
           setRules(filtered.rules);
-          // setCategory(filtered.categories);
 
           let t = typesSpec(filtered.categories, rulesSpec);
           setTypes(t);
+
           setColumns([...columnsSpec, {
             dataField: 'action',
             text: 'Action',
@@ -133,9 +126,9 @@ function Table() {
         (props) => (
           <div>
             <div className="row">
-              <div className="col-11">
+              <div className="col-8">
                 <form
-                  className="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search"
+                  className="d-none d-sm-inline-block form-inline mr-auto ml-md-2 my-2 my-md-0 mw-100 navbar-search"
                   style={{ border: '1px solid #e3e6f0', borderRadius: '.35rem' }}
                 >
                   <div className="input-group">
@@ -154,19 +147,16 @@ function Table() {
                   </div>
                 </form>
               </div>
-              <div className="col-1">
+              <div className="col-4">
                 <Modal
-                  button={
-                    <OverlayTrigger
-                      placement="auto"
-                      delay={{ show: 250, hide: 400 }}
-                      overlay={tooltipAjouterRegle()}
-                    >
-                      <AddCircle fontSize="large" />
-                    </OverlayTrigger>
+                  icon={ <AddIcon />}
+                  textButton
+                  overlay={
+                  <Tooltip id="button-tooltip" style={{ margin: 0 }}>
+                    Ajouter une nouvelle règle
+                  </Tooltip>
                   }
-                  title="Ajouter une régle"
-                  // body="{<SelectType categories={categories}/>}"
+                  title="Ajouter une règle"
                   body={<Add types={types} newRule={newRule} />}
                 />
               </div>

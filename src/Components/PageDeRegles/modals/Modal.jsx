@@ -1,12 +1,13 @@
 /* eslint-disable react/forbid-prop-types */
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-import { Modal, Button } from 'react-bootstrap';
+import { OverlayTrigger, Modal, Button } from 'react-bootstrap';
+import ButtonText from '@material-ui/core/Button'
 import IconButton from '@material-ui/core/IconButton';
 
 function FormModal(props) {
   const {
-    button, title, body, close, accept, acceptFunc
+    icon,textButton, overlay, title, body, close, accept, acceptFunc
   } = props
   const [showHide, setShowHide] = useState(false);
 
@@ -24,13 +25,24 @@ function FormModal(props) {
       acceptFunc()
     }
   };
+
+  const triggerButton = textButton ? 
+  <OverlayTrigger placement="auto" delay={{ show: 250, hide: 400 }} overlay={overlay}>            
+    <ButtonText variant="contained" color="primary" startIcon={icon} onClick={() => handleModalShowHide()}> 
+      {title}
+    </ButtonText>
+  </OverlayTrigger> :
+  <OverlayTrigger placement="auto" delay={{ show: 250, hide: 400 }} overlay={overlay}>            
+    <IconButton color="primary" onClick={() => handleModalShowHide()}>
+      {icon}
+    </IconButton>
+  </OverlayTrigger>
+
   return (
     <div>
-      <IconButton color="primary" onClick={() => handleModalShowHide()}>
-        {button}
-      </IconButton>
-
-      <Modal show={showHide} onHide={whenClosing}>
+        {triggerButton}
+      
+      <Modal show={showHide} onHide={whenClosing} scrollable size='xl'>
 
         <Modal.Header closeButton onClick={() => whenClosing()}>
           <Modal.Title>{title}</Modal.Title>
@@ -58,11 +70,13 @@ export default FormModal;
 FormModal.defaultProps = {
   close: null,
   accept: null,
-  // accepting: null
+  textButton: false
 };
 
 FormModal.propTypes = {
-  button: PropTypes.any.isRequired,
+  icon: PropTypes.any.isRequired,
+  textButton: PropTypes.any,
+  overlay: PropTypes.any.isRequired,
   title: PropTypes.string.isRequired,
   body: PropTypes.any.isRequired,
   close: PropTypes.string,

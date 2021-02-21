@@ -53,8 +53,6 @@ function Add({ types, newRule }) {
             break;
         }
       })
-    // POST obj
-    // refresh rules list
   };
 
   const Footer = () => (
@@ -67,20 +65,36 @@ function Add({ types, newRule }) {
   );
 
   const Form = () => (
-    <FormJSON
-      className="col-12"
-      schema={types[index].schema}
-      ArrayFieldTemplate={ArrayFieldTemplate}
-      onSubmit={onSubmit}
-    >
-      <Footer />
-    </FormJSON>
+    <Container>
+      <Row>
+        <h6>Règle de type : {types[index].type}</h6>
+      </Row>
+      <Row>
+        <FormJSON
+          className="col-12"
+          schema={types[index].schema}
+          ArrayFieldTemplate={ArrayFieldTemplate}
+          onSubmit={onSubmit}
+        >
+          <Footer />
+        </FormJSON>
+      </Row>
+    </Container>
   );
+
+    const TestImage = () =>
+    {
+      if (types[index].type === 'compte'){
+        return <Card.Img variant="top" src='../../../../static/compte.gif' />
+      } else {
+        return <Card.Body>{types[index].description}</Card.Body>
+      }
+    }
 
   const List = () => (
     <Container>
       <Row>
-        <Col>
+        <Col sm={3}>
           <ListGroup>
             {
               types.map((type) => (
@@ -93,7 +107,7 @@ function Add({ types, newRule }) {
         </Col>
         <Col>
           <Card>
-            <Card.Body>{types[index].description}</Card.Body>
+            <TestImage />
           </Card>
         </Col>
       </Row>
@@ -102,8 +116,8 @@ function Add({ types, newRule }) {
   );
 
   return (
-    <Container>
-      { !useForm && <Row> Choisissez un type de régle : </Row>}
+    <Container sm={10}>
+      { !useForm && <Row> Choisissez un type de règle : </Row>}
       <Row>
         { useForm ? <Form /> : <List /> }
       </Row>

@@ -72,7 +72,7 @@ Par exemple : Si plusieurs 101$d, il doit y avoir autant de 330
 
 ## Dependance
 
-> Ce type de régle effectue une opération de comparaison entre deux champs d'un meme document, ce type de regle s'intéresse a la valeur des **subfield** 
+> Ce type de règle effectue une opération de comparaison entre deux champs d'un meme document, ce type de regle s'intéresse a la valeur des **subfield** 
 Exemple : le les 4 premiers caracteres du sous champ 029\$b doivent etre egaux au champ 328\$d
 ```json
  {

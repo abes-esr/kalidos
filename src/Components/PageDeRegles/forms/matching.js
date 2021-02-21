@@ -20,7 +20,7 @@ export function formatRuleMatching(data) {
     obj.match = data.match;
   }
   console.log(obj);
-return obj;
+    return obj;
 }
 
 export function getSchemaMatching(categories, rules) {
@@ -30,10 +30,10 @@ export function getSchemaMatching(categories, rules) {
       category: {
         title: 'Type de document',
         type: 'string',
-        enum: categories,
+        enum: categories.fields, enumNames: categories.tags
       },
       numRuleExcell: {
-        title: "Nombre de ligne sur Excel",
+        title: "Identifiant Excel",
         type: "number",
       },
       datafields:{

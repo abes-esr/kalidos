@@ -9,7 +9,7 @@ export function formatRuleConditionnelsStructurel(data) {
     obj.type = data.type;
     obj.message = data.message;
     console.log(obj);
-return obj;
+    return obj;
 }
 
 export function getSchemaConditionnelsStructurel(categories, rules) {
@@ -19,10 +19,10 @@ export function getSchemaConditionnelsStructurel(categories, rules) {
             category: {
                 title: 'Type de document',
                 type: 'string',
-                enum: categories,
+                enum: categories.fields, enumNames: categories.tags
             },
             numRuleExcell: {
-                title: "Nombre de ligne sur Excel",
+                title: "Identifiant Excel",
                 type: "number",
             },
             condition: conditions,
@@ -67,6 +67,7 @@ export function getSchemaConditionnelsStructurel(categories, rules) {
                                     type: 'string',
                                 }
                             },
+                            default: ""
                         },
                         present: {
                             title: 'Le champ doit être présent ?',

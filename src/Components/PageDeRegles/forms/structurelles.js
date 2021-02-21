@@ -10,7 +10,7 @@ export function formatRuleStructurel(data) {
   obj.code = data.code;
   obj.type = data.type;
   console.log(obj);
-return obj;
+    return obj;
 }
 
 export function getSchemaStructurel(categories, rules) {
@@ -20,10 +20,10 @@ export function getSchemaStructurel(categories, rules) {
       category: {
         title: 'Type de document',
         type: 'string',
-        enum: categories,
+        enum: categories.fields, enumNames: categories.tags
       },
       numRuleExcell: {
-        title: "Nombre de ligne sur Excel",
+        title: "Identifiant Excel",
         type: "number",
       },
       number: {

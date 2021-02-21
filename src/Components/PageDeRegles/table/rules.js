@@ -12,7 +12,7 @@ export const filtering = (result) => {
       let filter = result[category][type].map((r) => {
         r.regleInitial = Object.assign({}, r);
         if (Array.isArray(r.number)) { r.number = r.number.toString() }
-        r.category = category
+        r.category = tagCategorie(category)
         r.type = type
         r.action = ""
         delete r.regex
@@ -21,5 +21,32 @@ export const filtering = (result) => {
       rules = rules.concat(filter)
     }
   }
-  return { rules: rules, categories: categories }
+  return { rules: rules, categories: tagCategories(categories) }
 };
+
+function tagCategorie(c) {
+  switch (c) {
+    case 'AutreDocuments':
+      return 'Monographies imprimées et autres documents'
+    case 'MémoireSoutenance':
+      return 'Thèse et Mémoires (Soutenance)';
+    case 'MémoireReproduction':
+      return 'Thèse et Mémoires (Reproduction)';
+    case 'Electronique':
+      return 'Monographie électronique';
+    case 'Generale':
+      return 'Générale';    
+    default:
+      break;
+  }
+}
+
+
+function tagCategories(categories) {
+  let tags = categories.map(c => tagCategorie(c))
+
+  return {
+    fields: categories,
+    tags: tags
+  }
+}

@@ -5,7 +5,7 @@ export function formatRuleOrdonnancement(data) {
     obj.orderBy = data.orderBy;
     obj.message = data.message;
     console.log(obj);
-return obj;
+    return obj;
 }
 
 
@@ -16,10 +16,10 @@ export function getSchemaOrdonnancement(categories, rules) {
             category: {
                 title: 'Type de document',
                 type: 'string',
-                enum: categories,
+                enum: categories.fields, enumNames: categories.tags
             },
             numRuleExcell: {
-                title: "Nombre de ligne sur Excel",
+                title: "Identifiant Excel",
                 type: "number",
             },
             number: {
