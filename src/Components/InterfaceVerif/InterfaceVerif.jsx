@@ -71,7 +71,7 @@ function InterfaceVerif({ result, recherchePPN, compteurResult, listPPNErronne }
                     message: listPPNWithError[i][1]['errors'][j]['message'],
                     number: listPPNWithError[i][1]['errors'][j]['number'],
                     code: listPPNWithError[i][1]['errors'][j]['code'],
-                    comm: "",
+                    comm: ""
                 })
             }
         }
@@ -81,11 +81,11 @@ function InterfaceVerif({ result, recherchePPN, compteurResult, listPPNErronne }
         csvData.push({ ppn: listPPNWithoutError[i][1]['PPN'], biblio: listPPNWithoutError[i][1]['biblio'], error: "0", message: "", number: "", code: "", comm: "" })
     }
 
-    
+
     // excel avec erreurs cochées
 
     // on crée une liste des erreurs présentes dans les ppn
-    const errorHeaders = [""];
+    const errorHeaders = ["", "Bibliothèque"];
 
     for (let i = 0; i < listPPNWithError.length; i++) {
         let error_number = listPPNWithError[i][1]['errors'].length;
@@ -113,7 +113,7 @@ function InterfaceVerif({ result, recherchePPN, compteurResult, listPPNErronne }
 
             if (indexError > 0) {
                 if (j == 0) {
-                    let excelRow = [listPPNWithError[i][1]['PPN']];
+                    let excelRow = [listPPNWithError[i][1]['PPN'], listPPNWithError[i][1]['biblio']];
                     for (let k = 1; k < sortedHeaders.length; k++) {
                         excelRow.push("");
                     }
@@ -121,7 +121,7 @@ function InterfaceVerif({ result, recherchePPN, compteurResult, listPPNErronne }
                     excelRow[indexError] = "X";
                     newCsvData.push(excelRow);
                 } else {
-                    // éviter redondance des ppn
+                    // éviter redondance des ppn et des biblio
                     let excelRow = newCsvData.pop();
                     excelRow[indexError] = "X";
                     newCsvData.push(excelRow);
@@ -131,7 +131,7 @@ function InterfaceVerif({ result, recherchePPN, compteurResult, listPPNErronne }
     }
 
     for (let i = 0; i < listPPNWithoutError.length; i++) {
-        newCsvData.push([listPPNWithoutError[i][1]['PPN'], ""]);
+        newCsvData.push([listPPNWithoutError[i][1]['PPN'], listPPNWithoutError[i][1]['biblio'], ""]);
     }
 
     return (
