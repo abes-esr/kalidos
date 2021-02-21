@@ -69,7 +69,7 @@ export function typesSpec(categories, rules) {
     { name: "Compte", 
       type: "compte",
       gif: "../../../../static/compte.gif",
-      description: "description",
+      description: "Ce type de règle vérifie que le nombre de document avec une certaine **Zone**  combiner avec sa Sous Zone doit être égale au nombre de Zone d'un autre document. Par exemple : Si plusieurs Zone$SousZone sont égales à '101$d' , il doit y avoir autant de  document avec la zone '330'",
       schema: getSchemaCompte(categories, rules),
       submit: formatRuleCompte,
     },
