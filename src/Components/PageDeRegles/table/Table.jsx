@@ -1,13 +1,11 @@
 /* eslint-disable import/no-extraneous-dependencies */
 /* eslint-disable react/jsx-props-no-spreading */
-import { OverlayTrigger, Tooltip } from 'react-bootstrap';
+import { OverlayTrigger, Tooltip, Button } from 'react-bootstrap';
 import React, { useState, useEffect } from 'react';
-import Button from '@material-ui/core/Button';
 import BootstrapTable from 'react-bootstrap-table-next';
 import paginationFactory from 'react-bootstrap-table2-paginator';
 import ToolkitProvider, { Search } from 'react-bootstrap-table2-toolkit';
 import 'react-bootstrap-table2-paginator/dist/react-bootstrap-table2-paginator.min.css';
-import AddIcon from '@material-ui/icons/Add';
 import Modal from '../modals/Modal';
 import { filtering } from './rules';
 import { options, columnsSpec } from './specifications';
@@ -140,7 +138,7 @@ function Table() {
               {/*********************************************************** 
                *                      SEARCH BAR
                * **********************************************************/ }
-              <div className="col-8">
+              <div className="col-9">
                 <form
                   className="d-none d-sm-inline-block form-inline mr-auto ml-md-2 my-2 my-md-0 mw-100 navbar-search"
                   style={{ border: '1px solid #e3e6f0', borderRadius: '.35rem' }}
@@ -164,9 +162,9 @@ function Table() {
               {/*********************************************************** 
                *                      BUTTON ADD
                * **********************************************************/ }
-              <div className="col-4">
+              <div className="col-3 left">
                 <Modal
-                  icon={ <AddIcon />}
+                  icon="fas fa-plus"
                   textButton
                   overlay={
                   <Tooltip id="button-tooltip" style={{ margin: 0 }}>

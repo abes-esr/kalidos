@@ -2,15 +2,14 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { OverlayTrigger, Modal, Button } from 'react-bootstrap';
-import ButtonText from '@material-ui/core/Button'
+import { MDBIcon } from 'mdbreact';
 import IconButton from '@material-ui/core/IconButton';
-
 
 /**
  * Composant de base pour la creation des modals ADD EDIT DELETE
  * 
  * @param {
- *    icon: Icone du button declencheur,
+ *    icon: Icone du button declencheur (texte),
  *    textButton : {
  *        true : le button est un rectangle qui aura te meme texte que celui du champ title,
  *        false : (default) le button est un simple icone 
@@ -44,10 +43,10 @@ function FormModal(props) {
   };
 
   const triggerButton = textButton ? 
-  <OverlayTrigger placement="auto" delay={{ show: 250, hide: 400 }} overlay={overlay}>            
-    <ButtonText variant="contained" color="primary" startIcon={icon} onClick={() => handleModalShowHide()}> 
-      {title}
-    </ButtonText>
+  <OverlayTrigger placement="auto" delay={{ show: 250, hide: 400 }} overlay={overlay}>
+    <Button variant="primary" style={{ width: "100%" }} onClick={() => handleModalShowHide()}>
+      <i class={icon} ></i>  {title}
+    </Button >
   </OverlayTrigger> :
   <OverlayTrigger placement="auto" delay={{ show: 250, hide: 400 }} overlay={overlay}>            
     <IconButton color="primary" onClick={() => handleModalShowHide()}>

@@ -70,7 +70,7 @@ export function getSchemaConditionnelsDependance(categories, rules) {
             },
             condition: conditions,
             field1: {title:"Premier champ","$ref": "#/definitions/champs"},
-            field2: {title:"Deuxiéme champ","$ref": "#/definitions/champs"},
+            field2: {title:"Deuxième champ","$ref": "#/definitions/champs"},
             operator: {
                 title: "Opérateur à appliquer",
                 type: "string",
