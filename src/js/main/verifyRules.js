@@ -18,9 +18,6 @@ import { WindowSidebar } from 'react-bootstrap-icons';
 
 const CATEGORIE_GENERALE = "Generale";
 
-let nombreTotalPPN = 0;
-let count = 0;
-
 /**
  * Permet de vérifier le PPN en le tapant dans le formulaire
  */
@@ -31,8 +28,6 @@ function verifiyRulesByTextArea() {
     window.location += 'interfaceVerif';
     const listPPN = document.getElementById("textAreaSaisie").value.split("\n").filter(x => x != '');
     store.dispatch(setNombreTotalPPN(listPPN.length));
-    nombreTotalPPN = listPPN.length;
-    count = 0;
     getRules(listPPN);
 }
 
@@ -43,8 +38,6 @@ function verifiyRulesByTextAreaNotice (listPPN) {
     let path = location.protocol + '//' + location.host + '/#/interfaceVerif';
     window.location = path;
     store.dispatch(setNombreTotalPPN(listPPN.length));
-    nombreTotalPPN = listPPN.length;
-    count = 0;
     getRules(listPPN);
 }
 
@@ -270,6 +263,12 @@ function prioBiblio (biblio) {
                 break;      
         }
     }
+
+    if (prio == "{}")
+        return biblios[0];
+    // si aucunes des biblios ne correspondent à une biblio de la liste des priorités
+    // alors on renvoie la première biblio
+        
     const prio_tab = Object.keys(prio).map((key) => [String(key), prio[key]]);
     let max_prio = prio_tab[0][0];
     for (let i = 1; i < prio_tab.length; i++) {
@@ -277,6 +276,16 @@ function prioBiblio (biblio) {
             max_prio = prio_tab[i][0];
     }
     return max_prio;
+}
+
+function getBiblio (datafields) {
+    let field = Parcours.findDataField(datafields, 930);
+    let bib = Parcours.getSubfieldValue(field, "b");
+    // pour l'instant pas vu plus d'une biblio dans le champ 930$b
+
+    if (bib.indexOf(':') > -1)
+        bib = prioBiblio(bib);
+    return bib;
 }
 
 /**
@@ -302,19 +311,13 @@ function verifMain(rules, sudoc) {
     if (categorieChoose != CATEGORIE_GENERALE) {
         testOnCategorie(categorieChoose, rules, controlfields, datafields, resultJson, getNoticeStructurelle, getNoticeSMatching);
     }
-    
-    let field = Parcours.findDataField(datafields, 930);
-    let bib = Parcours.getSubfieldValue(field, "b");
-    // pour l'instant pas vu plus d'une biblio dans le champ 930$b
 
-    if (bib.indexOf(':') > -1)
-        bib = prioBiblio(bib);
+    let bib = getBiblio(datafields);
     resultJson["biblio"] = bib;
 
     store.dispatch(addErrorPPN(resultJson));
 
-    count++;
-    if (count === nombreTotalPPN) {
+    if (store.getState().compteurResult === store.getState().nombreTotalPPN) {
         noticeErreurs();  
     }
 }
