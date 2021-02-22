@@ -24,7 +24,7 @@ export const rulesSpec = {
     "Ne doit pas commencer par",
     "Finit par",
     "Ne doit pas finir par",
-    "Nombre de caracteres"
+    "Nombre de caractères"
   ]
 }
 

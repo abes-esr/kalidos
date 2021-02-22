@@ -13,7 +13,7 @@ Appli web , un serveur localhost qui tournera sur le PC de la prof si c'est l'un
 => Problematique de "l'instalation" sur le PC de la prof, prévoir un guide d'utilisateur, script qui mache le travail vu qu'on aura pas d'executable windows
 => Utiliation de PKG pour generer des executables windows/mac/ubuntu
 
-### Regles 
+### Règles 
 ![alt text](notice-exemple.PNG)
 
 - champ A dependant du champ B 
