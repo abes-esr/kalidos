@@ -153,6 +153,29 @@ Le champ ``type`` peut contenir deux valeurs :
 
 ![](https://i.ibb.co/9Wnj9Tj/Cond-Match.gif)
 
+L'utilisateur va donc dans un premier temps choisir le type de documents parmi les 5 types existants dans `Type de documents`, Il saisira ensuite dans `Condistions` il précisera les conditions de départ à savoir :
+
+- **Zone **
+- **Sous Zone** 
+- **Opérateur de matching**
+- **Texte à vérifier** 
+
+Dans Zone il précisera les numéro des zones à traiter en y ajoutant les règles de types matching à évaluer pour chaque zone, et ceci en mettant :
+
+- **Numéro de la Zone **
+- **Numéro de la Sous Zone** 
+- **Règle à utiliser**
+- **Motifs à traiter** 
+- **Champ permettant d'indiquer si la Sous Zone doit être présente ou pas**
+- **Message à afficher en cas de violation** 
+
+Enfin,il précisera le type de matching à savoir :
+
+- **Type** = `TousObligatoires` pour spécifier que tous les motifs doivent être validés 
+- **Type** = `Un` pour préciser qu’au moins un motif doit être validé
+
+Puis le message à afficher en cas de violation de cette règle.
+
 ## Conditionnel Structurel
 
 > Ce type de règle applique une règle de type structurelle si les conditions sont validées. Ces règles de structures peuvent être appliqués soit sur le PPN en cours de traitement, soit sur un autre PPN (réciproque)
