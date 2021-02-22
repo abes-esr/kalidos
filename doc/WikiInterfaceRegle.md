@@ -55,7 +55,7 @@ L'utilisateur va donc dans un premier temps choisir le type de documents parmi l
 
 Il ajoutera enfin un message à afficher en cas de violation de cette règle.
 
-## IdRef
+## Référentiel
 
 > Nous rappelons que ce type de règle vérifie dans un document externe si le controlfield est valide ou pas.
 > Nous rappelons l'exemple : S'il existe une 606\$y et que 606\$2 est égal a la chaine `rameau` alors il faudrait récupérer l'identifiant de la notice comprise dans le champ 606\$3 et chercher par la suite cette notice sur https://www.idref.fr/ppn.xml. Enfin sur cette notice externe le controlfield 008 doit commence par `Tg`
