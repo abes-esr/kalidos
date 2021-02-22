@@ -8,6 +8,8 @@ Comme le montre la figure dans cette interface nous pouvons parcourir les règle
 
 
 
+# Explication d'ajout des règles 
+
 Lorsque l'utilisateur clique sur `Ajouter une règle`, la fenêtre suivante apparait, où il devrai choisir le type de règle correspondant parmi les 10 types qui existent, et qui sont pour rappel : 
 
 
@@ -17,7 +19,13 @@ En effet chaque type aura son propre formulaire que nous détaillerons par la su
 
 ![](https://i.ibb.co/W0svYFj/C16.png)
 
-En cliquant sur suivant l'utilisateur sera rediriger directement vers une fenêtre qui correspond au type choisi. Nous allons maintenant expliquer pour chaque type de règle son formulaire correspondant.
+En cliquant sur suivant l'utilisateur sera rediriger directement vers une fenêtre qui correspond au type choisi.  Il est a noter qu'une fois un formulaire d'ajout d'un type de règle complété, pour le sauvegarder l'utilisateur doit cliquer sur `Valider` et la fenêtre suivante s'affiche :
+
+![](https://i.ibb.co/y0x5PXB/C19.png)
+
+Nous allons maintenant expliquer pour chaque type de règle son formulaire correspondant.
+
+
 
 ## Compte
 
@@ -171,16 +179,33 @@ Dans Zone il précisera les numéro des zones à traiter en y ajoutant les règl
 
 Enfin,il précisera le type de matching à savoir :
 
-- **Type** = `TousObligatoires` pour spécifier que tous les motifs doivent être validés 
+- **Type** = `Tous Obligatoires` pour spécifier que tous les motifs doivent être validés 
 - **Type** = `Un` pour préciser qu’au moins un motif doit être validé
 
 Puis le message à afficher en cas de violation de cette règle.
 
 ## Conditionnel Structurel
 
-> Ce type de règle applique une règle de type structurelle si les conditions sont validées. Ces règles de structures peuvent être appliqués soit sur le PPN en cours de traitement, soit sur un autre PPN (réciproque)
+> Ce type de règle applique une règle de type structurelle si les conditions sont validées. Ces règles de structures peuvent être appliqués soit sur le PPN en cours de traitement, soit sur un autre PPN (réciproque).
 > Nous rappelons l'exemple : Si le zone 225 possède un indice 1 qui a une valeur à 0, alors il faut un zone 410
+
+![]()
 
 
 
  
+
+# Explication de modification d'une règle
+
+
+
+
+
+# Explication de suppression d'une règle
+
+
+
+
+
+# Explication de test d'un règle
+
