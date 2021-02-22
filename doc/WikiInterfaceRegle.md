@@ -117,7 +117,14 @@ Si le type de contrainte est une valeur obligatoire, il devra alors préciser ce
 
 ![](https://i.ibb.co/BNJLV7c/precedence.gif)
 
+L'utilisateur va donc dans un premier temps choisir le type de documents parmi les 5 types existants dans `Type de documents`, Il saisira ensuite la **Zone **et les **Sous Zone** concernées et qui correspondent aux conditions d'existence, ici nous avons choisi la **Zone 608 avec ses deux Sous Zones** `*a*` et `2` avec la chaine de caractère `*rameau*`. 
 
+Dans précédé il précisera les deux sous zones, à savoir :
+
+- Sous zone de départ ;
+- Sous zone précédente
+
+ Il finira par le message à afficher en cas de violation de cette règle.
 
 ## ConditionDependance
 
