@@ -218,7 +218,7 @@ Et enfin le message à afficher en cas de violation de cette règle.
 
 Dans cette interface un utilisateur pourra modifier une règle existante, comme le montre l'animation suivante ceci ce fait en cliquant sur le bouton pour `modifier le contenu de la règle` ,  qui va rediriger l'utilisateur vers une fenêtre d'édition des règles qui est identique à celle de l'ajout d'une règle, sans changement de la catégorie de cette dernière, si besoin d'éditer la catégorie ou le type d'une règle il faudrait la supprimer et la recréer de nouveau.
 
-![]()
+![](https://i.ibb.co/FwV2mhh/modification.gif)
 
 Il suffit de suivre les même principes d'ajout d'une règle décrits dans la partie **Explication d'ajout des règles** , pour pouvoir modifier une règle donnée.
 
@@ -228,7 +228,7 @@ Il suffit de suivre les même principes d'ajout d'une règle décrits dans la pa
 
 Dans cette interface un utilisateur pourra supprimer une règle existante, comme le montre l'animation suivante ceci se fait en cliquant sur le bouton `Supprimer la règle`, qui va rediriger l'utilisateur vers une fenêtre de confirmation de l'action de suppression, car en effet il s'agit de la suppression finale d'une règle.
 
-![]()
+![](https://i.ibb.co/6wk12g2/suppression.gif)
 
 
 
@@ -237,3 +237,4 @@ Dans cette interface un utilisateur pourra supprimer une règle existante, comme
 Dans cette interface un utilisateur pourra tester une règle existante, comme le montre l'animation suivante, l'utilisateur aura en entrée à gauche un PPN à tester, puis en appuyant sur le bouton `Tester la règle` , il sera informer si la règle est passé sur ce PPN ou pas.
 
 ![]()
+
