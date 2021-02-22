@@ -60,11 +60,11 @@ export function getSchemaIdRef(categories, rules) {
                 type: "object",
                 properties: {
                     number: {
-                        title: "Datafield où recuperer l'identifiant de la notice externe",
+                        title: "La zone où recuperer l'identifiant de la notice externe",
                         type: "string",
                     },
                     code: {
-                        title: "Subfield où recuperer l'identifiant de la notice externe",
+                        title: "La sous zone où recuperer l'identifiant de la notice externe",
                         type: "string",
                         default: ""
                     },
