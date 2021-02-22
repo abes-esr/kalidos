@@ -121,7 +121,8 @@ function Add({ types, newRule }) {
         </Col>
         <Col>
           <Card>
-            <TestImage />
+            <Card.Img variant="top" src={types[index].gif} />
+            <Card.Body>{types[index].description}</Card.Body>
           </Card>
         </Col>
       </Row>
