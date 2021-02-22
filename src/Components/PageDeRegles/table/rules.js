@@ -24,6 +24,11 @@ export const filtering = (result) => {
   return { rules: rules, categories: tagCategories(categories) }
 };
 
+
+/**
+ * Retourne le tag appropie a la categorie c passe en parametre
+ * @param {String} c 
+ */
 function tagCategorie(c) {
   switch (c) {
     case 'AutreDocuments':
@@ -41,7 +46,14 @@ function tagCategorie(c) {
   }
 }
 
-
+/**
+ * Retourne un objet de type:
+ * {
+ *    fields: Liste de categories dans le fichier json
+ *    tags: Tags a afficher dans l'schema
+ * }
+ * @param {Array} categories 
+ */
 function tagCategories(categories) {
   let tags = categories.map(c => tagCategorie(c))
 

@@ -1,28 +1,54 @@
 import { generator, applyRule } from '../generator';
+import { regexCreator } from './regex'
+
 export function formatDataMatching(data){
   let obj = data;
   obj.number = Array.isArray(data.number)? data.number : [data.number];
   return data
 }
 
-export function formatRuleMatching(data) {
-  //console.log('formatRuleMatching');
-  const obj = {};
-  obj.code = data.code;
-  obj.message = data.message;
+/**
+ * Functions pour la creation des schemas (react-json-schema), et la formalisation des donnees 
+ * pour les regles de type : 
+ * ______________________________________    MATCHING    ______________________________________ 
 
-  if (data.datafields === 'Un') {
-    obj.number = data.number;
-    obj.regex = generator(data.rule, data.patterns, data.isWord);
-  } else {
-    obj.number = data.number;
-    obj.value = applyRule(data.rule, data.values);
-    obj.match = data.match;
-  }
-  console.log(obj);
-    return obj;
+ */
+
+/**
+ * Function pour donner le format appropie aux donnes soumis par l'utilisateur
+ * @param {*} data
+ */
+export function formatRuleMatching(data) {
+    //console.log('formatRuleMatching');
+    const obj = {};
+    obj.code = data.code;
+    obj.message = data.message;
+
+    if (data.datafields === 'Un') {
+      obj.number = data.number;
+      obj.regex = generator(data.regex.rule, data.regex.patterns, data.regex.isWord);
+    } else {
+      obj.number = data.number;
+      obj.value = applyRule(data.rule, data.values);
+      obj.match = data.match;
+    }
+    console.log(obj);
+    obj.numRuleExcell = data.numRuleExcell
+   return obj;
 }
 
+/**
+ * Fonction pour la creation du schema
+ * 
+ * @param {
+ *      fields : liste de categories dans le fichier json
+ *      tags : liste de tags a afficher
+ * } categories Liste de categories 
+ * @param {
+ *      rules : liste de regles sur des motifs, pour le generateur (generator.js)
+ *      names : liste de tags a afficher pour chaque regle
+ * } rules 
+ */
 export function getSchemaMatching(categories, rules) {
   return {
     type: 'object',
@@ -56,31 +82,15 @@ export function getSchemaMatching(categories, rules) {
               code: {
                 title: 'Sous Zone',
                 type: 'string',
+                default: ""
               },
-              rule: {
-                title: 'Règle à utiliser',
-                type: 'string',
-                enum: rules.rules,
-                enumNames: rules.names,
-              },
-              isWord: {
-                title: 'Le(s) motif(s) ont plusieurs caractères?',
-                enum: [true, false],
-                enumNames: ["Oui", "Non"]
-              },
-              patterns: {
-                title: "Motifs",
-                type: 'array',
-                items: {
-                  type: 'string',
-                },
-              },
+              regex: regexCreator(rules),
               message: {
                 title: 'Message à afficher',
                 type: 'string',
               },
             },
-            required: ['number', 'code', 'isWord', 'rule', 'patterns', 'message']
+            required: ['number','regex', 'message']
           },
           {
             properties: {
@@ -95,6 +105,7 @@ export function getSchemaMatching(categories, rules) {
               code: {
                 title: 'Sous Zone',
                 type: 'string',
+                default: ""
               },
               rule: {
                 title: 'Règle a utiliser',
@@ -120,7 +131,7 @@ export function getSchemaMatching(categories, rules) {
                 type: 'string',
               },
             },
-            required: ['number', 'code','rule', 'values', 'match', 'message']
+            required: ['number','rule', 'values', 'match', 'message']
           },
         ]
       }

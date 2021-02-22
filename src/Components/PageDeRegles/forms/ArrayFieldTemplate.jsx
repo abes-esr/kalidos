@@ -4,6 +4,10 @@ import AddIcon from '@material-ui/icons/AddCircle'
 import CancelIcon from '@material-ui/icons/Cancel'
 import { IconButton } from "@material-ui/core"
 
+/**
+ * Composant template pour les fields de type array
+ * @param {} props 
+ */
 export default function ArrayFieldTemplate(props) {
   
   const AddingField = () => (
@@ -27,10 +31,10 @@ export default function ArrayFieldTemplate(props) {
         {props.items && props.items.map(element => {
           return(
           <Row key={element.key} className={element.className}>
-            <div className="col-10 shadow p-3 m-0 bg-white rounded"> 
+            <div className="col-11 shadow p-2 m-0 bg-white rounded"> 
               {element.children}
             </div>
-            <div className="col-2">
+            <div className="col-1">
               <IconButton size="small" variant="outlined" onClick={element.onDropIndexClick(element.index)}>
                 <CancelIcon/>
               </IconButton>

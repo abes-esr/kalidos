@@ -1,8 +1,10 @@
 import React from 'react';
 import Card12 from '../Générique/Card_12';
-// import Table from './TableDeRegles';
 import Table from './table/Table'
 
+/**
+ * Composant principal du site
+ */
 const PageDeRegles = () => (
     <div>
         <h2>

@@ -1,5 +1,15 @@
 import { mathOperators } from '../operators';
 
+/**
+ * Functions pour la creation des schemas (react-json-schema), et la formalisation des donnees 
+ * pour les regles de type : 
+ * ______________________________________    DEPENDENCE    ______________________________________ 
+ */
+
+/**
+ * Function pour donner le format appropie aux donnes soumis par l'utilisateur
+ * @param {*} data
+ */
 export function formatRuleDependencies(data) {
     //console.log('formatRuleDependencies');
     const obj = {};
@@ -8,10 +18,23 @@ export function formatRuleDependencies(data) {
     obj.field1 = data.field1;
     obj.field2 = data.field2;
     console.log(obj);
+        obj.numRuleExcell = data.numRuleExcell
     return obj;
-  }
+}
 
-  export function getSchemaDependencies(categories, rules) {
+/**
+ * Fonction pour la creation du schema
+ * 
+ * @param {
+ *      fields : liste de categories dans le fichier json
+ *      tags : liste de tags a afficher
+ * } categories Liste de categories 
+ * @param {
+ *      rules : liste de regles sur des motifs, pour le generateur (generator.js)
+ *      names : liste de tags a afficher pour chaque regle
+ * } rules 
+ */
+export function getSchemaDependencies(categories, rules) {
     return {
         definitions: {
             champs: {

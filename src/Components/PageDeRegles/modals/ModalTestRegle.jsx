@@ -4,6 +4,18 @@ import PropTypes from 'prop-types';
 import { Modal, Button } from 'react-bootstrap';
 import IconButton from '@material-ui/core/IconButton';
 
+
+/**
+ * Composant de base pour la creation du modal TEST
+ * 
+ * @param {
+    *    icon: Icone du button declencheur,
+    *    title : titre a afficher dans le modal,
+    *    body : ce qui sera affiche par le modal (les composants sont possibles),
+    *    close : (default -> null) message a afficher pour le button de fermeture,
+    *    accept : (default -> null) message a afficher pour le button de "acceptation",
+    * } props 
+    */
 function FormModal({
     button, title, body, close, accept,
 }) {
@@ -54,7 +66,6 @@ export default FormModal;
 FormModal.defaultProps = {
     close: null,
     accept: null,
-    // accepting: null
 };
 
 FormModal.propTypes = {
@@ -63,5 +74,4 @@ FormModal.propTypes = {
     body: PropTypes.any.isRequired,
     close: PropTypes.string,
     accept: PropTypes.string,
-    // accepting: PropTypes.func,
 };

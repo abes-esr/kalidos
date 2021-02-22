@@ -1,6 +1,17 @@
 import { mathOperators } from "../operators";
 import { conditions } from "./conditions";
 
+/**
+ * Functions pour la creation des schemas (react-json-schema), et la formalisation des donnees 
+ * pour les regles de type : 
+ * ______________________________________    CONDITIONNELS    ______________________________________ 
+ *                                            DEPENDANCE
+ */
+
+/**
+ * Function pour donner le format appropie aux donnes soumis par l'utilisateur
+ * @param {*} data
+ */
 export function formatRuleConditionnelsDependance(data) {
     console.log('formatRuleConditionnelsDependance');
     const obj = {};
@@ -10,10 +21,23 @@ export function formatRuleConditionnelsDependance(data) {
     obj.field2 = data.field2;
     obj.operator = data.operator;
     console.log(obj);
-    return obj;
+        obj.numRuleExcell = data.numRuleExcell
+return obj;
 }
 
 
+/**
+ * Fonction pour la creation du schema
+ * 
+ * @param {
+ *      fields : liste de categories dans le fichier json
+ *      tags : liste de tags a afficher
+ * } categories Liste de categories 
+ * @param {
+ *      rules : liste de regles sur des motifs, pour le generateur (generator.js)
+ *      names : liste de tags a afficher pour chaque regle
+ * } rules 
+ */
 export function getSchemaConditionnelsDependance(categories, rules) {
     return {
         definitions: {
@@ -27,9 +51,10 @@ export function getSchemaConditionnelsDependance(categories, rules) {
                     code: {
                         title: 'Sous Zone',
                         type: 'string',
+                        default: ""
                     }
                 },
-                required: ['number', 'code']
+                required: ['number']
             }
         },
         type: "object",

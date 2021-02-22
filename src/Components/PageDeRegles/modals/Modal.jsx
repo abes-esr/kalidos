@@ -5,6 +5,23 @@ import { OverlayTrigger, Modal, Button } from 'react-bootstrap';
 import ButtonText from '@material-ui/core/Button'
 import IconButton from '@material-ui/core/IconButton';
 
+
+/**
+ * Composant de base pour la creation des modals ADD EDIT DELETE
+ * 
+ * @param {
+ *    icon: Icone du button declencheur,
+ *    textButton : {
+ *        true : le button est un rectangle qui aura te meme texte que celui du champ title,
+ *        false : (default) le button est un simple icone 
+ *    },
+ *    overlay : Tooltip a afficher dans le overlay,
+ *    title : titre a afficher dans le modal,
+ *    body : ce qui sera affiche par le modal (les composants sont possibles),
+ *    close : (default -> null) message a afficher pour le button de fermeture,
+ *    accept : (default -> null) message a afficher pour le button de "acceptation",
+ * } props 
+ */
 function FormModal(props) {
   const {
     icon,textButton, overlay, title, body, close, accept, acceptFunc
@@ -75,7 +92,7 @@ FormModal.defaultProps = {
 
 FormModal.propTypes = {
   icon: PropTypes.any.isRequired,
-  textButton: PropTypes.any,
+  textButton: PropTypes.bool,
   overlay: PropTypes.any.isRequired,
   title: PropTypes.string.isRequired,
   body: PropTypes.any.isRequired,

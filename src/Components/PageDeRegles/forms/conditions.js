@@ -1,7 +1,9 @@
 import { matchingOperators } from "../operators";
 
+/**
+ * Objet schema pour le tableau de conditions a remplir par l'utilisateur
+ */
 export const conditions = {
-
     title:"Conditions",
     type: "array",
     items: {
