@@ -63,7 +63,7 @@ export function typesSpec(categories, rules) {
     },
     { name: "Conditionnels Structurel", 
       type: "ConditionStructurel",
-      gif: "../../../../static/compte.gif",
+      gif: "https://i.ibb.co/PzP6bJK/Cond-Struct.gif",
       description: "Description du type Conditionnels",
       schema: getSchemaConditionnelsStructurel(categories, rules),
       submit: formatRuleConditionnelsStructurel,
