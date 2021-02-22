@@ -149,8 +149,6 @@ Les regles suivantes sont verifiées de cette forme: Les conditions remplises se
 Les conditions ici peuvent être de ce types:
 
 - ``Le champ est présent`` : verifie si le datafield est présent
-
-
 - ``Le champ est absent`` : verifie si le datafield est absent
 - ``le champ est présent et il contient le texte`` : verifie si le datafield est présent et qu'il contient le texte
 - ``Ne doit pas contenir`` : verifie si le datafield n'existe pas ou qu'il ne contient pas le texte
