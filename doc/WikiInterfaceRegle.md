@@ -110,10 +110,12 @@ L'utilisateur commencera par choisir le type de documents parmi les 5 types exis
 Si le type de contrainte est une valeur obligatoire, il devra alors préciser cette valeur, il finira par le message à afficher en cas de violation de cette règle.
 
 
-## Precede
+## Précèdent
 
-> Verifie dans un datafield qu'une sous-zone est bien precedé par une autre sous-zone
-> Exemple : 608\$a et 608\$2rameau, 608\$a doit être précédé d’un 608\$3
+> Ce type de règle vérifie dans une **Zone** qu'une sous-zone est bien **précédée par une autre sous-zone**
+> Nous rappelons l'exemple : si les champs 608\$a et 608\$2 avec la chaine de caractère *rameau*  à matcher alors 608\$a doit être précédé d’un 608\$3.
+
+![](https://i.ibb.co/BNJLV7c/precedence.gif)
 
 
 
