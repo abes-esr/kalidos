@@ -126,27 +126,37 @@ Dans précédé il précisera les deux sous zones, à savoir :
 
  Il finira par le message à afficher en cas de violation de cette règle.
 
-## ConditionDependance
+## Conditionnel Dépendance
 
-> Applique une règle de dépence si les conditions sont validées
+> Ce type de règle applique une règle de dépendance si les conditions données sont validées.
+>
+> Nous rappelons l'exemple: Si la **Zone** 225 existe avec indice 1=0 alors sa **Sous Zone** $a doit être différente est différent du champs 410$t.
+
+![](https://i.ibb.co/Cm0DFWB/Condition-Dependance.gif)
+
+L'utilisateur va donc dans un premier temps choisir le type de documents parmi les 5 types existants dans `Type de documents`, Il saisira ensuite dans `Premier Champs` la **Zone **et/ou **Sous Zone** ainsi que la valeur des indices 1 et 2 concernées et qui correspondent aux conditions d'existence, puis dans `Deuxième Champs`  il saisira la **Zone **et/ou **Sous Zone**, il précisera ensuite l'indice concerné et l'opérateur du matching choisi parmi : 
+
+![](https://i.ibb.co/BPqwmxK/C18.png)
 
 
 
-## ConditionMatching
+ Il finira par le message à afficher en cas de violation de cette règle.
 
-> Applique une regle de matching si les conditions sont validées, de plus on peut imposer la présence d'un champ.
+## Conditionnel Matching
 
-
+> Ce type de règle applique une règle de matching si les conditions sont validées, de plus nous pouvons imposer la présence d'un champ.
 
 Le champ ``type`` peut contenir deux valeurs :
 
 - La valeur ``allRequired`` indiquant que tous les tests dans values doivent réussir
 - La valeur ``oneRequired`` indiquant qu'il faut au moins que l'un des test présent dans values réussisse
 
-## ConditionStructurel
+![](https://i.ibb.co/9Wnj9Tj/Cond-Match.gif)
 
-> Applique une règle de type structurelle si les conditions sont validées. Ces règles de structures peuvent être appliqués soit sur le PPN en cours de traitement, soit sur un autre PPN (réciproque)
-> Exemple : Si le datafield 225 possède un indice 1 qui a une valeur à 0, alors il faut un datafield 410
+## Conditionnel Structurel
+
+> Ce type de règle applique une règle de type structurelle si les conditions sont validées. Ces règles de structures peuvent être appliqués soit sur le PPN en cours de traitement, soit sur un autre PPN (réciproque)
+> Nous rappelons l'exemple : Si le zone 225 possède un indice 1 qui a une valeur à 0, alors il faut un zone 410
 
 
 

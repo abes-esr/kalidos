@@ -57,7 +57,7 @@ export function typesSpec(categories, rules) {
     { name: "Conditionnels Dependance", 
       type: "ConditionDependance",
       gif: "https://i.ibb.co/Cm0DFWB/Condition-Dependance.gif",
-      description: "Ce type de règle applique une règle de dépendance à un document si les conditions données sont validées.",
+      description: "Ce type de règle applique une règle de dépendance à un document si les conditions données sont validées. Nous rappelons l'exemple: Si la Zone 225 existe avec indice 1=0 alors sa Sous Zone $a doit être différente est différent du champs 410$t.",
       schema: getSchemaConditionnelsDependance(categories, rules),
       submit: formatRuleConditionnelsDependance,
     },
