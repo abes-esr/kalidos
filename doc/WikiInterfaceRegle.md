@@ -236,5 +236,5 @@ Dans cette interface un utilisateur pourra supprimer une règle existante, comme
 
 Dans cette interface un utilisateur pourra tester une règle existante, comme le montre l'animation suivante, l'utilisateur aura en entrée à gauche un PPN à tester, puis en appuyant sur le bouton `Tester la règle` , il sera informer si la règle est passé sur ce PPN ou pas.
 
-![]()
+![](https://i.ibb.co/tZFBnm1/test.gif)
 
