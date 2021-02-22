@@ -76,7 +76,7 @@ export function getSchemaDependencies(categories, rules) {
                 type: "number",
             },
             field1: {title:"Premier datafield","$ref": "#/definitions/champs"},
-            field2: {title:"Deuxiéme datafield","$ref": "#/definitions/champs"},
+            field2: {title:"Deuxième datafield","$ref": "#/definitions/champs"},
             operator: {
                 title: "Opérateur à appliquer",
                 type: "string",
