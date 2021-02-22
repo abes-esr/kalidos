@@ -77,7 +77,7 @@ export function typesSpec(categories, rules) {
     },
     { name: "Références", 
       type: "idRef",
-      gif: "../../../../static/compte.gif",
+      gif: "https://i.ibb.co/QKqmKxT/idref.gif",
       description: "Nous rappelons que ce type de règle vérifie dans un document externe si le controlfield est valide ou pas. Nous rappelons l'exemple : S'il existe une 606$y et que 606$2 est égal a la chaine `rameau` alors il faudrait récupérer l'identifiant de la notice comprise dans le champ 606$3 et chercher par la suite cette notice sur https://www.idref.fr/ppn.xml. Enfin sur cette notice externe le controlfield 008 doit commence par `Tg`",
       schema: getSchemaIdRef(categories, rules),
       submit: formatRuleIdRef,
