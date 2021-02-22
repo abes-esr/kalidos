@@ -1,7 +1,6 @@
-/* eslint-disable react/prop-types */
 import React from 'react';
 import FormJSON from '@rjsf/core';
-import { OverlayTrigger, Tooltip, Button } from 'react-bootstrap';
+import { OverlayTrigger, Tooltip, Button, Container, Row } from 'react-bootstrap';
 import { Edit, Delete, BugReport } from '@material-ui/icons';
 import ArrayFieldTemplate from '../forms/ArrayFieldTemplate';
 import Modal from '../modals/Modal';
@@ -108,20 +107,20 @@ function Action({ row, types, editRule, deleteRule }) {
 
     return (
     <Container>
-    <Row>
-      <h6>Règle de type : {row.type}</h6>
-    </Row>
-    <Row>
-      <FormJSON
-        className="col-12"
-        schema={editSchema}
-        ArrayFieldTemplate={ArrayFieldTemplate}
-        onSubmit={onSubmit}
-        formData={row}
-      >
-        <Button className="m-1" variant="primary" type="submit">Valider</Button>
-      </FormJSON>
-    </Row>
+      <Row>
+        <h6>Règle de type : {row.type}</h6>
+      </Row>
+      <Row>
+        <FormJSON
+          className="col-12"
+          schema={editSchema}
+          ArrayFieldTemplate={ArrayFieldTemplate}
+          onSubmit={onSubmit}
+          formData={row}
+        >
+          <Button className="m-1" variant="primary" type="submit">Valider</Button>
+        </FormJSON>
+      </Row>
   </Container>
   )};
 

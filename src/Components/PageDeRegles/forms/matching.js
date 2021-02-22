@@ -88,9 +88,10 @@ export function getSchemaMatching(categories, rules) {
               message: {
                 title: 'Message à afficher',
                 type: 'string',
+                default: ""
               },
             },
-            required: ['number','regex', 'message']
+            required: ['number','regex']
           },
           {
             properties: {

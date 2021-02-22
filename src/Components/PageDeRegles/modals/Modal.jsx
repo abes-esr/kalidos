@@ -45,7 +45,7 @@ function FormModal(props) {
   const triggerButton = textButton ? 
   <OverlayTrigger placement="auto" delay={{ show: 250, hide: 400 }} overlay={overlay}>
     <Button variant="primary" style={{ width: "100%" }} onClick={() => handleModalShowHide()}>
-      <i class={icon} ></i>  {title}
+      <i className={icon} ></i> {title}
     </Button >
   </OverlayTrigger> :
   <OverlayTrigger placement="auto" delay={{ show: 250, hide: 400 }} overlay={overlay}>            
