@@ -112,7 +112,12 @@ function Add({ types, newRule }) {
           <ListGroup>
             {
               types.map((type) => (
-                <ListGroup.Item key={type.type} action onClick={() => handleTypeChange(type.type)} className={'listGroupPPN'}>
+                <ListGroup.Item 
+                  key={type.type}
+                  action
+                  onClick={() => handleTypeChange(type.type)}
+                  className={'listGroupPPN'}
+                >
                   {type.name}
                 </ListGroup.Item>
               ))
@@ -121,8 +126,9 @@ function Add({ types, newRule }) {
         </Col>
         <Col>
           <Card>
-            <Card.Img variant="top" src={types[index].gif} />
+            <Card.Header>{types[index].name}</Card.Header>
             <Card.Body>{types[index].description}</Card.Body>
+            <Card.Img variant="top" src={types[index].gif} />
           </Card>
         </Col>
       </Row>
