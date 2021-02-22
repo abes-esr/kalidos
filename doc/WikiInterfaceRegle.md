@@ -1,5 +1,7 @@
 # Explication de l'interface de Règles
 
+[[_TOC_]]
+
 Dans cette interface un utilisateur peut ajouter, modifier ou bien supprimer une règle, aussi il aura la possibilité de basculer vers une interface pour tester la véracité d'une règle.
 
 Comme le montre la figure dans cette interface nous pouvons parcourir les règles qui existent par types de documents qui sont pour rappel : 
@@ -12,7 +14,6 @@ Comme le montre la figure dans cette interface nous pouvons parcourir les règle
 Ici chaque règle dispose d'une colonne `Vérification` qui correspond au message à afficher lorsque la règle est violée. Dans cette interface, l'utilisateur peut également rechercher une règle précise parmi les règles existantes, en entrant les mots clés dans la barre de recherche. 
 
 ![](https://i.ibb.co/341nHBB/c15.png)
-
 
 
 # Explication d'ajout des règles 
@@ -30,8 +31,30 @@ En cliquant sur suivant l'utilisateur sera rediriger directement vers une fenêt
 
 ![](https://i.ibb.co/y0x5PXB/C19.png)
 
-Nous allons maintenant expliquer pour chaque type de règle son formulaire correspondant.
+## Création de regex: 
+Pour la suite les champs de la forme ![](https://ibb.co/4ZK93Dm) 
 
+Ces trois champs : ``Règle à utiliser``, ``Le motif contiens de mots`` et ``Motif(s) à utiliser par la règle`` seront combinés pour générer le champ `regex` pour les règles de type [Matching, Référentiels, et Conditionnels Matching]
+(./wikiRègles.md) 
+**Motif :** champ, zone, valeur qui seront utilisés comme forme d'évaluation. Ceci peut être un **'mot'** qui dans notre cas nous considérons une séquence d'au moins 2 caractères (espaces inclus), ou bien un seul caractère, ou bien un nombre (comme dans le cas de la règle nombre de caractères). 
+Exemples de mots : rameau, Tg, C (espace). 
+Exemple de caractère seul : 9, a, c 
+
+### Règle à utiliser 
+
+La règle peut être de type : 
+* Doit contenir : La (Les) zone(s) doit(doivent) contenir les motifs soumis 
+* Ne doit pas contenir : La(Les) zone(s) ne doit(doivent) pas contenir les motifs soumis 
+* Égale à : La(Les) zone(s) doit(doivent) être égal(égaux) aux motifs soumis 
+* Ne soit pas égale à : La (Les) zone(s) ne doit(doivent) pas être égal(égaux) aux motifs soumis 
+* Commence par : La(Les) zone(s) doit(doivent) commencer par les motifs soumis 
+* Ne doit pas commencer par : La(Les) zone(s) ne doit(doivent) commencer par les motifs soumis 
+* Fini par : La(Les) zone(s) doit(doivent) finir par les motifs soumis * Ne doit pas finir par : La(Les) zone(s) ne doit(doivent) pas finir par les motifs soumis 
+* Nombre de caractères : La(Les) zone(s) doit(doivent) avoir exactement ce nombre de caractères (mettre le nombre de caractères dans la case ``Motif(s) à utiliser par la règle``)
+
+# Type de règles
+
+Nous allons maintenant expliquer pour chaque type de règle son formulaire correspondant.
 
 ## Compte
 
@@ -91,7 +114,6 @@ Comme il est également possible d’inclure plusieurs champs dans une même rè
   ![](https://i.ibb.co/K5kpjM0/matchingplusieurs.gif)
 
 
-
 ## Ordonnancement
 
 > Nous rappelons que ce type de règle vérifie l'ordonnancement de toutes les **Zone** possédant le même identifiant, en effet il faut qu'elles soient triées en fonction de leur indice (1 ou 2).
@@ -113,12 +135,30 @@ Il finira par le message à afficher en cas de violation de cette règle.
 ![](https://i.ibb.co/mD4Qt1g/structurel1.gif)
 
 
-
 L'utilisateur commencera par choisir le type de documents parmi les 5 types existants dans `Type de documents`, Il saisira ensuite la **Zone**  **Sous Zone** concernées de ce document. Il précisera ensuite les deux indices que doit contenir ce document, en précisant la valeur du type de la contrainte à savoir :
 
 ![](https://i.ibb.co/K7Hx7B3/C11.png)
 
 Si le type de contrainte est une valeur obligatoire, il devra alors préciser cette valeur, il finira par le message à afficher en cas de violation de cette règle.
+
+
+# Règles tenant en compte des conditions
+-----------------------------------------
+Les regles suivantes sont verifiées de cette forme: Les conditions remplises seront verifiées avant tout, une fois ces conditions sont valides, la verification de la regle est fait.
+
+Les conditions ici peuvent être de ce types:
+
+- ``Le champ est présent`` : verifie si le datafield est présent
+
+
+- ``Le champ est absent`` : verifie si le datafield est absent
+- ``le champ est présent et il contient le texte`` : verifie si le datafield est présent et qu'il contient le texte
+- ``Ne doit pas contenir`` : verifie si le datafield n'existe pas ou qu'il ne contient pas le texte
+- ``Commence par`` : verifie si le datafield existe et qu'il commence par le texte
+- ``Ne doit pas commencer par`` : verifie si le datafield n'existe pas ou 
+- ``Égale à`` : verifie si le datafield existe et qu'il est strictement égal au texte
+- ``Ne soit pas égale à`` : verifie si le datafield n'existe pas ou est différent du texte
+- ``Champ existant et sous chaine en partant de la fin est égal au texte `` : verifie si le champ existe et que la sous-chaîne en partant de la fin est égale au texte
 
 
 ## Précèdent
@@ -158,16 +198,16 @@ Enfin l'utilisateur indique le message à afficher en cas de violation de cette 
 
 ![](https://i.ibb.co/9Wnj9Tj/Cond-Match.gif)
 
-L'utilisateur va donc dans un premier temps choisir le type de documents parmi les 5 types existants dans `Type de documents`, Il saisira ensuite dans `Condistions` il précisera les conditions de départ à savoir :
+L'utilisateur va donc dans un premier temps choisir le type de documents parmi les 5 types existants dans `Type de documents`, Il saisira ensuite dans `Conditions` il précisera les conditions de départ à savoir :
 
-- **Zone **
+- **Zone**
 - **Sous Zone** 
 - **Opérateur de matching**
 - **Texte à vérifier** 
 
 Dans Zone il précisera les numéro des zones à traiter en y ajoutant les règles de types matching à évaluer pour chaque zone, et ceci en mettant :
 
-- **Numéro de la Zone **
+- **Numéro de la Zone**
 - **Numéro de la Sous Zone** 
 - **Règle à utiliser**
 - **Motifs à traiter** 
