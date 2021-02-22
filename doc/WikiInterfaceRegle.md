@@ -154,11 +154,6 @@ L'utilisateur va donc dans un premier temps choisir le type de documents parmi l
 
 > Ce type de règle applique une règle de matching si les conditions sont validées, de plus nous pouvons imposer la présence d'un champ.
 
-Le champ ``type`` peut contenir deux valeurs :
-
-- La valeur ``allRequired`` indiquant que tous les tests dans values doivent réussir
-- La valeur ``oneRequired`` indiquant qu'il faut au moins que l'un des test présent dans values réussisse
-
 ![](https://i.ibb.co/9Wnj9Tj/Cond-Match.gif)
 
 L'utilisateur va donc dans un premier temps choisir le type de documents parmi les 5 types existants dans `Type de documents`, Il saisira ensuite dans `Condistions` il précisera les conditions de départ à savoir :
@@ -187,11 +182,33 @@ Puis le message à afficher en cas de violation de cette règle.
 ## Conditionnel Structurel
 
 > Ce type de règle applique une règle de type structurelle si les conditions sont validées. Ces règles de structures peuvent être appliqués soit sur le PPN en cours de traitement, soit sur un autre PPN (réciproque).
-> Nous rappelons l'exemple : Si le zone 225 possède un indice 1 qui a une valeur à 0, alors il faut un zone 410
+> Nous rappelons l'exemple : Si la zone 456 existe, alors vérifier que la notice en 456$0 contient une zone 455 avec liens réciproques
 
-![]()
+![](https://i.ibb.co/PzP6bJK/Cond-Struct.gif)
 
+L'utilisateur va donc dans un premier temps choisir le type de documents parmi les 5 types existants dans `Type de documents`, Il saisira ensuite dans `Conditions` les conditions de départ à savoir :
 
+- **Zone **
+- **Sous Zone** 
+- **Opérateur de matching**
+- **Indice 1 de la zone (datafield)**
+- **Indice 2 de la zone (datafield)**
+
+Dans Zone il précisera le numéro de zone à traiter en y ajoutant les valeurs à évaluer pour cette zone, et ceci en mettant :
+
+- **Numéro de la Zone **
+- **Numéro de la Sous Zone** 
+- **Indice 1 de la zone (datafield)**
+- **Indice 2 de la zone (datafield)**
+- **Un précision pour indique si la règle est réciproque ou pas **
+- **Une précision pour indiquer si le champs doit être présent ou pas** 
+
+Dans `Réciprocité` , l'utilisateur précisera  la **Zone **et la **Sous Zone** du datafield réciproque puis le type duc champs à savoir :
+
+- **Type** = `Tous Obligatoires` pour spécifier que tous les motifs doivent être validés 
+- **Type** = `Un` pour préciser qu’au moins un motif doit être validé
+
+Et enfin le message à afficher en cas de violation de cette règle.
 
  
 
