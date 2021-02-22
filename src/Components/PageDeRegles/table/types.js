@@ -71,7 +71,7 @@ export function typesSpec(categories, rules) {
     { name: "Structurels", 
       type: "Structurel",
       gif: "https://i.ibb.co/mD4Qt1g/structurel1.gif",
-      description: "Ce type de règle impose des contraintes sur la structure du document. Nous rappelons l'exemple : la Zone '328' doit contenir ind1='' et ind2='0'",
+      description: "Ce type de règle impose des contraintes sur la structure du document. Nous rappelons l'exemple : la Zone '328' doit contenir : indice 1 ='' et indice 2='0'",
       schema: getSchemaStructurel(categories, rules),
       submit: formatRuleStructurel,
     },
