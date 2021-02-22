@@ -1,6 +1,18 @@
 import { generator } from "../generator";
 import { conditions } from "./conditions";
+import { regexCreator } from "./regex";
 
+/**
+ * Functions pour la creation des schemas (react-json-schema), et la formalisation des donnees 
+ * pour les regles de type : 
+ * ______________________________________    CONDITIONNELS    ______________________________________ 
+ *                                              MATCHING
+ */
+
+/**
+ * Function pour donner le format appropie aux donnes soumis par l'utilisateur
+ * @param {*} data
+ */
 export function formatRuleConditionnelsMatching(data) {
     console.log('formatRuleConditionnelsMatching');
     const obj = {};
@@ -10,7 +22,7 @@ export function formatRuleConditionnelsMatching(data) {
         let value = {}
         value.number = val.number
         value.code = val.code
-        value.regex = generator(val.rule, val.patterns, val.isWord)
+        value.regex = generator(val.regex.rule, val.regex.patterns, val.regex.isWord)
         value.subFieldRequired = val.subFieldRequired? val.subFieldRequired : false
         value.message = val.message
         return value
@@ -19,9 +31,22 @@ export function formatRuleConditionnelsMatching(data) {
     obj.type = data.type;
     obj.message = data.message;
     console.log(obj);
+    obj.numRuleExcell = data.numRuleExcell
     return obj;
 }
 
+/**
+ * Fonction pour la creation du schema
+ * 
+ * @param {
+ *      fields : liste de categories dans le fichier json
+ *      tags : liste de tags a afficher
+ * } categories Liste de categories 
+ * @param {
+ *      rules : liste de regles sur des motifs, pour le generateur (generator.js)
+ *      names : liste de tags a afficher pour chaque regle
+ * } rules 
+ */
 export function getSchemaConditionnelsMatching(categories, rules) {
     return {
         type: "object",
@@ -53,25 +78,9 @@ export function getSchemaConditionnelsMatching(categories, rules) {
                         code: {
                             title: 'Sous Zone',
                             type: 'string',
+                            default: ""
                         },
-                        rule: {
-                            title: 'Règle à utiliser',
-                            type: 'string',
-                            enum: rules.rules,
-                            enumNames: rules.names,
-                        },
-                        isWord: {
-                            title: 'Le motif contient de mots',
-                            enum: [true, false],
-                            enumNames: ["Oui", "Non"]
-                        },
-                        patterns: {
-                            title: "Motifs",
-                            type: 'array',
-                            items: {
-                              type: 'string',
-                            },
-                        },
+                        regex: regexCreator(rules),
                         subFieldRequired: {
                             title: "Le subfield doit être présent ?",
                             type: "boolean"

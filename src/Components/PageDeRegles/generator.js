@@ -1,3 +1,8 @@
+/**
+ * GENERATEUR DE REGEX
+ * 
+ * Les fonctions suivantes font partie de la generation de regex pour les champs 'regex' dans les regles
+ */
 export const rulesSpec = {
   rules: [
     "must contain",

@@ -1,35 +1,58 @@
 import { generator } from '../generator';
+import { regexCreator } from './regex';
 
+/**
+ * Functions pour la creation des schemas (react-json-schema), et la formalisation des donnees 
+ * pour les regles de type : 
+ * ______________________________________    IDREF    ______________________________________ 
+ */
+
+/**
+ * Function pour donner le format appropie aux donnes soumis par l'utilisateur
+ * @param {*} data
+ */
 export function formatRuleIdRef(data) {
-  console.log('formatRuleIdRef');
-  const obj = {};
-  obj.message = data.message;
-  obj.condition = data.condition.map(cond => {
-      console.log(cond)
-    if (cond.matching === 'Oui')
-        return {
-            number: cond.number,
-            code: cond.code,
-            regex: generator(cond.matching.rule, cond.matching.patterns, cond.matching.isWord),
-        }
-    else
-        return {
-            number: cond.number,
-            code: cond.code,
-        }
-  })
-  obj.identifiant = {
-    number: data.identifiant.number,
-    code: data.identifiant.code,
-  }
-  obj.verification = {
-    number: data.verification.number,
-    regex: generator(data.verification.rule, data.verification.patterns, data.verification.isWord),
-  }
-  console.log(obj);
+    console.log('formatRuleIdRef');
+    const obj = {};
+    obj.message = data.message;
+    obj.condition = data.condition.map(cond => {
+        return (cond.matching === 'Oui') ? 
+            {
+                number: cond.number,
+                code: cond.code,
+                regex: generator(cond.regex.rule, cond.regex.patterns, cond.regex.isWord),
+            }
+        :
+             {
+                number: cond.number,
+                code: cond.code,
+            }
+    })
+    obj.identifiant = {
+        number: data.identifiant.number,
+        code: data.identifiant.code,
+    }
+    obj.verification = {
+        number: data.verification.number,
+        regex: generator(data.verification.regex.rule, data.verification.regex.patterns, data.verification.regex.isWord),
+    }
+    console.log(obj);
+    obj.numRuleExcell = data.numRuleExcell;
     return obj;
 }
 
+/**
+ * Fonction pour la creation du schema
+ * 
+ * @param {
+ *      fields : liste de categories dans le fichier json
+ *      tags : liste de tags a afficher
+ * } categories Liste de categories 
+ * @param {
+ *      rules : liste de regles sur des motifs, pour le generateur (generator.js)
+ *      names : liste de tags a afficher pour chaque regle
+ * } rules 
+ */
 export function getSchemaIdRef(categories, rules) {
     return {
         definitions: {
@@ -43,9 +66,10 @@ export function getSchemaIdRef(categories, rules) {
                     code: {
                         title: "Subfield où recuperer l'identifiant de la notice externe",
                         type: "string",
+                        default: ""
                     },
                 },
-                required: ['number', 'code'],
+                required: ['number'],
             },
             verification: {
                 type: "object",
@@ -54,26 +78,9 @@ export function getSchemaIdRef(categories, rules) {
                         title: "Champ à vérifier dans la notice externe",
                         type: "string",
                     },
-                    rule: {
-                        title: 'Regle a utiliser',
-                        type: 'string',
-                        enum: rules.rules,
-                        enumNames: rules.names,
-                    },
-                    isWord: {
-                        title: ' Le motif contient de mots',
-                        enum: [true, false],
-                        enumNames: ["Oui", "Non"]
-                    },
-                    patterns: {
-                        title: 'Motif(s) a utiliser par la regle',
-                        type: 'array',
-                        items: {
-                            type: 'string',
-                        },
-                    },
+                    regex: regexCreator(rules)
                 },
-                required: ['number', 'rule', 'isWord', 'patterns'],
+                required: ['number', 'regex'],
             }
         },
         type: "object",
@@ -100,39 +107,23 @@ export function getSchemaIdRef(categories, rules) {
                         code: {
                             title: "Sous zone",
                             type: "string",
+                            default: ""
                         },
                         matching:{
                             title: "Condition de matching?",
                             enum: ['Oui', 'Non']
                         }
                     },
-                    required: ['number', 'code'],
+                    required: ['number'],
                     dependencies: {
                         matching: {
                             oneOf: [
                                 {
                                     properties: {
                                         matching: { enum: ['Oui'] },
-                                        rule: {
-                                            title: 'Règle à utiliser',
-                                            type: 'string',
-                                            enum: rules.rules,
-                                            enumNames: rules.names,
-                                        },
-                                        isWord: {
-                                            title: 'Le motif contient de mots',
-                                            enum: [true, false],
-                                            enumNames: ["Oui", "Non"]
-                                        },
-                                        patterns: {
-                                            title: "Motifs",
-                                            type: 'array',
-                                            items: {
-                                              type: 'string',
-                                            },
-                                        },
+                                        regex: regexCreator(rules)
                                     },
-                                    required: ['rule','patterns', 'isWord']
+                                    required: ['regex']
                                 },
                                 {
                                     properties: {
@@ -151,6 +142,6 @@ export function getSchemaIdRef(categories, rules) {
                 type: "string",
             },
         },
-        // required: ['category', 'numRuleExcell' ,'identifiant', 'verification', 'condition', 'message'],
+        required: ['category', 'numRuleExcell' ,'identifiant', 'verification', 'condition', 'message'],
     }
 }

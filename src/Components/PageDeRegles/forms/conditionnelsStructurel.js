@@ -1,5 +1,16 @@
 import { conditions } from "./conditions";
 
+/**
+ * Functions pour la creation des schemas (react-json-schema), et la formalisation des donnees 
+ * pour les regles de type : 
+ * ______________________________________    CONDITIONNELS    ______________________________________ 
+ *                                            STRUCTUREL
+ */
+
+/**
+ * Function pour donner le format appropie aux donnes soumis par l'utilisateur
+ * @param {*} data
+ */
 export function formatRuleConditionnelsStructurel(data) {
     console.log('formatRuleConditionnelsStructurel');
     const obj = {};
@@ -9,9 +20,22 @@ export function formatRuleConditionnelsStructurel(data) {
     obj.type = data.type;
     obj.message = data.message;
     console.log(obj);
+    obj.numRuleExcell = data.numRuleExcell
     return obj;
 }
 
+/**
+ * Fonction pour la creation du schema
+ * 
+ * @param {
+ *      fields : liste de categories dans le fichier json
+ *      tags : liste de tags a afficher
+ * } categories Liste de categories 
+ * @param {
+ *      rules : liste de regles sur des motifs, pour le generateur (generator.js)
+ *      names : liste de tags a afficher pour chaque regle
+ * } rules 
+ */
 export function getSchemaConditionnelsStructurel(categories, rules) {
     return {
         type: "object",
@@ -43,6 +67,7 @@ export function getSchemaConditionnelsStructurel(categories, rules) {
                         code: {
                             title: 'Sous Zone',
                             type: 'string',
+                            default: ""
                         },
                         ind1: {
                             title: "Indice 1 du datafield",
@@ -65,6 +90,7 @@ export function getSchemaConditionnelsStructurel(categories, rules) {
                                 code: {
                                     title: 'Sous Zone',
                                     type: 'string',
+                                    default: ""
                                 }
                             },
                             default: ""

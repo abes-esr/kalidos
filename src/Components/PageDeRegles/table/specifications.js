@@ -1,3 +1,10 @@
+/**
+ * Specifications pour la table 
+ * https://react-bootstrap-table.github.io/react-bootstrap-table2/
+ * 
+ */
+
+
 export const options = {
   paginationSize: 4,
   pageStartIndex: 1,

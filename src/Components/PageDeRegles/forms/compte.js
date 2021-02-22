@@ -1,3 +1,13 @@
+/**
+ * Functions pour la creation des schemas (react-json-schema), et la formalisation des donnees 
+ * pour les regles de type : 
+ * --------------------------------------    COMPTE    ---------------------------------------
+ */
+
+/**
+ * Function pour donner le format appropie aux donnes soumis par l'utilisateur
+ * @param {*} data
+ */
 export function formatRuleCompte(data) {
     console.log('formatRuleCompte');
     console.log(data)
@@ -7,9 +17,22 @@ export function formatRuleCompte(data) {
     obj.contrainte = data.contrainte;
     obj.message = data.message;
     console.log(obj);
-    return obj;
+        obj.numRuleExcell = data.numRuleExcell
+return obj;
 }
 
+/**
+ * Fonction pour la creation du schema
+ * 
+ * @param {
+ *      fields : liste de categories dans le fichier json
+ *      tags : liste de tags a afficher
+ * } categories Liste de categories 
+ * @param {
+ *      rules : liste de regles sur des motifs, pour le generateur (generator.js)
+ *      names : liste de tags a afficher pour chaque regle
+ * } rules 
+ */
 export function getSchemaCompte(categories, rules) {
     return {
         type: "object",
@@ -31,6 +54,7 @@ export function getSchemaCompte(categories, rules) {
             code: {
                 title: 'Sous Zone',
                 type: 'string',
+                default: ""
             },
             contrainte: {
                 title: 'Numéro de zone qui servira de comparateur',
@@ -41,7 +65,7 @@ export function getSchemaCompte(categories, rules) {
                 type: "string",
             },
         },
-        required: ['category','numRuleExcell', 'number', 'code', 'contrainte', 'message'],
+        required: ['category','numRuleExcell', 'number', 'contrainte', 'message'],
 
     }
 }

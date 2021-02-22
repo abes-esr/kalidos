@@ -5,8 +5,18 @@ import {
 } from 'react-bootstrap';
 import ArrayFieldTemplate from '../forms/ArrayFieldTemplate';
 
-
+/**
+ * Composant d'ajout de regles a deux parties:
+ *    List : qui propose la liste de regles disponibles avec une brief explication
+ *    Form : le formulaire correspondant au type de regle choisi
+ * 
+ * @param {
+ *   types : liste de types 
+ *   newRule : la fonction qui permet de suajouterpprimer une regle sur la liste
+ * } props 
+ */
 function Add({ types, newRule }) {
+  
   const [useForm, setUseForm] = useState(false);
   const [index, setIndex] = useState(0);
 
@@ -17,7 +27,14 @@ function Add({ types, newRule }) {
   const handleSelectedType = () => {
     setUseForm(!useForm);
   };
-
+  /**
+   * La fonction qui est appellee quand on veut ajouter une regle
+   * 
+   * @param {
+    *    formData : Information rempli par l'utilisateur
+    * } param0 
+    * @param {*} e 
+    */
   const onSubmit = ({ formData }, e) => {
     const obj = types[index].submit(formData);
     console.log('Add');
@@ -63,7 +80,10 @@ function Add({ types, newRule }) {
       </Button>
     </Row>
   );
-
+  
+  /*********************************************************** 
+   *                      FORMULAIRE
+   * **********************************************************/
   const Form = () => (
     <Container>
       <Row>
@@ -82,15 +102,9 @@ function Add({ types, newRule }) {
     </Container>
   );
 
-    const TestImage = () =>
-    {
-      if (types[index].type === 'compte'){
-        return <Card.Img variant="top" src='../../../../static/compte.gif' />
-      } else {
-        return <Card.Body>{types[index].description}</Card.Body>
-      }
-    }
-
+  /*********************************************************** 
+  *                     LISTE DE REGLES
+  * **********************************************************/
   const List = () => (
     <Container>
       <Row>

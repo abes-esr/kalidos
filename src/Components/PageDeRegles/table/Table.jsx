@@ -16,6 +16,11 @@ import { rulesSpec } from '../generator';
 import Action from './Actions';
 import Add from './Add';
 
+/**
+ * Composant qui gere la table de regles 
+ * https://react-bootstrap-table.github.io/react-bootstrap-table2/
+ * 
+ */
 function Table() {
   const [error, setError] = useState(null);
   const [isLoaded, setIsLoaded] = useState(false);
@@ -87,9 +92,15 @@ function Table() {
       .then(
         (result) => {
           setIsLoaded(true);
+          /**
+           * On appel la fonction filtering pour qu'elle filtre les donnes du fichier json pour etre affichees 
+           */
           const filtered = filtering(result);
           setRules(filtered.rules);
 
+          /**
+           * On appel la fonction typeSpec pour recuperer les specifications des types de regles 
+           */
           let t = typesSpec(filtered.categories, rulesSpec);
           setTypes(t);
 
@@ -126,6 +137,9 @@ function Table() {
         (props) => (
           <div>
             <div className="row">
+              {/*********************************************************** 
+               *                      SEARCH BAR
+               * **********************************************************/ }
               <div className="col-8">
                 <form
                   className="d-none d-sm-inline-block form-inline mr-auto ml-md-2 my-2 my-md-0 mw-100 navbar-search"
@@ -147,6 +161,9 @@ function Table() {
                   </div>
                 </form>
               </div>
+              {/*********************************************************** 
+               *                      BUTTON ADD
+               * **********************************************************/ }
               <div className="col-4">
                 <Modal
                   icon={ <AddIcon />}

@@ -1,3 +1,8 @@
+/**
+ * Objets qui representent les operateurs des regles avec leur tags (noms a utiliser dans l'interface)
+ * 
+ */
+
 export const mathOperators = 
 {
     rules :
@@ -20,6 +25,8 @@ export const mathOperators =
     ]
 
 }
+
+
 export const matchingOperators = 
 {
     rules: 

@@ -8,6 +8,17 @@ import Modal from '../modals/Modal';
 import ModalTestRegle from '../modals/ModalTestRegle';
 import TestRegle from '../testRegle/testRegle';
 
+/**
+ * Composant qui gere les actions (edition, test, suppresion) sur chaque ligne
+ * Affiche a la fin de chaque ligne
+ * 
+ * @param {
+ *    row : la ligne dans le tableau des regles
+ *    types : le type de la regle
+ *    editRule : la fonction qui permet de supprimer une regle sur la liste
+ *    deleteRule : la fonction qui permet de supprimer une regle sur la liste
+ * } props 
+ */
 function Action({ row, types, editRule, deleteRule }) {
   const typeIndex = types.findIndex((t) => t.type === row.type);
   const { schema } = types[typeIndex];
@@ -21,6 +32,15 @@ function Action({ row, types, editRule, deleteRule }) {
     )
   }
 
+
+  /**
+   * La fonction qui est appellee quand on veut modifier une regle
+   * 
+   * @param {
+   *    formData : Information rempli par l'utilisateur
+   * } param0 
+   * @param {*} e 
+   */
   const onSubmit = ({ formData }, e) => {
     const obj = types[typeIndex].submit(formData);
     console.log(`Edit: ${obj}`);
@@ -53,6 +73,10 @@ function Action({ row, types, editRule, deleteRule }) {
       })
   };
 
+
+  /**
+   * La fonction qui permet de de valider la suppression d'une certaine regle
+   */
   const onAcceptDelete = function () {
     const requestOptions = {
       method: 'DELETE',
@@ -79,9 +103,9 @@ function Action({ row, types, editRule, deleteRule }) {
     let editSchema = schema
     delete editSchema.properties.category
     editSchema.required = editSchema.required.slice(1)
-    if (row.type === "matching"){
+    if (row.type === "matching")
       row.number = String(row.number).split(',')
-    }
+
     return (
     <Container>
     <Row>
@@ -103,6 +127,10 @@ function Action({ row, types, editRule, deleteRule }) {
 
   return (
     <div className="row">
+
+      {/*********************************************************** 
+       *                      BUTTON EDIT
+       * **********************************************************/ }
       <div className="col-4 mx-auto" style={{ padding: 0 }}>
         <Modal
           icon={ <Edit color="primary" fontSize="small" />}
@@ -115,6 +143,10 @@ function Action({ row, types, editRule, deleteRule }) {
           body={<EditForm />}
         />
       </div>
+
+      {/*********************************************************** 
+       *                      BUTTON TEST
+       * **********************************************************/ }
       <div className="col-4 mx-auto" style={{ padding: 0 }}>
         <ModalTestRegle
           button={
@@ -130,6 +162,10 @@ function Action({ row, types, editRule, deleteRule }) {
           }
         />
       </div>
+
+      {/*********************************************************** 
+       *                      BUTTON DELETE
+       * **********************************************************/ }
       <div className="col-4 mx-auto" style={{ padding: 0 }}>
         <Modal
           icon={<Delete color="error" fontSize="small" />}
