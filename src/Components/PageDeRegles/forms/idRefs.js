@@ -16,7 +16,7 @@ export function formatRuleIdRef(data) {
     const obj = {};
     obj.message = data.message;
     obj.condition = data.condition.map(cond => {
-        return (cond.matching === 'Oui') ? 
+        return (cond.matching) ? 
             {
                 number: cond.number,
                 code: cond.code,
@@ -110,8 +110,9 @@ export function getSchemaIdRef(categories, rules) {
                             default: ""
                         },
                         matching:{
-                            title: "Condition de matching?",
-                            enum: ['Oui', 'Non']
+                            title: "Condition de matching ?",
+                            type: "boolean",
+                            default: false
                         }
                     },
                     required: ['number'],
@@ -120,14 +121,14 @@ export function getSchemaIdRef(categories, rules) {
                             oneOf: [
                                 {
                                     properties: {
-                                        matching: { enum: ['Oui'] },
+                                        matching: { enum: [true] },
                                         regex: regexCreator(rules)
                                     },
                                     required: ['regex']
                                 },
                                 {
                                     properties: {
-                                        matching: { enum: ['Non'] }
+                                        matching: { enum: [false] }
                                     }
                                 }
                             ]

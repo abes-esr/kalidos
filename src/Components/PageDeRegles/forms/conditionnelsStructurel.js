@@ -16,11 +16,25 @@ export function formatRuleConditionnelsStructurel(data) {
     const obj = {};
     obj.number = data.number;
     obj.condition = data.condition;
-    obj.value = data.values;
+    obj.value = data.values.map(value => {
+        let o = {}
+        o.number = value.number;
+        o.code = value.code;
+        o.ind1 = value.ind1;
+        o.ind2 = value.ind2;
+        o.present = value.present;
+        o.reciproque = isReciproque ? 
+            {
+                number: reciproque.number,
+                code: reciproque.code
+            }
+        : "";
+        return o
+    });
     obj.type = data.type;
     obj.message = data.message;
-    console.log(obj);
     obj.numRuleExcell = data.numRuleExcell
+    console.log(obj);
     return obj;
 }
 
@@ -79,26 +93,48 @@ export function getSchemaConditionnelsStructurel(categories, rules) {
                             type: "string",
                             default: ""
                         },
-                        reciproque:{
-                            title: 'La règle est réciproque ou non',
-                            type: "object",
-                            properties: {
-                                number: {
-                                    title: "Zone",
-                                    type: "string",
-                                },
-                                code: {
-                                    title: 'Sous Zone',
-                                    type: 'string',
-                                    default: ""
-                                }
-                            },
-                            default: ""
+                        isReciproque: {
+                            title: "La règle est réciproque ?",
+                            type: "boolean",
+                            default: false
                         },
                         present: {
                             title: 'Le champ doit être présent ?',
                             type: "boolean",
                         } 
+                    },
+                    dependencies: {
+                        isReciproque:{
+                            oneOf:[
+                                {
+                                    properties:{
+                                        isReciproque:{ enum: [true]},
+                                        reciproque:{
+                                            type: "object",
+                                            title: "Réciprocité",
+                                            properties: {
+                                                number: {
+                                                    title: "Zone",
+                                                    type: "string",
+                                                },
+                                                code: {
+                                                    title: 'Sous Zone',
+                                                    type: 'string',
+                                                    default: ""
+                                                }
+                                            },
+                                            default: ""
+                                        },
+                
+                                    }
+                                },
+                                {
+                                    properties:{
+                                        isReciproque:{ enum: [false]},
+                                    }
+                                }
+                            ]
+                        }
                     }
                 }
             },

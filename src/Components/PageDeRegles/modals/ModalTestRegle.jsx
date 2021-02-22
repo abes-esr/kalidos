@@ -38,7 +38,7 @@ function FormModal({
                 {button}
             </IconButton>
 
-            <Modal show={showHide} size="xl">
+            <Modal show={showHide} onHide={whenClosing} scrollable size="xl">
 
                 <Modal.Header closeButton onClick={() => whenClosing()}>
                     <Modal.Title>{title}</Modal.Title>

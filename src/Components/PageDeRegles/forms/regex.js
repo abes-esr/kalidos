@@ -18,7 +18,8 @@ export const regexCreator = (rules) => ({
         isWord: {
             title: ' Le motif contient de mots',
             enum: [true, false],
-            enumNames: ["Oui", "Non"]
+            enumNames: ["Oui", "Non"],
+            default: false
         },
         patterns: {
             title: 'Motif(s) a utiliser par la regle',

@@ -19,7 +19,7 @@ function TabPPNError({ result, PPNDisplay }) {
                     <th>Message d'erreur</th>
                     <th>Zone</th>
                     <th>Sous zone</th>
-                    <th>Numéro index excel</th>
+                    <th>ID Excel</th>
                 </tr>
             </thead>
             <tbody>
