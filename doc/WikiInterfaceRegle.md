@@ -2,7 +2,14 @@
 
 Dans cette interface un utilisateur peut ajouter, modifier ou bien supprimer une règle, aussi il aura la possibilité de basculer vers une interface pour tester la véracité d'une règle.
 
-Comme le montre la figure dans cette interface nous pouvons parcourir les règles qui existent par type de documents qui sont pour rappelle : ``Monographies imprimées et autres documents``, ``Thèse et Mémoires (Soutenance)``, ``Thèse et Mémoires (Reproduction)``, ``Monographie électronique`` et ``Générale``. Ici chaque règle aura une colonne `Vérification` qui correspond au message à afficher lorsque la règle est violée. Dans cette interface l'utilisateur a aussi la possibilité de rechercher une règle précise parmi les règles existantes, en entrant les mots clés dans la barre de recherche. 
+Comme le montre la figure dans cette interface nous pouvons parcourir les règles qui existent par types de documents qui sont pour rappel : 
+- ``Monographies imprimées et autres documents``
+- ``Thèse et Mémoires (Soutenance)``
+- ``Thèse et Mémoires (Reproduction)``
+- ``Monographie électronique``
+- ``Générale``. 
+
+Ici chaque règle dispose d'une colonne `Vérification` qui correspond au message à afficher lorsque la règle est violée. Dans cette interface, l'utilisateur peut également rechercher une règle précise parmi les règles existantes, en entrant les mots clés dans la barre de recherche. 
 
 ![](https://i.ibb.co/341nHBB/c15.png)
 
@@ -26,22 +33,20 @@ En cliquant sur suivant l'utilisateur sera rediriger directement vers une fenêt
 Nous allons maintenant expliquer pour chaque type de règle son formulaire correspondant.
 
 
-
 ## Compte
 
-> Nous rappelons que ce type de règle vérifie que la **Zone**  combiner avec sa  **Sous Zone** d'un document doit être d'un autre document à **Zone** la d'un autre document qui est spécifiée dans `Numéro de zone qui servira de comparateur*`.
-> Nous rappelons aussi par exemple : Si plusieurs Zone égale à '101' avec la Sous Zone 'd' , il doit y avoir autant de  document avec la zone '330'.
+> Nous rappelons que ce type de règles vérifie que la **Zone**  combinée avec sa  **Sous Zone** d'un document doit être d'un autre document à **Zone** la d'un autre document qui est spécifiée dans `Numéro de zone qui servira de comparateur*`.
+> Nous rappelons aussi par exemple : Si plusieurs Zones égales à '101' avec la Sous Zone 'd' , il doit y avoir autant de documents avec la zone '330'.
 
 ![](https://i.ibb.co/vYZFvDJ/compte.gif)
 
 
-
-L'utilisateur va donc dans un premier temps choisir le type de documents parmi les 5 types existants dans `Type de documents`, Il saisira ensuite la **Zone** et la **Sous Zone** du documents concerné, puis dans **Numéro de zone qui servira de comparateur*** il saisira la zone du document sur lequel la vérification doit être faite. Il ajoutera enfin un message à afficher en cas de violation de cette règle.
+L'utilisateur choisit donc d'abord le type de documents parmi les 5 types existants dans `Type de documents`, il saisit ensuite la **Zone** et la **Sous Zone** du documents concerné, puis dans **Numéro de zone qui sert de comparateur***, il indique la zone du document sur lequel la vérification doit être faite. Enfin, il n'a plus qu'à ajouter un message à afficher en cas de violation de cette règle.
 
 ## Dépendance
 
-> Nous rappelons que ce type de règle effectue une opération de comparaison entre deux champs d'un même document, ce type de règle s'intéresse a la valeur des **Sous Zone**.
-> Nous rappelons l'exemple : les 4 premiers caractères du sous champ (Zone$Sous Zone) 029\$b doivent être égaux au champ (Zone$Sous Zone) 328\$d .
+> Nous rappelons que ce type de règles effectue une opération de comparaison entre deux champs d'un même document, ce type de règles s'intéresse à la valeur des **Sous Zones**.
+> Nous rappelons l'exemple : les 4 premiers caractères du sous-champ (Zone$Sous Zone) 029\$b doivent être égaux au champ (Zone$Sous Zone) 328\$d .
 
 ![](https://i.ibb.co/wL0hR5c/dependences.gif)
 
@@ -62,28 +67,26 @@ Il ajoutera enfin un message à afficher en cas de violation de cette règle.
 
 ![](https://i.ibb.co/QKqmKxT/idref.gif)
 
-L'utilisateur va donc dans un premier temps choisir le type de documents parmi les 5 types existants dans `Type de documents`, Il saisira ensuite la **Zone** et la **Sous Zone** du document externe, puis il précisera s'il y'a une condition de *matching*, il rajoutera ensuite la deuxième condition (*condition d'existence*), en précisant la condition du *matching*, puis l'utilisateur *créera une regex* qui correspond à la règle.
+L'utilisateur choisit donc d'abord le type de documents parmi les 5 types existants dans `Type de documents`, il saisit ensuite la **Zone** et la **Sous Zone** du document externe et précise s'il y'a une condition de *matching*. Puis il rajoute la deuxième condition (*condition d'existence*), en précisant la condition du *matching*. Ensuite l'utilisateur *crée une regex* qui correspond à la règle.
 
-Dans la partie `Vérification` l'utilisateur va remplir le champ à vérifier dans la notice externe en précisant aussi la regex a utiliser.
+Dans la partie `Vérification`, l'utilisateur remplit le champ à vérifier dans la notice externe en précisant aussi la regex à utiliser.
 
-Dans *Identifiant* il est question de préciser la **Zone** et la **Sous Zone** où l'identifiant de la notice externe doit être récupérer, suivit par le message à afficher en cas de violation de cette règle.
+Dans *Identifiant* il est question de préciser la **Zone** et la **Sous Zone** où l'identifiant de la notice externe doit être récupéré, suivi par le message à afficher en cas de violation de cette règle.
 
 ## Matching
 
->Nous rappelons que ce type de règle permet d'imposer une contrainte sur la chaine de caractère d'une **Sous Zone** si elle existe
->Nous rappelons l'exemple : Le champ (Zone$Sous Zone)  230\$a ne doit pas contenir 'Mo'
+> Nous rappelons que ce type de règles permet d'imposer une contrainte sur la chaîne de caractères d'une **Sous Zone** si elle existe.
+> Nous rappelons l'exemple : Le champ (Zone$Sous Zone)  230\$a ne doit pas contenir 'Mo'
 
 ![](https://i.ibb.co/WPvv5xJ/matchingun.gif)
 
-L'utilisateur va donc dans un premier temps choisir le type de documents parmi les 5 types existants dans `Type de documents`, Il choisira ensuite les quantité de champs (**datafields**) sur les quels la vérification doit être faite, dans cet exemple nous choisirons un seul. L'utilisateur saisira ensuite la **Zone** et la **Sous Zone** concernés de ce document. Il précisera ensuite la règle à utiliser parmi :
+L'utilisateur choisit donc d'abord le type de documents parmi les 5 types existants dans `Type de documents`. Il choisit ensuite les quantités de champs (**datafields**) sur lesquels la vérification doit être opérée, dans cet exemple nous en choisirons un seul. Puis l'utilisateur saisit la **Zone** et la **Sous Zone** concernées de ce document et précise la règle à utiliser parmi :
 
 ![](https://i.ibb.co/RSdQhLW/c7.png)
 
-Une fois cela fait, il précisera si **le(s) motif(s) ont plusieurs caractères?**, il saisira par la suite les motifs concernés, suivit par le message à afficher en cas de violation de cette règle.
+Une fois cela fait, il précise si **le(s) motif(s) ont plusieurs caractères?**, il saisit par la suite les motifs concernés, suivis par le message à afficher en cas de violation de cette règle.
 
-
-
-Comme il est également possible d’inclure plusieurs champs dans une même règle et plusieurs motifs à matcher. Par exemple : 700$4  et 701$4 ne doivent pas contenir les valeurs 020, 050, 060. Et dans l'animation suivante nous mettrons en évidence cela :
+Comme il est également possible d’inclure plusieurs champs dans une même règle et plusieurs motifs à matcher. Par exemple : 700$4  et 701$4 ne doivent pas contenir les valeurs 020, 050, 060. Dans l'animation suivante nous mettons en évidence cela :
 
   ![](https://i.ibb.co/K5kpjM0/matchingplusieurs.gif)
 
@@ -147,8 +150,7 @@ L'utilisateur va donc dans un premier temps choisir le type de documents parmi l
 ![](https://i.ibb.co/BPqwmxK/C18.png)
 
 
-
- Il finira par le message à afficher en cas de violation de cette règle.
+Enfin l'utilisateur indique le message à afficher en cas de violation de cette règle.
 
 ## Conditionnel Matching
 
@@ -181,12 +183,12 @@ Puis le message à afficher en cas de violation de cette règle.
 
 ## Conditionnel Structurel
 
-> Ce type de règle applique une règle de type structurelle si les conditions sont validées. Ces règles de structures peuvent être appliqués soit sur le PPN en cours de traitement, soit sur un autre PPN (réciproque).
+> Ce type de règles applique une règle de type structurelle si les conditions sont validées. Ces règles de structures peuvent être appliquées soit sur le PPN en cours de traitement, soit sur un autre PPN (réciproque).
 > Nous rappelons l'exemple : Si la zone 456 existe, alors vérifier que la notice en 456$0 contient une zone 455 avec liens réciproques
 
 ![](https://i.ibb.co/PzP6bJK/Cond-Struct.gif)
 
-L'utilisateur va donc dans un premier temps choisir le type de documents parmi les 5 types existants dans `Type de documents`, Il saisira ensuite dans `Conditions` les conditions de départ à savoir :
+L'utilisateur choisit donc d'abord le type de documents parmi les 5 types existants dans `Type de documents`. Il saisit ensuite dans `Conditions` les conditions de départ à savoir :
 
 - **Zone **
 - **Sous Zone** 
@@ -194,7 +196,7 @@ L'utilisateur va donc dans un premier temps choisir le type de documents parmi l
 - **Indice 1 de la zone (datafield)**
 - **Indice 2 de la zone (datafield)**
 
-Dans Zone il précisera le numéro de zone à traiter en y ajoutant les valeurs à évaluer pour cette zone, et ceci en mettant :
+Dans Zone il précise le numéro de zone à traiter en y ajoutant les valeurs à évaluer pour cette zone, et ceci en mettant :
 
 - **Numéro de la Zone **
 - **Numéro de la Sous Zone** 
@@ -203,7 +205,7 @@ Dans Zone il précisera le numéro de zone à traiter en y ajoutant les valeurs 
 - **Un précision pour indique si la règle est réciproque ou pas **
 - **Une précision pour indiquer si le champs doit être présent ou pas** 
 
-Dans `Réciprocité` , l'utilisateur précisera  la **Zone **et la **Sous Zone** du datafield réciproque puis le type duc champs à savoir :
+Dans `Réciprocité` , l'utilisateur précise  la **Zone **et la **Sous Zone** du datafield réciproque puis le type du champs à savoir :
 
 - **Type** = `Tous Obligatoires` pour spécifier que tous les motifs doivent être validés 
 - **Type** = `Un` pour préciser qu’au moins un motif doit être validé
