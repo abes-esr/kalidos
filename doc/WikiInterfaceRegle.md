@@ -50,15 +50,15 @@ Il ajoutera enfin un message à afficher en cas de violation de cette règle.
 ## IdRef
 
 > Nous rappelons que ce type de règle vérifie dans un document externe si le controlfield est valide ou pas.
-> Nous rappelons l'exemple : S'il existe une 606\$y et que 606\$2 est egal a la chaine `rameau` alors on recupere l'identifiant de la notice comprise dans le champ 606\$3 et on vas chercher cette notice sur https://www.idref.fr/ppn.xml. Puis sur cette notice externe on verifie que le controlfield 008 commence par `Tg`
+> Nous rappelons l'exemple : S'il existe une 606\$y et que 606\$2 est égal a la chaine `rameau` alors il faudrait récupérer l'identifiant de la notice comprise dans le champ 606\$3 et chercher par la suite cette notice sur https://www.idref.fr/ppn.xml. Enfin sur cette notice externe le controlfield 008 doit commence par `Tg`
 
-![]()
+![](https://i.ibb.co/QKqmKxT/idref.gif)
 
-L'utilisateur va donc dans un premier temps choisir le type de documents parmi les 5 types existants dans `Type de documents`, Il saisira ensuite la **Zone** et la **Sous Zone** du document externe, puis il précisera le champs sur lequel doit se faire la vérification, ainsi que la règle à utiliser parmi les règles suivante :
+L'utilisateur va donc dans un premier temps choisir le type de documents parmi les 5 types existants dans `Type de documents`, Il saisira ensuite la **Zone** et la **Sous Zone** du document externe, puis il précisera s'il y'a une condition de *matching*, il rajoutera ensuite la deuxième condition (*condition d'existence*), en précisant la condition du *matching*, puis l'utilisateur *créera une regex* qui correspond à la règle.
 
- ![](https://i.ibb.co/RSdQhLW/c7.png)
+Dans la partie `Vérification` l'utilisateur va remplir le champ à vérifier dans la notice externe en précisant aussi la regex a utiliser.
 
-Il pourra aussi préciser si le motif contient de mots ou pas. Il rajoutera aussi la condition sous forme du numéro de la **Zone** et la **Sous Zone**, suivit par le message à afficher en cas de violation de cette règle.
+Dans *Identifiant* il est question de préciser la **Zone** et la **Sous Zone** où l'identifiant de la notice externe doit être récupérer, suivit par le message à afficher en cas de violation de cette règle.
 
 ## Matching
 
