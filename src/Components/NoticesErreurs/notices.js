@@ -8,6 +8,10 @@ export const modifKey = (result) => {
     return data_notice;
 };
 
+/**
+ * Supprime une notice sur le serveur.
+ * @param {string} errorIndex date de création de la notice à supprimer
+ */
 function deleteNotice(index) {
     axios({
         method: 'DELETE',
@@ -29,6 +33,9 @@ function deleteNotice(index) {
     });
 }
 
+/**
+ * Supprime toutes les notices sur le serveur.
+ */
 function deleteAllNotices() {
     axios({
         method: 'DELETE',
