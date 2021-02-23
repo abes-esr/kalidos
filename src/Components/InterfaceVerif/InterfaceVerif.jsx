@@ -7,7 +7,7 @@ import TabPPNError from './TabPPNError';
 import { connect } from 'react-redux';
 import { MDBIcon } from 'mdbreact';
 import { Button, Tooltip, OverlayTrigger, Row, Col } from 'react-bootstrap';
-import { CSVLink, CSVDownload } from "react-csv";
+import { CSVLink } from "react-csv";
 
 
 const mapStateToProps = (state) => ({
@@ -38,6 +38,8 @@ function InterfaceVerif({ result, recherchePPN, compteurResult, listPPNErronne }
     const listPPNWithGoodName = listPPNWithError.filter((row) => { return row[1].PPN.toString().includes(recherchePPN) });
 
     // excel avec descriptif complet
+
+    // on crée les entêtes du fichier excel
     const headers = [
         { label: "PPN", key: "ppn" },
         { label: "Bibliothèque", key: "biblio" },
@@ -49,12 +51,14 @@ function InterfaceVerif({ result, recherchePPN, compteurResult, listPPNErronne }
     ];
 
     const csvData = [];
+    // on travaille d'abord avec la liste des PPN erronés
     for (let i = 0; i < listPPNWithError.length; i++) {
         let error_number = listPPNWithError[i][1]['errors'].length;
 
         for (let j = 0; j < error_number; j++) {
             if (j == 0) {
-                csvData.push({
+                // on rentre une ligne dans le fichier excel pour chaque erreur d'un PPN donné
+                csvData.push({ 
                     ppn: listPPNWithError[i][1]['PPN'],
                     biblio: listPPNWithError[i][1]['biblio'],
                     error: error_number,
@@ -63,7 +67,8 @@ function InterfaceVerif({ result, recherchePPN, compteurResult, listPPNErronne }
                     code: listPPNWithError[i][1]['errors'][j]['code'],
                     comm: ""
                 })
-            } else { // éviter les redondances des champs ppn, biblio et error
+            } else { 
+                // éviter les redondances des champs ppn, biblio et error
                 csvData.push({
                     ppn: "",
                     biblio: "",
@@ -77,6 +82,7 @@ function InterfaceVerif({ result, recherchePPN, compteurResult, listPPNErronne }
         }
     }
 
+    // ensuite on a plus qu'à insérer les PPN non erronés
     for (let i = 0; i < listPPNWithoutError.length; i++) {
         csvData.push({ ppn: listPPNWithoutError[i][1]['PPN'], biblio: listPPNWithoutError[i][1]['biblio'], error: "0", message: "", number: "", code: "", comm: "" })
     }
@@ -91,7 +97,7 @@ function InterfaceVerif({ result, recherchePPN, compteurResult, listPPNErronne }
         let error_number = listPPNWithError[i][1]['errors'].length;
         for (let j = 0; j < error_number; j++) {
             errorHeaders.push(
-                listPPNWithError[i][1]['errors'][j]['number'] + " " + listPPNWithError[i][1]['errors'][j]['code']
+                listPPNWithError[i][1]['errors'][j]['numRuleExcell'] + " : " + listPPNWithError[i][1]['errors'][j]['number'] + " " + listPPNWithError[i][1]['errors'][j]['code']
             )
         }
     }
@@ -102,11 +108,12 @@ function InterfaceVerif({ result, recherchePPN, compteurResult, listPPNErronne }
     const newCsvData = [];
     newCsvData.push(sortedHeaders);
 
+    // on travaille d'abord avec la liste des PPN erronés
     for (let i = 0; i < listPPNWithError.length; i++) {
         let error_number = listPPNWithError[i][1]['errors'].length;
 
         for (let j = 0; j < error_number; j++) {
-            let ppnError = listPPNWithError[i][1]['errors'][j]['number'] + " " + listPPNWithError[i][1]['errors'][j]['code'];
+            let ppnError = listPPNWithError[i][1]['errors'][j]['numRuleExcell'] + " : " + listPPNWithError[i][1]['errors'][j]['number'] + " " + listPPNWithError[i][1]['errors'][j]['code'];
 
             // on regarde à quel index du header l'erreur du ppn correspond
             let indexError = sortedHeaders.indexOf(ppnError);
@@ -130,6 +137,7 @@ function InterfaceVerif({ result, recherchePPN, compteurResult, listPPNErronne }
         }
     }
 
+    // ensuite on a plus qu'à insérer les PPN non erronés, donc sans cochage
     for (let i = 0; i < listPPNWithoutError.length; i++) {
         newCsvData.push([listPPNWithoutError[i][1]['PPN'], listPPNWithoutError[i][1]['biblio'], ""]);
     }

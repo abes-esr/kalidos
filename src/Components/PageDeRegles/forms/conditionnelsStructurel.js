@@ -149,6 +149,6 @@ export function getSchemaConditionnelsStructurel(categories, rules) {
             },
 
         },
-        required: ['category', 'numRuleExcell', 'number', 'condition','type', 'values', 'message'],
+        required: ['category', 'number', 'condition','type', 'values', 'message'],
     }
 }

@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import PropTypes from 'prop-types';
 import FormJSON from '@rjsf/core';
 import {
   Button, Card, Col, Container, ListGroup, Row,
@@ -147,3 +148,8 @@ function Add({ types, newRule }) {
 }
 
 export default Add;
+
+Add.protoTypes = { 
+  types: PropTypes.any,
+  newRule: PropTypes.object,
+}

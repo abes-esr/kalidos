@@ -27,7 +27,7 @@ const mockResponse = {
 
 
 /**
- * renvoie le fichier de règles
+ * Renvoie le fichier de règles.
  */
 app.get('/rules', (req, res) => {
   const file = `${__dirname}/public/model_regles_tries.json`;
@@ -35,7 +35,7 @@ app.get('/rules', (req, res) => {
 });
 
 /**
- * remplace le contenu du fichier result.json par le body de la requête
+ * Remplace le contenu du fichier result.json par le body de la requête.
  * @body body : fichier resultat
  * return code 200
  */
@@ -46,7 +46,7 @@ app.post('/result', (req, res) => {
 });
 
 /**
- * ajoute une nouvelle règle dans le fichier de règles
+ * Ajoute une nouvelle règle dans le fichier de règles.
  * @header type : type de la règle
  * @header categorie : catégorie de la règle
  * retourne 200 si ajout avec succés
@@ -90,7 +90,7 @@ app.post('/rules', (req, res) => {
 });
 
 /**
- * supression d'une règle
+ * Supprime une règle.
  * @header index : identifiant de la règle à supprimer
  * return 200 ou 404
  */
@@ -116,7 +116,7 @@ app.delete('/rules', (req, res) => {
 });
 
 /**
- * modification d'une règle
+ * Modifie une règle.
  * @header index : identifiant de la règle à modifier
  * @body body : nouvelle règle
  * return 200 ou 404
@@ -144,7 +144,7 @@ app.put('/rules', (req, res) => {
 });
 
 /**
- * renvoie les notices erronées
+ * Renvoie les notices erronées.
  */
 app.get('/getNotices', (req, res) => {
   const file = `${__dirname}/public/noticesErreurs.json`;
@@ -152,9 +152,8 @@ app.get('/getNotices', (req, res) => {
 });
 
 /**
- * ajoute une notice à la liste des notices erronés, 
- * l'index de la notice est un timestamp
- * @body body : notice à ajouter
+ * Ajoute une notice à la liste des notices erronés.
+ * @body body : date de création qui fera office d'index de la notice
  * return code 200
  */
 app.post('/notices', (req, res) => {
@@ -176,9 +175,9 @@ app.post('/notices', (req, res) => {
 });
 
 /**
- * supression d'une notice
+ * Supprime une notice.
  * @header index : identifiant de la notice à supprimer
- * return 200
+ * return code 200
  */
 app.delete('/notices', (req, res) => {
   const index = req.header("index");
@@ -198,9 +197,8 @@ app.delete('/notices', (req, res) => {
 });
 
 /**
- * supression de toute les notices, réécrit un json vide
- * @header index : identifiant de la notice à supprimer
- * return 200
+ * Supprime toute les notices, réécrit un json vide.
+ * return code 200
  */
 app.delete('/deleteAllNotices', (req, res) => {
   fs.readFile(`${__dirname}/public/noticesErreurs.json`, 'utf8', function readFileCallback(err, data){

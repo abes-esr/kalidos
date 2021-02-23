@@ -68,7 +68,7 @@ export function getSchemaMatching(categories, rules) {
         enum: ['Un', 'Plusieurs'],
       },
     },
-    required: ['category','numRuleExcell','datafields'],
+    required: ['category','datafields'],
     dependencies: {
       datafields: {
         oneOf: [

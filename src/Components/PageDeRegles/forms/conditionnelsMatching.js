@@ -103,6 +103,6 @@ export function getSchemaConditionnelsMatching(categories, rules) {
                 type: "string",
             },
         },
-        required: ['category','numRuleExcell', 'number', 'condition','type', 'values', 'message'],
+        required: ['category', 'number', 'condition','type', 'values', 'message'],
     }
 }

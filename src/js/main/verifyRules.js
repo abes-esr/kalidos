@@ -13,13 +13,12 @@ import ConditionDependance from "../regles/ConditionDependance";
 import Ordonnancement from "../regles/Ordonnancement";
 import Compte from "../regles/Compte";
 import Precedence from "../regles/Precedence";
-import { WindowSidebar } from 'react-bootstrap-icons';
 
 
 const CATEGORIE_GENERALE = "Generale";
 
 /**
- * Permet de vérifier le PPN en le tapant dans le formulaire
+ * Permet de vérifier le PPN en le tapant dans le formulaire.
  */
 function verifiyRulesByTextArea() {
     store.dispatch(cleanResult());
@@ -43,7 +42,7 @@ function verifiyRulesByTextAreaNotice (listPPN) {
 
 
 /**
- * récupérer un PPN dans la base du sudoc et lance sa vérification
+ * Récupére un PPN dans la base du sudoc et lance sa vérification.
  * @param {json} rules règles à valider 
  * @param {string} PPN identifiant du PPN
  */
@@ -67,7 +66,7 @@ function getSudoc(rules, PPN) {
 }
 
 /**
- * ecrit les résultats de la vérification des règles dans un fichier json sur le serveur
+ * Ecrit les résultats de la vérification des règles dans un fichier json sur le serveur.
  */
 function writeResult() {
     axios({
@@ -90,7 +89,7 @@ function writeResult() {
 }
 
 /**
- * supprime une règle sur le serveur
+ * Supprime une règle sur le serveur.
  * @param {int} index identifiant de la règle à supprimer
  */
 function deleteRule(index) {
@@ -114,7 +113,7 @@ function deleteRule(index) {
 
 
 /**
- * permet de mettre à jour une règle sur le serveur
+ * Permet de mettre à jour une règle sur le serveur.
  * @param {int} index identifiant de la règle à modifier
  * @param {json} newRule règle mise à jour
  */
@@ -132,7 +131,7 @@ function updateRule(index, newRule) {
 }
 
 /**
- * ajoute une nouvelle règle sur le serveur
+ * Ajoute une nouvelle règle sur le serveur.
  * @param {string} categorie nom de la catégorie ou ajouter la règle
  * @param {string} type nom du type de la règle
  * @param {json} rule regle à ajouter
@@ -160,7 +159,7 @@ function addRule(categorie, type, rule) {
 }
 
 /**
- * récupère la liste des règles sur le serveur et lance la vérification pour tous les PPN
+ * Récupère la liste des règles sur le serveur et lance la vérification pour tous les PPN.
  * @param {List<String>} listPPN 
  */
 function getRules(listPPN) {
@@ -180,20 +179,10 @@ function getRules(listPPN) {
         });
 }
 
-
-
-function noticeErreurs(){
-    const json = store.getState().result;
-    const data_verif = Object.keys(json).map((key) => [Number(key), json[key]]);
-    const listPPNWithError = data_verif.filter((row) => { return row[1].errors.length });
-    
-    let errorIndex = [];
-    for (let i = 0; i < listPPNWithError.length; i++) {
-        errorIndex.push(listPPNWithError[i][1]['PPN']);
-    }
-    addNoticeErreurs(errorIndex);
-}
-
+/**
+ * Récupère la notice et l'envoie sur le serveur.
+ * @param {Array.<string>} errorIndex liste des PPN erronés 
+ */
 function addNoticeErreurs(errorIndex) {
     axios({
         method: 'POST',
@@ -213,9 +202,30 @@ function addNoticeErreurs(errorIndex) {
     });
 }
 
+
+/**
+ * Crée une nouvelle notice avec les PPN erronés.
+ */
+function noticeErreurs () {
+    const json = store.getState().result;
+    const data_verif = Object.keys(json).map((key) => [Number(key), json[key]]);
+    const listPPNWithError = data_verif.filter((row) => { return row[1].errors.length });
+    
+    let errorIndex = [];
+    for (let i = 0; i < listPPNWithError.length; i++) {
+        errorIndex.push(listPPNWithError[i][1]['PPN']);
+    }
+    addNoticeErreurs(errorIndex);
+}
+
+/**
+ * Retourne la bibliothèque prioritaire parmi une liste de bibliothèques.
+ * @param {Array.<string>} biblio liste de bibliothèques, séparées par des ":"
+ */
 function prioBiblio (biblio) {
     const biblios = biblio.split(":");
     let prio = {};
+    // on boucle pour connaître les priorités et on les stocke dans prio
     for (let i = 0; i < biblios.length; i++) {
         switch (biblios[i]) {
             case '692662101':
@@ -269,6 +279,7 @@ function prioBiblio (biblio) {
     // si aucunes des biblios ne correspondent à une biblio de la liste des priorités
     // alors on renvoie la première biblio
         
+    // on compare les priorités stockées dans prio et on retourne la bibliothèque prioritaire
     const prio_tab = Object.keys(prio).map((key) => [String(key), prio[key]]);
     let max_prio = prio_tab[0][0];
     for (let i = 1; i < prio_tab.length; i++) {
@@ -278,18 +289,23 @@ function prioBiblio (biblio) {
     return max_prio;
 }
 
+/**
+ * Retourne la bibliothèque d'un PPN.
+ * @param {json} datafields datafields du PPN 
+ */
 function getBiblio (datafields) {
+    //les bilbios se retrouvent dans le champ 930$b
     let field = Parcours.findDataField(datafields, 930);
     let bib = Parcours.getSubfieldValue(field, "b");
-    // pour l'instant pas vu plus d'une biblio dans le champ 930$b
 
+    // si on a plusieurs biblios alors elles sont séparées par un ":"
     if (bib.indexOf(':') > -1)
         bib = prioBiblio(bib);
     return bib;
 }
 
 /**
- * lance la vérification du jeu de règles sur un sudoc
+ * Lance la vérification du jeu de règles sur un sudoc.
  * @param {json} rules jeu de règle
  * @param {xml} sudoc document à vérifier
  */
@@ -325,7 +341,7 @@ function verifMain(rules, sudoc) {
 export {verifiyRulesByTextArea, verifiyRulesByTextAreaNotice};
 
 /**
- * Teste tous les type de règle sur un PPN
+ * Teste tous les type de règle sur un PPN.
  * @param {string} categorie nom de la catégorie de règle à appliquer
  * @param {json} rules fichier de règles
  * @param {json} controlfields zone de controle du sudoc

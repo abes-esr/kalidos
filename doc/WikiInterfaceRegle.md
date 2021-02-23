@@ -149,16 +149,52 @@ Les regles suivantes sont verifiées de cette forme: Les conditions remplises se
 Les conditions ici peuvent être de ce types:
 
 - ``Le champ est présent`` : verifie si le datafield est présent
-
-
 - ``Le champ est absent`` : verifie si le datafield est absent
+
+Exemple :  Condition de présence d’un champ : vérifie la présence du datafield *214* avec l’indice *2* égale à *2*, et d’un subfield de code *a*
+
+![](https://i.ibb.co/ryKKXh3/C20.png)
+
+
+
+
 - ``le champ est présent et il contient le texte`` : verifie si le datafield est présent et qu'il contient le texte
 - ``Ne doit pas contenir`` : verifie si le datafield n'existe pas ou qu'il ne contient pas le texte
+
+Exemple : Condition sur la contenance d’un texte : vérifie que le caractère a la position *10* du datafield *105$a* est égal a *0* *(entre 10 et 11 car 0 contient un seul caractère)*
+
+![](https://i.ibb.co/c6Rsbhs/21.png)
+
+
+
+
 - ``Commence par`` : verifie si le datafield existe et qu'il commence par le texte
 - ``Ne doit pas commencer par`` : verifie si le datafield n'existe pas ou 
+
+Exemple : Condition sur le commencement du texte : vérifie que la valeur de *856$5* commence par *692669902*
+
+![](https://i.ibb.co/Hd1m2Z7/22.png)
+
+
+
+
 - ``Égale à`` : verifie si le datafield existe et qu'il est strictement égal au texte
 - ``Ne soit pas égale à`` : verifie si le datafield n'existe pas ou est différent du texte
-- ``Champ existant et sous chaine en partant de la fin est égal au texte `` : verifie si le champ existe et que la sous-chaîne en partant de la fin est égale au texte
+
+Exemple : Condition sur l’égalité d’un texte : vérifie que la valeur de *328$z* soit égal à *“Reproduction de”*
+
+![](https://i.ibb.co/gvMBDRn/23.png)
+
+
+
+
+- ``Champ existant et sous chaine en partant de la fin est égal au texte `` : vérifie si le champ existe et que la sous-chaîne en partant de la fin est égale au texte
+
+Exemple : Condition sur une sous-chaîne se trouvant à la fin de la chaîne de caractère : *105$a* *5e position en commençant par la fin = 1*
+
+![](https://i.ibb.co/L0vc9ht/24.png)
+
+
 
 
 ## Précèdent
@@ -256,15 +292,25 @@ Et enfin le message à afficher en cas de violation de cette règle.
 
 # Explication de modification d'une règle
 
+Dans cette interface un utilisateur pourra modifier une règle existante, comme le montre l'animation suivante ceci ce fait en cliquant sur le bouton pour `modifier le contenu de la règle` ,  qui va rediriger l'utilisateur vers une fenêtre d'édition des règles qui est identique à celle de l'ajout d'une règle, sans changement de la catégorie de cette dernière, si besoin d'éditer la catégorie ou le type d'une règle il faudrait la supprimer et la recréer de nouveau.
 
+![](https://i.ibb.co/FwV2mhh/modification.gif)
+
+Il suffit de suivre les même principes d'ajout d'une règle décrits dans la partie **Explication d'ajout des règles** , pour pouvoir modifier une règle donnée.
 
 
 
 # Explication de suppression d'une règle
 
+Dans cette interface un utilisateur pourra supprimer une règle existante, comme le montre l'animation suivante ceci se fait en cliquant sur le bouton `Supprimer la règle`, qui va rediriger l'utilisateur vers une fenêtre de confirmation de l'action de suppression, car en effet il s'agit de la suppression finale d'une règle.
 
+![](https://i.ibb.co/6wk12g2/suppression.gif)
 
 
 
 # Explication de test d'un règle
+
+Dans cette interface un utilisateur pourra tester une règle existante, comme le montre l'animation suivante, l'utilisateur aura en entrée à gauche un PPN à tester, puis en appuyant sur le bouton `Tester la règle` , il sera informer si la règle est passé sur ce PPN ou pas.
+
+![](https://i.ibb.co/tZFBnm1/test.gif)
 
