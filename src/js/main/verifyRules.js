@@ -220,62 +220,62 @@ function noticeErreurs () {
 
 /**
  * Retourne la bibliothèque prioritaire parmi une liste de bibliothèques.
- * @param {Array.<string>} biblio liste de bibliothèques, séparées par des ":"
+ * @param {Array} biblio liste de bibliothèques
  */
-function prioBiblio (biblio) {
-    const biblios = biblio.split(":");
+function prioBiblio (biblios) {
     let prio = {};
     // on boucle pour connaître les priorités et on les stocke dans prio
     for (let i = 0; i < biblios.length; i++) {
-        switch (biblios[i]) {
+        const bib_txt = biblios[i]._text;
+        switch (bib_txt) {
             case '692662101':
-                return biblios[i];
+                return bib_txt;
             case '693882101':
-                prio[biblios[i]] = 2;
+                prio[bib_txt] = 2;
                 break;
             case '692669902':
-                prio[biblios[i]] = 3;
+                prio[bib_txt] = 3;
                 break;
             case '693842301':
-                prio[biblios[i]] = 4;
+                prio[bib_txt] = 4;
                 break;
             case '693882213':
-                prio[biblios[i]] = 5;
+                prio[bib_txt] = 5;
                 break;
             case '692662209':
-                prio[biblios[i]] = 6;
+                prio[bib_txt] = 6;
                 break;
             case '692662214':
-                prio[biblios[i]] = 7;
+                prio[bib_txt] = 7;
                 break;
             case '010532202':
-                prio[biblios[i]] = 8;
+                prio[bib_txt] = 8;
                 break;
             case '693872104':
-                prio[biblios[i]] = 9;
+                prio[bib_txt] = 9;
                 break;
             case '010532301':
-                prio[biblios[i]] = 10;
+                prio[bib_txt] = 10;
                 break;
             case '692662208':
-                prio[biblios[i]] = 11;
+                prio[bib_txt] = 11;
                 break;
             case '692042202':
-                prio[biblios[i]] = 12;
+                prio[bib_txt] = 12;
                 break;
             case '692662217':
-                prio[biblios[i]] = 13;
+                prio[bib_txt] = 13;
                 break;
             case '422182310':
-                prio[biblios[i]] = 14;
+                prio[bib_txt] = 14;
                 break;
             default:
                 break;      
         }
     }
-
+    
     if (prio == "{}")
-        return biblios[0];
+        return biblios[0]._text;
     // si aucunes des biblios ne correspondent à une biblio de la liste des priorités
     // alors on renvoie la première biblio
         
@@ -295,12 +295,14 @@ function prioBiblio (biblio) {
  */
 function getBiblio (datafields) {
     //les bilbios se retrouvent dans le champ 930$b
-    let field = Parcours.findDataField(datafields, 930);
-    let bib = Parcours.getSubfieldValue(field, "b");
+    let fields = Parcours.findDataFields(datafields, 930);
+    let biblios = Parcours.getListSubfieldValue(fields, "b");
 
-    // si on a plusieurs biblios alors elles sont séparées par un ":"
-    if (bib.indexOf(':') > -1)
-        bib = prioBiblio(bib);
+    let bib = "";
+    if (biblios.length > 0)
+        bib = prioBiblio(biblios);
+    else
+        bib = biblios[0]._text;
     return bib;
 }
 
