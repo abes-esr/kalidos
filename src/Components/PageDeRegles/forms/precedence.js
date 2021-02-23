@@ -72,6 +72,6 @@ export function getSchemaPrecedence(categories, rules) {
                 type: "string",
             },
         },
-        required: ['category', 'numRuleExcell', 'number', 'condition', 'precede', 'message'],
+        required: ['category', 'number', 'condition', 'precede', 'message'],
     }
 }

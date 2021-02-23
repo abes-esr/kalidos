@@ -88,7 +88,7 @@ export function getSchemaDependencies(categories, rules) {
                 type: "string",
             },
         },
-        required: ['category','numRuleExcell', 'operator', 'field1', 'field2', 'message'],
+        required: ['category', 'operator', 'field1', 'field2', 'message'],
 
     }
 }

@@ -82,6 +82,6 @@ export function getSchemaConditionnelsDependance(categories, rules) {
                 type: "string",
             },
         },
-        required: ['category','numRuleExcell','field1', 'field2', 'operator', 'condition'],
+        required: ['category','field1', 'field2', 'operator', 'condition'],
     }
 }

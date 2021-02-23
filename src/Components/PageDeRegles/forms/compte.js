@@ -65,7 +65,7 @@ export function getSchemaCompte(categories, rules) {
                 type: "string",
             },
         },
-        required: ['category','numRuleExcell', 'number', 'contrainte', 'message'],
+        required: ['category', 'number', 'contrainte', 'message'],
 
     }
 }

@@ -136,13 +136,13 @@ export function getSchemaIdRef(categories, rules) {
                     }
                 }
             },
-            verification: {title:"Vérification","$ref": "#/definitions/verification"},
             identifiant: {title:"Identifiant","$ref": "#/definitions/identifiant"},
+            verification: {title:"Vérification","$ref": "#/definitions/verification"},
             message: {
                 title: "Message à afficher",
                 type: "string",
             },
         },
-        required: ['category', 'numRuleExcell' ,'identifiant', 'verification', 'condition', 'message'],
+        required: ['category' ,'identifiant', 'verification', 'condition', 'message'],
     }
 }

@@ -82,7 +82,7 @@ export function getSchemaStructurel(categories, rules) {
         type: "string",
       },
     },
-    required: ['category', 'numRuleExcell', 'number', 'type', 'message'],
+    required: ['category', 'number', 'type', 'message'],
 
   }
 }

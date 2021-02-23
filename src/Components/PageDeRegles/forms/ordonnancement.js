@@ -59,6 +59,6 @@ export function getSchemaOrdonnancement(categories, rules) {
                 type: "string",
             },
         },
-        required: ['category', 'numRuleExcell', 'number', 'orderBy', 'message'],
+        required: ['category', 'number', 'orderBy', 'message'],
     }
 }
