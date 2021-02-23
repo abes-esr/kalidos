@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import FormJSON from '@rjsf/core';
 import { OverlayTrigger, Tooltip, Button, Container, Row } from 'react-bootstrap';
 import { Edit, Delete, BugReport } from '@material-ui/icons';
@@ -185,3 +186,10 @@ function Action({ row, types, editRule, deleteRule }) {
 }
 
 export default Action;
+
+Action.propTypes = { 
+  row: PropTypes.object,
+  types: PropTypes.any,
+  editRule: PropTypes.func,
+  deleteRule: PropTypes.func,
+};
