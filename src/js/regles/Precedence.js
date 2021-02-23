@@ -3,19 +3,19 @@ import Condition from "../utile/Condition";
 
 var Precedence = function () {
     /**
-     * Verifie les regles de type Precedence
-     * @param {String} categorie categorie du document
-     * @param {json} rules fichier de regle
-     * @param {json} controlfields zone de controle
+     * Vérifie les règles de type Precedence.
+     * @param {String} categorie catégorie du document
+     * @param {json} rules fichier de règle
+     * @param {json} controlfields zone de contrôle
      * @param {json} datafields zone de données
-     * @param {json} resultJson fichier de resultat
+     * @param {json} resultJson fichier de résultat
      */
     var testPrecedenceRules = function (categorie, rules, controlfields, datafields, resultJson) {
         rules[categorie].precedence.forEach(function (regle) {
            
             const fields = Parcours.findDataFields(datafields,regle.number)
             let fieldValid = [];
-            for(let i in fields) {
+            for (let i in fields) {
                 let checkedConds = true;
                 regle.condition.forEach(function (condition) {
                     if (!Condition.checkCondition([], [fields[i]], condition)) {
@@ -31,13 +31,13 @@ var Precedence = function () {
             for (let i in fieldValid) {
                 const depart = fieldValid[i].subfield.findIndex(x => x._attributes.code === regle.precede.depart);
                 const precedant = fieldValid[i].subfield.findIndex(x => x._attributes.code === regle.precede.precedant);
-                if(depart - precedant !== 1 || depart == 0) {
+                if (depart - precedant !== 1 || depart == 0) {
                     valid = false;
                     break;
                 }
             }
 
-            if(!valid) {
+            if (!valid) {
                 addError(regle, resultJson)
             }
 
@@ -45,7 +45,7 @@ var Precedence = function () {
     }
 
     /**
-     * ajoute une erreur au fichier de resultat
+     * Ajoute une erreur au fichier de résultat
      * @param {json} regle 
      * @param {json} resultJson 
      */

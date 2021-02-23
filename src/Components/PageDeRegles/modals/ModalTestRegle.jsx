@@ -6,14 +6,14 @@ import IconButton from '@material-ui/core/IconButton';
 
 
 /**
- * Composant de base pour la creation du modal TEST
+ * Composant de base pour la création du modal TEST.
  * 
  * @param {
-    *    icon: Icone du button declencheur,
-    *    title : titre a afficher dans le modal,
+    *    icon: Icône du button déclencheur,
+    *    title : titre à afficher dans le modal,
     *    body : ce qui sera affiche par le modal (les composants sont possibles),
-    *    close : (default -> null) message a afficher pour le button de fermeture,
-    *    accept : (default -> null) message a afficher pour le button de "acceptation",
+    *    close : (default -> null) message à afficher pour le button de fermeture,
+    *    accept : (default -> null) message à afficher pour le button de "acceptation",
     * } props 
     */
 function FormModal({

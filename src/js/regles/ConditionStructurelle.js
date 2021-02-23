@@ -9,13 +9,13 @@ const ConditionStructurel = function () {
     let ppnInitiale = undefined;
 
     /**
-     * Verifie que les regles de type Condition Structurelle sont valide
-     * @param {String} categorie categorie de document
-     * @param {json} rules fichier de regles
-     * @param {json} controlfields zone de controle
+     * Vérifie que les règles de type Condition Structurelle sont valides.
+     * @param {String} categorie catégorie de document
+     * @param {json} rules fichier de règles
+     * @param {json} controlfields zone de contrôle
      * @param {json} datafields zone de données
-     * @param {json} resultJson fichier de resultat
-     * @param {function} getfunctionDocument fonction pour recuperer un PPN
+     * @param {json} resultJson fichier de résultat
+     * @param {function} getfunctionDocument fonction pour récupérer un PPN
      */
     const testConditionStrucutrelRules = async function (categorie, rules, controlfields, datafields, resultJson, getfunctionDocument) {
         getDocument = getfunctionDocument
@@ -30,12 +30,12 @@ const ConditionStructurel = function () {
                 }
 
             });
-            //recuperation du field a testé
-            //si les conditions sont vrai
+            //récupération du field à tester
+            //si les conditions sont vraies
             if (checkedConds) {
                 //notice courante
                 let dataField = Parcours.findDataField(datafields, regle.number);
-                //si c'est pas un datafield en cherche dans controllefield
+                //si ce n'est pas un datafield on cherche dans controllefield
                 if (dataField == null) {
                     dataField = Parcours.findDataField(controlfields, regle.number);
                 }
@@ -54,7 +54,7 @@ const ConditionStructurel = function () {
                 if (regle.reciproque) {
                     ppnInitiale = Parcours.findDataField(controlfields, "001")._text;
 
-                    //si les verification sont sur la notice reciproque
+                    //si les vérifications sont sur la notice réciproque
                     const data = await getDocument(datafields, regle.reciproque.number, regle.reciproque.code);
                     if (data === null) {
                         addError(resultJson, regle);
@@ -73,9 +73,9 @@ const ConditionStructurel = function () {
     }
 
     /**
-     * Verifie que le contenue des champ est valide
-     * @param {json} regle regle courante 
-     * @param {json} controlfields zone de controle
+     * Vérifie que le contenu des champs est valide.
+     * @param {json} regle règle courante 
+     * @param {json} controlfields zone de contrôle
      * @param {json} datafields zone de données
      */
     function checkValues(regle, controlfields, datafields) {
@@ -102,7 +102,7 @@ const ConditionStructurel = function () {
     }
 
     /**
-     * verifie la reciprocité des PPN
+     * Vérifie la reciprocité des PPN.
      * @param {json} datafields zone de données
      * @param {String} number identifiant du datafield
      * @param {String} code code du subfield
@@ -132,11 +132,11 @@ const ConditionStructurel = function () {
 export default ConditionStructurel;
 
 /**
- * verifie qu'une regle est valide
+ * Vérifie qu'une règle est valide.
  * @param {json} datafields zone de données
- * @param {json} value implication de la regle
- * @param {json} controlfields zone de controle
- * @param {function} checkReciproque fonction qui verifie la reciprocité
+ * @param {json} value implication de la règle
+ * @param {json} controlfields zone de contrôle
+ * @param {function} checkReciproque fonction qui vérifie la reciprocité
  */
 function verifyOne(datafields, value, controlfields, checkReciproque) {
     
@@ -148,8 +148,8 @@ function verifyOne(datafields, value, controlfields, checkReciproque) {
 }
 
 /**
- * verifie qu'un subfield est present
- * @param {json} value implication de la regle
+ * Vérifie qu'un subfield est présent.
+ * @param {json} value implication de la règle
  * @param {json} listDatafield liste de datafield
  */
 function verifyPresenceSubfield(value, listDatafield) {
@@ -162,8 +162,8 @@ function verifyPresenceSubfield(value, listDatafield) {
 }
 
 /**
- * verifie la presence ou non d'un datafield
- * @param {*} value implication de la regle
+ * Vérifie la présence ou non d'un datafield.
+ * @param {*} value implication de la règle
  * @param {*} listDatafield liste de datafield
  */
 function verifyPresenceField(value, listDatafield) {
@@ -174,8 +174,8 @@ function verifyPresenceField(value, listDatafield) {
 
 
 /**
- * verifie si un champ doit etre present ou non
- * @param {*} value implication de la regle
+ * Vérifie si un champ doit etre présent ou non.
+ * @param {*} value implication de la règle
  * @param {*} listDatafield liste de datafield
  */
 function verifyPresence(value, listDatafield) {
@@ -190,8 +190,8 @@ function verifyPresence(value, listDatafield) {
 }
 
 /**
- * verifie si les index d'un datafield sont correcte
- * @param {*} value implication de la regle
+ * Vérifie si les index d'un datafield sont corrects.
+ * @param {*} value implication de la règle
  * @param {*} listDatafield liste de datafield
  */
 function verifyIndex(value, listDatafield) {
@@ -207,9 +207,9 @@ function verifyIndex(value, listDatafield) {
 
 /**
  * 
- * @param {json} value implication de la regle
- * @param {json} controlfields zone de controle
- * @param {json} checkReciproque fonction qui teste la reciprocité 
+ * @param {json} value implication de la règle
+ * @param {json} controlfields zone de contrôle
+ * @param {json} checkReciproque fonction qui teste la réciprocité 
  * @param {json} datafields zone de données
  */
 function verifyReciproque(value, controlfields, checkReciproque, datafields) {
@@ -221,9 +221,9 @@ function verifyReciproque(value, controlfields, checkReciproque, datafields) {
 }
 
 /**
- * Ajoute une erreur dans le fichier de resultat
- * @param {json} resultJson fichier de resultat
- * @param {json} regle regle courante
+ * Ajoute une erreur dans le fichier de résultat.
+ * @param {json} resultJson fichier de résultat
+ * @param {json} regle règle courante
  */
 function addError(resultJson, regle) {
     resultJson.errors.push({
@@ -236,9 +236,9 @@ function addError(resultJson, regle) {
 }
 
 /**
- * recupere une liste de datafield
+ * Récupère une liste de datafield.
  * @param {json} datafields zone de données
- * @param {json} value implication de la regle
+ * @param {json} value implication de la règle
  */
 function getListDatafield(datafields, value) {
     let dataField = Parcours.findDataFields(datafields, value.number);
@@ -252,7 +252,7 @@ function getListDatafield(datafields, value) {
 }
 
 /**
- * Recupere le PPN sur le sudoc
+ * Récupère le PPN sur le sudoc.
  * @param {json} datafields champ de données
  * @param {String} number identifiant du datafield
  * @param {String} code code du subfield
@@ -275,10 +275,7 @@ async function getDataOnSudoc(datafields, number, code) {
                 console.log("error matching reciproque");
                 return null;
             });
-            return result
+            return result;
     }
-    return null
-    
+    return null; 
 }
-
-

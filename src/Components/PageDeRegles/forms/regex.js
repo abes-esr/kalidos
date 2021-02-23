@@ -1,8 +1,8 @@
 /**
- * Cree un objet destinee a la creation du regex
+ * Crée un objet destiné à la création du regex.
  * @param {
- *      rules : liste de regles sur des motifs, pour le generateur (generator.js)
- *      names : liste de tags a afficher pour chaque regle
+ *      rules : liste de règles sur des motifs, pour le générateur (generator.js)
+ *      names : liste de tags à afficher pour chaque règle
  * } rules 
  */
 export const regexCreator = (rules) => ({

@@ -1,6 +1,6 @@
 /**
  * Filters the model_regles_tries.json to a single list of all the rules
- * having the category and type inside the element
+ * having the category and type inside the element.
  * @param {Array} result 
  */
 export const filtering = (result) => {
@@ -26,7 +26,7 @@ export const filtering = (result) => {
 
 
 /**
- * Retourne le tag appropie a la categorie c passe en parametre
+ * Retourne le tag appropié à la categorie c passée en paramètre.
  * @param {String} c 
  */
 function tagCategorie(c) {
@@ -49,8 +49,8 @@ function tagCategorie(c) {
 /**
  * Retourne un objet de type:
  * {
- *    fields: Liste de categories dans le fichier json
- *    tags: Tags a afficher dans l'schema
+ *    fields: Liste de catégories dans le fichier json
+ *    tags: Tags à afficher dans le schema
  * }
  * @param {Array} categories 
  */

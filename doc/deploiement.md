@@ -6,11 +6,11 @@
 
 > installation de docker compose
 
-## Guide du déploiment 
+## Guide du déploiement 
 
 ### Mode automatique 
 
-Le déploiment a été automatisé grâce à Gitlab CI, qui construit l'image de l'application avant de la déployer sur la machine virtuelle.
+Le déploiement a été automatisé grâce à Gitlab CI, qui construit l'image de l'application avant de la déployer sur la machine virtuelle.
 Ainsi il suffit de relancer une pipeline sur le projet pour redéployer l'application ou si il y a besoin de mettre à jour une nouvelle version de celle-ci sur la machine.
 
 Ce type de déploiment permet de redéployer complétement l'application depuis la dernière version disponible sur le Git. L'utilisateur perdra ses données, c'est une remise à zero totale de l'application.

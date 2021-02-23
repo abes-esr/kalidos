@@ -102,7 +102,7 @@ function deleteRule(index) {
             "index": index,
         },
     }).then(function () {
-        console.log("suppression ok")
+        console.log("deleteRule ok");
     })
     .catch(function (error) {
         console.log(error);
@@ -124,7 +124,7 @@ function updateRule(index, newRule) {
             "index": index
         }
     }).then(function () {
-        console.log("modification ok")
+        console.log("updateRule ok");
     }).catch(function (error) {
         console.log(error);
     });
@@ -148,7 +148,7 @@ function addRule(categorie, type, rule) {
         },
         data: rule,
     }).then(function () {
-        console.log("ok")
+        console.log("addRule ok");
     })
     .catch(function (error) {
         // handle error
@@ -343,8 +343,8 @@ function verifMain(rules, sudoc) {
 export {verifiyRulesByTextArea, verifiyRulesByTextAreaNotice};
 
 /**
- * Teste tous les type de règle sur un PPN.
- * @param {string} categorie nom de la catégorie de règle à appliquer
+ * Teste tous les type de règles sur un PPN.
+ * @param {string} categorie nom de la catégorie de règles à appliquer
  * @param {json} rules fichier de règles
  * @param {json} controlfields zone de controle du sudoc
  * @param {json} datafields zone de données du sudoc

@@ -2,13 +2,13 @@ import { structuralOperators } from "../operators";
 
 
 /**
- * Functions pour la creation des schemas (react-json-schema), et la formalisation des donnees 
- * pour les regles de type : 
+ * Functions pour la création des schemas (react-json-schema), et la formalisation des données. 
+ * pour les règles de type : 
  * ______________________________________    STRUCTUREL    ______________________________________ 
  */
 
 /**
- * Function pour donner le format appropie aux donnes soumis par l'utilisateur
+ * Function pour donner le format approprié aux données soumises par l'utilisateur.
  * @param {*} data
  */
 export function formatRuleStructurel(data) {
@@ -26,15 +26,15 @@ export function formatRuleStructurel(data) {
 }
 
 /**
- * Fonction pour la creation du schema
+ * Fonction pour la création du schema.
  * 
  * @param {
- *      fields : liste de categories dans le fichier json
- *      tags : liste de tags a afficher
- * } categories Liste de categories 
+ *      fields : liste de catégories dans le fichier json
+ *      tags : liste de tags à afficher
+ * } categories Liste de catégories 
  * @param {
- *      rules : liste de regles sur des motifs, pour le generateur (generator.js)
- *      names : liste de tags a afficher pour chaque regle
+ *      rules : liste de règles sur des motifs, pour le générateur (generator.js)
+ *      names : liste de tags à afficher pour chaque règle
  * } rules 
  */
 export function getSchemaStructurel(categories, rules) {

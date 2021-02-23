@@ -65,8 +65,8 @@ var Condition = function () {
 export default Condition;
 
 /**
- * retourne une sous-chaine a partir de la fin
- * @param {json} condition condition de la regle
+ * Retourne une sous-chaine à partir de la fin.
+ * @param {json} condition condition de la règle
  * @param {String} subfieldValue valeur du subfield
  */
 function compteFromEnd(condition , subfieldValue) {
@@ -79,10 +79,10 @@ function compteFromEnd(condition , subfieldValue) {
 }
 
 /**
- * Applique un test en fonction du tag de la regle
- * @param {json} condition condition de la regle
+ * Applique un test en fonction du tag de la règle.
+ * @param {json} condition condition de la règle
  * @param {String} subfieldValue valeur du subfield
- * @param {String} item chaine de charactere a comparer
+ * @param {String} item chaine de caractères à comparer
  */
 function testTagCondition(condition, subfieldValue, item) {
     const subfieldPresent = subfieldValue != null;
@@ -105,8 +105,8 @@ function testTagCondition(condition, subfieldValue, item) {
 }
 
 /**
- * liste d'operateur
- * @param {json} condition condition de la regle
+ * Liste d'operateur.
+ * @param {json} condition condition de la règle
  */
 function otherOperator(condition) {
     return condition.operator === "contains_text" || condition.operator === "startwith_text" ||

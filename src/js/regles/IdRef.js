@@ -6,10 +6,10 @@ const axios = require('axios');
 
 var IdRef = function () {
     /**
-     * Recupere un PPN sur le serveur externe IDREF
-     * @param {String} identifiant PPN a recuperer
-     * @param {json} regle regle courante
-     * @param {json} resultJson fichier de resultat
+     * Récupère un PPN sur le serveur externe IDREF.
+     * @param {String} identifiant PPN à récupérer
+     * @param {json} regle règle courante
+     * @param {json} resultJson fichier de résultat
      */
     var getRequest = function (identifiant, regle, resultJson) {
         axios.get("https://www.idref.fr/" + identifiant + ".xml")
@@ -28,10 +28,10 @@ var IdRef = function () {
     }
 
     /**
-     * Verifie que le document IDREF est valide
+     * Vérifie que le document IDREF est valide.
      * @param {json} data données du documents IDREF
-     * @param {json} regle regle courante
-     * @param {json} resultJson fichier de resultat
+     * @param {json} regle règle courante
+     * @param {json} resultJson fichier de résultat
      */
     var validateIdRef = function (data, regle, resultJson) {
         const controlfield = data.record.controlfield;
@@ -53,10 +53,10 @@ var IdRef = function () {
     }
 
     /**
-     * verifie que la valeur du subfield est valide
-     * @param {json} field datafield a tester
-     * @param {String} code code du subfield a tester
-     * @param {String} regex regex a matcher
+     * Vérifie que la valeur du subfield est valide.
+     * @param {json} field datafield à tester
+     * @param {String} code code du subfield à tester
+     * @param {String} regex regex à matcher
      */
     var testValueCode = function (field, code, regex) {
         const subfield = Parcours.getSubfieldValue(field, code)
@@ -70,8 +70,8 @@ var IdRef = function () {
     }
 
     /**
-     * filtre une liste selon la valeur
-     * @param {Array} array liste a filtrer
+     * Filtre une liste selon la valeur.
+     * @param {Array} array liste à filtrer
      * @param {*} value valeur filtre
      */
     function remove(array, value) {
@@ -80,7 +80,7 @@ var IdRef = function () {
         })
     }
     /**
-     * Teste la condition de la regle 
+     * Teste la condition de la regle .
      * @param {json} datafields 
      * @param {json} regle 
      */
@@ -112,9 +112,9 @@ var IdRef = function () {
 
 
     /**
-     * Verifie qu'un datafield n'existe pas
+     * Vérifie qu'un datafield n'existe pas.
      * @param {json} datafields zone de données
-     * @param {json} regle regle courrante
+     * @param {json} regle règle courante
      */
     function validEmptyArray(datafields, regle) {
         const fields = Parcours.findDataFields(datafields, regle.condition[0].number)
@@ -122,9 +122,9 @@ var IdRef = function () {
     }
 
     /**
-     * Ajoute une erreur au fichier resultat
-     * @param {json} regle regle courrante
-     * @param {json} resultJson fichier resultat
+     * Ajoute une erreur au fichier résultat.
+     * @param {json} regle règle courante
+     * @param {json} resultJson fichier résultat
      */
     function addError(regle, resultJson) {
         resultJson.errors.push({
@@ -137,58 +137,55 @@ var IdRef = function () {
     }
 
 
-
-
     /**
-     * Recupere l'identifiant à utiliser pour requeter le serveur externe
+     * Récupère l'identifiant à utiliser pour requêter le serveur externe.
      * @param {json} datafields zone de données
-     * @param {json} regle regle courrante
+     * @param {json} regle règle courante
      */
     var identifiantNotice = function (fields, regle) {
         let identifiant = [];
         let idValue;
         for (let i in fields) {
             if (regle.condition[0].code != null) {
-                idValue = Parcours.getIdentifiantValue(fields[i], regle.condition[0].code, regle.identifiant.code)
+                idValue = Parcours.getIdentifiantValue(fields[i], regle.condition[0].code, regle.identifiant.code);
                 if (idValue != null) {
-                    identifiant.push(idValue)
+                    identifiant.push(idValue);
                 }
 
             } else {
-                idValue = Parcours.getSubfieldValue(fields[i], regle.identifiant.code)
+                idValue = Parcours.getSubfieldValue(fields[i], regle.identifiant.code);
                 if (idValue != null) {
-                    identifiant.push(idValue)
+                    identifiant.push(idValue);
                 }
             }
         }
 
-        return identifiant
+        return identifiant;
     }
 
     /**
-     * Valide les regles de type Idref
-     * @param {String} categorie categorie du document
-     * @param {json} rules fichier de regle
-     * @param {json} controlfields zone de controle
+     * Valide les règles de type Idref.
+     * @param {String} categorie catégorie du document
+     * @param {json} rules fichier de règle
+     * @param {json} controlfields zone de contrôle
      * @param {json} datafields zone de données
-     * @param {json} resultJson fichier de resultat
+     * @param {json} resultJson fichier de résultat
      */
     var testIdRefRules = function (categorie, rules, controlfields, datafields, resultJson) {
         rules[categorie].idRef.forEach(function (regle) {
-            const fieldsValid = conditionNotice(datafields, regle)
+            const fieldsValid = conditionNotice(datafields, regle);
             if (fieldsValid.length > 0) {
-                const identifiant = identifiantNotice(fieldsValid, regle)
+                const identifiant = identifiantNotice(fieldsValid, regle);
                 if (identifiant.length > 0) {
                     for (let i in identifiant) {
-                        getRequest(identifiant[i], regle, resultJson)
+                        getRequest(identifiant[i], regle, resultJson);
                     }
                 } else {
-                    addError(regle, resultJson)
+                    addError(regle, resultJson);
                 }
             }
         });
     }
-
 
 
     return {
