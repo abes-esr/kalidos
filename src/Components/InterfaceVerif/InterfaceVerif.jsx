@@ -97,7 +97,7 @@ function InterfaceVerif({ result, recherchePPN, compteurResult, listPPNErronne }
         let error_number = listPPNWithError[i][1]['errors'].length;
         for (let j = 0; j < error_number; j++) {
             errorHeaders.push(
-                listPPNWithError[i][1]['errors'][j]['number'] + " " + listPPNWithError[i][1]['errors'][j]['code']
+                listPPNWithError[i][1]['errors'][j]['numRuleExcell'] + " : " + listPPNWithError[i][1]['errors'][j]['number'] + " " + listPPNWithError[i][1]['errors'][j]['code']
             )
         }
     }
@@ -113,7 +113,7 @@ function InterfaceVerif({ result, recherchePPN, compteurResult, listPPNErronne }
         let error_number = listPPNWithError[i][1]['errors'].length;
 
         for (let j = 0; j < error_number; j++) {
-            let ppnError = listPPNWithError[i][1]['errors'][j]['number'] + " " + listPPNWithError[i][1]['errors'][j]['code'];
+            let ppnError = listPPNWithError[i][1]['errors'][j]['numRuleExcell'] + " : " + listPPNWithError[i][1]['errors'][j]['number'] + " " + listPPNWithError[i][1]['errors'][j]['code'];
 
             // on regarde à quel index du header l'erreur du ppn correspond
             let indexError = sortedHeaders.indexOf(ppnError);
