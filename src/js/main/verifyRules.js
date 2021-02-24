@@ -273,13 +273,14 @@ function prioBiblio (biblios) {
                 break;      
         }
     }
-    
-    if (prio == "{}")
+
+    if (prio[0] == undefined)
         return biblios[0]._text;
     // si aucunes des biblios ne correspondent à une biblio de la liste des priorités
     // alors on renvoie la première biblio
         
     // on compare les priorités stockées dans prio et on retourne la bibliothèque prioritaire
+    
     const prio_tab = Object.keys(prio).map((key) => [String(key), prio[key]]);
     let max_prio = prio_tab[0][0];
     for (let i = 1; i < prio_tab.length; i++) {
