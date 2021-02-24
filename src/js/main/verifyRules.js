@@ -102,7 +102,7 @@ function deleteRule(index) {
             "index": index,
         },
     }).then(function () {
-        console.log("suppression ok")
+        console.log("deleteRule ok");
     })
     .catch(function (error) {
         console.log(error);
@@ -124,7 +124,7 @@ function updateRule(index, newRule) {
             "index": index
         }
     }).then(function () {
-        console.log("modification ok")
+        console.log("updateRule ok");
     }).catch(function (error) {
         console.log(error);
     });
@@ -148,7 +148,7 @@ function addRule(categorie, type, rule) {
         },
         data: rule,
     }).then(function () {
-        console.log("ok")
+        console.log("addRule ok");
     })
     .catch(function (error) {
         // handle error
@@ -273,13 +273,14 @@ function prioBiblio (biblios) {
                 break;      
         }
     }
-    
-    if (prio == "{}")
+
+    if (prio[0] == undefined)
         return biblios[0]._text;
     // si aucunes des biblios ne correspondent à une biblio de la liste des priorités
     // alors on renvoie la première biblio
         
     // on compare les priorités stockées dans prio et on retourne la bibliothèque prioritaire
+    
     const prio_tab = Object.keys(prio).map((key) => [String(key), prio[key]]);
     let max_prio = prio_tab[0][0];
     for (let i = 1; i < prio_tab.length; i++) {
@@ -343,8 +344,8 @@ function verifMain(rules, sudoc) {
 export {verifiyRulesByTextArea, verifiyRulesByTextAreaNotice};
 
 /**
- * Teste tous les type de règle sur un PPN.
- * @param {string} categorie nom de la catégorie de règle à appliquer
+ * Teste tous les type de règles sur un PPN.
+ * @param {string} categorie nom de la catégorie de règles à appliquer
  * @param {json} rules fichier de règles
  * @param {json} controlfields zone de controle du sudoc
  * @param {json} datafields zone de données du sudoc

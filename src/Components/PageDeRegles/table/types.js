@@ -11,24 +11,24 @@ import { getSchemaPrecedence, formatRulePrecedence } from '../forms/precedence';
 
 
 /**
- * Fonction qui retourne un tableau avec la specification de chaque type
+ * Fonction qui retourne un tableau avec la spécification de chaque type
  * Objets de la forme :
  *  { 
- *    name: Nom a afficher dans l'interface, 
- *    type: Type dans le fichier json des regles,
- *    description: Description de la regle,
- *    schema: schema de la regle,
- *    submit: fonction de formalisation de la regle (formatRule...),
+ *    name: Nom à afficher dans l'interface, 
+ *    type: Type dans le fichier json des règles,
+ *    description: Description de la règle,
+ *    schema: schema de la règle,
+ *    submit: fonction de formalisation de la règle (formatRule...),
     },
  * 
  * 
  * @param {
- *      fields : liste de categories dans le fichier json
- *      tags : liste de tags a afficher
+ *      fields : liste de catégories dans le fichier json
+ *      tags : liste de tags à afficher
  * } categories 
  * @param {
- *      rules : liste de regles sur des motifs, pour le generateur (generator.js)
- *      names : liste de tags a afficher pour chaque regle
+ *      rules : liste de règles sur des motifs, pour le générateur (generator.js)
+ *      names : liste de tags à afficher pour chaque règle
  * } rules 
  */
 export function typesSpec(categories, rules) {
@@ -36,14 +36,14 @@ export function typesSpec(categories, rules) {
     { name: "Matching", 
       type: "matching",
       gif: "https://i.ibb.co/WPvv5xJ/matchingun.gif",
-      description: "Ce type de règle permet d'imposer une contrainte sur la chaine de caractère d'une Sous Zone si elle existe. Nous rappelons l'exemple : Le champ (Zone$Sous Zone)  230$a ne doit pas contenir 'Mo'. Il est également possible d’inclure plusieurs champs dans une même règle et plusieurs motifs à matcher. Par exemple : 700$4 et 701$4 ne doivent pas contenir les valeurs 020, 050, 060.",
+      description: "Ce type de règle permet d'imposer une contrainte sur la chaîne de caractères d'une Sous Zone si elle existe. Nous rappelons l'exemple : Le champ (Zone$Sous Zone)  230$a ne doit pas contenir 'Mo'. Il est également possible d’inclure plusieurs champs dans une même règle et plusieurs motifs à matcher. Par exemple : 700$4 et 701$4 ne doivent pas contenir les valeurs 020, 050, 060.",
       schema: getSchemaMatching(categories, rules),
       submit: formatRuleMatching,
     },
     { name: "Dépendances", 
       type: "dependances",
       gif: "https://i.ibb.co/wL0hR5c/dependences.gif",
-      description: "Ce type de règle effectue une opération de comparaison entre deux champs d'un même document, ce type de règle s'intéresse a la valeur des Sous Zone. Nous rappelons l'exemple : les 4 premiers caractères du sous champs (Zone$SousZone) 029$b doit être égale au champs (Zone$SousZone) 328$d ",
+      description: "Ce type de règle effectue une opération de comparaison entre deux champs d'un même document, ce type de règle s'intéresse à la valeur des Sous-Zones. Nous rappelons l'exemple : les 4 premiers caractères du sous-champ (Zone$SousZone) 029$b doit être égale au champs (Zone$SousZone) 328$d ",
       schema: getSchemaDependencies(categories, rules),
       submit: formatRuleDependencies,
     },
@@ -85,21 +85,21 @@ export function typesSpec(categories, rules) {
     { name: "Ordonnancement", 
       type: "ordonnancement",
       gif: "https://i.ibb.co/JHX6X1k/ordonnancement.gif",
-      description: "Ce type de règle vérifie l'ordonnancement de toutes les Zone possédant le même identifiant, en effet il faut qu'elles soient triée en fonction de leur indice (1 ou 2).Nous rappelons l'exemple : Si plusieurs zones sont égale à 214, alors elles doivent respecter l'ordre des chiffres de l'indice 2",
+      description: "Ce type de règle vérifie l'ordonnancement de toutes les Zone possédant le même identifiant, en effet il faut qu'elles soient triées en fonction de leur indice (1 ou 2). Nous rappelons l'exemple : Si plusieurs zones sont égale à 214, alors elles doivent respecter l'ordre des chiffres de l'indice 2",
       schema: getSchemaOrdonnancement(categories, rules),
       submit: formatRuleOrdonnancement,
     },
     { name: "Compte", 
       type: "compte",
       gif: "https://i.ibb.co/vYZFvDJ/compte.gif",
-      description: "Ce type de règle vérifie que le nombre de document avec une certaine Zone combiner avec sa Sous Zone doit être égale au nombre de Zone d'un autre document. Par exemple : Si plusieurs Zone$SousZone sont égales à '101$d' , il doit y avoir autant de  document avec la zone '330'",
+      description: "Ce type de règle vérifie que le nombre de document avec une certaine Zone combiner avec sa Sous Zone doit être égale au nombre de Zone d'un autre document. Par exemple : Si plusieurs Zone$SousZone sont égales à '101$d' , il doit y avoir autant de document avec la zone '330'",
       schema: getSchemaCompte(categories, rules),
       submit: formatRuleCompte,
     },
     { name: "Precedence", 
       type: "precedence",
       gif: "https://i.ibb.co/BNJLV7c/precedence.gif",
-      description: "Ce type de règle vérifie dans une Zone qu'une sous-zone est bien précédée par une autre sous-zone. Nous rappelons l'exemple : si les champs 608$a et 608$2 avec la chaine de caractère *rameau*  à matcher alors 608$a doit être précédé d’un 608$3.",
+      description: "Ce type de règle vérifie dans une Zone qu'une sous-zone est bien précédée par une autre sous-zone. Nous rappelons l'exemple : si les champs 608$a et 608$2 avec la chaîne de caractères *rameau*  à matcher alors 608$a doit être précédé d’un 608$3.",
       schema: getSchemaPrecedence(categories, rules),
       submit: formatRulePrecedence,
     },

@@ -5,12 +5,12 @@ import Dependance from "../regles/Dependance";
 
 var ConditionDependance = function () {
     /**
-     * teste les regles de type Condition Dependance
-     * @param {String} categorie categorie de la regle a tester
-     * @param {json} rules fichier de regles
-     * @param {json} controlfields zones de controle
+     * Teste les règles de type Condition Dependance.
+     * @param {String} categorie catégorie de la règle à tester
+     * @param {json} rules fichier de règles
+     * @param {json} controlfields zones de contrôle
      * @param {json} datafields zone de données
-     * @param {json} resultJson ficher de resultat
+     * @param {json} resultJson ficher de résultat
      */
     var testConditionDependanceRules = function (categorie, rules, controlfields, datafields, resultJson) {
         rules[categorie].ConditionDependance.forEach(function (regle) {
@@ -34,8 +34,7 @@ var ConditionDependance = function () {
                     Parcours.addErrorSynchro();
                 }
             }
-        }
-        );
+        });
     }
 
     return {

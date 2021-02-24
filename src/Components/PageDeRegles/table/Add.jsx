@@ -7,10 +7,10 @@ import {
 import ArrayFieldTemplate from '../forms/ArrayFieldTemplate';
 
 /**
- * Composant d'ajout de regles a deux parties:
- *    List : qui propose la liste de regles disponibles avec une brief explication
- *    Form : le formulaire correspondant au type de regle choisi
- * Le changement entre ces parties est fait avec useForm (au depart a false)
+ * Composant d'ajout de règles à deux parties:
+ *    List : qui propose la liste de règles disponibles avec une brief explication
+ *    Form : le formulaire correspondant au type de règle choisi
+ * Le changement entre ces parties est fait avec useForm (au depart a false).
  * @param {
  *   types : liste de types 
  *   newRule : la fonction qui permet de suajouterpprimer une regle sur la liste
@@ -29,7 +29,7 @@ function Add({ types, newRule }) {
     setUseForm(!useForm);
   };
   /**
-   * La fonction qui est appellee quand on veut ajouter une regle
+   * La fonction qui est appelée quand on veut ajouter une règle.
    * 
    * @param {
     *    formData : Information rempli par l'utilisateur

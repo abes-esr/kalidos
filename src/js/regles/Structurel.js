@@ -3,8 +3,8 @@ import Parcours from "../utile/Parcours";
 var Structurel = function () {
 
     /**
-     * verifie les regles de sous-type required
-     * @param {String} type type de la regle
+     * Vérifie les règles de sous-type required.
+     * @param {String} type type de la règle
      * @param {json} retour valeur de retour -> datafield
      */
     function verifyRequire(type, retour) {
@@ -12,8 +12,8 @@ var Structurel = function () {
     }
 
     /**
-     * verifie les regles de sous-type exclude
-     * @param {String} type type de la regle
+     * Vérifie les règles de sous-type exclude.
+     * @param {String} type type de la règle
      * @param {json} retour valeur de retour -> datafield
      */
     function verifyExclude(type, retour) {
@@ -21,8 +21,8 @@ var Structurel = function () {
     }
 
     /**
-     * verifie une regle de sous-type "required one"
-     * @param {json} regle regle courrante
+     * Vérifie une règle de sous-type "required one".
+     * @param {json} regle règle courante
      * @param {json} datafields zone de données
      */
     function verifyRequireOne(regle, datafields) {
@@ -38,10 +38,10 @@ var Structurel = function () {
     }
 
     /**
- * verifie une regle de sous-type "contains code"
- * @param {json} regle regle courrante
- * @param {json} datafields zone de données
- */
+     * Vérifie une règle de sous-type "contains code".
+     * @param {json} regle règle courante
+     * @param {json} datafields zone de données
+     */
     function verifyContainsCode(regle, datafields) {
         if (regle.type == "contains code") {
             let valid = regle.number.length;
@@ -80,29 +80,28 @@ var Structurel = function () {
     }
 
     /**
-* verifie une regle de sous-type "index"
-* @param {json} regle regle courrante
-* @param {json} datafields zone de données
-*/
+    * Vérifie une règle de sous-type "index".
+    * @param {json} regle règle courante
+    * @param {json} datafields zone de données
+    */
     function verifyIndex(regle, datafields) {
         if (regle.type == "index") {
             for (let item in regle.number) {
                 let field = Parcours.findDataField(datafields, regle.number[item])
                 if (field != null && (field._attributes.ind1 !== regle.ind1 || field._attributes.ind2 !== regle.ind2)) {
-                    return true
+                    return true;
                 }
             }
-            return false
-
+            return false;
         }
     }
 
 
     /**
-* verifie une regle de sous-type "required with value"
-* @param {json} regle regle courrante
-* @param {json} datafields zone de données
-*/
+    * Vérifie une règle de sous-type "required with value".
+    * @param {json} regle règle courante
+    * @param {json} datafields zone de données
+    */
     function verifyRequiredValue(regle, datafields) {
         if (regle.type == "required with value") {
             for (let item in regle.number) {
@@ -110,19 +109,18 @@ var Structurel = function () {
                 let texte = Parcours.getSubfieldValue(field, regle.code)
                 //console.log(texte , " " , regle.value ," -> " ,texte !== regle.value)
                 if (texte !== regle.value) {
-                    return true
+                    return true;
                 }
             }
-            return false
-
+            return false;
         }
     }
 
     /**
-* verifie une regle de sous-type "exclude"
-* @param {json} regle regle courrante
-* @param {json} datafields zone de données
-*/
+    * Vérifie une règle de sous-type "exclude"
+    * @param {json} regle règle courante
+    * @param {json} datafields zone de données
+    */
     function verifyExcludeCode(regle, datafields) {
         if (regle.type == "exclude") {
             for (let item in regle.number) {
@@ -137,13 +135,13 @@ var Structurel = function () {
     }
 
     /**
- * Verifie les regles de type Structurel
- * @param {String} categorie categorie du document
- * @param {json} rules fichier de regle
- * @param {json} controlfields zone de controle
- * @param {json} datafields zone de données
- * @param {json} resultJson fichier de resultat
- */
+     * Vérifie les règles de type Structurel.
+     * @param {String} categorie catégorie du document
+     * @param {json} rules fichier de règle
+     * @param {json} controlfields zone de contrôle
+     * @param {json} datafields zone de données
+     * @param {json} resultJson fichier de résultat
+     */
     var testMatchStructurelRules = function (categorie, rules, controlfields, datafields, resultJson) {
         rules[categorie].Structurel.forEach(function (regle) {
             const ind1 = regle.ind1
@@ -183,8 +181,6 @@ var Structurel = function () {
                 Parcours.addErrorSynchro();
             }
         });
-
-
     }
     return {
         testMatchStructurelRules: testMatchStructurelRules

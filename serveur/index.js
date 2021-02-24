@@ -152,7 +152,7 @@ app.get('/getNotices', (req, res) => {
 });
 
 /**
- * Ajoute une notice à la liste des notices erronés.
+ * Ajoute une notice à la liste des notices erronées.
  * @body body : date de création qui fera office d'index de la notice
  * return code 200
  */
@@ -197,7 +197,7 @@ app.delete('/notices', (req, res) => {
 });
 
 /**
- * Supprime toute les notices, réécrit un json vide.
+ * Supprime toutes les notices, réécrit un json vide.
  * return code 200
  */
 app.delete('/deleteAllNotices', (req, res) => {

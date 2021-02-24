@@ -1,5 +1,5 @@
 /**
- * Objets qui representent les operateurs des regles avec leur tags (noms a utiliser dans l'interface)
+ * Objets qui représentent les opérateurs des règles avec leur tags (noms à utiliser dans l'interface).
  * 
  */
 

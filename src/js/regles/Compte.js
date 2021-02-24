@@ -3,33 +3,32 @@ import Parcours from "../utile/Parcours";
 
 var Compte = function () {
     /**
-     * teste les regles de type Compte
-     * @param {String} categorie categorie de la regle a tester
-     * @param {json} rules fichier de regles
-     * @param {json} controlfields zones de controle
+     * Teste les règles de type Compte.
+     * @param {String} categorie catégorie de la règle à tester
+     * @param {json} rules fichier de règles
+     * @param {json} controlfields zones de contrôle
      * @param {json} datafields zone de données
-     * @param {json} resultJson ficher de resultat
+     * @param {json} resultJson ficher de résultat
      */
     var testCompteRules = function (categorie, rules, controlfields, datafields, resultJson) {
         rules[categorie].compte.forEach(function (regle) {
             const fields = Parcours.findDataFields(datafields, regle.number);
             const subfields = Parcours.getListSubfieldValue(fields,regle.code);
-            if(subfields.length < 2) {
+            if (subfields.length < 2) {
                 return;
             }
             const fieldsContrainte = Parcours.findDataFields(datafields, regle.contrainte);
-            if(fieldsContrainte.length != subfields.length) {
+            if (fieldsContrainte.length != subfields.length) {
                 addError(regle, resultJson);
             }
-           
         });
     }
 
 
     /**
-     * Ajoute une erreur au fichier de resultat
-     * @param {json} regle regle courrante
-     * @param {json} resultJson fichier de resultat
+     * Ajoute une erreur au fichier de résultat.
+     * @param {json} regle règle courante
+     * @param {json} resultJson fichier de résultat
      */
     function addError(regle, resultJson) {
         resultJson.errors.push({

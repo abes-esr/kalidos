@@ -5,156 +5,151 @@ import { incrementeSynchro } from '../../actions/index';
 var Parcours = function () {
 
     /**
-     * Retourne un champ de notice
+     * Retourne un champ de notice.
      * @param {json} datafields zone de données
      * @param {String} number identifiant du datafield
      */
     const findDataField = function (datafields, number) {
-        let retour = null
+        let retour = null;
         datafields.forEach(function (field) {
             if (field._attributes.tag == number) {
-                retour = field
-                return field
+                retour = field;
+                return field;
             }
         });
         return retour;
     }
 
     /**
-     * Recupere un datafield ayant les caracteristiques passées en parametre, si il existe
+     * Récupère un datafield ayant les caractéristiques passées en paramètre, s"il existe.
      * @param {json} datafields zone de données
      * @param {String} number identifiant
      * @param {String} ind1 valeur de l'ind1
      * @param {String} ind2 valeur de l'ind2
      */
     const findDataFieldById = function (datafields, number , ind1 , ind2) {
-        let retour = null
+        let retour = null;
         datafields.forEach(function (field) {
             if (field._attributes.tag == number && field._attributes.ind1.toString().trim() === ind1
                 && field._attributes.ind2.toString().trim() === ind2) {
-                retour = field
-                return field
+                retour = field;
+                return field;
             }
         });
-
         return retour;
     }
 
     /**
-     * Retourne tous les datafield ayant les caracteristiques passées en parametre s'ils existent
+     * Retourne tous les datafield ayant les caractéristiques passées en paramètre s'ils existent.
      * @param {json} datafields zone de données
      * @param {String} number identifiant
      * @param {String} ind1 valeur de l'ind1
      * @param {String} ind2 valeur de l'ind2
      */
     const findDataFieldsById = function (datafields, number , ind1 , ind2) {
-        let retour = []
+        let retour = [];
         // let count = 0;
         datafields.forEach(function (field) {
             if (field._attributes.tag == number && field._attributes.ind1.toString().trim() === ind1
                 && field._attributes.ind2.toString().trim() === ind2) {
-                retour.push(field)
+                retour.push(field);
             }
         });
         return retour;
     }
 
     /**
-     * Retourne tous les datafield ayant le number passées en parametre s'ils existent
+     * Retourne tous les datafield ayant le number passés en parametre s'ils existent.
      * @param {json} datafields zone de données
      * @param {String} number identifiant
      */
     const findDataFields = function (datafields, number) {
-        let retour = []
+        let retour = [];
         let count = 0;
         datafields.forEach(function (field) {
             if (field._attributes.tag == number) {
-                field.num = count
-                retour.push(field)
-                count ++
+                field.num = count;
+                retour.push(field);
+                count ++;
             }
         });
         return retour;
     }
 
     /**
-     * Filtre les datafield par la valeur de la variable
+     * Filtre les datafield par la valeur de la variable.
      * @param {json} datafields 
      * @param {String} variable variable filtre
      * @param {String} value valeur de la variable
      */
     const filterDatafield = function(datafields,variable, value) {
         let retour = [];
-        for(let i in datafields) {
+        for (let i in datafields) {
             // let tutu = datafields[i]._attributes[variable];
-            if(datafields[i]._attributes[variable] === value) {
-                retour.push(datafields[i])
+            if (datafields[i]._attributes[variable] === value) {
+                retour.push(datafields[i]);
             }
         }
         return retour;
     }
 
     /**
-     * Recupere une liste de subfield contenu dans une liste de datafield qui valident une valeur de code
+     * Récupère une liste de subfield contenu dans une liste de datafield qui valident une valeur de code.
      * @param {json} datafields zone de données
      * @param {String} number identifiant des datafields
-     * @param {String} code code a matcher pour les subfields
+     * @param {String} code code à matcher pour les subfields
      */
-    const getAllDatafieldVerifyZone = function(datafields , number , code) {
+    const getAllDatafieldVerifyZone = function(datafields, number, code) {
         let retour  = [];
         const fields = findDataFields(datafields, number);
-        for(let i in fields) {
-            for(let j in fields[i].subfield) {
-                if(fields[i].subfield[j]._attributes.code === code) {
+        for (let i in fields) {
+            for (let j in fields[i].subfield) {
+                if (fields[i].subfield[j]._attributes.code === code) {
                     retour.push(fields[i]);
                     break;
                 }
-            }
-            
+            } 
         }
         return retour;
-
     }
 
 
     /**
-     * retourne la valeur d'un champ d'une notice
+     * Retourne la valeur d'un champ d'une notice.
      * @param {json} field liste de datafield
-     * @param {String} code code a matcher
+     * @param {String} code code à matcher
      */
-    const getSubfieldValue = function(field,code) {
+    const getSubfieldValue = function(field, code) {
         if (field != null && field.subfield instanceof Array) {
             for (let i in field.subfield) {
                 if(field.subfield[i]._attributes.code === code) {
-                    return field.subfield[i]._text
+                    return field.subfield[i]._text;
                 }
             }
-        }else if (field != null) {
+        } else if (field != null) {
             if (field.subfield._attributes.code === code) {
-                return field.subfield._text
-
+                return field.subfield._text;
             }
-        } 
-       
-        return null
+        }
+        return null;
     }
 
 
     /**
-     * recupere une liste de subfield celon une valeur de code
+     * Récupère une liste de subfield selon une valeur de code.
      * @param {json} fields liste de datafield
-     * @param {String} code code a matcher
+     * @param {String} code code à matcher
      */
     const getListSubfieldValue = function(fields,code) {
         let retour = [];
         for (let i in fields ) {
             if (fields[i] != null && fields[i].subfield instanceof Array) {
                 for (let j in fields[i].subfield) {
-                    if(fields[i].subfield[j]._attributes.code === code) {
+                    if (fields[i].subfield[j]._attributes.code === code) {
                         retour.push(fields[i].subfield[j]);
                     }
                 }
-            }else if (fields[i] != null) {
+            } else if (fields[i] != null) {
                 if (fields[i].subfield._attributes.code === code) {
                     retour.push(fields[i].subfield);
                 }
@@ -164,95 +159,93 @@ var Parcours = function () {
     }
 
 
-
     /**
-     * recupere les subfield qui valident le codeCondition et le codeIdentifiant
+     * Récupère les subfields qui valident le codeCondition et le codeIdentifiant.
      * @param {json} field list de datafield
-     * @param {String} codeCondition code a matcher
-     * @param {String} codeIdentifiant code a matcher
+     * @param {String} codeCondition code à matcher
+     * @param {String} codeIdentifiant code à matcher
      */
     const getIdentifiantValue = function(field,codeCondition,codeIdentifiant) {
         let retour = null;
         if (field != null && field.subfield instanceof Array) {
             for (let i in field.subfield) {
-                if(field.subfield[i]._attributes.code === codeIdentifiant) {
-                    retour =  field.subfield[i]._text
+                if (field.subfield[i]._attributes.code === codeIdentifiant) {
+                    retour = field.subfield[i]._text;
                 }
-                if(field.subfield[i]._attributes.code === codeCondition && retour != null) { 
-                    return retour
+                if (field.subfield[i]._attributes.code === codeCondition && retour != null) { 
+                    return retour;
                 }
             }
-        }else if (field != null) {
+        } else if (field != null) {
             if (field.subfield._attributes.code === codeIdentifiant) {
-                return field.subfield._text
+                return field.subfield._text;
             }
         } 
-        return null
+        return null;
     }
 
     /**
-     * Teste si un subfield avec une valeur de code donné existe
-     * @param {json} field datafield a tester
-     * @param {String} code code a tester
+     * Teste si un subfield avec une valeur de code donné existe.
+     * @param {json} field datafield à tester
+     * @param {String} code code à tester
      */
     const testCode = function(field,code) {
         if (field != null && field.subfield instanceof Array) {
             for (let i in field.subfield) {
-                if(field.subfield[i]._attributes.code === code) {
-                    return true
+                if (field.subfield[i]._attributes.code === code) {
+                    return true;
                 }
             }
-        }else if (field != null) {
+        } else if (field != null) {
             if (field.subfield._attributes.code === code) {
-                return true
-
+                return true;
             }
         } 
-        return false
+        return false;
     }
 
     /**
-     * retourne la liste des Categories de regles (General ,Electronique , ...)
-     * @param {json} regles fichier de regles
+     * Retourne la liste des Catégories de règles (General ,Electronique , ...).
+     * @param {json} regles fichier de règles
      */
     const getCategories = function (regles) {
-        let catagorie = []
-        for(item in regles) {
-            catagorie.push(item)
+        let catagorie = [];
+        for (item in regles) {
+            catagorie.push(item);
         }
-        return catagorie
+        return catagorie;
     }
 
     /**
-     * Retourne la liste des types de regles (matching, structurel ,...)
-     * @param {json} regles fichier de regles
+     * Retourne la liste des types de règles (matching, structurel ,...).
+     * @param {json} regles fichier de règles
      */
     const getTypes = function (regles) {
-        let types = []
-        for(item in regles) {
-            for( regle in regles[item]) {
-                types.push(regle)
+        let types = [];
+        for (item in regles) {
+            for (regle in regles[item]) {
+                types.push(regle);
             }
             break;
         }
-        return types
+        return types;
     }
 
     /**
-     * decoupe une chaine de caractere 
-     * @param {*} start debut
+     * Découpe une chaîne de caractères.
+     * @param {*} start début
      * @param {*} end fin
-     * @param {*} text texte a decouper
+     * @param {*} text texte à decouper
      */
-    const slice = function (start, end, text){
+    const slice = function (start, end, text) {
         return text.slice(start > 0 ? start -1  : 0, end);
     }
 
     /**
-     * permet la synchronisation de l'interface de verification des resultats
+     * Permet la synchronisation de l'interface de vérification des resultats.
      */
     const addErrorSynchro = function() {
-        if(store !== undefined) {
+        if (store !== undefined) {
             store.dispatch(incrementeSynchro("toto"));
         }
     }

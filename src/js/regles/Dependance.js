@@ -10,10 +10,10 @@ Dependance
 var Dependance = function () {
 
     /**
-     * applique une regle de dependance entre deux champs
+     * Applique une règle de dépendance entre deux champs.
      * @param {json} field1 datafield 1
      * @param {json} field2 datafield 2
-     * @param {json} regle regle courante
+     * @param {json} regle règle courante
      */
     function applyRuleOnFields(field1, field2, regle) {
 
@@ -66,12 +66,12 @@ var Dependance = function () {
 
 
     /**
-     * Applique les verrification sur les regles de type Dependance
-     * @param {json} categorie Catagorie de document a tester
-     * @param {json} rules fichier de regle
-     * @param {json} controlfields zone de controle
+     * Applique les vérifications sur les règles de type Dependance.
+     * @param {json} categorie Catégorie de document à tester
+     * @param {json} rules fichier de règle
+     * @param {json} controlfields zone de contrôle
      * @param {json} datafields zone de données
-     * @param {json} resultJson fichier de resultat
+     * @param {json} resultJson fichier de résultat
      */
     var testMatchDependanceRules = function (categorie,rules, controlfields, datafields, resultJson) {
         rules[categorie].dependances.forEach(function (regle) {

@@ -6,19 +6,19 @@ import { MDBIcon } from 'mdbreact';
 import IconButton from '@material-ui/core/IconButton';
 
 /**
- * Composant de base pour la creation des modals ADD EDIT DELETE
+ * Composant de base pour la création des modals ADD EDIT DELETE
  * 
  * @param {
- *    icon: Icone du button declencheur (texte),
+ *    icon: Icone du button déclencheur (texte),
  *    textButton : {
- *        true : le button est un rectangle qui aura te meme texte que celui du champ title,
+ *        true : le button est un rectangle qui aura le même texte que celui du champ title,
  *        false : (default) le button est un simple icone 
  *    },
- *    overlay : Tooltip a afficher dans le overlay,
- *    title : titre a afficher dans le modal,
+ *    overlay : Tooltip à afficher dans le overlay,
+ *    title : titre à afficher dans le modal,
  *    body : ce qui sera affiche par le modal (les composants sont possibles),
- *    close : (default -> null) message a afficher pour le button de fermeture,
- *    accept : (default -> null) message a afficher pour le button de "acceptation",
+ *    close : (default -> null) message à afficher pour le button de fermeture,
+ *    accept : (default -> null) message à afficher pour le button de "acceptation",
  * } props 
  */
 function FormModal(props) {

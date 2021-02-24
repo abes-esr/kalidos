@@ -1,36 +1,36 @@
 /**
- * Functions pour la creation des schemas (react-json-schema), et la formalisation des donnees 
- * pour les regles de type : 
+ * Functions pour la création des schemas (react-json-schema), et la formalisation des données 
+ * pour les règles de type : 
  * --------------------------------------    COMPTE    ---------------------------------------
  */
 
 /**
- * Function pour donner le format appropie aux donnes soumis par l'utilisateur
+ * Function pour donner le format approprié aux données soumises par l'utilisateur.
  * @param {*} data
  */
 export function formatRuleCompte(data) {
     console.log('formatRuleCompte');
-    console.log(data)
+    console.log(data);
     const obj = {};
     obj.number = data.number;
     obj.code = data.code;
     obj.contrainte = data.contrainte;
     obj.message = data.message;
     console.log(obj);
-        obj.numRuleExcell = data.numRuleExcell
-return obj;
+    obj.numRuleExcell = data.numRuleExcell;
+    return obj;
 }
 
 /**
- * Fonction pour la creation du schema
+ * Fonction pour la création du schema.
  * 
  * @param {
- *      fields : liste de categories dans le fichier json
- *      tags : liste de tags a afficher
- * } categories Liste de categories 
+ *      fields : liste de catégories dans le fichier json
+ *      tags : liste de tags à afficher
+ * } categories Liste de catégories 
  * @param {
- *      rules : liste de regles sur des motifs, pour le generateur (generator.js)
- *      names : liste de tags a afficher pour chaque regle
+ *      rules : liste de règles sur des motifs, pour le générateur (generator.js)
+ *      names : liste de tags à afficher pour chaque règle
  * } rules 
  */
 export function getSchemaCompte(categories, rules) {
