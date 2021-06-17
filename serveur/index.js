@@ -20,6 +20,7 @@ app.use(bodyParser.json())
 app.use(express.static(DIST_DIR));
 app.use(bodyParser.urlencoded({ extended: true }));
 const port = process.env.PORT || 3000;
+const HOST = '0.0.0.0';
 const mockResponse = {
   foo: 'bar',
   bar: 'foo',
@@ -237,7 +238,7 @@ app.get('/*', (req, res) => {
   res.sendFile(path.join(DIST_DIR, 'index.html'));
 });
 
-app.listen(port, () => {
+app.listen(port, HOST, () => {
   console.log(`App listening on port: ${port}`);
   console.log(`App is running on : http://localhost:${port}`);
 });
