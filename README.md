@@ -2,7 +2,7 @@
 
 KaliDoS est une application web qui permet de vérifier la qualité de notices bibliographiques selon un jeu de règles.
 Elle prend en entrée une liste de numéros PPN (identifiants de notices) et produit en sortie un rapport global et détaillé (erreurs pour chaque notice) qui est exportable au format Excel.
-Trois jeux de règles sont actuellement proposés (définis avec la BU de Lyon 1) mais une interface web permet d'en ajouter, d'en supprimer ou de les modifier.
+Cinq jeux de règles sont actuellement proposés (définis avec la BU de Lyon 1) mais une interface web permet d'en ajouter, d'en supprimer ou de les modifier.
 
 L'application a été développée par des étudiants du Master Informatique de l'Université Lyon 1, en collaboration avec la BU, d'octobre 2020 à février 2021.
 
