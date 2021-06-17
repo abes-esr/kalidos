@@ -49,8 +49,8 @@ Démo de l'application KaliDoS sur Heroku : [https://budev.herokuapp.com/#/](htt
 
 [Documentation des règles](doc/regles.md)
 
-[Liste des règles SCD UCBL (format Excel)](doc/controle-qualité-v5.xlsx)
+[Liste des règles SCD UCBL (format Excel)](doc/controle-qualite-v5.xlsx)
 
-[Documentation l'interface des règles](doc/interfaces-regles.md)
+[Documentation l'interface des règles](doc/interface-regles.md)
 
 
